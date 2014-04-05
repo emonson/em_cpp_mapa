@@ -9,3 +9,8 @@ option(BUILD_ANN "Build ANN (required for some apps)" ON)
 if(BUILD_ANN)
   ADD_SUBDIRECTORY(ann)
 endif(BUILD_ANN)
+
+option(BUILD_TINYXML2 "Build TINYXML2 (required for some apps)" ON)
+if(BUILD_TINYXML2)
+  ADD_SUBDIRECTORY(tinyxml2)
+endif(BUILD_TINYXML2)

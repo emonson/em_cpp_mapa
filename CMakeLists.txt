@@ -29,6 +29,8 @@ set(MAPA_INCLUDE_DIRS
    ${MAPA_SOURCE_DIR}/lib/io 
    ${MAPA_SOURCE_DIR}/lib/tclap 
    ${MAPA_SOURCE_DIR}/lib/ann/
+   ${MAPA_SOURCE_DIR}/lib/tinyxml2/
+   ${MAPA_SOURCE_DIR}/lib/boost_1_55_0/
 )
 
 set(MAPA_LIB_DIR 
@@ -37,6 +39,9 @@ set(MAPA_LIB_DIR
 
 set(ANN_LINK_DIR 
    ${MAPA_SOURCE_DIR}/lib/ann/
+)
+set(TINYXML2_LINK_DIR 
+   ${MAPA_SOURCE_DIR}/lib/tinyxml2/
 )
 
 ADD_SUBDIRECTORY(lib)
