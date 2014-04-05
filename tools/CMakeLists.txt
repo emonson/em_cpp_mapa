@@ -1,0 +1,12 @@
+PROJECT(MAPA_Tools)
+
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules/")
+
+INCLUDE_DIRECTORIES(. config ${MAPA_INCLUDE_DIRS})
+
+
+option(BUILD_SVD_TEST "Build SVD test" ON)
+if(BUILD_SVD_TEST)
+  ADD_SUBDIRECTORY(svd_test)
+endif(BUILD_SVD_TEST)
+

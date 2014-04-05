@@ -1,0 +1,9 @@
+# Ignore all python binary files
+*.pyc
+
+# Extra Mac directory files
+.DS_Store
+
+# This is the name I give CMake build/binary directories
+build
+
