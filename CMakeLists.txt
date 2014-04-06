@@ -29,6 +29,7 @@ set(MAPA_INCLUDE_DIRS
    ${MAPA_SOURCE_DIR}/lib/io 
    ${MAPA_SOURCE_DIR}/lib/tclap 
    ${MAPA_SOURCE_DIR}/lib/ann/
+   ${MAPA_SOURCE_DIR}/lib/ann/ANN/
    ${MAPA_SOURCE_DIR}/lib/tinyxml2/
    ${MAPA_SOURCE_DIR}/lib/boost_1_55_0/
 )
