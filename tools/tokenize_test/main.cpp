@@ -51,7 +51,7 @@ int example_1( const char* filename )
 	boost::char_separator<char> sep(" \t\n¡!¿?⸘‽“”‘’‛‟.,‚„'\"′″´˝^°¸˛¨`˙˚ªº…:;&_¯­–‑—§#⁊¶†‡@%‰‱¦|/\\ˉˆ˘ˇ-‒~*‼⁇⁈⁉$€¢£‹›«»<>{}[]()=+|");
     
     // read in stopwords from text file
-    std::ifstream stopfile("/Users/emonson/Programming/mapa/build/tools/tokenize_test/english_stopwords", std::ios_base::in);
+    std::ifstream stopfile("/Users/emonson/Programming/em_cpp_mapa/tools/tokenize_test/english_stopwords", std::ios_base::in);
     assert(!stopfile.fail());
     std::map<std::string, bool> stopwords_map;
     
@@ -260,7 +260,7 @@ int main( int argc, const char** argv )
 //        printf("must specify filename\n");
 //        return EXIT_FAILURE;
 //    }
-    const char* filename = "/Users/emonson/Downloads/Jigsaw/datafiles/InfovisVAST-papers.jig";
+    const char* filename = "/Users/emonson/Programming/em_cpp_mapa/tools/tokenize_test/InfovisVAST-papers.jig";
 	example_1( filename );
 //    example_5();
 
