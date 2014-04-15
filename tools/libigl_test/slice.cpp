@@ -64,6 +64,7 @@ int main(int argc, char * argv[])
   // select equivalent of loop over members(i), (m(i) < 3) ? 0 : m(i)
   m = (m.array() < 3).select(0,m);
   cout << m << endl;
+  cout << (m.array() < 3) << endl;
 
   return 0;
 }
