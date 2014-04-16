@@ -209,7 +209,7 @@ void init_Mu( ExtMat &X, ExtMat &Mu, char* initname ) {
     		sampleRowsRandom( X, Mu );
 	  } else if ( string( initname ) == "plusplus" ) {
   			sampleRowsPlusPlus( X, Mu );
-	  } else if ( string( initname ) == "hard" ) {
+	  } else if ( string( initname ) == "mapa" ) {
   			sampleRowsMAPA( X, Mu );
 	  }
 }

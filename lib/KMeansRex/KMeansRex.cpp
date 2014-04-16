@@ -45,7 +45,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   if (nrhs >= 4) {
     initname = mxArrayToString( prhs[3] );
   } else {
-    initname = (char *) "plusplus";
+    initname = (char *) "mapa";
   }
 
 	if (nrhs == 5) {
