@@ -52,6 +52,7 @@ using namespace std;
 typedef Map<ArrayXXd> ExtMat;
 typedef ArrayXXd Mat;
 typedef ArrayXd Vec;
+typedef Array<bool,Dynamic,1> BoolVec;
 typedef ArrayXd::Index Idx;
 
 
@@ -157,10 +158,11 @@ void sampleRowsPlusPlus( ExtMat &X, ExtMat &Mu ) {
     }       
 }
 
-void sampleRowsHard( ExtMat &U, ExtMat &seeds ) {
+void sampleRowsMAPA( ExtMat &U, ExtMat &seeds ) {
 	int N = U.rows();
 	int D = seeds.rows();
 	float tol = 1e-8;
+	Mat U1 = U;
     
 //     u0 = mean(U,1);
 //     [~,ind_m] = max(sum((U-repmat(u0,N,1)).^2,2));
@@ -173,7 +175,15 @@ void sampleRowsHard( ExtMat &U, ExtMat &seeds ) {
 	int k = 1;
 //     sq_dist_from_first_seed = (U - repmat(seeds(1,:),N,1)).^2;
 //     is_far_enough_away = sum(sq_dist_from_first_seed, 2) > tol;
+	BoolVec is_far_enough_away = ((U.rowwise() - seeds.row(0)).square().rowwise().sum() > tol);
 //     U1 = U(is_far_enough_away,:);
+	for(int ii=0; ii<is_far_enough_away.size(); ii++)
+	{
+		if (!is_far_enough_away(ii))
+		{
+			removeRow(U1,ii);
+		}
+	}
 //     % while we have fewer points than we wanted, and are not out of
 //     % potential points
 //     while k < K && size(U1,1)>0
@@ -200,7 +210,7 @@ void init_Mu( ExtMat &X, ExtMat &Mu, char* initname ) {
 	  } else if ( string( initname ) == "plusplus" ) {
   			sampleRowsPlusPlus( X, Mu );
 	  } else if ( string( initname ) == "hard" ) {
-  			sampleRowsHard( X, Mu );
+  			sampleRowsMAPA( X, Mu );
 	  }
 }
 
