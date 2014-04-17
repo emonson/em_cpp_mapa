@@ -4,6 +4,7 @@
   Provides two key functions:
     RunKMeans : runs kmeans from scratch on provided data matrix X (each row is an iid observation)
     SampleRowsPlusPlus : runs plusplus sampling on the rows of provided data matrix X
+    SampleRowsMAPA : runs MAPA sampling on the rows of provided data matrix X
 
   Notes
   -------
@@ -23,6 +24,15 @@ curdir = os.path.split( __file__ )[0]
 parentdir = os.path.split( curdir)[0]
 
 lib = ctypes.cdll.LoadLibrary( os.path.join(parentdir,'libkmeansrex.so') )
+lib.SampleRowsMAPA.restype = None
+lib.SampleRowsMAPA.argtypes = \
+               [ndpointer(ctypes.c_double),
+                ctypes.c_int,
+                ctypes.c_int,
+                ctypes.c_int,
+                ctypes.c_int,
+                ndpointer(ctypes.c_double)]
+
 lib.SampleRowsPlusPlus.restype = None
 lib.SampleRowsPlusPlus.argtypes = \
                [ndpointer(ctypes.c_double),
@@ -42,6 +52,14 @@ lib.RunKMeans.argtypes = [ndpointer(ctypes.c_double),
                 ctypes.c_char_p,
                 ndpointer(ctypes.c_double),
                 ndpointer(ctypes.c_double)]
+
+def SampleRowsMAPA( X, K, seed=42 ):
+  X = np.asarray( X, order='F')
+  N,D = X.shape
+
+  Mu = np.zeros( (K,D), order='F' )
+  lib.SampleRowsMAPA( X, N, D, K, seed, Mu)
+  return Mu
 
 def SampleRowsPlusPlus( X, K, seed=42 ):
   X = np.asarray( X, order='F')

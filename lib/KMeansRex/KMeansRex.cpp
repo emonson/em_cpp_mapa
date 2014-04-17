@@ -83,5 +83,5 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   // =============================================  Do the Work!
   // Initialize and Run Lloyd Alg to convergence!  
   init_Mu( X, Mu, initname);
-  // run_lloyd( X, Mu, Z, Niter);
+  run_lloyd( X, Mu, Z, Niter);
 }

@@ -124,6 +124,20 @@ void removeColumn(Mat &matrix, unsigned int colToRemove)
     matrix.conservativeResize(numRows,numCols);
 }
 
+void removeCloseRows(Mat &U1, ExtMat &seeds, int k, double tol)
+{
+	BoolVec is_far_enough_away = ((U1.rowwise() - seeds.row(k)).square().rowwise().sum() > tol);
+	// looping through in reverse so don't disrupt indices as removing rows
+	for(int ii = (is_far_enough_away.size()-1); ii >= 0; ii--) 
+	{
+		if (!is_far_enough_away(ii)) 
+		{
+			removeRow(U1,ii);
+		}
+	}
+
+}
+
 // ======================================================= Init Cluster Locs Mu
 
 void sampleRowsRandom( ExtMat &X, ExtMat &Mu ) {
@@ -161,41 +175,30 @@ void sampleRowsPlusPlus( ExtMat &X, ExtMat &Mu ) {
 void sampleRowsMAPA( ExtMat &U, ExtMat &seeds ) {
 	int N = U.rows();
 	int D = seeds.rows();
-	float tol = 1e-8;
-	int k = 0;
+	int dim = U.cols();
+	double tol = 1e-8;
 	Mat U1 = U;
 	Idx ind_m;
+	Vec sq_dist_sum;
+	seeds.setZero();
+	
 	float max = (U.rowwise() - U.colwise().mean()).square().rowwise().sum().maxCoeff(&ind_m);
 	seeds.row(0) = U1.row(ind_m);
-	removeRow(U1,ind_m);
-
-// 	BoolVec is_far_enough_away = ((U.rowwise() - seeds.row(0)).square().rowwise().sum() > tol);
-// 	for(int ii=is_far_enough_away.size()-1; ii >= 0; ii--)
-// 	{
-// 		if (!is_far_enough_away(ii))
-// 		{
-// 			removeRow(U1,ii);
-// 		}
-// 	}
-	while(k < D && U1.rows() > 0)
+	removeCloseRows(U1, seeds, 0, tol);
+	
+	for(int k = 1; k < D; k++)
 	{
-		Mat seeds_row_arranged = seeds.topRows(k+1).transpose();
-		seeds_row_arranged.resize(1,(k+1)*seeds.cols());
-		Mat copies_of_U_row_arranged = U1.replicate(1,k+1);
-		max = (copies_of_U_row_arranged.rowwise() - seeds_row_arranged.row(0)).square().rowwise().sum().maxCoeff(&ind_m);
-
-		k += 1;
+		if ( U1.rows() == 0 ) { break; }
+		
+		sq_dist_sum = ArrayXd::Zero(U1.rows());
+		for(int ii=0; ii < k; ii++)
+		{
+			sq_dist_sum += (U1.rowwise() - seeds.row(ii)).square().rowwise().sum();
+		}
+		max = sq_dist_sum.maxCoeff(&ind_m);
+		
 		seeds.row(k) = U1.row(ind_m);
-		removeRow(U1,ind_m);
-
-// 		is_far_enough_away = ((U1.rowwise() - seeds.row(k)).square().rowwise().sum() > tol);
-// 		for(int ii=is_far_enough_away.size()-1; ii >= 0; ii--)
-// 		{
-// 			if (!is_far_enough_away(ii))
-// 			{
-// 				removeRow(U1,ii);
-// 			}
-// 		}
+		removeCloseRows(U1, seeds, k, tol);
 	}
 }
 
@@ -296,4 +299,13 @@ void SampleRowsPlusPlus(double *X_IN,  int N,  int D, int K, int seed, double *M
   ExtMat Mu ( Mu_OUT, K, D);
 
   sampleRowsPlusPlus( X, Mu);
+}
+
+void SampleRowsMAPA(double *X_IN,  int N,  int D, int K, int seed, double *Mu_OUT) {
+  set_seed( seed );
+
+  ExtMat X  ( X_IN, N, D);
+  ExtMat Mu ( Mu_OUT, K, D);
+
+  sampleRowsMAPA( X, Mu);
 }
