@@ -162,70 +162,41 @@ void sampleRowsMAPA( ExtMat &U, ExtMat &seeds ) {
 	int N = U.rows();
 	int D = seeds.rows();
 	float tol = 1e-8;
+	int k = 0;
 	Mat U1 = U;
-    
-//     u0 = mean(U,1);
-//     [~,ind_m] = max(sum((U-repmat(u0,N,1)).^2,2));
-//     seeds(1,:) = U(ind_m(1),:);
 	Idx ind_m;
 	float max = (U.rowwise() - U.colwise().mean()).square().rowwise().sum().maxCoeff(&ind_m);
-	seeds.row(0) = U.row(ind_m);
-// 
-//     k = 1;
-	int k = 1;
-//     sq_dist_from_first_seed = (U - repmat(seeds(1,:),N,1)).^2;
-//     is_far_enough_away = sum(sq_dist_from_first_seed, 2) > tol;
-	BoolVec is_far_enough_away = ((U.rowwise() - seeds.row(0)).square().rowwise().sum() > tol);
-//     U1 = U(is_far_enough_away,:);
-	
-	// Need to go backwards here so don't break indices when resizing matrix
-	for(int ii=is_far_enough_away.size()-1; ii >= 0; ii--)
-	{
-		if (!is_far_enough_away(ii))
-		{
-			removeRow(U1,ii);
-		}
-	}
-//     % while we have fewer points than we wanted, and are not out of
-//     % potential points
-//     while k < K && size(U1,1)>0
+	seeds.row(0) = U1.row(ind_m);
+	removeRow(U1,ind_m);
+
+// 	BoolVec is_far_enough_away = ((U.rowwise() - seeds.row(0)).square().rowwise().sum() > tol);
+// 	for(int ii=is_far_enough_away.size()-1; ii >= 0; ii--)
+// 	{
+// 		if (!is_far_enough_away(ii))
+// 		{
+// 			removeRow(U1,ii);
+// 		}
+// 	}
 	while(k < D && U1.rows() > 0)
 	{
-//         seeds_row_arranged = reshape(seeds(1:k,:)',[],1)';
-//         seeds_row_arranged_duped = repmat(seeds_row_arranged, size(U1,1), 1);
-//         copies_of_U_row_arranged = repmat(U1,1,k);
-		Mat seeds_row_arranged = seeds.topRows(k);
-		seeds_row_arranged.transposeInPlace();
-		seeds_row_arranged.resize(1,seeds_row_arranged.size());
-		Mat copies_of_U_row_arranged = U1.replicate(1,k);
-//         % find the index of the point the furthest away from the 
-//         sum_sq_dists_from_all_seeds = sum((copies_of_U_row_arranged - seeds_row_arranged_duped).^2, 2);
-//         [~,ind_m] = max( sum_sq_dists_from_all_seeds );
+		Mat seeds_row_arranged = seeds.topRows(k+1).transpose();
+		seeds_row_arranged.resize(1,(k+1)*seeds.cols());
+		Mat copies_of_U_row_arranged = U1.replicate(1,k+1);
 		max = (copies_of_U_row_arranged.rowwise() - seeds_row_arranged.row(0)).square().rowwise().sum().maxCoeff(&ind_m);
-//         
-//         k = k+1;
-		k += 1;
-//         seeds(k,:) = U1(ind_m(1),:);
-		seeds.row(k) = U1.row(ind_m);
-//         sq_dist_from_curr_seed = (U1 - repmat(seeds(k,:),size(U1,1),1)).^2;
-//         is_far_enough_away = sum(sq_dist_from_curr_seed, 2) > tol;
-//         % only keep points far enough away from seed for next round
-//         U1 = U1(is_far_enough_away,:);
-		BoolVec is_far_enough_away = ((U1.rowwise() - seeds.row(k)).square().rowwise().sum() > tol);
-//     U1 = U(is_far_enough_away,:);
-	
-		// Need to go backwards here so don't break indices when resizing matrix
-		for(int ii=is_far_enough_away.size()-1; ii >= 0; ii--)
-		{
-			if (!is_far_enough_away(ii))
-			{
-				removeRow(U1,ii);
-			}
-		}
-		
-	}
-//     end
 
+		k += 1;
+		seeds.row(k) = U1.row(ind_m);
+		removeRow(U1,ind_m);
+
+// 		is_far_enough_away = ((U1.rowwise() - seeds.row(k)).square().rowwise().sum() > tol);
+// 		for(int ii=is_far_enough_away.size()-1; ii >= 0; ii--)
+// 		{
+// 			if (!is_far_enough_away(ii))
+// 			{
+// 				removeRow(U1,ii);
+// 			}
+// 		}
+	}
 }
 
 void init_Mu( ExtMat &X, ExtMat &Mu, char* initname ) {		  
