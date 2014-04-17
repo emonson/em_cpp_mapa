@@ -90,7 +90,7 @@ switch pExampleNames{pExampleIdx}
         for i = 1:3
             
             sequence = i
-            eval(['load data/MotionSegmentation/' dataset{i} '/' dataset{i} '_truth']);
+            eval(['load /Users/emonson/Data/MAPA/MotionSegmentation/' dataset{i} '/' dataset{i} '_truth']);
             [~, N, F] = size(x);
             z = transpose(reshape(permute(x(1:2,:,:),[1 3 2]),2*F,N)); 
             [U,S] = svds(z-repmat(mean(z,1),N,1),10);

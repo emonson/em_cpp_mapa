@@ -17,7 +17,7 @@ if ~REX,
 
         case 'hard'
 
-            [seeds, k] = expanded_seed_code(U,K);
+            [seeds, k] = hard_mapa_seeds(U,K);
 
         case 'soft'
 
@@ -46,8 +46,12 @@ if ~REX,
 end
 
 if REX,
-    [~, indicesKmeans] = KMeansRex(U, K, 25, 'mapa');
+    [~, indicesKmeans] = KMeansRex(U, K, 100, 'mapa');
+    % 
+    indicesKmeans = indicesKmeans + 1;
 end
+
+figure; plot(indicesKmeans);
 
 end
 
