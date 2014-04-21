@@ -1,0 +1,6 @@
+PROJECT(LIBIGL_Test)
+
+INCLUDE_DIRECTORIES(. ${MAPA_INCLUDE_DIRS})
+
+ADD_EXECUTABLE(random_test random_test.cpp)
+
