@@ -64,9 +64,13 @@ class MersenneTwister {
 
 	public: 
 	
-		MersenneTwister(unsigned long seed)
+		MersenneTwister()
 		{
 			mti = N_N + 1; /* mti==N_N+1 means mt[N_N] is not initialized */
+		};
+		
+		void InitGenrand(unsigned long seed)
+		{
 			init_genrand(seed);
 		};
 		

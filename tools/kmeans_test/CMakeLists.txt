@@ -1,6 +1,8 @@
 PROJECT(LIBIGL_Test)
 
 INCLUDE_DIRECTORIES(. ${MAPA_INCLUDE_DIRS})
+ADD_DEFINITIONS(-DIGL_HEADER_ONLY)
 
 ADD_EXECUTABLE(random_test random_test.cpp)
+ADD_EXECUTABLE(kmeans_test kmeans_test.cpp)
 
