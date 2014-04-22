@@ -135,18 +135,6 @@ class KMeansRex {
 				matrix.conservativeResize(numRows,numCols);
 		}
 
-		// http://stackoverflow.com/questions/13290395/how-to-remove-a-certain-row-or-column-while-using-eigen-library-c
-		void removeColumn(Mat &matrix, unsigned int colToRemove)
-		{
-				unsigned int numRows = matrix.rows();
-				unsigned int numCols = matrix.cols()-1;
-
-				if( colToRemove < numCols )
-						matrix.block(0,colToRemove,numRows,numCols-colToRemove) = matrix.block(0,colToRemove+1,numRows,numCols-colToRemove);
-
-				matrix.conservativeResize(numRows,numCols);
-		}
-
 		void removeCloseRows(Mat &U1, ExtMat &seeds, int k, double tol)
 		{
 			BoolVec is_far_enough_away = ((U1.rowwise() - seeds.row(k)).square().rowwise().sum() > tol);

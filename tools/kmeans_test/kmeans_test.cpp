@@ -14,8 +14,9 @@ int main(int argc, char * argv[])
 {
   Eigen::MatrixXd M;
   igl::readDMAT("artificial_data_rev1.dmat",M);
+  unsigned int K = 3;
   
-  KMeans::KMeansRex km;
+  KMeans::KMeansRex km(M, K);
   std::cout << M << std::endl;
 
   return 0;
