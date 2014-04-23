@@ -61,18 +61,30 @@ class KMeansRex {
 
 	public: 
 	
-		KMeansRex()
+		ArrayXXd X;
+		ArrayXXd Seeds;
+		ArrayXXd Centers;
+		ArrayXXd Z;
+		unsigned int K;
+		unsigned int N;
+		unsigned int D;
+		
+		KMeansRex(const ArrayXXd &Xin, unsigned int Kin)
 		{
 			set_seed((unsigned int)time(NULL));
+			X = Xin;
+			N = Xin.rows();			// number of points
+			D = Xin.cols();			// dimensionality of points
+			K = Kin;
+			Seeds.resize(K,D);
+			Centers.resize(K,D);
+			Z.resize(N,1);
+			
+			char method[5] = "mapa";
+			init_Mu( X, Seeds, method );
+			Centers = Seeds;
+			run_lloyd( X, Centers, Z, 100 );
 		};
-		
-		void run_lloyd( MatrixXd &X, MatrixXd &Mu, MatrixXd &Z, int Niter )
-		{
-			ArrayXXd X_A = X.array();
-			ArrayXXd Mu_A = Mu.array();
-			ArrayXXd Z_A = Z.array();
-			run_lloyd( X_A, Mu_A, Z_A, Niter);
-		}
 		
 		void run_lloyd( ArrayXXd &X, ArrayXXd &Mu, ArrayXXd &Z, int Niter )  {
 			double prevDist,totalDist = 0;
@@ -90,13 +102,6 @@ class KMeansRex {
 			}
 		}
 
-		void init_Mu( MatrixXd &X, MatrixXd &Mu, char* initname )
-		{
-			ArrayXXd X_A = X.array();
-			ArrayXXd Mu_A = Mu.array();
-			init_Mu( X_A, Mu_A, initname );
-		}
-				  
 		void init_Mu( ArrayXXd &X, ArrayXXd &Mu, char* initname ) {		  
 				if ( string( initname ) == "random" ) {
 						sampleRowsRandom( X, Mu );
