@@ -3,12 +3,11 @@
 #include <cstdio>
 #include "kMeansRex.h"
 
-typedef Map<ArrayXXd> ExtMat;
 
 #include <stdexcept>
 #undef eigen_assert
 #define eigen_assert(x) \
-  if (!x) { throw (std::runtime_error("Some wrong values were generated")); }
+  if (!x) { throw (std::runtime_error("TEST FAILED: Some wrong values were generated")); }
 
 #include <cmath>
 #define close_enough(a,b) (std::abs(a-b) < 0.0001)
@@ -16,32 +15,31 @@ typedef Map<ArrayXXd> ExtMat;
 
 int main(int argc, char * argv[])
 {
-  Eigen::MatrixXd M;
-  igl::readDMAT("artificial_data_rev1.dmat",M);
+  // Read in test data
+  Eigen::ArrayXXd X;
+  std::cout << "Reading in Artifical 3D test data (rev1)" << std::endl;
+  igl::readDMAT( "artificial_data_rev1.dmat", X );
   
-  // std::cout << M << std::endl;
+  unsigned int K = 3;		// number of clusters
+  int N = X.rows();			// number of points
+  int D = X.cols();			// dimensionality of points
+  char method[5] = "mapa";		// choices are "mapa", "random", "plusplus"
+  
+  // Initialize results arrays
+  Eigen::ArrayXXd Mu(K,D);
+  Eigen::ArrayXXd Z(N,1);
 
+  // Actual KMeansRex object
   KMeans::KMeansRex km;
+  std::cout << "KMeansRex with mapa seeding – 3 clusters" << std::endl;
   
-  unsigned int K = 3;
-  int N = M.rows();
-  int D = M.cols();
-  double Mu_OUT[K*D];
-  char method[5] = "mapa";
-  
-  ExtMat X  ( M.data(), N, D);
-  ExtMat Mu ( Mu_OUT, K, D);
-  double Z_OUT[N];
-  ExtMat Z  ( Z_OUT, N, 1);
-	
-
   // Generate seed points
   km.init_Mu( X, Mu, method);
 	
 	std::cout << "Seed points" << std::endl;
   std::cout << Mu << std::endl;
 	
-	// Test Mu values
+	// Test Mu (kmeans seed points) values
 	Eigen::MatrixXd Seeds_correct(3,3);
 	Seeds_correct << -0.433417, -0.64096, 0.666714, \
 	               0.623972, 0.364006, -0.716225, \
@@ -57,7 +55,7 @@ int main(int argc, char * argv[])
   std::cout << "Cluster assignments" << std::endl;
   std::cout << Z.transpose() << std::endl;
 	
-	// Test Z values
+	// Test Z (first 10 cluster labels) values
 	Eigen::VectorXd Cluster_assigns_first10(10);
 	Cluster_assigns_first10 << 2, 2, 1, 1, 2, 1, 1, 2, 2, 1;
 	for (int ii = 0; ii < Cluster_assigns_first10.size(); ii++)
@@ -65,7 +63,7 @@ int main(int argc, char * argv[])
 		eigen_assert( close_enough( Z(ii), Cluster_assigns_first10(ii) ) );
 	}
 	
-	// Test Z values
+	// Test Z (last 10 cluster labels) values
 	Eigen::VectorXd Cluster_assigns_last10(10);
 	Cluster_assigns_last10 << 2, 2, 2, 1, 2, 2, 2, 1, 2, 1;
 	int jj = Z.size()-Cluster_assigns_last10.size();
@@ -77,7 +75,7 @@ int main(int argc, char * argv[])
 	std::cout << "Cluster centers" << std::endl;
   std::cout << Mu << std::endl;
 
-	// Test Mu values
+	// Test Mu (cluster centroids) values
 	Eigen::MatrixXd Centers_correct(3,3);
 	Centers_correct << 0.0355854, -0.580986, 0.248681, \
 	               0.329016, -0.129425, -0.207384, \
@@ -87,5 +85,7 @@ int main(int argc, char * argv[])
 		eigen_assert( close_enough( Mu(ii), Centers_correct(ii) ) );
 	}
 	
-  return 0;
+	std::cout << "TEST PASSED" << std::endl;
+
+	return 0;
 }

@@ -54,15 +54,6 @@ Date:   2 April 2013
 using namespace Eigen;
 using namespace std;
 
-/*  DEFINE Custom Type Names to make code more readable
-    ExtMat :  2-dim matrix/array externally defined (e.g. in Matlab or Python)
-*/
-typedef Map<ArrayXXd> ExtMat;
-typedef ArrayXXd Mat;
-typedef ArrayXd Vec;
-typedef Array<bool,Dynamic,1> BoolVec;
-typedef ArrayXd::Index Idx;
-
 
 namespace KMeans {
 
@@ -75,11 +66,18 @@ class KMeansRex {
 			set_seed((unsigned int)time(NULL));
 		};
 		
-		// ======================================================= Overall Lloyd Algorithm
-		void run_lloyd( ExtMat &X, ExtMat &Mu, ExtMat &Z, int Niter )  {
+		void run_lloyd( MatrixXd &X, MatrixXd &Mu, MatrixXd &Z, int Niter )
+		{
+			ArrayXXd X_A = X.array();
+			ArrayXXd Mu_A = Mu.array();
+			ArrayXXd Z_A = Z.array();
+			run_lloyd( X_A, Mu_A, Z_A, Niter);
+		}
+		
+		void run_lloyd( ArrayXXd &X, ArrayXXd &Mu, ArrayXXd &Z, int Niter )  {
 			double prevDist,totalDist = 0;
 
-			Mat Dist = Mat::Zero( X.rows(), Mu.rows() );  
+			ArrayXXd Dist = ArrayXXd::Zero( X.rows(), Mu.rows() );  
 
 			for (int iter=0; iter<Niter; iter++) {
 		
@@ -92,7 +90,14 @@ class KMeansRex {
 			}
 		}
 
-		void init_Mu( ExtMat &X, ExtMat &Mu, char* initname ) {		  
+		void init_Mu( MatrixXd &X, MatrixXd &Mu, char* initname )
+		{
+			ArrayXXd X_A = X.array();
+			ArrayXXd Mu_A = Mu.array();
+			init_Mu( X_A, Mu_A, initname );
+		}
+				  
+		void init_Mu( ArrayXXd &X, ArrayXXd &Mu, char* initname ) {		  
 				if ( string( initname ) == "random" ) {
 						sampleRowsRandom( X, Mu );
 				} else if ( string( initname ) == "plusplus" ) {
@@ -111,7 +116,7 @@ class KMeansRex {
 			twist.InitGenrand( seed );
 		}
 
-		int discrete_rand( Vec &p ) {
+		int discrete_rand( ArrayXd &p ) {
 				double total = p.sum();
 				int K = (int) p.size();
 		
@@ -129,8 +134,8 @@ class KMeansRex {
 				return newk;
 		}
 
-		void select_without_replacement( int N, int K, Vec &chosenIDs) {
-				Vec p = Vec::Ones(N);
+		void select_without_replacement( int N, int K, ArrayXd &chosenIDs) {
+				ArrayXd p = ArrayXd::Ones(N);
 				for (int kk =0; kk<K; kk++) {
 					int choice;
 					int doKeep = false;
@@ -151,7 +156,7 @@ class KMeansRex {
 		}
 
 		// http://stackoverflow.com/questions/13290395/how-to-remove-a-certain-row-or-column-while-using-eigen-library-c
-		void removeRow(Mat &matrix, unsigned int rowToRemove)
+		void removeRow(ArrayXXd &matrix, unsigned int rowToRemove)
 		{
 				unsigned int numRows = matrix.rows()-1;
 				unsigned int numCols = matrix.cols();
@@ -162,9 +167,9 @@ class KMeansRex {
 				matrix.conservativeResize(numRows,numCols);
 		}
 
-		void removeCloseRows(Mat &U1, ExtMat &seeds, int k, double tol)
+		void removeCloseRows(ArrayXXd &U1, ArrayXXd &seeds, int k, double tol)
 		{
-			BoolVec is_far_enough_away = ((U1.rowwise() - seeds.row(k)).square().rowwise().sum() > tol);
+			Array<bool,Dynamic,1> is_far_enough_away = ((U1.rowwise() - seeds.row(k)).square().rowwise().sum() > tol);
 			// looping through in reverse so don't disrupt indices as removing rows
 			for(int ii = (is_far_enough_away.size()-1); ii >= 0; ii--) 
 			{
@@ -178,25 +183,25 @@ class KMeansRex {
 
 		// ======================================================= Init Cluster Locs Mu
 
-		void sampleRowsRandom( ExtMat &X, ExtMat &Mu ) {
+		void sampleRowsRandom( ArrayXXd &X, ArrayXXd &Mu ) {
 				int N = X.rows();
 				int K = Mu.rows();
-				Vec ChosenIDs = Vec::Zero(K);
+				ArrayXd ChosenIDs = ArrayXd::Zero(K);
 				select_without_replacement( N, K, ChosenIDs );
 				for (int kk=0; kk<K; kk++) {
 					Mu.row( kk ) = X.row( ChosenIDs[kk] );
 				}
 		}
 
-		void sampleRowsPlusPlus( ExtMat &X, ExtMat &Mu ) {
+		void sampleRowsPlusPlus( ArrayXXd &X, ArrayXXd &Mu ) {
 				int N = X.rows();
 				int K = Mu.rows();
-				Vec ChosenIDs = Vec::Ones(K);
+				ArrayXd ChosenIDs = ArrayXd::Ones(K);
 				int choice = discrete_rand( ChosenIDs );
 				Mu.row(0) = X.row( choice );
 				ChosenIDs[0] = choice;
-				Vec minDist(N);
-				Vec curDist(N);
+				ArrayXd minDist(N);
+				ArrayXd curDist(N);
 				for (int kk=1; kk<K; kk++) {
 					curDist = ( X.rowwise() - Mu.row(kk-1) ).square().rowwise().sum().sqrt();
 					if (kk==1) {
@@ -210,14 +215,14 @@ class KMeansRex {
 				}       
 		}
 
-		void sampleRowsMAPA( ExtMat &U, ExtMat &seeds ) {
+		void sampleRowsMAPA( ArrayXXd &U, ArrayXXd &seeds ) {
 			int N = U.rows();
 			int D = seeds.rows();
 			int dim = U.cols();
 			double tol = 1e-8;
-			Mat U1 = U;
-			Idx ind_m;
-			Vec sq_dist_sum;
+			ArrayXXd U1 = U;
+			ArrayXd::Index ind_m;
+			ArrayXd sq_dist_sum;
 			seeds.setZero();
 	
 			float max = (U.rowwise() - U.colwise().mean()).square().rowwise().sum().maxCoeff(&ind_m);
@@ -241,7 +246,7 @@ class KMeansRex {
 		}
 
 		// ======================================================= Update Cluster Assignments Z
-		void pairwise_distance( ExtMat &X, ExtMat &Mu, Mat &Dist ) {
+		void pairwise_distance( ArrayXXd &X, ArrayXXd &Mu, ArrayXXd &Dist ) {
 			int N = X.rows();
 			int D = X.cols();
 			int K = Mu.rows();
@@ -258,7 +263,7 @@ class KMeansRex {
 			}
 		}
 
-		double assignClosest( ExtMat &X, ExtMat &Mu, ExtMat &Z, Mat &Dist) {
+		double assignClosest( ArrayXXd &X, ArrayXXd &Mu, ArrayXXd &Z, ArrayXXd &Dist) {
 			double totalDist = 0;
 			int minRowID;
 
@@ -272,9 +277,9 @@ class KMeansRex {
 		}
 
 		// ======================================================= Update Cluster Locations Mu
-		void calc_Mu( ExtMat &X, ExtMat &Mu, ExtMat &Z) {
-			Mu = Mat::Zero( Mu.rows(), Mu.cols() );
-			Vec NperCluster = Vec::Zero( Mu.rows() );
+		void calc_Mu( ArrayXXd &X, ArrayXXd &Mu, ArrayXXd &Z) {
+			Mu = ArrayXXd::Zero( Mu.rows(), Mu.cols() );
+			ArrayXd NperCluster = ArrayXd::Zero( Mu.rows() );
 	
 			for (int nn=0; nn<X.rows(); nn++) {
 				Mu.row( (int) Z(nn,0) ) += X.row( nn );
