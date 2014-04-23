@@ -75,6 +75,33 @@ class KMeansRex {
 			set_seed((unsigned int)time(NULL));
 		};
 		
+		// ======================================================= Overall Lloyd Algorithm
+		void run_lloyd( ExtMat &X, ExtMat &Mu, ExtMat &Z, int Niter )  {
+			double prevDist,totalDist = 0;
+
+			Mat Dist = Mat::Zero( X.rows(), Mu.rows() );  
+
+			for (int iter=0; iter<Niter; iter++) {
+		
+				totalDist = assignClosest( X, Mu, Z, Dist );
+				calc_Mu( X, Mu, Z );
+				if ( prevDist == totalDist ) {
+					break;
+				}
+				prevDist = totalDist;
+			}
+		}
+
+		void init_Mu( ExtMat &X, ExtMat &Mu, char* initname ) {		  
+				if ( string( initname ) == "random" ) {
+						sampleRowsRandom( X, Mu );
+				} else if ( string( initname ) == "plusplus" ) {
+						sampleRowsPlusPlus( X, Mu );
+				} else if ( string( initname ) == "mapa" ) {
+						sampleRowsMAPA( X, Mu );
+				}
+		}
+
 	private:
 	
   	KMeans::MersenneTwister twist;
@@ -213,16 +240,6 @@ class KMeansRex {
 			}
 		}
 
-		void init_Mu( ExtMat &X, ExtMat &Mu, char* initname ) {		  
-				if ( string( initname ) == "random" ) {
-						sampleRowsRandom( X, Mu );
-				} else if ( string( initname ) == "plusplus" ) {
-						sampleRowsPlusPlus( X, Mu );
-				} else if ( string( initname ) == "mapa" ) {
-						sampleRowsMAPA( X, Mu );
-				}
-		}
-
 		// ======================================================= Update Cluster Assignments Z
 		void pairwise_distance( ExtMat &X, ExtMat &Mu, Mat &Dist ) {
 			int N = X.rows();
@@ -264,23 +281,6 @@ class KMeansRex {
 				NperCluster[ (int) Z(nn,0)] += 1;
 			}  
 			Mu.colwise() /= NperCluster;
-		}
-
-		// ======================================================= Overall Lloyd Algorithm
-		void run_lloyd( ExtMat &X, ExtMat &Mu, ExtMat &Z, int Niter )  {
-			double prevDist,totalDist = 0;
-
-			Mat Dist = Mat::Zero( X.rows(), Mu.rows() );  
-
-			for (int iter=0; iter<Niter; iter++) {
-		
-				totalDist = assignClosest( X, Mu, Z, Dist );
-				calc_Mu( X, Mu, Z );
-				if ( prevDist == totalDist ) {
-					break;
-				}
-				prevDist = totalDist;
-			}
 		}
 
 
