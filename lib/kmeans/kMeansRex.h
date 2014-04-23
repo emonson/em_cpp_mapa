@@ -65,9 +65,12 @@ class KMeansRex {
 		ArrayXXd Seeds;
 		ArrayXXd Centers;
 		ArrayXXd Z;
+		ArrayXXd Dist;
 		unsigned int K;
 		unsigned int N;
 		unsigned int D;
+		int Niter;
+		string method;
 		
 		KMeansRex(const ArrayXXd &Xin, unsigned int Kin)
 		{
@@ -80,21 +83,30 @@ class KMeansRex {
 			Centers.resize(K,D);
 			Z.resize(N,1);
 			
-			char method[5] = "mapa";
-			init_Mu( X, Seeds, method );
+			// only using these preset values for now
+			method = "mapa";
+			init_Mu();
 			Centers = Seeds;
-			run_lloyd( X, Centers, Z, 100 );
+			run_lloyd();
 		};
 		
-		void run_lloyd( ArrayXXd &X, ArrayXXd &Mu, ArrayXXd &Z, int Niter )  {
+	private:
+		
+		// Random number generator object
+  	KMeans::MersenneTwister twist;
+  	
+		// Actual calculation of clusters
+		void run_lloyd()  {
+			
 			double prevDist,totalDist = 0;
+			Centers = Seeds;
 
-			ArrayXXd Dist = ArrayXXd::Zero( X.rows(), Mu.rows() );  
+			Dist = ArrayXXd::Zero(N,K);  
 
 			for (int iter=0; iter<Niter; iter++) {
 		
-				totalDist = assignClosest( X, Mu, Z, Dist );
-				calc_Mu( X, Mu, Z );
+				totalDist = assignClosest();
+				calc_Mu();
 				if ( prevDist == totalDist ) {
 					break;
 				}
@@ -102,20 +114,17 @@ class KMeansRex {
 			}
 		}
 
-		void init_Mu( ArrayXXd &X, ArrayXXd &Mu, char* initname ) {		  
-				if ( string( initname ) == "random" ) {
-						sampleRowsRandom( X, Mu );
-				} else if ( string( initname ) == "plusplus" ) {
-						sampleRowsPlusPlus( X, Mu );
-				} else if ( string( initname ) == "mapa" ) {
-						sampleRowsMAPA( X, Mu );
+		// Switch for which seed generator to use
+		void init_Mu() {		  
+				if ( method == "random" ) {
+						sampleRowsRandom();
+				} else if ( method == "plusplus" ) {
+						sampleRowsPlusPlus();
+				} else if ( method == "mapa" ) {
+						sampleRowsMAPA();
 				}
 		}
 
-	private:
-	
-  	KMeans::MersenneTwister twist;
-  	
 		// ====================================================== Utility Functions
 		void set_seed( int seed ) {
 			twist.InitGenrand( seed );
@@ -188,51 +197,50 @@ class KMeansRex {
 
 		// ======================================================= Init Cluster Locs Mu
 
-		void sampleRowsRandom( ArrayXXd &X, ArrayXXd &Mu ) {
-				int N = X.rows();
-				int K = Mu.rows();
+		void sampleRowsRandom() 
+		{
 				ArrayXd ChosenIDs = ArrayXd::Zero(K);
 				select_without_replacement( N, K, ChosenIDs );
-				for (int kk=0; kk<K; kk++) {
-					Mu.row( kk ) = X.row( ChosenIDs[kk] );
+				for (int kk=0; kk<K; kk++) 
+				{
+					Seeds.row( kk ) = X.row( ChosenIDs[kk] );
 				}
 		}
 
-		void sampleRowsPlusPlus( ArrayXXd &X, ArrayXXd &Mu ) {
-				int N = X.rows();
-				int K = Mu.rows();
+		void sampleRowsPlusPlus() 
+		{
 				ArrayXd ChosenIDs = ArrayXd::Ones(K);
 				int choice = discrete_rand( ChosenIDs );
-				Mu.row(0) = X.row( choice );
+				Seeds.row(0) = X.row( choice );
 				ChosenIDs[0] = choice;
 				ArrayXd minDist(N);
 				ArrayXd curDist(N);
-				for (int kk=1; kk<K; kk++) {
-					curDist = ( X.rowwise() - Mu.row(kk-1) ).square().rowwise().sum().sqrt();
-					if (kk==1) {
+				for (int kk=1; kk<K; kk++) 
+				{
+					curDist = ( X.rowwise() - Seeds.row(kk-1) ).square().rowwise().sum().sqrt();
+					if (kk==1) 
+					{
 						minDist = curDist;
 					} else {
 						minDist = curDist.min( minDist );
 					}      
 					choice = discrete_rand( minDist );
 					ChosenIDs[kk] = choice;
-					Mu.row(kk) = X.row( choice );
+					Seeds.row(kk) = X.row( choice );
 				}       
 		}
 
-		void sampleRowsMAPA( ArrayXXd &U, ArrayXXd &seeds ) {
-			int N = U.rows();
-			int D = seeds.rows();
-			int dim = U.cols();
+		void sampleRowsMAPA() 
+		{
 			double tol = 1e-8;
-			ArrayXXd U1 = U;
+			ArrayXXd U1 = X;
 			ArrayXd::Index ind_m;
 			ArrayXd sq_dist_sum;
-			seeds.setZero();
+			Seeds.setZero();
 	
-			float max = (U.rowwise() - U.colwise().mean()).square().rowwise().sum().maxCoeff(&ind_m);
-			seeds.row(0) = U1.row(ind_m);
-			removeCloseRows(U1, seeds, 0, tol);
+			float max = (X.rowwise() - X.colwise().mean()).square().rowwise().sum().maxCoeff(&ind_m);
+			Seeds.row(0) = U1.row(ind_m);
+			removeCloseRows(U1, Seeds, 0, tol);
 	
 			for(int k = 1; k < D; k++)
 			{
@@ -241,38 +249,35 @@ class KMeansRex {
 				sq_dist_sum = ArrayXd::Zero(U1.rows());
 				for(int ii=0; ii < k; ii++)
 				{
-					sq_dist_sum += (U1.rowwise() - seeds.row(ii)).square().rowwise().sum();
+					sq_dist_sum += (U1.rowwise() - Seeds.row(ii)).square().rowwise().sum();
 				}
 				max = sq_dist_sum.maxCoeff(&ind_m);
 		
-				seeds.row(k) = U1.row(ind_m);
-				removeCloseRows(U1, seeds, k, tol);
+				Seeds.row(k) = U1.row(ind_m);
+				removeCloseRows(U1, Seeds, k, tol);
 			}
 		}
 
 		// ======================================================= Update Cluster Assignments Z
-		void pairwise_distance( ArrayXXd &X, ArrayXXd &Mu, ArrayXXd &Dist ) {
-			int N = X.rows();
-			int D = X.cols();
-			int K = Mu.rows();
-
+		void pairwise_distance() 
+		{
 			// For small dims D, for loop is noticeably faster than fully vectorized.
 			// Odd but true.  So we do fastest thing 
 			if ( D <= 16 ) {
 				for (int kk=0; kk<K; kk++) {
-					Dist.col(kk) = ( X.rowwise() - Mu.row(kk) ).square().rowwise().sum();
+					Dist.col(kk) = ( X.rowwise() - Centers.row(kk) ).square().rowwise().sum();
 				}    
 			} else {
-				Dist = -2*( X.matrix() * Mu.transpose().matrix() );
-				Dist.rowwise() += Mu.square().rowwise().sum().transpose().row(0);
+				Dist = -2*( X.matrix() * Centers.transpose().matrix() );
+				Dist.rowwise() += Centers.square().rowwise().sum().transpose().row(0);
 			}
 		}
 
-		double assignClosest( ArrayXXd &X, ArrayXXd &Mu, ArrayXXd &Z, ArrayXXd &Dist) {
+		double assignClosest() {
 			double totalDist = 0;
 			int minRowID;
 
-			pairwise_distance( X, Mu, Dist );
+			pairwise_distance();
 
 			for (int nn=0; nn<X.rows(); nn++) {
 				totalDist += Dist.row(nn).minCoeff( &minRowID );
@@ -282,15 +287,15 @@ class KMeansRex {
 		}
 
 		// ======================================================= Update Cluster Locations Mu
-		void calc_Mu( ArrayXXd &X, ArrayXXd &Mu, ArrayXXd &Z) {
-			Mu = ArrayXXd::Zero( Mu.rows(), Mu.cols() );
-			ArrayXd NperCluster = ArrayXd::Zero( Mu.rows() );
+		void calc_Mu() {
+			Centers = ArrayXXd::Zero(K,D);
+			ArrayXd NperCluster = ArrayXd::Zero(K);
 	
-			for (int nn=0; nn<X.rows(); nn++) {
-				Mu.row( (int) Z(nn,0) ) += X.row( nn );
+			for (int nn=0; nn < N; nn++) {
+				Centers.row( (int) Z(nn,0) ) += X.row( nn );
 				NperCluster[ (int) Z(nn,0)] += 1;
 			}  
-			Mu.colwise() /= NperCluster;
+			Centers.colwise() /= NperCluster;
 		}
 
 
