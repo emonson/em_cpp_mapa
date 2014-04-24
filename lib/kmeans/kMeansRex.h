@@ -11,7 +11,7 @@ Intended to be compiled as a shared library libkmeansrex.so
   such as Matlab or Python.
 
 Contains:
-  Utility Fcns: 
+  Utility Fcns:
     discrete_rand : sampling discrete r.v.
     select_without_replacement : sample discrete w/out replacement
 
@@ -56,259 +56,265 @@ namespace KMeans {
 
 class KMeansRex {
 
-	public: 
-	
-		KMeansRex(const ArrayXXd &Xin, unsigned int Kin)
-		{
-			set_seed((unsigned int)time(NULL));
-			X = Xin;
-			N = Xin.rows();			// number of points
-			D = Xin.cols();			// dimensionality of points
-			K = Kin;
-			Seeds.resize(K,D);
-			Centers.resize(K,D);
-			Z.resize(N);
-	
-			// only using these preset values for now
-			method = "mapa";
-			init_Mu();
-			Centers = Seeds;
-			run_lloyd();
-		};
+public:
 
-		ArrayXXd GetSeeds()
-		{
-			return Seeds;
-		};
+    KMeansRex(const ArrayXXd &Xin, unsigned int Kin)
+    {
+        set_seed((unsigned int)time(NULL));
+        X = Xin;
+        N = Xin.rows();			// number of points
+        D = Xin.cols();			// dimensionality of points
+        K = Kin;
+        Seeds.resize(K,D);
+        Centers.resize(K,D);
+        Z.resize(N);
 
-		ArrayXd GetClusterAssignments()
-		{
-			return Z;
-		};
+        // only using these preset values for now
+        method = "mapa";
+        Niter = 100;
 
-		ArrayXXd GetCenters()
-		{
-			return Centers;
-		};
-		
-	private:
-		
-		ArrayXXd X;
-		ArrayXXd Seeds;
-		ArrayXXd Centers;
-		ArrayXd Z;
-		ArrayXXd Dist;
-		unsigned int K;
-		unsigned int N;
-		unsigned int D;
-		int Niter;
-		std::string method;
-		
-		// Random number generator object
-  	KMeans::MersenneTwister twist;
-  	
-		// Actual calculation of clusters
-		void run_lloyd()  {
-			
-			double prevDist,totalDist = 0;
-			Centers = Seeds;
+        init_Mu();
+        run_lloyd();
+    };
 
-			Dist = ArrayXXd::Zero(N,K);  
+    ArrayXXd GetSeeds()
+    {
+        return Seeds;
+    };
 
-			for (int iter=0; iter<Niter; iter++) {
-		
-				totalDist = assignClosest();
-				calc_Mu();
-				if ( prevDist == totalDist ) {
-					break;
-				}
-				prevDist = totalDist;
-			}
-		};
+    ArrayXd GetClusterAssignments()
+    {
+        return Z;
+    };
 
-		// Switch for which seed generator to use
-		void init_Mu() {		  
-				if ( method == "random" ) {
-						sampleRowsRandom();
-				} else if ( method == "plusplus" ) {
-						sampleRowsPlusPlus();
-				} else if ( method == "mapa" ) {
-						sampleRowsMAPA();
-				}
-		};
+    ArrayXXd GetCenters()
+    {
+        return Centers;
+    };
 
-		// ====================================================== Utility Functions
-		void set_seed( int seed ) {
-			twist.InitGenrand( seed );
-		};
+private:
 
-		int discrete_rand( ArrayXd &p ) {
-				double total = p.sum();
-				int K = (int) p.size();
-		
-				double r = total * twist.GenrandDouble();
-				double cursum = p(0);
-				int newk = 0;
-				while ( r >= cursum && newk < K-1) {
-						newk++;
-						cursum += p[newk];
-				}
-				if ( newk < 0 || newk >= K ) {
-						std::cerr << "Badness. Chose illegal discrete value." << std::endl;
-						return -1;
-				}
-				return newk;
-		};
+    ArrayXXd X;
+    ArrayXXd Seeds;
+    ArrayXXd Centers;
+    ArrayXd Z;
+    ArrayXXd Dist;
+    unsigned int K;
+    unsigned int N;
+    unsigned int D;
+    int Niter;
+    std::string method;
 
-		void select_without_replacement( int N, int K, ArrayXd &chosenIDs) {
-				ArrayXd p = ArrayXd::Ones(N);
-				for (int kk =0; kk<K; kk++) {
-					int choice;
-					int doKeep = false;
-					while ( doKeep==false) {
-			
-						doKeep=true;
-						choice = discrete_rand( p );
-			
-						for (int previd=0; previd<kk; previd++) {
-							if (chosenIDs[previd] == choice ) {
-								doKeep = false;
-								break;
-							}
-						}      
-					}      
-					chosenIDs[kk] = choice;     
-				}
-		};
+    // Random number generator object
+    KMeans::MersenneTwister twist;
 
-		// http://stackoverflow.com/questions/13290395/how-to-remove-a-certain-row-or-column-while-using-eigen-library-c
-		void removeRow(ArrayXXd &matrix, unsigned int rowToRemove)
-		{
-				unsigned int numRows = matrix.rows()-1;
-				unsigned int numCols = matrix.cols();
+    // ----------------------------------------
+    // Utility Functions
+    void set_seed( int seed ) {
+        twist.InitGenrand( seed );
+    };
 
-				if( rowToRemove < numRows )
-						matrix.block(rowToRemove,0,numRows-rowToRemove,numCols) = matrix.block(rowToRemove+1,0,numRows-rowToRemove,numCols);
+    int discrete_rand( ArrayXd &p ) {
+        double total = p.sum();
+        int K = (int) p.size();
 
-				matrix.conservativeResize(numRows,numCols);
-		};
+        double r = total * twist.GenrandDouble();
+        double cursum = p(0);
+        int newk = 0;
+        while ( r >= cursum && newk < K-1) {
+            newk++;
+            cursum += p[newk];
+        }
+        if ( newk < 0 || newk >= K ) {
+            std::cerr << "Badness. Chose illegal discrete value." << std::endl;
+            return -1;
+        }
+        return newk;
+    };
 
-		void removeCloseRows(ArrayXXd &U1, ArrayXXd &seeds, int k, double tol)
-		{
-			Array<bool,Dynamic,1> is_far_enough_away = ((U1.rowwise() - seeds.row(k)).square().rowwise().sum() > tol);
-			// looping through in reverse so don't disrupt indices as removing rows
-			for(int ii = (is_far_enough_away.size()-1); ii >= 0; ii--) 
-			{
-				if (!is_far_enough_away(ii)) 
-				{
-					removeRow(U1,ii);
-				}
-			}
+    void select_without_replacement( int N, int K, ArrayXd &chosenIDs) {
+        ArrayXd p = ArrayXd::Ones(N);
+        for (int kk =0; kk<K; kk++) {
+            int choice;
+            int doKeep = false;
+            while ( doKeep==false) {
 
-		};
+                doKeep=true;
+                choice = discrete_rand( p );
 
-		// ======================================================= Init Cluster Locs Mu
+                for (int previd=0; previd<kk; previd++) {
+                    if (chosenIDs[previd] == choice ) {
+                        doKeep = false;
+                        break;
+                    }
+                }
+            }
+            chosenIDs[kk] = choice;
+        }
+    };
 
-		void sampleRowsRandom() 
-		{
-				ArrayXd ChosenIDs = ArrayXd::Zero(K);
-				select_without_replacement( N, K, ChosenIDs );
-				for (int kk=0; kk<K; kk++) 
-				{
-					Seeds.row( kk ) = X.row( ChosenIDs[kk] );
-				}
-		};
+    // http://stackoverflow.com/questions/13290395/how-to-remove-a-certain-row-or-column-while-using-eigen-library-c
+    void removeRow(ArrayXXd &matrix, unsigned int rowToRemove)
+    {
+        unsigned int numRows = matrix.rows()-1;
+        unsigned int numCols = matrix.cols();
 
-		void sampleRowsPlusPlus() 
-		{
-				ArrayXd ChosenIDs = ArrayXd::Ones(K);
-				int choice = discrete_rand( ChosenIDs );
-				Seeds.row(0) = X.row( choice );
-				ChosenIDs[0] = choice;
-				ArrayXd minDist(N);
-				ArrayXd curDist(N);
-				for (int kk=1; kk<K; kk++) 
-				{
-					curDist = ( X.rowwise() - Seeds.row(kk-1) ).square().rowwise().sum().sqrt();
-					if (kk==1) 
-					{
-						minDist = curDist;
-					} else {
-						minDist = curDist.min( minDist );
-					}      
-					choice = discrete_rand( minDist );
-					ChosenIDs[kk] = choice;
-					Seeds.row(kk) = X.row( choice );
-				}       
-		};
+        if( rowToRemove < numRows )
+            matrix.block(rowToRemove,0,numRows-rowToRemove,numCols) = matrix.block(rowToRemove+1,0,numRows-rowToRemove,numCols);
 
-		void sampleRowsMAPA() 
-		{
-			double tol = 1e-8;
-			ArrayXXd U1 = X;
-			ArrayXd::Index ind_m;
-			ArrayXd sq_dist_sum;
-			Seeds = ArrayXXd::Zero(K,D);
-	
-			float max = (X.rowwise() - X.colwise().mean()).square().rowwise().sum().maxCoeff(&ind_m);
-			Seeds.row(0) = U1.row(ind_m);
-			removeCloseRows(U1, Seeds, 0, tol);
-	
-			for(int k = 1; k < D; k++)
-			{
-				if ( U1.rows() == 0 ) { break; }
-		
-				sq_dist_sum = ArrayXd::Zero(U1.rows());
-				for(int ii=0; ii < k; ii++)
-				{
-					sq_dist_sum += (U1.rowwise() - Seeds.row(ii)).square().rowwise().sum();
-				}
-				max = sq_dist_sum.maxCoeff(&ind_m);
-		
-				Seeds.row(k) = U1.row(ind_m);
-				removeCloseRows(U1, Seeds, k, tol);
-			}
-		};
+        matrix.conservativeResize(numRows,numCols);
+    };
 
-		// ======================================================= Update Cluster Assignments Z
-		void pairwise_distance() 
-		{
-			// For small dims D, for loop is noticeably faster than fully vectorized.
-			// Odd but true.  So we do fastest thing 
-			if ( D <= 16 ) {
-				for (int kk=0; kk<K; kk++) {
-					Dist.col(kk) = ( X.rowwise() - Centers.row(kk) ).square().rowwise().sum();
-				}    
-			} else {
-				Dist = -2*( X.matrix() * Centers.transpose().matrix() );
-				Dist.rowwise() += Centers.square().rowwise().sum().transpose().row(0);
-			}
-		};
+    void removeCloseRows(ArrayXXd &U1, ArrayXXd &seeds, int k, double tol)
+    {
+        Array<bool,Dynamic,1> is_far_enough_away = ((U1.rowwise() - seeds.row(k)).square().rowwise().sum() > tol);
+        // looping through in reverse so don't disrupt indices as removing rows
+        for(int ii = (is_far_enough_away.size()-1); ii >= 0; ii--)
+        {
+            if (!is_far_enough_away(ii))
+            {
+                removeRow(U1,ii);
+            }
+        }
 
-		double assignClosest() {
-			double totalDist = 0;
-			int minRowID;
+    };
 
-			pairwise_distance();
+    // ----------------------------------------
+    // Init Cluster Locs Mu
 
-			for (int nn=0; nn<N; nn++) {
-				totalDist += Dist.row(nn).minCoeff( &minRowID );
-				Z(nn) = minRowID;
-			}
-			return totalDist;
-		};
+    void sampleRowsRandom()
+    {
+        ArrayXd ChosenIDs = ArrayXd::Zero(K);
+        select_without_replacement( N, K, ChosenIDs );
+        for (int kk=0; kk<K; kk++)
+        {
+            Seeds.row( kk ) = X.row( ChosenIDs[kk] );
+        }
+    };
 
-		// ======================================================= Update Cluster Locations Mu
-		void calc_Mu() {
-			Centers = ArrayXXd::Zero(K,D);
-			ArrayXd NperCluster = ArrayXd::Zero(K);
-	
-			for (int nn=0; nn < N; nn++) {
-				Centers.row( (int) Z(nn) ) += X.row( nn );
-				NperCluster[ (int) Z(nn)] += 1;
-			}  
-			Centers.colwise() /= NperCluster;
-		};
+    void sampleRowsPlusPlus()
+    {
+        ArrayXd ChosenIDs = ArrayXd::Ones(K);
+        int choice = discrete_rand( ChosenIDs );
+        Seeds.row(0) = X.row( choice );
+        ChosenIDs[0] = choice;
+        ArrayXd minDist(N);
+        ArrayXd curDist(N);
+        for (int kk=1; kk<K; kk++)
+        {
+            curDist = ( X.rowwise() - Seeds.row(kk-1) ).square().rowwise().sum().sqrt();
+            if (kk==1)
+            {
+                minDist = curDist;
+            } else {
+                minDist = curDist.min( minDist );
+            }
+            choice = discrete_rand( minDist );
+            ChosenIDs[kk] = choice;
+            Seeds.row(kk) = X.row( choice );
+        }
+    };
+
+    void sampleRowsMAPA()
+    {
+        double tol = 1e-8;
+        ArrayXXd U1 = X;
+        ArrayXd::Index ind_m;
+        ArrayXd sq_dist_sum;
+        Seeds = ArrayXXd::Zero(K,D);
+
+        float max = (X.rowwise() - X.colwise().mean()).square().rowwise().sum().maxCoeff(&ind_m);
+        Seeds.row(0) = U1.row(ind_m);
+        removeCloseRows(U1, Seeds, 0, tol);
+
+        for(int k = 1; k < D; k++)
+        {
+            if ( U1.rows() == 0 ) { break; }
+
+            sq_dist_sum = ArrayXd::Zero(U1.rows());
+            for(int ii=0; ii < k; ii++)
+            {
+                sq_dist_sum += (U1.rowwise() - Seeds.row(ii)).square().rowwise().sum();
+            }
+            max = sq_dist_sum.maxCoeff(&ind_m);
+
+            Seeds.row(k) = U1.row(ind_m);
+            removeCloseRows(U1, Seeds, k, tol);
+        }
+    };
+
+    // ----------------------------------------
+    // Update Cluster Assignments Z
+    void pairwise_distance()
+    {
+        // For small dims D, for loop is noticeably faster than fully vectorized.
+        // Odd but true.  So we do fastest thing
+        if ( D <= 16 ) {
+            for (int kk=0; kk<K; kk++) {
+                Dist.col(kk) = ( X.rowwise() - Centers.row(kk) ).square().rowwise().sum();
+            }
+        } else {
+            Dist = -2*( X.matrix() * Centers.transpose().matrix() );
+            Dist.rowwise() += Centers.square().rowwise().sum().transpose().row(0);
+        }
+    };
+
+    double assignClosest() {
+        double totalDist = 0;
+        int minRowID;
+
+        pairwise_distance();
+
+        for (int nn=0; nn<N; nn++) {
+            totalDist += Dist.row(nn).minCoeff( &minRowID );
+            Z(nn) = minRowID;
+        }
+        return totalDist;
+    };
+
+    // Update Cluster Locations Mu
+    void calc_Mu() {
+        Centers = ArrayXXd::Zero(K,D);
+        ArrayXd NperCluster = ArrayXd::Zero(K);
+
+        for (int nn=0; nn < N; nn++) {
+            Centers.row( (int) Z(nn) ) += X.row( nn );
+            NperCluster[ (int) Z(nn)] += 1;
+        }
+        Centers.colwise() /= NperCluster;
+    };
+
+    // ----------------------------------------
+    // Actual calculation of clusters
+    void run_lloyd()  {
+
+        double prevDist,totalDist = 0;
+        Centers = Seeds;
+
+        Dist = ArrayXXd::Zero(N,K);
+
+        for (int iter=0; iter<Niter; iter++) {
+
+            totalDist = assignClosest();
+            calc_Mu();
+            if ( prevDist == totalDist ) {
+                break;
+            }
+            prevDist = totalDist;
+        }
+    };
+
+    // ----------------------------------------
+    // Switch for which seed generator to use
+    void init_Mu() {
+        if ( method == "random" ) {
+            sampleRowsRandom();
+        } else if ( method == "plusplus" ) {
+            sampleRowsPlusPlus();
+        } else if ( method == "mapa" ) {
+            sampleRowsMAPA();
+        }
+    };
 
 
 
