@@ -61,17 +61,6 @@ class KMeansRex {
 
 	public: 
 	
-		ArrayXXd X;
-		ArrayXXd Seeds;
-		ArrayXXd Centers;
-		ArrayXXd Z;
-		ArrayXXd Dist;
-		unsigned int K;
-		unsigned int N;
-		unsigned int D;
-		int Niter;
-		string method;
-		
 		KMeansRex(const ArrayXXd &Xin, unsigned int Kin)
 		{
 			set_seed((unsigned int)time(NULL));
@@ -82,15 +71,41 @@ class KMeansRex {
 			Seeds.resize(K,D);
 			Centers.resize(K,D);
 			Z.resize(N,1);
-			
+	
 			// only using these preset values for now
 			method = "mapa";
 			init_Mu();
 			Centers = Seeds;
 			run_lloyd();
 		};
+
+		ArrayXXd GetSeeds()
+		{
+			return Seeds;
+		};
+
+		ArrayXXd GetClusterAssignments()
+		{
+			return Z;
+		};
+
+		ArrayXXd GetCenters()
+		{
+			return Centers;
+		};
 		
 	private:
+		
+		ArrayXXd X;
+		ArrayXXd Seeds;
+		ArrayXXd Centers;
+		ArrayXXd Z;
+		ArrayXXd Dist;
+		unsigned int K;
+		unsigned int N;
+		unsigned int D;
+		int Niter;
+		string method;
 		
 		// Random number generator object
   	KMeans::MersenneTwister twist;
@@ -112,7 +127,7 @@ class KMeansRex {
 				}
 				prevDist = totalDist;
 			}
-		}
+		};
 
 		// Switch for which seed generator to use
 		void init_Mu() {		  
@@ -123,12 +138,12 @@ class KMeansRex {
 				} else if ( method == "mapa" ) {
 						sampleRowsMAPA();
 				}
-		}
+		};
 
 		// ====================================================== Utility Functions
 		void set_seed( int seed ) {
 			twist.InitGenrand( seed );
-		}
+		};
 
 		int discrete_rand( ArrayXd &p ) {
 				double total = p.sum();
@@ -146,7 +161,7 @@ class KMeansRex {
 						return -1;
 				}
 				return newk;
-		}
+		};
 
 		void select_without_replacement( int N, int K, ArrayXd &chosenIDs) {
 				ArrayXd p = ArrayXd::Ones(N);
@@ -167,7 +182,7 @@ class KMeansRex {
 					}      
 					chosenIDs[kk] = choice;     
 				}
-		}
+		};
 
 		// http://stackoverflow.com/questions/13290395/how-to-remove-a-certain-row-or-column-while-using-eigen-library-c
 		void removeRow(ArrayXXd &matrix, unsigned int rowToRemove)
@@ -179,7 +194,7 @@ class KMeansRex {
 						matrix.block(rowToRemove,0,numRows-rowToRemove,numCols) = matrix.block(rowToRemove+1,0,numRows-rowToRemove,numCols);
 
 				matrix.conservativeResize(numRows,numCols);
-		}
+		};
 
 		void removeCloseRows(ArrayXXd &U1, ArrayXXd &seeds, int k, double tol)
 		{
@@ -193,7 +208,7 @@ class KMeansRex {
 				}
 			}
 
-		}
+		};
 
 		// ======================================================= Init Cluster Locs Mu
 
@@ -205,7 +220,7 @@ class KMeansRex {
 				{
 					Seeds.row( kk ) = X.row( ChosenIDs[kk] );
 				}
-		}
+		};
 
 		void sampleRowsPlusPlus() 
 		{
@@ -228,7 +243,7 @@ class KMeansRex {
 					ChosenIDs[kk] = choice;
 					Seeds.row(kk) = X.row( choice );
 				}       
-		}
+		};
 
 		void sampleRowsMAPA() 
 		{
@@ -236,7 +251,7 @@ class KMeansRex {
 			ArrayXXd U1 = X;
 			ArrayXd::Index ind_m;
 			ArrayXd sq_dist_sum;
-			Seeds.setZero();
+			Seeds = ArrayXXd::Zero(K,D);
 	
 			float max = (X.rowwise() - X.colwise().mean()).square().rowwise().sum().maxCoeff(&ind_m);
 			Seeds.row(0) = U1.row(ind_m);
@@ -256,7 +271,7 @@ class KMeansRex {
 				Seeds.row(k) = U1.row(ind_m);
 				removeCloseRows(U1, Seeds, k, tol);
 			}
-		}
+		};
 
 		// ======================================================= Update Cluster Assignments Z
 		void pairwise_distance() 
@@ -271,7 +286,7 @@ class KMeansRex {
 				Dist = -2*( X.matrix() * Centers.transpose().matrix() );
 				Dist.rowwise() += Centers.square().rowwise().sum().transpose().row(0);
 			}
-		}
+		};
 
 		double assignClosest() {
 			double totalDist = 0;
@@ -279,12 +294,12 @@ class KMeansRex {
 
 			pairwise_distance();
 
-			for (int nn=0; nn<X.rows(); nn++) {
+			for (int nn=0; nn<N; nn++) {
 				totalDist += Dist.row(nn).minCoeff( &minRowID );
 				Z(nn,0) = minRowID;
 			}
 			return totalDist;
-		}
+		};
 
 		// ======================================================= Update Cluster Locations Mu
 		void calc_Mu() {
@@ -296,7 +311,7 @@ class KMeansRex {
 				NperCluster[ (int) Z(nn,0)] += 1;
 			}  
 			Centers.colwise() /= NperCluster;
-		}
+		};
 
 
 
