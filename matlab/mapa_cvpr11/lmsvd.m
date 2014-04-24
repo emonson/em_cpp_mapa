@@ -76,10 +76,15 @@ end
 n0 = numel(opts.seeds);
 maxKNN = opts.MinNetPts + opts.nPtsPerScale*(opts.nScales-1);
 
-% Compute the distance between the seed point and all the other points
+% Compute the distance between the seed point and the maxKNN nearest points in X. 
+% opts.seeds are indices of X to compute distances from
+% e.g. if X is [600x3], and if there are 60 seed points, and 102 maxKNN
+%      idxs is [60x102] integers containing the indices of the nearest neighbors to the 60 seed points
+%      statdists is [60x102] doubles containing the distances from the 60 seed points to the 102 NNs
 [~, idxs, statdists] = nrsearch(X, uint32(opts.seeds), maxKNN, [], [], struct('XIsTransposed',true,'ReturnAsArrays',true));
 
-Delta = statdists(:,opts.MinNetPts:opts.nPtsPerScale:maxKNN);
+% e.g. statdists(:, 4:2:102) which is [60x50], which is [n_seed_pts x opts.nScales]
+Delta = statdists(:, opts.MinNetPts:opts.nPtsPerScale:maxKNN );
 
 %%
 Nets = cell(1,opts.nScales);

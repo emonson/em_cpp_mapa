@@ -30,18 +30,17 @@ INCLUDE_DIRECTORIES( "/usr/local/include" )
 
 set(MAPA_INCLUDE_DIRS 
    ${MAPA_SOURCE_DIR}/lib/ 
-   ${MAPA_SOURCE_DIR}/lib/utils 
-   ${MAPA_SOURCE_DIR}/lib/statistics 
-   ${MAPA_SOURCE_DIR}/lib/metrics  
-   ${MAPA_SOURCE_DIR}/lib/linalg
+   ${MAPA_SOURCE_DIR}/lib/Sam/utils 
+   ${MAPA_SOURCE_DIR}/lib/Sam/statistics 
+   ${MAPA_SOURCE_DIR}/lib/Sam/metrics  
+   ${MAPA_SOURCE_DIR}/lib/Sam/linalg
+   ${MAPA_SOURCE_DIR}/lib/Sam/io 
    ${MAPA_SOURCE_DIR}/lib/igl 
-   ${MAPA_SOURCE_DIR}/lib/io 
    ${MAPA_SOURCE_DIR}/lib/tclap 
-   ${MAPA_SOURCE_DIR}/lib/ann/
    ${MAPA_SOURCE_DIR}/lib/ann/ANN/
    ${MAPA_SOURCE_DIR}/lib/tinyxml2/
    ${MAPA_SOURCE_DIR}/lib/boost_1_55_0/
-   ${MAPA_SOURCE_DIR}/lib/kmeans/
+   ${MAPA_SOURCE_DIR}/lib/mapa/
 )
 
 set(MAPA_LIB_DIR 

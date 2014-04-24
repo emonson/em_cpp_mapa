@@ -9,12 +9,12 @@
 %    and save it in a subfolder with the name 'data'.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-clear all;
+% clear all;
 % close all;
 % clc;
 
 %% pick an experiment
-pExampleNames  = {'Artificial_Data','Simulation_Mode','Motion_Segmentation','Face_Clustering',...
+pExampleNames  = {'Artificial_Data','Artificial_Data_Preset','Simulation_Mode','Motion_Segmentation','Face_Clustering',...
     'Medical12_features','Medical12images','CorelImages_features','CorelImages',...
     'SciNews_TDM', 'SciNews_TFcorr', 'SciNews_TF', 'n20_sub1', 'SciNews_TFIDF', 'SciNews_LDA',...
     'SciNews_Cat1'};
@@ -73,7 +73,17 @@ switch pExampleNames{pExampleIdx}
         tic; [labels, planeDims, other] = mapa(X,opts); TimeUsed = toc
         MisclassificationRate = clustering_error(labels,aprioriSampleLabels)
         
-    case 'Simulation_Mode'
+   case 'Artificial_Data_Preset'
+       
+       % preset data from a sample run of Artificial_Data for testing
+       % (avoid randomness)
+       load('artificial_data_rev1.mat');
+       
+       % apply mapa
+       [labels, planeDims, other] = mapa(X,opts);
+       MisclassificationRate = clustering_error(labels,aprioriSampleLabels)
+        
+   case 'Simulation_Mode'
         
         nLoops = 10;
 
