@@ -42,8 +42,6 @@ Date:   2 April 2013
 */
 
 
-#include <iostream>
-// mersenneTwister2002.c reworked as C++ header file class
 #include "mersenneTwister2002.h"
 #include "Eigen/Dense"
 
@@ -52,7 +50,6 @@ Date:   2 April 2013
 #include <stdio.h>		/* srand */
 
 using namespace Eigen;
-using namespace std;
 
 
 namespace KMeans {
@@ -70,7 +67,7 @@ class KMeansRex {
 			K = Kin;
 			Seeds.resize(K,D);
 			Centers.resize(K,D);
-			Z.resize(N,1);
+			Z.resize(N);
 	
 			// only using these preset values for now
 			method = "mapa";
@@ -84,7 +81,7 @@ class KMeansRex {
 			return Seeds;
 		};
 
-		ArrayXXd GetClusterAssignments()
+		ArrayXd GetClusterAssignments()
 		{
 			return Z;
 		};
@@ -99,13 +96,13 @@ class KMeansRex {
 		ArrayXXd X;
 		ArrayXXd Seeds;
 		ArrayXXd Centers;
-		ArrayXXd Z;
+		ArrayXd Z;
 		ArrayXXd Dist;
 		unsigned int K;
 		unsigned int N;
 		unsigned int D;
 		int Niter;
-		string method;
+		std::string method;
 		
 		// Random number generator object
   	KMeans::MersenneTwister twist;
@@ -157,7 +154,7 @@ class KMeansRex {
 						cursum += p[newk];
 				}
 				if ( newk < 0 || newk >= K ) {
-						cerr << "Badness. Chose illegal discrete value." << endl;
+						std::cerr << "Badness. Chose illegal discrete value." << std::endl;
 						return -1;
 				}
 				return newk;
@@ -296,7 +293,7 @@ class KMeansRex {
 
 			for (int nn=0; nn<N; nn++) {
 				totalDist += Dist.row(nn).minCoeff( &minRowID );
-				Z(nn,0) = minRowID;
+				Z(nn) = minRowID;
 			}
 			return totalDist;
 		};
@@ -307,8 +304,8 @@ class KMeansRex {
 			ArrayXd NperCluster = ArrayXd::Zero(K);
 	
 			for (int nn=0; nn < N; nn++) {
-				Centers.row( (int) Z(nn,0) ) += X.row( nn );
-				NperCluster[ (int) Z(nn,0)] += 1;
+				Centers.row( (int) Z(nn) ) += X.row( nn );
+				NperCluster[ (int) Z(nn)] += 1;
 			}  
 			Centers.colwise() /= NperCluster;
 		};
