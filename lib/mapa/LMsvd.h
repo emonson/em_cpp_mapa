@@ -7,6 +7,7 @@ Based on the Matlab code of
 Guangliang Chen & Mauro Maggioni
 
 Eric E Monson – 2014
+Duke University
 
 */
 

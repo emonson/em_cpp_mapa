@@ -7,6 +7,7 @@ Based on the Matlab code of
 Guangliang Chen & Mauro Maggioni
 
 Eric E Monson – 2014
+Duke University
 
 */
 
@@ -57,6 +58,8 @@ Eric E Monson – 2014
     
 #include "Eigen/Dense"
 #include <math.h>
+#include <string>
+#include <iostream>
 
 using namespace Eigen;
 
@@ -84,7 +87,7 @@ public:
         discardRows = false;
         discardCols = false;
         nOutliers = 0;
-        averaging = 'L2';
+        averaging = "L2";
         plotFigs = false;
         showSpectrum = false;
         postOptimization = false;
@@ -149,7 +152,43 @@ public:
         //     end
         //     opts.n0 = length(opts.seeds);
         // end
-        
+        if (seeds.size() == 0)
+        {
+        	if (n0 == 0)
+        	{
+        		if (K == 0)
+        		{
+        			n0 = 20 * Kmax;
+        		}
+        		else
+        		{
+        			n0 = 20 * K;
+        		}
+        	}
+        	if (n0 < N)
+        	{
+        		// TODO
+        		// seeds = sort(randsample(N,n0));
+        	}
+        	else
+        	{
+						seeds.setLinSpaced(0,N-1);
+						if (n0 > N)
+						{
+							std::cout << "Warning: The sampling parameter n0 has been modified to N!" << std::endl;
+							n0 = N;
+						}
+        	}
+        }
+        else
+        {
+        	// Seeds provided
+        	if ((n0 > 0) && n0 != seeds.size())
+        	{
+        		std::cout << "Warning: The parameter values of n0 and seeds are incompatible. n0 has been changed to the length of seeds." << std::endl;
+        		n0 = seeds.size();
+        	}
+        }
         
         // maxKNN = round(min(N/5, 50*opts.dmax*log(max(3,opts.dmax))));
         maxKNN = (unsigned int)round(fmin((double)N/5.0, 50.0*dmax*log(fmax(3.0,(double)dmax))));
@@ -162,7 +201,8 @@ public:
         // if ~isfield(opts, 'nScales')
         //     opts.nScales = min(50, maxKNN);
         // end
-        nScales = 
+        nScales = (maxKNN < 50) ? maxKNN : 50;
+        
         // if ~isfield(opts, 'nPtsPerScale')
         //     opts.nPtsPerScale = round( maxKNN / opts.nScales );
         // end
@@ -224,9 +264,31 @@ public:
 	bool showSpectrum;
 	bool postOptimization;
 
+	// --------------------------
+	friend std::ostream& operator<<(std::ostream& os, const Opts& op);
+
 private:
 
 }; // class def
+
+
+std::ostream& operator<<(std::ostream& os, const Opts& op)
+{
+    os << "N: " << op.N << std::endl;
+    os << "D: " << op.D << std::endl;
+    os << "dmax: " << op.dmax << std::endl;
+    os << "K: " << op.K << std::endl;
+    os << "Kmax: " << op.Kmax << std::endl;
+    os << "maxKNN: " << op.maxKNN << std::endl;
+    os << "alpha0: " << op.alpha0 << std::endl;
+    os << "n0: " << op.n0 << std::endl;
+    os << "seeds: " << op.seeds.transpose() << std::endl;
+    os << "MinNetPts: " << op.MinNetPts << std::endl;
+    os << "nScales: " << op.nScales << std::endl;
+    os << "nPtsPerScale: " << op.nPtsPerScale << std::endl;
+    return os;
+}
+
 
 } // namespace MAPA
 
