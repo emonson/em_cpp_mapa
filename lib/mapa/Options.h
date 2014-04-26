@@ -36,8 +36,8 @@ Duke University
 // %            (default = 0)
 // %       .discardCols: percentage of bad columns of A to be discarded 
 // %            (default = 0)
-// %       .nOutliers: number of outliers (if >=1), or percentage (if <1)
-// %            (default=0)
+// %       .nOutliers: number of outliers (if >=1), or percentage (if <1) **NOTE: not supporting percentage for now...
+// %            (default=0) 
 // %       .averaging: 'L1' or 'L2'(default) mean of the local errors, which is
 // %            referred to as the tolerance (tau) in the CVPR paper
 // %       .plotFigs: whether or not to show the figures such as pointwise
@@ -60,6 +60,8 @@ Duke University
 #include <math.h>
 #include <string>
 #include <iostream>
+#include "UtilityCalcs.h"
+#include "igl/sort.h"
 
 using namespace Eigen;
 
@@ -169,6 +171,8 @@ public:
         	{
         		// TODO
         		// seeds = sort(randsample(N,n0));
+        		bool sorted = true;
+        		seeds = UtilityCalcs::RandSample(N, n0, sorted);
         	}
         	else
         	{
@@ -196,50 +200,37 @@ public:
         // if ~isfield(opts, 'MinNetPts')
         //     opts.MinNetPts = opts.dmax+2;
         // end
-        MinNetPts = dmax + 2;
+        if (MinNetPts == 0)
+        {
+        	MinNetPts = dmax + 2;
+        }
         
         // if ~isfield(opts, 'nScales')
         //     opts.nScales = min(50, maxKNN);
         // end
-        nScales = (maxKNN < 50) ? maxKNN : 50;
+        if (nScales == 0)
+        {
+        	nScales = (maxKNN < 50) ? maxKNN : 50;
+        }
         
         // if ~isfield(opts, 'nPtsPerScale')
         //     opts.nPtsPerScale = round( maxKNN / opts.nScales );
         // end
-        // 
-        // if ~isfield(opts, 'isLinear')
-        //     opts.isLinear = false;
-        // end
-        // 
-        // if ~isfield(opts, 'discardRows')
-        //     opts.discardRows = 0;
-        // end
-        // 
-        // if ~isfield(opts, 'discardCols')
-        //     opts.discardCols =  0;
-        // end
-        // 
-        // if ~isfield(opts,'averaging')
-        //     opts.averaging = 'L2';
-        // end
-        // 
+        if (nPtsPerScale == 0)
+        {
+        	nPtsPerScale = round( (double)maxKNN / (double)nScales );
+        }
+        
+        // NOTE: isLinear, discardRows, discardCols, averaging,
+        // plotFigs, showSpectrum, postOptimization already at default
+        
         // if ~isfield(opts, 'nOutliers')
         //     opts.nOutliers = 0;
         // elseif opts.nOutliers<1
         //     opts.nOutliers = round(N*opts.nOutliers);
         // end
-        //     
-        // if ~isfield(opts, 'plotFigs')
-        //     opts.plotFigs = false;
-        // end
-        // 
-        // if ~isfield(opts, 'showSpectrum')
-        //     opts.showSpectrum = 0;
-        // end
-        // 
-        // if ~isfield(opts, 'postOptimization')
-        //     opts.postOptimization = false;
-        // end        
+        // ** NOTE ** Not supporting nOutliers fraction as percentage for now...
+        
     }
     
     // Member varialbes

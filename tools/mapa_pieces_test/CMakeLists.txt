@@ -4,4 +4,5 @@ INCLUDE_DIRECTORIES(. ${MAPA_INCLUDE_DIRS})
 ADD_DEFINITIONS(-DIGL_HEADER_ONLY)
 
 ADD_EXECUTABLE(opts_test opts_test.cpp)
+ADD_EXECUTABLE(randsample_test randsample_test.cpp)
 

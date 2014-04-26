@@ -1,7 +1,7 @@
 #ifndef LMSVD_H
 #define LMSVD_H
 
-/* lmsvd.h
+/* LMsvd.h
 
 Based on the Matlab code of
 Guangliang Chen & Mauro Maggioni
