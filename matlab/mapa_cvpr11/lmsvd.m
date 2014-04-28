@@ -74,6 +74,8 @@ end
 
 %%
 n0 = numel(opts.seeds);
+% "rounded" version of maxKNN so get integer indices between MinNetPts and
+% maxKNN with nPtsPerScale stride
 maxKNN = opts.MinNetPts + opts.nPtsPerScale*(opts.nScales-1);
 
 % Compute the distance between the seed point and the maxKNN nearest points in X. 
