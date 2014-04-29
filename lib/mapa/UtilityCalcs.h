@@ -87,55 +87,72 @@ class UtilityCalcs {
 		static void nrsearch(const ArrayXXd &X, const ArrayXi &seedIdxs, int maxKNN,
 		                      Eigen::Ref<ArrayXXi> idxs, Eigen::Ref<ArrayXXd> statDists)
 		{
+			int n_points = X.rows();
+			int n_seed_points = seedIdxs.size();
+			
 			// Create seed points out of seed indices
 			ArrayXXd seedPoints;
 			igl::slice(X, seedIdxs, ArrayXi::LinSpaced(X.cols(),0,X.cols()-1), seedPoints);
 			
 			// Make sure output arrays are allocated to the proper size before ANN call
-			idxs = Array<int, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>::Zero(seedIdxs.size(), maxKNN);
-			statDists = Array<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>::Zero(seedIdxs.size(), maxKNN);
+			// idxs = Array<int, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>::Zero(seedIdxs.size(), maxKNN);
+			// statDists = Array<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>::Zero(seedIdxs.size(), maxKNN);
 			
+			// Arrays need to be fed into computeANN as 
+		  // data [dim x n_seed_points]
+		  // knn [n_knn x n_seed_points]
+		  // dists [n_knn x n_seed_points]
+		  // so want to after
+		  
+		  seedPoints.transposeInPlace();
+		  idxs = ArrayXXi::Zero(maxKNN, n_seed_points);
+		  statDists = ArrayXXd::Zero(maxKNN, n_seed_points);
+		  
 			computeANN(seedPoints, idxs, statDists, 0.0);
+			
+			idxs.transposeInPlace();
+			statDists.transposeInPlace();
 		};
 		
 	private:
 		
 		// Modified from Sam Gerber's Geometry.h computeANN() to use Eigen arrays
-		// data expected to be [n_points x dim]
-		// knn should be pre-allocated to 
-		// knn and dists should be RowMajor!!
+		/* ANN routines need pointers to vectors, so since default in Eigen is column-major
+		   arrangement, data needs to be sent here transposed from the original / desired. 
+		   So,
+		   data [dim x n_points]
+		   knn [n_knn x n_points]
+		   dists [n_knn x n_points]
+		   Note: n_points is the number of seed points, as all pairs are calculated here, so
+		   only pass in data for seed points.
+		*/
 		static void computeANN(const ArrayXXd &data, Eigen::Ref<ArrayXXi> knn, Eigen::Ref<ArrayXXd> dists, double eps){
 		
 			// Eigen data are not directly convertible to double**, so need to construct it
 			// explicitly
-		
-			// First, make sure data is in RowMajor order, so point coordinates are stored contiguously
-			Array<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor> dataRows = data;
 			
-		  // std::cout << data << std::endl;
-		
-			// TODO: clean this up and check dimensions match before running...
-			
-			// Now create the array of pointers to the rows
-			int n = data.rows();
-			int m = dataRows.cols();
+			int dim = data.rows();
+			int n_points = data.cols();
+			int n_knn = knn.rows();
+			// TODO: check for column major and any dim sanity checks...
 
-			double **rowPointers;
-			rowPointers = new double*[n];
+			// Create the arrays of pointers to the columns
+			double **dataPointers;
 			int **knnPointers;
-			knnPointers = new int*[n];
 			double **distsPointers;
-			distsPointers = new double*[n];
+
+			dataPointers = new double*[n_points];
+			knnPointers = new int*[n_points];
+			distsPointers = new double*[n_points];
 			
-			
-			for (int ii = 0; ii < dataRows.rows(); ii++)
+			for (int ii = 0; ii < n_points; ii++)
 			{
-				rowPointers[ii] = dataRows.data() + (ii*m)*sizeof(double);
-				knnPointers[ii] = knn.data() + (ii*m)*sizeof(int);
-				distsPointers[ii] = dists.data() + (ii*m)*sizeof(double);
+				dataPointers[ii] = (double*)data.col(ii).data();
+				knnPointers[ii] = knn.col(ii).data();
+				distsPointers[ii] = dists.col(ii).data();
 			}
 		
-			ANNpointArray pts = rowPointers;
+			ANNpointArray pts = dataPointers;
 		
 	// 	ANNkd_tree(							// build from point array
 	// 		ANNpointArray	pa,				// point array
@@ -145,7 +162,7 @@ class UtilityCalcs {
 	// 		ANNsplitRule	split = ANN_KD_SUGGEST);	// splitting method
 
 			// orig had (pts, data.N(), data.M())...
-			ANNkd_tree *annTree = new ANNkd_tree( pts, dataRows.rows(), dataRows.cols()); 
+			ANNkd_tree *annTree = new ANNkd_tree( pts, n_points, dim); 
 
 	// 		int **knnData = knn.data();
 	// 		double **distData = dists.data();
@@ -158,17 +175,12 @@ class UtilityCalcs {
 	// 		double			eps=0.0			// error bound
 	// 		) = 0;							// pure virtual (defined elsewhere)
 			
-			int maxKNN = knn.cols();
-			int *knnPointer = knn.data();
-			double *distsPointer = dists.data();
-			
-			
-			for(unsigned int i = 0; i < dataRows.rows(); i++){
-				annTree->annkSearch( pts[i], maxKNN, knnPointers[i], distsPointers[i], eps);
+			for(unsigned int i = 0; i < n_points; i++){
+				annTree->annkSearch( pts[i], n_knn, knnPointers[i], distsPointers[i], eps);
 			}
 
 			delete annTree;
-			delete[] rowPointers;
+			delete[] dataPointers;
 			delete[] knnPointers;
 			delete[] distsPointers;
 			

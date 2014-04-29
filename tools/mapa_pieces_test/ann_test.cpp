@@ -19,7 +19,9 @@ int main(int argc, char * argv[])
 		// NOTE: seeds is matlab-style 1s index!!
 		seeds -= 1;
 		
-		// std::cout << seeds << std::endl;
+		seeds = seeds.head(5);
+		
+		std::cout << seeds << std::endl;
 		
 		// Testing seeds slice into X
 // 		Eigen::ArrayXXd B;
@@ -27,14 +29,14 @@ int main(int argc, char * argv[])
 // 		
 // 		std::cout << B << std::endl;
 		
-		int maxKNN = 102;
+		int maxKNN = 10;
 		Eigen::ArrayXXi idxs(seeds.size(), maxKNN);
 		Eigen::ArrayXXd statDists(seeds.size(), maxKNN);
 		
 		MAPA::UtilityCalcs::nrsearch(X, seeds, maxKNN, idxs, statDists);
 		
-		std::cout << idxs.topLeftCorner(10,10) << std::endl;
-		std::cout << statDists.topLeftCorner(10,10) << std::endl;
+		std::cout << idxs << std::endl;
+		std::cout << statDists << std::endl;
 
     return 0;
 }
