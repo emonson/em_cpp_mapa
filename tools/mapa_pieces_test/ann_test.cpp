@@ -1,6 +1,5 @@
 #include <Eigen/Core>
 #include <igl/readDMAT.h>
-#include <igl/slice.h>
 #include <cstdio>
 #include "UtilityCalcs.h"
 
