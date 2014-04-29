@@ -84,15 +84,15 @@ class UtilityCalcs {
 			}
     };
 
-		static void nrsearch(const ArrayXXd &X, const ArrayXi &seedIdxs, int maxKNN,
+		static void nrsearch(ArrayXXd &X, ArrayXi &seedIdxs, int maxKNN,
 		                      Eigen::Ref<ArrayXXi> idxs, Eigen::Ref<ArrayXXd> statDists)
 		{
 			int n_points = X.rows();
 			int n_seed_points = seedIdxs.size();
 			
 			// Create seed points out of seed indices
-			ArrayXXd seedPoints;
-			igl::slice(X, seedIdxs, ArrayXi::LinSpaced(X.cols(),0,X.cols()-1), seedPoints);
+			// ArrayXXd seedPoints;
+			// igl::slice(X, seedIdxs, ArrayXi::LinSpaced(X.cols(),0,X.cols()-1), seedPoints);
 			
 			// Make sure output arrays are allocated to the proper size before ANN call
 			// idxs = Array<int, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>::Zero(seedIdxs.size(), maxKNN);
@@ -104,14 +104,16 @@ class UtilityCalcs {
 		  // dists [n_knn x n_seed_points]
 		  // so want to after
 		  
-		  seedPoints.transposeInPlace();
+		  X.transposeInPlace();
 		  idxs = ArrayXXi::Zero(maxKNN, n_seed_points);
 		  statDists = ArrayXXd::Zero(maxKNN, n_seed_points);
 		  
-			computeANN(seedPoints, idxs, statDists, 0.0);
+			computeANN(X, seedIdxs, idxs, statDists, 0.0);
 			
 			idxs.transposeInPlace();
 			statDists.transposeInPlace();
+			// NOTE: statDists are squared distances, so would need to sqrt() to get L2 dist...
+			// statDists = statDists.sqrt();
 		};
 		
 	private:
@@ -121,18 +123,18 @@ class UtilityCalcs {
 		   arrangement, data needs to be sent here transposed from the original / desired. 
 		   So,
 		   data [dim x n_points]
-		   knn [n_knn x n_points]
-		   dists [n_knn x n_points]
-		   Note: n_points is the number of seed points, as all pairs are calculated here, so
-		   only pass in data for seed points.
+		   seeds [dim x n_seed_points]
+		   knn [n_knn x n_seed_points]
+		   dists [n_knn x n_seed_points]
 		*/
-		static void computeANN(const ArrayXXd &data, Eigen::Ref<ArrayXXi> knn, Eigen::Ref<ArrayXXd> dists, double eps){
+		static void computeANN(const ArrayXXd &data, const ArrayXi &seedIdxs, Eigen::Ref<ArrayXXi> knn, Eigen::Ref<ArrayXXd> dists, double eps){
 		
 			// Eigen data are not directly convertible to double**, so need to construct it
 			// explicitly
 			
 			int dim = data.rows();
 			int n_points = data.cols();
+			int n_seed_points = seedIdxs.size();
 			int n_knn = knn.rows();
 			// TODO: check for column major and any dim sanity checks...
 
@@ -148,6 +150,9 @@ class UtilityCalcs {
 			for (int ii = 0; ii < n_points; ii++)
 			{
 				dataPointers[ii] = (double*)data.col(ii).data();
+			}
+			for (int ii = 0; ii < n_seed_points; ii++)
+			{
 				knnPointers[ii] = knn.col(ii).data();
 				distsPointers[ii] = dists.col(ii).data();
 			}
@@ -175,8 +180,8 @@ class UtilityCalcs {
 	// 		double			eps=0.0			// error bound
 	// 		) = 0;							// pure virtual (defined elsewhere)
 			
-			for(unsigned int i = 0; i < n_points; i++){
-				annTree->annkSearch( pts[i], n_knn, knnPointers[i], distsPointers[i], eps);
+			for(unsigned int i = 0; i < n_seed_points; i++){
+				annTree->annkSearch( pts[seedIdxs(i)], n_knn, knnPointers[i], distsPointers[i], eps);
 			}
 
 			delete annTree;
