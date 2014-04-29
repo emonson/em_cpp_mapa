@@ -84,43 +84,9 @@ class UtilityCalcs {
 			}
     };
 
-		static void nrsearch(ArrayXXd &X, ArrayXi &seedIdxs, int maxKNN,
-		                      Eigen::Ref<ArrayXXi> idxs, Eigen::Ref<ArrayXXd> statDists)
-		{
-			int n_points = X.rows();
-			int n_seed_points = seedIdxs.size();
-			
-			// Create seed points out of seed indices
-			// ArrayXXd seedPoints;
-			// igl::slice(X, seedIdxs, ArrayXi::LinSpaced(X.cols(),0,X.cols()-1), seedPoints);
-			
-			// Make sure output arrays are allocated to the proper size before ANN call
-			// idxs = Array<int, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>::Zero(seedIdxs.size(), maxKNN);
-			// statDists = Array<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>::Zero(seedIdxs.size(), maxKNN);
-			
-			// Arrays need to be fed into computeANN as 
-		  // data [dim x n_seed_points]
-		  // knn [n_knn x n_seed_points]
-		  // dists [n_knn x n_seed_points]
-		  // so want to after
-		  
-		  X.transposeInPlace();
-		  idxs = ArrayXXi::Zero(maxKNN, n_seed_points);
-		  statDists = ArrayXXd::Zero(maxKNN, n_seed_points);
-		  
-			computeANN(X, seedIdxs, idxs, statDists, 0.0);
-			
-			idxs.transposeInPlace();
-			statDists.transposeInPlace();
-			// NOTE: statDists are squared distances, so would need to sqrt() to get L2 dist...
-			// statDists = statDists.sqrt();
-		};
-		
-	private:
-		
 		// Modified from Sam Gerber's Geometry.h computeANN() to use Eigen arrays
 		/* ANN routines need pointers to vectors, so since default in Eigen is column-major
-		   arrangement, data needs to be sent here transposed from the original / desired. 
+		   arrangement, ** data needs to be sent here transposed from the original / desired! ** 
 		   So,
 		   data [dim x n_points]
 		   seeds [dim x n_seed_points]
@@ -144,8 +110,8 @@ class UtilityCalcs {
 			double **distsPointers;
 
 			dataPointers = new double*[n_points];
-			knnPointers = new int*[n_points];
-			distsPointers = new double*[n_points];
+			knnPointers = new int*[n_seed_points];
+			distsPointers = new double*[n_seed_points];
 			
 			for (int ii = 0; ii < n_points; ii++)
 			{
@@ -166,11 +132,7 @@ class UtilityCalcs {
 	// 		int				bs = 1,			// bucket size
 	// 		ANNsplitRule	split = ANN_KD_SUGGEST);	// splitting method
 
-			// orig had (pts, data.N(), data.M())...
 			ANNkd_tree *annTree = new ANNkd_tree( pts, n_points, dim); 
-
-	// 		int **knnData = knn.data();
-	// 		double **distData = dists.data();
 
 	// 	virtual void annkSearch(			// approx k near neighbor search
 	// 		ANNpoint		q,				// query point

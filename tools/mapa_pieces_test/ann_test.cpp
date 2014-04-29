@@ -19,21 +19,22 @@ int main(int argc, char * argv[])
 		// NOTE: seeds is matlab-style 1s index!!
 		seeds -= 1;
 		
-		seeds = seeds.head(5);
+		ArrayXi seed_subset = seeds.head(5);
 		
-		std::cout << seeds << std::endl;
-		
-		// Testing seeds slice into X
-// 		Eigen::ArrayXXd B;
-// 		igl::slice(X, seeds, Eigen::ArrayXi::LinSpaced(X.cols(), 0, X.cols()-1), B);
-// 		
-// 		std::cout << B << std::endl;
+		std::cout << seed_subset << std::endl;
 		
 		int maxKNN = 10;
-		Eigen::ArrayXXi idxs(seeds.size(), maxKNN);
-		Eigen::ArrayXXd statDists(seeds.size(), maxKNN);
+		// NOTE: computeANN needs point vectors as columns, so need to create column major ordering
+		// and transposed from normal arrangement!
+		Eigen::ArrayXXi idxs(maxKNN, seed_subset.size());
+		Eigen::ArrayXXd statDists(maxKNN, seed_subset.size());
 		
-		MAPA::UtilityCalcs::nrsearch(X, seeds, maxKNN, idxs, statDists);
+		MAPA::UtilityCalcs::computeANN(X.transpose(), seed_subset, idxs, statDists, 0.0);
+		
+		// Get data back in usual orientation and convert squared to actual distances
+		idxs.transposeInPlace();
+		statDists.transposeInPlace();
+		statDists = statDists.sqrt();
 		
 		std::cout << idxs << std::endl;
 		std::cout << statDists << std::endl;
