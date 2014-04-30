@@ -79,6 +79,9 @@ switch pExampleNames{pExampleIdx}
        % (avoid randomness)
        load('artificial_data_rev1.mat');
        
+       % make sure using the same seeds rather than randomly generated
+       opts.seeds = other.seeds;
+       
        % apply mapa
        [labels, planeDims, other] = mapa(X,opts);
        MisclassificationRate = clustering_error(labels,aprioriSampleLabels)
