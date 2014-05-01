@@ -73,7 +73,7 @@ if ~isfield(opts, 'showSpectrum')
 end
 
 %%
-n0 = numel(opts.seeds);
+n_seeds = numel(opts.seeds);
 % "rounded" version of maxKNN so get integer indices between MinNetPts and
 % maxKNN with nPtsPerScale stride
 maxKNN = opts.MinNetPts + opts.nPtsPerScale*(opts.nScales-1);
@@ -83,42 +83,50 @@ maxKNN = opts.MinNetPts + opts.nPtsPerScale*(opts.nScales-1);
 % e.g. if X is [600x3], and if there are 60 seed points, and 102 maxKNN
 %      idxs is [60x102] integers containing the indices of the nearest neighbors to the 60 seed points
 %      statdists is [60x102] doubles containing the distances from the 60 seed points to the 102 NNs
-[~, idxs, statdists] = nrsearch(X, uint32(opts.seeds), maxKNN, [], [], struct('XIsTransposed',true,'ReturnAsArrays',true));
+[~, nn_idxs, statdists] = nrsearch(X, uint32(opts.seeds), maxKNN, [], [], struct('XIsTransposed',true,'ReturnAsArrays',true));
 
 % e.g. statdists(:, 4:2:102) which is [60x50], which is [n_seed_pts x opts.nScales]
 Delta = statdists(:, opts.MinNetPts:opts.nPtsPerScale:maxKNN );
 
 %%
-Nets = cell(1,opts.nScales);
-MSVD_Stats = zeros(n0, D, opts.nScales);
+MSVD_Stats = zeros(n_seeds, D, opts.nScales);
 
-for j = 1:opts.nScales
+for scale = 1:opts.nScales
     
-    Nets{j}.count = opts.MinNetPts + (j-1)*opts.nPtsPerScale;
-    Nets{j}.AbsInvIdxs = idxs(:, 1:Nets{j}.count);
-    Nets{j}.S = zeros(n0, D);
-    Nets{j}.Delta = Delta(:,j);
+    % We have a minimum number of points to go out from each seed, and then
+    % are increasing the number of points with each scale
+    Nets_count = opts.MinNetPts + (scale-1)*opts.nPtsPerScale;
+    % Grab NNidxs over all seed points up to a certain number of NN for
+    % this scale
+    Nets_AbsInvIdxs = nn_idxs(:, 1:Nets_count);
+    Nets_S = zeros(n_seeds, D);
     
-    for i = 1:n0
-        net = X(Nets{j}.AbsInvIdxs(i,:),:);
+    for i_seed = 1:n_seeds
+        % actual point coords for the NNs for this seed point and scale
+        net = X(Nets_AbsInvIdxs(i_seed,:),:);
+        % center this set of net points and do an SVD to get the singular
+        % values
         sigs = svd(net-repmat(mean(net,1), size(net,1),1));
-        %sigs = svds(net-repmat(mean(net,1), size(net,1),1),opts.dmax+1);
+        % make into a row vector and normalize the singular values by the
+        % sqrt of the number of net points
         sigs = sigs'/sqrt(size(net,1));
-        Nets{j}.S(i,1:length(sigs)) = sigs;
+        % don't know why specify 1:length(sigs). won't it always be D?
+        Nets_S(i_seed,1:length(sigs)) = sigs;
     end
     
-    MSVD_Stats(:,:,j) = Nets{j}.S;
+    MSVD_Stats(:,:,scale) = Nets_S;
     
 end
 
 %%
-estDims = zeros(1, n0);
-GoodScales = zeros(n0,2);
-for i = 1:n0,
-    lS = (squeeze(MSVD_Stats(i,:,:)))'; 
-    lStats = EstimateDimFromSpectra(Delta(i,:)', lS, opts.alpha0);
-    estDims(i) = lStats.DimEst;
-    GoodScales(i,:) = lStats.GoodScales;
+estDims = zeros(1, n_seeds);
+GoodScales = zeros(n_seeds,2);
+for i_seed = 1:n_seeds,
+    % grab singular values for a single seed point across all scales
+    lS = (squeeze(MSVD_Stats(i_seed,:,:)))'; 
+    lStats = EstimateDimFromSpectra(Delta(i_seed,:)', lS, opts.alpha0);
+    estDims(i_seed) = lStats.DimEst;
+    GoodScales(i_seed,:) = lStats.GoodScales;
 end;
 
 if opts.plotFigs
@@ -136,9 +144,9 @@ if opts.plotFigs
     title('Optimal Local Scales', 'fontSize', 14); grid off; axis tight
 end
 
-goodLocalRegions = cell(1,n0);
-for i = 1:n0
-    goodLocalRegions{i} = idxs(i, 1:opts.MinNetPts+(lScale(i)-1)*opts.nPtsPerScale); % find(dists(i,:) <lScale(goodSeedPoints(i))^2);
+goodLocalRegions = cell(1,n_seeds);
+for i = 1:n_seeds
+    goodLocalRegions{i} = nn_idxs(i, 1:opts.MinNetPts+(lScale(i)-1)*opts.nPtsPerScale); % find(dists(i,:) <lScale(goodSeedPoints(i))^2);
 end
 
 %%
@@ -152,14 +160,14 @@ goodSeedPoints = opts.seeds(goodSeedPoints);
 if opts.showSpectrum > 0
     
     R = zeros(1,N); R([goodLocalRegions{:}]) = 1; R = find(R>0);
-    n0 = numel(goodSeedPoints);
+    n_seeds = numel(goodSeedPoints);
     
     tempDelta = Delta';
     lScale  = tempDelta((0:size(tempDelta,1):size(tempDelta,1)*(size(tempDelta,2)-1)) + lScale)';
     lMinScale  = tempDelta((0:size(tempDelta,1):size(tempDelta,1)*(size(tempDelta,2)-1)) + lMinScale)';
     lMaxScale = tempDelta((0:size(tempDelta,1):size(tempDelta,1)*(size(tempDelta,2)-1)) + lMaxScale)';
 
-    seeds = randsample(1:n0, opts.showSpectrum);
+    seeds = randsample(1:n_seeds, opts.showSpectrum);
     for j = seeds
         figure
         %subplot(1,2,1)
