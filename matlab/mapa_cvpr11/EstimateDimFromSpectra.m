@@ -1,4 +1,5 @@
-
+function vStats = EstimateDimFromSpectra( cDeltas, S_MSVD, alpha0 )
+%
 % Estimates intrinsic dimensionality and good scales given the multiscale singular values
 %
 % IN:
@@ -10,11 +11,9 @@
 %                       DimEst      : estimate of intrinsic dimensionality
 %                       GoodScales  : vector of indices (into the vector cDeltas) of good scales used for dimension estimate
 %
-function vStats = EstimateDimFromSpectra( cDeltas, S_MSVD, alpha0 )
 
 [nScales,nDims] = size(S_MSVD);
 
-%s1 = S_MSVD(:,1);
 s1 = cDeltas;
 
 if nargin<3; alpha0 = 0.2; end
@@ -31,10 +30,12 @@ vStats.DimEst = nDims;
 p = nDims;
 sp = S_MSVD(:,p);
 
-i = width; slope = compute_slope(s1(1:i), sp(1:i), 2);
+i = width; 
+slope = compute_slope(s1(1:i), sp(1:i), 2);
+
 while i<iMax && slope>0.1
     i=i+1; 
-    slope = compute_slope(s1(i-width+1:i),sp(i-width+1:i),2);
+    slope = compute_slope(s1(i-width+1:i), sp(i-width+1:i), 2);
 end
 
 if i>iMax
@@ -43,7 +44,7 @@ else
     j = i;
     while j<jMax && slope<=alpha0
         j = j+1; 
-        slope = compute_slope(s1(j-width+1:j),sp(j-width+1:j),2);
+        slope = compute_slope(s1(j-width+1:j), sp(j-width+1:j), 2);
     end
     j = j-1;
    
@@ -58,10 +59,10 @@ while p>1 && isaNoisySingularValue
     sp = S_MSVD(:,p);
     
     % find a lower bound for the optimal scale
-    i = width; slope = compute_slope(s1(1:i), sp(1:i),2);
+    i = width; slope = compute_slope(s1(1:i), sp(1:i), 2);
     while i<iMax && slope>0.1
         i=i+1; 
-        slope = compute_slope(s1(i-width+1:i),sp(i-width+1:i),2);
+        slope = compute_slope(s1(i-width+1:i), sp(i-width+1:i), 2);
     end
     
     % find an upper bound for the optimal scale
@@ -69,7 +70,7 @@ while p>1 && isaNoisySingularValue
         
         j = i;
         while j<jMax && slope<=alpha0
-            j = j+1; slope = compute_slope(s1(j-width+1:j),sp(j-width+1:j),2);
+            j = j+1; slope = compute_slope(s1(j-width+1:j), sp(j-width+1:j), 2);
         end
         j = j-1; 
         
@@ -78,23 +79,10 @@ while p>1 && isaNoisySingularValue
         else
             vStats.GoodScales = [i-1 j];
         end
-        
-        %jMax = j;
-        
+                
     else
         
         isaNoisySingularValue = false;
-       
-%         if compute_slope(S_MSVD(1:iMax,1), sp(1:iMax), 2)>0.2
-%             isaNoisySingularValue = false;
-%         end
-
-%         for j = iMax:-1:width+1
-%         %for j = vStats.GoodScales(2):-1:max(vStats.GoodScales(1), width+1)
-%             if mean((sp(j-width+1:j))./(S_MSVD(j-width+1:j,1)))> 0.2
-%                 isaNoisySingularValue = false; break;
-%             end
-%         end
         
     end
         

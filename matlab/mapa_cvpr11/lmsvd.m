@@ -86,70 +86,49 @@ maxKNN = opts.MinNetPts + opts.nPtsPerScale*(opts.nScales-1);
 [~, nn_idxs, statdists] = nrsearch(X, uint32(opts.seeds), maxKNN, [], [], struct('XIsTransposed',true,'ReturnAsArrays',true));
 
 % e.g. statdists(:, 4:2:102) which is [60x50], which is [n_seed_pts x opts.nScales]
+% Miles: "Delta is the distance to the farthest neighbor used in that scale. 
+%   so instead of thinking of the scale as a number of nearest neighbors in the data, 
+%   we can think of it as a distance needed to collect that many neighbors."
 Delta = statdists(:, opts.MinNetPts:opts.nPtsPerScale:maxKNN );
 
 %%
 MSVD_Stats = zeros(n_seeds, D, opts.nScales);
-
-for scale = 1:opts.nScales
-    
-    % We have a minimum number of points to go out from each seed, and then
-    % are increasing the number of points with each scale
-    Nets_count = opts.MinNetPts + (scale-1)*opts.nPtsPerScale;
-    % Grab NNidxs over all seed points up to a certain number of NN for
-    % this scale
-    Nets_AbsInvIdxs = nn_idxs(:, 1:Nets_count);
-    Nets_S = zeros(n_seeds, D);
-    
-    for i_seed = 1:n_seeds
-        % actual point coords for the NNs for this seed point and scale
-        net = X(Nets_AbsInvIdxs(i_seed,:),:);
-        % center this set of net points and do an SVD to get the singular
-        % values
-        sigs = svd(net-repmat(mean(net,1), size(net,1),1));
-        % make into a row vector and normalize the singular values by the
-        % sqrt of the number of net points
-        sigs = sigs'/sqrt(size(net,1));
-        % don't know why specify 1:length(sigs). won't it always be D?
-        Nets_S(i_seed,1:length(sigs)) = sigs;
-    end
-    
-    MSVD_Stats(:,:,scale) = Nets_S;
-    
-end
-
-%%
 estDims = zeros(1, n_seeds);
 GoodScales = zeros(n_seeds,2);
+goodLocalRegions = cell(1,n_seeds);
+
 for i_seed = 1:n_seeds,
-    % grab singular values for a single seed point across all scales
-    lS = (squeeze(MSVD_Stats(i_seed,:,:)))'; 
-    lStats = EstimateDimFromSpectra(Delta(i_seed,:)', lS, opts.alpha0);
+    
+    Nets_S = zeros(opts.nScales, D);
+    
+    for i_scale = 1:opts.nScales,
+        % We have a minimum number of points to go out from each seed, and then
+        % are increasing the number of points with each scale
+        Nets_count = opts.MinNetPts + (i_scale-1)*opts.nPtsPerScale;
+
+        % Grab NNidxs over all seed points up to a certain number of NN for
+        % this scale
+        % actual point coords for the NNs for this seed point and scale
+        net = X( nn_idxs(i_seed, 1:Nets_count), :);
+        % center this set of net points and do an SVD to get the singular
+        % values
+        sigs = svd(net - repmat(mean(net,1), Nets_count, 1));
+        % make into a row vector and normalize the singular values by the
+        % sqrt of the number of net points
+        sigs = sigs'/sqrt(Nets_count);
+
+        Nets_S(i_scale,:) = sigs;
+    end
+        
+    lStats = EstimateDimFromSpectra(Delta(i_seed,:)', Nets_S, opts.alpha0);
+    
     estDims(i_seed) = lStats.DimEst;
     GoodScales(i_seed,:) = lStats.GoodScales;
-end;
-
-if opts.plotFigs
-    % figure;plot(sort(estDims));axis tight; title('Estimate ptwise dimensionality');
-    figure;scatter3(X(opts.seeds,1),X(opts.seeds,2),X(opts.seeds,3),20,estDims,'filled');colorbar;
-    title('Pointwise Dimension Estimates', 'fontSize', 14); grid off; axis tight
+    maxScale = GoodScales(i_seed,2);
+    goodLocalRegions{i_seed} = nn_idxs(i_seed, 1:(opts.MinNetPts + (maxScale-1)*opts.nPtsPerScale));
+    
 end
 
-lMaxScale = GoodScales(:,2)';
-lMinScale  = GoodScales(:,1)';
-lScale = lMaxScale;
-   
-if opts.plotFigs
-    figure;scatter3(X(opts.seeds,1),X(opts.seeds,2),X(opts.seeds,3),30,lScale,'filled');colorbar;
-    title('Optimal Local Scales', 'fontSize', 14); grid off; axis tight
-end
-
-goodLocalRegions = cell(1,n_seeds);
-for i = 1:n_seeds
-    goodLocalRegions{i} = nn_idxs(i, 1:opts.MinNetPts+(lScale(i)-1)*opts.nPtsPerScale); % find(dists(i,:) <lScale(goodSeedPoints(i))^2);
-end
-
-%%
 goodSeedPoints = (cellfun(@length, goodLocalRegions)>2*estDims & estDims<D);
 
 goodLocalRegions = goodLocalRegions(goodSeedPoints);
@@ -157,59 +136,54 @@ estDims = estDims(goodSeedPoints);
 goodSeedPoints = opts.seeds(goodSeedPoints);
 
 %%
+
+lMinScale = GoodScales(:,1)';
+lMaxScale = GoodScales(:,2)';
+
+if opts.plotFigs
+    figure;scatter3(X(opts.seeds,1),X(opts.seeds,2),X(opts.seeds,3),20,estDims,'filled');colorbar;
+    title('Pointwise Dimension Estimates', 'fontSize', 14); grid off; axis tight
+
+    figure;scatter3(X(opts.seeds,1),X(opts.seeds,2),X(opts.seeds,3),30,lMaxScale,'filled');colorbar;
+    title('Optimal Local Scales', 'fontSize', 14); grid off; axis tight
+end
+
 if opts.showSpectrum > 0
     
-    R = zeros(1,N); R([goodLocalRegions{:}]) = 1; R = find(R>0);
+    R = zeros(1,N); 
+    R([goodLocalRegions{:}]) = 1; 
+    R = find(R>0);
     n_seeds = numel(goodSeedPoints);
     
     tempDelta = Delta';
-    lScale  = tempDelta((0:size(tempDelta,1):size(tempDelta,1)*(size(tempDelta,2)-1)) + lScale)';
+    lMaxScale  = tempDelta((0:size(tempDelta,1):size(tempDelta,1)*(size(tempDelta,2)-1)) + lMaxScale)';
     lMinScale  = tempDelta((0:size(tempDelta,1):size(tempDelta,1)*(size(tempDelta,2)-1)) + lMinScale)';
     lMaxScale = tempDelta((0:size(tempDelta,1):size(tempDelta,1)*(size(tempDelta,2)-1)) + lMaxScale)';
 
     seeds = randsample(1:n_seeds, opts.showSpectrum);
-    for j = seeds
+    for seed_idx = seeds
         figure
-        %subplot(1,2,1)
-        %plot(X(:,1), X(:,2), '.');
         plot3(X(R,1), X(R,2), X(R,3), '.');
         hold on
-        %plot(X(goodLocalRegions{j},1),X(goodLocalRegions{j},2),'rx')
-        plot3(X(goodLocalRegions{j},1),X(goodLocalRegions{j},2),X(goodLocalRegions{j},3),'rx')
-        x = j;
-        plot3(X(opts.seeds(x),1), X(opts.seeds(x),2), X(opts.seeds(x),3), 'k+', 'MarkerSize', 20)
-        title(['Est. Dim. = ' num2str(estDims(x))], 'fontSize', 14)
+        plot3(X(goodLocalRegions{seed_idx},1),X(goodLocalRegions{seed_idx},2),X(goodLocalRegions{seed_idx},3),'rx')
+        plot3(X(opts.seeds(seed_idx),1), X(opts.seeds(seed_idx),2), X(opts.seeds(seed_idx),3), 'k+', 'MarkerSize', 20)
+        title(['Est. Dim. = ' num2str(estDims(seed_idx))], 'fontSize', 14)
         
         figure;
-        %subplot(1,2,1)
         hold on
-        sigs = (squeeze(MSVD_Stats(x,:,:)))';
+        sigs = (squeeze(MSVD_Stats(seed_idx,:,:)))';
         for dim = 1:D
-            plot(Delta(x,:),sigs(:,dim), 'v-')
+            plot(Delta(seed_idx,:),sigs(:,dim), 'v-')
         end
-        plot(repmat(lMinScale(x),1,2), [0, sigs((Delta(x,:)==lMinScale(x)),1)], 'r-')
-        plot(repmat(lScale(x),1,2), [0, sigs((Delta(x,:)==lScale(x)),1)], 'g-')
-        plot(repmat(lMaxScale(x),1,2), [0, sigs((Delta(x,:)==lMaxScale(x)),1)], 'r-')
-        title(['Est. Dim. = ' num2str(estDims(x))], 'fontSize', 14)
+        plot(repmat(lMinScale(seed_idx),1,2), [0, sigs((Delta(seed_idx,:)==lMinScale(seed_idx)),1)], 'r-')
+        plot(repmat(lMaxScale(seed_idx),1,2), [0, sigs((Delta(seed_idx,:)==lMaxScale(seed_idx)),1)], 'g-')
+        plot(repmat(lMaxScale(seed_idx),1,2), [0, sigs((Delta(seed_idx,:)==lMaxScale(seed_idx)),1)], 'r-')
+        title(['Est. Dim. = ' num2str(estDims(seed_idx))], 'fontSize', 14)
         xlabel('Scale', 'fontSize', 14)
         ylabel('Sing.Vals.', 'fontSize', 14)
         hold off
         axis equal
-        
-%         figure
-%         %subplot(1,2,2)
-%         hold on
-%         for dim = 1:D
-%             plot(sigs(:,1),sigs(:,dim), 'v-')
-%         end
-%         plot(repmat(sigs((Delta(x,:)==lMinScale(x)),1),1,2), [0, sigs((Delta(x,:)==lMinScale(x)),2)], 'r-')
-%         plot(repmat(sigs((Delta(x,:)==lScale(x)),1),1,2), [0, sigs((Delta(x,:)==lScale(x)),2)], 'g-')
-%         plot(repmat(sigs((Delta(x,:)==lMaxScale(x)),1),1,2), [0, sigs((Delta(x,:)==lMaxScale(x)),2)], 'r-')
-%         title(['Est. Dim. = ' num2str(estDims(x))])
-%         hold off
-%         %axis equal
-%         %set(gca, 'ylim', [-0.01 max(sigs(:,1))+0.01])
-        
+                
     end
     
 end
