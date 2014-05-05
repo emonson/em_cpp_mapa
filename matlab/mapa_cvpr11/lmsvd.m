@@ -141,7 +141,7 @@ lMinScale = GoodScales(:,1)';
 lMaxScale = GoodScales(:,2)';
 
 if opts.plotFigs
-    figure;scatter3(X(opts.seeds,1),X(opts.seeds,2),X(opts.seeds,3),20,estDims,'filled');colorbar;
+    figure;scatter3(X(goodSeedPoints,1),X(goodSeedPoints,2),X(goodSeedPoints,3),20,estDims,'filled');colorbar;
     title('Pointwise Dimension Estimates', 'fontSize', 14); grid off; axis tight
 
     figure;scatter3(X(opts.seeds,1),X(opts.seeds,2),X(opts.seeds,3),30,lMaxScale,'filled');colorbar;
