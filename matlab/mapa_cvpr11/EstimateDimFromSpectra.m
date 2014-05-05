@@ -35,7 +35,7 @@ spectrum = S_MSVD(:,p);
 i = width; 
 slope = compute_slope(scale_distances, spectrum, width, i);
 
-% Test whether slope is already > 0.1
+% Test whether slope is already < 0.1
 % If so, increment r/delta index, computing slope and testing slope along
 % the way. This is to get past any initial rise, and find at what index, if
 % any, the slope flattens out below 0.1
@@ -91,7 +91,7 @@ while p>1 && isaNoisySingularValue
     % (flattens out)
     i = width; 
     slope = compute_slope(scale_distances, spectrum, width, i);
-    while i<iMax && slope>0.1
+    while i<=iMax && slope>0.1
         i=i+1; 
         slope = compute_slope(scale_distances, spectrum, width, i);
     end
@@ -107,7 +107,7 @@ while p>1 && isaNoisySingularValue
     % these dims judging the window of good scales (r/delta indices)
     if slope<=alpha0
         
-        % Set j either at iMax or at the r/delta index at which the slope
+        % Set j either at iMax+1 or at the r/delta index at which the slope
         % flattened out below 0.1
         j = i;
         % find the point at which the slope again rises, now above alpha0,
@@ -126,6 +126,7 @@ while p>1 && isaNoisySingularValue
         current_to_prev_spectra_diff = (spectrum(j-width+1:j)-S_MSVD(j-width+1:j,p+1));
         largest_to_prev_spectra_diff = (S_MSVD(j-width+1:j,1)-S_MSVD(j-width+1:j,p+1));
         mean_fractional_spectrum_rise = mean(current_to_prev_spectra_diff./largest_to_prev_spectra_diff);
+        
         if mean_fractional_spectrum_rise > 0.2
             % real manifold dim, so set flag to break out of dim decrease
             % loop
