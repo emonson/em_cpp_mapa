@@ -188,10 +188,9 @@ public:
         //             largest_to_prev_spectra_diff = (S_MSVD(idx_window,1)-S_MSVD(idx_window,dim+1));
         //             mean_fractional_spectrum_rise = mean(current_to_prev_spectra_diff./largest_to_prev_spectra_diff);
                     
-                    int lo = upperScaleIdx-width+1;
-                    int hi = upperScaleIdx;
-                    current_to_prev_spectra_diff = spectra.col(dim-1).segment(lo,hi) - spectra.col(dim+1-1).segment(lo,hi);
-                    largest_to_prev_spectra_diff = spectra.col(1-1).segment(lo,hi) - spectra.col(dim+1-1).segment(lo,hi);
+                    int idx = upperScaleIdx-width+1;
+                    current_to_prev_spectra_diff = spectra.col(dim-1).segment(idx,width) - spectra.col(dim+1-1).segment(idx,width);
+                    largest_to_prev_spectra_diff = spectra.col(1-1).segment(idx,width) - spectra.col(dim+1-1).segment(idx,width);
                     mean_fractional_spectrum_rise = (current_to_prev_spectra_diff / largest_to_prev_spectra_diff).mean();
                     
                     
