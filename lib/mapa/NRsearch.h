@@ -125,6 +125,6 @@ private:
 
 }; // class def
 
-} // namespace KMeans
+} // namespace MAPA
 
 #endif

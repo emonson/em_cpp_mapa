@@ -98,18 +98,10 @@ public:
     
     void SetDefaults(ArrayXXd &X)
     {
-        // [N,D] = size(X);
         N = X.rows();
         D = X.cols();
         
-        // if ~isfield(opts, 'alpha0')
-        //     if ~isfield(opts, 'dmax') || opts.dmax>=D
-        //         opts.dmax = D-1; 
-        //         opts.alpha0 = 0.2;
-        //     else
-        //         opts.alpha0 = 0.3/sqrt(opts.dmax);
-        //     end
-        // end
+        // alpha0 -----------
         if (!(alpha0 > 0.0))
         {
             if ((dmax == 0) || (dmax >= D))
@@ -123,37 +115,13 @@ public:
             }
         }
         
-        // if ~isfield(opts, 'K') && ~isfield(opts, 'Kmax'),
-        //     opts.Kmax = 10;
-        // end
+        // Kmax -----------
         if ((K == 0) && (Kmax == 0))
         {
             Kmax = 10;
         }
         
-        // if ~isfield(opts, 'seeds')
-        //     if ~isfield(opts, 'n0')
-        //         if ~isfield(opts, 'K')
-        //             opts.n0 = 20*opts.Kmax;
-        //         else
-        //             opts.n0 = 20*opts.K;
-        //         end
-        //     end
-        //     if opts.n0<N
-        //         opts.seeds = sort(randsample(N,opts.n0));
-        //     else
-        //         opts.seeds = 1:N;
-        //         if opts.n0 > N
-        //             opts.n0 = N;
-        //             warning('The sampling parameter n0 has been modified to N!'); %#ok<WNTAG>
-        //         end
-        //     end  
-        // else % seeds provided
-        //     if isfield(opts, 'n0') && opts.n0 ~= length(opts.seeds)
-        //         warning('The parameter values of n0 and seeds are incompatible. n0 has been changed to the length of seeds.') %#ok<WNTAG>
-        //     end
-        //     opts.n0 = length(opts.seeds);
-        // end
+        // n0 -----------
         if (seeds.size() == 0)
         {
         	if (n0 == 0)
@@ -169,8 +137,6 @@ public:
         	}
         	if (n0 < N)
         	{
-        		// TODO
-        		// seeds = sort(randsample(N,n0));
         		bool sorted = true;
         		seeds = UtilityCalcs::RandSample(N, n0, sorted);
         	}
@@ -194,28 +160,22 @@ public:
         	}
         }
         
-        // maxKNN = round(min(N/5, 50*opts.dmax*log(max(3,opts.dmax))));
+        // maxKNN -----------
         maxKNN = (unsigned int)round(fmin((double)N/5.0, 50.0*dmax*log(fmax(3.0,(double)dmax))));
         
-        // if ~isfield(opts, 'MinNetPts')
-        //     opts.MinNetPts = opts.dmax+2;
-        // end
+        // MinNetPts -----------
         if (MinNetPts == 0)
         {
         	MinNetPts = dmax + 2;
         }
         
-        // if ~isfield(opts, 'nScales')
-        //     opts.nScales = min(50, maxKNN);
-        // end
+        // nScales -----------
         if (nScales == 0)
         {
         	nScales = (maxKNN < 50) ? maxKNN : 50;
         }
         
-        // if ~isfield(opts, 'nPtsPerScale')
-        //     opts.nPtsPerScale = round( maxKNN / opts.nScales );
-        // end
+        // nPtsPerScale -----------
         if (nPtsPerScale == 0)
         {
         	nPtsPerScale = round( (double)maxKNN / (double)nScales );
@@ -234,29 +194,29 @@ public:
     }
     
     // Member varialbes
-	unsigned int N;
-	unsigned int D;
-	unsigned int dmax;
-	unsigned int K;
-	unsigned int Kmax;
-	unsigned int maxKNN;
-	double alpha0;
-	unsigned int n0;
-	ArrayXi seeds;
-	unsigned int MinNetPts;
-	unsigned int nScales;
-	unsigned int nPtsPerScale;
-	bool isLinear;
-	bool discardRows;
-	bool discardCols;
-	unsigned int nOutliers; // reall should be able to take float according to original...
-	std::string averaging;
-	bool plotFigs;
-	bool showSpectrum;
-	bool postOptimization;
+		unsigned int N;
+		unsigned int D;
+		unsigned int dmax;
+		unsigned int K;
+		unsigned int Kmax;
+		unsigned int maxKNN;
+		double alpha0;
+		unsigned int n0;
+		ArrayXi seeds;
+		unsigned int MinNetPts;
+		unsigned int nScales;
+		unsigned int nPtsPerScale;
+		bool isLinear;
+		bool discardRows;
+		bool discardCols;
+		unsigned int nOutliers; // reall should be able to take float according to original...
+		std::string averaging;
+		bool plotFigs;
+		bool showSpectrum;
+		bool postOptimization;
 
-	// --------------------------
-	friend std::ostream& operator<<(std::ostream& os, const Opts& op);
+		// --------------------------
+		friend std::ostream& operator<<(std::ostream& os, const Opts& op);
 
 private:
 
