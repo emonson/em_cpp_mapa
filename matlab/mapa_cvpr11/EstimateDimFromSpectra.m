@@ -1,4 +1,4 @@
-function vStats = EstimateDimFromSpectra( cDeltas, S_MSVD, alpha0 )
+function vStats = EstimateDimFromSpectra( scale_distances, S_MSVD, alpha0, i_seed)
 %
 % Estimates intrinsic dimensionality and good scales given the multiscale singular values
 %
@@ -13,8 +13,6 @@ function vStats = EstimateDimFromSpectra( cDeltas, S_MSVD, alpha0 )
 %
 
 [nScales,nDims] = size(S_MSVD);
-
-scale_distances = cDeltas;
 
 if nargin<3; alpha0 = 0.2; end
 
@@ -42,7 +40,7 @@ for dim = nDims:-1:1,
     % (flattens out)
     for ii = width:lowerScaleIdxMax+1,
         lowerScaleIdx = ii;
-        slope = compute_slope(scale_distances, spectrum, width, lowerScaleIdx);
+        slope = compute_slope(scale_distances, spectrum, width, lowerScaleIdx, i_seed);
         if (slope < 0.1),
             break;
         end
@@ -77,7 +75,7 @@ for dim = nDims:-1:1,
         % flattened out below 0.1
         for jj = lowerScaleIdx:upperScaleIdxMax,
             upperScaleIdx = jj;
-            slope = compute_slope(scale_distances, spectrum, width, upperScaleIdx);
+            slope = compute_slope(scale_distances, spectrum, width, upperScaleIdx, i_seed);
             if (slope > alpha0),
                 break;
             end
@@ -123,7 +121,7 @@ end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function slope = compute_slope(distances, spectrum, width, idx)
+function slope = compute_slope(distances, spectrum, width, idx, i_seed)
     s1 = distances(idx-width+1:idx);
     sp = spectrum(idx-width+1:idx);
     slope = (sum(s1.*sp) - sum(s1)*sum(sp)/numel(s1)) / (sum(s1.^2)-sum(s1)^2/numel(s1));

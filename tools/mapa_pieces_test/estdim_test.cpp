@@ -6,7 +6,7 @@
 
 int main(int argc, char * argv[])
 {
-    double alpha0 = 0.3;
+    double alpha0 = 0.212132034355964227412272293804562650620937347412109375;
     MAPA::EstimateDimFromSpectra estdim;
     
     // -------------------------------------
@@ -29,7 +29,7 @@ int main(int argc, char * argv[])
     estdim.EstimateDimensionality(Delta_1, NetS_1, alpha0);
     
     std::cout << "dim = 2, " << estdim.GetDimension() << std::endl;
-    std::cout << "lo = 8, " << estdim.GetLowerScaleIdx() << std::endl;
+    std::cout << "lo = 9, " << estdim.GetLowerScaleIdx() << std::endl;
     std::cout << "hi = 15, " << estdim.GetUpperScaleIdx() << std::endl;
 
 
@@ -51,8 +51,8 @@ int main(int argc, char * argv[])
     estdim.EstimateDimensionality(Delta_2, NetS_2, alpha0);
     
     std::cout << "dim = 1, " << estdim.GetDimension() << std::endl;
-    std::cout << "lo = 8, " << estdim.GetLowerScaleIdx() << std::endl;
-    std::cout << "hi = 32, " << estdim.GetUpperScaleIdx() << std::endl;
+    std::cout << "lo = 9, " << estdim.GetLowerScaleIdx() << std::endl;
+    std::cout << "hi = 33, " << estdim.GetUpperScaleIdx() << std::endl;
 
 
     // -------------------------------------
@@ -73,8 +73,8 @@ int main(int argc, char * argv[])
     estdim.EstimateDimensionality(Delta_60, NetS_60, alpha0);
     
     std::cout << "dim = 3, " << estdim.GetDimension() << std::endl;
-    std::cout << "dim = 0, " << estdim.GetLowerScaleIdx() << std::endl;
-    std::cout << "dim = 49, " << estdim.GetUpperScaleIdx() << std::endl;
+    std::cout << "lo = 1, " << estdim.GetLowerScaleIdx() << std::endl;
+    std::cout << "hi = 50, " << estdim.GetUpperScaleIdx() << std::endl;
 
     return 0;
 }

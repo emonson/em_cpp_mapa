@@ -120,10 +120,14 @@ for i_seed = 1:n_seeds,
         Nets_S(i_scale,:) = sigs;
     end
         
-    lStats = EstimateDimFromSpectra(Delta(i_seed,:)', Nets_S, opts.alpha0);
-    
+    lStats = EstimateDimFromSpectra(Delta(i_seed,:)', Nets_S, opts.alpha0, i_seed);
+    fprintf(1,'%.70f\n', opts.alpha0);
     estDims(i_seed) = lStats.DimEst;
     GoodScales(i_seed,:) = lStats.GoodScales;
+                if (i_seed == 2 || i_seed == 1 || i_seed == 60),
+                    disp(lStats.DimEst);
+                    disp(lStats.GoodScales);
+                end
     maxScale = GoodScales(i_seed,2);
     goodLocalRegions{i_seed} = nn_idxs(i_seed, 1:(opts.MinNetPts + (maxScale-1)*opts.nPtsPerScale));
     
