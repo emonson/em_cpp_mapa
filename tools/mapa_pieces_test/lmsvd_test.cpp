@@ -33,10 +33,12 @@ int main(int argc, char * argv[])
     
     opts.SetDefaults(X);
     
+    // std::cout << opts << std::endl;
+    
     MAPA::LMsvd lmsvd(X, opts);
     
     std::cout << "lmsvd" << std::endl;
-    std::cout << lmsvd.GetGoodLocalRegions() << std::endl;
+    // std::cout << lmsvd.GetGoodLocalRegions().at(0) << std::endl;
     std::cout << lmsvd.GetGoodSeedPoints() << std::endl;
     std::cout << lmsvd.GetEstimatedDims() << std::endl;
 

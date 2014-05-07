@@ -13,7 +13,6 @@ Duke University
 
 #include "Eigen/Dense"
 #include "mersenneTwister2002.h"
-#include <igl/slice.h>
 #include <igl/sort.h>
 #include <stdlib.h>
 #include "ANN.h"

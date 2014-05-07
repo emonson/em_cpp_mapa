@@ -12,9 +12,15 @@ Duke University
 */
 
 #include <Eigen/Core>
+#include <Eigen/SVD>
+
 #include <vector>
 #include <iostream>
+#include <cmath>
+
+#include <igl/slice.h>
 #include "Options.h"
+#include "NRsearch.h"
 
 using namespace Eigen;
 
@@ -25,7 +31,7 @@ class LMsvd {
 
 public:
 
-    LMsvd(const ArrayXXd &Xin, MAPA::Options opts)
+    LMsvd(const ArrayXXd &X, MAPA::Opts opts)
     {
         // n_seeds = numel(opts.seeds);
         int n_seeds = opts.seeds.size();
@@ -45,49 +51,90 @@ public:
         // ANN calc object
         MAPA::NRsearch ann(X);
     
-        ann.computeANN(seed_subset, maxKNN, eps);
+        ann.computeANN(opts.seeds, maxKNN, 0);
     
-        // std::cout << ann.GetIdxs() << std::endl;
-        // std::cout << ann.GetDistances() << std::endl;
-
+        ArrayXXi nn_idxs = ann.GetIdxs();
+        ArrayXXd statdists = ann.GetDistances();
         
-        
-        // 
         // % e.g. statdists(:, 4:2:102) which is [60x50], which is [n_seed_pts x opts.nScales]
         // % Miles: "Delta is the distance to the farthest neighbor used in that scale. 
         // %   so instead of thinking of the scale as a number of nearest neighbors in the data, 
         // %   we can think of it as a distance needed to collect that many neighbors."
         // Delta = statdists(:, opts.MinNetPts:opts.nPtsPerScale:maxKNN );
-        // 
-        // %%
-        // MSVD_Stats = zeros(n_seeds, D, opts.nScales);
+        
+        ArrayXi row_idxs, col_idxs;
+        ArrayXXd Delta;
+        
+        row_idxs.setLinSpaced(statdists.rows(), 0, statdists.rows()-1); 
+        col_idxs.setLinSpaced(opts.nScales, opts.MinNetPts-1, maxKNN-1);
+        
+        igl::slice( statdists, row_idxs, col_idxs, Delta );
+        
         // estDims = zeros(1, n_seeds);
         // GoodScales = zeros(n_seeds,2);
         // goodLocalRegions = cell(1,n_seeds);
-        // 
+        
+        ArrayXi estDims = ArrayXi::Zero(n_seeds);
+        ArrayXXd GoodScales = ArrayXXd::Zero(n_seeds,2);
+        std::vector<ArrayXi> goodLocalRegions;
+        
+        ArrayXXd Nets_S(opts.nScales, opts.D);
+        int Nets_count;
+        ArrayXi allXcols = ArrayXi::LinSpaced(X.cols(), 0, X.cols()-1);
+        ArrayXXd net, net_centered;
+        ArrayXd sigs;
+        ArrayXi seed_nn_idxs;
+        
         // for i_seed = 1:n_seeds,
-        //     
+        for (int i_seed = 0; i_seed < n_seeds; i_seed++)
+        {
+             
         //     Nets_S = zeros(opts.nScales, D);
-        //     
+            Nets_S.setZero();
+        
         //     for i_scale = 1:opts.nScales,
+            for (int i_scale = 0; i_scale < opts.nScales; i_scale++)
+            {
+            
         //         % We have a minimum number of points to go out from each seed, and then
         //         % are increasing the number of points with each scale
         //         Nets_count = opts.MinNetPts + (i_scale-1)*opts.nPtsPerScale;
-        // 
+                
+                // NOTE: i_scale already 0-based here, so no -1 !
+                Nets_count = opts.MinNetPts + (i_scale) * opts.nPtsPerScale;
+        
         //         % Grab NNidxs over all seed points up to a certain number of NN for
         //         % this scale
         //         % actual point coords for the NNs for this seed point and scale
         //         net = X( nn_idxs(i_seed, 1:Nets_count), :);
+                seed_nn_idxs = nn_idxs.row(i_seed);
+                igl::slice(X, seed_nn_idxs.head(Nets_count), allXcols, net);
+                
+                // *** FINE UP TO THIS POINT ** 
+                
         //         % center this set of net points and do an SVD to get the singular
         //         % values
         //         sigs = svd(net - repmat(mean(net,1), Nets_count, 1));
+                net_centered = net.rowwise() - net.colwise().mean();
+                std::cout << net_centered << std::endl << std::endl;
+                
+                // Eigen std SVD
+                Eigen::JacobiSVD<Eigen::MatrixXd> svd_std_e(net_centered, Eigen::ComputeThinU | Eigen::ComputeThinV);
+                sigs = svd_std_e.singularValues();
+
         //         % make into a row vector and normalize the singular values by the
         //         % sqrt of the number of net points
         //         sigs = sigs'/sqrt(Nets_count);
-        // 
+                sigs /= std::sqrt((double)Nets_count);
+                
         //         Nets_S(i_scale,:) = sigs;
+                Nets_S.row(i_scale) = sigs.transpose();
+                
         //     end
-        //         
+            }
+            
+            // std::cout << Nets_S << std::endl;
+            
         //     lStats = EstimateDimFromSpectra(Delta(i_seed,:)', Nets_S, opts.alpha0, i_seed);
         //     fprintf(1,'%.70f\n', opts.alpha0);
         //     estDims(i_seed) = lStats.DimEst;
@@ -98,9 +145,10 @@ public:
         //                 end
         //     maxScale = GoodScales(i_seed,2);
         //     goodLocalRegions{i_seed} = nn_idxs(i_seed, 1:(opts.MinNetPts + (maxScale-1)*opts.nPtsPerScale));
-        //     
+             
         // end
-        // 
+        }
+        
         // goodSeedPoints = (cellfun(@length, goodLocalRegions)>2*estDims & estDims<D);
         // 
         // goodLocalRegions = goodLocalRegions(goodSeedPoints);

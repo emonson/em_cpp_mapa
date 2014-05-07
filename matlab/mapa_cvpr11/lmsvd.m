@@ -92,7 +92,6 @@ maxKNN = opts.MinNetPts + opts.nPtsPerScale*(opts.nScales-1);
 Delta = statdists(:, opts.MinNetPts:opts.nPtsPerScale:maxKNN );
 
 %%
-MSVD_Stats = zeros(n_seeds, D, opts.nScales);
 estDims = zeros(1, n_seeds);
 GoodScales = zeros(n_seeds,2);
 goodLocalRegions = cell(1,n_seeds);
@@ -113,6 +112,7 @@ for i_seed = 1:n_seeds,
         % center this set of net points and do an SVD to get the singular
         % values
         sigs = svd(net - repmat(mean(net,1), Nets_count, 1));
+        disp(net - repmat(mean(net,1), Nets_count, 1));
         % make into a row vector and normalize the singular values by the
         % sqrt of the number of net points
         sigs = sigs'/sqrt(Nets_count);
@@ -122,6 +122,7 @@ for i_seed = 1:n_seeds,
         
     lStats = EstimateDimFromSpectra(Delta(i_seed,:)', Nets_S, opts.alpha0, i_seed);
     % DEBUG
+    % disp(Nets_S);
     % writeDMAT_binary(['artdat_rev1_lmsvd_mid_spectra' num2str(i_seed) '.dmat'], Nets_S);
 	% fprintf(1,'%.70f\n', opts.alpha0);
     % if (i_seed == 2 || i_seed == 1 || i_seed == 60),
