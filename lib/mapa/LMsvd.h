@@ -85,6 +85,7 @@ public:
         ArrayXXd net, net_centered;
         ArrayXd sigs;
         ArrayXi seed_nn_idxs;
+    		MAPA::EstimateDimFromSpectra estdim;
         
         // for i_seed = 1:n_seeds,
         for (int i_seed = 0; i_seed < n_seeds; i_seed++)
@@ -111,9 +112,7 @@ public:
         //         net = X( nn_idxs(i_seed, 1:Nets_count), :);
                 seed_nn_idxs = nn_idxs.row(i_seed);
                 igl::slice(X, seed_nn_idxs.head(Nets_count), allXcols, net);
-                
-                // *** FINE UP TO THIS POINT ** 
-                
+                                
         //         % center this set of net points and do an SVD to get the singular
         //         % values
         //         sigs = svd(net - repmat(mean(net,1), Nets_count, 1));
@@ -128,31 +127,30 @@ public:
         //         sigs = sigs'/sqrt(Nets_count);
                 sigs /= Nets_count_sqrt;
                 
-                std::cout << i_seed << " " << i_scale << std::endl;
-                std::cout << sigs.transpose() << std::endl << std::endl;
-                
         //         Nets_S(i_scale,:) = sigs;
                 Nets_S.row(i_scale) = sigs.transpose();
                 
         //     end
             }
-            
-            // std::cout << Nets_S << std::endl;
-            
+        
+                // *** FINE UP TO THIS POINT ** 
+
         //     lStats = EstimateDimFromSpectra(Delta(i_seed,:)', Nets_S, opts.alpha0, i_seed);
-        //     fprintf(1,'%.70f\n', opts.alpha0);
+        		estdim.EstimateDimensionality( Delta.row(i_seed), Nets_S, opts.alpha0);
+        		
         //     estDims(i_seed) = lStats.DimEst;
         //     GoodScales(i_seed,:) = lStats.GoodScales;
-        //                 if (i_seed == 2 || i_seed == 1 || i_seed == 60),
-        //                     disp(lStats.DimEst);
-        //                     disp(lStats.GoodScales);
-        //                 end
         //     maxScale = GoodScales(i_seed,2);
         //     goodLocalRegions{i_seed} = nn_idxs(i_seed, 1:(opts.MinNetPts + (maxScale-1)*opts.nPtsPerScale));
-             
+        		estDims(i_seed) = estdim.GetDimension();
+						GoodScales(i_seed,0) = estdim.GetLowerScaleIdx(); // NOTE: Matlab 1s-based now!!!             
+						GoodScales(i_seed,1) = estdim.GetUpperScaleIdx(); // NOTE: Matlab 1s-based now!!!      
+						       
         // end
         }
-        
+
+				std::cout << estDims.transpose() << std::endl;
+
         // goodSeedPoints = (cellfun(@length, goodLocalRegions)>2*estDims & estDims<D);
         // 
         // goodLocalRegions = goodLocalRegions(goodSeedPoints);

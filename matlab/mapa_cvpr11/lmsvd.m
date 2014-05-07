@@ -115,12 +115,13 @@ for i_seed = 1:n_seeds,
         % make into a row vector and normalize the singular values by the
         % sqrt of the number of net points
         sigs = sigs'/sqrt(Nets_count);
-        disp([i_seed i_scale]);
-        disp(sigs);
 
         Nets_S(i_scale,:) = sigs;
     end
         
+%     disp([i_seed i_scale]);
+%     disp(Nets_S);
+    
     lStats = EstimateDimFromSpectra(Delta(i_seed,:)', Nets_S, opts.alpha0, i_seed);
     % DEBUG
     % disp(Nets_S);
@@ -136,6 +137,8 @@ for i_seed = 1:n_seeds,
     goodLocalRegions{i_seed} = nn_idxs(i_seed, 1:(opts.MinNetPts + (maxScale-1)*opts.nPtsPerScale));
     
 end
+
+disp(estDims);
 
 goodSeedPoints = (cellfun(@length, goodLocalRegions)>2*estDims & estDims<D);
 
