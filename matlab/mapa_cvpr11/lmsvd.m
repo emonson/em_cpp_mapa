@@ -112,10 +112,11 @@ for i_seed = 1:n_seeds,
         % center this set of net points and do an SVD to get the singular
         % values
         sigs = svd(net - repmat(mean(net,1), Nets_count, 1));
-        disp(net - repmat(mean(net,1), Nets_count, 1));
         % make into a row vector and normalize the singular values by the
         % sqrt of the number of net points
         sigs = sigs'/sqrt(Nets_count);
+        disp([i_seed i_scale]);
+        disp(sigs);
 
         Nets_S(i_scale,:) = sigs;
     end

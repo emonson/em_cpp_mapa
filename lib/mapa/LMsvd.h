@@ -80,6 +80,7 @@ public:
         
         ArrayXXd Nets_S(opts.nScales, opts.D);
         int Nets_count;
+        double Nets_count_sqrt;
         ArrayXi allXcols = ArrayXi::LinSpaced(X.cols(), 0, X.cols()-1);
         ArrayXXd net, net_centered;
         ArrayXd sigs;
@@ -102,6 +103,7 @@ public:
                 
                 // NOTE: i_scale already 0-based here, so no -1 !
                 Nets_count = opts.MinNetPts + (i_scale) * opts.nPtsPerScale;
+                Nets_count_sqrt = std::sqrt((double)Nets_count);
         
         //         % Grab NNidxs over all seed points up to a certain number of NN for
         //         % this scale
@@ -116,7 +118,6 @@ public:
         //         % values
         //         sigs = svd(net - repmat(mean(net,1), Nets_count, 1));
                 net_centered = net.rowwise() - net.colwise().mean();
-                std::cout << net_centered << std::endl << std::endl;
                 
                 // Eigen std SVD
                 Eigen::JacobiSVD<Eigen::MatrixXd> svd_std_e(net_centered, Eigen::ComputeThinU | Eigen::ComputeThinV);
@@ -125,7 +126,10 @@ public:
         //         % make into a row vector and normalize the singular values by the
         //         % sqrt of the number of net points
         //         sigs = sigs'/sqrt(Nets_count);
-                sigs /= std::sqrt((double)Nets_count);
+                sigs /= Nets_count_sqrt;
+                
+                std::cout << i_seed << " " << i_scale << std::endl;
+                std::cout << sigs.transpose() << std::endl << std::endl;
                 
         //         Nets_S(i_scale,:) = sigs;
                 Nets_S.row(i_scale) = sigs.transpose();
