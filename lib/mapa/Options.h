@@ -56,7 +56,7 @@ Duke University
     values should be set. After that, run .SetDefaults(X) to set the rest of the
     values to natural defaults depending on the data. X is [N, D] */
     
-#include "Eigen/Dense"
+#include <Eigen/Core>
 #include <math.h>
 #include <string>
 #include <iostream>
