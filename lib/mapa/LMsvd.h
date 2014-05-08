@@ -68,12 +68,14 @@ public:
         allGoodScales = ArrayXXi::Zero(n_seeds,2);
 
         ArrayXXd Nets_S(opts.nScales, opts.D);
-        int Nets_count;
+        int Nets_count, maxScale, seed_est_dim;
         double Nets_count_sqrt;
         ArrayXi allXcols = ArrayXi::LinSpaced(X.cols(), 0, X.cols()-1);
         ArrayXXd net, net_centered;
         ArrayXd sigs;
-        ArrayXi seed_nn_idxs;
+        ArrayXi seed_nn_idxs, seed_local_region;
+        ArrayXi isSeedPointGood(n_seeds);
+        
         MAPA::EstimateDimFromSpectra estdim;
         
         for (int i_seed = 0; i_seed < n_seeds; i_seed++)
@@ -114,21 +116,40 @@ public:
             // GoodScales(i_seed,:) = lStats.GoodScales;
             // maxScale = GoodScales(i_seed,2);
             // goodLocalRegions{i_seed} = nn_idxs(i_seed, 1:(opts.MinNetPts + (maxScale-1)*opts.nPtsPerScale));
-            allEstDims(i_seed) = estdim.GetDimension();
+            seed_est_dim = estdim.GetDimension();
+            allEstDims(i_seed) = seed_est_dim;
             allGoodScales(i_seed,0) = estdim.GetLowerScaleIdx(); // NOTE: Matlab 1s-based now!!!             
             allGoodScales(i_seed,1) = estdim.GetUpperScaleIdx(); // NOTE: Matlab 1s-based now!!!  
 
                 // *** FINE UP TO THIS POINT ** 
 
-            int maxScale = allGoodScales(i_seed,1);
-            goodLocalRegions.push_back(nn_idxs.row(i_seed).head(opts.MinNetPts + (maxScale-1)*opts.nPtsPerScale));
+            maxScale = allGoodScales(i_seed,1);
+            seed_local_region = nn_idxs.row(i_seed).head(opts.MinNetPts + (maxScale-1)*opts.nPtsPerScale);
+            allLocalRegions.push_back(seed_local_region);
+            
+            isSeedPointGood(i_seed) = (int)(seed_local_region.size() > (2 * seed_est_dim)) && (seed_est_dim < opts.D);
+            if (isSeedPointGood(i_seed))
+            {
+            	goodLocalRegions.push_back(seed_local_region);
+            } 
         }
-
-        // goodSeedPoints = (cellfun(@length, goodLocalRegions)>2*estDims & estDims<D);
-
-        // goodLocalRegions = goodLocalRegions(goodSeedPoints);
         // estDims = estDims(goodSeedPoints);
         // goodSeedPoints = opts.seeds(goodSeedPoints);
+        
+        // TODO: Maybe can do this with some boolean indexing?
+        int n_good_seeds = isSeedPointGood.sum();
+        estDims = ArrayXi::Zero(n_good_seeds);
+        goodSeedPoints = ArrayXi::Zero(n_good_seeds);
+        int jj = 0;
+        for (int ii = 0; ii < n_seeds; ii++)
+        {
+        	if (isSeedPointGood(ii))
+        	{
+        		estDims(jj) = allEstDims(ii);
+        		goodSeedPoints(jj) = opts.seeds(ii);
+        		jj++;
+        	}
+        }
     };
 
     std::vector<ArrayXi> GetGoodLocalRegions()
