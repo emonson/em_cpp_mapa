@@ -24,7 +24,7 @@ int main(int argc, char * argv[])
     igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_lmsvd_allgoodscales.dmat", AllGoodScales );
 
     // Read in real lmsvd all est dims
-    Eigen::ArrayXi AllEstDims;
+    Eigen::ArrayXXi AllEstDims;
     std::cout << "Reading in Artifical test data (rev1) matlab-generated EstDims" << std::endl;
     igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_lmsvd_allestdims.dmat", AllEstDims );
 

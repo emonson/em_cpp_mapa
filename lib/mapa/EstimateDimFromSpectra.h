@@ -117,7 +117,8 @@ public:
                         break;
                     }
                 }
-                
+                upperScaleIdx = upperScaleIdx - 1;
+
                 // Only compute gap after first iteration
                 if (dim < nDims)
                 {
