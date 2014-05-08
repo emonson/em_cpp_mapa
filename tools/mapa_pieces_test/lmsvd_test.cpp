@@ -1,6 +1,8 @@
 #include <Eigen/Core>
 #include <igl/readDMAT.h>
+#include <igl/cat.h>
 #include <iostream>
+#include <vector>
 #include "Options.h"
 #include "EstimateDimFromSpectra.h"
 #include "LMsvd.h"
@@ -28,6 +30,11 @@ int main(int argc, char * argv[])
     std::cout << "Reading in Artifical test data (rev1) matlab-generated EstDims" << std::endl;
     igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_lmsvd_allestdims.dmat", AllEstDims );
 
+    // Read in good seed ponits
+    Eigen::ArrayXi GoodSeedPoints;
+    std::cout << "Reading in Artifical test data (rev1) matlab-generated EstDims" << std::endl;
+    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_lmsvd_out_goodseeds.dmat", GoodSeedPoints );
+
     // NOTE: seeds is matlab-style 1s index!!
     seeds -= 1;
     
@@ -47,15 +54,41 @@ int main(int argc, char * argv[])
     MAPA::LMsvd lmsvd(X, opts);
     
     MatrixXi scales_comparison;
-    int largest_dim = AllGoodScales.rows() > lmsvd.GetAllGoodScales().rows() ? AllGoodScales.rows() : lmsvd.GetAllGoodScales().rows();
-    scales_comparison.resize(largest_dim, 4);
-    scales_comparison << AllGoodScales.matrix(), lmsvd.GetAllGoodScales().matrix();
+    igl::cat(2, AllGoodScales.matrix(), lmsvd.GetAllGoodScales().matrix(), scales_comparison);
     
     std::cout << "lmsvd" << std::endl;
     std::cout << scales_comparison << std::endl << std::endl;
     
+    std::cout << "estimated dimensionalities" << std::endl;
     std::cout << AllEstDims << std::endl << std::endl;
     std::cout << lmsvd.GetAllEstimatedDims().transpose() << std::endl << std::endl;
+    
+    std::cout << "good seed points (1st matlab, which are 1s-based" << std::endl;
+    std::cout << GoodSeedPoints.transpose() << std::endl;
+    std::cout << lmsvd.GetGoodSeedPoints().transpose() << std::endl << std::endl;
+
+    // http://stackoverflow.com/questions/409348/iteration-over-vector-in-c
+    // 
+    // Using std::vector
+    // 
+    // Using iterators
+    // 
+    // for(std::vector<T>::iterator it = v.begin(); it != v.end(); ++it) {
+    //     /* std::cout << *it; ... */
+    // }
+    // 
+    // Using indices
+    // 
+    // for(std::vector<int>::size_type i = 0; i != v.size(); i++) {
+    //     /* std::cout << someVector[i]; ... */
+    // }
+    
+    std::vector<ArrayXi> goodRegions = lmsvd.GetGoodLocalRegions();
+    
+    for (std::vector<ArrayXi>::iterator it = goodRegions.begin(); it != goodRegions.end(); ++it)
+    {
+        // std::cout << "- " << (*it).transpose() << std::endl;
+    }
 
     return 0;
 }

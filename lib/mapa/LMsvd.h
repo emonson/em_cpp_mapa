@@ -133,19 +133,17 @@ public:
             	goodLocalRegions.push_back(seed_local_region);
             } 
         }
-        // estDims = estDims(goodSeedPoints);
-        // goodSeedPoints = opts.seeds(goodSeedPoints);
-        
+
         // TODO: Maybe can do this with some boolean indexing?
         int n_good_seeds = isSeedPointGood.sum();
-        estDims = ArrayXi::Zero(n_good_seeds);
+        goodEstDims = ArrayXi::Zero(n_good_seeds);
         goodSeedPoints = ArrayXi::Zero(n_good_seeds);
         int jj = 0;
         for (int ii = 0; ii < n_seeds; ii++)
         {
         	if (isSeedPointGood(ii))
         	{
-        		estDims(jj) = allEstDims(ii);
+        		goodEstDims(jj) = allEstDims(ii);
         		goodSeedPoints(jj) = opts.seeds(ii);
         		jj++;
         	}
@@ -162,9 +160,9 @@ public:
         return goodSeedPoints;
     };
     
-    ArrayXi GetEstimatedDims()
+    ArrayXi GetGoodEstimatedDims()
     {
-        return estDims;
+        return goodEstDims;
     };
     
     ArrayXi GetAllEstimatedDims()
@@ -182,7 +180,7 @@ private:
 
     std::vector<ArrayXi> goodLocalRegions;
     ArrayXi goodSeedPoints;
-    ArrayXi estDims;
+    ArrayXi goodEstDims;
     
     // Results before filtering out seeds with high-D or not enough neighbors
     std::vector<ArrayXi> allLocalRegions;
