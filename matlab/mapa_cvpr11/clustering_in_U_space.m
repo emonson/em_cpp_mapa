@@ -1,4 +1,5 @@
 function indicesKmeans = clustering_in_U_space(U,K,opts)
+% will cluster the rows of U (same number as the rows of A)
 
 REX = 1;
 
@@ -47,7 +48,7 @@ end
 
 if REX,
     [~, indicesKmeans] = KMeansRex(U, K, 100, 'mapa');
-    % 
+    % This is a C++ routine that has 0-based indices, so add one here
     indicesKmeans = indicesKmeans + 1;
 end
 

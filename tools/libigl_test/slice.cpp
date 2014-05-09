@@ -13,6 +13,7 @@ using namespace std;
 #include <stdio.h>		/* srand */
 
 #include <igl/slice.h>
+#include <igl/slice_into.h>
 #include <igl/speye.h>
 #include <igl/print_ijv.h>
 using namespace igl;
@@ -65,6 +66,31 @@ int main(int argc, char * argv[])
   m = (m.array() < 3).select(0,m);
   cout << m << endl;
   cout << (m.array() < 3) << endl;
+
+  // inv row map
+  // number of original data points
+  int N = 10;
+  VectorXi allPtsInOptRegions(4);
+  allPtsInOptRegions << 2, 3, 5, 9;
+  
+  int n = allPtsInOptRegions.size();
+  VectorXi optPtsIdxs = VectorXi::LinSpaced(n, 0, n-1);
+  VectorXi invRowMap = VectorXi::Constant(N,-1);
+  
+  // invRowMap(allPtsInOptRegions) = 0:(n-1) (= optPtsIdxs)
+  igl::slice_into(optPtsIdxs, allPtsInOptRegions, invRowMap);
+  
+  std::cout << std::endl << "slice_into" << std::endl;
+  std::cout << allPtsInOptRegions << std::endl;
+  std::cout << invRowMap.transpose() << std::endl;
+  
+  // create out of sample using slice
+  // piece = doubles(allPtsInOptRegions);
+  VectorXi doubles = VectorXi::LinSpaced(N, 0, 18);
+  VectorXi zeroIdx = VectorXi::Zero(1);
+  VectorXi piece;
+  slice(doubles, allPtsInOptRegions, piece);
+  std::cout << piece.transpose() << std::endl;
 
   return 0;
 }

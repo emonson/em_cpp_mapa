@@ -119,26 +119,14 @@ for i_seed = 1:n_seeds,
         Nets_S(i_scale,:) = sigs;
     end
         
-%     disp([i_seed i_scale]);
-%     disp(Nets_S);
-    
     lStats = EstimateDimFromSpectra(Delta(i_seed,:)', Nets_S, opts.alpha0, i_seed);
-    % DEBUG
-    % disp(Nets_S);
-    % writeDMAT_binary(['artdat_rev1_lmsvd_mid_spectra' num2str(i_seed) '.dmat'], Nets_S);
-	% fprintf(1,'%.70f\n', opts.alpha0);
-    % if (i_seed == 2 || i_seed == 1 || i_seed == 60),
-    %     disp(lStats.DimEst);
-    %     disp(lStats.GoodScales);
-    % end
+
     estDims(i_seed) = lStats.DimEst;
     GoodScales(i_seed,:) = lStats.GoodScales;
     maxScale = GoodScales(i_seed,2);
     goodLocalRegions{i_seed} = nn_idxs(i_seed, 1:(opts.MinNetPts + (maxScale-1)*opts.nPtsPerScale));
     
 end
-
-disp(estDims);
 
 goodSeedPoints = (cellfun(@length, goodLocalRegions)>2*estDims & estDims<D);
 
@@ -182,6 +170,7 @@ if opts.showSpectrum > 0
         
         figure;
         hold on
+        % TODO: refactored MSVD_Stats out...
         sigs = (squeeze(MSVD_Stats(seed_idx,:,:)))';
         for dim = 1:D
             plot(Delta(seed_idx,:),sigs(:,dim), 'v-')

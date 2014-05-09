@@ -31,9 +31,9 @@ function [labels, planeDims, MoreOutput] = mapa(X,opts)
 %       .nPtsPerScale: number of points per scale.
 %            Default = min(N/5,50*.dmax*log(.dmax)) / .nScales
 %       .isLinear: 1 (all linear subspaces), 0 (otherwise). Default = 0
-%       .discardRows: percentage of bad rows of the matrix A to be discarded 
+%       .discardRows: fraction of bad rows of the matrix A to be discarded 
 %            (default = 0)
-%       .discardCols: percentage of bad columns of A to be discarded 
+%       .discardCols: fraction of bad columns of A to be discarded 
 %            (default = 0)
 %       .nOutliers: number of outliers (if >=1), or percentage (if <1)
 %            (default=0)
@@ -202,14 +202,17 @@ end
 
 %% linear multiscale svd analysis
 [optLocRegions, seeds, localDims] = lmsvd(X, opts);
-n0 = numel(seeds); % Returned seed points could be fewer, because bad ones are thrown away in lmsvd.
+% Returned seed points could be fewer, because bad ones are thrown away in lmsvd.
+% localdims is the same length as seeds
+n0 = numel(seeds); 
 
-allPtsInOptRegions = 1:N;
-flags = zeros(1,N); flags([optLocRegions{:}]) = 1;
-allPtsInOptRegions = allPtsInOptRegions(flags>0);
+% allPtsInOptRegions are point indices
+allPtsInOptRegions = unique([optLocRegions{:}]);
 
 n = numel(allPtsInOptRegions);
 
+% Maps indices of original data points to indices of allPtsInOptRegions,
+% which will also be indices of the rows of A in a bit.
 invRowMap = zeros(1,N);
 invRowMap(allPtsInOptRegions) = 1:n;
 
@@ -229,18 +232,18 @@ for i = 1:n0
     n_i = numel(R_i);
     
     if opts.isLinear
-        X_c = X(allPtsInOptRegions,:);
+        X_c = X;
     else
         ctr = mean(X(R_i,:), 1);
-        X_c = X(allPtsInOptRegions,:)- repmat(ctr, n, 1);
+        X_c = X - repmat(ctr, N, 1);
     end
     
-    [~,s,v] = svd(X_c(invRowMap(R_i),:),0);
+    [~,s,v] = svd(X_c(R_i,:),0);
     s = diag(s); % local singular values
     
     eps(i) = sum(s(localDims(i)+1:end).^2) / (n_i-1); % local approximation error
     
-    heights(:,i) = (sum(X_c.^2,2)-sum((X_c*v(:,1:localDims(i))).^2,2)) / (2*eps(i));
+    heights(:,i) = (sum(X_c(allPtsInOptRegions,:).^2,2)-sum((X_c(allPtsInOptRegions,:)*v(:,1:localDims(i))).^2,2)) / (2*eps(i));
     
     if nargout>2,
         if ~opts.isLinear,
@@ -278,9 +281,11 @@ if opts.discardCols > 0
         MoreOutput.localSigs = MoreOutput.localSigs(goodCols);
     end
     
-    allPtsInOptRegions = 1:N;
-    flags = zeros(1,N); flags([optLocRegions{:}]) = 1;
-    allPtsInOptRegions = allPtsInOptRegions(flags>0);
+    % When we throw away columns, we are throwing away seed points, and
+    % when we throw away seed points, we throw away data points that were
+    % in the optimal local regions of those seed points, so that gets rid
+    % of rows of A as well.
+    allPtsInOptRegions = unique([optLocRegions{:}]);
     
     A = A(invRowMap(allPtsInOptRegions), goodCols);
     if opts.plotFigs
@@ -291,6 +296,8 @@ if opts.discardCols > 0
     
 end
 
+% Maps the indices of the original data set to indices of the seed points,
+% which are also the indices of the columns of A
 invColMap = zeros(1,N);
 invColMap(seeds) = 1:n0;
 
@@ -433,9 +440,13 @@ indicesKmeans = clustering_in_U_space(U,K,SCCopts);
 
 planeDims = zeros(1,K);
 for k = 1:K
+    % Find the original point indices of the rows of A/U in this cluster
     class_k = allPtsInOptRegions(indicesKmeans == k);
+    % Figure out which of these points are seed points
     temp = invColMap(class_k);  
     temp = temp(temp>0);
+    % Then see what dimensionality most of these seed points in this
+    % cluster have
     planeDims(k) = mode(localDims(temp));
 end
 

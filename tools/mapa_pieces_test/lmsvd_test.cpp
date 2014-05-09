@@ -3,6 +3,7 @@
 #include <igl/cat.h>
 #include <iostream>
 #include <vector>
+#include <string>
 #include "Options.h"
 #include "EstimateDimFromSpectra.h"
 #include "LMsvd.h"
@@ -63,7 +64,7 @@ int main(int argc, char * argv[])
     std::cout << AllEstDims << std::endl << std::endl;
     std::cout << lmsvd.GetAllEstimatedDims().transpose() << std::endl << std::endl;
     
-    std::cout << "good seed points (1st matlab, which are 1s-based" << std::endl;
+    std::cout << "good seed points (1st matlab, which are 1s-based)" << std::endl;
     std::cout << GoodSeedPoints.transpose() << std::endl;
     std::cout << lmsvd.GetGoodSeedPoints().transpose() << std::endl << std::endl;
 
@@ -85,9 +86,20 @@ int main(int argc, char * argv[])
     
     std::vector<ArrayXi> goodRegions = lmsvd.GetGoodLocalRegions();
     
+    int file_idx = 1;
+    std::stringstream locreg_file;
+    ArrayXXi matGoodLocalRegion;
+    std::cout << "good local regions (NN idxs -- 1st matlab, which are 1s-based)" << std::endl;
     for (std::vector<ArrayXi>::iterator it = goodRegions.begin(); it != goodRegions.end(); ++it)
     {
-        // std::cout << "- " << (*it).transpose() << std::endl;
+        // std::cout << "Reading in seed " << i_seed << " spectra for test data (rev1)" << std::endl;
+        locreg_file.str("");
+        locreg_file << "/Users/emonson/Programming/em_cpp_mapa/data/lmsvd_out/artdat_rev1_lmsvd_out_goodlocreg_" << file_idx << ".dmat";
+        igl::readDMAT( locreg_file.str().c_str(), matGoodLocalRegion);
+        std::cout << "* " << matGoodLocalRegion << std::endl;
+        file_idx++;
+        
+        std::cout << "- " << (*it).transpose() << std::endl;
     }
 
     return 0;
