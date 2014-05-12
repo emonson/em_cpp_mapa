@@ -81,16 +81,29 @@ int main(int argc, char * argv[])
   igl::slice_into(optPtsIdxs, allPtsInOptRegions, invRowMap);
   
   std::cout << std::endl << "slice_into" << std::endl;
-  std::cout << allPtsInOptRegions << std::endl;
+  std::cout << allPtsInOptRegions.transpose() << std::endl;
   std::cout << invRowMap.transpose() << std::endl;
   
   // create out of sample using slice
-  // piece = doubles(allPtsInOptRegions);
-  VectorXi doubles = VectorXi::LinSpaced(N, 0, 18);
-  VectorXi zeroIdx = VectorXi::Zero(1);
+  // piece = randints(allPtsInOptRegions);
+  VectorXi randints = (50.0 * ArrayXd::Random(N)).cast<int>();
   VectorXi piece;
-  slice(doubles, allPtsInOptRegions, piece);
+  slice(randints, allPtsInOptRegions, piece);
+
+  std::cout << std::endl << "create by slice" << std::endl;
+  std::cout << randints.transpose() << std::endl;
   std::cout << piece.transpose() << std::endl;
+
+  // create out of sample using slice
+  // m_piece = m_randints(:,allPtsInOptRegions);
+  // 2 is the 2nd (col) direction. 1 would be rows
+  MatrixXi m_randints = (50.0 * ArrayXXd::Random(5,N)).cast<int>();
+  MatrixXi m_piece;
+  slice(m_randints, allPtsInOptRegions, 2, m_piece);
+
+  std::cout << std::endl << "create by slice" << std::endl;
+  std::cout << m_randints << std::endl;
+  std::cout << m_piece << std::endl;
 
   return 0;
 }

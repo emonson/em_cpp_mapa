@@ -11,11 +11,15 @@ Duke University
 
 */
 
-#include "Eigen/Dense"
+#include <Eigen/Core>
 #include "mersenneTwister2002.h"
-#include <igl/sort.h>
-#include <stdlib.h>
 #include "ANN.h"
+#include <igl/sort.h>
+
+#include <stdlib.h>
+#include <iostream>
+#include <vector>
+#include <set>
 
 using namespace Eigen;
 
@@ -81,6 +85,30 @@ class UtilityCalcs {
 				igl::sort(Xidxs, 1, ascending, Yidxs, IX);
 				return Yidxs;
 			}
+    };
+
+    static ArrayXi UniqueMembers(const std::vector<ArrayXi> neighborhoods)
+    {
+        // Actually find unique members by adding them to a set
+        std::set<int> unique_members;
+        for (std::vector<int>::size_type ii = 0; ii != neighborhoods.size(); ii++)
+        {
+            int *nb = (int*)neighborhoods[ii].data();
+            int nb_size = neighborhoods[ii].size();
+            unique_members.insert(nb, nb+nb_size);
+        }
+        
+        // Copy values over into an Eigen array
+        ArrayXi unique_array(unique_members.size());
+        std::set<int>::iterator it;
+        int ii = 0;
+        for (it = unique_members.begin(); it != unique_members.end(); ++it)
+        {
+            unique_array(ii) = *it;
+            ii++;
+        }
+
+        return unique_array;
     };
 
    

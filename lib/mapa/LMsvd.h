@@ -21,6 +21,7 @@ Duke University
 #include <igl/slice.h>
 #include "Options.h"
 #include "NRsearch.h"
+#include "EstimateDimFromSpectra.h"
 
 using namespace Eigen;
 
