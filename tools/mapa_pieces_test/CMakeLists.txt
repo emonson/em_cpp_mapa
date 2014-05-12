@@ -9,6 +9,9 @@ ADD_EXECUTABLE(opts_test opts_test.cpp)
 ADD_EXECUTABLE(randsample_test randsample_test.cpp)
 ADD_EXECUTABLE(estdim_test estdim_test.cpp)
 
+ADD_EXECUTABLE(mapa_test mapa_test.cpp)
+TARGET_LINK_LIBRARIES(mapa_test myann)
+
 ADD_EXECUTABLE(lmsvd_test lmsvd_test.cpp)
 TARGET_LINK_LIBRARIES(lmsvd_test myann)
 
