@@ -4,8 +4,9 @@
 #include <Eigen/Sparse>
 using namespace Eigen;
 
-#include <cstdio>
+#include <cmath>
 #include <iostream>
+#include <ptr_fun>
 using namespace std;
 
 #include <stdlib.h>		/* NULL */
@@ -66,6 +67,15 @@ int main(int argc, char * argv[])
   m = (m.array() < 3).select(0,m);
   cout << m << endl;
   cout << (m.array() < 3) << endl;
+  
+  // Replace NaNs with finite value
+  MatrixXd h(1,5);
+  h << 0.5, 0.25, 0, -0.25, -0.5, INFINITY, nan("");
+  ArrayXd Aexp = (-1.0 * h.array().abs()).exp();
+  std::cout << std::endl << "exp array" << std::endl;
+  std::cout << Aexp.transpose() << std::endl;
+  h = (h.array().unaryExpr(std::ptr_fun(std::isfinite))).select(100,h);
+  std::cout << h.transpose() << std::endl;
 
   // inv row map
   // number of original data points

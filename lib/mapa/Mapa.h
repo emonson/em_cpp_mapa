@@ -163,6 +163,7 @@ public:
         ArrayXd eps = ArrayXd::Zero(n0);
 
         // for i = 1:n0
+        int ii = 0;
         for (std::vector<ArrayXi>::iterator it = optLocRegions.begin(); it != optLocRegions.end(); ++it)
         {
             // R_i = optLocRegions{i}; % indices of points in the current local region
@@ -177,6 +178,7 @@ public:
             //     X_c = X - repmat(ctr, N, 1);
             // end
             ArrayXXd X_c;
+            ArrayXXd X_loc;
             if (opts.isLinear)
             {
                 X_c = X;
@@ -185,29 +187,56 @@ public:
             {
                 // Default
                 // NOTE: more extra copies than we need...
-                ArrayXXd X_loc;
                 // X_loc = X(R_i,:)
                 igl::slice(X, R_i, 1, X_loc);
                 ArrayXd ctr = X_loc.colwise().mean();
                 X_c = X.rowwise() - ctr.transpose();
             }
-            
-            // ** OKAY TO HERE **
-            
+                        
             // [~,s,v] = svd(X_c(R_i,:),0);
             // s = diag(s); % local singular values
-            // 
+            
+            // X_loc = X_c(R_i,:)
+            igl::slice(X_c, R_i, 1, X_loc);
+            // Eigen std SVD
+            JacobiSVD<MatrixXd> svd(X_loc, Eigen::ComputeThinU | Eigen::ComputeThinV);
+            ArrayXd s = svd.singularValues();
+
+            int loc_dim = localDims(ii);
+            
             // eps(i) = sum(s(localDims(i)+1:end).^2) / (n_i-1); % local approximation error
-            // 
+            int num_noisy_dims = s.size() - (loc_dim + 1) + 1;
+            eps(ii) = (s.tail(num_noisy_dims).square() / (n_i - 1)).sum();
+            
+            ArrayXXd X_c_allOptPts;
+            // X_c_allOptPts = X_c(allPtsInOptRegions,:)
+            igl::slice(X_c, allPtsInOptRegions, 1, X_c_allOptPts);
+            MatrixXd v = svd.matrixV();
+            // v_good = v0(:,1:localDims(i))
+            MatrixXd v_good = v.leftCols(loc_dim);
             // heights(:,i) = (sum(X_c(allPtsInOptRegions,:).^2,2)-sum((X_c(allPtsInOptRegions,:)*v(:,1:localDims(i))).^2,2)) / (2*eps(i));
-            //     
+            heights.col(ii) = ( X_c_allOptPts.array().square().rowwise().sum() - (X_c_allOptPts.matrix() * v_good).array().square().rowwise().sum() ) / (2 * eps(ii));
+            
+            ii++;
+                 
         // end
         }
-        
+                
         // A = exp(-abs(heights)); 
         // A(isnan(A)) = 1;
-        // 
-        // 
+        
+        ArrayXXd A = (-1.0 * heights.abs()).exp();
+        // TODO: Can probably find a slicker way of doing this NaN check...
+        for (int ii = 0; ii < A.size(); ii++)
+        {
+            if (isnan(A(ii)))
+            {
+                A(ii) = 1.0;
+            }
+        }
+
+            // ** OKAY TO HERE **
+
         // %% discarding bad rows and columns
         // if opts.discardCols > 0
         //     
