@@ -29,6 +29,8 @@ int main(int argc, char * argv[])
     opts.dmax = aSubDims.maxCoeff();
     opts.Kmax = 2*K;
     opts.seeds = seeds;
+    opts.discardCols = 0.2;
+    opts.discardRows = 0.2;
     
     opts.SetDefaults(X);
         

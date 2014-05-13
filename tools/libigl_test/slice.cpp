@@ -6,7 +6,7 @@ using namespace Eigen;
 
 #include <cmath>
 #include <iostream>
-#include <ptr_fun>
+// #include <ptr_fun>
 using namespace std;
 
 #include <stdlib.h>		/* NULL */
@@ -74,7 +74,7 @@ int main(int argc, char * argv[])
   ArrayXd Aexp = (-1.0 * h.array().abs()).exp();
   std::cout << std::endl << "exp array" << std::endl;
   std::cout << Aexp.transpose() << std::endl;
-  h = (h.array().unaryExpr(std::ptr_fun(std::isfinite))).select(100,h);
+  // h = (h.array().unaryExpr(std::ptr_fun(std::isfinite))).select(100,h);
   std::cout << h.transpose() << std::endl;
 
   // inv row map

@@ -11,44 +11,44 @@ Duke University
 
 */
 
-// %   opts: a structure of the following optional parameters:
-// %
-// %       .dmax: upper bound on plane dimensions (default = D-1)
-// %       .K: number of planes in the model; 
-// %            if unknown, then provide an upper bound .Kmax (see below)
-// %       .Kmax: upper bound on the number of planes (default = 10)
-// %            This field is not needed when .K is provided.
-// %       .alpha0: cutoff slope for distinguishing tangential singular values 
-// %            from noise ones. Default = 0.3/sqrt(.dmax).
-// %       .n0: sampling parameter. Default = 20*.Kmax or 20*.K 
-// %            (depending on which is provided). Multiscale SVD analysis
-// %            will be performed at n0 randomly selected locations.  
-// %       .seeds: sampled points around which MSVD analysis is performed. 
-// %            If provided, its length should equal to .n0;
-// %            If not provided, it equals randsample(N, .n0) 
-// %       .MinNetPts: first scale (in terms of number of points).
-// %            Default=.dmax+2
-// %       .nScales: number of scales used in MSVD (default = 50)
-// %       .nPtsPerScale: number of points per scale.
-// %            Default = min(N/5,50*.dmax*log(.dmax)) / .nScales
-// %       .isLinear: 1 (all linear subspaces), 0 (otherwise). Default = 0
-// %       .discardRows: percentage of bad rows of the matrix A to be discarded 
-// %            (default = 0)
-// %       .discardCols: percentage of bad columns of A to be discarded 
-// %            (default = 0)
-// %       .nOutliers: number of outliers (if >=1), or percentage (if <1) **NOTE: not supporting percentage for now...
-// %            (default=0) 
-// %       .averaging: 'L1' or 'L2'(default) mean of the local errors, which is
-// %            referred to as the tolerance (tau) in the CVPR paper
-// %       .plotFigs: whether or not to show the figures such as pointwise
-// %            dimension estimates, their optimal scales, the affinity
-// %            matrix A, and the model selection curve (for K)
-// %            Default = false.
-// %       .showSpectrum: An integer representing the number of randomly 
-// %            sampled locations for which multiscale singular values as well as 
-// %            good scales are shown.  Default = 0.
-// %       .postOptimization: whether to apply the K-planes algorithm to further
-// %            improve the clustering using the estimated model    
+// opts: a structure of the following optional parameters:
+//
+//     .dmax: upper bound on plane dimensions (default = D-1)
+//     .K: number of planes in the model; 
+//          if unknown, then provide an upper bound .Kmax (see below)
+//     .Kmax: upper bound on the number of planes (default = 10)
+//          This field is not needed when .K is provided.
+//     .alpha0: cutoff slope for distinguishing tangential singular values 
+//          from noise ones. Default = 0.3/sqrt(.dmax).
+//     .n0: sampling parameter. Default = 20*.Kmax or 20*.K 
+//          (depending on which is provided). Multiscale SVD analysis
+//          will be performed at n0 randomly selected locations.  
+//     .seeds: sampled points around which MSVD analysis is performed. 
+//          If provided, its length should equal to .n0;
+//          If not provided, it equals randsample(N, .n0) 
+//     .MinNetPts: first scale (in terms of number of points).
+//          Default=.dmax+2
+//     .nScales: number of scales used in MSVD (default = 50)
+//     .nPtsPerScale: number of points per scale.
+//          Default = min(N/5,50*.dmax*log(.dmax)) / .nScales
+//     .isLinear: 1 (all linear subspaces), 0 (otherwise). Default = 0
+//     .discardRows: fraction of bad rows of the matrix A to be discarded 
+//          (default = 0, value [0 1]) based on low standard deviation
+//     .discardCols: fraction of bad columns of A to be discarded 
+//          (default = 0, value [0 1]) based on low standard deviation
+//     .nOutliers: number of outliers (if >=1), or percentage (if <1) **NOTE: not supporting percentage for now...
+//          (default=0) 
+//     .averaging: 'L1' or 'L2'(default) mean of the local errors, which is
+//          referred to as the tolerance (tau) in the CVPR paper
+//     .plotFigs: whether or not to show the figures such as pointwise
+//          dimension estimates, their optimal scales, the affinity
+//          matrix A, and the model selection curve (for K)
+//          Default = false.
+//     .showSpectrum: An integer representing the number of randomly 
+//          sampled locations for which multiscale singular values as well as 
+//          good scales are shown.  Default = 0.
+//     .postOptimization: whether to apply the K-planes algorithm to further
+//          improve the clustering using the estimated model    
 
 /* Usage:
     The constructor initializes all the values, but doesn't set them to useful
@@ -86,8 +86,8 @@ public:
         nScales = 0;
         nPtsPerScale = 0;
         isLinear = false;
-        discardRows = false;
-        discardCols = false;
+        discardRows = 0;
+        discardCols = 0;
         nOutliers = 0;
         averaging = "L2";
         plotFigs = false;
@@ -207,8 +207,8 @@ public:
 		unsigned int nScales;
 		unsigned int nPtsPerScale;
 		bool isLinear;
-		bool discardRows;
-		bool discardCols;
+		double discardRows;
+		double discardCols;
 		unsigned int nOutliers; // reall should be able to take float according to original...
 		std::string averaging;
 		bool plotFigs;

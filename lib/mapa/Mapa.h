@@ -41,9 +41,9 @@ Duke University
 // %            Default = min(N/5,50*.dmax*log(.dmax)) / .nScales
 // %       .isLinear: 1 (all linear subspaces), 0 (otherwise). Default = 0
 // %       .discardRows: fraction of bad rows of the matrix A to be discarded 
-// %            (default = 0)
+// %            (default = 0, value [0 1]) throwing out low standard deviation
 // %       .discardCols: fraction of bad columns of A to be discarded 
-// %            (default = 0)
+// %            (default = 0, value [0 1]) throwing out low standard deviation
 // %       .nOutliers: number of outliers (if >=1), or percentage (if <1)
 // %            (default=0)
 // %       .averaging: 'L1' or 'L2'(default) mean of the local errors, which is

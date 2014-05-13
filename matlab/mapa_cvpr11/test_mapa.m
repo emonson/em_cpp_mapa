@@ -81,8 +81,8 @@ switch pExampleNames{pExampleIdx}
        
        % make sure using the same seeds rather than randomly generated
        opts.seeds = other.seeds;
-       % opts.discardCols = 0.2;
-       % opts.discardRows = 0.2;
+       opts.discardCols = 0.2;
+       opts.discardRows = 0.2;
        
        % apply mapa
        [labels, planeDims] = mapa_min(X,opts);
