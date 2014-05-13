@@ -89,7 +89,7 @@ class UtilityCalcs {
 			}
     };
 
-    static ArrayXi UniqueMembers(const std::vector<ArrayXi> neighborhoods)
+    static ArrayXi UniqueMembers(const std::vector<ArrayXi> &neighborhoods)
     {
         // Actually find unique members by adding them to a set
         std::set<int> unique_members;
@@ -112,50 +112,86 @@ class UtilityCalcs {
 
         return unique_array;
     };
-
-    static ArrayXi IdxsAboveQuantile(const ArrayXd invals, double q_cutoff)
+    
+    template <typename Derived>
+    static ArrayXi IdxsFromComparison(const ArrayBase<Derived> &inarray, std::string comp, double value)
     {
-        int N = 10;
-        double q_cutoff = 0.2;
-
-        ArrayXd randvec = ArrayXd::Random(N);
-    
-        // std::cout.precision(3);
-        std::cout << randvec.transpose() << std::endl;
-    
-        ArrayXd Yd;
-        ArrayXi IX;
-        bool ascending = true;
-        igl::sort(randvec, 1, ascending, Yd, IX);
-    
-        // Create an array cumulative probabilities
-        ArrayXd quants = ArrayXd::LinSpaced(Eigen::Sequential, N, 0.5, N-0.5) / (double)N;
-        std::cout << quants << std::endl;
-
+        // Create an array of indices
+        ArrayXi idxs = ArrayXi::LinSpaced(Eigen::Sequential, inarray.size(), 0, inarray.size()-1);
+        ArrayXi found;
+        
         // Replace all indices with -1 that don't pass the test
-        ArrayXi IX_found = (quants.array() > q_cutoff).select(IX, -1);
-    
+        if (comp == "gt")
+        {
+            found = (inarray > value).select(idxs, -1);
+        }
+        else if (comp == "gte")
+        {
+            found = (inarray >= value).select(idxs, -1);
+        }
+        else if (comp == "lt")
+        {
+            found = (inarray < value).select(idxs, -1);
+        }
+        else if (comp == "lte")
+        {
+            found = (inarray <= value).select(idxs, -1);
+        }
+        else if (comp == "eq")
+        {
+            found = (inarray == value).select(idxs, -1);
+        }
+        else
+        {
+            return found;
+        }
+       
         // Use stable_partition and the gtezero ( >= 0 ) to place all good indices
         // still in their original order, before bound
         int *bound;
+        bound = std::stable_partition( found.data(), found.data()+found.size(), gtezero);
+
+        // Resize indices array to exclude all of the -1s
+        found.conservativeResize(bound-found.data());
+        
+        return found;
+    }
+    
+    template <typename Derived>
+    static ArrayXi IdxsAboveQuantile(const Array<Derived, Dynamic, 1> &inarray, double q_cutoff)
+    {
+        int N = inarray.size();
+
+        Array<Derived, Dynamic, 1> Yd;
+        ArrayXi IX;
+        bool ascending = true;
+        igl::sort(inarray, 1, ascending, Yd, IX);
+    
+        // Create an array cumulative probabilities
+        ArrayXd quants = ArrayXd::LinSpaced(Eigen::Sequential, N, 0.5, N-0.5) / (double)N;
+
+        // Replace all indices with -1 that don't pass the test
+        ArrayXi IX_found = (quants > q_cutoff).select(IX, -1);
+    
+        // Use stable_partition and the gtezero ( >= 0 ) to place all good indices
+        // still in their original order, before bound
+        // http://www.cplusplus.com/reference/algorithm/stable_partition/
+        int *bound;
         bound = std::stable_partition( IX_found.data(), IX_found.data()+IX_found.size(), gtezero);
-        std::cout << IX_found.transpose() << std::endl;
     
         // Resize indices array to exclude all of the -1s
         IX_found.conservativeResize(bound-IX_found.data());
-        std::cout << IX_found.transpose() << std::endl;
     
         // Resort indices back to original order
         ArrayXi Yi; 
         igl::sort(IX_found, 1, ascending, Yi, IX);
-        std::cout << Yi.transpose() << std::endl;
         
         return Yi;
     };
 
   private:
     
-    bool gtezero(int val) { return val >= 0; }
+    static bool gtezero(int val) { return val >= 0; }
    
 }; // class def
 
