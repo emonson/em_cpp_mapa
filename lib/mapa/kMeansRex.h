@@ -49,6 +49,8 @@ Date:   2 April 2013
 #include <time.h>			/* time */
 #include <stdio.h>		/* srand */
 
+#include <iostream>
+
 using namespace Eigen;
 
 
@@ -82,7 +84,7 @@ public:
         return Seeds;
     };
 
-    ArrayXd GetClusterAssignments()
+    ArrayXi GetClusterAssignments()
     {
         return Z;
     };
@@ -97,7 +99,7 @@ private:
     ArrayXXd X;
     ArrayXXd Seeds;
     ArrayXXd Centers;
-    ArrayXd Z;
+    ArrayXi Z;
     ArrayXXd Dist;
     unsigned int K;
     unsigned int N;

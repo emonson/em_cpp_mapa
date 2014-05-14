@@ -28,7 +28,7 @@ int main(int argc, char * argv[])
 
     // Results arrays
     ArrayXXd seeds = km.GetSeeds();
-    ArrayXd z = km.GetClusterAssignments();
+    ArrayXi z = km.GetClusterAssignments();
     ArrayXXd centers = km.GetCenters();
 
     // ---------------------------

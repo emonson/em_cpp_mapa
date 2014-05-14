@@ -13,6 +13,7 @@ Duke University
 
 #include <Eigen/Core>
 #include "mersenneTwister2002.h"
+#include "kMeansRex.h"
 #include "ANN.h"
 #include <igl/sort.h>
 #include <igl/slice.h>
@@ -209,12 +210,14 @@ class UtilityCalcs {
             ArrayXd rowNorms = U_copy.square().rowwise().sum().sqrt();
             rowNorms = (rowNorms == 0).select(1.0, rowNorms);
             U_copy = U_copy.colwise() / rowNorms;
-            std::cout << U_copy << std::endl;
         // end
         }
         
 
         // [~, indicesKmeans] = KMeansRex(U, K, 100, 'mapa');
+        KMeans::KMeansRex km(U_copy, K);
+        ArrayXi indicesKmeans = km.GetClusterAssignments();
+
         // % This is a C++ routine that has 0-based indices, so add one here
         // indicesKmeans = indicesKmeans + 1;
         // 
@@ -222,8 +225,7 @@ class UtilityCalcs {
         // 
         // end
 
-        ArrayXi cluster_labels;
-        return cluster_labels;
+        return indicesKmeans;
     };
 
   private:
