@@ -189,6 +189,43 @@ class UtilityCalcs {
         return Yi;
     };
 
+    static ArrayXi ClusteringInUSpace(const ArrayXXd &U, bool normalizeU)
+    {
+        // function indicesKmeans = clustering_in_U_space_min(U,opts)
+        // % will cluster the rows of U (same number as the rows of A)
+        // % minimal version using KMeansRex and only 'hard' seeds
+        // 
+        // K = size(U,2);
+        
+        ArrayXXd U_copy = U;
+        int K = U.cols();
+        
+        // if opts.normalizeU,
+        if (normalizeU)
+        {
+            //     rowNorms = sqrt(sum(U.^2,2));
+            //     rowNorms(rowNorms==0) = 1;
+            //     U = U./repmat(rowNorms,1,K);
+            ArrayXd rowNorms = U_copy.square().rowwise().sum().sqrt();
+            rowNorms = (rowNorms == 0).select(1.0, rowNorms);
+            U_copy = U_copy.colwise() / rowNorms;
+            std::cout << U_copy << std::endl;
+        // end
+        }
+        
+
+        // [~, indicesKmeans] = KMeansRex(U, K, 100, 'mapa');
+        // % This is a C++ routine that has 0-based indices, so add one here
+        // indicesKmeans = indicesKmeans + 1;
+        // 
+        // figure; plot(indicesKmeans);
+        // 
+        // end
+
+        ArrayXi cluster_labels;
+        return cluster_labels;
+    };
+
   private:
     
     static bool gtezero(int val) { return val >= 0; }

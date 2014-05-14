@@ -108,6 +108,7 @@ Duke University
 #include "NRsearch.h"
 #include "LMsvd.h"
 #include "UtilityCalcs.h"
+#include "SpectralAnalysis.h"
 
 using namespace Eigen;
 
@@ -315,7 +316,6 @@ public:
         {
             eps_mean = (eps / (opts.D - localDims).cast<double>()).sqrt().mean();
         }
-        std::cout << "eps " << eps_mean << std::endl;
         
         // if opts.discardRows>0
         if (opts.discardRows > 0)
@@ -361,42 +361,61 @@ public:
         degrees = (degrees == 0).select(1, degrees);
         ArrayXd invDegrees = 1.0 / degrees.sqrt();
         A = invDegrees.replicate(1,n0) * A;
-        std::cout << A.bottomLeftCorner(5,5) << std::endl;
 
                 // ** OKAY TO HERE **
 
-        // %% Directly cluster data (when K is provided)
+        // Directly cluster data (when K is provided)
         // if isfield(opts, 'K'),
-        //     
-        //     K = opts.K;
-        //     
-        //     [U,S] = svds(A, K+1);
-        //     if opts.plotFigs
-        //         figure; do_plot_data(diag(S)); title('Top Singular Values of L', 'fontSize',  14); box on
-        //     end
-        //     
-        //     [planeDims, labels, err] =  spectral_analysis(X, U(:,1:K), allPtsInOptRegions, invColMap, localDims, opts.nOutliers);
-        //     
-        // %% also select a model when only upper bound is given
+        ArrayXi planeDims;
+        ArrayXi labels;
+        double err;
+        if (opts.K > 0)
+        {
+            //     K = opts.K;
+            int K = opts.K;
+            
+            //     [U,S] = svds(A, K+1);
+            // Eigen std SVD
+            JacobiSVD<MatrixXd> svd(A, Eigen::ComputeThinU | Eigen::ComputeThinV);
+            ArrayXXd U = svd.matrixU();
+            
+            //     [planeDims, labels, err] =  spectral_analysis(X, U(:,1:K), allPtsInOptRegions, invColMap, localDims, opts.nOutliers);
+            MAPA::SpectralAnalysis spectral_analysis(X, U.leftCols(K), allPtsInOptRegions, invColMap, localDims, opts.nOutliers);
+            
+            planeDims = spectral_analysis.GetPlaneDims();
+            labels = spectral_analysis.GetLabels();
+            err = spectral_analysis.GetError();
+
+            std::cout << std::endl << "planeDims" << std::endl;
+            std::cout << planeDims.transpose() << std::endl;
+            std::cout << std::endl << "labels" << std::endl;
+            std::cout << labels.transpose() << std::endl;
+            std::cout << std::endl << "err" << std::endl;
+            std::cout << err << std::endl;
+       }
+        // Also select a model when only upper bound is given
         // elseif isfield(opts, 'Kmax'),
-        //     
-        //     [U,S] = svds(A, opts.Kmax+1);
-        //     if opts.plotFigs
-        //         figure; do_plot_data(diag(S)); title('Top Singular Values of L', 'fontSize', 14); box on
-        //     end
-        //     
-        //     planeDims = mode(localDims);
-        //     labels = ones(1,N);
-        //     L2Errors = L2error(X, planeDims, labels);
-        //     
-        //     K = 1;
-        //     while K<opts.Kmax && L2Errors > 1.05*eps
-        //         K = K+1;
-        //         [planeDims, labels, L2Errors] = ...
-        //             spectral_analysis(X, U(:,1:K), allPtsInOptRegions, invColMap, localDims, opts.nOutliers);
-        //     end
-        //     
+        else if (opts.Kmax > 0)
+        {
+            //     [U,S] = svds(A, opts.Kmax+1);
+            //     if opts.plotFigs
+            //         figure; do_plot_data(diag(S)); title('Top Singular Values of L', 'fontSize', 14); box on
+            //     end
+            //     
+            //     planeDims = mode(localDims);
+            //     labels = ones(1,N);
+            //     L2Errors = L2error(X, planeDims, labels);
+            //     
+            //     K = 1;
+            //     while K<opts.Kmax && L2Errors > 1.05*eps
+            //         K = K+1;
+            //         [planeDims, labels, L2Errors] = ...
+            //             spectral_analysis(X, U(:,1:K), allPtsInOptRegions, invColMap, localDims, opts.nOutliers);
+            //     end
+            //     
         // end
+        }
+        
         // 
         // %% use K-planes to optimize clustering
         // if opts.postOptimization    

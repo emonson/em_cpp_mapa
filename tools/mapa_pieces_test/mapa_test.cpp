@@ -27,12 +27,15 @@ int main(int argc, char * argv[])
     MAPA::Opts opts;
     opts.n0 = 20*K;
     opts.dmax = aSubDims.maxCoeff();
-    opts.Kmax = 2*K;
+    // opts.Kmax = 2*K;
+    opts.K = 3;
     opts.seeds = seeds;
-    opts.discardCols = 0.2;
-    opts.discardRows = 0.2;
+    // opts.discardCols = 0.2;
+    // opts.discardRows = 0.2;
     
     opts.SetDefaults(X);
+    std::cout << "options" << std::endl;
+    std::cout << opts << std::endl << std::endl;
         
     MAPA::Mapa mapa(X, opts);
     

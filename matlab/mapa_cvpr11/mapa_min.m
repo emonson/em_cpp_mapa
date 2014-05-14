@@ -358,7 +358,7 @@ K = size(U,2);
 SCCopts = struct();
 SCCopts.normalizeU = 1;
 SCCopts.seedType = 'hard';
-indicesKmeans = clustering_in_U_space(U,K,SCCopts);
+indicesKmeans = clustering_in_U_space_min(U,SCCopts);
 
 planeDims = zeros(1,K);
 for k = 1:K
