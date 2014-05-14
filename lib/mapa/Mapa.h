@@ -149,9 +149,9 @@ public:
         
         // note: indices 0-based
         // == 0:(n-1)
-        VectorXi optPtsIdxs = VectorXi::LinSpaced(n, 0, n-1);
+        ArrayXi optPtsIdxs = ArrayXi::LinSpaced(n, 0, n-1);
         // initialize all unused values to -1 so they will give an error if we use them as indices
-        VectorXi invRowMap = VectorXi::Constant(opts.N,-1);
+        ArrayXi invRowMap = ArrayXi::Constant(opts.N, -1);
         // invRowMap(allPtsInOptRegions) = 0:(n-1)
         igl::slice_into(optPtsIdxs, allPtsInOptRegions, invRowMap);
 
@@ -235,37 +235,52 @@ public:
             }
         }
 
-            // ** OKAY TO HERE **
-
         // %% discarding bad rows and columns
         // if opts.discardCols > 0
         if (opts.discardCols > 0)
         {
 
-        //     colStdA = std(A,0,1);
-        //     goodCols = find(colStdA > quantile(colStdA, opts.discardCols));
-        ArrayXd colStdA = ((A.rowwise() - A.colwise().mean()).square().colwise().sum() / (double)(A.rows()-1)).sqrt();
-        std::cout << colStdA.transpose() << std::endl;
-        ArrayXi goodCols = MAPA::UtilityCalcs::IdxsAboveQuantile( colStdA, opts.discardCols );
-        std::cout << goodCols.transpose() << std::endl;
+            //     colStdA = std(A,0,1);
+            //     goodCols = find(colStdA > quantile(colStdA, opts.discardCols));
+        
+            // Calculate standard deviation of the columns
+            ArrayXd colStdA = ((A.rowwise() - A.colwise().mean()).square().colwise().sum() / (double)(A.rows()-1)).sqrt();
+            ArrayXi goodCols = MAPA::UtilityCalcs::IdxsAboveQuantile( colStdA, opts.discardCols );
 
-        //     eps = eps(goodCols);
-        //     optLocRegions = optLocRegions(goodCols);
-        //     seeds = seeds(goodCols);
-        //     localDims = localDims(goodCols);
-        std::cout << eps.transpose() << std::endl;
-        igl::slice(eps, goodCols, eps);
-        std::cout << eps.transpose() << std::endl;
+            //     eps = eps(goodCols);
+            //     optLocRegions = optLocRegions(goodCols);
+            //     seeds = seeds(goodCols);
+            //     localDims = localDims(goodCols);
+        
+            ArrayXd tmp = eps;
+            igl::slice(tmp, goodCols, eps);
+            ArrayXi tmpi = seeds;
+            igl::slice(tmpi, goodCols, seeds);
+            tmpi = localDims;
+            igl::slice(tmpi, goodCols, localDims);
+        
+            std::vector<ArrayXi> tmpv;
+            for (int ii = 0; ii < goodCols.size(); ii++)
+            {
+                tmpv.push_back(optLocRegions[goodCols(ii)]);
+            }
+            optLocRegions = tmpv;
 
-        //     % When we throw away columns, we are throwing away seed points, and
-        //     % when we throw away seed points, we throw away data points that were
-        //     % in the optimal local regions of those seed points, so that gets rid
-        //     % of rows of A as well.
-        //     allPtsInOptRegions = unique([optLocRegions{:}]);
-        //     
-        //     A = A(invRowMap(allPtsInOptRegions), goodCols);
-        //     
-        //     [n,n0] = size(A);
+            //     % When we throw away columns, we are throwing away seed points, and
+            //     % when we throw away seed points, we throw away data points that were
+            //     % in the optimal local regions of those seed points, so that gets rid
+            //     % of rows of A as well.
+            //     allPtsInOptRegions = unique([optLocRegions{:}]);
+            //     A = A(invRowMap(allPtsInOptRegions), goodCols);
+            //     [n,n0] = size(A);
+            allPtsInOptRegions = MAPA::UtilityCalcs::UniqueMembers( optLocRegions );
+            
+            ArrayXi goodRowIdxs;
+            igl::slice(invRowMap, allPtsInOptRegions, goodRowIdxs);
+            ArrayXXd tmpdd = A;
+            igl::slice(tmpdd, goodRowIdxs, goodCols, A);
+            n = A.rows();
+            n0 = A.cols();
 
         // end
         }
@@ -275,35 +290,81 @@ public:
         // % which are also the indices of the columns of A
         // invColMap = zeros(1,N);
         // invColMap(seeds) = 1:n0;
-        // 
+        
+        // note: indices 0-based
+        // seedsIdxs = 0:(n0-1)
+        ArrayXi seedsIdxs = ArrayXi::LinSpaced(n0, 0, n0-1);
+        // initialize all unused values to -1 so they will give an error if we use them as indices
+        ArrayXi invColMap = ArrayXi::Constant(opts.N, -1);
+        // invColMap(seeds) = 0:(n-1) == seedsIdxs
+        igl::slice_into(seedsIdxs, seeds, invColMap);
+        
         // switch opts.averaging
         //     case {'l2','L2'}
         //         eps = sqrt(mean(eps./(D-localDims)));
         //     case {'l1','L1'}
         //         eps = mean(sqrt(eps./(D-localDims)));
         // end
-        // 
+        
+        double eps_mean;
+        if ((opts.averaging == "L2") || (opts.averaging == "l2"))
+        {
+            eps_mean = std::sqrt((eps / (opts.D - localDims).cast<double>()).mean());
+        }
+        else if ((opts.averaging == "L1") || (opts.averaging == "l1"))
+        {
+            eps_mean = (eps / (opts.D - localDims).cast<double>()).sqrt().mean();
+        }
+        std::cout << "eps " << eps_mean << std::endl;
+        
         // if opts.discardRows>0
-        //     
-        //     rowStdA = std(A,0,2);
-        //     goodRows = (rowStdA>quantile(rowStdA, opts.discardRows));
-        //     
-        //     A = A(goodRows,:);
-        //     
-        //     allPtsInOptRegions = allPtsInOptRegions(goodRows);
-        //     n = numel(allPtsInOptRegions);
-        //     
+        if (opts.discardRows > 0)
+        {
+            //     rowStdA = std(A,0,2);
+            //     goodRows = (rowStdA>quantile(rowStdA, opts.discardRows));
+
+            // Calculate standard deviation of the rows
+            ArrayXd rowStdA = ((A.colwise() - A.rowwise().mean()).square().rowwise().sum() / (double)(A.cols()-1)).sqrt();
+            ArrayXi goodRows = MAPA::UtilityCalcs::IdxsAboveQuantile( rowStdA, opts.discardRows );
+            
+            //     A = A(goodRows,:);
+            ArrayXXd tmpd2 = A;
+            igl::slice(tmpd2, goodRows, 1, A);
+
+            //     allPtsInOptRegions = allPtsInOptRegions(goodRows);
+            //     n = numel(allPtsInOptRegions);
+            ArrayXi tmp_allPts = allPtsInOptRegions;
+            igl::slice(tmp_allPts, goodRows, allPtsInOptRegions);
+            n = allPtsInOptRegions.size();
+
         // end
-        // 
+        }
+        
         // invRowMap = zeros(1,N);
         // invRowMap(allPtsInOptRegions) = 1:n;
-        // 
+        
+        // note: indices 0-based
+        // initialize all unused values to -1 so they will give an error if we use them as indices
+        invRowMap = ArrayXi::Constant(opts.N, -1);
+        // optPtsIdxs = 0:(n-1)
+        optPtsIdxs = ArrayXi::LinSpaced(n, 0, n-1);
+        // invRowMap(allPtsInOptRegions) = 0:(n-1)
+        igl::slice_into(optPtsIdxs, allPtsInOptRegions, invRowMap);
+
+        
         // %% normalize the spectral matrix A
         // degrees = A*sum(A,1).';
         // degrees((degrees == 0)) = 1;
         // A = repmat(1./sqrt(degrees),1,n0).*A;
-        // 
-        // 
+        
+        ArrayXXd degrees = A.matrix() * A.colwise().sum().transpose().matrix();
+        degrees = (degrees == 0).select(1, degrees);
+        ArrayXd invDegrees = 1.0 / degrees.sqrt();
+        A = invDegrees.replicate(1,n0) * A;
+        std::cout << A.bottomLeftCorner(5,5) << std::endl;
+
+                // ** OKAY TO HERE **
+
         // %% Directly cluster data (when K is provided)
         // if isfield(opts, 'K'),
         //     
