@@ -11,4 +11,5 @@ ADD_EXECUTABLE(reshape reshape.cpp)
 ADD_EXECUTABLE(slice slice.cpp)
 ADD_EXECUTABLE(sort sort.cpp)
 ADD_EXECUTABLE(sortrows sortrows.cpp)
+ADD_EXECUTABLE(stddev stddev.cpp)
 

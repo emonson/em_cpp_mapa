@@ -239,15 +239,24 @@ public:
 
         // %% discarding bad rows and columns
         // if opts.discardCols > 0
-        //     
+        if (opts.discardCols > 0)
+        {
+
         //     colStdA = std(A,0,1);
         //     goodCols = find(colStdA > quantile(colStdA, opts.discardCols));
-        //     
+        ArrayXd colStdA = ((A.rowwise() - A.colwise().mean()).square().colwise().sum() / (double)(A.rows()-1)).sqrt();
+        std::cout << colStdA.transpose() << std::endl;
+        ArrayXi goodCols = MAPA::UtilityCalcs::IdxsAboveQuantile( colStdA, opts.discardCols );
+        std::cout << goodCols.transpose() << std::endl;
+
         //     eps = eps(goodCols);
         //     optLocRegions = optLocRegions(goodCols);
         //     seeds = seeds(goodCols);
         //     localDims = localDims(goodCols);
-        //     
+        std::cout << eps.transpose() << std::endl;
+        igl::slice(eps, goodCols, eps);
+        std::cout << eps.transpose() << std::endl;
+
         //     % When we throw away columns, we are throwing away seed points, and
         //     % when we throw away seed points, we throw away data points that were
         //     % in the optimal local regions of those seed points, so that gets rid
@@ -257,8 +266,10 @@ public:
         //     A = A(invRowMap(allPtsInOptRegions), goodCols);
         //     
         //     [n,n0] = size(A);
-        //     
+
         // end
+        }
+        
         // 
         // % Maps the indices of the original data set to indices of the seed points,
         // % which are also the indices of the columns of A

@@ -21,7 +21,7 @@ int main(int argc, char * argv[])
     int N = 10;
     double q_cutoff = 0.2;
     
-    // -----------------
+    // Doubles -----------------
     ArrayXd randvec = ArrayXd::Random(N);
     std::cout << std::endl << "random double vector" << std::endl;
     std::cout << randvec.transpose() << std::endl;
@@ -33,7 +33,7 @@ int main(int argc, char * argv[])
     igl::slice(randvec, Yi, outdvec);
     std::cout << outdvec.transpose() << std::endl;
     
-    // ---------
+    // Integers ---------
     ArrayXi randints = (10.0 * ArrayXd::Random(N) + 10).cast<int>();
     std::cout << std::endl << "random int vector" << std::endl;
     std::cout << randints.transpose() << std::endl;

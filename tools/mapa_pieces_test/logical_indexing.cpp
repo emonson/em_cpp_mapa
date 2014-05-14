@@ -18,7 +18,7 @@ int main(int argc, char * argv[])
     // Reseed random number generator since Eigen Random.h doesn't do this itself
     srand( (unsigned int)time(NULL) );
 
-    // ---------
+    // Doubles ---------
     ArrayXd randvec = ArrayXd::Random(10);
     std::cout << std::endl << "random double vector" << std::endl;
     std::cout << randvec.transpose() << std::endl;
@@ -41,7 +41,7 @@ int main(int argc, char * argv[])
     std::cout << IX.transpose() << std::endl;
     std::cout << out_d.transpose() << std::endl;
     
-    // ---------
+    // Integers ---------
     ArrayXi randints = (4.0 * ArrayXd::Random(20)).cast<int>();
     std::cout << std::endl << "random int vector" << std::endl;
     std::cout << randints.transpose() << std::endl;
