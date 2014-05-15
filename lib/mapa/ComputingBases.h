@@ -41,8 +41,16 @@ public:
             
             ArrayXi cls_k_idxs = MAPA::UtilityCalcs::IdxsFromComparison(labels, "eq", k);
             ArrayXXd cls_k;
-            igl::slice(data, cls_k_idxs, 1, cls_k);
-            int n_k = cls_k.rows();
+            int n_k;
+            if (cls_k_idxs.size() > 0)
+            {
+                igl::slice(data, cls_k_idxs, 1, cls_k);
+                n_k = cls_k.rows();
+            }
+            else
+            {
+                n_k = 0;
+            }
 
             // if n_k >= dims(k)+1
             if (n_k >= (dims(k) + 1))
@@ -61,6 +69,13 @@ public:
                 bases.push_back(vk.leftCols(dims[k]).transpose());
                 
             // end
+            }
+            else
+            {
+                ArrayXd empty1d;
+                ArrayXXd empty2d;
+                centers.push_back( empty1d );
+                bases.push_back( empty2d );
             }
             
         // end

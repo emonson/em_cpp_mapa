@@ -102,8 +102,6 @@ public:
             dists[ii] = all_dists.row(ii).minCoeff(&labels[ii]);
         }
         
-            // * * * * OKAY TO HERE * * * *
-
         // TODO: Not implementing for now since not default and confused...
         
         // if nOutliers>0

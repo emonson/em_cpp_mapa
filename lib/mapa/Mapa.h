@@ -108,6 +108,7 @@ Duke University
 #include "NRsearch.h"
 #include "LMsvd.h"
 #include "UtilityCalcs.h"
+#include "ComputingBases.h"
 #include "SpectralAnalysis.h"
 
 using namespace Eigen;
@@ -366,47 +367,59 @@ public:
 
         // Directly cluster data (when K is provided)
         // if isfield(opts, 'K'),
-        double err;
+        JacobiSVD<MatrixXd> svd(A, Eigen::ComputeThinU | Eigen::ComputeThinV);
+        ArrayXXd U = svd.matrixU();
         if (opts.K > 0)
         {
             //     K = opts.K;
             int K = opts.K;
             
             //     [U,S] = svds(A, K+1);
-            // Eigen std SVD
-            JacobiSVD<MatrixXd> svd(A, Eigen::ComputeThinU | Eigen::ComputeThinV);
-            ArrayXXd U = svd.matrixU();
             
             //     [planeDims, labels, err] =  spectral_analysis(X, U(:,1:K), allPtsInOptRegions, invColMap, localDims, opts.nOutliers);
             MAPA::SpectralAnalysis spectral_analysis(X, U.leftCols(K), allPtsInOptRegions, invColMap, localDims, opts.nOutliers);
             
             planeDims = spectral_analysis.GetPlaneDims();
             labels = spectral_analysis.GetLabels();
-            err = spectral_analysis.GetError();
-
-            std::cout << std::endl << "planeDims" << std::endl;
-            std::cout << planeDims.transpose() << std::endl;
-            std::cout << std::endl << "labels" << std::endl;
-            std::cout << labels.transpose() << std::endl;
-            std::cout << std::endl << "err" << std::endl;
-            std::cout << err << std::endl;
+            distance_error = spectral_analysis.GetError();
        }
+            // * * * * OKAY TO HERE * * * *
         // Also select a model when only upper bound is given
         // elseif isfield(opts, 'Kmax'),
         else if (opts.Kmax > 0)
         {
             //     [U,S] = svds(A, opts.Kmax+1);
-            //     
+
             //     planeDims = mode(localDims);
             //     labels = ones(1,N);
-            //     L2Errors = L2error(X, planeDims, labels);
-            //     
+            int dim_winner = MAPA::UtilityCalcs::Mode(localDims);
+            planeDims = ArrayXi::Constant(opts.N, dim_winner);
+            labels = ArrayXi::Ones(opts.N);
+            
+            // NOTE: Why would we recompute the bases for all points for this error calculation??
+            MAPA::ComputingBases computing_bases_all(X, labels, planeDims);
+            std::vector<ArrayXd> planeCenters_all = computing_bases_all.GetCenters();
+            std::vector<ArrayXXd> planeBases_all = computing_bases_all.GetBases();
+        
+            //     L2Errors = L2error(X, labels, planeDims);
+            distance_error = MAPA::UtilityCalcs::L2error( X, labels, planeDims, planeCenters_all, planeBases_all );
+
             //     K = 1;
+            int K = 1;
+            
             //     while K<opts.Kmax && L2Errors > 1.05*eps
-            //         K = K+1;
-            //         [planeDims, labels, L2Errors] = ...
-            //             spectral_analysis(X, U(:,1:K), allPtsInOptRegions, invColMap, localDims, opts.nOutliers);
-            //     end
+            while ((K < opts.Kmax) && (distance_error > (1.05 * eps_mean)))
+            {
+                // K = K+1;
+                K += 1;
+                // [planeDims, labels, L2Errors] = ...
+                //    spectral_analysis(X, U(:,1:K), allPtsInOptRegions, invColMap, localDims, opts.nOutliers);
+                MAPA::SpectralAnalysis spectral_analysis(X, U.leftCols(K), allPtsInOptRegions, invColMap, localDims, opts.nOutliers);
+                planeDims = spectral_analysis.GetPlaneDims();
+                labels = spectral_analysis.GetLabels();
+                distance_error = spectral_analysis.GetError();
+            // end
+            }
             //     
         // end
         }
@@ -429,13 +442,18 @@ public:
     {
         return planeDims;
     };
+    
+    double GetDistanceError()
+    {
+        return distance_error;
+    };
 
 
 private:
 
     ArrayXi labels;
     ArrayXi planeDims;
-    
+    double distance_error;
 
 }; // class def
 

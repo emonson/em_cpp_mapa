@@ -71,16 +71,18 @@ class UtilityCalcs {
     static double L2error(const ArrayXXd &data, 
                           const ArrayXi &labels, 
                           const ArrayXi &dims,
-                          const std::vector<ArrayXd> ctr,
-                          const std::vector<ArrayXXd> dir)
+                          const std::vector<ArrayXd> &ctr,
+                          const std::vector<ArrayXXd> &dir)
     {
         // function mse = L2error(data, idx, dim, ctr, dir)
         // 
         // D = size(data,2);
-        // K = max(idx);
+        // K = max(labels);
         
+        // original point dimensionality
         int D = data.cols();
-        int K = labels.maxCoeff();
+        // number of clusters
+        int K = labels.maxCoeff()+1;
 
         // NOTE: ignoring this option for now...
         // if length(dims) == 1
@@ -93,10 +95,10 @@ class UtilityCalcs {
         // end
 
         // mse = zeros(1,K);
-        ArrayXd mse_array = ArrayXd::Zero(K+1);
+        ArrayXd mse_array = ArrayXd::Zero(K);
         
         // for k = 1:K
-        for (int k = 0; k <= K; k++)
+        for (int k = 0; k < K; k++)
         {
             // cls_k = data((labels==k),:);
             // n_k = size(cls_k,1);
@@ -135,8 +137,55 @@ class UtilityCalcs {
 
     static double ClusteringError(const ArrayXi &indices, const ArrayXi &trueLabels)
     {
-      std::cerr << "MAPA::UtilityCalcs::ClusteringError – Not implemented yet!!" << std::endl;
-			return 0;
+        // function p = clustering_error(indices,trueLabels)
+        // 
+        // [sortedLabels, inds_sort] = sort(trueLabels, 'ascend');
+        // indices = indices(inds_sort);
+        // 
+        // N = length(trueLabels);
+        // K = sortedLabels(N);
+        // 
+        // planeSizes = zeros(K,1);
+        // k = 1;
+        // i = 1;
+        // ini = 0;
+        // while k<=K 
+        //     while i<=N && sortedLabels(i)== k
+        //         i = i+1;
+        //     end
+        //     planeSizes(k)=i-1-ini;
+        //     ini = i-1;
+        //     k=k+1;
+        // end
+        // 
+        // num = zeros(K,K);
+        // for k = 1:K
+        //     for j = 1:K
+        //         num(k,j) = sum((indices(sum(planeSizes(1:k-1))+1:sum(planeSizes(1:k)))==j));
+        //     end
+        // end
+        // 
+        // p = 1-number_of_correctly_classified_points(num)/sum(planeSizes);
+        // 
+        // %%
+        // 
+        // function n = number_of_correctly_classified_points(num)
+        // 
+        // K = size(num,1);
+        // 
+        // if K>2
+        //     n = zeros(K,1);
+        //     for j = 1:K
+        //         n(j) = num(1,j)+number_of_correctly_classified_points(num(2:end,[1:j-1 j+1:K]));
+        //     end
+        //     n = max(n);
+        // elseif  K == 2 
+        //     n = max(num(1,1)+num(2,2), num(1,2)+num(2,1));
+        // else
+        //     n = num;
+        // end
+
+        return 0;
     };
     
     static ArrayXi RandSample(unsigned int N, unsigned int K, bool sorted=false)

@@ -122,8 +122,6 @@ public:
             allGoodScales(i_seed,0) = estdim.GetLowerScaleIdx(); // NOTE: Matlab 1s-based now!!!             
             allGoodScales(i_seed,1) = estdim.GetUpperScaleIdx(); // NOTE: Matlab 1s-based now!!!  
 
-                // *** FINE UP TO THIS POINT ** 
-
             maxScale = allGoodScales(i_seed,1);
             seed_local_region = nn_idxs.row(i_seed).head(opts.MinNetPts + (maxScale-1)*opts.nPtsPerScale);
             allLocalRegions.push_back(seed_local_region);
