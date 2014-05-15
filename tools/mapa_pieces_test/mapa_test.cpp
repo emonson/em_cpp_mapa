@@ -40,9 +40,9 @@ int main(int argc, char * argv[])
     MAPA::Mapa mapa(X, opts);
     
     std::cout << "Mapa labels:" << std::endl;
-    std::cout << mapa.GetLabels() << std::endl;
+    std::cout << mapa.GetLabels().transpose() << std::endl;
     std::cout << "Mapa plane dims:" << std::endl;
-    std::cout << mapa.GetPlaneDims() << std::endl;
+    std::cout << mapa.GetPlaneDims().transpose() << std::endl;
 
     return 0;
 }

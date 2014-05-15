@@ -14,8 +14,11 @@ Duke University
 #include <Eigen/Core>
 #include <Eigen/SVD>
 
-#include <iostream>
+#include "ComputingBases.h"
 
+#include <iostream>
+#include <vector>
+#include <cmath>
 
 using namespace Eigen;
 
@@ -35,6 +38,7 @@ public:
                      int nOutliers = 0)
     {
         // K = size(U,2);
+        err = INFINITY;
         int K = U.cols();
         
         // SCCopts = struct();
@@ -72,23 +76,36 @@ public:
             //     planeDims(k) = mode(localDims(temp));
             ArrayXi cluster_dims;
             igl::slice(localDims, temp_valid, cluster_dims);
-            std::cout << cluster_dims.transpose() << std::endl;
             planeDims(k) = MAPA::UtilityCalcs::Mode(cluster_dims);
             
         // end
         }
         
-            // * * * * OKAY TO HERE * * * *
-        
         // 
         // [planeCenters, planeBases] = computing_bases(X(allPtsInOptRegions,:), indicesKmeans, planeDims);
+        ArrayXXd X_allPtsOpt;
+        igl::slice(X, allPtsInOptRegions, 1, X_allPtsOpt);
+        MAPA::ComputingBases computing_bases(X_allPtsOpt, indicesKmeans, planeDims);
+        std::vector<ArrayXd> planeCenters = computing_bases.GetCenters();
+        std::vector<ArrayXXd> planeBases = computing_bases.GetBases();
+        
         // dists = p2pdist(X,planeCenters,planeBases);
-        // 
-        // %[N,D] = size(X);
-        // %dists = dists./repmat(D-planeDims, N, 1);
-        // 
+        ArrayXXd all_dists = MAPA::UtilityCalcs::P2Pdists(X_allPtsOpt, planeCenters, planeBases);
+        
+            // * * * * OKAY TO HERE * * * *
+        
         // [dists,labels] = min(dists,[],2);
-        // 
+        int N = all_dists.rows();
+        ArrayXd dists = ArrayXd::Constant(N, INFINITY);
+        labels = ArrayXi::Constant(N, -1);
+        
+        for (int ii = 0; ii < N; ii++)
+        {
+            dists[ii] = all_dists.row(ii).minCoeff(&labels[ii]);
+        }
+        
+        std::cout << dists.transpose() << std::endl;
+
         // if nOutliers>0
         //     % new labels
         //     labels1 = labels;

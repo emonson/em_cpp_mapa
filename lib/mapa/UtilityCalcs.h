@@ -24,6 +24,7 @@ Duke University
 #include <map>
 #include <set>
 #include <algorithm>
+#include <cmath>
 
 using namespace Eigen;
 
@@ -34,10 +35,37 @@ class UtilityCalcs {
 
   public:
 
-    static ArrayXXd P2Pdist(const ArrayXXd &X, const std::vector<ArrayXd> &centers, const std::vector<ArrayXXd> &bases)
+    static ArrayXXd P2Pdists(const ArrayXXd &X, const std::vector<ArrayXd> &centers, const std::vector<ArrayXXd> &bases)
     {
-      std::cerr << "MAPA::UtilityCalcs::P2Pdist – Not implemented yet!!" << std::endl;
-			return Array<double,1,1>::Zero();
+        // function dists = p2pdist(X,centers,bases)
+        // 
+        // % This code computes (squared) points to planes distances.
+        // 
+        // N = size(X,1);
+        // K = length(centers);
+        int N = X.rows();
+        int K = centers.size();
+
+        // dists = Inf(N, K);
+        ArrayXXd dists = ArrayXXd::Constant(N,K,INFINITY);
+
+        // for k = 1:K
+        for (int k = 0; k < K; k++)
+        {
+            // if ~isempty(centers{k}) && ~isempty(bases{k})
+            if ((centers[k].size() > 0) && (bases[k].size() > 0))
+            {
+                // Y = X - repmat(centers{k},N,1);
+                ArrayXXd Y = X.rowwise() - centers[k].transpose();
+                
+                // dists(:,k) = sum(Y.^2,2) - sum((Y*bases{k}').^2,2);
+                dists.col(k) = Y.square().rowwise().sum() - (Y.matrix() * bases[k].matrix().transpose()).array().square().rowwise().sum();
+            //     end
+            }
+        // end
+        }
+        
+        return dists;
     };
 
     static ArrayXd L2error(const ArrayXXd &data, const ArrayXi &dim, const ArrayXi &idx)
