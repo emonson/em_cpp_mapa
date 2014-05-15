@@ -68,10 +68,69 @@ class UtilityCalcs {
         return dists;
     };
 
-    static ArrayXd L2error(const ArrayXXd &data, const ArrayXi &dim, const ArrayXi &idx)
+    static double L2error(const ArrayXXd &data, 
+                          const ArrayXi &labels, 
+                          const ArrayXi &dims,
+                          const std::vector<ArrayXd> ctr,
+                          const std::vector<ArrayXXd> dir)
     {
-      std::cerr << "MAPA::UtilityCalcs::L2error – Not implemented yet!!" << std::endl;
-			return Array<double,1,1>::Zero();
+        // function mse = L2error(data, idx, dim, ctr, dir)
+        // 
+        // D = size(data,2);
+        // K = max(idx);
+        
+        int D = data.cols();
+        int K = labels.maxCoeff();
+
+        // NOTE: ignoring this option for now...
+        // if length(dims) == 1
+        //     dims = dims*ones(K,1);
+        // end
+
+        // NOTE: forcing these to be passed explicitly for now...
+        // if nargin<4
+        //     [ctr,dir] = computing_bases(data,labels,dims);
+        // end
+
+        // mse = zeros(1,K);
+        ArrayXd mse_array = ArrayXd::Zero(K+1);
+        
+        // for k = 1:K
+        for (int k = 0; k <= K; k++)
+        {
+            // cls_k = data((labels==k),:);
+            // n_k = size(cls_k,1);
+            
+            ArrayXi cls_k_idxs = MAPA::UtilityCalcs::IdxsFromComparison(labels, "eq", k);
+            ArrayXXd cls_k;
+            igl::slice(data, cls_k_idxs, 1, cls_k);
+            int n_k = cls_k.rows();
+
+            // if n_k >= dims(k)+1
+            if (n_k > dims(k))
+            {
+                // cls_k = cls_k - repmat(centers{k},n_k,1);
+                cls_k.rowwise() -= ctr[k].transpose();
+                
+                // mse(k) = sum( sum(cls_k.^2,2) - sum((cls_k*dir{k,1}').^2,2) ) / (D-dims(k));
+                ArrayXd sum_squares = cls_k.square().rowwise().sum();
+                ArrayXd proj_sum_squares = (cls_k.matrix() * dir[k].matrix().transpose()).array().square().rowwise().sum();
+                mse_array[k] = (sum_squares - proj_sum_squares).sum() / (D-dims[k]);
+            // end
+            }
+            
+        // end
+        }
+        
+        // mse = sqrt(sum(mse)/sum(labels>0));
+        int N = labels.size();
+        ArrayXi ones = ArrayXi::Ones(N);
+        ArrayXi zeros = ArrayXi::Zero(N);
+        ArrayXi good_labels = (labels > -1).select(ones, zeros);
+        int good_labels_count = good_labels.sum();
+        double mse = std::sqrt( mse_array.sum() / good_labels_count );
+        
+        return mse;
     };
 
     static double ClusteringError(const ArrayXi &indices, const ArrayXi &trueLabels)

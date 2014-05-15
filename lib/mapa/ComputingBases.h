@@ -12,6 +12,7 @@ Duke University
 */
 
 #include "Options.h"
+#include "UtilityCalcs.h"
 #include <vector>
 #include "Eigen/Dense"
 
@@ -32,6 +33,7 @@ public:
         int K = labels.maxCoeff();
         
         // for k = 1:K
+        // NOTE: labels that should be ignored need to be set negative
         for (int k = 0; k <= K; k++)
         {
             // cls_k = data((labels==k),:);

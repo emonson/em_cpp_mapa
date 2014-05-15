@@ -389,15 +389,25 @@ if nOutliers>0
     objectiveFun = Inf;
     labels = [];
     outliers = [];
+    % NOTE: I don't quite see how this is a progressive optimization...?
     while objectiveFun1<objectiveFun
+        % if we're doing better, go ahead and grab the labels from the last round
         labels = labels1;
+        % and keep track of sum of distances
         objectiveFun = objectiveFun1;
-        outliers = outliers1;       
+        % and lock in the outliers from last time, too
+        outliers = outliers1;
+        % sort descending so first points are furtheset pointss
         [~, I] = sort(dists, 'descend');
+        % grab indices of points farthest from any planes
         outliers1=I(1:nOutliers);
+        % setting labels as zero gets them ignored in computing_bases
         labels1(outliers1)=0;
+        % compute new planes ignoring these outlying points
         [planeCenters, planeBases] = computing_bases(X, labels1, planeDims);
+        % calculate distances from all points to these new bases
         dists = p2pdist(X,planeCenters,planeBases);
+        % figure out which groups all points should belong to using these new bases
         [dists,labels1] = min(dists,[],2);
         objectiveFun1 = sum(sqrt(dists));
     end

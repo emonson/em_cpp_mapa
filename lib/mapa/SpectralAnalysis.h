@@ -90,9 +90,7 @@ public:
         std::vector<ArrayXXd> planeBases = computing_bases.GetBases();
         
         // dists = p2pdist(X,planeCenters,planeBases);
-        ArrayXXd all_dists = MAPA::UtilityCalcs::P2Pdists(X_allPtsOpt, planeCenters, planeBases);
-        
-            // * * * * OKAY TO HERE * * * *
+        ArrayXXd all_dists = MAPA::UtilityCalcs::P2Pdists(X, planeCenters, planeBases);
         
         // [dists,labels] = min(dists,[],2);
         int N = all_dists.rows();
@@ -104,8 +102,10 @@ public:
             dists[ii] = all_dists.row(ii).minCoeff(&labels[ii]);
         }
         
-        std::cout << dists.transpose() << std::endl;
+            // * * * * OKAY TO HERE * * * *
 
+        // TODO: Not implementing for now since not default and confused...
+        
         // if nOutliers>0
         //     % new labels
         //     labels1 = labels;
@@ -115,23 +115,39 @@ public:
         //     objectiveFun = Inf;
         //     labels = [];
         //     outliers = [];
+        //     % NOTE: I don't quite see how this is a progressive optimization...?
         //     while objectiveFun1<objectiveFun
+        //         % if we're doing better, go ahead and grab the labels from the last round
         //         labels = labels1;
+        //         % and keep track of sum of distances
         //         objectiveFun = objectiveFun1;
-        //         outliers = outliers1;       
+        //         % and lock in the outliers from last time, too
+        //         outliers = outliers1;
+        //         % sort descending so first points are furtheset pointss
         //         [~, I] = sort(dists, 'descend');
+        //         % grab indices of points farthest from any planes
         //         outliers1=I(1:nOutliers);
+        //         % setting labels as zero gets them ignored in computing_bases
         //         labels1(outliers1)=0;
+        //         % compute new planes ignoring these outlying points
         //         [planeCenters, planeBases] = computing_bases(X, labels1, planeDims);
+        //         % calculate distances from all points to these new bases
         //         dists = p2pdist(X,planeCenters,planeBases);
+        //         % figure out which groups all points should belong to using these new bases
         //         [dists,labels1] = min(dists,[],2);
         //         objectiveFun1 = sum(sqrt(dists));
         //     end
         //     labels(outliers)=0;
         // end
-        // 
-        // err = L2error(X, planeDims, labels);
-        // 
+        
+        // err = L2error(X, labels, planeDims);
+        
+        // NOTE: Why would we recompute the bases for all points for this error calculation??
+        MAPA::ComputingBases computing_bases_all(X, labels, planeDims);
+        std::vector<ArrayXd> planeCenters_all = computing_bases_all.GetCenters();
+        std::vector<ArrayXXd> planeBases_all = computing_bases_all.GetBases();
+        
+        err = MAPA::UtilityCalcs::L2error( X, labels, planeDims, planeCenters_all, planeBases_all );
     };
 
     ArrayXi GetPlaneDims()
