@@ -45,10 +45,9 @@ public:
         // NOTE: Only allowing 'hard' seed type right now...
         bool normalizeU = true;
         ArrayXi indicesKmeans = MAPA::UtilityCalcs::ClusteringInUSpace(U, normalizeU);
-        std::cout << indicesKmeans.transpose() << std::endl;
         
         // planeDims = zeros(1,K);
-        ArrayXi planeDims = ArrayXi::Zero(K);
+        planeDims = ArrayXi::Zero(K);
         
         // for k = 1:K
         for (int k = 0; k < K; k++)
@@ -57,25 +56,29 @@ public:
             //     class_k = allPtsInOptRegions(indicesKmeans == k);
             ArrayXi cluster_k_idxs = MAPA::UtilityCalcs::IdxsFromComparison(indicesKmeans, "eq", k);
             ArrayXi class_k;
-            igl::slice(allPtsInOptRegions, cluster_k_indices, class_k);
+            igl::slice(allPtsInOptRegions, cluster_k_idxs, class_k);
         
             //     % Figure out which of these points are seed points
             //     temp = invColMap(class_k);  
             //     temp = temp(temp>0);
-            ArrayXi temp;
-            igl::slice(invColMap, class_k, temp);
-            ArrayXi temp_valid = MAPA::UtilityCalcs::IdxsFromComparison(temp, "gte", 0);
+            ArrayXi temp0;
+            igl::slice(invColMap, class_k, temp0);
+            ArrayXi temp1 = MAPA::UtilityCalcs::IdxsFromComparison(temp0, "gte", 0);
+            ArrayXi temp_valid;
+            igl::slice(temp0, temp1, temp_valid);
         
             //     % Then see what dimensionality most of these seed points in this
             //     % cluster have
             //     planeDims(k) = mode(localDims(temp));
             ArrayXi cluster_dims;
             igl::slice(localDims, temp_valid, cluster_dims);
-            planeDims(k) = mode(cluster_dims);
+            std::cout << cluster_dims.transpose() << std::endl;
+            planeDims(k) = MAPA::UtilityCalcs::Mode(cluster_dims);
             
         // end
         }
         
+            // * * * * OKAY TO HERE * * * *
         
         // 
         // [planeCenters, planeBases] = computing_bases(X(allPtsInOptRegions,:), indicesKmeans, planeDims);

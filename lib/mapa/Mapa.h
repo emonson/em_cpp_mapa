@@ -362,12 +362,10 @@ public:
         ArrayXd invDegrees = 1.0 / degrees.sqrt();
         A = invDegrees.replicate(1,n0) * A;
 
-                // ** OKAY TO HERE **
+            // * * * * OKAY TO HERE * * * *
 
         // Directly cluster data (when K is provided)
         // if isfield(opts, 'K'),
-        ArrayXi planeDims;
-        ArrayXi labels;
         double err;
         if (opts.K > 0)
         {
@@ -398,9 +396,6 @@ public:
         else if (opts.Kmax > 0)
         {
             //     [U,S] = svds(A, opts.Kmax+1);
-            //     if opts.plotFigs
-            //         figure; do_plot_data(diag(S)); title('Top Singular Values of L', 'fontSize', 14); box on
-            //     end
             //     
             //     planeDims = mode(localDims);
             //     labels = ones(1,N);

@@ -9,6 +9,7 @@ ADD_EXECUTABLE(opts_test opts_test.cpp)
 ADD_EXECUTABLE(randsample_test randsample_test.cpp)
 ADD_EXECUTABLE(estdim_test estdim_test.cpp)
 ADD_EXECUTABLE(unique unique.cpp)
+ADD_EXECUTABLE(mode mode.cpp)
 ADD_EXECUTABLE(logical_indexing logical_indexing.cpp)
 ADD_EXECUTABLE(quantile_transfer quantile_transfer.cpp)
 

@@ -21,6 +21,7 @@ Duke University
 #include <stdlib.h>
 #include <iostream>
 #include <vector>
+#include <map>
 #include <set>
 #include <algorithm>
 
@@ -221,12 +222,47 @@ class UtilityCalcs {
         // % This is a C++ routine that has 0-based indices, so add one here
         // indicesKmeans = indicesKmeans + 1;
         // 
-        // figure; plot(indicesKmeans);
         // 
         // end
 
         return indicesKmeans;
     };
+    
+    static int Mode(const ArrayXi &invec)
+    {
+        // Like Matlab implementation of mode(), this returns the lowest value
+        // that ties the highest count
+        
+        int max_count = 0;
+        int low_key = INFINITY;
+    
+        std::map<int, int> counts;
+        std::map<int, int>::iterator it;
+    
+        for (int ii = 0; ii < invec.size(); ii++)
+        {
+            int vv = invec(ii);
+            if (counts.find(vv) == counts.end())
+            {
+                counts[vv] = 1;
+            }
+            else
+            {
+                counts[vv] += 1;
+            }
+        
+            if ((counts[vv] == max_count) && (vv < low_key))
+            {
+                low_key = vv;
+            }
+            else if (counts[vv] > max_count)
+            {
+                max_count = counts[vv];
+                low_key = vv;
+            }
+        }
+        return low_key;
+    }
 
   private:
     
