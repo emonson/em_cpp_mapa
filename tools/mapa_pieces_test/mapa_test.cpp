@@ -23,6 +23,7 @@ int main(int argc, char * argv[])
 	
     // NOTE: seeds is matlab-style 1s index!!
     seeds -= 1;
+    aprioriSampleLabels -= 1;
     
     Array3i aSubDims;
     aSubDims << 1, 2, 1;

@@ -141,53 +141,152 @@ class UtilityCalcs {
         // 
         // [sortedLabels, inds_sort] = sort(trueLabels, 'ascend');
         // indices = indices(inds_sort);
-        // 
+        
+        // NOTE: This routine assumes trueLabels don't skip any integers and all are present
+        bool ascending = true;
+        ArrayXi sortedLabels;
+        ArrayXi inds_sort;
+        igl::sort(trueLabels, 1, ascending, sortedLabels, inds_sort);
+
         // N = length(trueLabels);
         // K = sortedLabels(N);
-        // 
+        int N = trueLabels.size();
+        // number of clusters
+        int K = sortedLabels(N-1) + 1;
+        
         // planeSizes = zeros(K,1);
+        ArrayXi planeSizes = ArrayXi::Zero(K);
+        
         // k = 1;
         // i = 1;
         // ini = 0;
+        int k = 0;
+        int i = 0;
+        int ini = 0;
+        
         // while k<=K 
+        while (k < K)
+        {
         //     while i<=N && sortedLabels(i)== k
-        //         i = i+1;
-        //     end
-        //     planeSizes(k)=i-1-ini;
-        //     ini = i-1;
-        //     k=k+1;
+            while ((i < N) && (sortedLabels[i]==k))
+            {
+                // i = i+1;
+                i = i + 1;
+            // end 
+            }
+            // planeSizes(k) = i-1-ini;
+            planeSizes[k] = i-ini;
+            // ini = i-1;
+            ini = i;
+            // k = k+1;
+            k = k + 1;
         // end
-        // 
+        }
+        
         // num = zeros(K,K);
+        ArrayXXi num = ArrayXXi::Zero(K,K);
+        
+        std::cout << "xxxxxxxx" << std::endl;
         // for k = 1:K
+        for (int k = 0; k < K; k++)
+        {
         //     for j = 1:K
-        //         num(k,j) = sum((indices(sum(planeSizes(1:k-1))+1:sum(planeSizes(1:k)))==j));
+            for (int j = 0; j < K; j++)
+            {
+        //         num(k,j) = sum((indices( sum(planeSizes(1:k-1))+1:sum(planeSizes(1:k)) )==j));
+                int inds_start = planeSizes.head(k-1).sum();
+                int inds_stop = planeSizes.head(k).sum() - 1;
+                std::cout << "pre-inds" << inds_start << ", " << inds_stop << std::endl;
+                ArrayXi inds = ArrayXi::LinSpaced(inds_stop-inds_start+1, inds_start, inds_stop);
+                std::cout << "inds " << inds.transpose() << std::endl;
+                ArrayXi indices_slice;
+                igl::slice(indices, inds, indices_slice);
+                ArrayXi indices_slice_matches = MAPA::UtilityCalcs::IdxsFromComparison(indices_slice, "eq", j);
+                num(k,j) = indices_slice_matches.size();
         //     end
+            }
         // end
-        // 
+        }
+        
         // p = 1-number_of_correctly_classified_points(num)/sum(planeSizes);
-        // 
-        // %%
-        // 
-        // function n = number_of_correctly_classified_points(num)
-        // 
-        // K = size(num,1);
-        // 
-        // if K>2
-        //     n = zeros(K,1);
-        //     for j = 1:K
-        //         n(j) = num(1,j)+number_of_correctly_classified_points(num(2:end,[1:j-1 j+1:K]));
-        //     end
-        //     n = max(n);
-        // elseif  K == 2 
-        //     n = max(num(1,1)+num(2,2), num(1,2)+num(2,1));
-        // else
-        //     n = num;
-        // end
-
-        return 0;
+        std::cout << "XXXXXXX" << std::endl;
+        int correct = MAPA::UtilityCalcs::NumberOfCorrectlyClassifiedPoints(num);
+        double p = 1.0 - (double)correct / planeSizes.sum();
+        
+        return p;
     };
-    
+
+    static int NumberOfCorrectlyClassifiedPoints(const ArrayXXi &num)
+    {
+        // function n = number_of_correctly_classified_points(num)
+
+        // K = size(num,1);
+        int K = num.rows();
+
+        int n;
+        // if K>2
+        if (K > 2)
+        {
+            // n = zeros(K,1);
+            ArrayXi n_tmp = ArrayXi::Zero(K);
+            // for j = 1:K
+            for (int j = 0; j < K; j++)
+            {
+                // n(j) = num(1,j)+number_of_correctly_classified_points( num(2:end,[1:j-1 j+1:K]) );
+                int num_cols = num.cols();
+                ArrayXXi num_tmp = num.rightCols(num_cols-1);
+                MAPA::UtilityCalcs::removeColumn( num_tmp, j );
+                n_tmp(j) = num(0, j) + MAPA::UtilityCalcs::NumberOfCorrectlyClassifiedPoints(num_tmp);
+            // end
+            }
+            // n = max(n);
+            n = n_tmp.maxCoeff();
+        }
+        // elseif  K == 2 
+        else if (K == 2)
+        {
+            // n = max(num(1,1)+num(2,2), num(1,2)+num(2,1));
+            int diag = num(0,0) + num(1,1);
+            int offd = num(0,1) + num(1,0);
+            n = (diag > offd) ? diag : offd;
+        }
+        // else
+        else
+        {
+            // n = num;
+            n = num(0,0);
+        // end
+        }
+        
+        return n;
+    };
+
+    // http://stackoverflow.com/questions/13290395/how-to-remove-a-certain-row-or-column-while-using-eigen-library-c
+    template <typename Derived>
+    static void removeRow(Array<Derived, Dynamic, Dynamic> &matrix, unsigned int rowToRemove)
+    {
+        unsigned int numRows = matrix.rows()-1;
+        unsigned int numCols = matrix.cols();
+
+        if( rowToRemove < numRows )
+            matrix.block(rowToRemove,0,numRows-rowToRemove,numCols) = matrix.block(rowToRemove+1,0,numRows-rowToRemove,numCols);
+
+        matrix.conservativeResize(numRows,numCols);
+    };
+
+    // http://stackoverflow.com/questions/13290395/how-to-remove-a-certain-row-or-column-while-using-eigen-library-c
+    template <typename Derived>
+    static void removeColumn(Array<Derived, Dynamic, Dynamic> &matrix, unsigned int colToRemove)
+    {
+        unsigned int numRows = matrix.rows();
+        unsigned int numCols = matrix.cols()-1;
+
+        if( colToRemove < numCols )
+            matrix.block(0,colToRemove,numRows,numCols-colToRemove) = matrix.block(0,colToRemove+1,numRows,numCols-colToRemove);
+
+        matrix.conservativeResize(numRows,numCols);
+    }
+
     static ArrayXi RandSample(unsigned int N, unsigned int K, bool sorted=false)
     {
 			/* Y = randsample(N,K) returns Y as a column vector of K values sampled
