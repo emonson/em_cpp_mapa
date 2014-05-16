@@ -90,8 +90,8 @@ switch pExampleNames{pExampleIdx}
        
        % apply mapa
        [labels, planeDims] = mapa_min(X,opts);
-       MisclassificationRate = clustering_error(labels,aprioriSampleLabels);
-       disp(MisclassificationRate);
+       MisclassificationRate = clustering_error_improved(labels,aprioriSampleLabels);
+       fprintf(1, 'Misclassification rate = %.10f\n', MisclassificationRate);
         
    case 'Simulation_Mode'
         
