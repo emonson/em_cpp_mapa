@@ -1,15 +1,16 @@
 function p = clustering_error_improved(clustered_labels, true_labels)
 
 % Right now this only works for equal numbers of clusters in both the true
-% and inferred labels. 
+%   and inferred labels. 
 % For unequal numbers, the inefficient way would be to make K equal to the
-% larger of the two numbers of labels and do all the rest the same. The
-% most efficient solution would be to make J the larger of the two and K
-% the smaller, and then instead of all of the permutations in the
-% subroutine, generate all of the nchoosek combinations, (j choose k), and
-% then generate all of the permutations of each of those and check them for
-% which is best. That would make k! * (n!/((n-k)!*k!)) possibilities over
-% which to find the max.
+%   larger of the two numbers of labels and do all the rest the same. That
+%   is what we have implemented at this point. 
+% The most efficient solution would be to make J the larger of the two and
+%   K the smaller, and then instead of all of the permutations in the
+%   subroutine, generate all of the nchoosek combinations, (j choose k), and
+%   then generate all of the permutations of each of those and check them for
+%   which is best. That would make k! * (n!/((n-k)!*k!)) possibilities over
+%   which to find the max.
 
 % Make sure both are row vectors (or columns will work)
 clustered_labels = reshape(clustered_labels, 1, []);
@@ -17,7 +18,7 @@ true_labels = reshape(true_labels, 1, []);
 
 Js = unique(clustered_labels);
 Ks = unique(true_labels);
-K = length(Ks);
+K = max([length(Js) length(Ks)]);
 
 planeSizes = zeros(1,K);
 for k = 1:length(Ks)

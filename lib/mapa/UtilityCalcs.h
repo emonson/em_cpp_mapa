@@ -135,128 +135,111 @@ class UtilityCalcs {
         return mse;
     };
 
-    static double ClusteringError(const ArrayXi &indices, const ArrayXi &trueLabels)
+    static double ClusteringError(const ArrayXi &clustered_labels, const ArrayXi &true_labels)
     {
-        // function p = clustering_error(indices,trueLabels)
+        // function p = clustering_error_improved(clustered_labels, true_labels)
         // 
-        // [sortedLabels, inds_sort] = sort(trueLabels, 'ascend');
-        // indices = indices(inds_sort);
+        // % Right now this only works for equal numbers of clusters in both the true
+        // %   and inferred labels. 
+        // % For unequal numbers, the inefficient way would be to make K equal to the
+        // %   larger of the two numbers of labels and do all the rest the same. That
+        // %   is what we have implemented at this point. 
+        // % The most efficient solution would be to make J the larger of the two and
+        // %   K the smaller, and then instead of all of the permutations in the
+        // %   subroutine, generate all of the nchoosek combinations, (j choose k), and
+        // %   then generate all of the permutations of each of those and check them for
+        // %   which is best. That would make k! * (n!/((n-k)!*k!)) possibilities over
+        // %   which to find the max.
+        // 
+        // % Make sure both are row vectors (or columns will work)
+        // clustered_labels = reshape(clustered_labels, 1, []);
+        // true_labels = reshape(true_labels, 1, []);
+        // 
+        int N = clustered_labels.size();
+        if (N != true_labels.size())
+        {
+            std::cerr << "MAPA::UtilityCalcs::ClusteringError -- number of true and clustered labels must be equal!" << std::endl;
+            return 1.0;
+        }
         
-        // NOTE: This routine assumes trueLabels don't skip any integers and all are present
-        bool ascending = true;
-        ArrayXi sortedLabels;
-        ArrayXi inds_sort;
-        igl::sort(trueLabels, 1, ascending, sortedLabels, inds_sort);
-
-        // N = length(trueLabels);
-        // K = sortedLabels(N);
-        int N = trueLabels.size();
-        // number of clusters
-        int K = sortedLabels(N-1) + 1;
+        // Js = unique(clustered_labels);
+        // Ks = unique(true_labels);
+        // K = max([length(Js) length(Ks)]);
+        ArrayXi Js = MAPA::UtilityCalcs::UniqueMembers(clustered_labels);
+        ArrayXi Ks = MAPA::UtilityCalcs::UniqueMembers(true_labels);
+        int K = Js.size() > Ks.size() ? Js.size() : Ks.size();
         
-        // planeSizes = zeros(K,1);
+        // planeSizes = zeros(1,K);
         ArrayXi planeSizes = ArrayXi::Zero(K);
         
-        // k = 1;
-        // i = 1;
-        // ini = 0;
-        int k = 0;
-        int i = 0;
-        int ini = 0;
-        
-        // while k<=K 
-        while (k < K)
-        {
-        //     while i<=N && sortedLabels(i)== k
-            while ((i < N) && (sortedLabels[i]==k))
-            {
-                // i = i+1;
-                i = i + 1;
-            // end 
-            }
-            // planeSizes(k) = i-1-ini;
-            planeSizes[k] = i-ini;
-            // ini = i-1;
-            ini = i;
-            // k = k+1;
-            k = k + 1;
+        // for k = 1:length(Ks)
+        //     planeSizes(k) = sum(true_labels == Ks(k));
         // end
-        }
-        
-        // num = zeros(K,K);
-        ArrayXXi num = ArrayXXi::Zero(K,K);
-        
-        std::cout << "xxxxxxxx" << std::endl;
-        // for k = 1:K
-        for (int k = 0; k < K; k++)
+        for (int k = 0; k < Ks.size(); k++)
         {
-        //     for j = 1:K
-            for (int j = 0; j < K; j++)
+            ArrayXi cls_k_idxs = MAPA::UtilityCalcs::IdxsFromComparison(true_labels, "eq", Ks(k));
+            planeSizes(k) = cls_k_idxs.size();
+        }
+
+        // counts_mtx = zeros(K,K);
+        ArrayXXi counts_mtx = ArrayXXi::Zero(K,K);
+        ArrayXi ones = ArrayXi::Ones(N);
+        ArrayXi zeros = ArrayXi::Zero(N);
+        
+        // % k is the index of true labels
+        // for k = 1:length(Ks)
+        for (int k = 0; k < Ks.size(); k++)
+        {
+            //     % j is the index of the inferred, clustering results labels
+            //     for j = 1:length(Js)
+            for (int j = 0; j < Js.size(); j++)
             {
-        //         num(k,j) = sum((indices( sum(planeSizes(1:k-1))+1:sum(planeSizes(1:k)) )==j));
-                int inds_start = planeSizes.head(k-1).sum();
-                int inds_stop = planeSizes.head(k).sum() - 1;
-                std::cout << "pre-inds" << inds_start << ", " << inds_stop << std::endl;
-                ArrayXi inds = ArrayXi::LinSpaced(inds_stop-inds_start+1, inds_start, inds_stop);
-                std::cout << "inds " << inds.transpose() << std::endl;
-                ArrayXi indices_slice;
-                igl::slice(indices, inds, indices_slice);
-                ArrayXi indices_slice_matches = MAPA::UtilityCalcs::IdxsFromComparison(indices_slice, "eq", j);
-                num(k,j) = indices_slice_matches.size();
-        //     end
+                //         % count up how many matches there are with this k and j combination
+                //         counts_mtx(k,j) = sum( (clustered_labels == Js(j)) & (true_labels == Ks(k)) );
+                ArrayXi clustered_matching = (clustered_labels == Js(j)).select(ones, zeros);
+                ArrayXi true_matching = (true_labels == Ks(k)).select(ones, zeros);
+                counts_mtx(k,j) = (clustered_matching * true_matching).sum();
+            //     end
             }
         // end
         }
         
-        // p = 1-number_of_correctly_classified_points(num)/sum(planeSizes);
-        std::cout << "XXXXXXX" << std::endl;
-        int correct = MAPA::UtilityCalcs::NumberOfCorrectlyClassifiedPoints(num);
-        double p = 1.0 - (double)correct / planeSizes.sum();
+
+        // [n_correct, ~] = number_of_correctly_classified_points(counts_mtx);
+        // p = 1 - n_correct/length(true_labels);
+        
+        int correct = MAPA::UtilityCalcs::NumberOfCorrectlyClassifiedPoints(counts_mtx);
+        double p = 1.0 - (double)correct / (double)N;
         
         return p;
     };
 
     static int NumberOfCorrectlyClassifiedPoints(const ArrayXXi &num)
     {
-        // function n = number_of_correctly_classified_points(num)
 
-        // K = size(num,1);
-        int K = num.rows();
-
-        int n;
-        // if K>2
-        if (K > 2)
-        {
-            // n = zeros(K,1);
-            ArrayXi n_tmp = ArrayXi::Zero(K);
-            // for j = 1:K
-            for (int j = 0; j < K; j++)
-            {
-                // n(j) = num(1,j)+number_of_correctly_classified_points( num(2:end,[1:j-1 j+1:K]) );
-                int num_cols = num.cols();
-                ArrayXXi num_tmp = num.rightCols(num_cols-1);
-                MAPA::UtilityCalcs::removeColumn( num_tmp, j );
-                n_tmp(j) = num(0, j) + MAPA::UtilityCalcs::NumberOfCorrectlyClassifiedPoints(num_tmp);
-            // end
-            }
-            // n = max(n);
-            n = n_tmp.maxCoeff();
-        }
-        // elseif  K == 2 
-        else if (K == 2)
-        {
-            // n = max(num(1,1)+num(2,2), num(1,2)+num(2,1));
-            int diag = num(0,0) + num(1,1);
-            int offd = num(0,1) + num(1,0);
-            n = (diag > offd) ? diag : offd;
-        }
-        // else
-        else
-        {
-            // n = num;
-            n = num(0,0);
+        // K = size(counts_mtx,1);
+        // 
+        // % There are K! permutations of the integers 1:K
+        // % We will consider k always to be the sequence 1:K
+        // % and j will be the permuted forms
+        // 
+        // % Generate all permutations. Each row is one permutation.
+        // permuted_js = perms(1:K);
+        // 
+        // % We'll keep track of the results for all of the permutations
+        // % and then just use the permutation that gives us the best results
+        // % (max number of correct answers)
+        // n_permutations = size(permuted_js,1); % == K!
+        // num_correct = zeros(1, n_permutations);
+        // 
+        // for pp = 1:n_permutations,
+        //     for k = 1:K
+        //         num_correct(pp) = num_correct(pp) + counts_mtx(k, permuted_js(pp,k));
+        //     end
         // end
-        }
+        // 
+        // [n,I] = max(num_correct);
+        // opt_perm = permuted_js(I);
         
         return n;
     };
@@ -326,6 +309,28 @@ class UtilityCalcs {
 			}
     };
 
+    static ArrayXi UniqueMembers(const ArrayXi &labels)
+    {
+        // Find unique members by adding them to a std::set
+        std::set<int> unique_members;
+        for (int ii = 0; ii < labels.size(); ii++)
+        {
+            unique_members.insert(labels(ii));
+        }
+        
+        // Copy values over into an Eigen array
+        ArrayXi unique_array(unique_members.size());
+        std::set<int>::iterator it;
+        int ii = 0;
+        for (it = unique_members.begin(); it != unique_members.end(); ++it)
+        {
+            unique_array(ii) = *it;
+            ii++;
+        }
+
+        return unique_array;
+    };
+    
     static ArrayXi UniqueMembers(const std::vector<ArrayXi> &neighborhoods)
     {
         // Actually find unique members by adding them to a set
