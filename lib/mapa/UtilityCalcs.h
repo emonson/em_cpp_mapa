@@ -214,11 +214,12 @@ class UtilityCalcs {
         return p;
     };
 
-    static int NumberOfCorrectlyClassifiedPoints(const ArrayXXi &num)
+    static int NumberOfCorrectlyClassifiedPoints(const ArrayXXi &counts_mtx)
     {
 
         // K = size(counts_mtx,1);
-        // 
+        int K = counts_mtx.rows();
+        
         // % There are K! permutations of the integers 1:K
         // % We will consider k always to be the sequence 1:K
         // % and j will be the permuted forms
@@ -231,17 +232,42 @@ class UtilityCalcs {
         // % (max number of correct answers)
         // n_permutations = size(permuted_js,1); % == K!
         // num_correct = zeros(1, n_permutations);
-        // 
+        
+        // For the C++ version not going to store all results. Can generate next permutation
+        // as we go, and just keep track of max and best permutation.
+        
+        // Sorted ascending is the lexographically lowest order, so start with that
+        ArrayXi permuted_js = ArrayXi::LinSpaced(K, 0, K-1);
+        int *pt = (int*)permuted_js.data();
+        int num_correct = 0;
+        int max_correct = -INFINITY;
+        
+        // Not returning these for now...
+        ArrayXi optimal_js = permuted_js;
+        
         // for pp = 1:n_permutations,
         //     for k = 1:K
         //         num_correct(pp) = num_correct(pp) + counts_mtx(k, permuted_js(pp,k));
         //     end
         // end
-        // 
+        
+        do {
+            num_correct = 0;
+            for (int k = 0; k < K; k++)
+            {
+                num_correct += counts_mtx(k, permuted_js(k));
+            }
+            if (num_correct > max_correct)
+            {
+                max_correct = num_correct;
+                optimal_js = permuted_js;
+            }
+        } while ( std::next_permutation(pt, pt+K) );
+
         // [n,I] = max(num_correct);
         // opt_perm = permuted_js(I);
         
-        return n;
+        return max_correct;
     };
 
     // http://stackoverflow.com/questions/13290395/how-to-remove-a-certain-row-or-column-while-using-eigen-library-c

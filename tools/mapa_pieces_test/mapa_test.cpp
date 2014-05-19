@@ -1,8 +1,11 @@
 #include <Eigen/Core>
 #include <igl/readDMAT.h>
 #include <iostream>
+#include <stdio.h> // printf
 #include "Options.h"
 #include "Mapa.h"
+
+#include <time.h>
 
 int main(int argc, char * argv[])
 {
@@ -43,19 +46,20 @@ int main(int argc, char * argv[])
     std::cout << "options" << std::endl;
     std::cout << opts << std::endl;
         
+    clock_t t = clock();
     MAPA::Mapa mapa(X, opts);
+    double MisclassificationRate = MAPA::UtilityCalcs::ClusteringError(mapa.GetLabels(), aprioriSampleLabels);
+    t = clock() - t;
     
     std::cout << std::endl << "Mapa labels:" << std::endl;
     std::cout << mapa.GetLabels().transpose() << std::endl;
     std::cout << std::endl << "Mapa plane dims:" << std::endl;
     std::cout << mapa.GetPlaneDims().transpose() << std::endl;
     std::cout << std::endl << "Mapa disance-based error:" << std::endl;
-    std::cout << mapa.GetDistanceError() << std::endl;
+    std::cout << mapa.GetDistanceError() << std::endl << std::endl;
 
-    double MisclassificationRate = MAPA::UtilityCalcs::ClusteringError(mapa.GetLabels(), aprioriSampleLabels);
-
-    std::cout << std::endl << "Mapa misclassification rate:" << std::endl;
-    std::cout << MisclassificationRate << std::endl;
+    printf("Misclassification Rate: %.10f\n", MisclassificationRate );
+    printf("Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
 
     return 0;
 }

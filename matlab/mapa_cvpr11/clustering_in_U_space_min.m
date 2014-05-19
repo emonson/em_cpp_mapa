@@ -14,8 +14,6 @@ end
 % This is a C++ routine that has 0-based indices, so add one here
 indicesKmeans = indicesKmeans + 1;
 
-figure; plot(indicesKmeans);
-
 end
 
 

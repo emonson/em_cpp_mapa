@@ -83,14 +83,17 @@ switch pExampleNames{pExampleIdx}
        opts.seeds = other.seeds;
        % opts.discardCols = 0.2;
        % opts.discardRows = 0.2;
+       opts.plotFigs = false;
        
        % DEBUG setting K
-       opts = rmfield(opts, 'Kmax');
-       opts.K = 3;
+       % opts = rmfield(opts, 'Kmax');
+       % opts.K = 3;
        
        % apply mapa
+       tic;
        [labels, planeDims] = mapa_min(X,opts);
        MisclassificationRate = clustering_error_improved(labels,aprioriSampleLabels);
+       toc
        fprintf(1, 'Misclassification rate = %.10f\n', MisclassificationRate);
         
    case 'Simulation_Mode'
