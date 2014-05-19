@@ -153,6 +153,8 @@ switch pExampleNames{pExampleIdx}
         opts = struct('dmax',3, 'Kmax',15, 'n0',640, 'plotFigs',true);
         tic; [labels, planeDims] = mapa_min(X,opts); TimeUsed = toc;
         MisclassificationRate = clustering_error_improved(labels,reshape(repmat(1:10, 64, 1), 1, []));
+        disp(['TimeUsed: ' num2str(TimeUsed)]);
+        disp(['MisclassificationRate: ' num2str(MisclassificationRate)]);
         
     case 'Medical12_features'
         

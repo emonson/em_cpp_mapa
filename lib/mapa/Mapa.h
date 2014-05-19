@@ -126,6 +126,7 @@ public:
         // %% linear multiscale svd analysis
         // [optLocRegions, seeds, localDims] = lmsvd(X, opts);
         
+        std::cout << "LMSVD IN" << std::endl;
         MAPA::LMsvd lmsvd(X, opts);
         std::vector<ArrayXi> optLocRegions = lmsvd.GetGoodLocalRegions();
         ArrayXi seeds = lmsvd.GetGoodSeedPoints();
@@ -363,12 +364,13 @@ public:
         ArrayXd invDegrees = 1.0 / degrees.sqrt();
         A = invDegrees.replicate(1,n0) * A;
 
+        JacobiSVD<MatrixXd> svd(A, Eigen::ComputeThinU | Eigen::ComputeThinV);
+        ArrayXXd U = svd.matrixU();
+
             // * * * * OKAY TO HERE * * * *
 
         // Directly cluster data (when K is provided)
         // if isfield(opts, 'K'),
-        JacobiSVD<MatrixXd> svd(A, Eigen::ComputeThinU | Eigen::ComputeThinV);
-        ArrayXXd U = svd.matrixU();
         if (opts.K > 0)
         {
             //     K = opts.K;
@@ -383,7 +385,7 @@ public:
             labels = spectral_analysis.GetLabels();
             distance_error = spectral_analysis.GetError();
        }
-            // * * * * OKAY TO HERE * * * *
+
         // Also select a model when only upper bound is given
         // elseif isfield(opts, 'Kmax'),
         else if (opts.Kmax > 0)
@@ -397,6 +399,7 @@ public:
             labels = ArrayXi::Ones(opts.N);
             
             // NOTE: Why would we recompute the bases for all points for this error calculation??
+            // PROBLEM: computing_bases_all with faces_clustering
             MAPA::ComputingBases computing_bases_all(X, labels, planeDims);
             std::vector<ArrayXd> planeCenters_all = computing_bases_all.GetCenters();
             std::vector<ArrayXXd> planeBases_all = computing_bases_all.GetBases();
