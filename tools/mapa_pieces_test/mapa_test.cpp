@@ -5,7 +5,10 @@
 #include "Options.h"
 #include "Mapa.h"
 
-#include <time.h>
+#include <stdlib.h>             /* NULL */
+#include <time.h>               /* time */
+#include <stdio.h>              /* srand */
+
 
 int main(int argc, char * argv[])
 {
@@ -32,6 +35,9 @@ int main(int argc, char * argv[])
     aSubDims << 1, 2, 1;
 
     int K = aSubDims.size();
+
+    // Reseed random number generator since Eigen Random.h doesn't do this itself
+    srand( (unsigned int)time(NULL) );
 
     MAPA::Opts opts;
     opts.n0 = 20*K;

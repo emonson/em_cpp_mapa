@@ -74,6 +74,7 @@ public:
         ArrayXi allXcols = ArrayXi::LinSpaced(X.cols(), 0, X.cols()-1);
         ArrayXXd net, net_centered;
         ArrayXd sigs;
+        ArrayXd D_sigs;
         ArrayXi seed_nn_idxs, seed_local_region;
         ArrayXi isSeedPointGood(n_seeds);
         
@@ -107,7 +108,10 @@ public:
                 // sqrt of the number of net points
                 sigs /= Nets_count_sqrt;
                 
-                Nets_S.row(i_scale) = sigs.transpose();
+                // sometimes there will be less singular values than D
+                D_sigs.setZero(opts.D);
+                D_sigs.head(sigs.size()) = sigs;
+                Nets_S.row(i_scale) = D_sigs.transpose();
             }
         
             // lStats = EstimateDimFromSpectra(Delta(i_seed,:)', Nets_S, opts.alpha0, i_seed);

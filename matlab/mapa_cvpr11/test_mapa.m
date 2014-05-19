@@ -81,8 +81,8 @@ switch pExampleNames{pExampleIdx}
        
        % make sure using the same seeds rather than randomly generated
        opts.seeds = other.seeds;
-       % opts.discardCols = 0.2;
-       % opts.discardRows = 0.2;
+       opts.discardCols = 0.2;
+       opts.discardRows = 0.2;
        opts.plotFigs = false;
        
        % DEBUG setting K
@@ -112,7 +112,7 @@ switch pExampleNames{pExampleIdx}
         
         for i = 1:3
             
-            sequence = i
+            disp(i);
             eval(['load /Users/emonson/Data/MAPA/MotionSegmentation/' dataset{i} '/' dataset{i} '_truth']);
             [~, N, F] = size(x);
             z = transpose(reshape(permute(x(1:2,:,:),[1 3 2]),2*F,N)); 
@@ -122,10 +122,14 @@ switch pExampleNames{pExampleIdx}
             X = X(inds,:); %figure; do_plot_data(X(:,1:3))
             
             opts = struct('dmax',3, 'Kmax',5, 'n0',N, 'plotFigs',true);
-            tic; [labels, planeDims, other] = mapa(X,opts); TimeUsed = toc
-            planeDims
-            estimatedTolerance = other.eps*sqrt(10)
-            MisclassificationRate = clustering_error(labels,aprioriSampleLabels)
+            tic; 
+            [labels, planeDims] = mapa_min(X,opts); 
+            TimeUsed = toc;
+            disp(TimeUsed);
+            disp(planeDims);
+            % estimatedTolerance = other.eps*sqrt(10);
+            MisclassificationRate = clustering_error_improved(labels,aprioriSampleLabels);
+            disp(MisclassificationRate);
             
             fprintf('\n')
             
@@ -147,8 +151,8 @@ switch pExampleNames{pExampleIdx}
         X = V(:,1:30)*S(1:30,1:30); % 640 points
         figure; do_plot_data(X(:,1:3));
         opts = struct('dmax',3, 'Kmax',15, 'n0',640, 'plotFigs',true);
-        tic; [labels, planeDims, other] = mapa(X,opts); TimeUsed = toc;
-        MisclassificationRate = clustering_error(labels,reshape(repmat(1:10, 64, 1), 1, []));
+        tic; [labels, planeDims] = mapa_min(X,opts); TimeUsed = toc;
+        MisclassificationRate = clustering_error_improved(labels,reshape(repmat(1:10, 64, 1), 1, []));
         
     case 'Medical12_features'
         

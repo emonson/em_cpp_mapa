@@ -116,7 +116,7 @@ for i_seed = 1:n_seeds,
         % sqrt of the number of net points
         sigs = sigs'/sqrt(Nets_count);
 
-        Nets_S(i_scale,:) = sigs;
+        Nets_S(i_scale,1:length(sigs)) = sigs;
     end
         
     lStats = EstimateDimFromSpectra(Delta(i_seed,:)', Nets_S, opts.alpha0, i_seed);

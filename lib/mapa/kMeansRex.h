@@ -47,7 +47,6 @@ Date:   2 April 2013
 
 #include <stdlib.h>		/* NULL */
 #include <time.h>			/* time */
-#include <stdio.h>		/* srand */
 
 #include <iostream>
 
