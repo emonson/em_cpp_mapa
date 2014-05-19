@@ -18,15 +18,17 @@ int main(int argc, char * argv[])
     igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artificial_data_rev1.dmat", X );
 		
     // Read in seed points
-    Eigen::ArrayXi seeds;
+    Eigen::ArrayXXi seeds_in;
     std::cout << "Reading in seed points for test data (rev1)" << std::endl;
-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_nrsearch_seeds.dmat", seeds);
-		
+    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_nrsearch_seeds.dmat", seeds_in);
+    Eigen::ArrayXi seeds = seeds_in.col(0);
+
     // Read in seed points
-    Eigen::ArrayXXi aprioriSampleLabels;
+    Eigen::ArrayXXi aprioriSampleLabels_in;
     std::cout << "Reading in apriori sample labels for test data (rev1)" << std::endl;
-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artificial_aprioriLabels_rev1.dmat", aprioriSampleLabels);
-	
+    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artificial_aprioriLabels_rev1.dmat", aprioriSampleLabels_in);
+    Eigen::ArrayXi aprioriSampleLabels = aprioriSampleLabels_in.row(0);
+
     // NOTE: seeds is matlab-style 1s index!!
     seeds -= 1;
     aprioriSampleLabels -= 1;
@@ -54,7 +56,8 @@ int main(int argc, char * argv[])
         
     clock_t t = clock();
     MAPA::Mapa mapa(X, opts);
-    double MisclassificationRate = MAPA::UtilityCalcs::ClusteringError(mapa.GetLabels(), aprioriSampleLabels);
+    ArrayXi inferred_labels = mapa.GetLabels();
+    double MisclassificationRate = MAPA::UtilityCalcs::ClusteringError(inferred_labels, aprioriSampleLabels);
     t = clock() - t;
     
     std::cout << std::endl << "Mapa labels:" << std::endl;

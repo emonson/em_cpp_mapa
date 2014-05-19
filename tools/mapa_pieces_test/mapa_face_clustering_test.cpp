@@ -18,10 +18,11 @@ int main(int argc, char * argv[])
     igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/face_clustering_svd_in_data.dmat", X );
 		
     // Read in true labels
-    Eigen::ArrayXXi true_labels;
+    Eigen::ArrayXXi true_labels_in;
     std::cout << "Reading in true labels for test data (rev1)" << std::endl;
-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/face_clustering_svd_in_labels.dmat", true_labels);
-	
+    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/face_clustering_svd_in_labels.dmat", true_labels_in);
+    Eigen::ArrayXi true_labels = true_labels_in.row(0);
+
     // NOTE: seeds is matlab-style 1s index!!
     true_labels -= 1;
     
@@ -40,9 +41,7 @@ int main(int argc, char * argv[])
         
     clock_t t = clock();
     MAPA::Mapa mapa(X, opts);
-    double MisclassificationRate = MAPA::UtilityCalcs::ClusteringError(mapa.GetLabels(), true_labels);
     t = clock() - t;
-    
     std::cout << std::endl << "Mapa labels:" << std::endl;
     std::cout << mapa.GetLabels().transpose() << std::endl;
     std::cout << std::endl << "Mapa plane dims:" << std::endl;
@@ -50,8 +49,11 @@ int main(int argc, char * argv[])
     std::cout << std::endl << "Mapa disance-based error:" << std::endl;
     std::cout << mapa.GetDistanceError() << std::endl << std::endl;
 
-    printf("Misclassification Rate: %.10f\n", MisclassificationRate );
     printf("Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
+
+    double MisclassificationRate = MAPA::UtilityCalcs::ClusteringError(mapa.GetLabels(), true_labels);
+    
+    printf("Misclassification Rate: %.10f\n", MisclassificationRate );
 
     return 0;
 }

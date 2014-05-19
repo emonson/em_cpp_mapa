@@ -126,7 +126,6 @@ public:
         // %% linear multiscale svd analysis
         // [optLocRegions, seeds, localDims] = lmsvd(X, opts);
         
-        std::cout << "LMSVD IN" << std::endl;
         MAPA::LMsvd lmsvd(X, opts);
         std::vector<ArrayXi> optLocRegions = lmsvd.GetGoodLocalRegions();
         ArrayXi seeds = lmsvd.GetGoodSeedPoints();

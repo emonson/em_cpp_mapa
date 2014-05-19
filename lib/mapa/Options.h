@@ -142,7 +142,7 @@ public:
         	}
         	else
         	{
-						seeds.setLinSpaced(0,N-1);
+                        seeds = ArrayXi::LinSpaced(N,0,N-1);
 						if (n0 > N)
 						{
 							std::cout << "Warning: The sampling parameter n0 has been modified to N!" << std::endl;
