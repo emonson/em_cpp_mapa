@@ -112,7 +112,7 @@ switch pExampleNames{pExampleIdx}
         
         for i = 1:3
             
-            disp(i);
+            disp(['kanatani' int2str(i)]);
             eval(['load /Users/emonson/Data/MAPA/MotionSegmentation/' dataset{i} '/' dataset{i} '_truth']);
             [~, N, F] = size(x);
             z = transpose(reshape(permute(x(1:2,:,:),[1 3 2]),2*F,N)); 
@@ -125,11 +125,11 @@ switch pExampleNames{pExampleIdx}
             tic; 
             [labels, planeDims] = mapa_min(X,opts); 
             TimeUsed = toc;
-            disp(TimeUsed);
-            disp(planeDims);
+            disp(['TimeUsed: ' num2str(TimeUsed)]);
+            disp(['PlaneDims: ' num2str(planeDims)]);
             % estimatedTolerance = other.eps*sqrt(10);
             MisclassificationRate = clustering_error_improved(labels,aprioriSampleLabels);
-            disp(MisclassificationRate);
+            disp(['MisclassificationRate: ' num2str(MisclassificationRate)]);
             
             fprintf('\n')
             

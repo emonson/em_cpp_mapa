@@ -19,6 +19,9 @@ TARGET_LINK_LIBRARIES(mapa_test myann)
 ADD_EXECUTABLE(mapa_face_clustering_test mapa_face_clustering_test.cpp)
 TARGET_LINK_LIBRARIES(mapa_face_clustering_test myann)
 
+ADD_EXECUTABLE(mapa_motion_segmentation_test mapa_motion_segmentation_test.cpp)
+TARGET_LINK_LIBRARIES(mapa_motion_segmentation_test myann)
+
 ADD_EXECUTABLE(lmsvd_test lmsvd_test.cpp)
 TARGET_LINK_LIBRARIES(lmsvd_test myann)
 

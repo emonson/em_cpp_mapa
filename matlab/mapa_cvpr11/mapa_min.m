@@ -325,6 +325,7 @@ elseif isfield(opts, 'Kmax'),
             spectral_analysis(X, U(:,1:K), allPtsInOptRegions, invColMap, localDims, opts.nOutliers);
     end
     
+    disp(['L2Error ' num2str(L2Errors)]);
     
     %%
     if opts.plotFigs
