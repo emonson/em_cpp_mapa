@@ -16,9 +16,10 @@ int main(int argc, char * argv[])
     igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artificial_data_rev1.dmat", X );
 		
     // Read in seed points
-    Eigen::ArrayXi seeds;
+    Eigen::ArrayXXi seeds_in;
     std::cout << "Reading in seed points for test data (rev1)" << std::endl;
-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_nrsearch_seeds.dmat", seeds);
+    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_nrsearch_seeds.dmat", seeds_in);
+    Eigen::ArrayXi seeds = seeds_in.col(0);
 		
     // Read in real lmsvd all good seeds
     Eigen::ArrayXXi AllGoodScales;
@@ -32,9 +33,10 @@ int main(int argc, char * argv[])
     igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_lmsvd_allestdims.dmat", AllEstDims );
 
     // Read in good seed ponits
-    Eigen::ArrayXi GoodSeedPoints;
+    Eigen::ArrayXXi GoodSeedPoints_in;
     std::cout << "Reading in Artifical test data (rev1) matlab-generated EstDims" << std::endl;
-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_lmsvd_out_goodseeds.dmat", GoodSeedPoints );
+    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_lmsvd_out_goodseeds.dmat", GoodSeedPoints_in );
+    Eigen::ArrayXi GoodSeedPoints = GoodSeedPoints_in.row(0);
 
     // NOTE: seeds is matlab-style 1s index!!
     seeds -= 1;

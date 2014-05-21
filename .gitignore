@@ -7,6 +7,7 @@
 # This is the name I give CMake build/binary directories
 build
 build_qtc
+build_debug
 
 # QtCreator puts .user at the end of the main CMakeLists.txt file
 *.user
