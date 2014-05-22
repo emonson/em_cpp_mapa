@@ -12,6 +12,7 @@ ADD_EXECUTABLE(unique unique.cpp)
 ADD_EXECUTABLE(mode mode.cpp)
 ADD_EXECUTABLE(logical_indexing logical_indexing.cpp)
 ADD_EXECUTABLE(quantile_transfer quantile_transfer.cpp)
+ADD_EXECUTABLE(combinations_test combinations_test.cpp)
 
 ADD_EXECUTABLE(mapa_test mapa_test.cpp)
 TARGET_LINK_LIBRARIES(mapa_test myann)

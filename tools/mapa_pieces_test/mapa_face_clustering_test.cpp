@@ -33,7 +33,7 @@ int main(int argc, char * argv[])
     MAPA::Opts opts;
     opts.dmax = 3;
     opts.Kmax = 15;
-    opts.n0 = 640;
+    opts.n0 = 100;
     
     opts.SetDefaults(X);
     std::cout << "options" << std::endl;
@@ -53,6 +53,8 @@ int main(int argc, char * argv[])
 
     double MisclassificationRate = MAPA::UtilityCalcs::ClusteringError(mapa.GetLabels(), true_labels);
     
+    t = clock() - t;
+    printf("Elapsed time: %.10f sec.for %ld d result\n", (double)t/CLOCKS_PER_SEC, mapa.GetPlaneDims().size() );
     printf("Misclassification Rate: %.10f\n", MisclassificationRate );
 
     return 0;

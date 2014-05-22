@@ -150,12 +150,19 @@ switch pExampleNames{pExampleIdx}
         [U, S, V] = svd(I,0);
         X = V(:,1:30)*S(1:30,1:30); % 640 points
         figure; do_plot_data(X(:,1:3));
-        opts = struct('dmax',3, 'Kmax',15, 'n0',640, 'plotFigs',true);
-        tic; [labels, planeDims] = mapa_min(X,opts); TimeUsed = toc;
+        % opts = struct('dmax',3, 'Kmax',15, 'n0',640, 'plotFigs',true);
+        opts = struct('dmax',3, 'Kmax',15, 'n0',200, 'plotFigs',false);
+        tic; 
+        [labels, planeDims] = mapa_min(X,opts); 
+        TimeUsed = toc;
+        disp(['TimeUsed for mapa: ' num2str(TimeUsed) ' : ' int2str(length(planeDims)) ' d result']);
+
+        tic;
         MisclassificationRate = clustering_error_improved(labels,reshape(repmat(1:10, 64, 1), 1, []));
-        disp(['TimeUsed: ' num2str(TimeUsed)]);
-        disp(['MisclassificationRate: ' num2str(MisclassificationRate)]);
-        
+        TimeUsed = toc;
+        fprintf(1, 'Misclassification rate: %.10f\n', MisclassificationRate);
+        disp(['TimeUsed for clustering error: ' num2str(TimeUsed)]);
+       
     case 'Medical12_features'
         
         cd('/Users/emonson/Data/Ronak');
