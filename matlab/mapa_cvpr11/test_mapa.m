@@ -70,7 +70,7 @@ switch pExampleNames{pExampleIdx}
         opts = struct('n0',20*K, 'dmax',d_max, 'Kmax',2*K, 'plotFigs',true, 'showSpectrum', 0);
                 
         % apply mapa
-        tic; [labels, planeDims, other] = mapa(X,opts); TimeUsed = toc
+        tic; [labels, planeDims] = mapa_min(X,opts); TimeUsed = toc
         MisclassificationRate = clustering_error(labels,aprioriSampleLabels)
         
    case 'Artificial_Data_Preset'
@@ -143,7 +143,7 @@ switch pExampleNames{pExampleIdx}
 %         [U, S, V] = svd(I(:, [64*4+1:320 64*7+1:64*8 64*9+1:640]),0);
 %         X = V(:,1:10)*S(1:10,1:10); N = size(X,1);
 %         opts = struct('dmax',3, 'Kmax',6, 'n0',N, 'plotFigs',true, 'MinNetPts',6, 'nScales',30, 'nPtsPerScale',3);
-%         tic; [labels, planeDims, other] = mapa(X,opts); TimeUsed = toc
+%         tic; [labels, planeDims] = mapa_min(X,opts); TimeUsed = toc
 %         MisclassificationRate = clustering_error(labels,reshape(repmat([1 2 3], 64, 1), 1, []))
         
         % all 10 faces
@@ -151,7 +151,7 @@ switch pExampleNames{pExampleIdx}
         X = V(:,1:30)*S(1:30,1:30); % 640 points
         figure; do_plot_data(X(:,1:3));
         % opts = struct('dmax',3, 'Kmax',15, 'n0',640, 'plotFigs',true);
-        opts = struct('dmax',3, 'Kmax',15, 'n0',200, 'plotFigs',false);
+        opts = struct('dmax', 3, 'Kmax', 15, 'n0', 100, 'plotFigs',false);
         tic; 
         [labels, planeDims] = mapa_min(X,opts); 
         TimeUsed = toc;
@@ -172,7 +172,7 @@ switch pExampleNames{pExampleIdx}
         
         opts = struct('dmax', 3, 'Kmax', 20, 'n0', 540, 'plotFigs', true);
         tic; 
-        [labels, planeDims, other] = mapa(I, opts); 
+        [labels, planeDims] = mapa_min(I, opts); 
         TimeUsed = toc;
         figure; 
         plot(classes+0.15*randn(size(classes)),labels+0.15*randn(size(labels)),'ko','Color',[0.4 0 0]);
@@ -209,7 +209,7 @@ switch pExampleNames{pExampleIdx}
         X = V(:,1:30)*S(1:30,1:30); 
         opts = struct('dmax', 3, 'Kmax', 30, 'n0', 540, 'plotFigs', true);
         tic; 
-        [labels, planeDims, other] = mapa(X, opts); 
+        [labels, planeDims] = mapa_min(X, opts); 
         TimeUsed = toc;
         figure; 
         plot(classes+0.15*randn(size(classes)),labels+0.15*randn(size(labels)),'ko','Color',[0.4 0 0]);
@@ -228,7 +228,7 @@ switch pExampleNames{pExampleIdx}
         % X = V(:,1:50)*S(1:50,1:50); % 640 points
         opts = struct('dmax', 3, 'Kmax', 50, 'n0', 1000, 'plotFigs', true);
         tic; 
-        [labels, planeDims, other] = mapa(I', opts); 
+        [labels, planeDims] = mapa_min(I', opts); 
         TimeUsed = toc;
         figure; 
         plot(classes+0.15*randn(size(classes)),labels+0.15*randn(size(labels)),'ko','Color',[0.4 0 0]);
@@ -278,7 +278,7 @@ switch pExampleNames{pExampleIdx}
         X = V(:,1:150)*S(1:150,1:150); 
         opts = struct('dmax', 3, 'Kmax', 50, 'n0', 1000, 'plotFigs', true);
         tic; 
-        [labels, planeDims, other] = mapa(X, opts); 
+        [labels, planeDims] = mapa_min(X, opts); 
         TimeUsed = toc;
         figure; 
         plot(classes+0.15*randn(size(classes)),labels+0.15*randn(size(labels)),'ko','Color',[0.4 0 0]);
@@ -305,7 +305,7 @@ switch pExampleNames{pExampleIdx}
         figure; do_plot_data(X(:,1:3));
         opts = struct('dmax', 6, 'Kmax', 32, 'n0', 1047, 'plotFigs', true);
         fprintf('Running MAPA\n');
-        tic; [labels, planeDims, other] = mapa(X,opts); 
+        tic; [labels, planeDims] = mapa_min(X,opts); 
         fprintf(1,'Time Used: %3.2f\n', toc);
         % Plot category assignments with some jitter
         figure; plot(labels_true+0.15*randn(size(labels_true)),labels+0.15*randn(size(labels)),'ko','Color',[0.4 0 0]);
@@ -381,7 +381,7 @@ switch pExampleNames{pExampleIdx}
         % opts = struct('dmax', 12, 'Kmax', 64, 'n0', 1047, 'plotFigs', true);
         figure; do_plot_data(X(:,1:3));
         fprintf('Running MAPA\n');
-        tic; [labels, planeDims, other] = mapa(X,opts); 
+        tic; [labels, planeDims] = mapa_min(X,opts); 
         fprintf(1,'Time Used: %3.2f\n', toc);
         % Plot category assignments with some jitter
         figure; plot(labels_true+0.15*randn(size(labels_true)),labels+0.15*randn(size(labels)),'ko','Color',[0.4 0 0]);
@@ -428,7 +428,7 @@ switch pExampleNames{pExampleIdx}
         % opts = struct('dmax', 12, 'Kmax', 64, 'n0', 1047, 'plotFigs', true);
         % figure; do_plot_data(X(:,1:3));
         fprintf('Running MAPA\n');
-        tic; [labels, planeDims, other] = mapa(X,opts); 
+        tic; [labels, planeDims] = mapa_min(X,opts); 
         fprintf(1,'Time Used: %3.2f\n', toc);
         % Plot category assignments with some jitter
         figure; plot(labels_true+0.15*randn(size(labels_true)),labels+0.15*randn(size(labels)),'ko','Color',[0.4 0 0]);
@@ -591,7 +591,7 @@ switch pExampleNames{pExampleIdx}
         % opts = struct('dmax', 12, 'Kmax', 64, 'n0', 1047, 'plotFigs', true);
         figure; do_plot_data(X(:,1:3));
         fprintf('Running MAPA\n');
-        tic; [m_labels, planeDims, other] = mapa(X,opts); 
+        tic; [m_labels, planeDims] = mapa_min(X,opts); 
         fprintf(1,'Time Used: %3.2f\n', toc);
         % Plot category assignments with some jitter
         figure; plot(labels_true+0.15*randn(size(labels_true)),m_labels+0.15*randn(size(m_labels)),'ko','Color',[0.4 0 0]);
@@ -630,7 +630,7 @@ switch pExampleNames{pExampleIdx}
         figure; do_plot_data(X(:,1:3));
         opts = struct('dmax', 6, 'Kmax', 32, 'n0', 1047, 'plotFigs', true);
         fprintf('Running MAPA\n');
-        tic; [labels, planeDims, other] = mapa(X,opts); 
+        tic; [labels, planeDims] = mapa_min(X,opts); 
         fprintf(1,'Time Used: %3.2f\n', toc);
         % Plot category assignments with some jitter
         figure; plot(labels_true+0.15*randn(size(labels_true)),labels+0.15*randn(size(labels)),'ko','Color',[0.4 0 0]);
@@ -667,7 +667,7 @@ switch pExampleNames{pExampleIdx}
 
         opts = struct('dmax', 6, 'Kmax', 32, 'n0', 1047, 'plotFigs', true);
         fprintf('Running MAPA\n');
-        tic; [labels, planeDims, other] = mapa(X,opts); 
+        tic; [labels, planeDims] = mapa_min(X,opts); 
         fprintf(1,'Time Used: %3.2f\n', toc);
         % Plot category assignments with some jitter
         figure; plot(labels_true+0.15*randn(size(labels_true)),labels+0.15*randn(size(labels)),'ko','Color',[0.4 0 0]);
@@ -700,7 +700,7 @@ switch pExampleNames{pExampleIdx}
 
             fprintf('Running MAPA, cat = %d\n', subN);
 
-            [labels, planeDims, other] = mapa(Xsub, opts); 
+            [labels, planeDims] = mapa_min(Xsub, opts); 
             [cc,bb] = computing_bases(Xsub, labels, planeDims);
             centers{subN} = cc{1}';
             bases{subN} = bb{1}';

@@ -76,12 +76,21 @@ public:
             //     planeDims(k) = mode(localDims(temp));
             ArrayXi cluster_dims;
             igl::slice(localDims, temp_valid, cluster_dims);
-            planeDims(k) = MAPA::UtilityCalcs::Mode(cluster_dims);
+
+            if (cluster_dims.size() > 0)
+            {
+                planeDims(k) = MAPA::UtilityCalcs::Mode(cluster_dims);
+            }
+            else
+            {
+                // HACK!! -- Sometimes there are no seed points in a particular cluster...
+                // TODO: This probably isn't right!!
+                planeDims(k) = MAPA::UtilityCalcs::Mode(localDims);
+            }
             
         // end
         }
         
-        // 
         // [planeCenters, planeBases] = computing_bases(X(allPtsInOptRegions,:), indicesKmeans, planeDims);
         ArrayXXd X_allPtsOpt;
         igl::slice(X, allPtsInOptRegions, 1, X_allPtsOpt);

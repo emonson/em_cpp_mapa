@@ -32,6 +32,9 @@ public:
         // K = max(labels);
         int K = labels.maxCoeff();
         
+                // DEBUG
+                std::cout << "dims size " << dims.size() << " K " << K << std::endl;
+
         // for k = 1:K
         // NOTE: labels that should be ignored need to be set negative
         for (int k = 0; k <= K; k++)
@@ -65,8 +68,11 @@ public:
                 JacobiSVD<MatrixXd> svd(cls_k, Eigen::ComputeThinU | Eigen::ComputeThinV);
                 ArrayXXd vk = svd.matrixV();
                 
+                // DEBUG
+                std::cout << "vk cols " << vk.cols() << " dims(k) " << dims(k) << std::endl;
+                
                 // bases{k} = vk';
-                bases.push_back(vk.leftCols(dims[k]).transpose());
+                bases.push_back(vk.leftCols(dims(k)).transpose());
                 
             // end
             }

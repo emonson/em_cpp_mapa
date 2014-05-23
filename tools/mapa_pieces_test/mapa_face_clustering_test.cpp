@@ -33,7 +33,7 @@ int main(int argc, char * argv[])
     MAPA::Opts opts;
     opts.dmax = 3;
     opts.Kmax = 15;
-    opts.n0 = 100;
+    opts.n0 = 10;
     
     opts.SetDefaults(X);
     std::cout << "options" << std::endl;
