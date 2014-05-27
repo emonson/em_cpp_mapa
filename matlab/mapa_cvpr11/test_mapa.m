@@ -146,8 +146,9 @@ switch pExampleNames{pExampleIdx}
 %         tic; [labels, planeDims] = mapa_min(X,opts); TimeUsed = toc
 %         MisclassificationRate = clustering_error(labels,reshape(repmat([1 2 3], 64, 1), 1, []))
         
-        % all 10 faces
+        % all 10 faces -- I is D x N
         [U, S, V] = svd(I,0);
+        % reduced X is N x D
         X = V(:,1:30)*S(1:30,1:30); % 640 points
         figure; do_plot_data(X(:,1:3));
         % opts = struct('dmax',3, 'Kmax',15, 'n0',640, 'plotFigs',true);
@@ -572,20 +573,36 @@ switch pExampleNames{pExampleIdx}
     
     case 'n20_sub1'
         
-        load('/Users/emonson/Data/Fodava/EMoDocMatlabData/n20_sub1train_TFcorr_111809.mat');
+        load('/Users/emonson/Data/Fodava/EMoDocMatlabData/n20_sub1_tdm_train.mat');
         
         % all "non-zero class" documents (need D x N)
-        I = full(G.W);
-        labels_true = double(labels');
+ 
+        % calculate TFIDF (std) normalization for word counts
+        nkj = sum(tdm,1)';      % how many terms in each document
+        D = size(tdm,2);        % number of documents
+        df = sum(tdm>0,2);      % number of documents each term shows up in
+        idf = log(D./(1+df));   % the 1+ is common to avoid divide-by-zero
+
+        [ii,jj,vv] = find(tdm);
+        vv_norm = (vv./nkj(jj)).*idf(ii);
+
+        tdm_norm = sparse(ii,jj,vv_norm);
+        I = full(tdm_norm);
         
-        % Trying sorted to see structure of matA better...
-        % [YY,II] = sort(labels);
-        % I = I(:,II);
-        % labels_true = double(labels(II))';
+        % Take cosine similarity
+        % I is D x N
+        I2 = sqrt(sum(I'.*I', 2));
+        good_cols = I2 > 0;
+        I = I(good_cols, good_cols);
+        I2 = I2(good_cols);
+        labels_true = double(labels(good_cols)');
+        cos_sim = (I'*I)./(I2*I2');
         
         [U, S, V] = svd(I,0);
+        % [U, S, V] = svd(cos_sim,0);
+        
         X = V(:,1:50)*S(1:50,1:50); % 1047 points in 8 true classes
-        opts = struct('dmax', 6, 'Kmax', 32, 'n0', 1177, 'plotFigs', true);
+        opts = struct('dmax', 6, 'Kmax', 8, 'n0', 1177, 'plotFigs', true);
         % opts = struct('K', 2, 'n0', 1177, 'plotFigs', true);
         % X = I';
         % opts = struct('dmax', 12, 'Kmax', 64, 'n0', 1047, 'plotFigs', true);
@@ -594,7 +611,7 @@ switch pExampleNames{pExampleIdx}
         tic; [m_labels, planeDims] = mapa_min(X,opts); 
         fprintf(1,'Time Used: %3.2f\n', toc);
         % Plot category assignments with some jitter
-        figure; plot(labels_true+0.15*randn(size(labels_true)),m_labels+0.15*randn(size(m_labels)),'ko','Color',[0.4 0 0]);
+        figure; plot(labels_true+0.15*randn(length(labels_true),1),m_labels+0.15*randn(size(m_labels)),'ko','Color',[0.4 0 0]);
         xlabel('True categories');
         ylabel('Assigned plane index');
         % MisclassificationRate = clustering_error(labels,reshape(repmat(1:10, 64, 1), 1, []))
@@ -625,10 +642,18 @@ switch pExampleNames{pExampleIdx}
         tdm_norm = sparse(ii,jj,vv_norm);
         I = full(tdm_norm);
         
-        [U, S, V] = svd(I,0);
+        % Take cosine similarity
+        % I is D x N
+        I2 = sqrt(sum(I'.*I', 2));
+        cos_sim = (I'*I)./(I2*I2');
+        
+        % [U, S, V] = svd(I,0);
+        [U, S, V] = svd(cos_sim,0);
+        % X is N x D
         X = V(:,1:50)*S(1:50,1:50); % 1047 points in 8 true classes
         figure; do_plot_data(X(:,1:3));
-        opts = struct('dmax', 6, 'Kmax', 32, 'n0', 1047, 'plotFigs', true);
+        % opts = struct('dmax', 6, 'Kmax', 32, 'n0', 1047, 'plotFigs', true);
+        opts = struct('dmax', 6, 'Kmax', 16, 'n0', 1047, 'plotFigs', true);
         fprintf('Running MAPA\n');
         tic; [labels, planeDims] = mapa_min(X,opts); 
         fprintf(1,'Time Used: %3.2f\n', toc);

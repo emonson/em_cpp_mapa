@@ -128,7 +128,8 @@ for i_seed = 1:n_seeds,
     
 end
 
-goodSeedPoints = (cellfun(@length, goodLocalRegions)>2*estDims & estDims<D);
+% goodSeedPoints = (cellfun(@length, goodLocalRegions)>2*estDims & estDims<D);
+goodSeedPoints = (cellfun(@length, goodLocalRegions)>2*estDims & (estDims < 10));
 
 goodLocalRegions = goodLocalRegions(goodSeedPoints);
 estDims = estDims(goodSeedPoints);
