@@ -1,4 +1,4 @@
-function p = clustering_error_improved(clustered_labels, true_labels)
+function [p, counts_mtx, opt_perm] = clustering_error_improved(clustered_labels, true_labels)
 
 % Right now this only works for equal numbers of clusters in both the true
 %   and inferred labels. 
@@ -35,5 +35,5 @@ for k = 1:length(Ks)
     end
 end
 
-[n_correct, ~] = number_of_correctly_classified_points(counts_mtx);
+[n_correct, opt_perm] = number_of_correctly_classified_points(counts_mtx);
 p = 1 - n_correct/length(true_labels);

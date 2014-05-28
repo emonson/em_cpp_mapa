@@ -602,7 +602,7 @@ switch pExampleNames{pExampleIdx}
         % [U, S, V] = svd(cos_sim,0);
         
         X = V(:,1:50)*S(1:50,1:50); % 1047 points in 8 true classes
-        opts = struct('dmax', 6, 'Kmax', 8, 'n0', 1177, 'plotFigs', true);
+        opts = struct('dmax', 6, 'Kmax', 4, 'n0', length(labels_true), 'plotFigs', false);
         % opts = struct('K', 2, 'n0', 1177, 'plotFigs', true);
         % X = I';
         % opts = struct('dmax', 12, 'Kmax', 64, 'n0', 1047, 'plotFigs', true);
@@ -614,7 +614,13 @@ switch pExampleNames{pExampleIdx}
         figure; plot(labels_true+0.15*randn(length(labels_true),1),m_labels+0.15*randn(size(m_labels)),'ko','Color',[0.4 0 0]);
         xlabel('True categories');
         ylabel('Assigned plane index');
-        % MisclassificationRate = clustering_error(labels,reshape(repmat(1:10, 64, 1), 1, []))
+        [MisclassificationRate, counts_mtx, opt_perm] = clustering_error_improved(m_labels,labels_true);
+        disp(['Misclassification rate: ' num2str(MisclassificationRate)]);
+        figure; 
+        imagesc(counts_mtx); 
+        axis image;
+        colormap(gray);
+        caxis([0 max(counts_mtx(:))]);
 
     case 'SciNews_TFIDF'
         
