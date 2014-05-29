@@ -1,5 +1,5 @@
 
-load('/Users/emonson/Data/Fodava/EMoDocMatlabData/n20_sub4_tdm_train.mat');
+load('/Users/emonson/Data/Fodava/EMoDocMatlabData/n20_setAll_tdm_20120711_train.mat');
 
 % all "non-zero class" documents (need D x N)
 
@@ -26,10 +26,12 @@ cos_sim = (I'*I)./(I2'*I2);
 
 [U, S, V] = svd(I);
 % [U, S, V] = svd(cos_sim,0);
-red_dim = 50;
+
+%% do mapa on reduced dimensionality data
+red_dim = 200;
 
 X = V(:,1:red_dim)*S(1:red_dim,1:red_dim); % 1047 points in 8 true classes
-opts = struct('dmax', 6, 'Kmax', 6, 'n0', length(labels_true), 'plotFigs', false);
+opts = struct('dmax', 6, 'Kmax', 40, 'n0', 800, 'plotFigs', false);
 % opts = struct('K', 2, 'n0', 1177, 'plotFigs', true);
 % X = I';
 % opts = struct('dmax', 12, 'Kmax', 64, 'n0', 1047, 'plotFigs', true);
@@ -39,16 +41,20 @@ fprintf('Running MAPA\n');
 tic; 
 [m_labels, planeDims, planeCenters, planeBases] = mapa_min(X,opts); 
 fprintf(1,'Time Used: %3.2f\n', toc);
+fprintf(1,'Plane Dims:\n');
+disp(planeDims);
 
-% Plot category assignments with some jitter
-figure; plot(labels_true+0.15*randn(length(labels_true),1),m_labels+0.15*randn(size(m_labels)),'ko','Color',[0.4 0 0]);
-xlabel('True categories');
-ylabel('Assigned plane index');
+%% Plot category assignments with some jitter
+figure; plot(m_labels+0.15*randn(size(m_labels)), labels_true+0.15*randn(length(labels_true),1), 'ko','Color',[0.4 0 0]);
+xlabel('Assigned plane index');
+ylabel('True categories');
 [MisclassificationRate, counts_mtx, opt_perm] = clustering_error_improved(m_labels,labels_true);
 disp(['Misclassification rate: ' num2str(MisclassificationRate)]);
 figure; 
 imagesc(counts_mtx); 
 axis image;
+xlabel('Assigned plane index');
+ylabel('True categories');
 colormap(gray);
 caxis([0 max(counts_mtx(:))]);
 
@@ -56,11 +62,31 @@ caxis([0 max(counts_mtx(:))]);
 % figure;
 % hold on;
 for ii=1:length(planeCenters), 
-    % Need to reproject vectors back into term space
-    cent = abs(planeCenters{ii}*U(:,1:red_dim)');
-    [YY,II]=sort(cent, 'descend'); 
-    disp(ii); 
-    disp(terms(II(1:20))); 
-    % plot(cent(II));
+    if ~isempty(planeCenters{ii}),
+        % Need to reproject vectors back into term space
+        cent = abs(planeCenters{ii}*U(:,1:red_dim)');
+        [YY,II]=sort(cent, 'descend'); 
+        disp(ii); 
+        disp(terms(II(1:10))); 
+        % plot(cent(II));
+    end
 end
 
+%% Basis vectors
+cluster_idx = 2;
+for ii=1:length(planeBases{cluster_idx}), 
+    % Need to reproject vectors back into term space
+    projected = planeBases{cluster_idx}(ii,:)*U(:,1:red_dim)';
+    [YY,II]=sort(abs(projected), 'descend'); 
+    fprintf(1, '%d: ', ii);
+    for tt = 1:10,
+        term = terms{II(tt)}; 
+        if projected >= 0,
+            term_sign = '+';
+        else
+            term_sign = '-';
+        end
+        fprintf(1, ' %s%s ', term_sign, term);
+    end
+    fprintf(1, '\n');
+end

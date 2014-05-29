@@ -35,5 +35,11 @@ for k = 1:length(Ks)
     end
 end
 
-[n_correct, opt_perm] = number_of_correctly_classified_points(counts_mtx);
+if K > 12,
+    fprintf(1,'Too many clusters to calculate error in the way we currently implemented\n');
+    n_correct = NaN;
+    opt_perm = ones(K,1);
+else
+    [n_correct, opt_perm] = number_of_correctly_classified_points(counts_mtx);
+end
 p = 1 - n_correct/length(true_labels);
