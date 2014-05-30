@@ -700,28 +700,37 @@ switch pExampleNames{pExampleIdx}
         vv_norm = (vv./nkj(jj)).*idf(ii);
 
         tdm_norm = sparse(ii,jj,vv_norm);
-        I = full(tdm_norm);
-        
+
         % Take cosine similarity
         % I is D x N
         I2 = sqrt(sum(I'.*I', 2));
         cos_sim = (I'*I)./(I2*I2');
         
-        % [U, S, V] = svd(I,0);
-        [U, S, V] = svd(cos_sim,0);
+        [U, S, V] = svds(tdm_norm,50);
+        % [U, S, V] = svd(cos_sim,0);
         % X is N x D
-        X = V(:,1:50)*S(1:50,1:50); % 1047 points in 8 true classes
+        X = V*S; % 1047 points in 8 true classes
         figure; do_plot_data(X(:,1:3));
         % opts = struct('dmax', 6, 'Kmax', 32, 'n0', 1047, 'plotFigs', true);
-        opts = struct('dmax', 6, 'Kmax', 16, 'n0', 1047, 'plotFigs', true);
+        opts = struct('dmax', 6, 'K', 8, 'n0', 1047, 'plotFigs', true);
         fprintf('Running MAPA\n');
-        tic; [labels, planeDims] = mapa_min(X,opts); 
+        tic; 
+        [m_labels, planeDims, planeCenters, planeBases] = mapa_min(X,opts); 
         fprintf(1,'Time Used: %3.2f\n', toc);
+
         % Plot category assignments with some jitter
-        figure; plot(labels_true+0.15*randn(size(labels_true)),labels+0.15*randn(size(labels)),'ko','Color',[0.4 0 0]);
-        xlabel('True categories');
-        ylabel('Assigned plane index');
-        % MisclassificationRate = clustering_error(labels,reshape(repmat(1:10, 64, 1), 1, []))
+        figure; plot(m_labels+0.15*randn(size(m_labels)), labels_true+0.15*randn(length(labels_true),1), 'ko','Color',[0.4 0 0]);
+        xlabel('Assigned plane index');
+        ylabel('True categories');
+        [MisclassificationRate, counts_mtx, opt_perm] = clustering_error_improved(m_labels,labels_true);
+        disp(['Misclassification rate: ' num2str(MisclassificationRate)]);
+        figure; 
+        imagesc(counts_mtx); 
+        axis image;
+        xlabel('Assigned plane index');
+        ylabel('True categories');
+        colormap(gray);
+        caxis([0 max(counts_mtx(:))]);
 
     case 'SciNews_LDA'
         
