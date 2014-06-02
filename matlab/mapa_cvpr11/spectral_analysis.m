@@ -15,8 +15,16 @@ for k = 1:K
     temp = invColMap(class_k);  
     temp = temp(temp>0);
     % Then see what dimensionality most of these seed points in this
-    % cluster have
-    planeDims(k) = mode(localDims(temp));
+    %   cluster have
+    % HACK!! Not sure what else to do, though, if there isn't a seed point
+    %   in a particular cluster. KMeans seems to be returning some
+    %   super-small clusters sometimes, though, even if we have a decent
+    %   number of seed points.
+    if isempty(localDims(temp))
+        planeDims(k) = mode(localDims);
+    else
+        planeDims(k) = mode(localDims(temp));
+    end
 end
 
 [planeCenters, planeBases] = computing_bases(X(allPtsInOptRegions,:), indicesKmeans, planeDims);
