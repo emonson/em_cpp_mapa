@@ -40,7 +40,7 @@ int example_1( const char* filename )
 	// Load the document to parse
 	XMLDocument doc;
     doc.LoadFile( filename );
-    printf("Error ID %d", doc.ErrorID());
+    printf("Error ID %d\n", doc.ErrorID());
    if (doc.ErrorID() > 0)
    {
      printf("Error Loading %s\n", filename);
@@ -48,20 +48,22 @@ int example_1( const char* filename )
    }
 
 	typedef boost::tokenizer<boost::char_separator<char> > tokenizer;
-	boost::char_separator<char> sep(" \t\n¡!¿?⸘‽“”‘’‛‟.,‚„'\"′″´˝^°¸˛¨`˙˚ªº…:;&_¯­–‑—§#⁊¶†‡@%‰‱¦|/\\ˉˆ˘ˇ-‒~*‼⁇⁈⁉$€¢£‹›«»<>{}[]()=+|");
+	boost::char_separator<char> sep(" \t\n¡!¿?⸘‽“”‘’‛‟.,‚„'\"′″´˝^°¸˛¨`˙˚ªº…:;&_¯­–‑—§#⁊¶†‡@%‰‱¦|/\\ˉˆ˘ˇ-‒~*‼⁇⁈⁉$€¢£‹›«»<>{}[]()=+|01234567890");
     
     // read in stopwords from text file
-    std::ifstream stopfile("/Users/emonson/Programming/em_cpp_mapa/tools/tokenize_test/english_stopwords", std::ios_base::in);
+    std::ifstream stopfile("/Users/emonson/Programming/em_cpp_mapa/tools/tokenize_test/tartarus_org_stopwords.txt", std::ios_base::in);
     assert(!stopfile.fail());
     std::map<std::string, bool> stopwords_map;
     
     // load stopwords into hash map
     std::string s;
-    stopfile >> s;
-    while (!stopfile.eof()) {
-        stopwords_map[s] = true;
-        stopfile >> s;
-        std::cout << s << " ";
+    while (stopfile >> s) {
+        if (stopwords_map.find(s) == stopwords_map.end())
+        {
+            stopwords_map[s] = true;
+            stopfile >> s;
+            std::cout << s << " · ";
+        }
     }
     std::cout << std::endl;
     stopfile.close();
@@ -70,11 +72,11 @@ int example_1( const char* filename )
     std::map<std::string, int> term_count_map;
     std::map<std::string, int>::iterator term_count_it;
 
-    std::map<std::string, std::vector<int> > term_indexVec_map;
+    std::map<std::string, std::vector<int> > term_docIndexVec_map;
     std::map<std::string, std::vector<int> >::iterator term_indexVec_it;
     
     std::map<int, std::string> index_docID_map;
-    std::map<int, std::string> index_term_map;
+    std::map<int, std::string> termIndex_term_map;
     
     // CONSTANTS
     int MIN_TERM_LENGTH = 2;
@@ -102,23 +104,22 @@ int example_1( const char* filename )
             // std::cout << "<" << *tok_iter << "> ";
             std::string tmp = *tok_iter;
             // NOTE: Right now doing a rough length check
-            if (tmp.length() > MIN_TERM_LENGTH) {
+            if (tmp.length() >= MIN_TERM_LENGTH) {
                 // Only count terms not in stopwords list
-                if (!stopwords_map.count(tmp)) {
+                if (stopwords_map.find(tmp) == stopwords_map.end()) {
                     // Check for all caps, otherwise convert to lowercase
                     //   (maybe should just be turning everything to lowercase...)
                     if (!boost::all(tmp, boost::is_upper())) {
                         boost::to_lower(tmp);
                     }
-                    term_count_it = term_count_map.find(tmp);
-                    if (term_count_it == term_count_map.end()) {
+                    if (term_count_map.find(tmp) == term_count_map.end()) {
                         // Initialize term count and doc index vector maps for new term
                         term_count_map[tmp] = 0;
                         std::vector<int> newvec;
-                        term_indexVec_map[tmp] = newvec;
+                        term_docIndexVec_map[tmp] = newvec;
                     }
                     term_count_map[tmp]++;
-                    term_indexVec_map[tmp].push_back(docIndex);
+                    term_docIndexVec_map[tmp].push_back(docIndex);
                 }
             }
         }
@@ -137,7 +138,7 @@ int example_1( const char* filename )
 	// ANNdistArray		dists;					// near neighbor distances
 	ANNkd_tree*			kdTree;					// search structure
         
-	nPts = docIndex;    // TODO: check for off by one errors!!
+	nPts = docIndex;    // is (and has to be) one more than the last zero-based doc index
     dim = int(term_count_map.size());
 
 	queryPt = annAllocPt(dim);					// allocate query point
@@ -151,10 +152,13 @@ int example_1( const char* filename )
     int term_idx = 0;
     
     // Run through all of the entries in the term totals and correpsonding doc index vectors
-    for ( term_count_it=term_count_map.begin() ; term_count_it != term_count_map.end(); term_count_it++ )
+    for ( term_count_it=term_count_map.begin(); term_count_it != term_count_map.end(); term_count_it++ )
     {
+        std::string term = (*term_count_it).first;
+        int term_count = (*term_count_it).second;
+        
         // First, check if count passes threshold (could base this on percentiles in future...)
-        if ((*term_count_it).second < MIN_TERM_COUNT)
+        if (term_count < MIN_TERM_COUNT)
         {
             continue;
         }
@@ -162,20 +166,21 @@ int example_1( const char* filename )
         // NOTE: Could set up here some sort of entropy thresholds
         
         // Record the term with its index as key
-        index_term_map[term_idx] = (*term_count_it).first;
+        termIndex_term_map[term_idx] = term;
         
         // Print
-        std::cout << (*term_count_it).first << " => " << (*term_count_it).second << std::endl;
+        std::cout << term << " => " << term_count << std::endl;
         
         // Convenience vector so iteration and access are more clear
-        std::vector<int> index_vec = term_indexVec_map[(*term_count_it).first];
+        std::vector<int> docIndex_vec = term_docIndexVec_map[term];
         
         // Run through doc index vectors and increment counts in real data arrays
-        for ( int ii = 0; ii < index_vec.size(); ii++ )
+        std::cout << "    ";
+        for ( int ii = 0; ii < docIndex_vec.size(); ii++ )
         {
-            std::cout << index_vec[ii] << " ";
+            std::cout << docIndex_vec[ii] << " ";
             // Increment count sums
-            dataPts[index_vec[ii]][term_idx] += 1;
+            dataPts[docIndex_vec[ii]][term_idx] += 1;
         }
         std::cout << std::endl;
         term_idx++;
