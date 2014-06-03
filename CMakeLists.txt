@@ -41,6 +41,7 @@ set(MAPA_INCLUDE_DIRS
    ${MAPA_SOURCE_DIR}/lib/tinyxml2/
    ${MAPA_SOURCE_DIR}/lib/boost_1_55_0/
    ${MAPA_SOURCE_DIR}/lib/mapa/
+   ${MAPA_SOURCE_DIR}/lib/SVDLIBC/
 )
 
 set(MAPA_LIB_DIR 
@@ -49,6 +50,9 @@ set(MAPA_LIB_DIR
 
 set(ANN_LINK_DIR 
    ${MAPA_SOURCE_DIR}/lib/ann/
+)
+set(SVD_LINK_DIR 
+   ${MAPA_SOURCE_DIR}/lib/SVDLIBC/
 )
 set(TINYXML2_LINK_DIR 
    ${MAPA_SOURCE_DIR}/lib/tinyxml2/

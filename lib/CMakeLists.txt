@@ -10,6 +10,11 @@ if(BUILD_ANN)
   ADD_SUBDIRECTORY(ann)
 endif(BUILD_ANN)
 
+option(BUILD_SVD "Build SVDLIBC (required for some apps)" ON)
+if(BUILD_SVD)
+  ADD_SUBDIRECTORY(SVDLIBC)
+endif(BUILD_SVD)
+
 option(BUILD_TINYXML2 "Build TINYXML2 (required for some apps)" ON)
 if(BUILD_TINYXML2)
   ADD_SUBDIRECTORY(tinyxml2)
