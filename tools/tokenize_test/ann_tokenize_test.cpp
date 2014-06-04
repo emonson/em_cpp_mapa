@@ -82,6 +82,7 @@ int example_1( const char* filename )
     int MIN_TERM_COUNT = 2;
     
     int docIndex = 0;
+    long n_terms_counted = 0;
 
     for (XMLElement* documentElement = doc.FirstChildElement("documents")->FirstChildElement("document"); 
          documentElement; 
@@ -100,30 +101,30 @@ int example_1( const char* filename )
         tokenizer tokens(text_str, sep);
         for (tokenizer::iterator tok_iter = tokens.begin(); tok_iter != tokens.end(); ++tok_iter)
         {
-            // std::cout << "<" << *tok_iter << "> ";
-            std::string tmp = *tok_iter;
+            std::string term = *tok_iter;
             // NOTE: Right now doing a rough length check
-            if (tmp.length() >= MIN_TERM_LENGTH) {
+            if (term.length() >= MIN_TERM_LENGTH) 
+            {
+                // Change everything to lowercase
+                boost::to_lower(term);
+                
                 // Only count terms not in stopwords list
-                if (stopwords_map.find(tmp) == stopwords_map.end()) {
-                    // Check for all caps, otherwise convert to lowercase
-                    //   (maybe should just be turning everything to lowercase...)
-                    if (!boost::all(tmp, boost::is_upper())) {
-                        boost::to_lower(tmp);
-                    }
-                    if (term_count_map.find(tmp) == term_count_map.end()) {
+                if (stopwords_map.find(term) == stopwords_map.end()) 
+                {
+                    if (term_count_map.find(term) == term_count_map.end()) 
+                    {
                         // Initialize term count and doc index vector maps for new term
-                        term_count_map[tmp] = 0;
+                        term_count_map[term] = 0;
                         std::vector<int> newvec;
-                        term_docIndexVec_map[tmp] = newvec;
+                        term_docIndexVec_map[term] = newvec;
                     }
-                    term_count_map[tmp]++;
-                    term_docIndexVec_map[tmp].push_back(docIndex);
+                    term_count_map[term]++;
+                    term_docIndexVec_map[term].push_back(docIndex);
+                    n_terms_counted++;
                 }
             }
         }
         docIndex++;
-        // std::cout << "\n";
     }
     
     // Now that we have the terms and the documents they came from, we need to 

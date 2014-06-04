@@ -61,12 +61,10 @@ int main( int argc, const char** argv )
     // load stopwords into hash map
     std::map<std::string, bool> stopwords_map;
     std::string s;
-    while (stopfile >> s) {
-        if (stopwords_map.find(s) == stopwords_map.end())
-        {
-            stopwords_map[s] = true;
-            std::cout << s << " · ";
-        }
+    while (std::getline(stopfile, s)) 
+    {
+        stopwords_map.insert( std::pair<std::string,int>(s, true));
+        std::cout << s << " · ";
     }
     std::cout << std::endl;
     stopfile.close();
@@ -104,39 +102,30 @@ int main( int argc, const char** argv )
         tokenizer tokens(text_str, sep);
         for (tokenizer::iterator tok_iter = tokens.begin(); tok_iter != tokens.end(); ++tok_iter)
         {
-            // std::cout << "<" << *tok_iter << "> ";
-            std::string tmp = *tok_iter;
+            std::string term = *tok_iter;
             // NOTE: Right now doing a rough length check
-            if (tmp.length() >= MIN_TERM_LENGTH) 
+            if (term.length() >= MIN_TERM_LENGTH) 
             {
+                // Change everything to lowercase
+                boost::to_lower(term);
+                
                 // Only count terms not in stopwords list
-                if (stopwords_map.find(tmp) == stopwords_map.end()) 
+                if (stopwords_map.find(term) == stopwords_map.end()) 
                 {
-                    // Check for all caps, otherwise convert to lowercase
-                    //   (maybe should just be turning everything to lowercase...)
-                    if (!boost::all(tmp, boost::is_upper())) 
-                    {
-                        boost::to_lower(tmp);
-                    }
-                    if (term_count_map.find(tmp) == term_count_map.end()) 
+                    if (term_count_map.find(term) == term_count_map.end()) 
                     {
                         // Initialize term count and doc index vector maps for new term
-                        term_count_map[tmp] = 0;
+                        term_count_map[term] = 0;
                         std::vector<int> newvec;
-                        term_docIndexVec_map[tmp] = newvec;
+                        term_docIndexVec_map[term] = newvec;
                     }
-                    term_count_map[tmp]++;
-                    term_docIndexVec_map[tmp].push_back(docIndex);
+                    term_count_map[term]++;
+                    term_docIndexVec_map[term].push_back(docIndex);
                     n_terms_counted++;
                 }
             }
-            else
-            {
-                std::cout << "-" << tmp;
-            }
         }
         docIndex++;
-        // std::cout << "\n";
     }
     
     // Now that we have the terms and the documents they came from, we need to 
@@ -160,13 +149,11 @@ int main( int argc, const char** argv )
         std::string term = (*term_count_it).first;
         int term_count = (*term_count_it).second;
         
-        // First, check if count passes threshold (could base this on percentiles in future...)
+        // First, check if count passes threshold
         if (term_count < MIN_TERM_COUNT)
         {
             continue;
         }
-        
-        // NOTE: Could set up here some sort of entropy thresholds
         
         // Record the term with its index as key
         termIndex_term_map[term_idx] = term;
@@ -188,20 +175,16 @@ int main( int argc, const char** argv )
         std::cout << std::endl;
         term_idx++;
     }
-    
-    // Create the actual Term-Document Matrix
-    
+        
     // NOTE: the "long" specification for the indices is necessary to match the 
     //   pointer type for the SVDLIBC matrices...
     // NOTE: using the fact that term_idx will get incremented one beyond the last
     //   index value, so equal to the number of terms...
     
+    // Create the actual Term-Document Matrix
     Eigen::SparseMatrix<double,0,long> tdm(term_idx, n_docs);
     tdm.setFromTriplets(count_triplets_vector.begin(), count_triplets_vector.end());
 
-//     std::cout << "Original (sparse) matrix" << std::endl;
-//     std::cout << tdm << std::endl << std::endl;
-    
     std::cout << std::endl << term_count_map.size() << " terms in dictionary, " << term_idx << " terms used" << std::endl << std::endl;
 
     return EXIT_SUCCESS;
