@@ -62,7 +62,6 @@ int example_1( const char* filename )
         if (stopwords_map.find(s) == stopwords_map.end())
         {
             stopwords_map[s] = true;
-            stopfile >> s;
             std::cout << s << " · ";
         }
     }
