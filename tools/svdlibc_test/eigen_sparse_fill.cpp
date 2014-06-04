@@ -48,6 +48,7 @@ int main(int argc, char * argv[])
     SMat s_mat = svdNewSMat(mat.rows(), mat.cols(), mat.nonZeros()); 
 
     /* Harwell-Boeing sparse matrix. */
+    // SVDLIBC sparse matrix
     // struct smat {
     //   long rows;
     //   long cols;
@@ -57,6 +58,7 @@ int main(int argc, char * argv[])
     //   double *value; /* For each nz entry, the value. */
     // };
     
+    // EIGEN sparse matrix
     // sm1.valuePtr(); // Pointer to the values
     // sm1.innerIndexPtr(); // Pointer to the indices.
     // sm1.outerIndexPtr(); //Pointer to the beginning of each inner vector
