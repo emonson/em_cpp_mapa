@@ -8,6 +8,9 @@ LINK_DIRECTORIES( ${SVD_LINK_DIR} )
 ADD_EXECUTABLE(eigen_sparse_fill eigen_sparse_fill.cpp)
 TARGET_LINK_LIBRARIES(eigen_sparse_fill svd)
 
+ADD_EXECUTABLE(sparse_svd sparse_svd.cpp)
+TARGET_LINK_LIBRARIES(sparse_svd svd)
+
 ADD_EXECUTABLE(svdmain main.c)
 TARGET_LINK_LIBRARIES(svdmain svd)
 
