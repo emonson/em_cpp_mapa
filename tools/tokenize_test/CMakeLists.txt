@@ -12,3 +12,6 @@ TARGET_LINK_LIBRARIES(eigen_tokenize_test tinyxml2)
 
 ADD_EXECUTABLE(sparse_tokenize_test sparse_tokenize_test.cpp)
 TARGET_LINK_LIBRARIES(sparse_tokenize_test tinyxml2)
+
+ADD_EXECUTABLE(tdm_test tdm_test.cpp)
+TARGET_LINK_LIBRARIES(tdm_test tinyxml2)

@@ -182,8 +182,10 @@ int main( int argc, const char** argv )
     //   index value, so equal to the number of terms...
     
     // Create the actual Term-Document Matrix
-    Eigen::SparseMatrix<double,0,long> tdm(term_idx, n_docs);
+    Eigen::SparseMatrix<double,0,long> tdm;
+    tdm.resize(term_idx, n_docs);
     tdm.setFromTriplets(count_triplets_vector.begin(), count_triplets_vector.end());
+    std::cout << tdm.rows() << ", " << tdm.cols() << ", " << tdm.nonZeros() << std::endl;
 
     std::cout << std::endl << term_count_map.size() << " terms in dictionary, " << term_idx << " terms used" << std::endl << std::endl;
 
