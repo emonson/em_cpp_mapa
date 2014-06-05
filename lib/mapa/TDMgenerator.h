@@ -46,8 +46,24 @@ public:
         docIndex = 0;
         n_terms_counted = 0;
 
-        std::string stop_file_name = "/Users/emonson/Programming/em_cpp_mapa/tools/tokenize_test/tartarus_org_stopwords.txt";
-        load_stopwords_from_file(stop_file_name);
+        // std::string stop_file_name = "/Users/emonson/Programming/em_cpp_mapa/tools/tokenize_test/tartarus_org_stopwords.txt";
+        // load_stopwords_from_file(stop_file_name);
+        generate_stopwords();
+    };
+    
+    void setMinTermLength(int min_term_length)
+    {
+        MIN_TERM_LENGTH = min_term_length;
+        
+        // TODO: Move term length check to TDM gen step so can redo TDM if someone changes
+        //   this value after documents are ingested...
+    };
+
+    void setMinTermCount(int min_term_count)
+    {
+        MIN_TERM_COUNT = min_term_count;
+        
+        // TODO: If TDM has already been generated, redo with this new value...!
     };
 
     void addDocument(std::string id_str, std::string text_str)
@@ -157,6 +173,8 @@ public:
     
     void calculateTFIDF()
     {
+        std::cout << "WARNING: calculateTFIDF() not implemented yet!" << std::endl;
+        
         tfidf_current = true;
         return;
     };
@@ -180,7 +198,7 @@ public:
         {
             calculateTFIDF();
         }
-        return tdm;
+        return tfidf;
     };
     
 
@@ -213,16 +231,41 @@ private:
     std::vector<T> count_triplets_vector;
 
 
-    void generate_stopwords_vector()
+    void generate_stopwords()
     {
-        // load stopwords into hash map
+        stopwords_map.clear();
         
-        // TODO: put stopwords list here!!!
-        std::string s = "";
-        while (std::getline(stopfile, s)) 
+        // http://stackoverflow.com/questions/236129/how-to-split-a-string-in-c
+        
+        std::string stopwords = "a about above after again against all also am an and another \
+                        any are aren as at back be because been before being below \
+                        between both but by can can cannot could couldn d daren did \
+                        didn do does doesn doing don down during each even ever \
+                        every few first five for four from further get go goes had \
+                        hadn has hasn have haven having he her here here hers \
+                        herself him himself his how how however i if in into is isn \
+                        it its itself just least less let like ll m made make many \
+                        may me might mightn more most must mustn my myself needn \
+                        never no nor not now of off on once one only or other ought \
+                        oughtn our ours ourselves out over own put re s said same \
+                        say says second see seen shall shan she should shouldn since \
+                        so some still such t take than that that the their theirs \
+                        them themselves then there there these they this those three \
+                        through to too two under until up us ve very was wasn way we \
+                        well were weren what what when when where where whether \
+                        which while who who whom why why will with won would wouldn \
+                        you your yours yourself yourselves";
+        std::stringstream ss(stopwords);
+        std::string s;
+        
+        // load stopwords into hash map
+        while (std::getline(ss, s, ' ')) 
         {
-            stopwords_map.insert( std::pair<std::string,int>(s, true));
-            std::cout << s << " · ";
+            if (!s.empty())
+            {
+                stopwords_map.insert( std::pair<std::string,int>(s, true));
+                std::cout << s << " · ";
+            }
         }
         std::cout << std::endl;
         
@@ -232,21 +275,28 @@ private:
 
     void load_stopwords_from_file(std::string stopfile_name)
     {
+        stopwords_map.clear();
+        
         // read in stopwords from text file
-        std::ifstream stopfile(stopfile_name, std::ios_base::in);
+        std::ifstream stopfile(stopfile_name);
         
-        // TODO: error if no file found!!
-
-        // load stopwords into hash map
-        std::string s;
-        while (std::getline(stopfile, s)) 
+        if (stopfile) // Verify that the file was open successfully
         {
-            stopwords_map.insert( std::pair<std::string,int>(s, true));
-            std::cout << s << " · ";
+            // load stopwords into hash map
+            for (std::string s; std::getline(stopfile, s); ) 
+            {
+                stopwords_map.insert( std::pair<std::string,int>(s, true));
+                std::cout << s << " · ";
+            }
+            std::cout << std::endl;
         }
-        std::cout << std::endl;
-        stopfile.close();
+        else
+        {
+             std::cerr << "File could not be opened!\n";
+             std::cerr << "Error code: " << strerror(errno);
+        }
         
+        stopfile.close();
         return;
     };
     
