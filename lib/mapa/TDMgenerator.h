@@ -13,6 +13,13 @@ Duke University
 
 */
 
+    // TODO: Add way to return term and document ID vectors!!
+    // TODO: Move term length check to TDM gen step so can redo TDM if someone changes
+    //   this value after documents are ingested...
+    // TODO: If TDM has already been generated, redo with this new value...!
+    // TODO: Should check whether it's faster to do the sums with int triplet values rather than double...
+    // TODO: Add ability to add stopwords to standard list
+    
 #include <iostream>
 #include <fstream>
 #include <boost/tokenizer.hpp>
@@ -54,16 +61,11 @@ public:
     void setMinTermLength(int min_term_length)
     {
         MIN_TERM_LENGTH = min_term_length;
-        
-        // TODO: Move term length check to TDM gen step so can redo TDM if someone changes
-        //   this value after documents are ingested...
     };
 
     void setMinTermCount(int min_term_count)
     {
         MIN_TERM_COUNT = min_term_count;
-        
-        // TODO: If TDM has already been generated, redo with this new value...!
     };
 
     void addDocument(std::string id_str, std::string text_str)
@@ -117,7 +119,6 @@ public:
     
         // Filling sparse Eigen matrix with triplets.
         // Will rely on Eigen to do the sums when it forms the sparse matrix out of these triplets.
-        // TODO: Should check whether it's faster to do the sums with int rather than double...
         count_triplets_vector.clear();
         count_triplets_vector.reserve(n_terms_counted);
         
@@ -201,7 +202,6 @@ public:
         return tfidf;
     };
     
-
 private:
 
     bool tdm_current;

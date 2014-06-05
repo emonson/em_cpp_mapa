@@ -11,22 +11,6 @@ Duke University
 */
 
 #include "tinyxml2.h"
-#include "xmltest.h"
-
-#include <cstdlib>
-#include <cstring>
-#include <ctime>
-
-#if defined( _MSC_VER )
-#include <direct.h>		// _mkdir
-#include <crtdbg.h>
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
-_CrtMemState startMemState;
-_CrtMemState endMemState;
-#else
-#include <sys/stat.h>	// mkdir
-#endif
 
 using namespace tinyxml2;
 

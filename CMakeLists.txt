@@ -26,6 +26,8 @@ FIND_PACKAGE(BLAS)
 FIND_PACKAGE(LAPACK)
 FIND_LIBRARY(GFORTRAN_LIBRARY gfortran)
 
+FIND_PACKAGE(Boost 1.55 REQUIRED filesystem system)
+
 INCLUDE_DIRECTORIES( "/usr/local/include" )
 
 set(MAPA_INCLUDE_DIRS 
@@ -40,6 +42,7 @@ set(MAPA_INCLUDE_DIRS
    ${MAPA_SOURCE_DIR}/lib/ann/ANN/
    ${MAPA_SOURCE_DIR}/lib/tinyxml2/
    ${MAPA_SOURCE_DIR}/lib/boost_1_55_0/
+   ${MAPA_SOURCE_DIR}/lib/dirent/include/
    ${MAPA_SOURCE_DIR}/lib/mapa/
    ${MAPA_SOURCE_DIR}/lib/SVDLIBC/
 )
