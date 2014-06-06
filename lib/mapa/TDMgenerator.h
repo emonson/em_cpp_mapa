@@ -51,6 +51,7 @@ public:
     {
         tdm_current = false;
         tfidf_current = false;
+        VERBOSE = false;
             
         MIN_TERM_LENGTH = min_term_length;
         MIN_TERM_COUNT = min_term_count;
@@ -78,6 +79,11 @@ public:
         MIN_TERM_COUNT = min_term_count;
         tdm_current = false;
     };
+    
+    void setVerbose(bool verbose)
+    {
+        VERBOSE = verbose;
+    };
 
     int addStopwords(std::string space_separated_words)
     {
@@ -92,10 +98,10 @@ public:
             {
                 stopwords_map.insert( std::pair<std::string,int>(s, true));
                 new_stopwords_count++;
-                std::cout << s << " · ";
+                if (VERBOSE) std::cout << s << " · ";
             }
         }
-        std::cout << std::endl;
+        if (VERBOSE) std::cout << std::endl;
 
         tdm_current = false;
         return new_stopwords_count;
@@ -177,20 +183,20 @@ public:
             termIndex_term_map[term_idx] = term;
         
             // Print
-            std::cout << term << " => " << term_count << std::endl;
+            if (VERBOSE) std::cout << term << " => " << term_count << std::endl;
         
             // Convenience vector so iteration and access are more clear
             std::vector<int> docIndex_vec = term_docIndexVec_map[term];
         
             // Run through doc index vectors and increment counts in real data arrays
-            std::cout << "    ";
+            if (VERBOSE) std::cout << "    ";
             for ( int ii = 0; ii < docIndex_vec.size(); ii++ )
             {
-                std::cout << docIndex_vec[ii] << " ";
+                if (VERBOSE) std::cout << docIndex_vec[ii] << " ";
                 // Increment count sums
                 count_triplets_vector.push_back(T(term_idx, docIndex_vec[ii], 1));
             }
-            std::cout << std::endl;
+            if (VERBOSE) std::cout << std::endl;
             term_idx++;
         }
         
@@ -203,7 +209,7 @@ public:
         tdm.resize(term_idx, n_docs);
         tdm.setFromTriplets(count_triplets_vector.begin(), count_triplets_vector.end());
 
-        std::cout << std::endl << term_count_map.size() << " terms in dictionary, " << term_idx << " terms used" << std::endl << std::endl;
+        if (VERBOSE) std::cout << std::endl << term_count_map.size() << " terms in dictionary, " << term_idx << " terms used" << std::endl << std::endl;
 
         tdm_current = true;
         return;
@@ -263,6 +269,7 @@ private:
     
     int MIN_TERM_LENGTH;
     int MIN_TERM_COUNT;
+    bool VERBOSE;
     
     int docIndex;
     long n_terms_counted;
@@ -304,10 +311,10 @@ private:
             if (!s.empty())
             {
                 stopwords_map.insert( std::pair<std::string,int>(s, true));
-                std::cout << s << " · ";
+                if (VERBOSE) std::cout << s << " · ";
             }
         }
-        std::cout << std::endl;
+        if (VERBOSE) std::cout << std::endl;
         
         return;
     };
@@ -326,9 +333,9 @@ private:
             for (std::string s; std::getline(stopfile, s); ) 
             {
                 stopwords_map.insert( std::pair<std::string,int>(s, true));
-                std::cout << s << " · ";
+                if (VERBOSE) std::cout << s << " · ";
             }
-            std::cout << std::endl;
+            if (VERBOSE) std::cout << std::endl;
         }
         else
         {

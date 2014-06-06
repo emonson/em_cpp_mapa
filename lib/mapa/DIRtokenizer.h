@@ -51,12 +51,12 @@ public:
             while ((ent = readdir (dir)) != NULL) {
                 switch (ent->d_type) {
                 case DT_REG:
-                    printf ("%s\n", ent->d_name);
+                    // printf ("%s\n", ent->d_name);
 
                     try
                     {
                         // Found an actual file
-                        std::cout << ent->d_name << "\n";
+                        // std::cout << ent->d_name << "\n";
 
                         // http://stackoverflow.com/questions/2602013/read-whole-ascii-file-into-c-stdstring
                         std::string whole_file_path = pathAppend(dirpath, ent->d_name);
@@ -75,16 +75,8 @@ public:
 
                     break;
 
-                case DT_DIR:
-                    printf ("%s/\n", ent->d_name);
-                    break;
-
-                case DT_LNK:
-                    printf ("%s@\n", ent->d_name);
-                    break;
-
                 default:
-                    printf ("%s*\n", ent->d_name);
+                    break;
                 }
             }
 
