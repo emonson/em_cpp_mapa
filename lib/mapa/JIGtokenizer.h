@@ -31,8 +31,10 @@ class JIGtokenizer {
 
 public:
 
-    JIGtokenizer(std::string jigfile, int min_term_length = 2, int min_term_count = 2)
+    JIGtokenizer(std::string jigfile, MAPA::TDMgenerator *tdm_generator)
     {
+        tdm_gen = tdm_generator;
+        
         // Load the document to parse
         XMLDocument doc;
         doc.LoadFile( jigfile.c_str() );
@@ -43,9 +45,6 @@ public:
         }
         else
         {
-            tdm_gen.setMinTermLength(min_term_length);
-            tdm_gen.setMinTermCount(min_term_count);
-    
             for (XMLElement* documentElement = doc.FirstChildElement("documents")->FirstChildElement("document"); 
                  documentElement; 
                  documentElement = documentElement->NextSiblingElement("document")) 
@@ -59,25 +58,14 @@ public:
                 std::string text_str(docText->GetText());
 
                 // Add document to generator
-                tdm_gen.addDocument(id_str, text_str);
+                tdm_gen->addDocument(id_str, text_str);
             }
         }
     };
     
-    Eigen::SparseMatrix<double,0,long> getTDM()
-    {
-        return tdm_gen.getTDM();
-    };
-    
-    Eigen::SparseMatrix<double,0,long> getTFIDF()
-    {
-        return tdm_gen.getTFIDF();
-    };
-    
-
 private:
 
-    MAPA::TDMgenerator tdm_gen;
+    MAPA::TDMgenerator *tdm_gen;
     
 }; // class def
 

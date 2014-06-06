@@ -36,12 +36,10 @@ class DIRtokenizer {
 
 public:
 
-    DIRtokenizer(std::string dirpath, int min_term_length = 2, int min_term_count = 2)
+    DIRtokenizer(std::string dirpath, MAPA::TDMgenerator *tdm_generator)
     {
-        tdm_gen.setMinTermLength(min_term_length);
-        tdm_gen.setMinTermCount(min_term_count);
-
-
+        tdm_gen = tdm_generator;
+        
         DIR *dir;
         struct dirent *ent;
             
@@ -68,7 +66,7 @@ public:
 
                         // Add document to generator
                         // addDocument(ID_string, text_string)
-                        tdm_gen.addDocument(ent->d_name, buffer.str());
+                        tdm_gen->addDocument(ent->d_name, buffer.str());
                     }
                     catch (const std::exception & ex)
                     {
@@ -93,22 +91,11 @@ public:
             closedir(dir);
         }
 
-    };
-    
-    Eigen::SparseMatrix<double,0,long> getTDM()
-    {
-        return tdm_gen.getTDM();
-    };
-    
-    Eigen::SparseMatrix<double,0,long> getTFIDF()
-    {
-        return tdm_gen.getTFIDF();
-    };
-    
+    };    
 
 private:
 
-    MAPA::TDMgenerator tdm_gen;
+    MAPA::TDMgenerator *tdm_gen;
 
     std::string pathAppend(const std::string& p1, const std::string& p2) {
 

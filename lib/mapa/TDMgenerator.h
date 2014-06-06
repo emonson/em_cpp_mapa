@@ -8,17 +8,22 @@ Tokenize strings from documents and generate term-document matrix (TDM)
 char_sep_example_3.cpp
 http://www.boost.org/doc/libs/1_40_0/libs/tokenizer/char_separator.htm
 
+The method I'm using here is not optimal for memory usage, but gives more
+flexibility. The maps of term counts and documents are persistently stored,
+and can be updated at any time by adding more documents. The TDM is
+generated lazily, upon request. The terms are only filtered for non-letter
+characters at first, not for length or frequency or stopwords. Those things
+are only taken into account upon TDM generation so parameters can be changed
+or stopwords added without having to reingest documents, but just recalculate
+the TDM.
+
 Eric E Monson – 2014
 Duke University
 
 */
 
     // TODO: Add way to return term and document ID vectors!!
-    // TODO: Move term length check to TDM gen step so can redo TDM if someone changes
-    //   this value after documents are ingested...
-    // TODO: If TDM has already been generated, redo with this new value...!
     // TODO: Should check whether it's faster to do the sums with int triplet values rather than double...
-    // TODO: Add ability to add stopwords to standard list
     
 #include <iostream>
 #include <fstream>
@@ -58,16 +63,50 @@ public:
         generate_stopwords();
     };
     
+    // ---------------------------------
+    // Parameters updates
+    // All of these dirty the TDM, so it has to be regenerated after changes.
+    // 
     void setMinTermLength(int min_term_length)
     {
         MIN_TERM_LENGTH = min_term_length;
+        tdm_current = false;
     };
 
     void setMinTermCount(int min_term_count)
     {
         MIN_TERM_COUNT = min_term_count;
+        tdm_current = false;
     };
 
+    int addStopwords(std::string space_separated_words)
+    {
+        std::stringstream ss(space_separated_words);
+        std::string s;
+        int new_stopwords_count = 0;
+        
+        // load stopwords into hash map
+        while (std::getline(ss, s, ' ')) 
+        {
+            if (!s.empty())
+            {
+                stopwords_map.insert( std::pair<std::string,int>(s, true));
+                new_stopwords_count++;
+                std::cout << s << " · ";
+            }
+        }
+        std::cout << std::endl;
+
+        tdm_current = false;
+        return new_stopwords_count;
+    };
+    
+    void regenerateStopwordsList()
+    {
+        generate_stopwords();
+    }
+
+    // ---------------------------------
     void addDocument(std::string id_str, std::string text_str)
     {
         tdm_current = false;
@@ -83,32 +122,25 @@ public:
         for (tokenizer::iterator tok_iter = tokens.begin(); tok_iter != tokens.end(); ++tok_iter)
         {
             std::string term = *tok_iter;
-            // NOTE: Right now doing a rough length check
-            if (term.length() >= MIN_TERM_LENGTH) 
+            // Change everything to lowercase
+            boost::to_lower(term);
+            
+            // Initialize term count and doc index vector maps for new term
+            if (term_count_map.find(term) == term_count_map.end()) 
             {
-                // Change everything to lowercase
-                boost::to_lower(term);
-                
-                // Only count terms not in stopwords list
-                if (stopwords_map.find(term) == stopwords_map.end()) 
-                {
-                    if (term_count_map.find(term) == term_count_map.end()) 
-                    {
-                        // Initialize term count and doc index vector maps for new term
-                        term_count_map[term] = 0;
-                        std::vector<int> newvec;
-                        term_docIndexVec_map[term] = newvec;
-                    }
-                    term_count_map[term]++;
-                    term_docIndexVec_map[term].push_back(docIndex);
-                    n_terms_counted++;
-                }
+                term_count_map[term] = 0;
+                std::vector<int> newvec;
+                term_docIndexVec_map[term] = newvec;
             }
+            term_count_map[term]++;
+            term_docIndexVec_map[term].push_back(docIndex);
+            n_terms_counted++;
         }
         docIndex++;
         return;
     };
     
+    // ---------------------------------
     void generateTDM()
     {
         // Now that we have the terms and the documents they came from, we need to 
@@ -130,12 +162,17 @@ public:
             std::string term = (*term_count_it).first;
             int term_count = (*term_count_it).second;
         
-            // First, check if count passes threshold
-            if (term_count < MIN_TERM_COUNT)
+            // First, check if count and length pass thresholds
+            if (term_count < MIN_TERM_COUNT || term.length() < MIN_TERM_LENGTH)
             {
                 continue;
             }
-        
+            // Only count terms not in stopwords list
+            if (stopwords_map.find(term) != stopwords_map.end()) 
+            {
+                continue;
+            }
+            
             // Record the term with its index as key
             termIndex_term_map[term_idx] = term;
         
@@ -180,6 +217,9 @@ public:
         return;
     };
     
+    // ---------------------------------
+    // Accessors
+    // 
     Eigen::SparseMatrix<double,0,long> getTDM()
     {
         if (!tdm_current)
