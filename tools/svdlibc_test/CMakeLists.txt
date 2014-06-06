@@ -14,3 +14,8 @@ TARGET_LINK_LIBRARIES(sparse_svd svd)
 ADD_EXECUTABLE(svdmain main.c)
 TARGET_LINK_LIBRARIES(svdmain svd)
 
+ADD_EXECUTABLE(jig_svd_test jig_svd_test.cpp)
+TARGET_LINK_LIBRARIES(jig_svd_test tinyxml2 svd)
+
+ADD_EXECUTABLE(dir_svd_test dir_svd_test.cpp)
+TARGET_LINK_LIBRARIES(dir_svd_test svd)
