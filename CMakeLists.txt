@@ -41,6 +41,7 @@ set(MAPA_INCLUDE_DIRS
    ${MAPA_SOURCE_DIR}/lib/tclap 
    ${MAPA_SOURCE_DIR}/lib/ann/ANN/
    ${MAPA_SOURCE_DIR}/lib/tinyxml2/
+   ${MAPA_SOURCE_DIR}/lib/redsvd-0.2.0/src/
    ${MAPA_SOURCE_DIR}/lib/boost_1_55_0/
    ${MAPA_SOURCE_DIR}/lib/dirent/include/
    ${MAPA_SOURCE_DIR}/lib/mapa/
@@ -59,6 +60,9 @@ set(SVD_LINK_DIR
 )
 set(TINYXML2_LINK_DIR 
    ${MAPA_SOURCE_DIR}/lib/tinyxml2/
+)
+set(REDSVD_LINK_DIR 
+   ${MAPA_SOURCE_DIR}/lib/redsvd-0.2.0/build/default/src/
 )
 
 ADD_SUBDIRECTORY(lib)
