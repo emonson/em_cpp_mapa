@@ -11,6 +11,7 @@
 #include "SvdlibcSVD.h"
 
 #include "redsvd.hpp"
+#include "EigenRandomSVD.h"
 
 int main( int argc, const char** argv )
 {
@@ -49,22 +50,22 @@ int main( int argc, const char** argv )
     std::cout << "X reduced: " << Xred.rows() << " x " << Xred.cols() << std::endl;
 
     // Eigen standard JacobiSVD
-    Eigen::MatrixXd tdm_dense = tdm;
-    t = clock();
-    JacobiSVD<MatrixXd> svd_e(tdm_dense, Eigen::ComputeThinU | Eigen::ComputeThinV);
-    t = clock() - t;
-    printf("JacobiSVD Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
-    
-    std::cout << "U: " << svd_e.matrixU().rows() << " x " << svd_e.matrixU().cols() << std::endl;
-    // std::cout << svd_e.matrixU() << std::endl << std::endl;
-    std::cout << "V: " << svd_e.matrixV().rows() << " x " << svd_e.matrixV().cols() << std::endl;
-    // std::cout << svd_e.matrixV() << std::endl << std::endl;
-    std::cout << "S" << std::endl;
-    std::cout << svd_e.singularValues().head(rank).transpose() << std::endl << std::endl;
-
-    Eigen::MatrixXd Xred_e = svd_e.matrixV().leftCols(rank) * svd_e.singularValues().head(rank).asDiagonal();
-    
-    std::cout << "X reduced Eigen: " << Xred_e.rows() << " x " << Xred_e.cols() << std::endl;
+//     Eigen::MatrixXd tdm_dense = tdm;
+//     t = clock();
+//     JacobiSVD<MatrixXd> svd_e(tdm_dense, Eigen::ComputeThinU | Eigen::ComputeThinV);
+//     t = clock() - t;
+//     printf("JacobiSVD Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
+//     
+//     std::cout << "U: " << svd_e.matrixU().rows() << " x " << svd_e.matrixU().cols() << std::endl;
+//     // std::cout << svd_e.matrixU() << std::endl << std::endl;
+//     std::cout << "V: " << svd_e.matrixV().rows() << " x " << svd_e.matrixV().cols() << std::endl;
+//     // std::cout << svd_e.matrixV() << std::endl << std::endl;
+//     std::cout << "S" << std::endl;
+//     std::cout << svd_e.singularValues().head(rank).transpose() << std::endl << std::endl;
+// 
+//     Eigen::MatrixXd Xred_e = svd_e.matrixV().leftCols(rank) * svd_e.singularValues().head(rank).asDiagonal();
+//     
+//     std::cout << "X reduced Eigen: " << Xred_e.rows() << " x " << Xred_e.cols() << std::endl;
     
 
     // RedSVD test (row-major sparse)
@@ -87,6 +88,17 @@ int main( int argc, const char** argv )
     std::cout << "X reduced redsvd: " << Xred_r.rows() << " x " << Xred_r.cols() << std::endl;
     
 
+    // Eigen random SVD (Sam)
+//     Eigen::MatrixXd tdm_dense = tdm;
+//     t = clock();
+//     EigenLinalg::RandomSVD svd_e(tdm_dense, rank, 3);
+//     t = clock() - t;
+//     printf("JacobiSVD Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
+//     
+//     std::cout << "U: " << svd_e.U.rows() << " x " << svd_e.U.cols() << std::endl;
+//     // std::cout << svd_e.matrixU() << std::endl << std::endl;
+//     std::cout << "S" << std::endl;
+//     std::cout << svd_e.S.head(rank).transpose() << std::endl << std::endl;
 
     return EXIT_SUCCESS;
 }
