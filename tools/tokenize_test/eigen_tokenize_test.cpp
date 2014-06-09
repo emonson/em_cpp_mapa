@@ -52,7 +52,7 @@ int example_1( const char* filename )
 	boost::char_separator<char> sep(" \t\n¡!¿?⸘‽“”‘’‛‟.,‚„'\"′″´˝^°¸˛¨`˙˚ªº…:;&_¯­–‑—§#⁊¶†‡@%‰‱¦|/\\ˉˆ˘ˇ-‒~*‼⁇⁈⁉$€¢£‹›«»<>{}[]()=+|01234567890");
     
     // read in stopwords from text file
-    std::ifstream stopfile("/Users/emonson/Programming/em_cpp_mapa/tools/tokenize_test/tartarus_org_stopwords.txt", std::ios_base::in);
+    std::ifstream stopfile("/Users/emonson/Programming/em_cpp_mapa/data/tartarus_org_stopwords.txt", std::ios_base::in);
     assert(!stopfile.fail());
     
     // load stopwords into hash map

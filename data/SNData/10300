@@ -1,0 +1,229 @@
+Pitching Science: Science News Online, June 9, 2001
+
+ Pitching Science
+
+ Engineers who track baseballs catch insights into the game
+
+ Peter Weiss
+
+ The pitcher's action up to the release of the ball is part of the art of 
+pitching; the action of the ball after release . . . is addressed by physics.
+
+-Robert K. Adair, The Physics of Baseball, 1994
+
+ Even in baseball, there's pure science and there's applied science. Mechanical 
+engineer LeRoy W. Alaways has been pursuing a bit of both.
+
+ On the one hand, he and his colleagues at a biomechanics lab at the University 
+of California, Davis have been helping forge a better understanding of what 
+makes a baseball curve. They've been making particularly good headway on one 
+theoretical question that's stumped baseball researchers for more than 50 
+years-how the seams of the ball affect the way it flies from the mound to home 
+plate.
+
+ On the other hand, Alaways has also recently been working with designers on 
+next-generation machines capable of pitching just like the human big leaguers.
+
+ Curving pitches
+
+ When it comes to studying why baseballs do what they do, Alaways finds himself 
+part of a long tradition. In 1949, aeronautical engineer Ralph B. Lightfoot 
+used a wind tunnel to collect the first data suggesting that a baseball's seams 
+have an important role in every pitch. Lightfoot made those measurements to 
+help his boss Igor Sikorsky, inventor of the helicopter, jump into a national 
+baseball debate. An argument was raging on the pages of Look, Life, and other 
+major magazines over this fundamentally important question: Do baseball pitches 
+really curve?
+
+ Ultimately, Lightfoot and other investigators proved that the curve is real. 
+They did so by means of both wind-tunnel tests and high-speed photography. For 
+his part, Lightfoot measured force that causes balls to veer sideways and down. 
+Moreover, he found a striking relationship between those forces and the 
+orientation of a pitched ball's seams as the ball cuts through the air toward a 
+batter.
+
+ The results were never published in a scientific journal. But they made it 
+into a 1953 article entitled "The Hell It Don't Curve," which sportswriter 
+Joseph F. Drury wrote for the then-popular magazine American Mercury.
+
+ That might have been the end of Lightfoot's data if Alaways hadn't heard that 
+Sikorsky had dabbled in baseball science. Alaways searched the Web weekly for 
+"Sikorsky" and "baseball." Finally, after a year, he had a hit. That clue 
+eventually led him to Lightfoot himself, who retrieved his original data from a 
+folder long tucked away in the attic of his Cape Cod home. Now, those old 
+wind-tunnel results are playing a crucial role in bolstering new baseball 
+studies.
+
+ Working backwards
+
+ Researchers in the UC Davis sports-biomechanics laboratory like to work 
+backwards. To dissect the performance of athletes, they often first view the 
+balls, sticks, or other objects those players use in a sporting contest. The 
+motion of those objects harbors a wealth of information about the performance 
+of the people who handle them.
+
+ The raw data for this research are videotapes that capture the trajectories of 
+sports projectiles, including javelins, golf balls, boomerangs, and 
+shuttlecocks. Mont Hubbard, the mechanical engineer who leads the lab, and his 
+students then carefully analyze those objects' trajectories. The researchers 
+can backtrack to the forces that shaped the flights-and therefore to the 
+performance of the players who applied the forces.
+
+ Not until Alaways joined the lab did the Davis team turn its attention to 
+baseballs. Gravity and the specific mechanical conditions experienced by the 
+ball at the moment that it leaves the pitcher's hand largely determine the 
+ball's path. Those conditions include how fast the ball is spinning, the 
+orientation of its spin, and the location and initial direction of its release. 
+Alaways created a mathematical model of the baseball pitch from the instant the 
+ball is let go to the instant that it crosses home plate.
+
+ Ignoring complicating factors, such as a crosswind, Alaways created a set of 
+equations that closely predicts actual pitch trajectories both in the 
+laboratory and on the field. Conversely, from trajectories recorded 
+simultaneously on up to 10 high-speed video cameras, he reconstructed the 
+likely initial conditions on the ball by means of a mathematical technique 
+known as nonlinear least-squares parameter estimation. Implemented as a 
+computer program, the technique enables someone with accurate data on the 
+trajectory of a pitch to work backwards to the acceleration and spin that the 
+pitcher put on the ball.
+
+ The computer plots a three-dimensional trajectory and compares it with the 
+videotaped path. It then adjusts the calculated pitch's parameters, such as the 
+spatial coordinates of the release point and the spin rate, according to a 
+scheme aimed at minimizing the difference between the plotted trajectory and 
+that of the videotaped original. By repeating the process, the computer 
+calculates a set of release conditions producing a trajectory that closely 
+matches the videotaped one.
+
+ The Davis researchers say their system could become useful to coaches as a new 
+tool for tracking their pitchers' performances. Perhaps, but their work already 
+has scored points in the long-standing debate about the role of baseball seams 
+in curve balls.
+
+ Gripping the ball
+
+ In bullpen discussions about curve balls, players commonly compare the merits 
+of so-called four-seam pitches and two-seam pitches. Depending on how the 
+pitcher grips the ball, either two or four lines of stitching pass across the 
+face of the spinning ball with each revolution. The popular lore among players 
+is that four-seam pitches curve more than two-seam pitches do.
+
+ So far, scientists have been unable to confirm the players' hypothesis. Yale 
+University's Robert K. Adair, who was once the official physicist to the 
+National League, considered the issue in the current edition of The Physics of 
+Baseball. He speculates that the effect should be contrary to what players 
+claim. A four-seam pitch makes the air around it more turbulent than a two-seam 
+throw does, so it actually curves less, he surmises.
+
+ Wind-tunnel studies dating back to Lightfoot's work in the late 1940s paint a 
+confusing picture. Lightfoot, for one, found a striking difference between two- 
+and four-seam orientations when he gauged the curve-inducing aerodynamic force 
+known as lift. His measurements revealed that lift on four-seam pitches is up 
+to three times as great as on two-seam pitches. But tests by other scientists 
+since then have revealed no such difference.
+
+ In their recent experiments, Alaways and Hubbard entered the fray when they 
+detected a small but statistically significant disparity between the two types 
+of pitches. The researchers describe their experiment, which was also the basis 
+for Alaways' doctoral thesis, in the May issue of the Journal of Sports Science.
+
+ Alaways, now at the California Maritime Academy in Vallejo, is confident that 
+there's a difference between the lifts of the two and four-seam pitches. 
+Moreover, he now also thinks that the new work explains why the results of the 
+various experiments over the years didn't agree.
+
+ In trials using high-speed photography and balls marked with reflective tape, 
+Alaways and Hubbard collected data from pitches thrown by a pitching machine. 
+From trajectory and spin data, Alaways' software determined the release 
+conditions, including the initial lift on the ball, for nine pitches thrown in 
+the two-seam orientation and eight thrown in the four-seam orientation. The 
+researchers also varied the conditions of spin and initial velocity to cover a 
+range of possible pitches.
+
+ Plotted on a graph, the findings bridge a gap in the conflicting wind-tunnel 
+data. At one extreme are the results of Sikorsky and Lightfoot. They measured a 
+large effect of seam orientation while exploring pitches having low values of a 
+ratio known as the spin parameter. It divides an object's rotation speed by its 
+forward velocity.
+
+ At the other extreme are findings from a team led by Robert G. Watts of Tulane 
+University in New Orleans in the late 1980s. His group found no influence from 
+seam orientation at much higher spin parameters.
+
+ Without additional data, it had been difficult to come to a conclusion about 
+the role of seams in curve balls. The newer results break the stalemate, 
+Alaways says. Collectively, the data suggest that the distinction between 2- 
+and 4-seam orientations diminishes as the speed at which the seams circulate 
+begins to compare to the speed of the ball itself.
+
+ Watts, coauthor of the baseball science book entitled Keep Your Eye on the 
+Ball (2000, W.H. Freeman and Co.), finds the new picture persuasive. "I 
+concluded that the orientation didn't matter, but it looks like it does," he 
+comments. Adair also has come around to thinking that the four-seam ball 
+probably curves more, a new perspective that he says will show up in the next 
+edition of his book.
+
+ Meanwhile, Alaways and Lightfoot have coauthored a paper that, after 50 years, 
+will finally bring Lightfoot's pioneering wind-tunnel data into the official 
+literature on baseball science. It's slated for publication in a forthcoming 
+issue of Sports Engineering.
+
+ Besides tracking pitches in the laboratory, the Davis researchers have also 
+been applying their new method to real baseball games. In 1996, Alaways, 
+Hubbard, and Sean P. Mish, now at Credence Systems in Hillsboro, Ore., mounted 
+high-speed video cameras at the Fulton County Stadium in Atlanta.
+
+ In the Cuba-versus-Japan contest of the Summer Olympic Games, they used the 
+equipment to track pitches in three dimensions. The paths predicted by their 
+model for 21 pitches deviated by less than 2 centimeters on average from the 
+recorded ones, they reported in the February Journal of Applied Biomechanics.
+
+ Their analysis of the videotaped trajectories produced hints of another 
+aerodynamic effect called the drag crisis-a steep decrease in air resistance, 
+or drag, on moving bodies above a certain velocity. If further studies confirm 
+that there is a drag crisis within the ranges of speeds that pitchers can 
+throw, then balls fired above a certain speed wouldn't lose velocity as fast as 
+balls thrown just a little slower.
+
+ Pitching machine
+
+ While taking a break from pursuing issues of pure baseball science, Alaways 
+has turned to an application. Last spring, engineers at Fastball Development 
+Corp. in Seattle were searching the Web and discovered Alaways' dissertation 
+(). They then offered him some summer work.
+
+ For 3 years, Fastball has been developing a deluxe pitching machine, nicknamed 
+Abner after baseball's putative inventor, Abner Doubleday. Besides spitting out 
+balls at controlled speeds and nearly any desired orientation of launch and 
+spin, this pitching simulator displays an animation of a pitcher winding up and 
+throwing. What's more, in the most advanced version of Abner, the ball shoots 
+through the screen at whatever point the pitcher's hand appears to be letting 
+it go.
+
+ That was all well and good, but the designers didn't understand baseball 
+aerodynamics sufficiently to know where the ball would end up, given the launch 
+settings they fed into the machine. That's where Alaways' work came in.
+
+"What he did was of tremendous value to us," says the company's sales and 
+marketing chief Michael Kirby. Alaways "gave us the equations and told us what 
+in the hell we needed to program these pitches," Kirby says.
+
+ Now, the machine's curves, fastballs, sliders, and other styles of pitches 
+reliably cross home plate within a palm's width of any desired point in the 
+strike zone, Alaways says.
+
+ This spring, the Cleveland Indians and the St. Louis Cardinals rented the 
+machines for training. The players have raved about them in ESPN Magazine and 
+other venues. The company is now discussing sales of the $175,000 machines with 
+a handful of Major League teams, Kirby says.
+
+ Alaways is about to go into private industry himself, but he won't be 
+designing pitching machines. Instead, he'll be applying the same sorts of math 
+and models to the task of recreating, from skid marks and other evidence at a 
+crash site, the trajectories of cars in a collision.
+
+ As for the data that gave Alaways the bedrock on which his own work stands, it 
+will never again be so hard to find. The researchers have donated Lightfoot's 
+data to the Baseball Hall of Fame in Cooperstown, N.Y.
+
+

@@ -1,0 +1,288 @@
+The Meaning of Life: Science News Online, April 29, 2000
+
+ The Meaning of Life
+
+ Computers are unscrambling genomes to reveal the secrets in DNA codes
+
+ Tina Hesman
+
+ In a football field-size room that genetics researchers have dubbed "the 
+factory," row upon row of sequencing machines churn through strands of DNA and 
+record long strings of As, Ts, Gs, and Cs. Each symbol represents the stuff of 
+life-the chemical bases adenine, thymine, guanine, and cytosine that make up 
+the genetic code of every living organism on Earth.
+
+ The 300 sequencing machines at the factory in Celera Genomics' headquarters in 
+Rockville, Md., run day and night in the race to decipher the genetic 
+blueprints of dozens of organisms including people, mice, flies, and flowers. 
+Celera isn't alone in its efforts. Other scientists from around the world, many 
+affiliated with a competing, massive public effort to map genomes, dump more 
+than 100 million bases each week into a public data repository.
+
+ Raw genetic sequences, however, tell little. It's the messages among all those 
+letters that the scientists are after. Only by finding patterns in the long 
+strings of DNA will scientists understand "how the genome is wired" and 
+ultimately how life is structured, says mathematician Pavel A. Pevzner of the 
+University of Southern California in Los Angeles.
+
+ The task of making sense of the raw information is formidable. "The speed of 
+acquiring data is now exceeding our ability to comprehend it and put it into 
+the proper biological context," said Michigan State University biologist George 
+M. Garrity at a conference on microbial genomes in Chantilly, Va., last 
+February.
+
+ Gone are the days when biologists could analyze most of their data with a 
+pencil and a sheet of paper, says Steven L. Salzberg of the Institute for 
+Genomic Research, also in Rockville. Today's biologists need computing power to 
+find even the most obvious needles in molecular haystacks of information, he 
+says.
+
+ That's where the field of bioinformatics comes in, says Sean Eddy, a 
+computational biologist at the Washington University School of Medicine in St. 
+Louis. The burgeoning field, also called biological computing, straddles the 
+lines dividing biology, computer science, and mathematics.
+
+ The process of making sense out of a DNA sequence by finding genes and other 
+interesting patterns in the strings of letters is called annotation, and it's 
+often the most difficult aspect of a sequencing project, says computer 
+scientist Peter D. Karp of SRI Internationale in Menlo Park, Calif.
+
+"Genome annotation is a lot like passing a piano through a nine-inch hole," he 
+told attendees of the Chantilly conference. It's very difficult, and it isn't 
+immediately obvious how such a task can be accomplished. It's also essential to 
+understanding biology, he says.
+
+ Processing all the data is going to take a lot of time and resources, says 
+Celera's president, J. Craig Venter. His company has already identified all the 
+bases of one person's DNA sequence and is planning to decode the sequences of 
+four or five more people. Celera's announcement on April 6 came a week after 
+the Human Genome Project, a publicly funded consortium of researchers, reported 
+that it had finished determining 2 billion of the 3 billion bases of the human 
+genome.
+
+ Venter predicts, however, that it will take most of this century to analyze 
+the data.
+
+"It's only through having phenomenal computers and computer tools that we will 
+be able to try and understand how biology works," Venter says. "It doesn't 
+matter what analysis [of the human genome] we do this year, it will be only the 
+most cursory analysis." Scientists will have to invent ever-more-powerful 
+computer algorithms to deal with and understand the data, he says. "Scientists 
+will be making major discoveries from the human genetic code a hundred years 
+from now," he says.
+
+ Scientists generally start by searching for obvious patterns in the DNA with a 
+computer program. The trouble is, Pevzner says, that scientists don't know how 
+a cell processes all the information contained in its DNA. But one thing is 
+certain: "The way we do annotation today is very different from the way nature 
+does it," Pevzner says.
+
+ Ultimately, researchers want to use computers to take raw DNA-sequence 
+information and construct an entire biochemical model of an organism, says 
+Karp. That's still a long way off, but some patterns are beginning to take 
+shape on computer screens.
+
+ Making sense of data
+
+ Without annotation, the billions of bases of DNA sequenced are essentially 
+useless, says bioinformatician Sylvia J. Spengler of Lawrence Berkeley (Calif.) 
+National Laboratory. All those As, Cs, Gs, and Ts might as well be 
+alphabetized, she quips. "If we can't make sense of it, we don't have any 
+information," she says. "All we have is data."
+
+ Right now, biologists are most interested in finding the genes. "That's where 
+all the action is," says Salzberg.
+
+ Most genes lay the plan for strings of amino acids, which make up proteins. 
+Some genes, however, encode various forms of RNA that interact with proteins 
+and other molecules to run the machinery of cells. And long segments of DNA 
+between genes-and even within them-appear to code for nothing. These strings of 
+bases, which are nevertheless being sequenced in the factory and other genome 
+laboratories, are called junk DNA.
+
+ Genes that code for proteins have some easily recognized patterns. A string of 
+three-letter words, called codons, spells out the code for the 20 amino acids 
+used to build proteins. For example, GCC spells alanine in the cell's language, 
+while ACC spells threonine. Each protein gene also has a starting codon-the 
+letters ATG-and one of three different three-letter stop signs-TGA, TAG, or TAA.
+
+ Even though protein-coding genes obligingly follow these rules, it's not easy 
+to recognize a gene, says Salzberg. The genes are big, some ATG sequences don't 
+indicate the beginning of a gene, and it's difficult to decipher exactly how to 
+group the letters to form the codons, he says. For instance, the letters 
+GCCCGAAGAC could be read as GCC (alanine) CGA (arginine) AGA (arginine) C, but 
+the pattern might also read G CCC (proline) GAA (glutamic acid) GAC (aspartic 
+acid).
+
+ A complex statistical analysis can tell scientists the likelihood that a base 
+fits with the bases that come before or after it to form a codon. That's 
+something people can't do very quickly and efficiently.
+
+ But computers can. Bioinformaticians have developed mathematical and 
+statistical formulas, or algorithms, for sorting through large chunks of raw 
+data to locate genes. Most gene-finding programs use a statistical method to 
+test sequences by determining their "coding potential," the likelihood that a 
+string of bases codes for a protein.
+
+ For bacterial genes, the process is relatively straightforward because each 
+gene is a continuous unit. In plants, animals, and some other organisms, 
+however, the genes are often interrupted by chunks of junk DNA called introns.
+
+ Cells make RNA copies of genes, then slice out the introns and splice the 
+protein-coding stretches-called exons-back into a single molecule that's the 
+template for making a protein. Although cells identify protein-coding regions 
+and junk DNA with aplomb, computer programs can have difficulty searching over 
+long stretches of junk-sometimes several thousand bases-to find the next exon, 
+says Salzberg.
+
+ Luckily, the boundaries between introns and exons are marked. These borders 
+aren't as pronounced as the start and stop codons, Salzberg says, but there is 
+a pattern to them that cells and computer programs can pick up.
+
+ Gene-finding computer programs mark the stretches of DNA that are likely to 
+contain a gene. Some programs perform the task better than others do, and 
+programmers train their algorithms to recognize subtle differences in the way 
+genes are flagged in different organisms. A person still has to check to make 
+sure the computer program hasn't made an obvious mistake.
+
+ Earlier this year, Celera researchers called in 40 fruit fly scientists to 
+help the company analyze the data encoded in the 120 million bases of the 
+Drosophila melanogaster genome-the largest genome yet sequenced (SN: 2/26/00, 
+p. 132: Available to subscribers at .). During a 2-week "annotation jamboree," 
+the researchers put two different gene-finding programs to work on the fruit 
+fly genome and got two very different results.
+
+ The gene-hunting program named Genie found 13,189 genes for the fruit fly, but 
+another program, Genscan, identified 17,464 genes, the scientists reported in 
+the March 24 Science. After checking the gene predictions against the 2,500 
+genes known from nearly a hundred years of genetic experiments on fruit flies, 
+the researchers decided that the lower number of genes is closer to correct.
+
+ The Genie program came up with the more accurate number because the 
+researchers primed it with examples of previously sequenced fruit fly genes. 
+Genscan made mistakes because it didn't have a bank of Drosophila-specific 
+information to work with, the researchers say.
+
+ Gene-hunting programs generally work best if they have learned the rules for 
+each organism they analyze. For instance, a bacterial-gene finder expects 90 
+percent of the DNA to contain genes. These great expectations would lead the 
+program to identify far too many genes in human DNA, Salzberg says. Conversely, 
+a gene-finding program trained to recognize human genes would probably fail to 
+find most of the genes in a bacterium, he says, because the program only 
+expects 3 percent of the DNA to be part of a gene.
+
+ Finding proteins
+
+ Programs that find protein-forming genes aren't good at looking for other 
+features of DNA, says bioinformatician Gustavo Glusman of the Weizmann 
+Institute of Science in Rehovot, Israel. These include genes that code for RNA 
+but not proteins.
+
+ Eddy and his colleagues at Washington University study a class of RNA 
+molecules called small nucleolar RNAs, or snoRNAs. Each of about 60 snoRNAs 
+directs an enzyme to a certain spot on ribosomal RNA, which is a component of 
+the cell's protein-building machinery. Traditional biology had been able to 
+uncover only about a dozen of the snoRNAs when Eddy and his colleagues joined 
+the search.
+
+ It's been difficult to pick up the scent of snoRNA genes, Eddy says. These 
+genes don't have three-letter codons or obvious start and stop signals. Also, 
+the genes don't seem much alike outside of two short sequences, known as C and 
+D boxes. However, scientists can see a familial resemblance of RNA molecules if 
+they look beyond the sequence of the bases.
+
+ Despite great differences in their base sequence, snoRNAs all fold up into 
+similarly shaped, compact structures. RNA's four bases (the same A, C, and G as 
+DNA, but uracil, or U, instead of T) pair in predictable ways to form the RNA 
+structure. Eddy's group trained its computer bloodhounds to follow the twists 
+and turns of the snoRNA molecule.
+
+ The researchers use algorithms called stochastic context-free grammars. 
+Originally designed to analyze languages, they can calculate whether a sequence 
+would fold into the snoRNA structure. This method requires the computer 
+programmer to know in advance the structure that the algorithm should seek. 
+Currently, there's no good statistical way to identify novel structures, Eddy 
+says.
+
+ Important patterns
+
+ One way to find important patterns in an organism's genome is to look at 
+another organism, Eddy says. Over evolutionary time, DNA sequences can change 
+dramatically, but organisms tend to hang onto the sequences that are most 
+important to their function. "Let evolution tell you [what's important], 
+because statistics takes us a long way, but not far enough," Eddy says.
+
+"In the absence of good predictive models, comparing sequences is the last 
+resort. A very powerful resort," says Glusman. This last, best hope for finding 
+patterns and making sense of them is known as comparative genomics.
+
+"Comparative genomics is going to be the big win," says Eddy. The biggest wins 
+of all will result from the comparison of mice and people, he predicts. "When 
+[the] mouse [genome] comes along, you can say, 'Now I understand the human 
+genome,'" Eddy says. Celera researchers plan to begin sequencing the mouse 
+genome this summer.
+
+ Researchers aren't waiting for the completion of whole genomes to begin 
+finding biologically important patterns, though. The GenBank DNA database, the 
+public data repository for DNA sequences managed by the National Center for 
+Biotechnology Information in Bethesda, Md., already contains sequences from 
+62,000 species of animals, plants, bacteria, and viruses, and more are added 
+every day, says the center's Dennis A. Benson. Scientists from around the world 
+compare newly identified, short sequences of DNA to the sequences in GenBank, 
+hoping to find a matching pattern that will give them clues about a gene's 
+functions.
+
+ With comparative genomics, scientists match up the complete genetic code of 
+one organism to the code of a second organism, rather than doing a piecemeal 
+comparison of snippets. This large-scale comparison will find regions of the 
+genome that are important biologically, says Spengler.
+
+"It's as if there's a giant 'Watch This Space' sign over the DNA. It lets you 
+know something important is going on there, even if you don't know what that 
+might be," she says.
+
+ One of the most important things that could be going on in gene-free stretches 
+of the DNA is the regulation of genes. The comparative approach has already 
+identified one such region.
+
+ Each gene has DNA sequences associated with it, often located in the junk DNA, 
+that turn the gene on and off at the proper time and place during an organism's 
+development and adult life. These often short but complex regulatory regions 
+are difficult for a computer program to pick out from the surrounding jumble of 
+bases, says Spengler.
+
+ Since people, mice, flies, and even worms need to turn on many of their genes 
+in similar ways, the sequence of the regulatory regions may have been preserved 
+during evolution, she says.
+
+ Comparative genomics doesn't make distinctions between genes and junk, says 
+Spengler. Right now, whole-genome comparisons are the only good way to look for 
+regulatory regions of genes, she says.
+
+ By comparing 1 million bases of human DNA with a similar stretch of mouse DNA, 
+a research team from several universities found a regulatory region that 
+governs three genes for proteins that influence the immune response. The 
+results were published in the April 7 Science.
+
+ The great hope of whole-genome comparison can't be realized unless scientists 
+are actually able to match up the sequences of entire organisms. That's a 
+difficult task, says Salzberg. For one thing, it takes enormous amounts of 
+computer memory to keep track of all the bases and their matches with the bases 
+of another genome. Another problem is that it takes an astounding amount of 
+time to compare very long DNA sequences with each other.
+
+ Computer programs could take days to match up a single human chromosome with a 
+single mouse chromosome, Salzberg says. Scientists are now devising programs to 
+handle whole genomes more quickly. "Those programs didn't exist before because 
+no one needed them," says Salzberg. The completion of more genome sequences 
+will certainly change that.
+
+ The field of bioinformatics is growing rapidly, and new algorithms are being 
+developed to deal with the avalanches of data. The more genomes that are 
+sequenced, the richer the biological databases, and the better the annotation, 
+says Spengler.
+
+ There's still a long road ahead. "We're still defining the questions we want 
+to ask," Salzberg says. "We certainly haven't developed all the solutions yet."
+
+

@@ -1,0 +1,228 @@
+Dances with Robots: Science News Online, June 30, 2001
+
+ Dances with Robots
+
+ The military is betting millions that technology can turn soldiers into 
+superhumans
+
+ Peter Weiss
+
+ The legs of an aluminum skeleton hang from Homayoon Kazerooni's backpack, its 
+feet bolted to his boots. The lanky metal framework is part of an experimental 
+robot, powered by a chain saw engine, that rides piggyback on Kazerooni, a 
+mechanical engineering professor at the University of California, Berkeley. 
+He's trying to walk with the contraption, which weighs as much as a grown man. 
+As long as the engine is on, the robot walks with him, and he doesn't even feel 
+the extra weight.
+
+ Kazerooni and his colleagues have made what may be the world's most advanced 
+motorized exoskeleton. The Defense Advanced Research Projects Agency (DARPA) 
+regards exoskeleton technology as promising enough to deserve a $50 million, 
+5-year commitment to fund Kazerooni's lab and others. This spring, the agency 
+awarded first-year grants under the program.
+
+ Exoskeletons may one day give U.S. soldiers a crucial advantage as warfare 
+becomes increasingly urban, says Ephrahim Garcia, manager of the new DARPA 
+program. Since troops are less able to use their armored vehicles to fight in 
+confined urban battlefields, military planners want to fasten the armor, heavy 
+weapons, and advanced electronics onto the foot soldiers themselves. Without 
+heavy-duty mechanical support from something like an exoskeleton, however, 
+people would collapse under the load.
+
+ Besides their military uses, Garcia notes, exoskeletons could also help 
+civilians, from disabled people and construction workers to rescuers working in 
+fires and natural disasters.
+
+ Natural exoskeletons
+
+ Natural exoskeletons abound, encasing critters ranging from crickets to crabs. 
+In more human contexts, robotic exoskeletons are most familiar from science 
+fiction and comic books. In Robert A. Heinlein's 1959 novel Starship Troopers 
+(G.P. Putnam's Sons), swift, merciless warriors in powered suits wreak havoc on 
+their enemies with missiles and hydrogen bombs. To Heinlein, "the beauty of a 
+powered suit [is that] you don't have to think about it. You don't have to 
+drive it, fly it, conn it, operate it: you just wear it and it takes orders 
+directly from your muscles . . . ."
+
+ Four years after Heinlein's book came out, Marvel Comics introduced the 
+character Iron Man, a rich industrialist encased in a homemade iron exoskeleton 
+that enables him to lift tons at a time, fire deadly radiation beams, and even 
+fly. In the 1986 film Aliens, Sigourney Weaver as Lt. Ripley straps herself 
+into an industrial loader-like a forklift with legs-to battle the hideous, 
+mucus-covered alien queen.
+
+ Actual efforts to make motorized exoskeletons date back to the 1960s, although 
+design studies began well before. Hollywood's human-cum-forklift idea may have 
+arisen from a 1965 project at the General Electric (GE) Research and 
+Development Center in Schenectady, N.Y. There, a design for a self-standing 
+exoskeleton powered by hydraulics and electricity came to life as a hulking 
+contraption called Hardiman 1.
+
+ The robot, as heavy as a car, would have enabled a person to lift a 
+refrigerator as though it were a bag of potatoes. However, the machine's 
+inventors could only get one arm of the device to work. And attempts to operate 
+both legs at once would lead to "violent and uncontrollable motion," according 
+to an old GE report on the project.
+
+ Since then, most development has focused on components for exoskeletons rather 
+than complete systems. For instance, before Kazerooni and his colleagues built 
+their new exoskeleton, they had devised a number of so-called extenders, such 
+as force-amplifying arms.
+
+ Even the new exoskeleton is not a full-body device. It's only a "lower 
+extremity enhancer," known by the acronym Lee, the researchers say. The device 
+has attracted DARPA's eye, but the Berkeley group created the machine during 
+the past 6 years with funding from nonmilitary sources.
+
+ At the University of Utah in Salt Lake City and the nearby spin-off company 
+Sarcos, a team led by Stephen C. Jacobsen has been creating so-called 
+master-slave telerobotic devices. They include a slave limb that follows the 
+motions of a person's arm that's yoked into a master arm across the room.
+
+ Although this type of technology has been around for decades, used for 
+instance, to handle radioactive materials, the latest versions are more 
+responsive and dexterous than past devices. A full-body suit that Sarcos 
+developed implements the same idea on a larger scale. Whatever the wearer of 
+the sensor-equipped harness is doing-from calm sitting to wild dancing-a 
+humanoid robot would instantly do the same thing.
+
+ Researchers at Oak Ridge (Tenn.) National Laboratory have developed a lifting 
+machine that can amplify hand motions enough to manipulate tremendous loads 
+with the precision of a jeweler-a difficult combination to achieve. The 
+experimental device, developed for loading weapons into aircraft, can sustain 
+jolts without getting jitters that often crop up when a control system is 
+suddenly disturbed, says Francois Pin, one of the machine's inventors. The 
+lifter enables its operator to raise a 2,200 kilogram bomb as if it weighed 
+only 4 kg.
+
+ Looking at these and other developments in exoskeleton-related technology, 
+Garcia believes that "all this combined together makes this a good time" to try 
+again for the complete package. "We're going to take some of these technologies 
+that are almost ready . . . and push them over the edge," he says.
+
+ The result may be some formidable prototype machines. Garcia says his current 
+goal is to equip a soldier with an exoskeleton that will make him or her 3 to 
+10 times stronger than without it. Fighters would smoothly wield 50-kg weapons 
+while simultaneously wearing 20 kg of armor.
+
+ Compared with a currently equipped U.S. marine, who is required to march 4 
+kilometers per hour carrying as much as 50 kilograms of equipment, an 
+exoskeleton-equipped marine would be able to move about three times that fast 
+while carrying more than double the load, Garcia predicts. The leatherneck 
+exoskeleton would probably cost no more than the price of a motorcycle, he adds.
+
+ Personal flying machines
+
+ The leap from today's technology to an exoskeleton meeting Garcia's goals is a 
+huge one. Among the three DARPA contractors working on exoskeletons for ground 
+troops-Kazerooni's lab, Jacobson's operation at Sarcos, and Oak Ridge's 
+robotics group-only Kazerooni's team has actually demonstrated a powered 
+exoskeleton.
+
+ Millennium Jet in Sunnyvale, Calif., which is also receiving DARPA funds, is 
+well under way with developing a personal flying machine known as Solo Trek XFV 
+(see below). The vehicle is a one-person device but not a wearable exoskeleton.
+
+ To build a system in which a robot shadows every move a person makes is a 
+complex undertaking. After detecting the motion and gauging its speed and 
+force, the robot must translate those readings into a parallel motion by some 
+of its components. All the while, other exoskeleton components have to adjust 
+to maintain the system's balance.
+
+ Gravity, friction, thermal effects, sensor errors, and other subtle influences 
+play into the human-robot interactions. Managing it all requires sophisticated 
+mathematical models based on fundamental physics and control theory that 
+builders must program into the machinery, says Oak Ridge's Pin. The researchers 
+at all the DARPA-funded labs are creating these models as they go.
+
+ Neither such a computer program nor the motions of an exoskeleton itself have 
+to be off by much to cause the wearer discomfort or fatigue, says Jacobsen. 
+Less than 2 kg of misplaced weight on a person's arm, for instance, can wear a 
+person out in just 10 minutes or so, he says.
+
+ Bigger errors may be dangerous. Industrial robots sometimes injure or kill 
+people who stray too close. Powerful exoskeletons will be embracing their 
+wearers when something goes wrong, Pin notes.
+
+ Countless challenges to exoskeleton designers involve such details as 
+framework materials, actuators, and sensors, plus the heat, noise, and weight 
+of each of these components. Nothing looms larger, however, than the need for a 
+compact, portable, and ample source of power. Not only do the mechanical 
+motions of the exoskeleton and its various control systems draw a lot of power, 
+but soldiers are increasingly outfitted with computerized communications and 
+information gadgetry that also drinks up energy. Garcia has hired several 
+analysts specifically to investigate this issue.
+
+ As a group, the DARPA contractors are pursuing several innovative solutions 
+for powering exoskeletons. These include chemical reactors, a coffee-cup-size 
+turbine that whirls a half-million revolutions per minute, miniaturized 
+internal combustion engines, and fuel cells that feed supercapacitors that can 
+release power in bursts. Each offers its own advantages and disadvantages.
+
+ Internal combustion engines and some chemical reactors, for instance, run hot 
+and so will require extra insulation to protect the wearer. Says Garcia, "If 
+you can't do the power, everything else is, in some sense, academic."
+
+ Control theories
+
+ Using a relatively heavy gasoline engine, as Kazerooni has done with his leggy 
+Lee, is clearly not the way to power an exoskeleton. Equipped with a fuel tank 
+that holds about 1 liter, the engine runs Lee for only about 15 minutes. Then, 
+as the power dies, another flaw of the Berkeley group's first exoskeleton 
+becomes obvious. Unless someone races to scoot a chair under the wearer, the 
+suddenly burdensome load will bring him helplessly to the ground.
+
+ Perhaps the worst strike against the prototype is that it "imposes constraints 
+on the person, like a tight shoe or like clothes that aren't comfortable to 
+you," confesses Kazerooni.
+
+ Yet making even a crude device that can pull its own weight provides the 
+Berkeley team with an important confirmation. "It verified some of our control 
+theories, which shows we are going in the right direction," Kazerooni says.
+
+ Even as the research teams work out the early details of their exoskeleton 
+designs, some of the investigators are looking beyond this round of 
+experimentation. Kazerooni, for one, anticipates that exoskeletons of the 
+future will be "invasive"-not just worn but partially implanted within a 
+person's musculature and nervous system.
+
+ Jacobsen says he's thinking in the opposite direction-about putting more human 
+nature into the machines. His idea is to build an exoskeleton intelligent 
+enough to take care of the soldier wearing it. If the human trooper is badly 
+wounded, the machine would say to itself, in effect, "Take this guy home."
+
+ One-person air car may let troops fly
+
+ Although it looks like the fantasy of some 1950s futurist, a new type of 
+flying platform may carry 21st-century soldiers into battle. Work on the 
+platform is taking place as part of a recently launched military program that 
+aims to develop motorized robotic frameworks, or exoskeletons, for soldiers.
+
+ While those devices may endow troops with remarkable strength (see main 
+story), they'll lack a vital feature of the superman dream-flight.
+
+ That missing piece has been the goal of the company Millennium Jet of 
+Sunnyvale, Calif., since the mid-1990s. The company has designed and built a 
+prototype of a one-person flying machine, called Solo Trek XFV, on which a 
+pilot stands.
+
+ Above the pilot's head, a pair of powerful counter-rotating fans provide 
+propulsion. According to the design specs, the rotors ought to enable the 
+aircraft to take off vertically, fly horizontally at more than 70 miles per 
+hour, and then land vertically again on a clear patch of ground as small as a 
+dining-room table. The innovative craft is expected to fly at altitudes up to 
+2,400 meters and carry a maximum load of 200 kilograms. None of these 
+parameters has yet been flight-tested, however.
+
+ By awarding a $1 million first-year grant to Millennium Jet in December 2000, 
+the Defense Advanced Research Projects Agency (DARPA) became the first outside 
+investor to support the company's project. Why is DARPA interested? The machine 
+"allows a person to get three-dimensional in the battle space," explains DARPA 
+exoskeleton program manager Ephrahim Garcia.
+
+"We have a system that gives people capabilities that they don't have right 
+now," adds company head Michael Moshier. Including Millennium Jet's flyer in 
+the larger DARPA-funded exoskeleton program, he says, "was a natural marriage," 
+but the company is promoting Solo Trek as a civilian craft, too.
+
+

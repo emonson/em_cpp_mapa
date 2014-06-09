@@ -1,0 +1,228 @@
+Guessing Secrets: Science News Online, April 6, 2002
+
+ Guessing Secrets
+
+ Applying mathematics to the efficient delivery of Internet content
+
+ Ivars Peterson
+
+ Even on uneventful days, traffic on the Internet can sometimes stutter to a 
+crawl. It gets much worse when millions of people go online at the same time to 
+view the latest images from a Mars expedition, download a trailer for an 
+upcoming Star Wars movie, or take in a titillating fashion show. The 
+mushrooming demand on such days can rapidly clog this worldwide web of computer 
+networks, causing horrendous delays and outages. In other words, access to Web 
+sites melts down just as things get interesting.
+
+"We have to use the Internet the way it is, bugs and all," says mathematician 
+Tom Leighton of the Massachusetts Institute of Technology, one of the founders 
+of Akamai Technologies in Cambridge, Mass. Originally designed several decades 
+ago to handle communication among researchers at a handful of laboratories, the 
+system that's now the Internet can falter in the face of massive, global 
+migrations of digital data.
+
+ Since 1999, Akamai has offered to highly popular Web sites ways to ease 
+congestion. The company redistributes text, images, and movies through its own 
+computer network, which is independent of but connected to the Internet. 
+Akamai's network takes advantage of sophisticated mathematical methods to 
+determine which of the company's worldwide collection of more than 14,000 
+computers should store a Web site's content so that it can unfailingly get to 
+users in the shortest possible time. Akamai's customers include the Centers for 
+Disease Control, retailer Victoria's Secret, and the search engine Yahoo.
+
+ Leighton, graduate student Danny Lewin, and several colleagues developed the 
+proprietary algorithms that govern the way Akamai manages and redistributes 
+information. (Lewin died on Sept. 11, 2001, aboard one of the planes that 
+struck the World Trade Center.)
+
+ The data-management tools developed by Akamai to keep Web sites operating 
+efficiently solve about 99 percent of the problem of Internet-style traffic 
+jams, Leighton says. To better that performance, Akamai researchers must tackle 
+various quirks in the rules that govern Internet communication.
+
+ One recent effort to improve network performance has mathematicians taking a 
+fresh look at the familiar game of 20 questions. In this game, a player tries 
+to identify a secret object by asking a sequence of questions-traditionally 
+beginning with "Animal? Vegetable? Mineral?"- that can be answered by yes or no.
+
+ In the Internet variant of the game, the secret is a sequence of 32 binary 
+digits representing a computer's Internet protocol (IP) address. In this game, 
+however, there are always two or more secret solutions, and the responder 
+supplies a truthful answer to a given question without specifying for which 
+secret the answer is true.
+
+"The research issues are: How much can you learn, and how quickly can you do 
+it?" says Ronald L. Graham of the University of California, San Diego. "It's a 
+fascinating problem that has surprising links to all sorts of mathematics."
+
+ Internet match game
+
+ Roaming the Internet's World Wide Web appears effortless. To join the hordes 
+eager for a glimpse of a newly imaged Martian rock, for instance, you simply 
+fire up your Web browser and type in a Web-page identifier-the so-called 
+uniform resource locator, or URL. If the image is available only at a single 
+computer that's sitting in, say, a NASA laboratory, every such request must 
+find its way to that one Internet address. The frequent result is a mess of 
+jammed communication lines, an overwhelmed Web site, and frustrated armchair 
+explorers.
+
+ A significant part of Akamai's strategy is to make high-demand content 
+available at multiple computers throughout the world. The next step is to match 
+Web-page requests with the appropriate Akamai servers-in effect, shortening the 
+paths traversed by requests and data throughout the Internet labyrinth. For the 
+Akamai system to decide which server should deliver the requested content, it's 
+desirable to quickly and accurately pinpoint the geographic location of a 
+user's computer.
+
+ Every computer connected to the Internet has its own numerical address, but 
+there's a burdensome complication in the way the system operates. When a 
+browser makes a request, the message goes to a network computer known as a 
+nameserver, which looks up the target Web site's numerical Internet address and 
+passes the message on to the relevant server. For example, any request for a 
+Science News Online Web page (at ) must be sent to a computer with the IP 
+address 216.167.111.80.
+
+ If the message is directed to a Web site for an Akamai customer ( Science News 
+Online is not one), the Akamai system receives the message and must decide 
+which of its servers should provide the content. However, all that system sees 
+initially is the Internet address of the nameserver, not of the client. The 
+nameserver's address doesn't reliably indicate locations of the computers it 
+serves.
+
+ So, it would be helpful for Akamai to know which nameservers handle which 
+clients. In a quirk of the protocols governing Internet communication, the 
+address of a nameserver never appears together with the address of any one of 
+its clients. However, the nameserver can provide some additional information, 
+which might be used to deduce the client address.
+
+ In effect, the strings of digits representing clients' Internet addresses need 
+to be guessed using a step-by-step process analogous to the game of 20 
+questions.
+
+ A home computer with only one link to the Internet would probably have only 
+one address. That address would be relatively easy to determine: A questioner 
+could ask about each digit in turn. Many computers, especially in large 
+corporations, have two or more addresses for added security and to distribute 
+the activity.
+
+ The game variant that proved of particular interest to mathematicians involves 
+a client computer with two Internet addresses-in other words, two 
+secrets-either of which may be in use at any given moment. In this case, how 
+much can you hope to learn about both secrets (IP addresses) from yes-or-no 
+answers? It would be as if in 20 questions, the answerer had two objects in 
+mind and answered "yes" when it was appropriate for either object.
+
+ Leighton, Graham, and San Diego mathematician Fan Chung tackled this problem. 
+Their findings appear online in the Electronic Journal of Combinatorics ().
+
+ They deliberately chose the most difficult cases, and the news is 
+discouraging. The mathematicians say that there's no way to guarantee that you 
+can learn both secrets from a "malevolent but truthful" adversary. It's 
+possible, for example, that all replies apply to just one of the two secrets. 
+You would then learn nothing about the other.
+
+ It gets worse. The mathematical analysis shows that it isn't possible to 
+guarantee that you can learn even one element of a secret-say, one binary digit 
+of an Internet address-let alone the entire secret.
+
+ In this simplified, hypothetical example, suppose you've narrowed down the 
+possibilities for the final digits in the two secret Web addresses to two of 
+three four-digit strings: 1 0 0 1, 1 1 0 1, or 0 0 1 1. You ask whether the 
+second digit is 1. The adversary can stymie your efforts to learn anything 
+about the secret pair by choosing the answer that applies to the majority of 
+the three strings. In this case, because 0 comes up twice as the second element 
+and 1 only once, the answer would be "no." Similarly, if you ask whether the 
+sum of the digits is odd, the respondent would answer "no". Based on majority 
+answers, no matter which questions you ask (or how many), you can't narrow down 
+the choices to a single pair.
+
+ The mathematicians obtained additional insights by expressing the problem in 
+terms of graph theory, representing possible secrets as pairs of points joined 
+by lines to form a network (see below). Yes-or-no answers to questions 
+eliminate pairs from consideration, in the end leaving either a single line 
+identifying the two secrets or certain configurations of lines and points that 
+can't be resolved further.
+
+ The same problem can be extended from a game with two secret answers to a game 
+with three. "There's a big jump in complexity from two to three," Graham 
+observes. However, "we can enumerate the many cases where definitive answers 
+can't be obtained."
+
+ At the same time, there is some good news. Mathematicians have developed very 
+quick ways for getting to the answer or, in the worst cases, narrowing it down 
+to a few possibilities.
+
+ Intriguing puzzles
+
+ Although it originated in an Internet context, the mathematical problem that 
+underlies guessing secrets has taken on a life of its own as an intriguing 
+puzzle and as a practical concern in computer science. Graham, Chung, and 
+others have recently explored what sorts of questions to ask to arrive at the 
+final answers-in cases where it can be done-in the fewest steps. "You need to 
+ask good questions-ones that can eliminate many possibilities," Chung says. For 
+example, when there are two or more secrets expressed as binary digits, more 
+possibilities are ruled out when you ask whether the sum of the secret digits 
+is an even number than when you ask whether the first digit is 1.
+
+ Computer scientists have discovered connections between the problem of 
+guessing secrets and various topics in computer science, such as separating 
+systems into smaller units, diagnosing technical problems, protecting data from 
+unauthorized reproduction, and authenticating ownership claims. Graham himself 
+was surprised to find that his current effort is related to research he 
+originally did in the 1960s on the performance of electrical circuits.
+
+ When MIT computer scientist Madhu Sudan heard about the Chung-Graham-Leighton 
+work, he noticed a link to a task known as list decoding, which concerns errors 
+that may occur during the transmission of digital data.
+
+"When the number of errors is guaranteed to be small, and one puts in 
+sufficiently large amounts of redundancy in encoding one's transmission, then 
+it is possible to pin down the transmitted message," Sudan says. "When the 
+number of errors is somewhat larger, it may not be possible to pin down the 
+transmitted message."
+
+ It may be possible, however, to isolate a small set, or list, of messages that 
+include the transmitted message. Computer scientists call this process "list 
+decoding."
+
+ By establishing a connection between the problem of guessing secrets and list 
+decoding, Sudan and his coworkers developed procedures for recovering secrets 
+more efficiently than by using methods originally proposed by Chung and her 
+colleagues.
+
+ That's only the beginning. "There are numerous questions about guessing 
+secrets that remain unanswered," Chung remarks. For instance, no one has yet 
+looked at what happens in the case of guessing two secrets if some of the 
+answers to queries aren't true.
+
+ Additional applications of this type of research may also be on the horizon. 
+The notion of guessing secrets shows promise in the context of making digital 
+information more secure, Sudan suggests.
+
+ Akamai's networks haven't yet felt the impact of this research. "We have not 
+used this work for the original applied problem because we are currently 
+following a different . . . approach," Leighton says. "But we might use some of 
+the stuff over the course of the next year."
+
+ He adds, "It certainly was interesting to encounter such a deep and rich 
+mathematical problem when working on a seemingly applied problem."
+
+ That's not an unusual occurrence at Akamai.
+
+"We have a lot of people here with strong mathematical backgrounds," Leighton 
+notes, "so it is natural for us to recognize interesting mathematical problems 
+that lurk beneath more applied problems involving the Internet."
+
+ A Graphic Route for Disclosing Secrets
+
+ Guessing a pair of secrets can be visualized in terms of an array of points 
+and lines, an array that mathematicians describe as a graph. Each point 
+represents a potential answer, and a line links each pair. The player zeroes in 
+on the pair of secrets by asking yes-or-no questions. Each answer may eliminate 
+certain lines from further consideration. In the best case, the result is two 
+points connected by a line. In the worst possible case, however, a player may 
+be left with a triangle of three potential secrets or a star made up of several 
+possible secrets. In neither of these instances is it possible for the player 
+to identify both secrets.-I.P.
+
+

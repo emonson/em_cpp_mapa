@@ -1,0 +1,211 @@
+Pi à la Mode: Science News Online, Sept. 1, 2001
+
+> Pi à la Mode
+
+ Mathematicians tackle the seeming randomness of pi's digits
+
+ Ivars Peterson
+
+ Memorizing the digits of pi-the ratio of a circle's circumference to its 
+diameter-presents a hefty challenge to anyone undertaking that quixotic 
+exercise. Starting with 3.14159265, the decimal digits of pi run on forever, 
+and there is no discernible pattern to ease the task.
+
+ The apparent randomness of pi's digits has long intrigued mathematician David 
+H. Bailey of the Lawrence Berkeley (Calif.) National Laboratory. In the 1970s, 
+when Bailey was a graduate student at Stanford University, he memorized the 
+value of pi to more than 300 decimal places. It served "as a diversion during 
+classroom lectures," Bailey confesses.
+
+ In 1986, after joining NASA's Ames Research Center in Mountain View, Calif., 
+he tested a new supercomputer by having it compute pi to nearly 30 million 
+digits (SN: 2/8/86, p. 91). Any errors would reflect problems in the computer. 
+"The program actually did disclose hardware bugs," Bailey says.
+
+ From the computer trial, he also obtained statistical evidence suggesting that 
+every digit-from 0 to 9-occurs equally often. Tossing a fair 10-sided die would 
+generate a sequence of random numbers having the same property.
+
+ However, like many mathematicians before him, Bailey could not prove that such 
+a random distribution would hold beyond the first 30 million decimal digits of 
+pi.
+
+ Now, there's a shard of hope that mathematicians may yet lay bare the apparent 
+randomness of pi's infinite digits. Bailey and Richard E. Crandall of Reed 
+College in Portland, Ore., have identified a potential link between two 
+disparate mathematical fields-number theory and chaotic dynamics-that they 
+suspect could lead to a proof that every digit occurs with the same frequency 
+when pi is written out ad infinitum. Bailey and Crandall report their findings 
+in the June Experimental Mathematics. The characteristic would hold whether 
+pi's in decimal form or in some other base.
+
+ If the Bailey-Crandall hypothesis pans out, "this would be one of the most 
+spectacular results about pi ever," says Stan Wagon of Macalester College in 
+St. Paul, Minn. Establishing the crucial mathematical link necessary for a 
+proof, however, remains a difficult, unsolved problem.
+
+ Pi's irrationality
+
+ Mathematicians have long known that pi is an irrational number. In other 
+words, it can't be expressed exactly as a fraction, such as 22/7. One 
+consequence of pi's irrationality is that its endless string of digits never 
+repeats in a cyclic fashion. Its digits show no apparent pattern and thus seem 
+random although they can be derived from a formula.
+
+ Pi can be calculated to as many decimal places as desired by formulas that are 
+sums of infinitely many terms, such as p = 4/1 ^-- 4/3 + 4/5 ^-- 4/7 + 4/9 ^- . 
+. . . The larger the number of terms, the more decimal places are revealed.
+
+ In 1909, mathematician Emile Borel introduced the concept of normality as one 
+way to characterize the resemblance between the digits of pi and a sequence of 
+random numbers. If a number is normal, digit sequences of the same length occur 
+with the same frequency. Being normal is necessary but not sufficient for a 
+number's digits to be random.
+
+ Pi would be considered normal to base 10 if any single digit appears one-tenth 
+of the time, any two-digit combination one-hundredth of the time, any 
+three-digit combination one-thousandth of the time, and so on.
+
+ Bailey and other researchers amassed statistical evidence in the 1980s 
+supporting the notion that pi is normal. For example, one would expect the 
+digit 7 to appear 1 million times among the first 10 million decimal digits of 
+pi. It actually occurs 1,000,207 times-close to the expected value. Each of the 
+other digits also turns up with approximately the same frequency, showing no 
+significant departure from predictions.
+
+ In 1999, Yasumasa Kanada and his colleagues at the University of Tokyo 
+computed pi to a record 206 billion decimal digits (SN: 10/16/99, p. 255). 
+Their analysis shows that 7 appears 19,999,967,594 times among the first 200 
+billion decimal digits.
+
+ Last year, statistician Ted Jaditz of CNA Corp. in Alexandria, Va., 
+systematically extended this type of frequency analysis of pi's digits to 
+clusters up to 16 digits long. His statistical tests show no significant 
+deviation from what would be expected for a string of random numbers.
+
+ A number is said to be "absolutely normal" if its digits are normal not only 
+to base 10 but also to every integer base greater than or equal to 2. In base 
+2, for example, p = 11.0010010000 . . . . If pi is normal to base 2, the digits 
+1 and 0 would appear equally often.
+
+ Bolstered by the statistical evidence now available, mathematicians generally 
+consider pi and several other fundamental constants, such as the square root of 
+2 and the natural logarithm of 2 (log 2), to be absolutely normal. However, 
+they haven't yet mathematically proved that even one of these fundamental 
+constants is normal to a particular base, much less to all bases.
+
+"Current techniques don't even begin to dent the problem," says Peter B. 
+Borwein of Simon Fraser University in Burnaby, B.C.
+
+ Indeed, mathematicians have very little definitive information about the 
+digits of pi and other irrational constants. "It is not even known that all 
+digits appear infinitely often," Wagon remarks. In the case of pi, for example, 
+no one can yet rule out the possibility that at some point beyond the range of 
+current computations of pi's value, its decimal digits revert to a string 
+constrained to, say, only the digits 1 and 0. If this were so, Wagon points 
+out, it would alter the relative frequency of the digits.
+
+ An amazing formula
+
+ An amazing 1995 discovery in number theory provided the first hint of a new 
+way to tackle the question of pi's normality.
+
+ Bailey, Borwein, and Simon Plouffe of the University of Quebec at Montreal 
+unexpectedly found a simple formula that enables one to calculate isolated 
+digits of pi-say, the trillionth digit-without computing and keeping track of 
+all the preceding digits (SN: 10/28/95, p. 279). How such a formula possibly 
+could arise constitutes a mystery in itself, mathematicians say.
+
+ The only catch is that the formula works for base 2 and 16 but not base 10.
+
+ So, it's possible to use the formula for determining that, say, the 
+five-trillionth binary digit of pi is 0 (SN: 10/17/98, p. 255). But there's no 
+way to convert the result into its decimal equivalent without knowing all the 
+binary digits that come before the one of interest.
+
+ Similar formulas are now known for computing arbitrary, isolated digits of 
+other mathematical constants, including log 2.
+
+ Bailey suspected early on that the existence of such formulas might have 
+something to do with the normality of pi, log 2, and other mathematical 
+constants. The formulas also reminded him of those used in certain computer 
+algorithms to generate so-called pseudorandom numbers (SN: 11/9/91, p. 300). 
+Computers follow such recipes to create strings of digits that pass for random 
+numbers, which are often required for games, simulations, and other 
+applications.
+
+ Crandall, who heads the Center for Advanced Computation at Reed, then 
+identified a link between normality and so-called chaotic sequences of numbers 
+that fall between 0 and 1. These sequences are extremely sensitive to tiny 
+changes in the formula or starting point, and they hop from one value to 
+another in an erratic manner. They've been used to model a variety of natural 
+phenomena (SN: 10/31/98, p. 285).
+
+ Together, Bailey and Crandall established that if they could prove that the 
+numbers of particular chaotic sequences (see "A flavor of pi's normality," 
+below) are evenly distributed between 0 and 1, the normality to base 2 of pi 
+and log 2 would follow automatically.
+
+"What we have done is to translate a heretofore unapproachable problem to a 
+more tractable question in the field of chaotic processes," Bailey says. "At 
+the very least, we have shown why the [binary] digits of pi and log 2 appear to 
+be random."
+
+"This is interesting work," Borwein comments. "The link between [chaotic 
+dynamics] and normality was a surprise to me."
+
+ Bailey and Crandall are now taking a closer look at the link between their 
+hypothesis and algorithms for generating pseudorandom numbers. "This is likely 
+the best route to making further progress on the problem" of proving that pi's 
+digits are normal no matter how far out they go, Bailey says.
+
+ Some mathematicians are pessimistic about whether the Bailey-Crandall approach 
+will eventually lead to a normality proof for pi and other fundamental 
+constants. The pair's hypothesis about chaotic sequences may itself be too hard 
+to prove, says Jeffrey C. Lagarias of AT&T Labs-Research at Florham Park, N.J.
+
+ Crandall responds by quoting German mathematician Carl Ludwig Siegel: "One 
+cannot guess the real difficulties of a problem before having solved it."
+
+ As it stands now, pi and its mathematical cousins continue to present 
+tantalizing mysteries that push mathematical research in new, unexpected 
+directions.
+
+ A flavor of pi's normality
+
+ Proof of the normality of pi may come from a link between number theory and 
+chaotic dynamics. While this link is too complicated to explain briefly for pi, 
+the example of log 2 (the logarithm of 2 to base e, where e is the fundamental 
+constant 2.718281828 . . . .) illustrates the mathematicians' new approach.
+
+ Log 2 can be obtained to any desired number of decimal places from the 
+expression given below:
+
+log 2 = 1/2 + 1/8 + 1/24 + 1/64 + . . . , where each term has the form 1/k2k , 
+starting at k = 1
+
+ This value works out to 0.6931471805599453 . . . .
+
+ Bailey and Crandall have proposed that the normality of log 2 to base 2 is 
+linked to a particular iterative process, or dynamical map, that generates a 
+sequence of numbers between 0 and 1. Here's the mathematical form for this 
+dynamical map:
+
+xn = (2xn^-1 + 1/n)mod 1
+
+ Starting with x0 = 0, each iteration, n, uses the previous result, xn^-1, as 
+the input for calculating the next number, xn. The term "mod 1" is an 
+instruction to use only the fractional remainder of each iteration's result as 
+input for the next iteration. In other words, no input is ever larger than 1.
+
+ The process generates the following sequence: x0 = 0, x1 = 0, x2 =1/2, x3 
+=1/3, x4 = 11/12, x5 = 1/30, x6 = 7/30, x7 = 64/105, x8 = 289/840 . . . . If it 
+could be proved that the erratically fluctuating numbers xn are evenly 
+distributed between 0 and 1, log 2 would be deemed normal to base 2.
+
+ Establishing the same equidistribution property for a different, more 
+complicated dynamical map would lead to a proof that pi is normal to base 16 
+(or, equivalently, to base 2). That would be a significant step toward the 
+long-sought goal of proving pi's absolute normality.
+
+

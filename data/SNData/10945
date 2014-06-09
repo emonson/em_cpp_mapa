@@ -1,0 +1,191 @@
+Science News Online (8/15/98): The Incredible Shrinking Laboratory Microchips 
+may revolutionize chemistry as they did computers
+
+ August 15, 1998 
+
+ The Incredible Shrinking Laboratory 
+
+ Microchips may revolutionize chemistry as they did computers
+
+ By CORINNA WU
+
+ Once, computers were monolithic machines that churned out just a few 
+calculations per minute. Since then, microchips have put a much faster computer 
+on nearly every desktop.
+
+ Dozens of companies are hoping that similar chips can do for chemistry 
+laboratories what they have done for computers. Using the techniques of the 
+semiconductor industry, researchers are etching microscopic labs onto the 
+surfaces of chips made of glass, plastic, and silicon.
+
+ Instead of shuttling electrons back and forth as chips do in computers, the 
+chemistry chips move minuscule amounts of fluid -- volumes of millionths or 
+even trillionths of a liter -- through labyrinths of tiny channels and chambers 
+equipped with pumps, valves, and filters. A computer choreographs the complex 
+interaction of these components.
+
+ These chips could allow scientists to conduct biochemical analyses with 
+greater accuracy than is now possible and in a fraction of the time. Instead of 
+dealing with beakers, test tubes, and Bunsen burners, scientists could simply 
+inject a small sample into a machine containing a microchip and wait a few 
+minutes for the results to appear on a computer screen.
+
+ Several chemistry chip manufacturers are making substantial progress toward 
+this goal. Pharmaceutical companies have taken a particular interest in chip 
+technology, putting millions of dollars into developmental research.
+
+ The idea of chemistry chips began as a response to two research trends: 
+genomics and combinatorial chemistry, says Michael R. Knapp, vice president of 
+science and technology at Caliper Technologies Corp. in Palo Alto, Calif. The 
+drive to sequence and identify all the genes in organisms -- the Human Genome 
+Project being the most prominent example -- provided an incentive for 
+entrepreneurs to develop ways to rapidly analyze large numbers of DNA samples 
+(SN: 3/8/97, p. 144). 
+
+"There's a clear need to do thousands  -- if not tens of thousands -- of genes 
+at one time," says Paul Heaney, senior director of new technology and 
+applications at Orchid Biocomputer in Princeton, N.J. Chips can accomplish 
+these repetitive tasks quickly and cheaply, while requiring only small amounts 
+of sample, he says.
+
+ At the same time, the techniques of combinatorial chemistry have radically 
+changed the way drug companies look for new drug candidates. Instead of 
+painstakingly synthesizing compounds one at a time and testing each 
+individually for therapeutic activity, scientists simultaneously make small 
+quantities of hundreds of related substances by systematically combining a 
+range of chemical ingredients. They then screen the
+
+resulting libraries of compounds for biochemical activity.
+
+ The faster and easier this screening can be done, the better it is for a 
+pharmaceutical company's bottom line.
+
+ Microchips may also be able to improve accuracy. Traditional chemistry labs 
+are "open systems," says Jing Cheng of Nanogen, a biotechnology company in San 
+Diego, Calif. Even though some steps in a complex process may be automated, a 
+person has to intervene at several points, often moving materials from one 
+container to another.
+
+ Not only can material be lost when it is moved, but an open system carries the 
+risk of contamination. In contrast, after the sample is added to a microchip 
+system, the analysis takes place entirely within the chip.
+
+ Chips may also be valuable to forensic scientists, who often have only small 
+amounts of material to analyze, and hospital laboratories, where there is a 
+need for accurate, automated diagnostic tests. The chips could be made 
+disposable to prevent cross-contamination among samples.
+
+ Companies are approaching chip design from different angles. For example, 
+Caliper Technologies is developing custom chips made from glass, plastic, or 
+silicon that "miniaturize more conventional ways of doing experiments," says 
+Knapp. "We can design whatever we want in miniature and recreate any experiment 
+we can do on the lab bench."
+
+ Other groups are developing more generic chips that can be adapted for a wide 
+variety of analyses.
+
+ Researchers face the challenge of scaling down the pumps, valves, and reaction 
+vessels found in larger lab devices. The chip components may not correspond to 
+those available in traditional chemistry laboratories. There is no miniature 
+centrifuge in a chip, for example, says Knapp. In fact, the chips generally 
+have no moving parts at all.
+
+ Instead of using motors to move material around on a chip, a common strategy 
+takes advantage of the charged, ionic nature of the cells and molecules 
+themselves.
+
+ One trick is to use electrophoresis, a widely used technique for separating 
+molecules by size. In the large-scale method, an electric voltage pulls DNA 
+samples through a porous gel, moving different-size fragments at different 
+rates and causing them to separate as marathon runners do in a race.
+
+ On a microchip, a simple pump might consist of electrodes that apply a voltage 
+to pull cells and fluids through channels. Similarly, a miniature valve could 
+use a voltage to block a fluid's flow. The valves in Orchid's chips are simply 
+breaks in the capillaries that hold back fluids with surface tension. To 
+restart the flow, electrodes protruding into the capillaries give the fluid an 
+electric stimulus, overcoming the tension.
+
+ Orchid's 5-centimeter-square chips have a 12-by-12 array of chambers connected 
+to form a "fluidic network," says Heaney. Made of multiple layers of glass or 
+plastic, the chips are designed to perform as many as 144 simultaneous chemical 
+reactions. In a three-layer chip, for example, the top layer contains the 
+electronic connections, the middle layer the channels that distribute the 
+fluids, and the bottom layer the chambers where chemical reactions take place.
+
+ In the June Nature Biotechnology, Cheng and his Nanogen colleagues describe a 
+chip designed to isolate the bacterium Escherichia coli from a blood sample and 
+remove the microbe's DNA. The DNA is then analyzed by another chip. This type 
+of sample preparation is one of the most difficult steps for researchers 
+developing chip-based systems, Cheng says.
+
+ Their silicon chip, one millimeter on a side, carries 25 round, platinum 
+electrodes arranged in a 5-by-5 array. The chip is connected to two tubes: one 
+carries solutions to the chip and the other escorts them away.
+
+ A blood sample passes through the chip while an oscillating pattern of 
+electric voltage is applied to the electrodes. Chemicals added to the chip 
+adjust the blood's electrical properties so that a voltage pulls blood cells in 
+one direction and bacteria in the other.
+
+ Through trial and error, Cheng and his colleagues found that an electric field 
+with a frequency of 10 kiloHertz caused bacteria to collect on the electrodes 
+and red and white blood cells to gather in the spaces between. A fluid pumped 
+in over the chip washes the blood cells away.
+
+ Then, pulses of electric current break apart the bacteria, releasing their 
+innards. An enzyme solution eats away the proteins in the cells, leaving the 
+DNA and RNA intact. The resulting melange of molecules is then pumped out, and 
+the genetic material is analyzed by another chip.
+
+ The 25-electrode chip can also be used to separate cervical cancer cells from 
+blood cells, Cheng and his colleagues report in the June 1 Analytical 
+Chemistry. "We are creating a platform for many different assays," he says.
+
+ Chip makers have found that miniaturizing chemical processes results in a set 
+of problems different from those routinely encountered in a conventional 
+laboratory. For example, Knapp says, "There's so much wall space compared to 
+the volume of the sample that the wall exerts a chemical impact." Molecules or 
+biological cells inside a chip so frequently encounter the material that 
+contains them that they may undergo unwanted chemical reactions.
+
+ Many companies prefer to make microchips out of glass, which interacts the 
+least with samples. Plastic is cheap, which makes it a good choice for 
+disposable chips, says Knapp, but it has more surface reactions and may not be 
+as durable as other materials.
+
+ Silicon dissipates heat better than glass, getting rid of temperature 
+variations that can push cells where they are not supposed to go. To mask the 
+reactivity of the silicon surface, researchers have developed various ways to 
+put down barrier layers. For example, Peter Wilding of the University of 
+Pennsylvania School of Medicine in Philadelphia, who has been working on 
+chemistry chips for more than a decade, uses silicon dioxide to "passivate the 
+surface." At Nanogen, scientists deposit a gel on the walls that makes the 
+silicon nonstick.
+
+ These Lilliputian laboratories also come with their own "miniature plumbing 
+problem," says Heaney. The physics and engineering principles that apply to 
+fluids moving on a microscopic scale are so different from conventional 
+properties that they have been given their own name: microfluidics. "When you 
+put fluids in small spaces, things happen that surprise you," says Knapp.
+
+ Caliper is working towards creating a device about the size of a toaster that 
+could serve as a personal laboratory workstation -- "a Nintendo machine for the 
+lab," Knapp says. A scientist could simply plug in a cartridge containing the 
+chip appropriate for a test. Because the machine would be connected to a 
+computer, "it not only does the experiment for you but collects the data, too."
+
+ Indeed, says Wilding, companies will have to package the chips in convenient 
+devices. "The real breakthrough will not be in the demonstration of the 
+technology but in the completion of a system that people can use," he says.
+
+ Eventually, the chips may even find their way into home health-testing kits, 
+says Cheng.
+
+ Now that home computers are commonplace, home chemistry labs might not be far 
+behind.
+
+ From Science News, Vol. 154, No. 7, August 15, 1998, p. 104. Copyright O 1998 
+by Science Service.
+
+

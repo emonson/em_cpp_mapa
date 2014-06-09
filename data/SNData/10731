@@ -1,0 +1,241 @@
+Science News Online - This Week - Feature Article - 5/3/97 May 3, 1997
+
+ Everybody's Talkin' Language's great innate debate continues to make noise
+
+ By BRUCE BOWER The chorus of a popular song from nearly 30 years ago proclaims 
+"Everybody's talkin' at me, I can't hear a word they're sayin', only the echoes 
+of my mind."
+
+ A vocally precocious but otherwise typical baby might paraphrase those 
+sentiments as follows: "Everybody's talkin' at me, I hear every word they're 
+sayin', it's all echoing through my mind. And if someone doesn't take care of 
+this diaper and give me some milk, I'll scream!"
+
+ Okay, babies don't talk, and their song lyrics consist of incessant babbling. 
+Nonetheless, young children move from a conversational crawl to linguistic 
+leaps in a matter of months, typically beginning sometime between their first 
+and second birthdays. A burgeoning number of studies indicates that language 
+learning begins long before infants utter their first words, probably within 
+the womb upon hearing their mother's voice.
+
+ Several factors have rekindled the debate over how people learn to talk. 
+Researchers have increasing respect for infants' talent for soaking up 
+language, and there is growing evidence of the brain's facility for 
+reorganizing itself in light of new experiences. Moreover, computer systems 
+that squeeze knowledge out of simple arrays of processing units are being 
+developed as models of how learning occurs in the brain.
+
+"There's a war going on between competing views of the nature of language," 
+says psychologist Mark S. Seidenberg of the University of Southern California 
+in Los Angeles. "On a deeper level, it's an argument about what innateness 
+means and where knowledge comes from."
+
+ Philosophers have quarreled over these issues for centuries. Current 
+scientific turmoil focuses on the influential theory launched more than 30 
+years ago by Massachusetts Institute of Technology linguist Noam Chomsky. From 
+an imposing thicket of jargon cloaking technical analyses of spoken sentences, 
+Chomsky attacked the assumption that children learn to talk thanks solely to 
+the guidance of their parents and the wider culture.
+
+ Kids wield innate knowledge about rules for constructing sentences in any 
+language, Chomsky argued. Armed with a facility for universal grammar, as he 
+dubbed it, the average toddler formulates a plan for speaking a native tongue 
+based on the overheard conversations of a limited circle of adults. The 
+youngster then creates all sorts of novel, meaningful expressions, as well as 
+predictable kinds of errors.
+
+ Inspired by evolutionary theory, some scientists have elaborated on Chomsky's 
+proposal. In their view, humanity's gift of gab derives from genetically 
+sculpted brain circuits devoted to basic grammar and word skills. Through their 
+contributions to our ancestors' survival, such prewired mechanisms assumed 
+neural prominence over thousands of generations, according to these researchers.
+
+"Language is a distinct piece of the biological makeup of our brains," wrote 
+MIT psychologist Steven Pinker in his 1994 book The Language Instinct (New 
+York: W. Morrow). "People know how to talk in more or less the sense that 
+spiders know how to spin webs."
+
+ Two related realms of investigation now challenge Pinker's view, Seidenberg 
+asserts in the March 14 Science. The first has more to do with nets than with 
+webs. Connectionist, or neural network, theories try to explain various 
+behaviors or mental feats by drawing analogies with the learning exhibited by 
+interconnected processing units in a computer system. The mathematical strength 
+of connections among these units gradually changes as the system learns to 
+solve a particular problem. The computer network eventually assumes a stable 
+pattern of activity that successfully tackles both the familiar problem and 
+related new challenges.
+
+ For instance, some connectionist researchers interested in language have 
+devised computer networks that learn to predict which words will appear next in 
+incomplete sentences. In much the same way, a child's early grammatical 
+insights may depend on establishing criteria for what makes utterances well 
+formed versus awkward or confusing, these scientists propose. Thus, grammatical 
+skills may accumulate through experience without the rigid guidance of innate 
+language centers in the brain.
+
+ A second body of data indicates that speech contains a host of statistical 
+regularities that can be learned by connectionist systems and babies alike, 
+Seidenberg contends.
+
+ Computerized archives of spoken and written language, collected from adults 
+and children, have aided the search for these statistical uniformities. 
+Recurring features of language serve as handy guides to the meaning of spoken 
+or written passages, the USC investigator maintains.
+
+ Consider what happens upon being told that "the plane left for the East 
+Coast." Comprehension hinges on a rapid determination that the vehicle meaning 
+of "plane" occurs more often than its other meanings and that the verb "left" 
+more often appears in active rather than passive contexts (such as, "The plane 
+left for the repair crew is missing"). The meaning of "left" is further 
+clarified by noting that "plane" rarely modifies the noun "left," so "the plane 
+left" is not a plausible noun phrase.
+
+ Infants wade eagerly into the statistical undercurrents of humanity's verbal 
+stream, according to other research. By 8 months of age, babies use speech 
+regularities as reels with which to fish words out of passing schools of sound, 
+report psychologist Jenny R. Saffran of the University of Rochester (N.Y.) and 
+her coworkers.
+
+ Forty-eight babies, all 8 months old, listened to 2 minutes of continuous 
+recorded speech consisting of four three-syllable nonsense words repeated in 
+random order without pauses. A sample of what they heard is 
+"bidaku-padoti-golabu-bidaku." Nonsense words were detectable solely by the 
+tendency of their syllable pairs, such as "bida," to occur together more often 
+than those between words, such as "kupa."
+
+ After this brief session, the diminutive participants showed much less 
+interest in listening to the same nonsense words than in listening to new 
+three-syllable words made from the same syllables. Babies tapped into 
+probabilistic information on syllable order in the course of a mere 2 minutes 
+of listening, Saffran's group argues, creating a sense of surprise and interest 
+in new rather than familiar words.
+
+ Linguistic learning probably begins with talk overheard from the confines of 
+the womb, Seidenberg holds. In some studies, for example, newborns listen 
+longer to recorded speech in the mother's language than to utterances from 
+another tongue.
+
+ Projects such as Saffran's have yet to demonstrate that probabilistic learning 
+unleashes grammatical knowledge. But they do begin to raise questions about the 
+assumption, first articulated by Chomsky, that youngsters could not possibly 
+wield grammar in all its complexity by listening to the often flawed and 
+inconsistent speech of their elders.
+
+"We need to understand the limits of our learning mechanisms before making 
+assumptions about the innateness of language," Seidenberg says.
+
+ Connectionist systems are edging toward realistic simulations of how children 
+may attain grammatical milestones through learning, adds psycholinguist Jeffrey 
+L. Elman of the University of California, San Diego. A prime illustration 
+involves the past tense of English verbs.
+
+ Researchers reported in 1986 that a simple neural network learned the past 
+tenses of regular and irregular verbs-such as "showed" for "show" and "went" 
+for "go," respectively-in much the same way as has been observed in children. 
+The network was taught to produce correct responses for a small group 
+containing both classes of verbs; soon thereafter, when exposed to a larger 
+sample of unfamiliar verbs, it treated all of them as if they were regular, 
+yielding, say, "bringed" (instead of "brought") for "bring." As these mistakes 
+were corrected one by one, the network gradually improved its ability to 
+produce correct past tenses for irregular verbs that it hadn't specifically 
+been taught.
+
+ Pinker, who theorizes that innate grammatical capacities guide the learning of 
+regular past tenses, whereas irregulars must be memorized, criticized this 
+early connectionist foray as artificial and misleading. He noted that the 
+network's designers first trained it on 10 verbs, 8 of which were irregular, 
+and then suddenly exposed it to 410 new verbs, most of which were regular. This 
+arrangement departs sharply from children's actual exposure to verbs during the 
+first few years of life.
+
+ An updated neural network, with a more naturalistic exposure to verbs, 
+exhibits many of the subtleties of past-tense acquisition documented in 
+extended studies of preschool children, Elman asserts. As happens with kids, 
+the computer system incorrectly puts "ed" on the end of irregular verbs for a 
+considerable period, but it makes this error for no more than about 10 percent 
+of the irregular verbs in its vocabulary at any one time. It also alternates 
+occasionally between correct and incorrect past tenses for the same irregular 
+verb, in the style of novice talkers.
+
+ Elman and his five coauthors describe this system in their 1996 book 
+Rethinking Innateness (Cambridge, Mass.: MIT Press).
+
+ Such results buttress their opinion that rules and knowledge systems in the 
+brain arise following neural reorganization due to learning, not from genetic 
+orders independent of childhood experiences. Genes set in motion neural 
+remodeling projects, which must nevertheless operate within the limits of the 
+brain's prespecified structure, Elman holds. Genetic elements interact with one 
+another in ways that are influenced by the types of information available to a 
+growing child, setting off chains of neural events that can play out in a 
+variety of ways and yet still yield specieswide abilities, such as speech.
+
+"Language is a conspiracy of a lot of different forces and factors that did not 
+evolve specifically for language but which come together during development to 
+make language inevitable," Elman holds. "Something about our need to engage in 
+social interactions may predispose us to learn language."
+
+ A contrasting perspective on language learning, which has attracted much 
+attention among linguists in the past few years, assumes that children assemble 
+a hierarchy of mental guidelines to unlock possible sentence meanings. All 
+languages are presumed to share these structural themes, which vary in 
+significance from one tongue to another; the challenge for a fledgling 
+communicator is to rank grammatical rules of thumb in a way that best plumbs 
+the meaning of his or her native language.
+
+ Optimality theory, as it is known, veers away from Chomsky's emphasis on 
+grammar as a universal set of procedures that, if followed, inevitably clarify 
+conversation.
+
+"Optimality theory provides an account of how children could figure out their 
+native language, perhaps given innate access to universal constraints on 
+grammar," contends Paul Smolensky, a cognitive scientist at Johns Hopkins 
+University in Baltimore.
+
+ Smolensky and linguist Alan Prince of Rutgers University in New Brunswick, 
+N.J., describe optimality theory in the March 14 Science.
+
+ Grammatical constraints for English include the basic word order of 
+subject-verb-object in a sentence and the necessity for all words in a sentence 
+to contribute to its meaning. Yet, constraints may conflict with one another at 
+times, requiring some to take priority over others.
+
+ So, for instance, the first word in the sentence "it rains" does not 
+contribute to its meaning, but the expression satisfies the greater need that 
+every sentence must have a subject. Children of English speakers face the task 
+of ranking many such constraints in ways that allow them to wring meaning out 
+of what they hear.
+
+ Pinker calls optimality theory an "interesting hybrid" of ideas that he may 
+use in future studies of grammar use. Still, he finds the new wave of 
+connectionist models touted by Elman to be "toy systems with promissory notes 
+that they will eventually learn truly complex grammar."
+
+ The biological complexity of the brain also presents vexing hurdles to those 
+intrigued by the nature of language. For instance, a study directed by 
+psychologist Michael Ullman of Georgetown University in Washington, D.C., 
+indicates that separate neural memory systems-one for facts and events, the 
+other for motor skills and habits-underwrite knowledge of words and grammar 
+rules, respectively.
+
+ His report, based on vocabulary and grammar tests conducted with people who 
+had suffered brain damage that blocked one or the other type of memory, appears 
+in the March Journal of Cognitive Neuroscience. Pinker is a coauthor.
+
+ Although Ullman accepts Pinker's notion of a language instinct, he 
+acknowledges that the new evidence is more consistent with the theory that 
+wide-ranging brain systems foster linguistic skills.
+
+ Both Ullman and Pinker theorize that a language instinct incorporates some 
+brain structures devoted to broad capacities, such as memory, and others that 
+make unique contributions to the use of grammar and words.
+
+ Whatever the case, Smolensky views the future of language studies with 
+optimism. "There are moderate views on both sides of the debate," he says. 
+"Fertile ground exists for future research."
+
+ Or, as that articulate baby might put it, "Everybody's still talking, I'm 
+still wet and hungry, and Mommy and Daddy are in for a long night."
+
+copyright 1997
+
+

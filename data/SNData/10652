@@ -1,0 +1,221 @@
+Science News Online - This Week - Feature Article - 11/8/97
+
+ November 8, 1997 
+
+ Fine Lines for Chips
+
+ Competing technologies for downsizing the transistor
+
+ By IVARS PETERSON
+
+ In the realm of microelectronics, smaller means faster.
+
+ During the last 2 decades, the number of transistors crammed onto an 
+integrated-circuit chip has doubled roughly every 2 years, while the price per 
+transistor has dropped steadily. That miniaturization of electronic components 
+has led to enormous increases in computer speed and memory.
+
+ Nowadays, the channels defining each transistor on a silicon surface are 
+typically 0.35 micrometer (mm) wide, small enough that some 16 million 
+transistors can occupy a single chip. Looking a decade into the future, the 
+semiconductor industry is contemplating the technical challenges of 
+manufacturing chips with 500 million transistors. Those transistors would have 
+features only a fraction of the size of the present-day standard.
+
+ Essential to chip fabrication is a process called lithography, which resembles 
+the printing of a photograph by shining light through a negative onto a 
+photosensitive surface. To produce features less than 0.1 mm wide, 
+semiconductor companies face the task of developing methods that involve light 
+or other electromagnetic radiation of wavelengths much shorter than those 
+commonly used today. The shorter the wavelength, the finer the line that can be 
+sharply drawn.
+
+ To create sufficiently thin lines for future chips, researchers have explored 
+several schemes: one based on the use of extreme ultraviolet (EUV) radiation, 
+another on X rays, and a third on electron beams. Laboratory demonstrations 
+show that all three technologies are capable of writing features far smaller 
+than those produced by conventional optics. The big question is whether any of 
+them can be scaled up and put on a factory floor to manufacture 
+integrated-circuit chips accurately and inexpensively.
+
+ Such a leap in technology would require a major investment in research and 
+development and in equipment and facilities. Whatever the choice, it would also 
+be a gamble, with no guarantee of success.
+
+ Earlier this year, Intel Corp. of Santa Clara, Calif., and two collaborators 
+placed their bet on EUV lithography, agreeing to fund research at the Lawrence 
+Livermore (Calif.) National Laboratory and the Sandia National Laboratories in 
+Livermore, where the technology was initially developed, and the Lawrence 
+Berkeley (Calif.) National Laboratory (SN: 9/20/97, p. 180). "We believe that 
+this approach holds the greatest amount of promise," says Intel spokesman Adam 
+Grossberg. "It's been demonstrated in a lab environment, and we believe it's 
+possible to take this technology to a manufacturing capability."
+
+ Other companies, such as IBM and Lucent Technologies, continue to pursue 
+alternative approaches. "All of the technologies work," says Richard R. 
+Freeman, who heads the newly formed Virtual National Laboratory, which 
+coordinates the joint national labs effort on EUV lithography. "It's just a 
+question of whether [advanced lithography] can be done efficiently and at 
+sufficiently low cost."
+
+ Chip manufacture has become an extremely expensive proposition. Installing and 
+operating a single factory production line can cost more than $1 billion.
+
+ Fabrication begins with a silicon wafer topped by a light-sensitive polymer 
+layer and a stencil-like mask made from glass coated with a light-blocking 
+metal. The mask bears the intricate master pattern that chip designers wish to 
+etch onto the silicon wafer.
+
+ The system shines light through the mask, then through a series of lenses to 
+focus the image falling on the polymer layer to about one-quarter of its 
+original size. The light causes chemical changes in the polymer, imprinting the 
+circuit design. Affected areas can then be chemically etched, exposing and 
+eating away some of the underlying silicon. This creates the pattern for a 
+single chip, many of which are ultimately inscribed on a silicon wafer.
+
+ These lithographic light projectors are called steppers because they step to a 
+chip location, create the required pattern, then step to the next chip site. In 
+this way, one site after another is exposed to the patterned light.
+
+ The wavelength of light used cannot be much larger than the desired size of 
+features on the chip. To etch lines as narrow as 0.35 mm, or 350 nanometers, 
+manufacturers rely on lasers that generate ultraviolet light at a wavelength of 
+365 nm, somewhat shorter than wavelengths of light visible to the human eye. 
+The newest steppers, designed to create lines 0.25 mm wide, make use of 248-nm 
+radiation, or deep ultraviolet light. Various refinements in the mask 
+technology and the optics, along with the use of a laser that generates 193-nm 
+radiation, could bring the line width down to 0.18 mm, perhaps even to 0.13 mm 
+by using further optical tricks.
+
+ Each step down poses tough challenges, from making the illumination 
+increasingly uniform and keeping masks from warping to ensuring that different 
+chip layers are aligned with sufficient precision. Nonetheless, the basic setup 
+remains the same.
+
+ Going to even shorter wavelengths, however, requires a different approach. For 
+one thing, quartz lenses begin to absorb rather than refract, or bend, light at 
+such wavelengths, so conventional optics can no longer be used.
+
+ One advantage of EUV lithography is that the overall setup resembles that 
+required for conventional optical lithography. The main difference is that, in 
+order to reduce absorption, an elaborate set of mirrors replaces the refractive 
+lenses to focus the radiation.
+
+ The technology is an outgrowth of research related to the Department of 
+Defense's Strategic Defense Initiative and the development of laser-based 
+antimissile weapons. Starting in the mid-1980s, researchers at Livermore sought 
+ways to control X rays created when high-powered laser beams penetrate a gas. 
+They devised special mirrors coated with alternating layers of materials such 
+as molybdenum and silicon to reflect and direct X rays.
+
+ The interaction between an extremely intense laser beam and a gas produces a 
+high-temperature plasma of ions and electrons. The plasma emits radiation 
+spanning a wide range of wavelengths, including some in the extreme ultraviolet 
+that could be useful for lithography when controlled with the 
+Livermore-designed mirrors. That possibility encouraged Sandia engineers to 
+design and build plasma light sources potentially suitable for EUV lithography.
+
+ The laser-generated plasmas typically produce radiation at wavelengths between 
+10 and 20 nm, depending on the target gas. "We chose 13 nm because that's the 
+wavelength at which our mirrors are most highly reflective," Freeman says. Last 
+year, a Sandia team used the technology to make a working transistor and other 
+devices with a minimum feature size of 0.1 mm. "To get even smaller features 
+would require just an incremental improvement in the imaging optics," says 
+Sandia's Richard H. Stulen. "The wavelength would stay the same. That's one of 
+the beauties of this technology."
+
+ That's still a long way from putting billions of transistors on a single chip 
+in a factory setting. Researchers face a number of technical issues, such as 
+improving the reflectivity of the mirrors, achieving sufficiently accurate 
+positioning of the wafer and mask, and developing a suitable photosensitive 
+material for coating the wafer.
+
+"You have to get the source right, you have to get the optics right, you have 
+to get the coatings right, and you have to get the mask right," Freeman says. 
+"Everything has to work. It's an incredibly complex system."
+
+ X-ray lithography has been under development even longer than EUV technology. 
+The X-ray technique makes use of highly penetrating radiation, ranging from 
+0.01 to 1.0 nm in wavelength. Normally, that radiation is generated by 
+electrons pushed to a high energy in a particle accelerator and circulating in 
+a storage ring.
+
+ As early as 1977, Henry I. Smith and his coworkers at the Massachusetts 
+Institute of Technology used X rays to draw lines less than 0.02 mm wide on a 
+silicon surface. The group later built microelectronic devices with features 
+only 0.05 mm wide.
+
+ More recently, John M. Warlaumont and his colleagues at the IBM Thomas J. 
+Watson Research Center in Yorktown Heights, N.Y., demonstrated that X-ray 
+lithography can be used to build many devices side by side.
+
+ Several factors have discouraged semiconductor companies from moving this 
+technology out of the laboratory and into the factory. In particular, it 
+requires X rays produced by accelerated electrons, which are available at only 
+a handful of synchrotron facilities throughout the country.
+
+"Semiconductor companies want equipment that can be wheeled on to the factory 
+floor," Freeman says. "They don't want to build a factory around a synchrotron."
+
+ The use of high-energy electron beams as "pencils" to write patterns on a 
+silicon surface also has a long history. Such technology is already used to 
+create the masks needed for conventional lithography and to etch tiny features 
+directly on chips built for research purposes.
+
+ Although the basic process is too slow for manufacturing, the technique 
+remains promising. High-energy electrons have extremely short wavelengths, 
+making possible the creation of much finer patterns than can be made with other 
+methods. One way to speed up the process is to send multiple electron beams 
+through a mask, allowing each beam to write a separate section of the chip 
+pattern. Alternatively, a wide beam acting as a floodlight could inscribe an 
+entire pattern at once.
+
+ Recently, researchers at Lucent Technologies have pushed ahead with an 
+electron-beam process called SCALPEL (scattering with angular limitation 
+projection electron-beam lithography). The method requires a special mask made 
+of thin layers of metals such as chromium and tungsten, which deflect or 
+scatter rather than absorb electrons. The layers sit on a silicon nitride base, 
+which is transparent to electrons.
+
+ As electrons pass through the mask, some are scattered and others are 
+unaffected by the coating. A system of magnetic lenses focuses the unscattered 
+electrons on a silicon wafer to create the desired pattern.
+
+ Last year, researchers at Bell Laboratories in Murray Hill, N.J., demonstrated 
+that SCALPEL could produce lines as thin as 0.08 mm. A chip built to take 
+advantage of that size could store up to 8 billion bits of information.
+
+"We are confident that SCALPEL will make [electron-beam] lithography viable for 
+high-volume production and decreasing line widths," says Lloyd R. Harriott of 
+Bell Labs. A production-worthy SCALPEL system could be available by the year 
+2002.
+
+ Whatever lithography technique proves viable for manufacturing, the high cost 
+of developing the technology presents a serious obstacle.
+
+"Although nearly $50 million of private and government support has been 
+invested in SCALPEL and the concept has been proven, it will take closer to a 
+$1 billion investment worldwide over the next decade to lead to actual 
+production with SCALPEL," says J. Murray Gibson of the University of Illinois 
+at Urbana-Champaign, who coinvented SCALPEL.
+
+ There are also political obstacles. Intel's agreement with the Department of 
+Energy to provide $250 million in funding to develop EUV lithography has been 
+criticized by members of Congress and U.S. companies involved in supplying 
+lithography equipment.
+
+ Last month, a letter from four House Democrats to Secretary of Energy Federico 
+F. Pena noted that the agreement allows Intel to license any developed 
+technology. They argued that the agreement potentially allows the company to 
+grant foreign equipment makers access to sensitive new technology, possibly 
+giving away U.S. trade secrets and compromising national security in the 
+process. Intel replied that licensing agreements were not yet complete and 
+would ultimately include a significant number of U.S. companies. In the 
+meantime, the pursuit of the small and fast continues.
+
+ Even the modest decreases in minimum line width permitted by pushing current 
+optical lithography to its limit could enable chip designers to put both memory 
+and logic circuits on the same chip. The resulting increase in the speed and 
+performance of computers could have a tremendous economic impact.
+
+

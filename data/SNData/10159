@@ -1,0 +1,231 @@
+Mathematician on Ice: Science News Online, Aug. 5, 2000
+
+ Mathematician on Ice Adventurous voyages to Antarctica test mathematical 
+models of sea ice
+
+ By I. Peterson
+
+ A winter expedition into frigid Antarctic waters is no pleasure cruise. 
+Screaming winds, bone-chilling temperatures, high seas, driving snow, and 
+crunching ice create conditions that try the hardiest of souls.
+
+ It's an unlikely place to find a mathematician.
+
+ Last year's 8-week voyage of the ice-breaking research vessel Aurora Australis 
+from Tasmania wasn't Kenneth M. Golden's first venture into the Antarctic ice 
+pack. An applied mathematician at the University of Utah in Salt Lake City, he 
+had also studied sea ice on three previous Antarctic outings.
+
+ Foul weather never kept Golden from relishing an Antarctic voyage. "I loved 
+watching the waves," he says. When the sun squeaked through storm clouds during 
+the few hours of daylight, he could also enjoy spectacular views of giant 
+icebergs, crumpled ice sheets, and penguins waddling across snow or skimming 
+the water.
+
+ About four dozen researchers were aboard the icebreaker on its 1999 voyage. 
+Their destination was a sizable region, called a polynya, of open water and 
+thin ice that had appeared in the ice-bound waters near the toe of the Mertz 
+Glacier off the Antarctic coast.
+
+ The sea-ice pack insulates the ocean from the atmosphere. A hole in this lid 
+permits a significant amount of heat to escape from the water to the much 
+chillier air. At the same time, surface waters cool, become denser, and sink, 
+contributing to ocean circulation (SN: 7/15/00, p. 42). New ice begins to form, 
+filling in the hole.
+
+ As the boundary layer between ocean and atmosphere in polar regions, sea ice 
+has a significant impact on global climate, Golden notes. Polynyas play a 
+crucial role in energy exchange and ice formation, so the occurrence of one 
+inevitably draws the attention of researchers.
+
+ On a broader front, sea ice "is most important in the context of climate 
+variability and change, both as an indicator and an agent of climate change," 
+says geophysicist Hajo Eicken of the University of Alaska in Fairbanks.
+
+ The need to understand better the physical properties of sea ice, track its 
+movements, and remotely monitor its thickness, temperature, and roughness has 
+prompted a number of recent studies of its structure.
+
+ In May at a Society for Industrial and Applied Mathematics meeting in 
+Philadelphia on mathematical aspects of materials science, Golden described how 
+new mathematical models have provided insights into the way brine seeps through 
+ice, carrying heat and nutrients.
+
+ Other models have also helped researchers refine methods for reconstructing 
+the physical characteristics of polar ice-its age, thickness, roughness, brine 
+content, and porosity-from satellite or airplane measurements of microwaves 
+bounced off the surface.
+
+ Mathematical and computer models-both simple and complex-help researchers 
+design field experiments and provide insights that can guide the development of 
+accurate, large-scale climate models, Eicken says.
+
+ It was during Golden's 1994 trip to the Antarctic-his second expedition-that 
+he witnessed a remarkable scene that was to motivate much of his subsequent 
+mathematical research on sea-ice structure.
+
+ Buffeted by winds reaching 60 miles per hour during a fierce snowstorm, he was 
+out on the ice in the middle of the night. "It was snowing like crazy, but it 
+was warm," Golden recalls.
+
+ What caught his eye was a massive upwelling of liquid, percolating up through 
+the ice to flood the surface beneath the newly fallen snow, forming a slushy 
+boil. Though he had heard about this phenomenon and had even proved theorems 
+about percolation models, he had never before seen it or realized how striking 
+the phenomenon is.
+
+"That was very important for guiding my theoretical research and suggesting new 
+questions to investigate," Golden remarks.
+
+ To understand percolation, he had to dig into sea-ice formation. As seawater 
+freezes, it can't incorporate salt into its crystal structure. The salt that it 
+rejects concentrates in brine pockets between crystals. So, sea ice is a porous 
+material made up of pure ice laced with brine-filled cavities and air bubbles.
+
+ Unlike other porous materials, such as sandstone or bone, sea ice's 
+microstructure and bulk properties can change dramatically over a small 
+temperature range. Sea ice becomes permeable and brine can travel through the 
+solid when temperatures rise above about -5@C, if the brine-volume fraction is 
+5 percent and the salt content is 5 parts per thousand. At lower temperatures, 
+sea ice is effectively impermeable, locking in place any liquid that happens to 
+be present.
+
+ In polar regions, a snowstorm can elevate the ice temperature and push down on 
+the surface. Brine cavities grow larger and connect, so the ice becomes 
+permeable. Sea water percolates up through the ice to flood the surface and 
+form the boils observed by Golden.
+
+ Interest in assessing brine movement through ice has escalated in recent years 
+as researchers have come to recognize the vital role of percolation in polar 
+ecosystems. It supplies nutrients to algal communities and bacteria living in 
+the ice, transports contaminants, and heats the atmosphere.
+
+ To develop a mathematical model of brine transport, Golden turned to 
+percolation theory. In the simplest form of a percolation model, one considers 
+an array of points arranged in a square lattice or a cubic network. The idea is 
+to introduce links between randomly chosen pairs of neighboring points until 
+it's possible to travel from one side of the grid to the other along an 
+unbroken chain.
+
+ In two dimensions, such a pathway appears when roughly half of all possible 
+links are in place; in three dimensions, about one-quarter of the links must be 
+present. If ice is regarded as a random mix of brine pockets and ice particles 
+of equal size, the simple percolation model says sea ice should be at least 25 
+percent brine before salty water can percolate through it. The actual figure 
+for sea ice is 5 percent, however.
+
+ Golden solved this puzzle by turning to a more sophisticated percolation 
+model, first used in the 1960s to study the electrical behavior of metal 
+particles mixed with a nonconducting polymer. Engineers had found that by 
+compressing powders made up of large polymer particles and much smaller metal 
+particles, they could obtain a flexible, composite material that permitted 
+electricity to flow despite a relatively low metal content.
+
+ The microstructure of such a compressed powder is remarkably similar to the 
+cellular microstructure of the columnar form of sea ice, Golden remarks. The 
+most important parameter for the powder model is the ratio of the radius of the 
+large particles to that of the smaller ones.
+
+ Applying the compressed-powder-conductivity model to typical sizes of ice 
+crystals and brine cavities in columnar sea ice yielded a critical brine volume 
+of about 5 percent.
+
+ The model, however, serves only as a rough approximation of both brine 
+percolation and ice structure. In reality, the situation is much more 
+complicated. For instance, once percolation begins, brine pockets quickly 
+connect with each other to create large-diameter brine channels along which 
+most of the fluid transport takes place.
+
+ During the 1999 voyage to Antarctica, Golden, Victoria I. Lytle of the 
+Antarctic Cooperative Research Centre in Hobart, Australia, and their coworkers 
+ventured out onto the ice to examine brine channels in the field. They used 
+chain saws to cut out slabs of ice 15 to 26 inches thick. Beet juice scrounged 
+from the ship's galley revealed the intricate brine pathways threading through 
+the ice.
+
+"As beet juice seeps into a slab, you see layers of different types of ice 
+crystals, and you get a feel for how brine moves through the ice," Golden says. 
+The researchers are now trying to determine precisely how these brine channels 
+form.
+
+ Laboratory measurements and field studies by Eicken and his coworkers have 
+revealed other aspects of sea-ice behavior. Even at low temperatures, some 
+liquid can slowly seep through the solid, Eicken notes. "It will be interesting 
+to have a closer look at some of the processes that help maintain connected 
+pore space even at low temperatures."
+
+ Another important issue is how the microphysics of sea-ice structure 
+determines the extent and quality of microbial activity in the ice. Researchers 
+need such information to assess the role of sea-ice organisms in taking up 
+carbon in the Arctic and Antarctic.
+
+ Structural details can be important. "Given the microscopic size of the 
+organisms, even a few connected pores, which do not affect the macrophysics of 
+the system measurably, can decide the fate of a group of organisms," Eicken 
+remarks.
+
+ Don Perovich of the U.S. Army Cold Regions Research and Development Center in 
+Hanover, N.H., says, "Here, we have a frozen environment that is home for a 
+rich and diverse food web. Understanding life in this extreme environment may 
+provide insights in the search for extraterrestrial life."
+
+ In late August during the 1999 expedition, Golden and five colleagues got a 
+vivid demonstration of sea-ice dynamics on a larger scale.
+
+ The researchers had just descended to the ice to collect samples, when a small 
+crack appeared, then quickly widened. Four people crowded back into the small 
+cage that had brought them down, and the ship's crane hoisted them back on 
+board, leaving Golden and researcher Robert A. Massom of the Antarctic 
+Cooperative Research Centre on the ice to await the cage's return.
+
+ Meanwhile, the crack closed, and a slab of ice started riding up over the slab 
+on which Golden and Massom were standing, pushing it down so that sea water 
+began flooding its surface. After what seemed like an interminable wait, the 
+crane finally dropped the cage for the second pickup. Two minutes later, the 
+ice sheet had broken up completely.
+
+"It's plate tectonics on a very fast timescale," Golden observes.
+
+ Experiments and measurements on the ice surface provide important data for 
+calibrating mathematical models and interpreting remote-sensing signals. The 
+extent of the connections among brine cavities, for instance, affects how sea 
+ice interacts with electromagnetic radiation, and surface flooding and 
+subsequent freezing influence how a surface scatters microwaves.
+
+ In remote sensing, it's often difficult to distinguish between slush and open 
+water. A better understanding of slush formation would allow researchers to 
+refine remote-sensing methods to distinguish different types of ice and open 
+water more reliably.
+
+ Hence, knowledge of how brine flows is important for accurate satellite 
+measurements, Golden says. Such data, in turn, would provide information on the 
+extent and thickness of polar ice, a parameter useful in tracking global 
+climate change.
+
+ The mathematics behind techniques for interpreting reflected microwave signals 
+is interesting, Golden says. "We now have a lot of new results, which can also 
+be applied to other types of scattering."
+
+ Traveling to the Antarctic ice pack to collect data also has dangers unrelated 
+to the ice.
+
+ On its 1998 voyage, after sailing for a week, the Aurora Australis finally 
+reached the ice edge, 100 miles off the Antarctic coast. Late that night, a 
+serious engine-room fire triggered alarms throughout the ship, bringing 
+everyone on deck.
+
+ Awoken soon after he had gone to sleep, a groggy Golden showed up wearing just 
+a light jacket and jeans. Luckily, although lifeboats were lowered, the ship 
+didn't have to be abandoned. A few hours in a lifeboat at temperatures nearing 
+-65@C would have made the folly of Golden's choice of apparel painfully clear.
+
+"I should have known better," he admits.
+
+ Eventually, crew members managed to control the fire, though it ended up 
+gutting the main engine room. Engineers jury-rigged a control system for a 
+backup engine, and the ship slowly limped 3,000 kilometers back to port.
+
+ Unfazed by his chilling experience and still in pursuit of all things ice, 
+Golden was back on board in 1999 for a return trip to Antarctic waters.
+
+

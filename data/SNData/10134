@@ -1,0 +1,207 @@
+The Power of Partitions: Science News Online, June 17, 2000
+
+> The Power of Partitions
+
+ Writing a whole number as the sum of smaller numbers springs a mathematical 
+surprise
+
+ Ivars Peterson
+
+ Just a year before his death in 1920 at the age of 32, mathematician Srinivasa 
+Ramanujan came upon a remarkable pattern in a special list of whole numbers.
+
+ The list represented counts of how many ways a given whole number can be 
+expressed as a sum of positive integers. For example, 4 can be written as 3 + 
+1, 2 + 2, 2 + 1 + 1, and 1 + 1 + 1 + 1. Including 4 itself but excluding 
+different arrangements of the same integers (2 + 1 + 1 is considered the same 
+as 1 + 2 + 1), there are five distinct possibilities, or so-called partitions, 
+of the number 4. Similarly, the integer 5 has seven partitions.
+
+ The list that Ramanujan perused gave for each of the first 200 integers, the 
+number of their partitions, which range from 1 to 3,972,999,029,388.
+
+ Ramanujan noticed that, starting with 4, the number of partitions for every 
+fifth integer is a multiple of 5. For instance, the number of partitions for 9 
+is 30 and for 14 is 135.
+
+ He discovered several more such patterns. Starting with 5, the number of 
+partitions for every seventh integer is a multiple of 7, and starting with 6, 
+the number of partitions for every 11th integer is a multiple of 11. Moreover, 
+similar relationships occur where the interval between the chosen integers is a 
+power of 5, 7, or 11 or a product of these powers. Ramanujan went on to prove 
+rigorously that these patterns hold not only for the 200 partition numbers in 
+his table but also for all higher numbers.
+
+ It was a curious discovery. Nothing in the definition of partitions hinted 
+that such relationships, called congruences, should exist or that the prime 
+numbers 5, 7, and 11 should play a special role.
+
+ After many decades of nearly fruitless searching that yielded just one or two 
+apparently isolated examples of large numbers that fit the pattern, 
+mathematicians came to believe that no other congruences exist. Those found by 
+Ramanujan and the later mathematicians were thought to be little more than 
+numerical flukes.
+
+ Indeed, "it was really believed that there would probably never be any new 
+major discoveries regarding partition congruences," says George E. Andrews of 
+Pennsylvania State University in State College.
+
+ In a startling turnabout, mathematician Ken Ono has now proved that infinitely 
+many such relationships occur. "This was really quite unexpected," says number 
+theorist Ono, who holds positions at both Penn State and the University of 
+Wisconsin-Madison. He described his results in the January Annals of 
+Mathematics.
+
+"Ono's work is really spectacular," comments Bruce C. Berndt of the University 
+of Illinois at Urbana-Champaign. "This certainly must rank as the most 
+important work on partition congruences since the epic work of Ramanujan."
+
+"It's an extraordinary discovery," agrees Andrew M. Granville of the University 
+of Georgia in Athens.
+
+ Moreover, Ono's partition research has intriguing, unexpected links to complex 
+mathematical ideas and methods that earlier led to proofs of Fermat's last 
+theorem (SN: 11/5/94, p. 295) and the Taniyama-Shimura conjecture (SN: 10/2/99, 
+p. 221). It has opened up new avenues for studying some of the most important, 
+but difficult, questions in number theory, Granville says.
+
+ Hooked on math
+
+ Born into poverty, Ramanujan grew up in southern India, and although he had 
+little formal training in mathematics, he became hooked on mathematics. He 
+spent the years between 1903 and 1913 cramming notebooks with page after page 
+of mathematical formulas and relationships that he had uncovered (SN: 4/25/87, 
+p. 266).
+
+ Ramanujan's life as a professional mathematician began in 1914 when he 
+accepted an invitation from the prominent British mathematician G.H. Hardy to 
+come to Cambridge University. He spent 5 years in England, publishing many 
+papers and achieving international recognition for his mathematical research.
+
+ Though his work was cut short by a mysterious illness that brought him back to 
+India for the final year of his life, Ramanujan's work has remained a subject 
+of considerable interest. For the past 2 decades, Berndt has been going through 
+Ramanujan's scribbled notes, systematically deciphering, writing out, and 
+proving each of the numerous theorems Ramanujan had formulated.
+
+ Two years ago, Berndt was examining an unpublished, handwritten Ramanujan 
+manuscript on partitions. "It contained claims that had never been proved," 
+Berndt remarks. So he recruited Ono, an expert on partitions from a modern 
+perspective, to help him fill in the details and provide the necessary proofs.
+
+"I had never read any of Ramanujan's notebooks, though I was familiar with a 
+lot of what he had done through the writings of more modern mathematicians," 
+Ono says. "I didn't suspect that I would learn anything from studying 
+Ramanujan's notes."
+
+ In fact, the manuscript didn't contain anything startling or new. However, 
+Ramanujan had written out one mathematical expression, or identity, in a manner 
+that to Ono seemed particularly awkward.
+
+"The first time I saw it, I wrote to Berndt saying this can't be right," Ono 
+recalls. Nonetheless, after Ono translated the expression into modern 
+mathematical language, it made perfect sense.
+
+ Yet the apparent awkwardness of Ramanujan's original formulation bothered Ono. 
+It got him to think deeply about the many different ways in which 
+mathematicians can express identities. In the course of that rethinking, he 
+obtained crucial insights that led him to tackle the question of partition 
+congruences-something that he would not otherwise have attempted.
+
+"I learned a valuable lesson," Ono remarks. "It sometimes really pays to read 
+the original."
+
+ Tour de force
+
+ In a remarkable tour de force, Ono proved that partition congruences can be 
+found not only for the prime numbers 5, 7, and 11 but also for all larger 
+primes. To do so, he had to exploit a previously unsuspected link between 
+partition numbers and complex mathematical objects called modular forms.
+
+"Modular forms lie at the heart of modern number theory," says Scott Ahlgren of 
+Colgate University in Hamilton, N.Y.
+
+ They are special types of mathematical relationships that involve so-called 
+complex numbers, which have a real and an imaginary component. In effect, the 
+relationships represent particular types of repeating patterns, roughly 
+analogous to the way a trigonometric function such as sine represents a 
+repeating pattern for ordinary numbers.
+
+ Mathematicians have identified many different types of modular forms. The 
+connection between certain modular forms and elliptic curves helped Andrew 
+Wiles of Princeton University prove Fermat's last theorem in 1993.
+
+ Applying modular-form theory, as developed by other mathematicians, Ono 
+uncovered a connection between partition numbers and specific modular forms. He 
+used that relationship to establish, in effect, the existence of congruences 
+involving prime-number divisors among the partition numbers.
+
+ Unlike many previous advances in partition theory, Ono's research involved no 
+computation and relied heavily on theory. "What I find particularly appealing 
+about this approach is that it uses the most powerful tools in modern number 
+theory to attack a classical problem," Ahlgren says.
+
+ Interestingly, although Ono proved the existence of these congruences, he 
+provided only one explicit example. In this new congruence, the starting number 
+is 111,247, with each successive step to the next integer going up by 594 x 13. 
+The corresponding partitions are then multiples of the prime number 13.
+
+ Ono, however, didn't have an effective recipe, or algorithm, for generating 
+examples. But Rhiannon L. Weaver, an undergraduate at Penn State, found a 
+simple criterion for identifying the start of a progression. She then developed 
+an algorithm, working with primes from 13 to 31, to obtain more than 70,000 new 
+congruences.
+
+"This wasn't a trivial exercise," Ono says. "It was a great piece of work." 
+Applying Weaver's method, a researcher can now readily write a computer program 
+to find thousands of additional examples, he explains.
+
+ The newfound congruences also show why mathematicians had failed to come up 
+with many additional examples by trial and error. "The numbers involved are 
+very big," Granville remarks. Moreover, "even now that we know where to look, I 
+don't think we would have spotted them from raw computation."
+
+ In another recent development, Ahlgren has extended Ono's results to establish 
+the existence of congruences that work with multiples of composite numbers, 
+which consist of primes multiplied together, as long as the numbers aren't 
+divisible by 2 or 3.
+
+ Ahlgren reported his results in May at the Millennial Conference on Number 
+Theory held at Illinois.
+
+"It is now apparent that Ramanujan-type congruences are plentiful," Ono says. 
+"However, it is typical that such congruences are monstrous."
+
+ New role
+
+ Ono's results have already sparked a considerable amount of research activity. 
+"It's amazing how much more we know now than we did just last year," Ahlgren 
+says.
+
+ Despite these advances, however, mathematicians still don't know whether there 
+are congruences that involve multiples of 2 or 3. Ono's methods don't work for 
+these particular cases, and researchers must develop new tools to hunt for such 
+relationships.
+
+ At the same time, Ono has given partition numbers an exciting, new role in 
+mathematics. "Partitions are much more than just counts of how to add up 
+numbers," Ono says. "They are a vehicle for testing some of the most important 
+conjectures about [mathematical] objects that we can barely get a handle on 
+otherwise."
+
+ Indeed, studying partitions could lead to new insights into the theory of 
+modular forms and illuminate its connections with important, unsolved questions 
+in number theory, such as the so-called Swinnerton-Dyer conjecture. The Clay 
+Mathematics Institute in Cambridge, Mass., recently listed this problem as one 
+of the top seven questions in mathematics and offered a $1 million prize for 
+its solution. The conjecture concerns a criterion for deciding whether certain 
+equations have whole-number solutions.
+
+ The study of partitions has long been one of the mainstays of number theory 
+and rivals the study of primes for intrinsic mathematical appeal, Andrews says.
+
+"Primes form the basis for multiplication, and the study of partitions is 
+grounded in the addition of integers," he notes. "What is intriguing is the 
+fact that such an elementary idea can have theorems as subtle as those of Ono."
+
+

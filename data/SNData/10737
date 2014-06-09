@@ -1,0 +1,89 @@
+Science News Online (6/14/97): Divide and conquer for quantum computers
+
+ June 14, 1997 
+
+ Divide and conquer for quantum computers
+
+by I. Peterson
+
+ One way to get a job done faster is to divvy it up into small chores that 
+different people can do simultaneously. The same strategy can be applied to 
+solving certain computational problems by breaking them up into components that 
+are distributed among many computers working in parallel.
+
+ In principle, a quantum computer (SN: 1/14/95, p. 30) offers an alternative 
+approach to speeding up lengthy calculations (SN: 5/14/94, p. 308). Now, Lov K. 
+Grover of Bell Labs in Murray Hill, N.J., has found a way in which quantum 
+computers can also be made to work in parallel, considerably speeding up a 
+quantum computation.
+
+ The significance of Grover's work on what he calls "quantum telecomputation" 
+is that it pioneers the study of an important question, says theoretical 
+physicist John Preskill of the California Institute of Technology in Pasadena. 
+"How can the task of performing a quantum computation best be distributed among 
+many processors?"
+
+ The finding follows up on Grover's remarkable discovery last year that, in 
+theory, a quantum computer can search an unsorted database to locate a specific 
+entry more efficiently than a conventional computer can (SN: 8/31/96, p. 143).
+
+ Grover's initial interest was in exploiting quantum mechanical effects to 
+develop an efficient procedure, or algorithm, for solving an important type of 
+problem in computer science. The task is to estimate the mean value of a large 
+set of numbers in such a way that the estimated value has a high probability of 
+being within a specified range of the true mean. The closer the estimated value 
+must lie to the true mean, the more numbers must be randomly selected from the 
+entire group to calculate that value and the longer the computation takes.
+
+ In Grover's scheme, each number is represented as a quantum mechanical 
+particle (such as an electron), and its value is encoded as the particle's 
+phase. The phase is a wavelike property intrinsic to the particle that allows 
+interference between particles in the same way that wave crests and troughs 
+nullify each other when ripples meet.
+
+ By manipulating the phases of all these particles in the same manner, it's 
+possible to obtain an estimate of the mean, derived from the quantum state of 
+the entire ensemble, in fewer steps than a conventional computer would take to 
+do the same calculation.
+
+ The computation can be speeded up if the operations are shared among a number 
+of processors. In conventional computing, each processor would simply calculate 
+the exact mean of a certain fraction of the numbers and transmit the resulting 
+value to a central processor, which would then assemble the data and calculate 
+the overall mean.
+
+ In Grover's quantum mechanical algorithm, however, each processor computes the 
+approximate mean of the whole group to a certain precision. Consequently, 
+there's no simple way of partitioning the calculation among several quantum 
+processors.
+
+ Grover's alternative approach takes advantage of a phenomenon known as quantum 
+entanglement. The idea is to set up a large system that exists in two quantum 
+states at the same time. The act of observation then determines which state is 
+manifest at any given moment.
+
+ Scientists have created such entangled states in an electron orbiting an atom 
+(SN: 8/26/95, p. 133) and in a single atom (SN: 5/25/96, p. 325). In both 
+cases, the particle appears to be in two well-separated positions at the same 
+time.
+
+ Grover proposes the possibility of representing numbers as entangled 
+particles, each of which is a combination of two states. The particles can then 
+be physically separated among individual quantum processors that independently 
+compute the mean of the ensemble to a certain precision. Because the parallel 
+processors are already linked through quantum entanglement of the particles, 
+only a minimal amount of data finally needs to be transmitted to a single 
+processor to obtain the final result.
+
+"By exploiting their shared entanglement, the processors can get the job done 
+faster than one processor acting alone," Preskill says.
+
+ The prospects of achieving practical quantum telecomputation any time soon 
+appear dim, however. "This is a tremendously difficult thing to do [in the 
+lab], but as far as we know, the laws of physics don't make it impossible -- 
+only somewhat improbable," says Norman Margolus of Boston University. "By 
+investigating the theoretical limits of quantum computation without worrying 
+about the practicality, Grover and others are helping to stimulate continued 
+interest in the field."
+
+

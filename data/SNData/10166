@@ -1,0 +1,73 @@
+Nanotechnologists get a squirt gun, almost: Science News Online, Aug. 19, 2000
+
+ Nanotechnologists get a squirt gun, almost
+
+ P. Weiss
+
+ It's anything but a Super Soaker.
+
+ According to computer simulations by physicists at the Georgia Institute of 
+Technology in Atlanta, a fantastically tiny squirt gun that can spit liquids a 
+few hundred nanometers ought to work-if it can be built.
+
+ Michael F. Moseler and Uzi Landman developed the model of the miniature device 
+to investigate a possible new technology and to confront a challenge facing 
+scientists at the forefront of the much-anticipated nanotechnology revolution 
+(SN: 3/1/97, p. S14). In the nanoworld, different forces prevail, compared with 
+our everyday, macroscopic domain. Not only do intuitions of scientists and 
+engineers fail at the nanometer scale, so do their equations.
+
+ Computer models of molecular behavior offer a research alternative. On 
+computers, researchers depict thousands to millions of individual molecules 
+programmed to interact according to physics rules. By putting those tiny 
+players through their paces in these so-called molecular-dynamics simulations, 
+scientists can predict nanometer-scale phenomena that are often 
+counterintuitive.
+
+ Researchers welcome the simulations, but they also need equations, which are 
+simpler and apply more generally, to describe submicroscopic happenings.
+
+ Moseler and Landman have done more than just simulate the movements of 
+molecules in nanojets-liquids forced to spurt through nozzles with orifices 
+smaller than viruses. They also created a so-called continuum description of 
+the jets, which ignores the molecular details. They derived this description by 
+adding the effects of random, thermal fluctuations to existing hydrodynamic 
+equations. This modification of equations that were developed to describe 
+macroscopic flows yielded results in line with the molecular simulations. The 
+theorists report their findings in the Aug. 18 Science.
+
+ The newfound agreement of the two approaches means "that the powerful 
+mathematical tools developed to solve the hydrodynamic equations can be put to 
+use in the nanoworld," comments Jens Eggers of the University of Essen, Germany.
+
+ On the practical side, Moseler and Landman predict that nanojets may make 
+possible tiny fuel injectors whose smaller, more uniform droplets would burn 
+cleaner in engines. Other minuscule machines might use nanojets to insert genes 
+into cells or to lay down wires only a few nanometers wide in electronic 
+circuits. "The major technological challenge will be to actually build nozzles 
+of the required size," Eggers remarks.
+
+ The new study shows that nanojets ought to behave differently from macroscopic 
+ones. For instance, because thermal fluctuations add instability to the 
+nanojets, the tiny spurts break into droplets after going only about half as 
+far as large-scale jets would go under corresponding conditions, Moseler says. 
+That's why water nanojets are unlikely to become the nanoworld's answer to 
+Super Soaker squirt guns.
+
+ In another example of peculiar nanoscale effects, the spurting liquid becomes 
+a plug. When the researchers simulated liquid propane gushing from a gold 
+nanonozzle, they found that the fuel tended to stick to the outside of the 
+nozzle, shutting off further flow.
+
+ By simulating heating of the nozzle or the presence of a slick exterior 
+coating, the researchers fixed that problem. Still, the unexpected effect 
+highlights the unfamiliar territory of the nanoworld, Landman says. There, 
+surface forces, such as the attractive tug between the gold atoms and the 
+propane molecules, become much more important than they are in the macroscopic 
+world.
+
+ Next to come in the nanojet investigations are water, molten metals, silicon, 
+and polymers, and liquid biomolecules. No one yet knows how those materials 
+might behave, Landman notes.
+
+

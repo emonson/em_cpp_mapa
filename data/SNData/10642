@@ -1,0 +1,170 @@
+Science News Online (11/22/97): Calming Bad Vibes -- From microscopes to 
+skyscrapers, smart structures help control vibration
+
+ November 22, 1997 
+
+ Calming Bad Vibes
+
+ From microscopes to skyscrapers, smart structures help control vibration
+
+ By SID PERKINS
+
+ Thanks to the transistor, computers are no longer basement-sized behemoths 
+pursuing only the most arcane of tasks. Now, they sit atop desks or even fit in 
+briefcases. Shrunk onto a few electronic chips, they can constantly adjust the 
+fuel injection in cars and even nag the driver who forgets to buckle a seat 
+belt or leaves a door ajar.
+
+ More than ever before, engineers are using the brain power of computers in 
+combination with new classes of exotic materials to create what they call 
+"smart structures," or objects that can sense their environment, process the 
+information, and then react appropriately. Designers are beginning to bestow 
+upon bridges, buildings, and even sporting goods the same limited degree of 
+self-awareness and perhaps intelligence currently given to cars and aircraft.
+
+ Smart structures have many potential applications, but almost all of them 
+involve controlling undesirable vibrations of various sizes, from annoying 
+sound waves to building sway. Many engineers see smart structures as the wave 
+-- or, perhaps more appropriately, the antiwave -- of the future.
+
+ Vibrations are inescapable. Some may be pleasing -- the soft strum of a 
+guitar, the gentle swing of a hammock, the soothing sound of a mother's voice 
+-- but many vibrations cause problems. Consider bridges and tall buildings that 
+sway excessively in a stiff gust of wind or a moderate earthquake, floors that 
+flex or shimmy as people walk across them, and noisy aircraft cabins and 
+whirring home appliances.
+
+ Structural engineers use several methods to minimize unwanted vibrations, says 
+B.F. Spencer Jr., professor of civil engineering at the University of Notre 
+Dame (Ind.). They place buildings on large rubber pads to isolate them from 
+ground vibrations and use large shock absorbers inside structures to calm 
+movements more quickly. Often, aerospace engineers must add material to stiffen 
+aircraft wings.
+
+ These techniques have their downside, however, Spencer says. They typically 
+add weight, and they work only for certain frequencies of vibrations. To help 
+overcome these limitations, designers are increasingly turning to smart 
+materials with controllable properties. 
+
+ Piezoelectric materials, for example, change shape when an electric current 
+passes through them and generate electric signals when they flex. These 
+materials are therefore doubly useful for controlling small vibrations. 
+Incorporated into a machine, piezoelectric components can monitor its flexing; 
+stimulated by an electric signal, they can apply forces that initiate or resist 
+movement. 
+
+ In effect, these materials become the smart structure's nerve endings and 
+muscles, while the computer control becomes its brain.
+
+ Smart materials can reduce the weight of structures by allowing designers to 
+incorporate extra stiffness without adding bulk. The weight-saving potential of 
+smart materials drove their initial development for applications in space, 
+where every ounce counts, says Mark S. Whorton, an aerospace engineer at NASA's 
+Marshall Space Flight Center in Huntsville, Ala. "As a general rule of thumb, 
+it takes about $10,000 to put a pound of payload into orbit," he explains.
+
+ The appeal of smart structures has spread from its aerospace roots to a 
+variety of arenas. Possible applications range from controlling vibrations in 
+microscopes to reducing the sway in bridges.
+
+ Researchers at CSA Engineering in Palo Alto, Calif., and their colleagues are 
+trying to commercialize several products developed in their laboratories, says 
+Eric H. Anderson, an engineer at the company. One of the innovations is a 
+programmable device that integrates sensors, piezoelectric components, and 
+electronic circuitry into a single unit. 
+
+ According to Anderson, this technology has reduced the noise in aircraft 
+cabins by cutting down on vibration in the walls, which are typically made up 
+of many large panels of thin, unstiffened metal. The same technique could, in 
+theory, tame the noise from washing machines, clothes dryers, and 
+refrigerators, he adds.
+
+"Any degree of vibration causes blur, which means you can't etch extremely 
+small circuit features," says Jim Redmond, an engineer at Sandia. The challenge 
+is magnified even further, he says, because the platform must move and stop 
+abruptly as the same pattern is etched repeatedly onto the wafer. After each 
+sudden stop, the platform must settle and stop vibrating before a new portion 
+of the silicon wafer can be exposed to the ultraviolet light.
+
+ By embedding three small strips of smart material in the platform, the Sandia 
+researchers reduced the magnitude of its vibrations from 240 nanometers to 4 nm 
+and cut the platform's settling time after each movement from 15 milliseconds 
+to 9 ms, Redmond says.
+
+ Tackling the same problem on a much larger scale, researchers at the 
+University of Miami can alleviate the symptoms of shaky floor syndrome by 
+attacking the source of the problem -- the floor itself. Civil engineer Linda 
+M. Hanagan developed a way to use an electromagnetic shaker to damp floor 
+vibrations.
+
+ In Hanagan's system, the shaker, which is mounted underneath the floor, 
+consists of a 74-kg frame and a 30-kg movable mass and is smaller than a 
+two-drawer filing cabinet. A personal computer takes readings from a nearby 
+sensor 2,000 times each second. Whenever the floor moves, the computer sends 
+signals that drive the movable mass back and forth to compensate for the 
+vibration.
+
+ The researchers have tested the system in two offices and a university 
+chemistry laboratory. In all three cases, the system reduced the problem 
+vibrations to less than a quarter of their previous magnitude, says Hanagan.
+
+ Using computer feedback to control large structures is a daunting task. In 
+bridges and buildings, each girder or I-beam can weigh a ton or more, and 
+vibrations can arise from powerful forces such as gusts of wind and 
+earthquakes. 
+
+ Pushing and pulling on the building with powerful actuators may therefore not 
+be the most effective way to control unwanted vibrations in tall buildings, 
+says Spencer. Shifting masses back and forth to change the building's response 
+to outside influences is often a better approach.
+
+ In Nanjing, China, engineers are working on a newly constructed 341-meter 
+tower that has a problem with wind-induced vibrations in one of its observation 
+decks. They plan to turn the tower into a smart structure next year by 
+installing a device called a hybrid mass damper, a combination of a large 
+weight and actuators to move it back and forth. A 60-ton, ring-shaped weight 
+will be mounted on bearings around the tower's waistline. When a sensor detects 
+vibrations, three actuators will push and pull against the massive weight to 
+cut down on the tower's overall movement.
+
+ Japanese engineers leapt to embrace smart structures during a skyscraper 
+construction boom that began about 10 years ago, Spencer says. Today, 20 hotels 
+and office towers in Japan, 14 of them more than 26 stories tall, use hybrid 
+mass dampers. The Yokohama Landmark Tower, the tallest building in Japan, uses 
+two such dampers, each weighing 170 tons, to cut down on building sway.
+
+"The Japanese are not ahead of us on research, but they've zoomed ahead of us 
+in the implementation of this technology because they see its tremendous 
+potential," Spencer says. 
+
+ Smart dampers, which are essentially controllable versions of large shock 
+absorbers, represent another effective way to counter large forces in massive 
+structures, says Spencer. One type of smart damper contains a 
+magnetorheological fluid, a material that can undergo considerable and almost 
+immediate changes in its viscosity when subjected to a magnetic field. 
+
+ These fluids can be transformed from the consistency of water to that of a 
+thick pudding in a matter of milliseconds, Spencer says. Prototype dampers 
+filled with the fluids can generate reactive forces of up to 20 tons with as 
+little as 50 watts of power, which a modest battery can supply.
+
+ Smart structures have enjoyed widespread use in university, corporate, and 
+government research labs for the last decade, but they are only slowly making 
+their way into commercial applications, says Anderson. At an American Society 
+for Mechanical Engineering conference last week, he identified a few of the 
+obstacles -- the complicated nature of the technology, its formerly high price, 
+and a dearth of successes outside the lab environment.
+
+ In one commercial arena, smart structures have succeeded in hurdling these 
+barriers, following a path blazed by another aerospace product: graphite-epoxy 
+composites. Composite materials once languished in the labs, but they captured 
+widespread attention when sporting goods manufacturers used them to make tennis 
+rackets and golf clubs. 
+
+ With the recent surge of research and a number of successes both in the 
+laboratory and in the field, smart structures are poised to solve a variety of 
+problems, on small to grand scales. The infiltration of smart structures into 
+mainstream design may come only slowly, Spencer says, but he has no doubt that 
+it will come. 
+
+

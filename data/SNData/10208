@@ -1,0 +1,248 @@
+Little Big Wire: Science News Online, Nov. 18, 2000
+
+ Little Big Wire High-temperature superconductivity makes a bid for the power 
+grid
+
+ By Peter Weiss
+
+ In 1986, scientists discovered a new family of materials that can conduct 
+electricity with absolutely no resistance. Because these so-called 
+superconductors work at much higher temperatures than any previously identified 
+superconductors, the discovery was considered one of the most important of that 
+decade. The findings triggered a wave of euphoria that flooded scientific 
+meetings and the popular press.
+
+ At an American Physical Society meeting in New York City that convened just 
+months after the discovery hit the news, thousands of researchers overflowed a 
+huge hall. An all-night session was filled with presentations about the 
+phenomenon of high-temperature superconductivity and speculations about its 
+impact. That event became known as the Woodstock of physics.
+
+ Because the materials potentially could carry huge currents resistance-free 
+and because cooling them to their effective temperature is far less onerous a 
+task than it is for their lower-temperature cousins, many scientists turned 
+visionary and predicted a technological revolution.
+
+"We physicists were the darlings of the media for a year," recalls Paul M. 
+Grant of the Electric Power Research Institute (EPRI) in Palo Alto, Calif. At 
+the time, he led the research group at IBM's Almaden Research Center in San 
+Jose, Calif., that determined the atomic structure of one of the materials. "If 
+someone shoves a mike in your face...you can say some things that, in 
+retrospect, are pretty silly," he says.
+
+ To be sure, the revolution has yet to materialize, mainly because the new 
+substances-complex and brittle ceramics-proved to be tougher to tame than the 
+early pundits suspected. But the dream didn't die.
+
+ Recently, researchers and designers have started demonstrating full-scale 
+prototypes of electric power cables, motors, transformers, and other equipment 
+made of high-temperature superconducting (HTS) wire. The new devices waste less 
+energy than their conventional counterparts. The energy requirement is less 
+even when taking into account the power to cool them to -196@C-or often lower 
+temperatures when strong magnetic fields are present. Moreover, the new 
+superconducting equipment is smaller, lighter, safer, and often more 
+environmentally friendly than conventional devices.
+
+"We're offering a way to make [motors and other electrical equipment] as 
+perfect as they're ever going to get," says James Daley, manager of the 
+Department of Energy's (DOE) superconductivity program, which is based in 
+Washington, D.C.
+
+ In Detroit next year, if all goes well on one of the projects sponsored by 
+Daley's office, power will flow through HTS cables to commercial customers for 
+the first time.
+
+ The main component of the HTS devices now beginning to prove themselves is 
+wire made with compounds of bismuth, strontium, calcium, copper, and oxygen. 
+These materials are generically known as BSCCO (pronounced bisco).
+
+ However, the high cost of using BSCCO looms as a serious obstacle to its wide 
+use. That cost may come down through high-volume production of the wire and 
+improvements in its performance. Still, even BSCCO manufacturers are looking 
+for less expensive alternatives to the material.
+
+ In labs throughout the world, researchers are racing to develop wire from 
+another high-temperature superconductor called yttrium barium copper oxide, or 
+YBCO (pronounced ibco). YBCO wires may cost less than BSCCO ones. They're also 
+expected to carry higher currents than BSCCO wires in the presence of the 
+magnetic fields found in many types of equipment.
+
+ If YBCO wire can be made in practical lengths-a challenge that arose as soon 
+as YBCO was discovered in 1987-high-temperature superconductivity may finally 
+offer both cost low enough and performance high enough to become a central 
+technology of the 21st century, say many industry observers. "It's a big leap 
+of faith to go to YBCO," notes Donald U. Gubser of the Naval Research 
+Laboratory in Washington, D.C. But it's a leap that "could lead to tremendous 
+rewards," he adds.
+
+ By ordinary human scales of hot and cold, there's nothing really high 
+temperature about high-temperature superconductors. As the materials are cooled 
+from ambient temperature, their superconductivity kicks in at so-called 
+critical temperatures. But those temperatures are high only in comparison with 
+the critical temperatures of the more aptly named low-temperature 
+superconductors.
+
+ Those substances, mostly metals or metal alloys, lose all resistivity when 
+chilled to a temperature that liquefies helium, which is -269@C. By contrast, 
+the critical temperatures of high-temperature superconductors tend to be above 
+-196@C, the temperature at which nitrogen liquifies. That's still profoundly 
+cold, but it's much less of a challenge for refrigeration systems to meet.
+
+ Building practical power devices with high-temperature superconductors 
+entailed making them into a suitable wire. That took more than a decade, but 
+finally developers figured out ways to reliably encase the granular, brittle 
+BSCCO in silver and extrude the package into long filaments.
+
+ Further rolling and heating coerces the material, on a microscopic level, to 
+align in a manner that permits large currents to flow. The technique, which 
+researchers developed by about 1990, works because BSCCO crystals have a 
+layered structure-"like a deck of cards," says Gregory J. Yurek, a former 
+Massachusetts Institute of Technology metallurgist who co-invented the idea of 
+blending BSCCO with metal. He's now president of HTS-wire maker American 
+Superconductor Corp. in Westborough, Mass.
+
+ Rolling shatters the weak bonds between the cardlike flakes of BSCCO, 
+spreading each deck lengthwise by sliding layers past each other. Heating then 
+merges overlapping flakes, creating an extended, continuous path along which 
+current can flow.
+
+ Even with this wire-making tactic in hand, there was still a long slog ahead 
+to practical applications. "A lot of hard work has gone into fine-tuning the 
+process incrementally so today you have wire with high enough performance," 
+EPRI's Grant notes. At present, the maximum amount of current per 
+cross-sectional area, or critical current density, of BSCCO-roughly 70,000 
+amperes per square centimeter (A/cm2) at -196@C- is about three times what it 
+was 4 years ago, he says. Above the critical current density, a superconducting 
+wire starts to resist electric flow.
+
+ Because BSCCO wires are made only partially of the pure superconducting 
+material, the actual critical current density of wires reaches only about 
+15,000 A/cm2. Nonetheless, that's 15 to 150 times copper's maximum current 
+density, which varies dramatically depending on how well a cable or other 
+device containing the metal can dissipate heat.
+
+ Because of their high capacity, HTS cables can be so svelte that Detroit's 
+local electric utility, in partnership with DOE and other institutions, is 
+replacing nine underground, oil-cooled copper power cables that serve nearly 
+14,000 customers with just three liquid-nitrogen-cooled BSCCO cables. By next 
+summer, when the swap should be complete, a mere 900 pounds of BSCCO wire will 
+have taken the place of 25,000 lbs. of copper wire.
+
+ DOE estimates that because of electrical resistance and other losses, more 
+than 7 percent of all the power currently generated in the United States is 
+wasted. By converting the nation's power grid to HTS technology, "we can save 
+half the existing losses," Daley claims.
+
+ Last July, in a milestone for practical high-temperature superconductivity, 
+another DOE project led by Rockwell Automation in Greenville, S.C., began to 
+test the first HTS motor powerful enough to potentially find wide use in 
+industry. According to DOE, motors rated at 1,000 horsepower or more eat up a 
+large chunk-about 30 percent-of U.S. electric power. The prototype 
+1,000-horsepower, BSCCO-based motor is currently half the size and weight of a 
+conventional motor but shows about the same efficiency. However, its developers 
+say that they expect to slice its energy losses in half.
+
+ Meanwhile, the same consortium is building a 5,000-horsepower motor. And the 
+U. S. Navy has been exploring the possibility of 25,000-33,000-horsepower HTS 
+motors to drive all-electric ships. "Twenty-five-thousand-horsepower motors 
+exist today, but they're so big and heavy that [ships] don't use them," Gubser 
+notes. An HTS motor of that power would tip the scales at about 40,000 lbs., a 
+third the weight of a conventional motor, he estimates.
+
+ The green potential of HTS devices is soon to be put to the test by Waukesha 
+(Wisc.) Electric, DOE, and their partners. Early next year, they expect to 
+install a large, BSCCO-based transformer at a utility substation. Because of 
+their low temperatures, HTS transformers don't require the hazardous oils that 
+cool conventional transformers.
+
+ The oils, which often contain toxic, flame-retarding compounds called PCBs, 
+sometimes leak into the ground, Daley says. By eliminating the oils, HTS 
+transformers and power cables offer an environment-protection bonus over 
+conventional technology, Daley notes. Moreover, the new transformers could be 
+used in buildings where conventional transformers have been banned because of 
+the risk that their cooling oils will catch fire.
+
+ Despite the apparent advantages of high-temperature superconductors, major 
+economic and technical hurdles remain as engineers push the new materials 
+toward the power grid.
+
+ BSCCO is costly because it's encased in silver. Currently, BSCCO wire costs 20 
+to 30 times as much as copper wire does. However, a number of superconductivity 
+veterans predict the price will drop to a tenth of today's figure within the 
+next 3 to 5 years, as long as the predicted demand for HTS cables and devices 
+materializes.
+
+ Contributing to that anticipated price drop, supply should also increase 
+dramatically because American Superconductor is building the first large-scale 
+plant for making the wire. By 2002, the company plans to be churning out 10,000 
+kilometers of it per year. "We expect the cost of production to fall by about a 
+factor of six when we open that plant," says company spokesman John B. Howe.
+
+ As BSCCO becomes more abundant, its quality is also likely to continue to 
+improve, Gubser says, so the cost of making devices from the wire may diminish.
+
+ In the meantime, wire researchers are lavishing most of their funding and 
+laboratory studies on what they hope will be BSCCO's successor-YBCO. "People 
+believe that YBCO wire can be manufactured with significantly lower cost" than 
+BSCCO wire, Gubser says.
+
+ That's because scientists have found ways to make YBCO wire by starting with a 
+strip of inexpensive metal such as nickel. The researchers then coat the strip 
+with a few layers of materials that keep the metal atoms from contaminating the 
+superconductor, and they finally add a thin YBCO topcoat.
+
+ Because YBCO has a high critical current density, that last layer can be 
+extremely thin but still enable the wire to carry as much current as BSCCO 
+wire-and possibly more, scientists say. Researchers have measured up to 3 
+million A/cm2 in some YBCO wire samples at -196@C, says David C. Larbalestier 
+of the University of Wisconsin-Madison. That's more than 40 times the critical 
+current density of BSCCO (SN: 4/29/95, p. 269).
+
+ Yet making YBCO wire is more easily said than done. So far, no one has found a 
+way to fabricate it in practical lengths. The challenge has been to get the 
+YBCO, which lacks the laminar structure of BSCCO, to lie down in a uniform 
+sheet that has crystal lattices lined up nearly perfectly in three dimensions 
+from one grain to the next.
+
+ Why must grain boundaries line up so well? Think of superconductivity as a 
+flow of pairs of electrons, called Cooper pairs, says Oak Ridge (Tenn.) 
+National Laboratory physicist John D. Budai (SN: 2/11/95, p. 88; 6/7/97, p. 
+351). Those electrons "have to dance around each other in a careful way so as 
+to never run into the atoms in the crystal," says Budai, who a decade ago 
+developed one of the main ways of aligning YBCO films. "They can't keep doing 
+that when they hit the boundary between two [misaligned] grains" because there 
+the atomic layout abruptly changes, he says.
+
+ By using very expensive fabrication techniques, researchers can now align 
+their YBCO grains to within a 10@ angle of each other, which allows for 
+adequate currents-but only up to a half-dozen meters. Beyond that, 
+irregularities still wreck the wire's properties.
+
+ Interestingly, a sprinkle of calcium where the grains touch could be a 
+solution. In an experiment on just two grains meeting at a 24@ angle, Jochen 
+Mannhart of the University of Augsburg in Germany and his colleagues found that 
+a dose of calcium could boost current through the intersection sixfold. The 
+calcium may directly modify the border, researchers suspect. Also, because 
+there's a shortage of electrons in calcium ions compared with the yttrium ions 
+that they displace, the calcium effectively injects additional positive charges 
+that can ferry current across the boundary region. The researchers describe 
+their findings in the Sept. 14 Nature.
+
+ In a commentary accompanying that report, Grant calls this calcium doping "the 
+best idea that's come along in the 5 years since coated conductors first 
+emerged."
+
+ Yurek says that he doubts such doping will benefit YBCO films because the 
+grains are already much better aligned than those in the German experiment. 
+Budai and Daley also doubt that added calcium is necessary for practical 
+wire-making.
+
+ While such uncertainties surrounding YBCO continue to challenge research 
+scientists and engineers, the demonstrations of BSCCO-based devices are 
+convincing utilities and industry that HTS technology works and is reliable. 
+Says Larbalestier, "Technically, the picture is clear. Those things work."
+
+ That should make it easier for YBCO-based technology, if and when it becomes 
+ready, to take over what BSCCO has begun.
+
+

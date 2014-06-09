@@ -1,0 +1,257 @@
+Science News Online (9/26/98): Curbing Air Bags' Dangerous Excesses
+
+ September 26, 1998 
+
+ Curbing Air Bags' Dangerous Excesses
+
+ New smarts, new sensors, and variable inflation could reduce injury and death
+
+ By PETER WEISS
+
+ Air bags punch out of their dashboard cocoons at more than 140 miles per hour. 
+Because of their speed, they both save lives and occasionally squander them.
+
+ The rapidly inflating nylon sacks have prevented nearly 3,500 auto collision 
+deaths since the late 1980s, according to the National Highway Traffic Safety 
+Administration (NHTSA). From 1991, when the first air bag-induced death was 
+reported until Sept. 1, 1998, the agency has tallied 113 people, mostly 
+children and small adults, killed by the bags during minor accidents when their 
+lives weren't otherwise at risk.
+
+"Anyone who gets too close to [an inflating] bag, whether a young child or a 
+300-pound football player, is in big trouble," says Barry Felrice, director of 
+regulatory affairs for the American Automobile Manufacturers Association. Air 
+bags, which are inflated by gas from a rapidly burning propellant and sometimes 
+also from a pressurized cartridge, have caused nonfatal injuries including 
+broken bones, burns, and eye damage, although the damage may have been worse in 
+many cases had the air bag not deployed.
+
+ Today's automobiles carry only one-size-fits-all air bags. Nonetheless, these 
+bags, by federal decree, pack a wallop intended to immobilize an average-size 
+man. So, by design, they unleash too much energy for people at the smaller end 
+of the scale.
+
+ As this dark side of air bags gained wide attention over the past few years, 
+automobile manufacturers and the companies that build safety restraints for 
+them stepped up efforts to develop a safer technology.
+
+"It's a difficult problem, in my opinion, but that doesn't mean it's not 
+achievable," says Robert L. Phen, program manager for energy and surface 
+transportation at the Jet Propulsion Laboratory (JPL) in Pasadena, Calif. Phen 
+led a year-long JPL study of advanced air bag technology for the National 
+Aeronautics and Space Administration and NHTSA. The study, released in April, 
+concluded that in model year 2003 "systems should be able to remove most of the 
+risk of injury from deploying air bags."
+
+ To achieve this goal, the auto industry must boost the ability of air 
+bag-control computers to predict within an instant of onset a crash's severity. 
+Too often today, restraint engineers say, the computers that control air bag 
+firing misjudge the severity of a crash.
+
+ Safety improvement also relies on developing sensor arrays that can feed the 
+air bag controller up-to-the-millisecond details about vehicle occupants, such 
+as their weight, position, and whether or not they are wearing seat belts.
+
+ At the same time, the air bags themselves must also become more talented -- 
+for instance, by being able to inflate at several different rates and 
+pressures. Engineers must coordinate all new air bag technology with the 
+advanced seat belt features that are also under development, such as automatic 
+tightening at the start of a crash.
+
+ Air bag technology is a highly controversial issue. James Walker is the air 
+bag specialist for the National Motorists Association, a motorists' advocacy 
+group based in Waunakee, Wis., and a vocal critic of mandatory air bags. He 
+says it is folly to make air bag systems more complex. "There are just too many 
+points of failure, and we can't make the simple systems work now," he argues.
+
+ Walker notes that millions of air bag- equipped cars have been recalled, many 
+of them because bags have fired at random, when no accident was taking place, 
+sometimes causing injuries.
+
+ The high-tech approach is "backwards," says Morris Kindig, president of TIER 
+ONE, an automotive electronics market research firm in Mountain View, Calif. 
+The firm has just completed a study of sensors that would provide information 
+about the occupants of a car to the air bag controller. Rather than installing 
+complex and costly equipment, he argues, people should be better taught to use 
+seat belts and to put children and small adults in the back seat. "The solution 
+is education. It's not technology," he says.
+
+ Automakers have already introduced some changes to air bag equipment to reduce 
+air bag-induced injuries, but these alterations are considered only stopgaps 
+until more sophisticated solutions are ready. Foremost among the changes is 
+so-called air bag depowering, which means installing air bags that inflate more 
+slowly and to a lesser volume than the original designs. Most 1998 American 
+vehicle models contain air bags depowered by 20 to 35 percent compared to 1997, 
+says Felrice.
+
+ Engineers have also incorporated an air bag disabling switch for the passenger 
+side of new vehicles with only a single row of seats, such as pickup trucks. 
+Under limited circumstances, the federal government is also allowing vehicle 
+owners to install on-off switches or disconnect air bags in older models.
+
+ Companies keep tight wraps on many details. "It's a competitive issue for 
+manufacturers," explains Felrice. "They all want to be first with safety 
+improvements. Whether it's night vision or antilock brakes, safety sells these 
+days."
+
+ Earlier this month, the U.S. government reconfirmed its commitment to 
+technology as a necessary part of preventing crash fatalities and injuries. In 
+a Sept. 14 preliminary ruling, NHTSA unveiled plans to order vehicle makers to 
+install smarter restraints in 25 percent of new passenger cars and light trucks 
+by Sept. 1, 2002, and in all new models by Sept. 1, 2005. Instead of mandating 
+specific technologies, the agency will require vehicles to pass a battery of 
+tests.
+
+ These plans demonstrate that NHTSA officials, as well as industry designers, 
+regard better crash prediction as a high priority.
+
+"The challenge is to predict this event with very little up-front information," 
+Phen says.
+
+ In a typical crash, the air bag-control microprocessor must decide within 20 
+milliseconds whether or not to fire the air bag. Otherwise, the bag won't be 
+fully deployed before the occupant strikes it. During that time, the controller 
+examines voltage readings from a tiny accelerometer mounted at the front of the 
+passenger compartment, typically just behind the firewall.
+
+ To interpret the often wildly fluctuating deceleration and acceleration of a 
+car during an accident, the computer employs problem-solving pathways, or 
+algorithms. They either compare the accelerometer's signal to a library of 
+known crashes or extrapolate forces and other crash parameters from 
+accelerometer readings.
+
+ Accelerometer readings vary greatly from one crash to the next, making the 
+forecasting of the impact's severity daunting, experts say. Head-on wrecks into 
+poles particularly dumbfound current software.
+
+ The impact of these collisions is so concentrated that, at first, its energy 
+goes more into folding the car's grille around the pole than into decelerating 
+the vehicle, tricking air bag controllers into predicting a minor collision. 
+When the pole finally meets the engine block, the sudden enormous deceleration 
+flings the car occupants forward. By then, it may be too late because air bags 
+have not fired or are in the process of filling, possibly adding to injuries 
+from the crash.
+
+ Algorithms can be made to do much better, engineers say. Some air bag 
+suppliers are building more complete libraries of possible crash profiles into 
+controllers and speeding up the comparison between those profiles and 
+accelerometer data. Others have learned to distill more accurate predictors of 
+crash behavior from accelerometer signals and are writing software to make 
+those calculations more nimble.
+
+ Beyond getting smarter about a crash in progress, some air bag researchers 
+have proposed giving vehicles the ability to prejudge a crash before it begins. 
+Such precrash sensors could include radar systems now being developed for 
+collision avoidance. The warnings that such sensors could provide might boost 
+safety by making it possible to inflate air bags sooner in a severe crash.
+
+ While better crash profiles will help, gathering information about the people 
+inside the vehicle is also vital to boosting air bag safety, engineers say. 
+Most often, it's small people who end up dangerously close to air bags.
+
+ Small, adult drivers may sit forward to reach controls, putting them up 
+against the steering-wheel air bag. Children's faces may hover at the same 
+height as the passenger-side air-bag compartment positioned at an adult's chest 
+level. Child seats, especially rear-facing infant seats, often protrude into 
+the space into which an air bag inflates -- called the keep-out zone.
+
+ When an air bag occasionally does smack someone, small people, with their more 
+delicate frames, also tend to suffer worse injury than bigger folk.
+
+ Advanced air bag controllers need answers to many questions about a car's 
+occupants in order to recognize who is most vulnerable to air bag-induced 
+injuries and to solve physics equations for the forces and motion that vehicle 
+restraints are meant to control.
+
+ Is there a front-seat passenger? A child seat? How much do the driver and 
+passenger each weigh? Are they wearing seat belts? Where are parts of their 
+bodies relative to the keep-out zone for each bag?
+
+ Restraint makers have yet to settle on the best ways to get those answers.
+
+ A group of engineers from TEMIC Telefunken Microelectronic GmbH, a German 
+firm, have developed a sensing method using infrared light. They described it 
+in February 1997 at the Society of Automotive Engineers' International Congress 
+and Exposition in Detroit.
+
+ Mounted in front of a seat and above it, the device shines beams of infrared 
+light onto the seat from top to bottom. By comparing transmitted and reflected 
+beams, it constructs a profile of the seat or whoever is sitting in it.
+
+ Another company, unidentified in the JPL report, would electrify the seats to 
+detect the presence and size of an occupant. Four electrodes would generate an 
+oscillating electric field whose properties change when someone sits down. The 
+system would sense the human body's ability to store electric charge, or its 
+capacitance, which increases with body volume.
+
+ Other engineering teams have built instruments that bounce sound waves inside 
+the vehicle compartment at frequencies above the human hearing range. Detectors 
+pick up ultrasound echoes, which the circuitry can use to determine shapes and 
+positions of people and objects in the vehicle.
+
+ According to the JPL report, restraint equipment suppliers are also 
+investigating optical camera-based sensors, radar, and other approaches.
+
+ Weight sensors already developed can determine if someone is present and how 
+heavy they are by measuring the pressure in a gas-filled bag in the seat or by 
+detecting the change in current through force-sensitive resistors. Although 
+tests have shown that these sensors lack the accuracy needed, for instance, to 
+reliably distinguish between a child and a slightly heavier small woman, the 
+weight-sensing technology, which is inexpensive and sturdy, has proved useful.
+
+ Mercedes-Benz customers can opt for a front passenger seat weight detector 
+that shuts off the air bag if it senses less than 30 kilograms of force, 
+indicating that the seat is unoccupied or that a child is present.
+
+ The strategies of advanced air bag controllers will rely so heavily on 
+information indicating whether an occupant is belted or not that engineers have 
+felt compelled to introduce a more reliable seat belt sensor.
+
+ Currently, a simple electric contact switch typically monitors whether the 
+seat-belt tongue is in the buckle, but its contacts can become dirty. Newly 
+developed sensors register an altered magnetic field when the tongue is in 
+place.
+
+ Along with more information, restraint designers also plan to give air bag 
+controllers more ways to respond to a crash. Manufacturers have developed air 
+bags with two gas sources rather than the typical single source. The change 
+gives controllers four levels of response: no inflation, a relatively slow 
+inflation, a faster rate, and finally, a simultaneous firing of both inflators 
+for the quickest bag filling.
+
+ As an example of how the options might provide an advantage, suppose that a 
+small woman is driving when she has an accident at low speed but still severe 
+enough to cause injuries. The current options are for the air bag to do 
+nothing, risking broken cheek bones or worse, or for it to fire, possibly 
+causing neck injury or other damage.
+
+ With the two-inflator bag, the controller could choose its gentlest inflation, 
+possibly avoiding injury either from crash or bag. This technology will be 
+available in at least one 1999 model of European car this year, according to 
+TRW Vehicle Safety Systems of Washington, Mich. Air bag makers also are 
+exploring adding even more inflation levels and developing fully adjustable 
+inflators that could give a continuous range of rates.
+
+ The sophistication of seat belts is growing too, giving controllers more 
+factors to consider and more options for responses.
+
+ Belt manufacturers have developed ways to draw belt webbing back into the reel 
+as a crash begins, cinching the occupant more tightly against the seat -- a 
+safer way to ride out a crash. Engineers are also designing load limiters into 
+seat belts to reduce tension when it reaches potentially harmful levels. 
+Inflatable seat belts may be in the offing too. Their shoulder straps would 
+puff up to hold and cushion occupants during a crash.
+
+ In the next few years, as these new technologies come into play, many people 
+will be watching to see whether air bag-induced death and injury rates drop and 
+crash survival improves.
+
+ Whatever the outcome, the dark side of air bags won't disappear entirely. As 
+the JPL report notes, sometimes air bags will fire when they shouldn't and not 
+fire when they should, no matter how reliably they are made. The nature of 
+technology is that it sometimes fails.
+
+ From Science News, Vol. 154, No. 13, September 26, 1998, p. 206. Copyright O 
+1998 by Science Service.
+
+

@@ -1,0 +1,230 @@
+Science News Online (4/10/99): Computing at the Edge
+
+ The Weekly Newsmagazine of Science
+
+ Volume 155, Number 15 (April 10, 1999)
+
+ Computing at the Edge
+
+ Capturing a flame's flicker, an ink jet's splatter, and other shifting shapes
+
+ By Ivars Peterson
+
+ The foam-flecked fringe of a breaking ocean wave marks a rapidly changing, 
+intricately woven boundary between water and air.
+
+ Every detail of that turbulent behavior results from complex responses to 
+physical forces acting at the interface between two different materials. 
+Similar boundary effects occur amid a fireplace's wavering flames, in milk 
+swirled into a cup of tea, at the freezing edge of a snowflake, and among ink 
+droplets ejected from a microscopic nozzle.
+
+ To study and predict boundary effects, researchers have struggled to 
+accurately capture erratic, complicated behavior in a computer model. In recent 
+years, however, two novel schemes for calculating what happens at rapidly 
+evolving interfaces have provided new insights into a variety of physical 
+processes important in technologies such as semiconductor manufacturing and 
+ink-jet printing.
+
+"By suitably writing the equations for a propagating interface, one can find a 
+way of borrowing numerical techniques from computational fluid mechanics to 
+solve these equations of motion," says mathematician James A. Sethian of the 
+University of California, Berkeley.
+
+ Adds Stanley Osher of the University of California, Los Angeles, "You can 
+compute things that you couldn't compute before."
+
+ Researchers have now adapted the same techniques to detect edges in scanned 
+medical images, find optimal paths for robots negotiating obstacle-strewn 
+courses, and create special effects for movies.
+
+ Consider an ice cube floating in a glass of water. The boundary between ice 
+and water shrinks as the ice melts, and it grows as more water freezes.
+
+ Each point along such an interface has a speed, which depends on a variety of 
+physical factors. For a floating ice cube, the speed at which a given point 
+moves in or out might be determined by the local temperature difference between 
+the ice and the water.
+
+ To model a moving interface, researchers conventionally have represented the 
+boundary as a set of connected points-like a system of buoys loosely linked 
+together with pieces of rope. The idea is to move each marker with the 
+appropriate speed, according to the relevant equations of motion, and track the 
+resulting changes in the interface's shape.
+
+ Such computational methods, however, often fail when the interface shape 
+fluctuates rapidly, develops sharp corners or cusps, breaks up into smaller 
+pieces, or merges with other features. In effect, the ropes connecting the 
+buoys get tangled or severed.
+
+ About a decade ago, Sethian and Osher discovered an ingenious way to skirt 
+such problems. They called their method the level-set approach. The 
+mathematical term "level set" refers to a contour, much like the curve linking 
+points of equal elevation on a topographic map.
+
+ Suppose that the two-dimensional interface between materials starts out as a 
+circle. Then, think of the circle as a slice through a three-dimensional 
+surface-a cone, for example. This surface is known as a level-set function. If 
+the chosen surface were a topographic map, the interface would be defined as 
+the sea-level (or zero-elevation) contour.
+
+ Researchers have tremendous freedom in choosing an appropriate 
+three-dimensional surface for a given interface. Above and below the 
+zero-elevation contour, the smooth shape could bulge out or narrow to a point, 
+for example. The trick is to find a surface that changes smoothly over time 
+even if the contour by itself does not.
+
+ Next, the mathematicians consider the physics governing the contour's 
+movement, such as the inward march of a melting ice cube's edge. They then 
+calculate how points on the three-dimensional surface would move in accordance 
+with differential equations describing that physics. To find the shape and 
+location of the two-dimensional boundary at any moment, they simply determine 
+the evolving surface's zero level at that time.
+
+ Although the level-set approach trades the problem of a moving curve for one 
+involving a moving surface, it offers significant computational advantages, 
+Sethian says. Whereas a two-dimensional front can split up and become wildly 
+distorted, the corresponding three-dimensional surface has been chosen so that 
+it undulates and twists in a well-defined, mathematically tractable manner.
+
+ The strategy also works for tracking a three-dimensional interface. Though 
+much harder (if not impossible) to visualize, it considers the interface as a 
+closed surface, like a ball or distorted blob, and follows the evolution of its 
+corresponding level-set function in four-dimensional space.
+
+"Armed with the level-set perspective from this higher-dimensional space, we 
+can efficiently compute solutions to a wide collection of problems," Sethian 
+says.
+
+ Sethian and his collaborators have explored many varied applications of the 
+level-set method. They have modeled a bubble of one liquid rising within a 
+liquid of higher density and also have simulated the etching of a semiconductor 
+surface during manufacture of an integrated-circuit chip.
+
+ The investigators have recently applied their scheme to the automatic 
+extraction of anatomical features from medical images, such as magnetic 
+resonance scans. In the past, physicians typically drew outlines by hand to 
+identify spots requiring further examination or to measure the size of enclosed 
+regions to see how they change from one scan to another.
+
+ To outline an organ or some other feature automatically, a computerized front 
+starts as a small circle inside the area of interest in a digitized image. That 
+initial spot is then allowed to spread out at a speed that depends on the 
+change in brightness from one pixel to the next. When a portion of the front 
+hits an abrupt brightness change, presumably marking an edge, it slows 
+dramatically. Eventually, the front outlines the required feature.
+
+ One medical imaging company recently adopted this approach to locate and 
+measure fatty deposits and track heart- wall motion in images obtained using a 
+new electron-beam scanner. "These very fast scanners are using the latest 
+algorithms to help identify and measure very delicate features," Sethian says.
+
+ Also taking advantage of level-set methods, Ravikanth Malladi of the Lawrence 
+Berkeley (Calif.) National Laboratory and his collaborators are now working on 
+what they term "computer-aided cytology." Their goal is to develop a reliable, 
+automated method for analyzing microscope images of cells, Malladi says.
+
+ Working independently, Osher and his colleagues have applied the level-set 
+approach to model the growth of crystals and thin films on surfaces. Because 
+the thin-film model describes dozens of constantly moving and merging islands 
+of aggregating atoms, the level-set method is essential for practical 
+simulations of the growth process, Osher says.
+
+ Researchers have also simulated processes in which not just two but three 
+phases, or components, interact. One example models the spread of oil through 
+water beneath ice.
+
+ At the same time, simulations of two-phase flows show promise as convincing 
+computer-generated images of splashing water and other complicated subjects on 
+movie screens. "Flames can also be done this way," Osher notes.
+
+ One intriguing set of applications involves image processing and computer 
+vision. Video enhancement techniques developed by Osher and Leonid I. Rudin of 
+Cognitech in Pasadena, Calif., smooth out or remove static and other 
+distortions while keeping edges sharp and clear. That approach is based on the 
+notion that the edges of objects obscured by electronic noise can be described 
+by the equations used to model shock waves traveling through fluids.
+
+ Such image restoration has already played a critical role in the courtroom. 
+During the 1992 Los Angeles riots, video cameras in helicopters captured 
+several men pulling a truck driver out of his vehicle and severely beating him. 
+Defense lawyers argued that the videotape was too low in quality to link one 
+particular person to the attack. Rudin's analysis, however, revealed a 
+distinctive dark patch in the same location as a tattoo on the defendant's arm. 
+The defendant was convicted.
+
+ Plastic surgeons have recently expressed interest in the various 
+image-processing and analysis techniques developed by Osher and his colleagues. 
+They would like to be able to classify complicated shapes, such as bone 
+structures and facial features, by reducing the data obtained from a scan to a 
+small number of numerical parameters that characterize the features of interest.
+
+ Sethian has developed an efficient technique for rapidly calculating how 
+curved interfaces move in the particular case when the front always advances in 
+one direction and never backtracks. He calls it the fast-marching method.
+
+ For a two-dimensional interface, he sets up a surface with the property that 
+if he slices it at a certain height, he immediately gets the position (and 
+shape) of the front at the corresponding time. In effect, the physics is built 
+into the shape to encode the interface's behavior over time.
+
+ That approach lends itself to the problem of determining the shortest path 
+that a robot can take through a maze of narrow corridors to reach its 
+destination-or that shoppers can use to find their car in a crowded parking lot.
+
+ Imagine a front-like a ripple-expanding outward from a starting point. 
+Depending on what obstacles or surfaces different parts of the front encounter, 
+the front expands faster in certain directions than in others, sometimes 
+splitting into two or more fingers, sometimes merging again.
+
+ For example, a parcel-laden shopper coming out of a store would be the 
+ripple's starting point. Other people's cars, trash cans, and piles of snow 
+might slow or split the front. Eventually, some point on the front would reach 
+the shopper's car. The path that had been followed by that point would 
+represent the shortest route to the car.
+
+ Sethian and Ron Kimmel, now at the Technion Israel Institute of Technology in 
+Haifa, Israel, described in the July 21, 1998 Proceedings of the National 
+Academy of Sciences how to use this method to compute the shortest paths, 
+called geodesics, from point to point across hilly terrain and other 
+computer-generated landscapes.
+
+ The level-set approach by itself, however, doesn't solve all tricky 
+computational problems involving moving interfaces, says Elbridge Gerry Puckett 
+of the University of California, Davis.
+
+ A water drop breaking up into smaller droplets as it moves through still air, 
+for example, would always maintain the same total volume. Level-set methods 
+don't automatically include such a constraint.
+
+ Puckett is interested, for example, in modeling the formation of ink droplets 
+ejected by the microscopic nozzles of ink-jet printers. Current technology 
+allows the generation of ink drops with diameters of 25 to 100 micrometers at 
+rates of up to 4,000 drops per second.
+
+ The trouble is that, under most operating conditions, the jet rarely consists 
+of a spherical drop. Created by a pressure pulse, a droplet typically exits the 
+nozzle with a tail. This tail pinches off and breaks up into a few satellite 
+droplets that are generally smaller and slower than the main droplet. Because 
+these satellite droplets follow different paths, they miss the target, and so 
+they slightly blur the final printed image.
+
+ Researchers have had difficulty simulating the details of the 
+droplet-formation process to learn how to get rid of satellite droplets. 
+Standard methods produce inaccurate results, Puckett says.
+
+ One promising solution, based largely on research by Mark Sussman of the 
+University of California, Davis, couples the level-set approach with the 
+conventional volume-of-fluid method to create a powerful hybrid technique for 
+modeling the entire jetting process.
+
+ Although the research results aren't published yet, several companies have 
+already expressed interest in the simulation technique. The new method "won't 
+solve everything, but if you know what you're doing, you can do a lot," Puckett 
+says. "You need to tailor your method carefully to the problem at hand."
+
+ The level-set method has proved to be phenomenally successful as both a 
+theoretical and a computational device, Osher remarks. "The possibilities are 
+endless."
+
+

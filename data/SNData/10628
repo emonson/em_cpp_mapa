@@ -1,0 +1,56 @@
+Science News Online - This Week - News Feature - 10/25/97
+
+ October 25, 1997 
+
+ Immersion for analyzing complex software
+
+by I. Peterson 
+
+ Scanning the millions of lines of a computer program's instructions in order 
+to find inconsistencies and other problems is a time-consuming, error-prone 
+task -- even when the process is automated.
+
+ Researchers are now developing a system that generates a three-dimensional 
+representation of a computer program, letting programmers visualize, experiment 
+with, and modify the software. In effect, the technique immerses a person in 
+the software, says Thomas P. Caudell of the University of New Mexico in 
+Albuquerque."It's like being inside a brain."
+
+ At a high-integrity software conference last week in Albuquerque, Caudell 
+described a prototype virtual reality system, running on a supercomputer, for 
+analyzing complex computer systems.
+
+ As a first step, he and his coworkers have used their approach to track what 
+happens within a complicated computer program -- an artificial neural network 
+-- that drives a simple robot resembling a roller skate. Called Encephalon, the 
+neural network incorporates modules for processing sensor data, controlling the 
+robot's actions, and performing other functions.
+
+ In the virtual reality environment, each software component is represented by 
+a three-dimensional block that flashes colors or makes sounds as the component 
+functions. Paths along which data pass appear as links between blocks. Wearing 
+special goggles, the researcher sees the robot sensor data as if they were 
+projected on the walls of a computer-generated virtual room. The linked blocks 
+float in the middle.
+
+ Navigating around the room, the user can modify the software, set or adjust 
+system parameters, monitor information flow, visualize intermediate 
+computational results, view the raw input and output data, evaluate the 
+system's overall performance, and observe the resulting behavior of the robot. 
+The team's current focus on artificial neural networks is only one possible 
+application, Caudell says. Similar schemes could be used for simulating 
+industrial process control, visualizing enormous databases to facilitate 
+pattern recognition, and improving engineering and software design.
+
+"A large proportion of all computer problems is attributable to the initial, 
+informal, subjective phase of conceptualizing how a system should or should not 
+behave," says Larry J. Dalton of Sandia National Laboratories in Albuquerque. 
+Virtual reality potentially offers a way of exploring such behavior.
+
+ At present, however, many research questions remain unanswered, particularly 
+the issue of how best to represent abstract entities in a three-dimensional 
+environment. "We're trying to extend natural human capabilities of seeing 
+patterns and organizing knowledge," Caudell says, "but we need to understand 
+more about how people think and how the brain works."
+
+

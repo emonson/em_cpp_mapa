@@ -1,0 +1,154 @@
+Science News Online (6/12/99): Fibonacci at Random
+
+ The Weekly Newsmagazine of Science
+
+ Volume 155, Number 24 (June 12, 1999)
+
+ Fibonacci at Random
+
+ Uncovering a new mathematical constant
+
+ By Ivars Peterson
+
+ It all started out with imaginary rabbits.
+
+ In a book completed in the year 1202, mathematician Leonardo of Pisa (also 
+known as Fibonacci) posed the following problem: How many pairs of rabbits will 
+be produced in a year, beginning with a single pair, if every month each pair 
+bears a new pair that becomes productive from the second month on?
+
+ The total number of pairs, month by month, forms the sequence 1, 1, 2, 3, 5, 
+8, 13, 21, 34, 55, 89, and so on. Each new term is the sum of the previous two 
+terms. This set of numbers is now called the Fibonacci sequence.
+
+ Fibonacci's immortal rabbit problem. A red rectangle designates a newborn 
+pair, which doesn't produce offspring until the second month.
+
+ Fibonacci numbers come up surprisingly often in nature, from the number of 
+petals in various flowers to the number of scales along a spiral row in a pine 
+cone. They also arise in computer science, especially in sorting or organizing 
+data.
+
+ Amazingly, the ratios of successive terms of the Fibonacci sequence get closer 
+and closer to a specific number, often called the golden ratio. It can be 
+calculated as (1 + O5)/2, or 1.6180339887.... For instance, the ratio 55/34 is 
+1.617647..., and the next ratio, 89/55, is 1.6181818....
+
+ Now, computer scientist Divakar Viswanath of the Mathematical Sciences 
+Research Institute in Berkeley, Calif., has taken a fresh look at Fibonacci 
+numbers and unexpectedly discovered a new mathematical constant: the number 
+1.13198824.... He describes his result in a paper to be published in 
+Mathematics of Computation.
+
+ Viswanath's research represents an intriguing gateway to heavy-duty 
+mathematics, says mathematician Keith Devlin of Saint Mary's College of 
+California in Moraga. It relies on powerful mathematical techniques that also 
+are used, for instance, to elucidate the behavior of disordered materials.
+
+ Viswanath wondered what would happen to the Fibonacci sequence if he 
+introduced an element of randomness.
+
+ Here's one way to proceed: Start with the numbers 1 and 1, as in the original 
+Fibonacci sequence. To get the next term, flip a coin to decide whether to add 
+the last two terms or subtract the last term from the previous term.
+
+ Suppose that heads means add and tails means subtract. Tossing heads would 
+result in adding 1 to 1 to get 2, and tossing tails would lead to subtracting 1 
+from 1 to get 0. According to this scheme, the successive coin tosses H H T T T 
+H, for example, would generate the sequence 1, 1, 2, 3, ^-1, 4, ^-5, ^-1.
+
+ It's easy to write a short computer program to generate these random Fibonacci 
+sequences, notes Lloyd N. Trefethen of the University of Oxford in England. 
+Looking for patterns and trends among such sequences of numbers can be a 
+fascinating pastime, he says.
+
+ Indeed, infinitely many sequences follow Viswanath's rule. A few have special 
+characteristics. If the coin always comes up heads, for instance, the result is 
+the original Fibonacci sequence. Other strings of coin tosses can produce a 
+repeating pattern, such as 1, 1, 0, 1, 1, 0, 1, 1, 0, and so on.
+
+ Nonetheless, such special cases are sufficiently rare among all possible 
+sequences that mathematicians ignore them.
+
+ The standard Fibonacci sequence has an intriguing property. The hundredth 
+Fibonacci number, for example, is roughly equal to the hundredth power of the 
+golden ratio.
+
+ Despite significant fluctuations, the absolute values of the first 1,000 terms 
+of a typical, computer-generated random Fibonacci sequence show a clear trend 
+to larger values, fitting a pattern of exponential growth (dashed line). 
+(Viswanath)
+
+ By examining typical random Fibonacci sequences based on coin tosses, 
+Viswanath uncovered a similar pattern. He ignored the minus signs, thereby 
+taking the absolute value of the terms. He found that the hundredth term in 
+such a sequence, for example, is approximately equal to the hundredth power of 
+the number 1.13198824.... In fact, the higher the term, the closer its value 
+gets to the appropriate power of 1.13198824....
+
+ Despite the element of chance and the resulting large fluctuations in value 
+that characterize a random Fibonacci sequence, the absolute values of the 
+numbers, on average, increase at a well-defined exponential rate.
+
+ It's not obvious that this should happen, Viswanath observes. Random Fibonacci 
+sequences might have leveled off to a constant absolute value because of the 
+subtractions, for example, but they actually escalate exponentially.
+
+ Providing a rigorous proof of the result was a tricky business. To get the 
+answer he required, Viswanath had to delve into several different areas of 
+mathematics, including the intricacies of geometric forms known as fractals, 
+and finish with a computer calculation.
+
+ Viswanath's achievement "showed persistence and imagination of a very high 
+order," Trefethen remarks.
+
+ Now, Devlin adds, "mathematics has a new constant." No one has yet identified 
+any link between this particular number and other known constants, such as the 
+golden ratio.
+
+ Surprisingly, Viswanath's constant provides one answer to a mathematical 
+puzzle that arose several decades ago from the work of Hillel Furstenberg, now 
+at Hebrew University in Jerusalem, and Harry Kesten of Cornell University.
+
+ In a different mathematical context involving so-called random matrix 
+multiplication, Furstenberg and Kesten had proved that in number sequences 
+generated by certain types of processes having an element of randomness, the 
+value of the nth term of the sequence gets closer to the nth power of some 
+fixed number. However, they provided no hint of what that fixed number might be 
+for any particular sequence.
+
+ Because random Fibonacci sequences fit into this category of sequences, 
+Viswanath's new constant represents an accessible example of these fixed 
+numbers.
+
+"It is a beautiful result with a variety of interesting aspects," Trefethen 
+says. It's a nice illustration, for example, of how a random process can lead 
+to a deterministic result when the numbers involved get very large.
+
+ Moreover, although Viswanath's result by itself has no obvious applications, 
+it serves as an introduction to the sophisticated type of mathematics developed 
+by Furstenberg, Kesten, and others. That mathematical machinery has proved 
+valuable in accounting for properties of disordered materials, particularly how 
+repeated random movements can lead to orderly behavior, Devlin says.
+
+ Such mathematics underlies explanations of why glass is transparent and how an 
+electric current can still pass in an orderly fashion through a semiconductor 
+laced with randomly positioned impurities.
+
+ Viswanath's original work was done at Cornell University, under Trefethen's 
+supervision. Trefethen and Oxford's Mark Embree have recently studied slightly 
+modified versions of the random Fibonacci sequence. If, for example, one 
+combines the last known term with half the previous term, adding or subtracting 
+according to the toss of a coin, the sequence's numbers decrease at a certain 
+rate, displaying exponential decay.
+
+ By using fractions other than one-half, it's possible to find fractions for 
+which one gets exponential decay, exponential growth, or merely equilibrium. 
+"All this quickly gets under your skin when you start trying it on the 
+computer," Trefethen says, adding that it becomes an addictive pastime.
+
+ There's still plenty of room for mathematical exploration and experimentation 
+in a problem that began centuries ago as a decidedly unrealistic model of a 
+population of rabbits.
+
+

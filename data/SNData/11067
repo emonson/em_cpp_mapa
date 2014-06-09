@@ -1,0 +1,67 @@
+Science News Online (3/6/99): Simulations nab protein-folding mistakes
+
+ The Weekly Newsmagazine of Science
+
+ Volume 155, Number 10 (March 6, 1999)
+
+ Simulations nab protein-folding mistakes
+
+ By I. Peterson
+
+ The human body manufactures thousands of different proteins, which act as 
+enzymes, structural elements, or carriers. Each protein starts out as a long 
+strand that must fold itself into the proper shape to perform its specific 
+function.
+
+ To gain insights into the folding process, researchers have developed 
+mathematical models that attempt to capture how a single strand rapidly 
+collapses into its correct configuration (SN: 5/9/98, p. 296). New computer 
+simulations now reveal how one protein strand can interfere with the folding of 
+another.
+
+"This is a step toward successful protein engineering," says computer scientist 
+Sorin Istrail of the Sandia National Laboratories in Albuquerque. "It provides 
+our first clue in how to design sequences of laboratory proteins that can 
+survive the essential but complicated folding process."
+
+ The results could also help laboratory scientists understand the mechanisms 
+underlying protein-folding mistakes, which are implicated in Alzheimer's 
+disease (SN: 7/4/98, p. 4) and other maladies.
+
+ Istrail and his collaborators, biologist Jonathan A. King and computer 
+scientist Russell Schwartz of the Massachusetts Institute of Technology, report 
+their findings in an upcoming Journal of Computational Biology.
+
+ Each protein is a string of amino acids spelling out a characteristic 
+sequence. Scientists divide the 20 distinct amino acids into two groups 
+according to whether they attract or repel water molecules, the main 
+constituent of cells. Those interactions drive protein folding, creating 
+globular structures in which water-repelling amino acids end up on the inside 
+and water-attracting ones on the outside.
+
+ A simple model portrays a protein as a stiff but jointed structure, made of 
+two types of beads, that can snap into a few positions at each joint. Because 
+of the huge number of different folding possibilities for even a short strand, 
+however, simulating the process on a computer has proved difficult.
+
+ Moreover, protein strands in cells have many jostling neighbors, King notes. 
+Two partially folded protein molecules may end up sticking together.
+
+ To capture that additional complication, Istrail and his coworkers started 
+with a well-studied, jointed-structure model originally developed by Ken Dill 
+of the University of California, San Francisco. Taking advantage of Sandia's 
+powerful computers (SN: 7/5/97, p. 5), the researchers examined what happens 
+when strands move about and bump into each other.
+
+ Although the specific amino acid sequence determines the protein's function, 
+the location of water-attracting components appears to be random. By tracking 
+two highly simplified protein chains interacting on a grid, Istrail and his 
+coworkers showed that this irregular arrangement plays an important role in 
+preventing water-repelling units from binding to those of another strand.
+
+ A protein with an ordered distribution of water-attracting units tends to 
+aggregate with other proteins to form an inert lump, Istrail says. Random 
+positioning appears necessary to keep different strands apart, allowing the 
+formation of the correct folds.
+
+

@@ -1,0 +1,290 @@
+Schroedinger's Cash Register, Science News Online (11/27/99)
+
+ Schroedinger's Cash Register Physicists try to break economists' monopoly on 
+financial theory
+
+ By Oliver Baker
+
+ Fluctuations over time in Standard & Poor's index of 500 U.S. stocks (S&P 
+500), expressed in standard deviations. Analysts use this index to monitor 
+broad trends in the value of U.S. stocks. (Adapted from R.N. Mantegna, et 
+al./1999)
+
+ How is the stock market like the nucleus of an atom? To an economist, the 
+question sounds like a joke. It's no laughing matter, however, for physicists 
+seeking to plant their flag in the field of economics.
+
+ In the past few years, these trespassers have borrowed from quantum mechanics, 
+string theory, and other accomplishments of physics in an attempt to divine 
+undiscovered laws of finance. They're already tallying what they say are 
+important gains.
+
+ Inside the halls of economics, the whoops of physicists outside barely stir 
+the air. Economists occasionally gaze out the windows, but are unimpressed by 
+what they see. Is the new physics of finance a fool's errand-as most economists 
+contend-or a rising stock that they will soon be buying into?
+
+ Boston University physicist H. Eugene Stanley specializes in the behavior of 
+molecules and particles en masse-a discipline that, he says, provides an ideal 
+background for approaching problems in economics.
+
+"Economics is a pure subject in statistical mechanics," says Stanley. "It's not 
+the case that one needs to master the field of economics to study this."
+
+ Physics training, he says, gives a person powerful mathematical tools, 
+computer savvy, a facility in manipulating large sets of data, and an intuition 
+for modeling and simplification. Such skills, he says, could bring new order 
+into economics. Geophysics, astrophysics, and biophysics testify to the success 
+of physicists at fertilizing new fields.
+
+ Financial firms on Wall Street put out welcome mats for physicists over a 
+decade ago. People with physics Ph.D.s hold about half of the so-called 
+quantitative analyst positions at such institutions, says Wall Street 
+headhunter Robert Long of the Denison Group in New York City. "And they 
+significantly outnumber economists," he adds.
+
+ Wall Street physics has been mostly a proprietary pursuit of new spins on old 
+methods for concocting abstract financial instruments, of which stock options 
+are among the simplest examples. In the margins, a few physicist-financiers are 
+working on so-called black box trading schemes (see sidebar).
+
+ Now, the embrace of physics and finance is reaching into academics. Physicists 
+at universities are taking up finance, and nonacademic physicists in finance 
+are pursuing basic research. Together they published about 50 economics papers 
+this year in journals of physics.
+
+ Participants in the movement say that research in finance is growing faster 
+than in any other area of physics. They point to a meeting this summer in 
+Dublin entitled "Applications of Physics in Financial Analysis," which drew 
+about 200 physicists. Many describe the phenomenon as the birth of a new field: 
+econophysics.
+
+ Most economists aren't aware of the physicists' efforts, and those who are 
+informed tend to dismiss them. Jonathan Berk, a financial economist at the 
+University of California, Berkeley, read the first one or two financial 
+articles in physics journals that his graduate students brought him. These 
+sated his curiosity permanently, he says.
+
+ Berk says that he doesn't read physics articles anymore and his colleagues 
+don't, either. "No one references this work," he says.
+
+ It wouldn't be surprising if some of the ideas published by physicists in 
+recent years were to turn economists a queasy shade of yellow.
+
+ To explain interest rates and fluctuations of stock market prices, these 
+theories draw analogies to earthquakes, turbulence, sand piles, fractals, 
+radioactivity, energy states in nuclei, and the composition of elementary 
+particles.
+
+ Some of these theories make propositions that strike Andrew Lo as patently 
+absurd. An econometrist at the Massachusetts Institute of Technology, he cites 
+papers proposing that prices can be negative or can incorporate so-called 
+imaginary numbers, based on the square root of negative one.
+
+ Many econophysicists acknowledge the presence in their field of an unusual 
+amount of work that they call ungrounded, misguided, or in some cases downright 
+crazy. Pioneer econophysicist Jean-Philippe Bouchaud, whose company, Science & 
+Finance, in Levallois, France, provides consultation to banks, says that many 
+physicists have not invested sufficient time to learn about finance. Too many, 
+he says, are dabbling in economics "as just an easy way to do some research."
+
+ Yet the work of others, Bouchaud contends, deserves economists' full 
+attention. Econophysicists have the right skills to eke information from the 
+fluctuating prices seen in stock market records. Furthermore, Bouchaud says, 
+they've been mining their insights from a wealth of new data that has become 
+available with the proliferation of computers.
+
+ Bouchaud cites a study done last year by Stanley and his collaborators. The 
+team analyzed a 2-year price record of 1,000 stocks traded on the New York 
+Stock Exchange, the American Stock Exchange, and the National Association of 
+Securities Dealers Automated Quotation (NASDAQ). Taking quotations spaced 5 
+minutes apart, the researchers compiled a data set of 40 million prices, the 
+largest pool of market data that had ever been analyzed, they say. They 
+described their findings in just two pages of the May 2, 1998 European Physical 
+Journal B.
+
+ After calculating the swing in price that occurred over each 5-minute interval 
+for all 1,000 stocks, Stanley and colleagues constructed a graph called a 
+histogram. Sorting price changes by size, they counted how many fell into each 
+group and graphed that number against the size of the price change.
+
+ While the histogram exhibits the shape of a bell, it's not the bell curve most 
+people know, which describes the random variations most visible in nature. The 
+so-called tails to the left and right of the histogram's hump are fatter than 
+the ones on a conventional bell curve, or normal distribution. This result 
+means that extreme events-big price swings up or down-are far more likely than 
+a simplistic statistical approach predicts.
+
+ Stanley's team is not the only one to observe these tail statistics. At the 
+Dublin econophysics conference, researchers presented similar findings from 
+analyses of other assemblages of stocks, different stock markets, currency 
+exchanges, and interest-rate markets. In sum, says Bouchaud, "all markets look 
+pretty much alike."
+
+ These analyses together, he says, point to an underlying, mathematical 
+structure to market behavior. While exact numbers may differ from one market to 
+another, Bouchaud says, essential features do not.
+
+ Beyond the innate fascination of this conclusion, these studies also have 
+immediate practical significance to finance, according to Bouchaud. The shape 
+of the tails matters in particular, he says, to the way trading institutions 
+calculate risk.
+
+"All the software I know to be used professionally is completely wrong in the 
+tails," he says. "This will have to change."
+
+ Stanley shares his view, saying, "Physicists have completely revolutionized 
+how you calculate risk."
+
+ Traders will want to pay attention to the lessons emerging from these studies, 
+says Bouchaud. By assuming that conventional bell-curve statistics apply, 
+investors have unwittingly stacked the deck against themselves.
+
+ Bouchaud and a colleague have devised a method to calculate financial risk 
+that incorporates the recent findings about price fluctuations. Their scheme 
+exploits the claim of Stanley and other econophysicists that a simple formula 
+describes the shape of the histogram's tails. If a piece of commercial software 
+could make practical use of such calculations-and should the physicists' 
+formula prove right-it would be the first such product able to account 
+accurately for extreme swings in price, says Mark B. Garman, chairman of 
+Financial Engineering Associates in Berkeley, Calif., which manufactures 
+business software.
+
+ However, few economists know the work. Those who do say the physicists' 
+findings amount, at best, to nothing new. According to Blake LeBaron, an 
+economist at Brandeis University in Waltham, Mass., researchers have known 
+since 1963 that tails are fat, and they have known the fine points of the tail 
+shape for some time, too.
+
+"High-frequency data is [already] an enormous area in finance," says LeBaron. 
+"There are conferences run around it."
+
+ Rather than finding a universal law, LeBaron contends, what econophysicists 
+have uncovered is of limited interest and little practical use. The fat-tailed 
+bell curve, he says, is not what statisticians call stable. Its shape differs 
+if researchers sample prices every 5 months versus every 5 minutes.
+
+ For sampling intervals between 1 minute and 2 weeks, the tails remain 
+reasonably fixed. The limit of 2 weeks, however, severely restricts the 
+formula's utility, he says.
+
+"To an economist, these tails would be very interesting if they held up out to 
+long range," says LeBaron, "but they don't." He adds that economists care more 
+about what an asset might be worth in a few months than in a few minutes.
+
+ Garman differs, however. Banks may shift financial strategies once or more 
+within a day, he says, and they want software that calculates risk for 8 or 24 
+hours ahead.
+
+ Physicists have also invaded another patch of economic turf-one that aims to 
+understand price fluctuations from the ground up. Multiagent modeling, as this 
+research is called, throws together psychological motives, rational strategies, 
+and social dynamics in order to identify what elements control how stock prices 
+evolve. On the computer, virtual traders-or agents-buy, sell, and swap 
+information, causing imaginary stock prices to rise and fall.
+
+ While economists make up the vast majority of researchers working on such 
+models, econophysicists have established a niche of their own by making models 
+much simpler than most economists now choose to consider. Some of the 
+stripped-down scenarios don't even involve stocks.
+
+ The simplicity of such models could yield rewards in several ways, say their 
+developers. In paring down markets to their most basic facets, the models offer 
+to clarify what makes prices behave the way they do.
+
+ Some also enable econophysicists to forecast aspects of how prices or other 
+outputs will behave. Sophisticated mathematics have produced formulas that can 
+predict trends in the fluctuations before researchers run a model.
+
+ The formulas are general, so they apply to many configurations of the 
+model-whether the virtual agents rely on 20 trading strategies or only 2.
+
+ LeBaron says that with a few exceptions, only the econophysicists' models have 
+yielded such formulas. Most of LeBaron's economist colleagues pay the 
+physicists' models little mind, he says, because they consider them trivially 
+simple-a judgment LeBaron often shares. However, because of the mathematical 
+insight that some econophysicists have into their models, LeBaron says that he 
+takes care to stay up-to-date on the latest.
+
+ In contrast to the econophysicists, "economists are more worried about getting 
+the economic details right," LeBaron says. If there are tractable formulas with 
+application to real markets, LeBaron says, economists-with their more elaborate 
+models-are not liable to discover them on their own.
+
+"Probably if anyone is going to bump into them," LeBaron says, "I have a hunch 
+it's going to be the econophysicists."
+
+ Even if they do find such formulas, he says, that achievement will not be 
+enough in itself to predict the behavior of actual markets. In describing real 
+trading, the numbers that one would plug into a formula-such as how many 
+strategies an agent has and how long a memory-are not obvious. Figuring out 
+what these numbers should be will require models such as the ones that 
+economists are working on, he says.
+
+ In fact, LeBaron has already initiated collaborations with a few physicists- 
+work that has led to two articles.
+
+ Given the potential payoff, J. Doyne Farmer of the Santa Fe (N.M.) Institute 
+says he wants to see more economists and econophysicists exchanging ideas. A 
+trained physicist who has worked in finance for 7 years, he perceives some 
+obstacles to this goal, however.
+
+ The newcomers to economics offend their hosts in a number of ways, Farmer 
+says. Besides having a cultural tolerance toward audacious analogies, 
+econophysicists have exuded a hubris that puts economists off, and at times 
+they have operated in ignorance of basic facts of finance.
+
+ Farmer contends that the proper way to judge a field, however, is by its best 
+work, not its worst. Many economists, he fears, have dismissed econophysics 
+summarily, overlooking both what it has accomplished so far and the clear 
+promise he believes it holds. On the other hand, he regards the few recent 
+collaborative papers as encouraging.
+
+ Berk, who believes breakthroughs in economics will demand some insightful 
+simplifications, acknowledges that physicists have skills in this regard. They 
+could conceivably use these talents to reap dividends in his field, he 
+grudgingly admits. "But as my undergraduate training in physics taught me," 
+Berk says. "Let's see some evidence."
+
+ Econophysics will have to improve its credit rating before Berk and most other 
+economists take it seriously. They haven't bought into the new field on its 
+initial public offering.
+
+ Physicists' black boxes: Money machines?
+
+ Within the dark recesses of proprietary financial research on and off Wall 
+Street, an unreckoned but purportedly small number of stock analysts are 
+building what they call black boxes. These computerized systems monitor current 
+and past prices of a stock or asset, consult currency exchange rates or other 
+factors that might serve as financial indicators, and spit out decisions from 
+moment to moment about whether an investor should buy or sell.
+
+ An ever-evolving formula instructs some black boxes as to which indicators to 
+consult and how to factor them into the decisions. The boxes themselves may 
+devise these formulas. Many boxes evaluate stocks using programming that 
+mirrors how brain-cell networks operate. The computers effectively teach 
+themselves as they go along how to forecast swings in price.
+
+ The goal of black box research is narrow, to sell high and buy low, and its 
+ethos may be summed up as "whatever works." Researchers have a strong 
+disincentive to publish any innovations that would be useful for turning 
+profits, since if everybody knew of them-prevailing economic theory says-they 
+would cease to work. In these ways, the black box efforts differ from most of 
+the physics research that has been newly dubbed econophysics.
+
+ Physicists, nevertheless, number among those pursuing black boxes. A new book 
+by Thomas A. Bass, entitled The Predictors (1999, Henry Holt), chronicles the 
+adventures of two such physicists: J. Doyne Farmer and Norman Packard. They 
+formed the Prediction Company in Santa Fe, N.M., which operates under contract 
+with the United Bank of Switzerland.
+
+ Farmer, also of the Santa Fe (N.M.) Institute, told Science News that since 
+the days documented in The Predictors, he has begun to turn his attention to 
+more academic financial questions. This move reflects the direction of his own 
+curiosity, he says. The profits that he and coworkers have made with black 
+boxes, Farmer contends, are "highly statistically significant."
+
+ Most financial analysts, however, are skeptical.
+
+ From Science News, Vol. 156, No. 22, November 27, 1999, p. 344. Copyright C 
+1999, Science Service. 

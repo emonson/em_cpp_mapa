@@ -1,0 +1,255 @@
+Building a Supermodel: Science News Online, Jan. 22, 2000
+
+ Building a Supermodel
+
+ In search of a versatile virtual person
+
+ Sid Perkins
+
+ More than 1,800 years ago, the Greek physician Galen came up with a model for 
+how the human body works. Blood, which he called the "natural spirit," 
+originated in the liver and traveled to all parts of the body through the 
+veins. In the left side of the heart, some of the blood mixed with air from the 
+lungs to make "vital spirit," which flowed to all parts of the body through the 
+arteries. Some of this fluid went to the head, where it was infused with 
+"animal spirit," or consciousness, and then was distributed to the muscles and 
+the senses through a network of hollow nerves.
+
+ Galen was wrong, of course, but his ideas held sway for more than 1,400 years 
+for one simple reason: His model provided a rational explanation of all the 
+biological facts known at the time. Not until the Renaissance rekindled the 
+spirit of scientific inquiry did new observations by Leonardo da Vinci, Andreas 
+Vesalius, and others pave the way for William Harvey's model of circulation, 
+which appeared in 1628.
+
+ Today, the burgeoning volume of biological information has grown so large that 
+it threatens to overwhelm rather than enlighten scientists. With the power of 
+the computer, however, researchers are using the available raw data to refine 
+the crude qualitative models of yesteryear into finely tuned simulations that 
+can represent-and even predict-the behavior of complex biological systems.
+
+ Individually, these simulations provide scientists with the opportunity to 
+understand aspects of human biology that aren't readily apparent and to think 
+about old problems in new ways. Integrated into a whole, they promise a 
+sophisticated version of Galen's model-a virtual person that could serve myriad 
+roles, such as a computerized crash-test dummy or perhaps as a tool for 
+predicting adverse drug interactions.
+
+ Inhaled particles
+
+ Over a decade ago, Ted Martonen envisioned developing a computer model to 
+predict how inhaled particles, such as soot, dust, and cigarette smoke, would 
+spread through the respiratory system. Those predictions, he believed, could 
+help physicians target drugs to treat the ailments that those particles cause.
+
+ First, Martonen's research team at the Environmental Protection Agency's 
+National Health and Environmental Effects Research Laboratory in Research 
+Triangle Park, N.C., developed a mathematical model of the structure of the 
+human respiratory system. The system and the model include the nose, mouth, 
+throat, sinuses, and 20 million airways in the lungs.
+
+ Team members then used computational fluid dynamics-the same techniques 
+aeronautical engineers use to analyze the flow of air around aircraft-to 
+determine the airflow through the model. With this information, the researchers 
+could predict how deep the inhaled air pollutants would spread through the 
+lungs and whether they would stick there or be exhaled.
+
+ The resulting supercomputer simulation earned Martonen the 1997 Computerworld 
+Smithsonian Award for Medicine. Called the Virtual Lung, the model can be used 
+to help evaluate a patient's condition and select the best drug and delivery 
+method, the researchers say.
+
+ The Virtual Lung is now being tested in clinical trials in Canada and the 
+United Kingdom, where it's being used to customize the delivery of drugs in 
+patients with respiratory-tract diseases, such as asthma and emphysema.
+
+"I wanted to use computers to do what they do best, which is to run thousands 
+of possible [treatment options] to customize drug-delivery protocols in real 
+time," Martonen says. "I'd like to see the day when a doctor has a stethoscope 
+in one pocket and a floppy disk with our program on it in the other."
+
+ Faster processing speeds
+
+ As the processing speed of computers increases, programmers can broaden the 
+potential applications of their models by refining existing capabilities and 
+adding new ones. Nothing illustrates this phenomenon better than Jack, a 
+program that helps engineers assess workplaces according to issues such as 
+ergonomics and potential for causing injury.
+
+ Developed at the University of Pennsylvania's Center for Human Modeling and 
+Simulation, Jack began as a simple computer model that could be scaled to 
+represent a person of any size and weight. Over the years, programmers endowed 
+Jack with the ability to walk, lift objects, and avoid obstacles. The 
+simulation became so successful that it turned into a commercial venture. It is 
+currently owned by Engineering Animation, Inc., in Ann Arbor, Mich.
+
+ Even though Jack is just a teenager, he has quite a resume. Soldier, pilot, 
+astronaut, assembly line worker, truck driver, and yard-maintenance worker are 
+just a few of his former job titles.
+
+ Heavy-equipment manufacturer Deere & Co. has used Jack over the past 10 years, 
+says Jerry Duncan, senior staff engineer in the company's product technology 
+group in Moline, Ill. Jack has worked for Deere on a virtual assembly line to 
+help equipment designers optimize the size, shape, and location of access 
+panels. He has also operated virtual earthmoving equipment to ensure there's 
+adequate visibility from the vehicle cab.
+
+"Jack helps us evaluate a wider range of equipment features and the placement 
+of controls without ever putting a human being into the situation," Duncan 
+says. "We can actually see what it's like to reach over and pull a lever, for a 
+small female versus a large male, without ever building a prototype."
+
+ NASA uses Jack to simulate a person in surroundings as diverse as the 
+shirt-sleeve environment within a spacecraft and the cramped conditions inside 
+a space suit during extravehicular activity. Recently, Jack helped designers of 
+the International Space Station determine where they should place the footholds 
+for astronauts performing assembly tasks in the weightlessness of space.
+
+ Jack is a very reliable worker, NASA has found. About 94 percent of the 
+results simulated with Jack proved acceptable when verified with tests in 
+neutral-buoyancy tanks, said Charles Dischinger Jr., human-factors engineer at 
+NASA's Marshall Space Flight Center in Huntsville, Ala.
+
+ Human biology
+
+ Imagine, if you will, a Super-Jack-not one that leaps tall buildings in a 
+single bound but a simulation of the complete human biology. It would encompass 
+full-scale anatomy and continue down to the genetic code.
+
+ Only recently have advances in computational tools and biological insights 
+come together to make this type of simulation feasible. Researchers at Oak 
+Ridge (Tenn.) National Laboratory have begun a project to create just such 
+virtual humans, says Clay Easterly, the lab's director for the Virtual Human 
+project.
+
+ The scientists held meetings at the National Academy of Sciences in 
+Washington, D.C., in October 1999 with representatives of several agencies, 
+including the Department of Defense, the National Institutes of Health, and the 
+National Science Foundation. The researchers hoped that interested agencies 
+would commission a study to be presented to Congress that would outline the 
+feasibility, cost, and scope of the project and suggest the approach and who 
+should be involved.
+
+ In the meantime, more than 70 academic, government, and corporate scientists 
+met early last November in Washington to begin charting a roadmap for what will 
+undoubtedly be a decades-long effort.
+
+"The Virtual Human will be a computational model of an individual that contains 
+the knowledge base to describe mental health to the extent possible, disease 
+processes, responses to chemicals in the environment, responses to stimuli, and 
+a host of other biological phenomena," Easterly says.
+
+ Early versions of the Virtual Human would focus on integrating existing models 
+of human biology with a detailed model of anatomy. It would begin with the 
+National Institutes of Health's Visible Human Project, based in Bethesda, Md., 
+which has generated complete three-dimensional digital representations of the 
+normal male and female human bodies with resolution as small as one-third of a 
+millimeter.
+
+ Subsequent versions of Oak Ridge's Virtual Human would incorporate new models 
+as they are developed and refine existing simulations as more data are gathered.
+
+ Easterly regards the Virtual Human as more than just a computerized person. It 
+would be a tool to help scientists work with the vast amount of information on 
+human biology that scientists have amassed. This will be quite a chore-the 
+National Library of Medicine's MEDLINE database has more than 10 million 
+references to health-science journal articles published since 1966, and it 
+expands by about 7,300 references each week.
+
+"We have journals full of specialized data that are understood in large part 
+only by people within that specialty," Easterly says. "The Virtual Human can 
+help organize this vast amount of information in such a way that a bigger 
+section of the scientific community and the public can appreciate the 
+knowledge, and it will become apparent how all of the pieces affect the whole."
+
+ For example, data from a simulation of the effects of pollutants on individual 
+lung cells could be combined with a model of lung function to help physicians 
+understand how pollution exacerbates congestive heart failure and other 
+conditions.
+
+ Passing information
+
+ Because the individual simulations that might be assembled into an early 
+version of the Virtual Human have been programmed to run on computers as 
+disparate as Compaqs and Crays, researchers need to develop effective ways to 
+pass information quickly back and forth between the models.
+
+ The best way to integrate the models may be to have a distributed network of 
+computers run the Virtual Human simulation-think of it as living with your 
+kidneys in Cleveland and your immune system in El Paso. Distributed computing 
+would provide many beneficial side effects, says Michael Ackerman, assistant 
+director of the National Library of Medicine's Office of High Performance 
+Computing and Communications in Bethesda, Md.
+
+"In a networked type of model, the individual models will stay in the hands of 
+those who developed them," Ackerman says. "Each expert provides his own piece 
+of the program and is responsible for its upkeep and maintenance, and the model 
+resides wherever the researcher is. That way, the simulation can be updated to 
+include the latest and greatest information available."
+
+ The possible uses for a high-fidelity simulation of human biology are 
+innumerable, and the benefits of constructing such a model are likely to be 
+wide-ranging, Easterly says. The Virtual Human could, for example, alert 
+doctors to possible harmful interactions between drugs, foods, and nutritional 
+supplements.
+
+ Also, the blunt-trauma models needed to evaluate nonlethal weapons for the 
+Department of Defense could be used to design better safety equipment, such as 
+bulletproof vests, motorcycle helmets, and seat belts. Such computer 
+simulations would offer considerable savings, compared with traditional 
+evaluation methods.
+
+"The Virtual Human is likely to be of enormous value because it will be an 
+environment in which we can test hypotheses and evaluate strategies for 
+treatment in the context of what we think we know about human biology in silico 
+before we ever try them out in patients," says Tim Buchman, chief of surgical 
+critical care at Barnes-Jewish Hospital in St. Louis.
+
+ Says George Fenton, who heads the Joint Non-Lethal Weapons Directorate at 
+Quantico (Va.) Marine Corps Base, "The Virtual Human project is a great idea. 
+The Departments of Transportation, Defense, Justice, and Energy, as well as 
+other organizations, will all be working toward a common goal, and we're 
+looking to leverage the power of the computer to help us solve these problems." 
+Fenton adds, "I think it's going to happen sooner than most of us think."
+
+ Personalizing simulations
+
+ Although in the near term the Virtual Human would be a generic human being, 
+the long-term goal is to be able to personalize the simulation by superimposing 
+an individual's physical characteristics, medical history, genetic information, 
+and other personal data on the general model. Such a model could be used to 
+assess the best course of treatment and tailor a patient's prescription dosage 
+to meet individual needs.
+
+ Richard M. Satava, a surgeon at Yale University School of Medicine in New 
+Haven, Conn., sees the personalized Virtual Human as an integral part of a 
+suite of new technologies for the doctor's office of the future.
+
+ The patient would enter the office through a portal, similar to an airport 
+metal detector, that conducts a scan of his or her structural anatomy, Satava 
+says. Next, he or she would proceed to a waiting room where technicians would 
+place the patient's palm onto a table-top scanner to gather vital signs and 
+other medical data. All this information would be instantly uploaded to an 
+individualized version of the Virtual Human, which would serve as a 
+next-generation medical record and fit on a memory cartridge the size of a 
+credit card.
+
+ When the doctor slips the cartridge into a holographic viewer, a 
+three-dimensional image, annotated with pertinent medical data, would pop up. 
+If the doctor suspects a liver problem, for example, he or she could enlarge 
+the image and move through and around the virtual organ to conduct a more 
+detailed investigation.
+
+ If the problem requires surgery, the images could be used for preoperative 
+planning or downloaded into a surgical simulator that would enable doctors to 
+practice the operation before they pick up a scalpel.
+
+ All this fantastic technology is years in the future, of course, but Satava 
+sees the Virtual Human as a springboard for its development.
+
+"This project would be the health-care equivalent of the Apollo missions to the 
+moon," Satava says. "It could be the pivot point for a new information 
+revolution in the health-care system that would dwarf what we're seeing today 
+with the Internet."
+
+

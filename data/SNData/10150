@@ -1,0 +1,64 @@
+Device Sees More inside Live Cells: Science News Online, July 22, 2000
+
+ Device Sees More inside Live Cells
+
+ P. Weiss
+
+ The delicate touch of visible light allows scientists to peer into living 
+cells without disrupting them. However, to discern the subtlest details, 
+optical microscopes have long been considered too crude a tool. Instead, 
+researchers have developed techniques such as electron microscopy to make out 
+the finest features, but only in dead specimens.
+
+ Enter the stimulated emission depletion microscope. This novel optical device 
+harmlessly resolves fluorescently labeled bits of living cells that are smaller 
+than the so-called diffraction limit, say its developers at the Max Planck 
+Institute for Biophysical Chemistry in Gottingen, Germany. Because light bends, 
+or diffracts, around the edges of objects, ordinary optical microscopes can 
+discern features no closer than a half-wavelength apart, a distance of 200 
+nanometers (nm) or so.
+
+ Beating the diffraction limit, the new prototype instrument can resolve depth 
+to one-sixth of what the best conventional optical microscopes can achieve. Its 
+horizontal resolution comes in under one-half the other instruments' limit, 
+report Thomas A. Klar and his colleagues in the July 18 Proceedings of the 
+National Academy of Sciences.
+
+ Considering all three dimensions, the device can distinguish structures only 
+one-eighteenth the minimum volume discernable by diffraction-limited equipment, 
+the researchers say.
+
+"The work by [the Gottingen team] has the potential to transform the 
+fluorescence microscopy 'Renaissance' we are currently experiencing into an 
+'Enlightenment Millennium,'" says Shimon Weiss of Lawrence Berkeley (Calif.) 
+National Laboratory in a commentary in the same journal issue.
+
+ While the immediate focus is biology, "this beautiful story is not going to 
+end here," he adds, predicting possible applications in lithography, 
+electro-optics, magneto-optics, and other areas.
+
+ Like other so-called confocal microscopes, the novel instrument works by 
+focusing a laser inside cells tagged with nontoxic fluorescent molecules. By 
+scanning the light across horizontal levels in the cell and then assembling the 
+slices in a computer, researchers can generate a three-dimensional fluorescent 
+image of the cell's interior.
+
+ Typically, an oblong laser spot created by a confocal microscope has a 
+diffraction-limited size of about 600 nm in depth and 200 nm in girth, says 
+team leader Stefan W. Hell. What enables the new microscope to both beat the 
+diffraction limit and reduce distortion from its oblong spot, he explains, is a 
+one-two combination of laser pulses.
+
+ The device generates a 0.2-picosecond pulse of green light, which creates the 
+typical oblong illumination. Immediately afterward, it fires an oddly shaped 
+and much longer-lasting red pulse into the area excited by the green pulse. The 
+red squelches fluorescence from the green light anywhere the pulses overlap.
+
+ Because the second pulse is doughnut-shaped, with blobs of light above and 
+below its doughnut hole, the red light confines fluorescence to a roughly 
+spherical spot 100 nm across. Comparing the green oblong to an American 
+football, Hell says that the final truncated spot resembles a tennis ball. 
+Thanks to that smaller spot size, he adds, the microscope can scan with a finer 
+point and discern unprecedentedly small features.
+
+

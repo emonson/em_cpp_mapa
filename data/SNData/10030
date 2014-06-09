@@ -1,0 +1,229 @@
+Science News Magazine Editor's Picks - ps_3.htm
+
+ The Best of SCIENCE NEWS
+
+ October 14, 1995
+
+ PHYSICAL SCIENCES AND TECHNOLOGY
+
+ The Stability of Matter
+
+ Why matter neither collapses nor explodes
+
+ By RICHARD LIPKIN
+
+ Contemplate, for a moment, a glass of water.
+
+ Try to imagine the frenetic atomic activity within this seemingly tranquil 
+liquid. Its trillions of molecules, each containing two hydrogen atoms and one 
+oxygen atom, are continuously crashing into one another.
+
+ Each oxygen atom sports, on average, eight electrons whirring around eight 
+tightly packed protons. In each hydrogen atom, a single electron hurtles around 
+a central proton, which pulls it perilously inward.
+
+ Despite a strong electrical attraction, the negatively charged electrons do 
+not fall into the positively charged protons; if they did, the resulting 
+unstable mixture might explode. Confined to a relatively small area, pulled by 
+gravity, and pressed by the atmosphere, the liquid teeters, in theory, on the 
+brink of an atomic-bomb-sized explosion.
+
+ Nonetheless, the glass of water remains just that--a glass of water.
+
+"In some poetic sense, it's a miracle," says Elliott H. Lieb, a mathematical 
+physicist at Princeton University. "When you consider all of the physical 
+forces at work in matter, even in something as simple as a glass of water, it's 
+sort of miraculous that everything doesn't just collapse and then, releasing 
+huge amounts of energy, blow up."
+
+ Most people regard this fact as too commonplace to think about, Lieb muses. 
+"It seems so trivial. It's just the way things are. Except, when you think 
+about the problem in detail, it really is sort of amazing."
+
+ Putting aside the seeming absurdity of an inquiry into why atoms don't 
+collapse, the question raises serious mathematical issues in quantum mechanics 
+and field theory. "Classical physics can't account for the fact that matter is 
+stable and occupies space," says Mary Beth Ruskai, a mathematical physicist at 
+the University of Massachusetts, Lowell. There's nothing in the classical laws 
+of dynamics and electromagnetism to prevent orbiting electrons from spiraling 
+inward to a nuclear doom.
+
+"People interested in this question have had to rely on some very gnarly 
+mathematics to get answers."
+
+ Among such people are Lieb and his collegues Jan Philip Solovej, also at 
+Princeton, and Michael Loss of the Georgia Institute of Technology in Atlanta. 
+In the Aug. 7 Physical Review Letters, the three mathematical physicists tackle 
+the question of why matter remains stable in an intense magnetic field--even 
+one so powerful that it may exist only on a neutron star. To Lieb, whose 
+involvement with this problem spans 28 years, the issue of matter's stability 
+constitutes a "foundational problem" of modern physics.
+
+ Speculations about matter's stability hark back to the early days of quantum 
+mechanics. In 1931, Austrian physicist Paul Ehrenfest observed that someone 
+holding a piece of metal or stone should be "astonished that this quantity of 
+matter should occupy so large a volume."
+
+"Admittedly," Ehrenfest remarked, "the molecules are packed tightly together 
+and likewise the atoms within each molecule. But why are the atoms themselves 
+so big?" For an answer, he summoned a principle first stated by Viennese 
+physicist Wolfgang Pauli: No two particles of the same kind can occupy the same 
+quantum state at the same time. Pauli's principle means that electrons can't 
+all fall into the lowest energy, smallest orbital around an atomic nucleus but 
+have to fill successively larger orbitals.
+
+"That is why atoms are so unnecessarily big, and why metal and stone are so 
+bulky," Ehrenfest concluded.
+
+ Unfortunately, that intuitively reasonable explanation did not fully satisfy 
+theoretical physicists, who wanted a more mathematically complete answer. So 
+individually and together they picked and pawed at the problem, tinkered with 
+the equations of quantum mechanics and field theories, and eventually, 
+frustrated by a lack of clarity, put the issue to rest for about 30 years.
+
+ In the mid-1960s, physicist Andrew Lenard, now at Indiana University in 
+Bloomington, posed a question: Is it possible to prove that matter is 
+inherently stable? Freeman J. Dyson, a mathematical physicist at the Institute 
+for Advanced Study in Princeton, N.J., became enchanted with the question.
+
+ Dyson and Lenard mulled the problem over for some time--egged on by the offer 
+of a bottle of wine to anyone who could prove matter's inherent stability--then 
+served up a paper in the August 1967 Journal of Mathematical Physics.
+
+ Their report proved that with Pauli's exclusion principle, matter is stable; 
+without it, matter collapses into a dense state, creating a situation in which 
+"the assembly of any two macroscopic objects would release energy comparable to 
+that of an atomic bomb."
+
+ In effect, Dyson and Lenard had mathematically demonstrated the truth of 
+Ehrenfest's assertion by showing that Pauli's principle of exclusion remained 
+essential to keep matter stable. To build their argument, however, the two 
+researchers had to simplify their model of matter. They had to put aside 
+temporarily some real-world phenomena, such as magnetic and gravitational 
+fields, and consider only the subtle interactions of attractive and repulsive 
+forces between charged particles within an atom.
+
+ Enter Lieb. He and physicist Walter Thirring of the University of Vienna found 
+a simpler proof of matter's stability than the one put forth by Dyson and 
+Lenard, using mathematical techniques that relied more heavily on physical 
+intuition.
+
+ Working in concert with many collaborators, Lieb then turned his attention to 
+examining more carefully those situations in which matter does, in fact, 
+collapse. For example, under the influence of gravitational forces, which only 
+attract and never repel, matter will collapse despite the effects of the Pauli 
+exclusion principle--a situation that presents a problem only for an object as 
+massive as a star.
+
+ In 1931, the late Nobel laureate Subrahmanyan Chandrasekhar predicted that 
+stars with more than about 1.4 times the sun's mass would, on running out of 
+nuclear fuel, collapse under their own gravity. More than half a century later, 
+Lieb and H.-T. Yau, a mathematical physicist now at New York University's 
+Courant Institute, proved that, starting from the basic principles of quantum 
+mechanics, Chandrasekhar had indeed been correct.
+
+ On earth, however, matter--not subject to star-sized gravitational 
+forces--behaves tamely.
+
+"It's crazy," says Loss. "Look around and everywhere we see matter extended, 
+proportional to the number of particles. And yet atoms are incredibly tiny, 
+each one being essentially a void."
+
+ To get a deeper feeling for the problem, says Loss, bear in mind that matter 
+is mostly space. Wispy electron clouds hover on the outskirts, relatively 
+speaking, of an atom's tiny core, with vast distances extending between the 
+nuclei of atoms in every molecule--even in a dense solid. And yet, if someone 
+takes 2 quarts of water and pours them into one pitcher, that person will have 
+a half gallon of drinkable beverage rather than, say, one quart of "compact" 
+water that is twice as dense. The water molecules flow together, interact with 
+one another, and respond to each other's electrical charges. But the volume and 
+energy remain proportional to the amount of stuff, or number of atoms, present, 
+says Loss.
+
+"The amazing thing, from a scientific point of view, is that this phenomenon 
+can be explained mathematically," he continues. Starting with the equations of 
+quantum mechanics, physicists can now show that those mathematical expressions 
+must have stable solutions--implying that matter itself must remain stable.
+
+ The fact that someone can't simply push two stones together into one 
+superdense rock falls in with commonsense notions of how solid objects behave 
+on Earth. The situation changes remarkably when matter comes in contact with a 
+very intense magnetic field, however. Such fields, on the order of 1 trillion 
+gauss--or more than 1 million times stronger than the most extreme magnetic 
+fields produced artificially in laboratories--could compress atoms into a state 
+so dense that one would expect them to merge into a single explosive, subatomic 
+stew.
+
+ In their Aug. 7 report, Lieb, Loss, and Solovej look at the stability of 
+matter under the influence of an intense magnetic field. Such fields are not 
+the "garden variety found on Earth," says Loss, but ones trillions of times 
+greater--at an intensity that might occur on a neutron star.
+
+ A neutron star, the result of a massive star's collapse, generates crushing 
+magnetic and gravitational fields. Such stars have the power, for example, to 
+squeeze Earth into an object the size of a marble. But such large fields simply 
+do not exist on Earth. Moreover, to create fields of such intensity requires a 
+huge amount of energy.
+
+ On Earth, when a person "bangs two stones together, for instance, the most one 
+expects to see is a spark," says Lieb. "Nothing dramatic happens." But what if 
+the energy contained in those two rocks were not packaged conveniently in 
+trillions of separate atoms? Under extreme conditions, if those packages of 
+mass and energy were to combine, matter could compress, collapse, and explode. 
+Indeed, there are instances in nature--such as stellar explosions--where matter 
+undergoes just such a sequence of events. Those circumstances, however, involve 
+enormous gravitational forces, for greater than those present on Earth.
+
+"There are two issues here, one weak, one strong," Lieb says.
+
+"The weaker issue is that matter is stable because there's a limit to the 
+amount of energy that each atom can have.
+
+"The stronger issue is that the energy of matter remains strictly proportional 
+to the number of particles." In other words, the amount of energy and the 
+number of atomic particles increase at the same rate. This phenomenon of nature 
+is rooted in certain immutable physical constants.
+
+ In essence, what Lieb and his colleagues have shown mathematically is that 
+even under extreme conditions matter remains stable. As elucidated by the 
+equations of quantum mechanics, which govern atomic behavior, matter tolerates 
+the onslaught of an extremely large magnetic field without colllapsing.
+
+ Earlier research had shown that if, for some reason, a few of nature's 
+critical physical constants ever grew too large, matter would subsequently 
+become unstable. Now the three scientists show that because those constants are 
+indeed sufficiently small, the energies of both the fields and the atomic 
+particles balance out in such a way that, together, they remain stable.
+
+"We have proved that under these conditions, the energy is not only finite but 
+also proportional to the number of particles," Lieb says, "as it should be in 
+order to have the strong kind of stability."
+
+ Moreover, by clarifying mathematically the conditions under which matter does 
+remain stable, Lieb and his colleagues may help to shed light on those in which 
+it doesn't, such as the conditions believed to be present in stars headed for 
+collapse and explosion.
+
+"This is not a trivial result," says Ruskai. "Ironically, we need quantum 
+mechanics to explain simple facts about ordinary life.
+
+"If matter weren't stable, we wouldn't exist," she continues. "And even if we 
+could somehow exist under unstable conditions, it would be virtually impossible 
+to function normally in everyday life. We'd be at risk of setting off 
+nuclear-sized explosions every time we put a glass of water down on a table."
+
+"Elliott Lieb has become the central figure in this area of research," says 
+Dyson. "He's done most of the important work during the last 20 years. I'm 
+delighted with the results on magnetic fields. In general, this issue gets 
+right to the heart of the constitution of the universe."
+
+ The subject is not closed by any means, says Dyson. As in every area of 
+science, each solution poses new questions. "There are still open questions 
+regarding the interactions of large numbers of atoms," he notes.
+
+"But in this field of research, Elliott is like the Moses who has shown us the 
+way to the promised land," Dyson adds. "Though he's not quite there yet."
+
+ copyright 1996 
+
+

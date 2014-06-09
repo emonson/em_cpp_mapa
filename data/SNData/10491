@@ -1,0 +1,249 @@
+Logic in the Blocks: Science News Online, Aug. 17, 2002
+
+ Logic in the Blocks
+
+ Simple puzzles can give computers an unexpectedly strenuous workout
+
+ Ivars Peterson
+
+ The parking-lot attendant at the trendy P'SPACE Club has a tough job. Whenever 
+someone leaves the nightspot, she must retrieve the patron's car from the 
+crammed lot, often having to move other vehicles out of the way to clear a path 
+to the exit. She has to do it quickly to earn a generous tip, but being 
+efficient can be a real challenge. The attendant's quandary is an example of 
+what computer scientists and engineers describe as a motion-planning problem. 
+Such challenges can arise when a robot needs to shift bulky crates from place 
+to place within a crowded warehouse or find its way through an obstacle-strewn 
+maze. Motion-planning predicaments also come up in seemingly simple puzzles in 
+which a would-be solver slides blocks along given paths to achieve a desired 
+configuration.
+
+ In recent years, sliding-block puzzles have served as proving grounds for 
+novel motion-planning strategies. They have also attracted the attention of 
+computer scientists interested in the fundamental limits of computation-for 
+example, in determining the relative running time or amount of memory a 
+computer would require to solve various types of demanding problems in their 
+most difficult form (SN: 5/6/00, p. 296: ).
+
+ When they confront a puzzle, researchers work out what resources a computer 
+would need to decide whether the challenge is solvable. Where solutions exist, 
+the investigators try to determine how many there are or identify the one with 
+the fewest steps.
+
+ One sliding-block puzzle that has played a starring role in several recent 
+research efforts is Rush Hour, a commercial product first distributed in the 
+United States in 1996. A player starts with rectangular blocks shaped like cars 
+and trucks, each in a given location on a square tray, and figures out a 
+sequence of moves that frees a target vehicle from the traffic jam and gets it 
+to the exit.
+
+ A study by Gary W. Flake and Eric B. Baum of the NEC Research Institute in 
+Princeton, N.J., now establishes that Rush Hour is indeed a formidable puzzle. 
+From a computational standpoint, their analysis puts Rush Hour on the same 
+level of difficulty as such demanding games as Othello (SN: 8/16/97, p. 100) 
+but below that of chess and Go.
+
+"We find these results to be surprising considering the simplicity of the 
+game," Flake and Baum remarked in the January Theoretical Computer Science.
+
+ The findings suggest that "unjamming a bunch of cars can be a challenging 
+task," Flake notes. Flake and Baum subtitled their Rush Hour research report: 
+"Why you should generously tip parking-lot attendants."
+
+ Starting blocks
+
+ Even in the earliest days of computers, researchers couldn't resist 
+programming them to play games and solve puzzles. It was an entertaining way to 
+show off one's programming prowess, test a computer, try out problem-solving 
+strategies, and evaluate rival approaches for organizing data or performing 
+searches (SN: 8/2/97, p. 76: ).
+
+ A few years ago, when Baum developed a novel computer program that could learn 
+how to solve specific problems, he turned to a puzzle called Blocks World to 
+test his scheme. The subject of dozens of research papers during the past few 
+decades, Blocks World requires sorting and combining several stacks of colored 
+blocks to match a taller stack.
+
+ Dubbed Hayek, Baum's learning system consisted of a collection of modules-each 
+one a little computer program-that, in effect, competed to make contributions 
+to the solution of a given problem. In the evolving system, the modules making 
+the biggest contributions would be the ones most likely to survive. The system 
+would typically find a procedure for solving a big problem by breaking up the 
+lengthy search for a solution into a sequence of achievable interim goals.
+
+ Hayek proved surprisingly successful at solving Blocks World puzzles, easily 
+outperforming other machine-learning systems. Working with colleague Igor 
+Durdanovic, Baum then turned to Rush Hour to see whether the same 
+divide-and-conquer strategy would be as successful in another domain.
+
+ In a Rush Hour traffic jam, each vehicle on the six-by-six-square tray is one 
+square wide and either two or three squares long. It can travel only backward 
+and forward along the row in which it is initially placed and can't change its 
+orientation. The player's goal is to clear a path for a designated car so it 
+can reach the only exit on the grid. "Rush Hour seemed to be a good candidate 
+[for testing Hayek] because of the finite configuration and the simple action 
+space," Flake notes.
+
+ While straightforward to play, Rush Hour turned out to be considerably more 
+challenging to the computer than Blocks World is. "No one knew this at the 
+time," Flake says.
+
+ Tricky moves
+
+ Flake and Baum had anecdotal evidence that Rush Hour is difficult. In certain 
+Rush Hour puzzles, for example, it takes dozens of moves to free the target 
+car, with some vehicles being forced to move back and forth many times. Such 
+behavior reflects subtle and complicated interactions among the vehicles, even 
+on a six-by-six grid, the researchers say.
+
+ In theoretical computer science, the difficulty of problems-or puzzles and 
+games-is assessed in terms of the computational resources required to solve 
+them. Roughly speaking, how much do the calculation time and memory needs 
+increase as a problem gets bigger? For instance, what does it take to solve 
+Rush Hour played on a 12-by-12 grid with more cars and trucks than the standard 
+allocation?
+
+ To get a measure of Rush Hour's computational complexity, Flake and Baum 
+considered a generalized version of the puzzle-one in which the grid could be 
+any number of cells wide and the single exit could be placed at any location on 
+the grid's perimeter. They focused on the computer resources that would be 
+required to determine whether there's a legal sequence of moves that permits 
+the target car to exit.
+
+ The researchers proved that their generalized Rush Hour belongs to a category 
+of computational problems described as PSPACE. This designation applies to 
+challenges in which a computer can search through all the possibilities to find 
+the answer using a reasonable amount of memory-defined in computer science as 
+"a polynomial amount of space." Such a search in the case of Rush Hour takes an 
+amount of memory that increases algebraically with grid size, but the time 
+required may increase exponentially.
+
+ Even more strikingly, Flake and Baum established that the seemingly simple 
+Rush Hour is as difficult as any other problem that belongs in PSPACE. Rush 
+Hour's computational complexity is greater than that of Blocks World, whose 
+time to a solution increases algebraically rather than exponentially. However, 
+Rush Hour is less difficult than generalized chess, where both memory and time 
+requirements increase exponentially as the board size gets bigger.
+
+ Inspired by the NEC work on Rush Hour, Robert A. Hearn and Erik D. Demaine of 
+the Massachusetts Institute of Technology applied different mathematical 
+formulations to the game and confirmed Rush Hour's position in the hierarchy of 
+computational difficulty.
+
+ Flake calls that work "a nice and natural extension that allows one to map 
+many other [motion-planning] problems into a framework that is very similar to 
+the one we originally developed. As such, it allows one to [establish] the 
+computational properties of many other problems."
+
+ Hearn and Demaine have already taken advantage of their techniques to show 
+that a variety of sliding-block puzzles belongs in the PSPACE category, 
+including simplified versions of Rush Hour in which all blocks are one-by-two 
+rectangles, like dominoes, and can slide in any direction.
+
+ The researchers presented their findings at the International Colloquium on 
+Automata, Languages, and Programming, held last month in Malaga, Spain. Hearn 
+and Demaine now hope to apply their techniques to several other motion-planning 
+problems to determine their computational difficulty.
+
+ One project examines generalized chess. Given two configurations of chess 
+pieces, each on a board that is a certain number of squares wide, is it 
+possible to use legal moves to get from one configuration to the other?
+
+ Another project analyzes Lunar Lockout, a commercial puzzle in which 
+robot-shaped blocks can slide along rows and columns of a grid until they 
+collide with another block. The goal is to bring a particular robot to a 
+specified position.
+
+ Traffic-jam logic
+
+ There's an intriguing connection between computers and sliding-block puzzles 
+that belong to the PSPACE category. "You can build computers out of them," 
+Hearn says. Indeed, he can imagine various arrangements of sliding blocks as 
+logic components in a hypothetical computing machine.
+
+ A digital computer contains circuitry that enables it to perform various 
+actions, from storing a bit of information to adding digits and sorting data. 
+Fundamental to these operations are electronic gates for handling Boolean 
+logic. For example, a so-called AND logic gate gives 1 as the output if two 
+input signals are both 1, and it gives 0 as the output if the input signals are 
+both 0 or one is 0 and the other is 1.
+
+ Flake and Baum demonstrated that certain block configurations in a variation 
+on Rush Hour permit the same sort of logic operations. A sliding-block 
+configuration doesn't by itself perform a logic operation, however.
+
+"It merely permits it to happen if, and only if, there exists a sequence of car 
+moves that allow it to happen," they point out.
+
+ Hearn and Demaine worked out a simpler, more flexible scheme for representing 
+those operations. Within this framework, they defined sliding-block logic gates 
+equivalent to AND gates and other logic components of conventional computers.
+
+ For example, they devised a logic gate from a nine-by-nine grid with two 
+places that vehicles can enter and one exit. The AND operation is successful if 
+both inputs begin a sequence of possible moves that releases a target car from 
+the grid.
+
+"We showed there are just a few different kinds of primitive gates that suffice 
+for building computers," Hearn says. In general, he adds, "if you're allowed to 
+use arbitrarily many blocks, you can make a sliding-block puzzle that can . . . 
+solve any given problem that a [computer] can solve."
+
+ Indeed, Flake adds, "if one wanted to build a physically realizable model of 
+computation from nanoscale components, [a sliding-block puzzle] is a pretty 
+good candidate because the cars need move only a very small distance to 
+complete the computation."
+
+ The fact that it's possible to turn sliding-block puzzles into a model of 
+computation underscores how versatile such puzzles can be. A Blocks World game, 
+for instance, wouldn't serve that purpose. The computational possibilities also 
+suggest that developing an all-purpose strategy for solving sliding-block 
+puzzles is out of reach. "Because we know that computer programs can do 
+complicated things, we should not expect to find a simple theory of 
+sliding-block puzzles," Hearn argues.
+
+ Puzzle mania
+
+ Sliding-block puzzles have come a long way since puzzle maker Sam Loyd 
+introduced the fiendish "14-15" puzzle to the United States in the 1870s. The 
+puzzle consisted of 15 square tiles numbered from 1 to 15 in a square tray 
+large enough to hold 16 tiles. Tiles 14 and 15 started out interchanged, and 
+the player had to restore all the tiles to numerical order. The puzzle was a 
+sensation, but no one could solve it. The sneaky truth was that Loyd's puzzle 
+was insoluble-something that contemporaneous mathematicians soon proved.
+
+ Inspired by Loyd's example and seeking to tap into the public's evident 
+puzzle-solving frenzy, designers all over the world vied to create addictive 
+pastimes of their own. Their sliding-block puzzles often featured differently 
+shaped pieces in rectangular trays. The Donkey Puzzle, for instance, required a 
+player to move a two-by-two block to a specified location in a four-by-five 
+tray jammed with several unit squares and one-by-two rectangular blocks.
+
+ Japanese designer Nob Yoshigahara came up with the idea for Rush Hour in the 
+late 1970s. In Japan, it initially appeared as a commercial product called 
+Tokyo Parking Lot, and players were expected to solve tough traffic-jam 
+challenges. The current U.S. edition offers puzzles that range in difficulty 
+from "beginner to expert."
+
+ Although mathematicians had developed a theory for solving any sliding-block 
+puzzle in which the pieces are all uniform squares, they could not do so for 
+puzzles in which the blocks have different shapes. Indeed, there still isn't a 
+general-purpose way-other than by trial and error-to determine whether it's 
+possible to go from one particular block arrangement to another given array. 
+Even in individual cases, such as Rush Hour, where mathematicians can 
+demonstrate that there's a solution, they can't readily determine the minimum 
+number of moves to reach the desired pattern.
+
+ Today's popular sliding-block puzzles-involving rectangular blocks instead of 
+just squares-pose surprisingly formidable challenges for puzzle enthusiasts. 
+Moreover, they give scientists a new way of looking at what computers do. A 
+sliding-domino puzzle, says Hearn, "is perhaps the simplest known physical 
+system that exhibits computational properties."
+
+**************** Comments on this article are welcome. Contact Ivars Peterson 
+at .
+
+ If you have a comment on this article that you would like considered for 
+publication in Science News, please send it to .
+
+

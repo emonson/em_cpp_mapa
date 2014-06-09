@@ -1,0 +1,67 @@
+Simplicity makes for superfast computing, Science News Online (12/11/99)
+
+ Simplicity makes for superfast computing 
+
+ By I. Peterson
+
+ A radically new approach to computer design promises to deliver a 
+supercomputer 500 times faster than any available today. Such a 
+high-performance machine would be capable of performing more than 1 quadrillion 
+operations per second.
+
+ This week, IBM Research in Yorktown Heights, N.Y., announced a $100 million, 
+5-year exploratory research initiative to build such a computer. Nicknamed Blue 
+Gene, it would be used initially to model how proteins fold themselves into the 
+correct shapes to perform specific biological functions (SN: 3/6/99, p. 150).
+
+"The IBM announcement of its new research project is very exciting and 
+important to high-end computing," says Thomas Sterling of the California 
+Institute of Technology's Center for Advanced Computing Research in Pasadena. 
+The project highlights innovative computer architecture (SN: 4/15/95, p. 234) 
+as being crucial for rapid advances in computational power, he adds.
+
+ The proposed machine would consist of about 1 million processors, which would 
+share the computational load.
+
+ Simplicity is key to the supercomputer's anticipated speed. "We use an 
+ultraminimalist architecture for the processor design," says IBM's Monty M. 
+Denneau.
+
+ Processors in today's computers typically carry several hundred built-in 
+commands. Most of those instructions, however, aren't actually used in many 
+types of scientific computations.
+
+ The IBM design cuts the number of instructions per processor down to a 
+considerably more manageable 57. Moreover, each processor would be able to 
+handle eight tasks at once instead of having to complete one task before going 
+on to the next.
+
+"Our goal was to reduce the size of the individual processor to almost nothing 
+but to have a large number of them," Denneau says.
+
+ Each of the computer's 32,000 microchips would hold 32 processors and 32 
+high-performance memory units for storing information and sharing it among 
+processors. Keeping memory and processor close together should speed data 
+access and greatly reduce power requirements.
+
+ Even so, the computer, which would cover an area roughly the size of a tennis 
+court, would consume about 1 megawatt of power and require a sophisticated 
+cooling system.
+
+ Denneau and his coworkers have also developed an innovative scheme for 
+monitoring computations, checking for processor failures, and if necessary, 
+redistributing the workload among still functioning processors on a chip. 
+However, "it's going to take a couple of years to work out all the details," 
+Denneau notes.
+
+"It's a very interesting, revolutionary architecture," comments David V. 
+Chudnovsky of the Institute for Mathematics and Advanced Supercomputing at the 
+Polytechnic University in Brooklyn, N.Y.
+
+ Even though fewer instructions are available, the simplicity should make the 
+computer easier to program for applications ranging from modeling protein 
+folding to performing fluid-dynamics calculations (SN: 2/27/99, p. 136), 
+Denneau says.
+
+ From Science News, Vol. 156, No. 24, December 11, 1999, p. 373. Copyright C 
+1999, Science Service. 

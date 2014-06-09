@@ -1,0 +1,101 @@
+Science News Online (6/20/98): Power Cracking of Cash Card Codes
+
+ June 20, 1998 
+
+ Power Cracking of Cash Card Codes
+
+by  I. Peterson
+
+ Loaded with electronic cash that has been protected by an encryption scheme, a 
+smart card represents a convenient, versatile medium for business transactions. 
+Roughly the size of a standard credit card, it incorporates circuitry for 
+processing information and keeping records.
+
+ That microcircuitry also makes it vulnerable to attack. Cryptographers have 
+now identified techniques for breaking the security system built into a smart 
+card. They cracked the codes by monitoring power consumption as the circuitry 
+performed its cryptographic operations.
+
+"We have implemented these attacks against a large number of smart cards and, 
+at this point, do not believe that any cryptographic smart cards on the market 
+are immune to these analysis techniques," says Paul Kocher of the consulting 
+firm Cryptography Research in San Francisco.
+
+ Last week, Kocher and his coworkers Joshua Jaffe and Benjamin Jun posted their 
+report revealing the security flaw. It can be found on the World Wide Web at .
+
+"[The flaw] is indeed a serious security threat to many existing systems," says 
+Ross Anderson of the University of Cambridge Computer Laboratory in England. 
+"It allows relatively low-budget attackers to get at key material that 
+previously required a moderately well-equipped lab."
+
+ The integrated circuits on smart cards consist of vast arrays of transistors, 
+which act as voltage-controlled switches. Different microprocessor instructions 
+initiate characteristic switching patterns. The resulting motion of electric 
+charge consumes power and generates electromagnetic radiation, which can be 
+detected outside the card.
+
+ Researchers have already demonstrated that it is possible to accumulate enough 
+data to deduce secret keys -- strings of 1s and 0s -- required to decrypt 
+confidential information stored on smart cards. Using sophisticated tools, 
+they've measured the duration of cryptographic operations (SN: 12/16/95, p. 
+406) or exploited processing errors (see , SN: 2/1/97, p. 78).
+
+ In the new threat, an attacker can use less expensive equipment to monitor a 
+smart card's electronic responses. Fluctuations in power consumption correspond 
+to different stages in a cryptographic process. By magnifying the signal, it is 
+possible to detect individual microprocessor instructions and distinguish 
+between various arithmetic operations.
+
+ A more sophisticated analysis of these data relies on the application of 
+statistical and error-correction techniques to extract information useful for 
+deducing secret keys. Once the secret key is found, a criminal could make a 
+copy of the smart card and obtain unauthorized access to someone else's account 
+or, in some systems, automatically refill the card with cash.
+
+ Such threats, however, require that criminals have special equipment attached 
+to or physically near the card. Smart cards are safe when stored in a wallet or 
+purse, Kocher says.
+
+ Stolen or lost smart cards are another matter, because they can be connected 
+to a power sensor and computer.
+
+ One approach to increased security is to recognize a smart card's 
+vulnerability. An electronic cash system used by Visa International, for 
+example, checks for unusual account activity. When that system was designed, 
+Anderson says, "we did not know as much about breaking into smart cards as we 
+do now, but we suspected that it would be done." Other companies have also 
+started to adopt countermeasures.
+
+ Security expert Peter G. Neumann of SRI International in Menlo Park, Calif., 
+notes that "unfortunately, attacks such as Paul Kocher's merely remind us of 
+how difficult -- if not impossible -- it is to achieve security that can 
+withstand very determined and well-funded attacks."  
+
+ From Science News, Vol. 153, No. 25, June 20, 1998, p. 388. Copyright O 1998 
+by Science Service.
+
+ References: 
+
+ Additional information about differential power analysis is available at .
+
+ Further Readings: 
+
+ Peterson, I. 1997. . Science News 151(Feb. 1):78.
+
+______. 1995. Timing attack beats cryptographic keys. Science News 148(Dec. 
+16):406.
+
+ Sources: 
+
+ Ross Anderson University of Cambridge Computer Laboratory New Museums Site 
+Pembroke Street Cambridge CB2 3QG United Kingdom Web site: 
+
+ Paul Kocher Cryptography Research870 Market Street, Suite 1088 San Francisco, 
+CA 94102 Web site: 
+
+ Peter G. Neumann SRI International333 Ravenswood Avenue Menlo Park, CA 94025
+
+  
+
+copyright 1998

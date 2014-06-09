@@ -12,6 +12,7 @@ Duke University
 */
 
 #include "Options.h"
+#include "SvdlibcSVD.h"
 #include "UtilityCalcs.h"
 #include <vector>
 #include "Eigen/Dense"
@@ -32,8 +33,8 @@ public:
         // K = max(labels);
         int K = labels.maxCoeff();
         
-                // DEBUG
-                std::cout << "dims size " << dims.size() << " K " << K << std::endl;
+        // DEBUG
+        // std::cout << "dims size " << dims.size() << " K " << K << std::endl;
 
         // for k = 1:K
         // NOTE: labels that should be ignored need to be set negative
@@ -65,11 +66,12 @@ public:
                 cls_k.rowwise() -= centers[k].transpose();
                 
                 // [~,~,vk] = svds(cls_k,dims(k));
-                JacobiSVD<MatrixXd> svd(cls_k, Eigen::ComputeThinU | Eigen::ComputeThinV);
+                // JacobiSVD<MatrixXd> svd(cls_k, Eigen::ComputeThinU | Eigen::ComputeThinV);
+                SvdlibcSVD svd(cls_k, dims(k));
                 ArrayXXd vk = svd.matrixV();
                 
                 // DEBUG
-                std::cout << "vk cols " << vk.cols() << " dims(k) " << dims(k) << std::endl;
+                // std::cout << "vk cols " << vk.cols() << " dims(k) " << dims(k) << std::endl;
                 
                 // bases{k} = vk';
                 bases.push_back(vk.leftCols(dims(k)).transpose());

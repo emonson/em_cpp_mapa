@@ -1,0 +1,244 @@
+Hop . . . Hop . . . Hopbots!: Science News Online, Feb. 10, 2001
+
+ Hop . . . Hop . . . Hopbots!
+
+ Designers of small, mobile robots take cues from grasshoppers and frogs
+
+ Peter Weiss
+
+ Rush Robinett got the idea for his lab's new robot while out on his father's 
+New Mexico farm. He was catching grasshoppers for trout bait and noticed that 
+when he reached for the grasshoppers, they seemed to spring in random 
+directions. They fell on their sides as they landed and then struggled back 
+onto their feet before springing again.
+
+ A robot designer at Sandia National Laboratories in Albuquerque, Robinett 
+realized that this kind of grasshopper mobility might be just the thing for 
+developing new kinds of small, mobile robots. Program managers at the Defense 
+Advanced Research Projects Agency (DARPA), in Arlington Va., had been 
+interested in creating wide-ranging minirobots for years.
+
+ As both Robinett and his military sponsors knew only too well, small robots 
+have a big problem.
+
+ Consider Sojourner, NASA's celebrated hassock-size rover that poked around a 
+tiny patch of Mars as part of the 1997 Pathfinder mission. According to the 
+dictionary, to sojourn implies to stop and stay in one place for a spell. It 
+seems that the small, wheeled robot did just that nearly every time a rock as 
+big as itself blocked its way. Sometimes, it got hung up for days on end.
+
+ Not exactly the kind of get-up-and-go you want from a robot sent millions of 
+kilometers to explore exotic worlds.
+
+ Agencies like NASA and the Department of Defense have been championing the 
+idea of little robots because they can be cheap and portable but can still 
+carry a payload-cameras, scientific instruments, or perhaps bombs. However, "as 
+you get smaller, obstacles the size of yourself come along much more 
+frequently," explains Sandia's Barry Spletzer. "If you're an Abrams tank, there 
+are not many obstacles your size, but if you're an ant, every blade of grass is 
+bigger than you are."
+
+ While Sojourner was getting stuck on Martian rocks, two independent groups-the 
+Sandia researchers and a joint team from NASA's Jet Propulsion Laboratory (JPL) 
+and the California Institute of Technology (Caltech), both in 
+Pasadena-independently hit upon the same new concept for dealing with the 
+problem of obstacles.
+
+ From the robot's perspective, it goes something like this: Throw yourself as 
+high and as far as you can in the general direction you want to go. After the 
+crash landing, right and reorient yourself. Then, do it again until you reach 
+your goal. In the past few months, each group has unveiled a prototype of what 
+it intends to develop into a new generation of hopping robots.
+
+ The Sandia robot looks nothing like a grasshopper, but it sure can jump. 
+"They've put an emphasis on really good thrusting. It's amazing," comments Joel 
+Burdick, one of the designers of the rival JPL/Caltech machine.
+
+ Dubbed by its inventors as "the knight" -after the chess piece that leaps over 
+others-the robot is basically a piston-driving combustion chamber mounted 
+inside a spherical, plastic shell about the size of a grapefruit. To propel 
+each of the half-kilogram robot's leaps, a small charge of liquid propane or 
+other fuel ignites within the chamber. This slams the piston against the 
+ground. Typically, that push-off hurls the device about 1 meter into the air 
+and a couple of meters away from its starting point.
+
+ The New Mexico team is also working on a powerful, 2.5-kg version of the 
+robot, which has leaped 4 m high and 5 m away in preliminary tests, says Sandia 
+engineer Gary J. Fischer.
+
+ When the hopper lands, the imbalance between its relatively lightweight, 
+spherical top and relatively heavy, cone-shaped base causes it to automatically 
+right itself. Then, a small, battery-powered motor rotates an internal, 
+off-center weight to pivot the device around and realign it according to its 
+built-in compass.
+
+ Like a tacking sailboat, the robot can head more-or-less in a chosen compass 
+direction. "Even though individual hops are fairly inaccurate, over the long 
+term you get where you're going," Spletzer says. The Sandia team figured that 
+more sophisticated navigation would be unnecessary for the uses their sponsors 
+had in mind for the robot and would only add to the complexity, weight, and 
+cost.
+
+ Initially, DARPA officials envisioned a small, rugged, camera-equipped robot 
+that soldiers or a SWAT team could toss into a building to snoop around. Then, 
+another DARPA program took over funding for the robot's development. This 
+program's goal is to create mobile antitank mines that can shuffle around the 
+minefield and close up any gaps that enemy mine-clearing actions might have 
+opened.
+
+ The energy-efficient knight can hop thousands of times on a 20-gram fuel tank, 
+enabling it to wander for at least several kilometers before running out of 
+gas. With that kind of range, the device might serve other applications as 
+well. "My favorite is for planetary exploration," Spletzer says.
+
+ The robot designers at JPL and Caltech found their inspiration in another 
+hopper in the animal kingdom. They call their electrically powered invention 
+"frogbot."
+
+ By appearances alone, the 40-centimeter-tall aluminum and plastic gizmo seems 
+more like the skeleton of some big-beaked bird than a frog.
+
+ Watch it move, however, and the reason for the frog moniker jumps out: A pair 
+of hinged shafts, bent like a pair of squatting frog's legs and tethered 
+together at the knees by a strong spring, suddenly straighten. The action 
+resembles a frog's leap, except the legs share a single foot.
+
+ Since it falls over when it lands, frogbot is equipped with plastic levers for 
+righting itself. The levers push against the ground, forcing the 1.5-kg device 
+erect. Then the motor pivots the device on its base to point in the right 
+direction and rebends the legs for the next leap.
+
+ In the prototype, an operator controls that direction, but future versions 
+will contain an orientation sensor. "Mars, for example, has no [planetwide] 
+magnetic field, [so] it is necessary to use a sensor that reads the position of 
+the sun in the sky," says JPL engineer Paolo Fiorini, who heads the project.
+
+ On Earth, frogbot lunges about 2 m per leap-roughly as far as the Sandia 
+robot. But in the low gravity of Mars, it would go three times as far in a 
+single bound.
+
+ So far, the frogbot prototype hops only a half-dozen times before it must 
+recharge its batteries, says Fiorini. However, he notes, models ultimately sent 
+to space will rely on solar power, which will enable them to roam indefinitely.
+
+ In 5 to 10 years, NASA could be sending hoppers into space by the hundreds, 
+predicts Neville I. Marzwell, manager of JPL's advanced concepts and technology 
+innovation office. His office and the National Science Foundation are funding 
+the JPL-Caltech hopper's development.
+
+ Spacecraft would drop groups of hoppers onto planets, asteroids, or other 
+bodies. The robots would then fan out to explore the surface. Compared with 
+wheeled rovers, hoppers would have a better chance of climbing mountains or 
+descending into craters and canyons, Marzwell asserts.
+
+ Mission-ready hoppers in the coming years would probably be smaller and 
+lighter than today's experimental models. They would also be equipped with 
+cameras and one or two scientific instruments, each no larger than a sugar 
+cube. "Like a colony," Marzwell says, all the individual units would keep in 
+touch with a "mother brain" on the orbiter or on one large rover on the surface.
+
+ If hoppers stay simple and cheap, "the return on investment for science will 
+be 1,000 times what it is today," Marzwell predicts. More than $100 million was 
+spent on the lander and rover in the Pathfinder mission, he explains, whereas 
+hoppers dropped from an orbiter would probably cost considerably less than 
+$100,000 apiece and carry out more extensive scientific investigations.
+
+ What's more, Marzwell argues, the penalties-financial and scientific-from 
+losing a few of the robots would be minimal. "If I lose one or two, it's not a 
+big deal. The mission can go on," he says.
+
+ While both of the critter-inspired robots' designs leap beyond what 
+roboticists have done before, they're not the first efforts to make machines 
+hop.
+
+ The record for the largest, heaviest hopper ever conceived may go to a leaping 
+battle tank patented in 1945 by Henry W. Wallace. Although there's no record 
+that Wallace ever built the machine, he described it in detail in his patent 
+application. He proposed a multiton metal canister bristling with cannons and 
+bounding around on a single, telescoping leg. A driver would steer the leg, 
+powered by explosives and diesel fuel, as it hurled the tank into the air with 
+each thrust.
+
+ The idea of hoppers reappeared in a different guise when the space race began. 
+Translated from German, a 1959 book called The Moon Car (Hermann Oberth, 
+Harper) featured a hopping lunar vehicle.
+
+ In the 1960s, H.S. Seifert of Stanford University set to work on a hopping car 
+that he intended to transport astronauts around the moon's surface. He built a 
+prototype and gathered evidence that hoppers are a particularly efficient mode 
+of transportation in low gravity.
+
+ Robotic hoppers first appeared in the late 1970s. They were built by 
+scientists interested in both robotics and new ways to study how people and 
+animals walk and run. Those researchers built machines with sophisticated 
+mechanisms and controllers that mimicked the ways animals balance and propel 
+themselves.
+
+ Until this work, self-propelled robots were "like tables with moving legs," 
+says Marc Raibert, a pioneer of hopping and running robots who now heads a 
+company called Boston Dynamics in Cambridge, Mass. During the 1980s and 1990s, 
+Raibert and other scientists at Carnegie Mellon University in Pittsburgh, the 
+Massachusetts Institute of Technology, and elsewhere developed a zoo of robots 
+that hopped, ran, and even did flips.
+
+ The machines now under development in California and New Mexico represent a 
+new type of hopping robot because they don't maintain continuous motion or 
+balance. Practical considerations ruled out that kind of sophistication. Says 
+Robinett, "We've tried to make them as cheap, as dumb, and as simple as 
+possible."
+
+ Neither machine has yet debuted in a field application, but each one's 
+performance to date suggests where it might excel.
+
+ The Sandia researchers have, so far, created the faster jumper-leaping every 
+15 seconds or so. Their machine also lasts through many more hops on its stored 
+energy.
+
+ The California design, however, may prove to be the more capable navigator 
+because of two new features in its latest version. The frogbot now can control 
+its jumping angle and can drive the last centimeters to its target on recently 
+added wheels, Burdick says.
+
+ Compared with Sojourner, which roamed within only a few meters of its lander, 
+the new generation of hopping machines looks toward much broader horizons-in 
+space or on Earth.
+
+"There is nowhere [this technology] can't reach," Marzwell declares. "The 
+question is how many leaps will it take."
+
+ Hoppers may keep minefields lethal
+
+ Antivehicle mines scattered from aircraft form an effective barrier against 
+tanks and other military vehicles. However, if enemy troops blow up just one 
+lane of the devices, a dangerous force can rumble through the breach.
+
+ Clearing a lane would become much harder if the remaining mines immediately 
+flowed into the gap, much as water on a table, if you draw your finger through 
+it, says condensed-matter physicist Thomas W. Altshuler of the Defense Advanced 
+Research Projects Agency (DARPA) in Arlington, Va. He heads the agency's 
+program to develop a "self-healing minefield."
+
+ The program is exploring the possibility of mounting 2-kilogram mines-shaped 
+like half a coffee can-on the hopping robots invented by Sandia National 
+Laboratories of Albuquerque. Alternatively, tiny rocket thrusters built into 
+the mines' rims might flip neighboring mines into the breach "like 
+tiddlywinks," Altshuler says. Whichever propulsion method is eventually chosen, 
+the mobile mines will also require rudimentary intelligence and the ability to 
+communicate with each other.
+
+ By fall 2002, DARPA aims to field-test systems of 50 such mines. Scientists 
+are developing algorithms for determining how mines can efficiently move to 
+fill gaps. "Those are very hard questions" that become even more challenging in 
+actual minefields with hundreds or thousands of mines, Altshuler says.
+
+ Current U.S. military tactics call for sprinkling antipersonnel mines among 
+antivehicle mines to deter enemy troops from clearing the antivehicle weapons. 
+Because of those tactics, the United States has not signed the 1997 Ottawa 
+Convention banning mines designed specifically to kill or maim people.
+
+ Following a directive from then-President Clinton, DARPA is developing the 
+fluidlike minefield plan and other technologies to "obviate the need for the 
+antipersonnel mine" and clear the way for U.S. endorsement of the treaty, 
+Althshuler says.
+
+

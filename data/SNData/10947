@@ -1,0 +1,81 @@
+Science News Online (8/15/98): Cracking Kepler's sphere-packing problem
+
+ August 15, 1998 
+
+ Cracking Kepler's sphere-packing problem
+
+ By I. Peterson
+
+ The familiar piles of neatly stacked oranges at a supermarket represent a 
+practical solution to the problem of packing spheres as tightly as possible.
+
+ Now, a mathematician has proved that no other arrangement of identical spheres 
+fills space more efficiently. That result -- if verified -- would finally solve 
+a problem that has stymied mathematicians for more than 300 years.
+
+ Thomas C. Hales of the University of Michigan in Ann Arbor announced the feat 
+this week and posted his set of proofs on the Internet ().
+
+"These results are still preliminary in the sense that they have not been 
+refereed and have not even been submitted for publication," he noted, "but the 
+proofs are -- to the best of my knowledge -- correct and complete."
+
+ The proofs look convincing, says John H. Conway of Princeton University. 
+"Hales has been careful to document everything, so that an auditor who has 
+doubt over any particular point can actually go to the files and check that 
+point."
+
+ When supermarket personnel stack oranges, the bottom layer consists of rows 
+that are staggered by half an orange. Placing oranges in the hollows formed by 
+three adjacent oranges in the first layer produces the second layer, and so on. 
+Such an arrangement is known as face-centered cubic packing.
+
+ In 1611, Johannes Kepler asserted that this arrangement is the tightest 
+possible way to pack identical spheres. In the 19th century, Carl Friedrich 
+Gauss proved that face-centered cubic packing is the densest arrangement in 
+which the centers of the spheres form a regular lattice. That left open the 
+question of whether an irregular stacking of spheres might be still denser.
+
+ In 1953, Laszlo Fejes Toth reduced the Kepler conjecture to an enormous 
+calculation involving specific cases and later suggested that computers might 
+be helpful for solving the problem. Hales recently worked out a five-step 
+strategy to implement that approach.
+
+ In a key step, Michigan graduate student Samuel L.P. Ferguson proved that an 
+irregular arrangement based on a structure known as a pentahedral prism is less 
+dense than the face-centered cubic packing. That was a crucial finding because 
+preliminary computer experiments had indicated that the pentahedral prism might 
+be a counterexample to Kepler's conjecture.
+
+"There were a number of tricky things about solving the problem," Ferguson 
+says. Techniques developed to handle this case were useful in carrying out the 
+other steps, he explains.
+
+ The complete, five-part proof appears in a series of articles totaling more 
+than 250 pages. The computer programs and data files take up 3 gigabytes of 
+memory.
+
+ Hales used a variety of computational techniques to ensure the accuracy of his 
+calculations. He also worried about the possibility of errors introduced by 
+defective computer chips and any faults in the way a computer translates a 
+program into instructions to a microprocessor.
+
+"There is certainly quite a lot of room for error," Ferguson says. As one 
+check, he and Hales independently wrote computer programs to verify important 
+steps.
+
+ Nonetheless, "the problem with such proofs is . . . their length, not the 
+involvement with the computer," Conway says. "A long proof is inevitably weaker 
+than a short one just because there are so many more places where a slip might 
+have been made."
+
+ If it holds up, the Hales proof demonstrates that Kepler was right. This feat 
+may not, however, represent the last word on the problem.
+
+"I don't see why there shouldn't be a very short proof involving totally 
+different ideas," Conway says, "and [I] would hazard the guess that there is."
+
+ From Science News, Vol. 154, No. 7, August 15, 1998, p. 103. Copyright C 1998 
+by Science Service.
+
+

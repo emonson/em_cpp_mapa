@@ -1,0 +1,178 @@
+Filling In Blanks: Science News Online, May 11, 2002
+
+ Filling In Blanks
+
+ Automating the restoration of a picture's missing pieces
+
+ Ivars Peterson
+
+ Faced with a grime-encrusted, damaged painting, a conservator can spend many 
+months restoring the artwork. It's often not enough to meticulously clean off 
+dirt, remove discolored varnish, and repair torn, warped, or cracked canvas. 
+Where paint has flaked away to expose bare spots, a conservator may need to 
+fill in the ragged scars-a practice known as inpainting. This process is time- 
+consuming, highly subjective, and different for each artwork and for each 
+professional restorer.
+
+ Aiming to make the modifications as unobtrusive as possible, a conservator 
+uses cues from surrounding areas to guess what once adorned a painting's 
+missing pieces. Visible patterns and structures are then extended into the 
+empty regions. In general, there is no single correct solution to a given 
+problem.
+
+ Similar issues of plausible restoration arise in retouching photographs and 
+digital images. Even with sophisticated graphics software, image inpainting 
+remains largely a manual process. The user has to specify for the computer 
+which areas need to be filled in and precisely what colors, forms, and textures 
+should go into the gaps.
+
+ Researchers are now developing computer techniques to automate image 
+inpainting. In these applications, a user simply selects the areas to be 
+restored and a computer takes care of the rest. "We try to replicate the basic 
+techniques used by professional restorers," says computer engineer Guillermo 
+Sapiro of the University of Minnesota at Minneapolis-St. Paul.
+
+ At the Joint Mathematics Meetings held in January in San Diego, Sapiro and 
+other researchers described recent advances in automated image inpainting. Such 
+computer techniques could significantly reduce the time and effort required to 
+fix digital images, not only to fill in blank regions but also to remove 
+extraneous objects-superimposed text, a distracting spectator in the 
+background, or a political foe of the featured person-from a given scene. The 
+process could also improve an image's resolution or correct for losses suffered 
+during the transmission of digital images.
+
+ Finally, this sort of software could help conservators by providing a digital 
+canvas on which they can test various inpainting options. "It could help you 
+decide what colors to start with," Sapiro suggests.
+
+ Going with the flow
+
+ Inpainting has a lengthy history. Not long after the earliest paintings had 
+been completed, someone probably had to go back to fill in areas where pigment 
+had flaked away to reveal bare plaster, wood, or canvas. With the advent of 
+photography, darkroom experts expanded the retouching repertoire to include 
+techniques for filling in scratches, repairing cracks, and airbrushing away 
+blemishes.
+
+ Nowadays, anyone with access to graphics software can readily modify digital 
+images to remove such blights as red eye in flash photos or transport 
+themselves from a crowded room to a pristine beach. Doing it well enough to 
+fool even the casual eye, however, can take a great deal of time and effort.
+
+ One area where automation already plays a role is the restoration of movies. 
+By converting a movie's frames into a sequence of digital images, it's possible 
+to use a computer to detect and repair scratches and dust spots on a given 
+frame by comparing it to adjacent frames and copying image information from 
+intact areas.
+
+ Digital inpainting of still images is considerably more difficult and 
+subjective because there's usually no information available from neighboring 
+frames or other sources. A restorer can base decisions only on whatever details 
+are visible in the margins surrounding a blank area.
+
+ To automate image inpainting, Sapiro, Vicent Caselles and Marcelo Bertalmio of 
+the University of Pompeu-Fabra in Barcelona and their coworkers in the past 2 
+years have developed algorithms that mimic the way conservators work. They 
+extend known image characteristics, such as geometric shapes, contours, curves, 
+lines, and color changes, from margins into blank areas. During the project, 
+Sapiro made several visits to the Minneapolis Institute of Arts to observe how 
+conservators restore paintings.
+
+ In their initial model, Sapiro and his team used differential equations to 
+simulate the way pigments of various shades of gray might seep into a central 
+pool-the hole-from the hole's margin, or shoreline. According to how quickly 
+the shade of gray changes at different places along the shoreline, the 
+equations specify the directions and rates at which the shade changes 
+throughout the pool.
+
+ Applied repeatedly, the procedure gradually fills in a given blank area, 
+directing and mingling flows to create a stable, plausible pattern that 
+completes the picture. For a color picture, the technique is applied 
+independently to each of three grayscale images, which can then be combined to 
+generate a color rendering.
+
+"A user selects the region to inpaint," Sapiro says. "It then takes less than a 
+minute-maybe just a few seconds-for a [desktop computer] to run through the 
+process." Moreover, the method can fill in numerous regions simultaneously, 
+even when they represent different structures against varied backgrounds.
+
+ The results aren't always perfect, Sapiro admits. Nonetheless, even when 
+manual procedures must be applied to correct errors, total restoration time is 
+reduced by orders of magnitude.
+
+ Repairing defects
+
+ With plenty of room for improvement, Sapiro, Caselles, and their coworkers 
+have studied alternative sets of equations to enhance their methods. The 
+equations of one scheme take into account both changes in shade and the 
+continuation of lines and shadows. This combination comes closer to matching 
+how conservators restore a painting than does the flow model based just on 
+shade gradients.
+
+ Flow-based techniques have trouble reproducing textures to cover large gaps. 
+Hence, the researchers have looked into combining their approaches with 
+standard methods for synthesizing textures. "An ideal algorithm should be able 
+to automatically switch between textured and geometric areas and select the 
+best-suited technique for each region," the researchers reported in the August 
+2001 IEEE Transactions on Image Processing.
+
+ Andrea L. Bertozzi of Duke University in Durham, N.C., working with Sapiro and 
+Bertalmio, has shown how the differential equations for smooth, directed flows 
+of image intensity used by Sapiro's team are related to the so-called 
+Navier-Stokes equations, which are used to model the motion of air, water, and 
+other fluids. "This opens the door to bringing computational fluid-dynamics 
+theory and practice into computer vision and image analysis," Bertozzi says.
+
+ Engineers and physicists have already developed a wealth of techniques for 
+solving the Navier-Stokes equations to describe fluid flow under various 
+conditions, whether in a wind tunnel or water tank (SN: 3/18/95, p. 168). They 
+can now look forward to the use of these techniques in image processing. 
+Frame-by-frame video inpainting is one possible application, Bertozzi suggests.
+
+ Differential equations and flows are also starting to play a role in novel 
+techniques to sharpen blurry images or reduce speckling caused by transmission 
+of digital images over noisy channels. Incorporating inpainting as part of the 
+deblurring and denoising process is now feasible, says applied mathematician 
+Tony F. Chan of the University of California, Los Angeles. Such approaches to 
+image restoration hark back to methods originally developed to model shock 
+waves and to algorithms for tracking fluid motions at interfaces (SN: 4/10/99, 
+p. 232: ).
+
+ Publications struggle to obtain images with enough resolution to produce a 
+clear, sharp picture on the page. Software to increase image resolution would 
+have wide application, and digital inpainting techniques offer a possible 
+solution.
+
+ A digital image can be regarded as a square grid of points, or pixels, with 
+each point having a particular shade of gray. Suppose an image is represented 
+by a square grid that's 64 pixels wide. If the image's width and height were 
+doubled, the shade of each original pixel would fill an area four times as big, 
+giving the enlarged image a jagged, blocky look. Algorithms based on the way 
+fluids diffuse could be used to smooth out blocks and add detail, while still 
+preserving the sharp lines and smooth curves that the eye perceived in the 
+smaller image, Chan suggests.
+
+ Similar questions of restoration arise when digital images are electronically 
+compressed and pixel information is lost during transmission. Sapiro and his 
+colleagues have recently worked out techniques for restoring compressed images. 
+"We have shown that as long as the features in the image are not completely 
+lost, they can be satisfactorily reconstructed using a combination of 
+computationally efficient image-inpainting and texture-synthesis algorithms," 
+the researchers report in a paper submitted for publication.
+
+ Other recent approaches to automated image inpainting stem from 
+computer-vision research. These employ algorithms for detecting specific image 
+features such as lines and shadows and establishing that seemingly separate 
+pieces belong to a single structure. In that way, it's possible to take 
+advantage of visible image characteristics to guide inpainting. "A good image 
+model leads to a good inpainting model," says University of Minnesota 
+mathematician Jianhong Shen.
+
+ Whether digital or manual, however, inpainting is always an attempt to make up 
+for lost information. In many situations, there may be multiple solutions to 
+how a gap can be filled in to produce a plausible result.
+
+ Ultimately, judgment resides in the eye of the beholder. "Can you tell where 
+the image was changed?" Chan asks. "If you can't tell, we've been successful."
+
+

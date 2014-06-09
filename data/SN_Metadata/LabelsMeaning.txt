@@ -1,0 +1,8 @@
+1 = anthropology
+2 = astronomy
+3 = social sciences
+4 = earth sciences
+5 = biology
+6 = math
+7 = medicine
+8 = physics

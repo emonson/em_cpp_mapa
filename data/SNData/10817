@@ -1,0 +1,56 @@
+Science News Online (11/14/98): Lock-on-a-chip may close hackers out
+
+ November 14, 1998 
+
+ Lock-on-a-chip may close hackers out
+
+ By P. Weiss
+
+ Engineers have crammed an electromechanical combination lock onto a computer 
+chip that they say can shut out cybercrooks. The device erects a barrier to 
+computer intrusions that is far more difficult to penetrate than security 
+software, the only option available today, say the lock's inventors.
+
+ Because security software does not physically isolate a system but monitors 
+electronic codes, determined hackers on the Internet or a modem connection can 
+keep trying passwords and other keys until they breach the defenses.
+
+ The new lock, however, accepts only one number among a million possibilities 
+as its correct combination. If a remote troublemaker attempts a break-in with 
+the wrong code just once, the device disconnects the computer from its network. 
+When the lock closes, only someone physically present at the computer can 
+reopen it.
+
+ The new lock, which employs concepts developed for protecting nuclear weapons, 
+"puts a physical barrier between an asset and a threat," says the devices 
+designer, Frank J. Peter of Sandia National Laboratories in Albuquerque, N.M. 
+"And it absolutely, positively can't be circumvented in software."
+
+ Peter and his colleagues have packed intricate machinery into the silicon 
+device the size of a shirt button. Electrically driven shafts studded with 
+microscopic teeth turn tiny gears to set the combination. If triggered by a 
+bogus code, the mechanism throws a switch that interrupts the flow of electric 
+current or light through the device, temporarily isolating the computer.
+
+ Such a drastic response may prove impractical except for restricted-use 
+computer systems where a small number of users all know the code and someone is 
+continuously on duty to reset machines, says Peter Mell of the National 
+Institute of Standards and Technology in Gaithersburg, Md. Moreover, attackers 
+can send trouble-causing electronic mail and other data without having to gain 
+access to a computer by logging on. Hackers could also maliciously trigger the 
+lock to deny use of computers to their owners, he notes.
+
+ During the next 2 years, the inventors may consider such questions in 
+preparation for commercializing the technology. Perhaps they will choose to 
+allow more than one false start, for instance, since computer users who rely on 
+remote log-ins may occasionally type the wrong password. They also hope to find 
+a company to mass-produce the locks inexpensively via methods used by 
+integrated-circuit makers.
+
+ From Science News, Vol. 154, No. 20, November 14, 1998, p. 309. Copyright C 
+1998 by Science Service.
+
+: Sandia National Laboratories provides additional information about the lock 
+at these websites:  and .
+
+ 

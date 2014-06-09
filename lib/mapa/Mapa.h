@@ -363,8 +363,9 @@ public:
         ArrayXd invDegrees = 1.0 / degrees.sqrt();
         A = invDegrees.replicate(1,n0) * A;
 
-        JacobiSVD<MatrixXd> svd(A, Eigen::ComputeThinU | Eigen::ComputeThinV);
-        ArrayXXd U = svd.matrixU();
+        // TESTING alt SVD
+        // JacobiSVD<MatrixXd> svd(A, Eigen::ComputeThinU | Eigen::ComputeThinV);
+        // ArrayXXd U = svd.matrixU();
 
             // * * * * OKAY TO HERE * * * *
 
@@ -376,6 +377,11 @@ public:
             int K = opts.K;
             
             //     [U,S] = svds(A, K+1);
+            // TESTING alt SVD
+            // JacobiSVD<MatrixXd> svd(A, Eigen::ComputeThinU | Eigen::ComputeThinV);
+            // ArrayXXd U = svd.matrixU();
+            SvdlibcSVD svd(A, K+1);
+            ArrayXXd U = svd.matrixU();
             
             //     [planeDims, labels, err] =  spectral_analysis(X, U(:,1:K), allPtsInOptRegions, invColMap, localDims, opts.nOutliers);
             MAPA::SpectralAnalysis spectral_analysis(X, U.leftCols(K), allPtsInOptRegions, invColMap, localDims, opts.nOutliers);
@@ -390,6 +396,10 @@ public:
         else if (opts.Kmax > 0)
         {
             //     [U,S] = svds(A, opts.Kmax+1);
+            // TESTING alt SVD
+            // JacobiSVD<MatrixXd> svd(A, Eigen::ComputeThinU | Eigen::ComputeThinV);
+            SvdlibcSVD svd(A, opts.Kmax+1);
+            ArrayXXd U = svd.matrixU();
 
             //     planeDims = mode(localDims);
             //     labels = ones(1,N);

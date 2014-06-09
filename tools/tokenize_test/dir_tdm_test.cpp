@@ -13,7 +13,7 @@ int main( int argc, const char** argv )
         _CrtMemCheckpoint( &startMemState );
     #endif
     
-    std::string dirname = "/Users/emonson/Data/Fodava/EMoDocDataSets/SNData";
+    std::string dirname = "/Users/emonson/Programming/em_cpp_mapa/data/SNData";
 
     int min_term_length = 3;
     int min_term_count = 5;

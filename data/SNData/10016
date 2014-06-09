@@ -1,0 +1,227 @@
+Science News Magazine Editor's Picks - mc_1.htm
+
+ The Best of SCIENCE NEWS
+
+ March 25, 1995
+
+ MATHEMATICS AND COMPUTERS
+
+ Viral shell game
+
+ A surprising view of how a virus shell assembles itself
+
+ By IVARS PETERSON
+
+ Like a microscopic, heavily armored spacecraft, a virus cruises intercellular 
+space in search of a cell to invade and colonize. A tough, rigid shell protects 
+its cargo of nucleic acids -- strands of DNA or RNA -- until contact. Then, 
+clinging to its target, the shell opens up to inject its contents into the 
+hapless cell.
+
+ The success of a virus in infecting its host depends largely on how well its 
+outer coat functions. Made up of protein building blocks, this tightly closed 
+shell usually has a geometric structure.
+
+ As the virus reproduces inside the cell it has infected, new shells must 
+assemble themselves out of a broth of identical protein subunits. Researchers 
+have long sought to understand how they do it. "This is an unsolved problem in 
+modern biochemistry and structural biology," says Jonathan A. King of the 
+biology department at the Massachusetts Institute of Technology.
+
+ Now, biologists have a new perspective from which to tackle the question of 
+virus self-assembly. Mathematical research suggests that sets of simple rules, 
+which define the way an individual protein can stick to another, will 
+automatically lead to the kinds of virus structures that biologists observe.
+
+"The rules completely guarantee the final shell shape," says applied 
+mathematician Bonnie A. Berger of MIT, who worked with mathematician Peter W. 
+Shor of AT&T Bell Laboratories in Murray Hill, N.J., and others to devise this 
+new, mathematical model of virus shell construction.
+
+ Such research may offer a novel and potentially lifesaving strategy for 
+short-circuiting the infection process. Instead of looking for ways to prevent 
+a fully formed shell from binding to a cell, researchers can now think about 
+interfering with the growth of a virus shell to render it ineffectual.
+
+"It's a very important piece of work," says Peter E. Prevelige Jr. of the 
+Boston Biomedical Research Institute. "It allows you to think about what 
+happens when things don't work correctly. You can try to poison the growing 
+[virus shell] complex to make it go down a dead end."
+
+ Of the myriad viruses that cause a variety of ailments in plants and animals, 
+most have highly regular structures. Many display the 20 triangular faces of an 
+icosahedron. This large group includes the adenoviruses, which can cause 
+respiratory problems in humans, the herpesvirus, the poliovirus, and HIV, the 
+AIDS virus.
+
+ The shells of these viruses typically consist of a hundred or more copies of a 
+single protein, though in some cases the shell contains two or three different 
+kinds of proteins. Assembly occurs quickly and spontaneously -- often, in a 
+matter of seconds.
+
+ To explain how these shells assemble themselves, biologists initially focused 
+on their regularity and symmetry. They postulated a two-step process. First, 
+five or six protein molecules link to form pentagonal or hexagonal rings. Then 
+these rings connect to make icosahedrons (see diagram). In this way, 
+construction would proceed in an orderly and direct manner to the final 
+structure.
+
+ But this model didn't address the issue of how individual proteins join to 
+create larger units, the rings and the shells. "How does one little protein 
+know where to go to form such a highly structured shape?" Berger asks.
+
+ Moreover, experimental studies of the growth process revealed the presence of 
+single proteins and completed shells, but not the pentagonal and hexagonal 
+rings of the postulated intermediate steps. These results challenged the 
+existing model.
+
+"We had strong experimental data demonstrating that almost certainly the shells 
+were built from monomers [single protein units]," King says. "The high symmetry 
+of the end product did not account for how [a shell] got built."
+
+ In some instances, researchers found that certain virus shells even require a 
+protein scaffolding to aid assembly. This disposable framework serves the same 
+stabilizing function as the scaffolding needed to construct a cathedral's dome 
+or bridge's arch, and it disappears once the structure is completed.
+
+ Several years ago, King became interested in using computers to visualize the 
+ways in which virus shells might grow. He and his colleagues had spent more 
+than 15 years studying virus assembly experimentally, and they wanted a better 
+understanding of how the process works in three dimensions.
+
+ King suggested the problem to Berger, who has a background in both computer 
+science and mathematics. He hoped she could find some mathematical recipes, or 
+algorithms, that would make it possible to depict protein polymerization -- how 
+proteins join together to form larger units -- on the computer screen.
+
+"I did not know that a much deeper insight would necessarily come out of this," 
+he says.
+
+ Berger shared the problem with Peter Shor, and they began exploring the kinds 
+of rules that might specify how one protein links to another. Instead of 
+concentrating on the actual geometry of virus shells, they looked at the web of 
+possible connections between individual proteins.
+
+ Berger and Shor discovered that they could formulate a set of simple rules 
+specifying how one protein links with another to directly create the desired 
+final structure -- if they assumed that the protein molecules, each identical 
+in its chemical composition, could fold themselves into a specific number of 
+different shapes, or conformations.
+
+"It seemed a reasonable assumption to make," Berger says. For the P22 bacterial 
+virus (or bacteriophage), which had long been the target of King's 
+investigations, the mathematics led to the desired structure if the protein 
+could assume seven different conformations, or perhaps only four.
+
+ When Berger checked with King, she was delighted to find that he and his 
+colleagues had recently obtained experimental evidence strongly suggesting just 
+such a possibility. His micrographs showed that the protein molecule that makes 
+up the P22 shell apparently has seven different shapes, of which four look 
+particularly distinctive.
+
+"These structural studies had shown that the same chemical subunits are in 
+different, stable conformations in different positions in the shell," King 
+says. "Until very recently, that was considered a heretical notion."
+
+ With this encouragement, Berger and Shor, assisted by graduate student Lisa 
+Tucker-Kellogg of MIT's Laboratory for Computer Science, went on to develop a 
+more complete mathematical theory of virus shell assembly.
+
+"If the protein subunits assume different conformations during the assembly 
+process depending on their relative positions, a protein binding to the 
+structure has enough 'local' information to 'know' where to bind," the 
+researchers reported in the Aug. 2, 1994, Proceedings of the National Academy 
+of Sciences.
+
+ To keep things as simple as possible, Berger and her coworkers initially 
+assumed that virus shells contain a single kind of protein. These proteins, 
+however, could take on a certain number of different conformations.
+
+ For each conformation, the rules specified which other molecular shapes it 
+could bind with. They also designated the approximate angles and distances 
+between the two interacting proteins.
+
+ For one model of the P22 bacteriophage, the researchers came up with seven 
+protein conformations and seven rules (see diagram). Interacting only with 
+their immediate neighbors according to the given rules, the proteins could 
+assemble themselves into the required structure of P22's exterior. As soon as 
+one link was made, the others followed automatically to create the complete 
+shell.
+
+ Berger and Shor tried various sets of rules for different types of virus 
+structures. In a number of cases, they discovered alternative strategies for 
+achieving the same result, sometimes using fewer different protein 
+conformations.
+
+ They also predicted the existence of shell geometries that the old biological 
+model of virus shell construction appeared to rule out. Alerted to this 
+possibility, researchers began searching for and are now starting to find 
+examples of these "anomalous" forms.
+
+ Computer simulations verified that the rules worked to create closed shells. 
+They also demonstrated that changing the assumed interaction angles and 
+distances by small amounts didn't necessarily disrupt shell growth.
+
+ But with larger deviations, the shells often failed to close, and deformed 
+structures appeared. For example, with one false step, a polymerizing shell 
+could start growing into a spiral, mimicking a malformation occasionally 
+observed in nature (see color illustration).
+
+ Berger is now interested in modeling the rates at which different types of 
+shells grow. "Before in our models, when a protein came along and bonded on 
+according to the rules, it stayed there," she says. "Now, we're looking at a 
+protein soup and allowing things to come and go, sometimes bonding and 
+sometimes not."
+
+ The mathematical models proposed by Berger and her colleagues have already had 
+some impact on biological studies.
+
+ In one instance involving the P22 bacteriophage, Berger's rules suggested that 
+scaffolding proteins would have to have a particular structure to fit with the 
+shell proteins. This insight enabled Peter Prevelige to make sense of several 
+puzzling experimental findings.
+
+"We had worked for a number of years trying to discern what sorts of 
+[combinations] of scaffolding proteins exist in solution," Prevelige says, but 
+the combinations they had found didn't appear to fit into any known 
+shell-building model.
+
+ By suggesting what types of protein units might be present and how they might 
+interact, Berger's rules provided a possible explanation. "Having a theory 
+allowed us to say that our results were plausible," Prevelige says.
+
+"The theory tells us what to pay attention to," he adds. "It's like looking for 
+something that's lost. If you know what you're looking for, it's much easier to 
+find."
+
+ Understanding how virus shells assemble themselves also suggests new 
+opportunities for therapeutic intervention. "In general, people in the 
+pharmaceutical industry haven't seen this process as a target, partly because 
+this process hadn't been sorted out," King says. Now, researchers have a 
+picture of what may occur.
+
+ Prevelige and his co-workers have already demonstrated that a dose of small 
+dye molecules can block virus shell formation in vitro by binding with the 
+protein subunits at critical positions. "That's quite surprising because these 
+proteins have large surface areas and the dye molecules are comparatively 
+small," King says.
+
+ Apparently, the dye molecules zero in on the same molecular sites that, 
+according to the mathematical model, dictate the binding of proteins to each 
+other. "You can stop these reactions with small, weakly bound molecules," King 
+argues.
+
+ Prevelige is now trying to refine this strategy. The preferred course is not 
+to go after individual proteins, but to rechannel the growth into misshapen 
+viral forms that can no longer function properly.
+
+"We're going to think about and use Berger's rules in our work," Prevelige says.
+
+"There are many problems we face as biologists where we need the tools of the 
+mathematician to come to our aid," King notes. "The intersection of biology and 
+mathematics can be extremely productive when both sides tune in to the actual 
+problem, the actual need."
+
+ copyright 1996 
+
+

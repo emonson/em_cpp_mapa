@@ -11,6 +11,9 @@ TARGET_LINK_LIBRARIES(eigen_sparse_fill svd)
 ADD_EXECUTABLE(sparse_svd sparse_svd.cpp)
 TARGET_LINK_LIBRARIES(sparse_svd svd)
 
+ADD_EXECUTABLE(dense_svd dense_svd.cpp)
+TARGET_LINK_LIBRARIES(dense_svd svd)
+
 ADD_EXECUTABLE(svdmain main.c)
 TARGET_LINK_LIBRARIES(svdmain svd)
 

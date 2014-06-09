@@ -1,0 +1,268 @@
+Science News Online - Past Issues - 5/4/96
+
+ May 4, 1996
+
+ Formulas for fairness Applying the math of cake cutting to conflict resolution
+
+ By IVARS PETERSON
+
+ The marriage had lasted more than 30 years. The wife had given up a promising 
+career as an actress and singer to raise the couple's four sons and manage the 
+household. The husband's business success, in which the wife also played a 
+significant part, had enabled the family to maintain a grand and gracious 
+lifestyle centered in New York City and Paris.
+
+ Then, the husband left his wife to live with another woman. In 1981, after a 
+lengthy proceeding, the Supreme Court of New York State granted a divorce. But 
+it took another 2 years of bitter and costly legal wrangling to determine how 
+to divide the couple's joint assets.
+
+ According to state guidelines, this case met the criteria for an equal 
+division of marital property, which included a very expensive Paris apartment. 
+To achieve an equitable split, the court granted the husband all the real 
+estate except for the apartment and ordered him to compensate his former wife 
+for her share of that property. She was obliged to sell the Paris apartment 
+within 3 years of the settlement and divide the proceeds with her former 
+husband.
+
+ Stunned by the outcome, she appealed the decision. She prized the Paris 
+apartment and would, at the age of 70, have to seek another home after having 
+lived there for more than 25 years.
+
+ She lost her case. However, one of the appeal panel judges did protest that 
+the court-imposed settlement, so meticulously formulated and delicately 
+balanced, was nonetheless unfair to the wife.
+
+ Political scientist Steven J. Brams of New York University agrees strongly 
+with the dissenting judge's view. He can also point to potentially fairer 
+methods of handling contentious issues such as the division of marital property.
+
+ Brams and mathematician Alan D. Taylor of Union College in Schenectady, N.Y., 
+have worked out mathematical procedures that they claim can be used to settle 
+disputes in ways that both parties see as fair and equitable.
+
+"There are about 1.2 million divorce cases in the United States each year," 
+Brams says. Seldom are both parties satisfied with the provisions of a 
+settlement.
+
+"We have specific procedures that offer very practical solutions in such 
+situations," he asserts.
+
+ Nor is divorce the only arena in which these conflict resolution schemes could 
+play a role. Inheritance squabbles, international border disputes, and treaty 
+and contract negotiations could benefit from strategies that promise fair 
+outcomes.
+
+ The key to these new methods is the recognition that people generally have 
+different opinions about the values of the items to be shared or the importance 
+of the issues to be settled. These differences make it possible to work out 
+agreements in which all of the parties feel as if they've gotten the best deal. 
+Researchers working on fairness term such allocations "envyfree."
+
+ The new methods put together in a practical framework some notions of 
+fairness, equity, and justice that have developed over the last 50 years in 
+philosophy, theoretical economics, and mathematics.
+
+"From the viewpoint of economics, what Brams and Taylor are doing is one case 
+of a more general fair division problem," says economist Herve Moulin of Duke 
+University in Durham, N.C.
+
+ Economists interested in fair division emphasize general principles that 
+underlie the fair allocation of resources, going beyond such precepts as "no 
+envy." They also consider such specific issues as allocating the cost of 
+constructing a shared road or a computer network among potential users, 
+introducing incentives to modify undesirable human behavior, and distributing 
+risk among communities faced with environmental hazards.
+
+"The central issue is how we can get the participants in a scheme of fair 
+division to behave in the right way and not manipulate the system to their own 
+advantage," Moulin says.
+
+ Brams and Taylor offer mathematical recipes for solving a particular subset of 
+these problems. "For divorce settlements and things like that, their methods 
+have a lot of potential," Moulin remarks.
+
+ When mathematicians ponder fair division, they usually start with a cake. 
+Suppose a thickly frosted, elaborately decorated birthday cake must be divided 
+among several people. Different people may prefer different parts of the 
+cake--the thickest pink icing for one, strawberry slices for another.
+
+ Is there a step-by-step procedure for cutting the cake into pieces so that 
+each participant can guarantee his or her own satisfaction?
+
+ There's a familiar strategy for two persons: "I cut, you choose." The first 
+person divides the cake into two pieces that appear equally desirable to him. 
+The pieces may not seem equally desirable to the second person, so she picks 
+the one she prefers. They both automatically end up with a piece that they 
+think is at least as good as the piece they didn't get.
+
+ The Convention of the Law of the Sea, which went into effect in 1994, 
+incorporates such a scheme to protect the interests of developing countries 
+when a highly industrialized nation wants to mine a portion of the seabed 
+underlying international waters. The country seeking to mine would divide that 
+area into two portions. An independent agency representing the developing 
+countries would then choose one of the two tracts, reserving it for future use.
+
+ It's somewhat trickier to find an effective divide-and-choose procedure that's 
+fair for three or more people. In the 1940s, mathematicians proved that such 
+allocations are possible but provided no step-by-step method for doing so. By 
+1960, several such recipes had been developed for the special case of three 
+people, but they didn't work for a larger number.
+
+ In 1992, Brams and Taylor invented a cutting and trimming recipe that achieved 
+this sort of cake division for any number of people (see Envyfree Cake 
+Division). Brams and Taylor proved that this envyfree strategy can be carried 
+out in a finite number of steps, at the end of which the cake is completely 
+apportioned, although somewhat mashed. The same routine can be applied in any 
+situation in which the goods are, in principle, divisible into infinitely small 
+amounts.
+
+ It isn't always possible to distribute goods by subdividing individual items. 
+Divorce settlements often involve property that can't be split up easily, and 
+some treaty or contract issues have no middle ground.
+
+ In recent years, Brams and Taylor have developed procedures for these 
+situations. The starting point is a list of all the disputed items. Working in 
+secret, each combatant ranks these items in order of importance. A mediator can 
+then use the lists to figure out who gets what according to the stated 
+preferences.
+
+ To make this allocation, the mediator can follow a procedure that Brams and 
+Taylor call "adjusted winner" (see Divorce Points).
+
+ Brams and Taylor have demonstrated mathematically that any allocation arising 
+out of such a scheme is not only equitable but also envyfree. Neither player 
+would be happier with what the other received. Moreover, no other allocation 
+can make one party better off without making the other party worse off.
+
+ The adjusted winner strategy is vulnerable to manipulation, however. One party 
+might try to anticipate the other party's rankings and write down scores that 
+deliberately skew the result. In practice, such a course rarely is worthwhile 
+for the schemer unless there's a spy involved who can relay complete and 
+accurate information about the other party's intentions.
+
+"Unless you have the exact information, it's a dangerous game to play," Brams 
+insists. "On the other hand, I don't want to minimize the spite that people 
+have in many of these situations."
+
+ Nonetheless, the adjusted winner procedure does a better job in terms of 
+achieving fairness than anything else now available, Brams contends.
+
+ Point allocation schemes can also be applied to political disputes and 
+contract negotiations, in which the two sides define the crucial issues, then 
+individually rank their importance.
+
+ Brams and NYU colleague Jeffrey M. Togman have recently applied the adjusted 
+winner procedure retrospectively to the 1978 Camp David agreement between Egypt 
+and Israel. In a paper accepted for publication in Conflict Management and 
+Peace Science, the researchers used political reports from the 1970s to 
+estimate how Egyptian and Israeli diplomats might have ranked six key issues 
+dividing the two sides. The researchers conclude that their procedure yielded 
+an outcome similar to the agreement actually negotiated.
+
+"This agreement probably could have been achieved more expeditiously, and in a 
+less crisis-driven atmosphere," they argue.
+
+ Brams and NYU's David Denoon have tried this scheme on an unresolved dispute 
+between China and several countries of Southeast Asia over claims to the 
+Spratly Islands, a chain of about 230 islets and reefs in the South China Sea.
+
+ They experimented with different rankings of selected issues, such as what 
+country owns each island, then proposed a methodology--working with two parties 
+at a time--for reaching a fair settlement. The U.S. State Department is now 
+considering use of that scheme in mediating the dispute.
+
+ The negotiation literature already contains a great deal of material on 
+identifying crucial issues, articulating them, and splitting them up properly. 
+"Once you've done the hard work of defining the issues, then something like the 
+adjusted winner procedure can kick in to complete the process," Taylor says.
+
+ Brams, Taylor, and others continue to explore a variety of mathematical 
+questions that have arisen concerning fair division. For example, they are 
+still looking for a reasonable point allocation system for three or more 
+players.
+
+ In cake-cutting schemes, Taylor is intrigued by the fact that strategies 
+involving three people are quite straightforward. But stepping up to four 
+represents a tremendous increase in complexity, with higher numbers only 
+slightly more complicated.
+
+"Mathematically, it indicates there's something there that we don't fully 
+understand in going from three to four," Taylor suggests.
+
+ Brams and Taylor recognize that their methods don't offer complete, perfect 
+solutions to human problems.
+
+"The search for better procedures, which make the achievement of fairness not 
+just an outcome but a process as well, will go on," Brams and Taylor write in 
+Fair Division: From Cake-Cutting to Dispute Resolution (Cambridge University 
+Press, 1996). "What cannot wait is applying our knowledge, primitive as it is, 
+to problems of fair division that cry out for better and more durable solutions 
+in realistic settings."
+
+ This approach represents a modest step toward satisfying a plea made by 
+economist Herbert A. Simon of Carnegie Mellon University in Pittsburgh. "If I 
+were to select a research problem without regard to scientific feasibility," 
+Simon wrote in his 1991 autobiography, "it would be that of finding out how to 
+persuade human beings to design and play games that all can win."
+
+ Envyfree Cake Division
+
+ Suppose Alice, Bob, and Carol want to divide up a cake. Alice starts by 
+cutting it into three pieces that look equal to her. If Bob views one piece as 
+being largest, he trims it to look equal to the piece he sees as second 
+largest. This leaves one trimmed piece and two untrimmed pieces. Carol chooses 
+one of the three pieces. Bob picks next and must take the trimmed piece if it's 
+available. Alice gets the last piece.
+
+ By choosing first, Carol can't lose because she picks the piece she likes 
+best. Bob can't lose because he can choose one of the two pieces he made sure 
+were tied for largest. Alice ends up with one of the two untrimmed pieces, both 
+of which are better in her eyes than the one Bob trimmed.
+
+ This procedure can then be repeated with the trimmings until the crumbs are so 
+small that no one cares anymore.
+
+ For four players, the cake cutting has to start with an extra piece: Alice 
+must slice the cake into five pieces. The extra piece ensures that no player is 
+forced into taking second best. The number of extra pieces escalates for more 
+people, the researchers discovered. For example, nine pieces are needed for 
+five players, 17 pieces for six, and 2n-2 + 1 for n players.
+
+ It's interesting to note that after World War II, Great Britain, France, the 
+United States, and the Soviet Union divided Germany into four zones of 
+occupation, with Berlin, which fell within the Soviet zone, as a valuable 
+"trimming" that was itself divided into four zones.
+
+ Divorce points
+
+ In the adjusted winner method of fair division, the husband and wife secretly 
+prepare lists showing how much they value each of the disputed items, ranking 
+them by allocating a total of 100 points among the items.
+
+ For example, husband and wife might have come up with these allocations: 
+Marital property                Husband                     Wife
+
+Paris apartment                   35                         55
+Paris studio                       6                          1
+New York City coop                 8                          1
+Farm                               8                          1
+Cash and receivables               5                          6
+Securities                        18                         17
+Profit-sharing plan               15                         15
+Life insurance policy              5                          4
+                                 ----                       ----
+Total                            100                        100
+
+ In this example, based on an actual divorce case, the husband and wife 
+initially win the items that one person rated higher than the other. This gives 
+the husband 45 points to the wife's 61 points. The profit-sharing plan, valued 
+equally by both (15/15), goes to the husband, but that still puts him short of 
+the wife's total. The next closest item is the cash and receivables, which can 
+be divided up so that each party ends up with an equal number of points (in 
+this case, 60.5 points-boldface indicates which party received each asset).
+
+ In this way, Brams argues, both husband and wife achieve a more satisfactory 
+result than that actually decreed by the courts.
+
+

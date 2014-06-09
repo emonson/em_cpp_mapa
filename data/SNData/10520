@@ -1,0 +1,247 @@
+Science News Online - This Week - Feature Article - 11/23/96 November 23, 1996
+
+ The Gods of Sugarscape Digital sex, migration, trade, and war on the social 
+science frontier
+
+ By IVARS PETERSON
+
+ In the ritualized warfare of the game of chess, the board is a miniature 
+battlefield on which opposing commanders-in-chief marshal their forces.
+
+ Each playing piece has a particular pattern of allowed movements, and the 
+game's rules shape the battle. The combatants can try out different strategies, 
+directing bold attacks, mounting stubborn defenses, or waging wars of attrition 
+across the grid.
+
+ At the Brookings Institution in Washington, D.C., social scientist Joshua M. 
+Epstein and computer modeler Robert Axtell also have a playing field on which 
+to audition their ideas. They play their game on a 50 by 50 square lattice on a 
+computer screen, and the playing pieces, or agents, are colored dots occupying 
+some fraction of the squares.
+
+ Epstein and Axtell are actually more like gods than commanders. They define 
+the landscape, set the rules, and characterize the agents. Instead of 
+participating in the action, they step back to observe what happens as the 
+swarming agents, left on their own in these simulations, move about, gather 
+sustenance, reproduce, and die off according to their programmed predilections.
+
+ From the patterns that emerge, the re-searchers can glean insights into human 
+social and economic behavior. "We grow social structures--artificial 
+societies--in the computer," Epstein says. "We can examine population growth 
+and migration, famine, epidemics, economic development, trade, conflict, and 
+other social issues."
+
+"It's intellectually provocative work," comments economist Sidney G. Winter of 
+the Wharton School of the University of Pennsylvania in Philadelphia. The 
+resulting simulations "provide challenges to existing treatments of social and 
+economic matters."
+
+ Epstein and Axtell describe their project in the newly published book Growing 
+Artificial Societies: Social Science from the Bottom Up (Washington, D.C.: 
+Brookings Institution/MIT Press).
+
+"It's a magnificent achievement," says John L. Casti of the Santa Fe Institute 
+in New Mexico. "What they've done in building a world inside a computer is a 
+glimpse of how ...science will be done in the 21st century."
+
+ The cyberworld in which Epstein and Axtell's agents dwell is known as 
+Sugarscape. It's a two-dimensional landscape, represented as a square grid, 
+containing two regions rich in a renewable resource arbitrarily called sugar. 
+Every agent is born into this world with a metabolism demanding sugar, and each 
+has a number of other attributes, such as visual range for food detection, that 
+vary across the population.
+
+ They move from square to square according to a simple rule: Look around as far 
+as your vision permits, find the unoccupied spot with the most sugar, go there, 
+and eat the sugar. As it is consumed, the sugar grows back at a predetermined 
+rate.
+
+ An agent's range is set by how far it can see. Every time an agent moves, it 
+burns an amount of sugar determined by its given metabolic rate. Agents die 
+when they fail to gather enough sugar to fuel their activities.
+
+ With hundreds of agents roaming the landscape, "interesting things begin to 
+happen," Axtell says.
+
+ Initially distributed at random across the landscape, the agents quickly 
+gravitate toward the two sugar mountains. A few individuals end up accumulating 
+large stocks of sugar, building up a great deal of personal wealth. These 
+happen to be agents that have superior vision and a low metabolic rate and have 
+lived a long time.
+
+ A few others, combining short vision with a low metabolic rate, manage to 
+subsist at the fringes, gathering just enough to survive in the sugar badlands 
+but not looking far enough to see the much larger sugar stocks available just 
+beyond the horizon.
+
+ At its simplest level, the Sugarscape model represents a kind of 
+hunter-gatherer society, Axtell explains.
+
+ Yet even this rudimentary model reproduces the kind of strongly skewed 
+distribution of wealth generally observed in human societies--where a few 
+individuals hold most of the wealth and the bulk of the population lives in 
+relative poverty.
+
+ Introducing sex and reproduction to Sugarscape is as simple as adding to the 
+agent's string of numbers a few bits specifying gender.
+
+ A rule specifies the allowed behavior: An agent must select a neighboring 
+agent at random. If the neighbor is of the opposite sex and of reproductive 
+age, and if one of the two agents has an empty neighboring site (to hold 
+offspring), a child is born. The child inherits a mixture of its parents' 
+genetic attributes.
+
+ This new dimension enables the researchers to investigate the effect of 
+cultural forces on biological evolution and vice versa. For example, in the 
+absence of any cultural factor, agents with relatively low metabolism and high 
+vision enjoy a selective advantage in Sugarscape.
+
+ Now, suppose that when an agent dies, it can pass on its accumulated holdings 
+of sugar to its offspring. How does this cultural convention influence 
+evolution?
+
+ The Sugarscape model suggests that agents who might otherwise have been 
+"weeded out" are given an extra advantage through inheritance, Epstein says. 
+The average vision of the population doesn't increase to the same high level 
+eventually reached in a population where no wealth is passed on.
+
+ The researchers can also modify their model to observe the emergence of tribes 
+(identified by numerical tags) and the process of assimilation (changing 
+affiliation to join the local majority). Inevitably, there arises a primitive 
+kind of combat, in which agents of two different tribes may plunder each other 
+for sugar.
+
+ Various combat rules lead to patterns of movement that differ from those 
+produced by the standard "eat all you can find" rule. For example, some combat 
+rules lead quickly to strictly segregated colonies, each clinging to its own 
+sugar peak. In other cases, one side wipes the other out.
+
+ The Sugarscape model also offers insights into other phenomena, such as the 
+introduction of trade. In this case, the landscape contains heaps of two 
+resources: sugar and spice. The agents are programmed with different metabolic 
+rates, or preferences, for each of the two commodities. They die if either 
+their sugar or their spice store falls to zero.
+
+ A mathematical formula called a welfare function allows each agent to compute 
+how close it is to sugar or spice starvation. The agent then strives to gather 
+more of the commodity it needs.
+
+ An additional system of rules specifies how agents bargain for and exchange 
+sugar and spice according to their needs. These rules enable the researchers to 
+document how much trade transpires and at what price exchanges occur.
+
+ When agents are allowed to live forever, so long as they never run out of 
+food, the sugar-spice model shows that the average trade price converges to a 
+stable level. Economic equilibrium emerges, Epstein says, just as textbook 
+market economics predicts.
+
+ However, when Epstein and Axtell make the agents "more human" by giving them 
+finite lives and permitting their preferences to evolve, the price no longer 
+stabilizes and the market never reaches equilibrium.
+
+"The assumption that we can let markets produce efficient allocations [of 
+capital or resources] on their own is deeply challenged by our work," Epstein 
+claims. "We see how brittle traditional economic theory really is."
+
+ Epstein and Axtell's Sugarscape simulation is just one example of a wide 
+variety of computer models now being developed on the basis of interactions 
+between agents governed by given rules rather than on equations defining global 
+behavior. The idea is to model from the bottom up--seeing behavior emerge out 
+of interactions among individuals--instead of from the top down--deriving the 
+behavior of individuals from overarching laws.
+
+ Researchers at the Santa Fe Institute, Los Alamos (N.M.) National Laboratory, 
+and elsewhere have worked out agent-based models of urban transportation 
+systems, insect colonies, business organizations, financial markets, and other 
+situations. Such approaches are also useful in studies of artificial 
+life--forms that exist only in the computer yet mimic certain aspects of the 
+behavior of living organisms (SN: 8/10/91, p. 88).
+
+ What distinguishes the Sugarscape project is its emphasis on seeing what sorts 
+of socially relevant behavior can emerge from the collective interaction of 
+individuals following the simplest possible rules. "The surprise is that we can 
+grow [complex, recognizable behavior] with incredibly simple rules and simple 
+agents," Epstein says.
+
+ Such agent-based modeling shows that social norms can arise out of very 
+primitive behavior, though it doesn't necessarily demonstrate how the norms 
+actually came about, notes economist Thomas Schelling of the University of 
+Maryland in College Park.
+
+ Epstein insists that although these bare-bones models can't really be used to 
+make specific predictions, they can suggest explanations of some widely 
+observed macroscopic phenomena, from distributions of wealth in typical 
+societies to erratic price fluctuations in markets.
+
+"We think of our model as a laboratory for social science," Epstein says. 
+Researchers from a wide variety of disciplines, including economics, biology, 
+demographics, and environmental studies, can use this approach as a research 
+tool to tackle oft-neglected, cross-disciplinary issues like the effects of 
+inheritance on the genetic evolution of a system.
+
+"One can readily imagine hypotheses or mechanisms that no one has thought of 
+before arising out of this kind of model," Winter adds.
+
+ Like others working with agent-based models, Epstein and Axtell must interpret 
+the patterns they observe on the computer screen. After all, their agents are 
+no more than strings of digits and the observed behaviors no more than patterns 
+in a computer's memory.
+
+"It is the act of interpretation . . . that allows these electronic worlds to 
+make contact with their real-world counterparts," Casti notes.
+
+ In the case of Sugarscape, the model is more a metaphor than a realistic 
+depiction of society. No one literally spends a working day accumulating sugar. 
+The landscape and agent characteristics are simple stand-ins for the more 
+complicated things that occur in the real world.
+
+ In one application of their method, Epstein and Axtell are now working with 
+archaeologist George J. Gumerman of Southern Illinois University in Carbondale 
+and his colleagues to "grow" the Anasazi society, a Native American culture 
+that flourished in the U.S. Southwest for hundreds of years, then suddenly 
+disappeared. The archaeologists have data on weather patterns, crop yields, and 
+other environmental conditions during that period, along with information about 
+the Anasazi culture.
+
+"This gives our modeling an empirical target," Epstein says. The researchers 
+hope that agent-based simulations may shed light on whether environmental or 
+cultural factors were primarily responsible for the society's abrupt decline.
+
+ Epstein and Axtell are also working with H. Peyton Young of Johns Hopkins 
+University in Baltimore to study how caste systems, in which a small elite 
+demands more than its fair share, arise in societies (, SN: 5/4/96, p. 284). 
+"We want to know whether or not equity comes about naturally in social 
+systems," Young says.
+
+ The Sugarscape laboratory is still very much in the development stage. 
+Re-searchers are just starting to examine ways of tailoring this approach to 
+address specific needs and issues in the social sciences, economics, and 
+elsewhere.
+
+ One key issue in the Sugarscape approach involves how to tweak the model to 
+obtain such phenomena as the emergence of governments. "There may be some kind 
+of threshold beyond which you can't take a step up in understanding . . . human 
+organization without making the agents smarter," Winter says. "The problem is 
+how to make the agents smarter in a way that remains true to the basic 
+approach."
+
+ Sugarscape is already an immensely attractive playing field because the 
+limited repertoire of the agents makes it easy to understand, measure, and 
+depict what's going on and why the agents behave as they do. Moreover, typical 
+Sugarscape experiments take only a few minutes on an ordinary personal computer.
+
+"There are lots of opportunities to try things out," Epstein says. "Our 
+artificial societies let you get your teeth into things that conventional 
+theory can't handle."
+
+ The Sugarscape effort is part of Project 2050, a cooperative venture of the 
+Santa Fe Institute, the Brookings Institution, and the World Resources 
+Institute in Washington, D.C., to identify conditions for sustainable 
+development on a global scale.
+
+ By providing insights into population growth, resource use, migration, 
+economic development, conflict, and other global social processes, games played 
+on the Sugarscape grid may help shape the policies needed to direct the future 
+course of society.
+
+

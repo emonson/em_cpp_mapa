@@ -1,0 +1,230 @@
+Science News Online - Past Issues - 5/18/96
+
+ May 18, 1996
+
+ Fit for a King
+
+ Computer scanners capture the body's subtle shapes
+
+ By RICHARD LIPKIN
+
+ In the classic comedy film Sleeper, a futuristic Woody Allen pays a visit to a 
+21st century tailor, who happens to be a robot.
+
+"You vant jackets, ve got jackets. You vant trousers, ve got trousers," says 
+the heavily accented computer-clothier. "Step in here," the robot says, 
+motioning Allen into an automated tailoring machine. Lights flash, the machine 
+hums, a computer measures the red-haired time traveler, and out pops a suit, 
+which Allen puts on.
+
+"This is terrible," Allen balks, pointing to his baggy outfit.
+
+"All right, all right," mumbles the robot, "Ve'll take it in a little."
+
+ As is often the case with science fiction, life is proceeding to imitate 
+art--but this time, with better-fitting results.
+
+ Researchers are designing systems that can scan the surface of a person's body 
+and produce an accurate three-dimensional image of it. These scanners offer the 
+possibility of crafting quick, computerized representations that can be used to 
+design a wide variety of items, from custom-fit clothing and shoes to 
+automobile passenger compartments and crash helmets.
+
+ Since the 3-D scans employ a general process that works for virtually any 
+spatial object, researchers around the country are also seeking to adapt it to 
+other purposes. "People are looking at ways to use this technology for 
+biomedicine, anthropology, archaeology, museum inventory, and entertainment," 
+says David Addleman, president of Cyberware, a computer graphics firm in 
+Monterey, Calif.
+
+ To obtain a 3-D image for fitting clothes, a customer puts on a stretchy, 
+tight-fitting garment and steps onto a platform surrounded by an array of 
+lights and mirrors. The system passes harmless laser beams over the person's 
+body from head to toe, while cameras record the patterns they make. The system 
+can then put together a detailed surface map of the individual's shape in a 
+process that takes only 17 seconds.
+
+"The system shines stripes of light across a person, then measures the 
+distortions created by the body's curves," says Addleman. "With four video 
+cameras and four mirrors, the machine has eight views of the person. By viewing 
+the person from different angles and perspectives, we can triangulate points on 
+the body surface."
+
+ The result is a grid, looking something like a mannequin made of wire mesh, 
+assembled from 300,000 to 400,000 points spaced 3 millimeters apart. Once the 
+scanner has assembled a "cloud of points" covering the surface of a person's 
+body, the computer then "stitches" the various views together to create a 
+single, seamless 3-D likeness, Addleman explains.
+
+ The basic concept of the technology is simple, he adds. "You're really just 
+mapping a curved surface in space." The tricky part, Addleman says, "is putting 
+it all together" to create a smooth, accurate, and detailed figure from which 
+information can be extracted to fit clothing or make masks and helmets, for 
+example.
+
+ The idea of the scanner arose in a military project aimed at finding a way to 
+produce faster, cheaper, and better-fitting uniforms for troops, says Kathleen 
+M. Robinette, an anthropologist at the Wright-Patterson Air Force Base in Ohio. 
+"Traditionally, we measure people with very basic tools, like tape measures and 
+calipers," she says. "But they don't provide complete or accurate information. 
+In the end, most of the information used to design clothing comes from an 
+artist's imagination."
+
+ Standard measuring tools take too much time to use, she adds. It can take as 
+long as 20 minutes to measure someone properly for a garment, so military 
+scientists decided to try to computerize and automate the body-measuring 
+process. "We started out using scanning machines to measure people's heads and 
+faces for helmets," she says. "Eventually it became feasible to use the same 
+methods on the whole body."
+
+ The Army and Air Force are already using the body data to make a smaller 
+number of uniforms, boots, and flight suits fit a wider range of body types. 
+"We've been approached by podiatrists and shoe companies wanting to make scans 
+of people's feet" for custom-fitting shoes and orthotics, Addleman says. Scans 
+of hands could serve in the design and fitting of gloves.
+
+ In one new venture, Jeffrey Silverman, owner of the Custom Foot shoe store in 
+Westport, Conn., orders footwear made to fit electronically scanned feet.
+
+ Using a simpler scanner than Cyberware's, Silverman models his customers' 
+feet, then transmits the data by modem to Italy, where manufacturers produce 
+customized versions of existing models. Purchasers receive their uniquely 
+fitted shoes in about 2 weeks, at an average cost of $140 per pair, Silverman 
+says.
+
+ Physicians at the Department of Veterans Affairs are looking at ways to use 
+the 3-D scanner to make replicas of body parts. A person who loses an arm or 
+leg, for example, can have the remaining one scanned into the system. The 
+computer can then invert the model to make a mirror image of the existing 
+limb--a process that could streamline the making and fitting of prostheses.
+
+ The Army and Air Force are applying the new technology to design better 
+aircraft cockpits, parachute harnesses, and other safety equipment. "These data 
+are good for designing anything a body has to fit into," Robinette says. "You 
+can rotate the image, look at it from different angles, even change aspects of 
+the figure," she says.
+
+ In similar fashion, scientists concerned with improving safety in the 
+workplace want to use the scanning system to lessen the likelihood of 
+industrial accidents. "There's very little accurate data on the body dimensions 
+of certain populations, such as construction and agricultural workers," says 
+Hongwei Hsiao, a biomechanist at the National Institute for Occupational Safety 
+and Health (NIOSH) in Morgantown, W. Va. "We're hoping to use these machines to 
+gather information to design better protective equipment, such as face masks, 
+eyewear, harnesses, and respirators. We can also study problems like the 
+compression forces that cause lower back injuries in people who have to carry 
+heavy loads. The more we know about human shapes and sizes, the better we can 
+do in designing safety features for vehicles and equipment to reduce deaths and 
+injuries."
+
+ Taking advantage of the system's ability to scan bones accurately, 
+archaeologists are using the device to construct replicas of dinosaur skeletons 
+for museums. "There's often a problem at archaeological sites of finding 
+incomplete skeletons of animals," says Vance A. Deason, a physicist at the 
+Idaho National Engineering Laboratory in Idaho Falls. "The original bones are 
+fragile, and you only have a few of them."
+
+ Thus, to create the mighty skeletons on view at most museums, archaeologists 
+must mold and model each bone, then fit the bones together. The original 
+fossils remain safely in storage, while the giant skeletal replicas--often 
+assembled from copies of pieces of several incomplete skeletons--stand in view 
+of awestruck patrons.
+
+"The problem in combining the bones to make one complete skeleton is that bones 
+are often taken from animals of different sizes, so they have to be scaled 
+properly to fit together," says Deason. The process is extremely slow and 
+expensive. "With this technology, you can scan bones into the computer, then 
+scale them to make a perfect replica that's also the right size."
+
+ The system could work equally well for other art objects preserved in museums, 
+Deason says. For instance, curators must often protect rare and delicate 
+objects from mass viewing and handling, lest they become damaged. As a result, 
+only scholars are permitted to see and handle some of a museum's finest pieces. 
+A 3-D scanning system capable of producing accurate, color replicas of art 
+objects could permit more people to view and handle at least copies of rare 
+works, Deason says.
+
+ Engineers manufacturing objects such as automobile parts might use these 
+modeling techniques to speed up their design and testing procedures. 
+Individuals studying inaccessible architecture or ruins might benefit from 
+calling up replicas of rare items or buildings for detailed study. Even home 
+shoppers, perusing the inventory of a virtual department store on television or 
+a computer, might want to download and inspect models of items they're 
+considering buying.
+
+"We're working on scanning large objects, like cars, sculptures, and 
+buildings," says Marc Levoy of Stanford University. "This would enable someone 
+to create, say, a virtual showroom for automobiles or a movie set or an urban 
+landscape." With such depth and accuracy of detail, someone wearing a virtual 
+reality headset could take a simulated walk or flight through a building, 
+neighborhood, or even city.
+
+"My goal is to scan a historic building and make a model that's so realistic, 
+you could use computer graphics to fly through the model and it would look 
+indistinguishable from a video of the original."
+
+ As part of realizing that technological fantasy, Levoy and his colleagues at 
+Stanford have assembled a "responsive workbench," on which one can see and 
+manipulate virtual objects created from 3-D computer models. "If you put on 
+special glasses, the objects look like holograms sitting on the table," says 
+Levoy.
+
+ Capitalizing on the scanning system's ability to describe a 3-D object in a 
+digital format, Levoy and his colleagues have built a 3-D fax machine. As a 
+demonstration, they scanned an image of a 6-inch-tall statue of Buddha into the 
+computer, then transmitted the file to another location, where a 
+stereolithography machine recreated the smiling Buddha in plastic. Start to 
+finish, the process took about 18 hours.
+
+ In an effort to integrate such technology into the manufacture and retail 
+sales of clothing, scientists at the Textile Clothing Technology Corp. in Cary, 
+N.C., are pursuing a project called "apparel on demand."
+
+"The idea is to automate the designing, cutting, and fitting of garments for 
+retail customers," says David A. Bruner, an engineer at the company. "The 
+long-term goal is mass customization of clothing."
+
+ In this vision, customers visiting a retail clothing outlet could, in addition 
+to searching through racks of clothes, flip through pictures in books or on a 
+computer screen to find the items they want. They would then step into an 
+automated measuring booth, which would gather their vital statistics and put 
+the data onto a computer disk or magnetic card. Once they've selected the items 
+of their choice, the retail outlet would transmit the customers' measurements 
+to a factory, where the garments would be cut and sewn to fit their exact body 
+dimensions, then delivered directly to their homes.
+
+"We believe that the whole process, from purchase to delivery at the customer's 
+home, should take 24 to 48 hours," says Bruner.
+
+ To make this system feasible, researchers at the company are developing a 
+simpler, less expensive whole-body scanner that can take all necessary 
+measurements in only 2 seconds. To achieve this goal, they're using a laser 
+scanning technology similar to that of Cyberware but with more video cameras to 
+make a quicker, less detailed model. To fit clothing, one doesn't need 
+submillimeter accuracy, Bruner says.
+
+ Though starting up such a system requires a large capital investment for the 
+industry, says Bruner, in the long run manufacturers believe that the 
+changeover will not raise the retail price of garments. "The automated process 
+eliminates much of the waste in the existing system," he says.
+
+ Currently, about one-third of all mass-produced garments sell at a discount, 
+since manufacturing lags lead to mismatches between supply and demand. 
+Moreover, another 30 percent of raw textiles are never fashioned into garments 
+because they're considered out of style, he adds. Despite the need to add 
+equipment to the present production line, in the long run such an "agile" 
+manufacturing system requires less infrastructure to operate and manage than 
+existing clothing factories do, Bruner says. "That's another cost advantage." 
+Despite the plethora of mass-produced retail clothes available to U.S. 
+consumers, the data suggest the nation is poorly garbed. According to clothing 
+industry statistics, only half of U.S. consumers fit correctly into 
+off-the-rack garments. Of the ill-clad customers, half alter their clothes to 
+fit properly, while the other half don't even bother.
+
+ Based on a survey by Audra Knight and Nancy Cassill, textile specialists at 
+the University of North Carolina, Greensboro, consumers--especially women--are 
+willing to pay up to $10 for body scans to get their clothes to fit properly. 
+"Based on these estimates," says Bruner, "we believe there's a strong market 
+for customers who aren't served well by the existing system."
+
+

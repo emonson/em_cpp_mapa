@@ -32,8 +32,56 @@ public:
 
     SvdlibcSVD( SparseMatrix<double,0,long> &mat, int rank)
     {
+        run(mat, rank);
+    };
+    
+    SvdlibcSVD( MatrixXd &dmat, int rank )
+    {
+        // Convert dense matrix to sparse
+        SparseMatrix<double,0,long> mat = dmat.sparseView();
+
+        run(mat, rank);
+
+    };
+
+    SvdlibcSVD( ArrayXXd &darray, int rank )
+    {
+        // Convert dense matrix to sparse
+        SparseMatrix<double,0,long> mat = darray.matrix().sparseView();
+
+        run(mat, rank);
+
+    };
+
+    VectorXd singularValues()
+    {
+        return S;
+    };
+    
+    MatrixXd matrixU()
+    {
+        return Ut.transpose();
+    };
+    
+    MatrixXd matrixV()
+    {
+        return Vt.transpose();
+    };
+    
+
+private:
+
+    VectorXd S;
+    MatrixXd Ut;
+    MatrixXd Vt;
+    
+    void run(SparseMatrix<double,0,long> &mat, int rank)
+    {
         // make double-sure that matrix is in compressed format
-        mat.makeCompressed();
+        if (!mat.isCompressed())
+        {
+            mat.makeCompressed();
+        }
         
         // Allocate dynamic memory for a svdlibc sparse matrix
         // NOTE: SMat is a typedef for a pointer to a sparse matrix structure
@@ -97,31 +145,8 @@ public:
         // or you get this:
         //   sparse_svd(3400,0x7fff7de6f310) malloc: *** error for object 0x7fee8a500080: pointer being freed was not allocated
         //   *** set a breakpoint in malloc_error_break to debug
-        //   Abort trap: 6
-    
+        //   Abort trap: 6    };
     };
-
-    VectorXd singularValues()
-    {
-        return S;
-    };
-    
-    MatrixXd matrixU()
-    {
-        return Ut.transpose();
-    };
-    
-    MatrixXd matrixV()
-    {
-        return Vt.transpose();
-    };
-    
-
-private:
-
-    VectorXd S;
-    MatrixXd Ut;
-    MatrixXd Vt;
 
 }; // class def
 

@@ -1,0 +1,264 @@
+Science News Online (3/6/99): Census Sampling Confusion
+
+ The Weekly Newsmagazine of Science
+
+ Volume 155, Number 10 (March 6, 1999)
+
+ Census Sampling Confusion
+
+ Controversy dogs the use of statistical methods to adjust U.S. population 
+figures
+
+ By Ivars Peterson
+
+ Counting the number of people in the United States is a massive, costly 
+enterprise, done once every 10 years.
+
+ For the year 2000 enumeration, the Bureau of the Census plans to mail out more 
+than 90 million questionnaires and deliver millions more by hand to households 
+across the nation before Census Day, April 1. An army of census takers will 
+next fan out across the country aiming to track down the significant number of 
+people who fail to return forms.
+
+ Past experience suggests that, despite such a huge effort, the population 
+count will still be incomplete. In 1990, the Census Bureau officially recorded 
+248,709,873 people. Evidence from other surveys and demographic analyses 
+indicated that the population was closer to 253 million and those not counted 
+were mostly children, people from racial and ethnic minorities, and poor 
+residents of both rural and urban areas.
+
+"Coming out of the 1990 census, we recognized that you can't count everyone by 
+direct enumeration," says Barbara Everitt Bryant, Census Bureau director during 
+that head count.
+
+ To obtain the most accurate count possible in the year 2000, the Census Bureau 
+has proposed integrating the results of conventional counting techniques with 
+the results of a large sample survey of the population (SN: 10/11/97, p. 238). 
+Bureau officials call this approach a "one-number census" because the 
+statistically adjusted result will be the one and only official count.
+
+"The plan will help lead to a result that includes more of the overall 
+population, especially for certain subpopulations, and it will help to control 
+costs," Tommy Wright, chief of the Census Bureau's statistical research 
+division, argues in the Jan. 22 Science.
+
+ In January, however, the Supreme Court ruled against the use of statistical 
+sampling methods to obtain population figures for determining how many of the 
+435 seats in the House of Representatives go to each of the 50 states. At the 
+same time, the court upheld a law that mandates the use of statistically 
+adjusted figures, when feasible, for all other purposes, such as distributing 
+$180 billion in funds for federal programs and determining congressional and 
+state district boundaries.
+
+ Last week, the Census Bureau responded to the court's decision and unveiled a 
+revised plan for Census 2000 that would, in effect, provide two population 
+totals. After counting "everyone it possibly can," the bureau would then 
+conduct a quality-check survey, says Kenneth Prewitt, Census Bureau director. 
+The new plan, however, could push the cost of conducting the census from $4 
+billion to more than $6 billion.
+
+ A handful of statisticians has also entered the fray. David A. Freedman of the 
+University of California, Berkeley; Martin T. Wells of Cornell University in 
+Ithaca, N.Y.; and several colleagues contend that current survey techniques 
+don't necessarily provide the accuracy needed to improve census data.
+
+"It's a very difficult problem," Wells says. "There are many, many problems for 
+which statistics is wildly successful, but statistics can't solve everything." 
+Freedman and his colleagues present their critique in a paper posted on the 
+Internet (Technical Report 537 at ).
+
+ Many other statisticians disagree with that stand. "You have to look at what 
+else is feasible," says David S. Moore of Purdue University in West Lafayette, 
+Ind. "The real question is, Given the time constraints, the obvious weaknesses 
+in straight enumeration, and the budget Congress is likely to supply, how good 
+a job does the Census Bureau's proposed method do?"
+
+"Generally, the statistical community is very much in favor of trying to do 
+sampling," says Donald B. Rubin of Harvard University.
+
+ To illustrate the difficulties of obtaining accurate population figures, 
+Wright uses an analogy. Suppose 10 enumerators, working independently, are 
+asked to determine the number of people at a basketball game during halftime.
+
+ The ticket sales count won't do because some people might have sneaked in or 
+legitimately gained admission without tickets, while others who bought tickets 
+may not have shown up. Counting people in the stands during halftime presents 
+other problems. Spectators come and go, some exiting the arena and others 
+seeking refreshments or switching seats.
+
+ As a result, some people may be counted twice and others missed completely. 
+Almost certainly, the 10 enumerators would come up with 10 different counts. 
+That variability represents what statisticians call measurement error.
+
+ Just like the estimates of attendance at a basketball game, censuses of the 
+United States also contain measurement error, Wright says. Moreover, given 
+limited resources, it's difficult to keep that measurement error small when 
+counting a large and highly mobile population.
+
+ As a quality check on the accuracy of the year 2000 enumeration, the Census 
+Bureau has proposed surveying a nationwide sample of about 10,000 randomly 
+selected areas, or "blocks," containing about 300,000 households. The Census 
+Bureau divides the United States into roughly 7 million blocks, of which about 
+5 million are inhabited. A block can be just one large apartment complex or a 
+rural county.
+
+ In an effort entirely independent of the main count, census workers would 
+knock on the door of each housing unit in the sample blocks and list every 
+person who admits to having resided there on Census Day. The Census Bureau 
+would compare the results from the main count conducted in those blocks with 
+this second, independent count, looking for matches of housing units and 
+persons. Those two measures would then be combined to yield a single set of 
+numbers.
+
+ The venerable, widely used statistical procedure that underlies this approach 
+is known as the capture-recapture method. In effect, it combines two estimates, 
+both slightly off from the true value, to generate one number that is thought 
+to be closer to the truth than either of the original measures.
+
+ To illustrate how the technique works, consider the problem of estimating the 
+number of perch in a certain lake. By fishing simultaneously in several areas 
+distributed across the lake, a research team catches, tags, and releases 40 
+perch. That represents the capture phase.
+
+ In a second effort, the recapture phase, the team goes out and catches, say, 
+50 perch, of which eight are tagged. Because one-fifth (8 out of 40) of the 
+tagged fish were caught, you can conclude that this time approximately 
+one-fifth of all the perch in the lake were caught. That means the total number 
+of perch is about 250 (40/8 x 50).
+
+ In the Census Bureau's approach, the traditional count is the capture phase 
+and the survey is the recapture phase. The final population estimate would be 
+the product of the first measure (based on counting) times the second measure 
+(based on sampling) divided by the number of people found in both phases.
+
+"Although sampling techniques introduce sampling error, they offer the 
+opportunity to diminish the larger measurement error and hence the overall 
+error," Wright notes.
+
+ That approach has been endorsed by the National Research Council's Committee 
+on National Statistics as well as a panel of the American Statistical 
+Association and other groups.
+
+"Estimation based on statistically designed samples is a standard and widely 
+used method of obtaining information about large human populations," Moore 
+says. All the economic indicators and employment figures, for example, stem 
+from such methods.
+
+ Though there may be questions about the details of how the Census Bureau might 
+implement statistical sampling, proper use of this tool can improve the 
+accuracy of the census, Moore maintains.
+
+ It's the details, however, that bother Freedman and his associates. 
+"Adjustment adds layer upon layer of complexity to an already complex census," 
+the statisticians contend. "The results of adjustment are highly dependent on 
+somewhat arbitrary technical decisions. Furthermore, mistakes are almost 
+inevitable, are very hard to detect, and have profound consequences."
+
+ Flawed data processing and clerical work in both the census and the survey, 
+for example, can accidentally introduce errors. In the 1990 quality-check 
+effort, a computer glitch would have mistakenly added a million people to the 
+initial count.
+
+ If they go undetected, such errors can have a significant impact. The census 
+includes both overcounts (people erroneously counted twice) and undercounts 
+(people missed). The quality-control survey provides estimates of both numbers. 
+However, a relatively small error in approximating the number of omissions and 
+the number of mistaken enumerations could lead to an unacceptably large error 
+in calculating the difference of the two, the net undercount.
+
+ Even if it's possible to improve the counts of demographic groups across the 
+nation as a whole using sampling, critics of the method point out that getting 
+an accurate estimate of the population make-up in an individual state, county, 
+or city is much more difficult. That's important because political 
+representation and tax funds are generally allocated to geographical areas 
+rather than specifically to racial, ethnic, or other groups nationwide.
+
+ Some groups of people, such as children, are likely to be missed in both the 
+census and the follow-up survey. Other people, such as college students, may 
+get counted twice. The difficulty is that the people missed or counted twice 
+aren't distributed evenly across the country but are concentrated in different 
+regions.
+
+"Unless the adjustment method is quite exact, it can make estimated shares 
+worse by putting people in the wrong places," the statisticians point out.
+
+ In planning for the 2000 census follow-up, the bureau has responded to 
+criticisms of the 1990 post-enumeration survey, which was not actually used to 
+adjust the 1990 counts. It intends to increase the sample size substantially, 
+change the procedure for matching the enumeration and sampling, require that 
+adjustments be made state by state rather than nationwide, and introduce other 
+refinements.
+
+ Nonetheless, Freedman and his colleagues maintain that the central issue is 
+whether the proposed adjustments to the census take out more error than they 
+put in. Although sampling error goes down as the sample size increases, it 
+becomes more difficult to recruit, train, and manage the personnel required to 
+conduct an accurate survey, they contend. Other potentially sizable, 
+hard-to-detect errors can then creep in.
+
+"Those concerns about nonsampling error are not new," says the Census Bureau's 
+Raj Singh. "We have quality-control programs, we monitor the various operations 
+very closely as they are conducted, and we have an extensive training program 
+for the staff performing those operations."
+
+"The Census Bureau does an outstanding job, but it has constraints," Wells 
+says. "There's no easy solution. You have to be very careful and try to really 
+understand where the problems lie."
+
+"This is a scientific question on which scientists ought to be able to use 
+their best judgment without being attacked for the consequences of that 
+judgment on, for example, apportionment or representation of minorities," Moore 
+says. However, "that doesn't mean that the scientists have to be unanimous."
+
+ The method also doesn't have to be perfect. "You're correcting the big 
+errors," Bryant says. "The whole point of the adjustment is to get the 
+differential undercount down."
+
+ Dress rehearsals last year allowed the Census Bureau to test and refine its 
+procedures. For example, the bureau implemented its original census plan, which 
+includes statistical sampling for completing the count and for conducting an 
+independent post-enumeration survey in Sacramento, Calif. There, the initial 
+population count was 349,197. Door-to-door enumerators and sampling techniques 
+later added 28,544 people. The independent quality-check survey pointed to a 
+net undercount of 6.3 percent, even after the additions. The final, adjusted 
+population figure was 403,313.
+
+ In Columbia, S.C., and 11 surrounding counties, the Census Bureau conducted 
+the dress rehearsal using only traditional counting methods and came up with a 
+population total of 662,140. It also administered a post-enumeration survey to 
+check accuracy but not to make an adjustment. The survey indicated that the 
+count missed 9.4 percent of the population. The net undercount was 13.4 percent 
+for blacks and 6.3 percent for whites.
+
+"The evidence, repeatedly from the first census through the 1990 census, 
+suggests that if Census 2000 were conducted . . . using the conventional 
+methods of the past, even with increased outreach, the results would tend to be 
+consistently below the truth," Wright insists. "On the other hand, theory, 
+simulations, and tests lead us to believe that a one-number census . . . would 
+tend to yield results around and closer to the truth."
+
+ The debate over sampling in the census, however, is far from over. In 
+Congress, it has become a highly partisan battle.
+
+ Republicans vehemently oppose the use of sampling. They favor improving the 
+traditional head count. Their proposal makes additional funds available to the 
+Census Bureau to reach a greater number of people by advertising the census 
+more widely, hiring extra census workers, and translating the census forms into 
+additional languages.
+
+ Congressional Democrats strongly support the Census Bureau's original plan and 
+are ready to go along with the Clinton administration's idea of pursuing an 
+enumeration that produces two sets of figures. Some contend that, without 
+sampling, the bureau will get a significant undercount no matter how much it 
+spends on outreach.
+
+ With funding for the Census Bureau slated to run out in June, reaching a 
+decision on the specific form the census will take becomes a major issue.
+
+"The census is a very large undertaking," Moore says. "With Congress not 
+wanting to fully fund the census until these issues are settled, regardless of 
+which way we go, [Census 2000] may end up being seen as a failure simply 
+because there wasn't enough time to do all the details as well as we would 
+like."
+
+

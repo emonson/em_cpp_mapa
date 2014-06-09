@@ -1,0 +1,178 @@
+Science News Magazine Editor's Picks - ps_1.htm
+
+ The Best of SCIENCE NEWS
+
+ April 29, 1995
+
+ PHYSICAL SCIENCES AND TECHNOLOGY
+
+ Cavities of chaos
+
+ Sorting out quantum chaos in the microwave lab
+
+ By IVARS PETERSON
+
+ A smooth stroke ending in a sharp tap with a billiard cue sends a ball 
+scooting across the table's green felt surface. The ball bounces off one 
+cushion, then another before smacking squarely into a second ball.
+
+ On a rectangular table, an expert player can return the first ball to its 
+original position, repeat the shot, and obtain the same result. However, such 
+consistency proves practically impossible to achieve on a rounded, 
+stadium-shaped table.
+
+ In stadium billiards, even the slightest change in starting point can alter 
+the ball's trajectory radically. The ball's path becomes unpredictable -- 
+especially after several bounces. If there were no friction, the ball's 
+continuing motion as it rattled around the table would appear random.
+
+ Thus, depending on the table's shape, the motion of a billiard ball can be 
+either predictable or chaotic. The same physical laws determine the outcome in 
+either case, but in the chaotic situation the result is sensitively dependent 
+on initial conditions.
+
+ The rectangle and the stadium have long served as geometric playing fields for 
+theorists studying differences between regular and chaotic motion. They can 
+readily calculate sample trajectories to investigate the details of these 
+different types of behavior.
+
+ Researchers can also use these geometries as models for investigating the link 
+between the classical mechanics of billiard balls and tables and the quantum 
+mechanics of the microscopic world of atoms and electrons.
+
+ For example, electrons confined to a tiny volume act in some respects like 
+billiard balls, bouncing around within its walls. But because electrons are 
+quantum particles, they exhibit wavelike behavior too. Where electron waves 
+cross, they can reinforce or cancel each other, creating a quantum interference 
+pattern.
+
+ What happens when an electron wave bounces around inside a stadium-shaped 
+cavity, in which a classical particle's motion would be chaotic? More 
+generally, how do quantum systems behave when the corresponding classical 
+systems are chaotic?
+
+ Extensive theoretical work, often augmented by computer simulations, has 
+uncovered a wealth of new physical phenomena at the blurry interface between 
+the microscopic and macroscopic worlds -- where classical theory may be chaotic 
+and quantum theory is very complicated.
+
+"Although not yet available in your local video store, this new game of Quantum 
+Pinball has captured the imagination of theorists in the field of quantum 
+chaos," physicist Roderick V. Jensen of Wesleyan University in Middletown, 
+Conn., commented in the Jan. 5 Nature.
+
+ Now, experiment is beginning to catch up with theory. Several research groups 
+are studying microwaves in thin, metallic boxes and electrons in tiny 
+structures called quantum dots to verify theoretical results and to explore the 
+possibility of unveiling new physics not yet evident to the theorists.
+
+ In the realm of electrons, microdots, and nanostructures, "there's a huge 
+frontier of potential applications of quantum chaos," Jensen says. 
+Understanding such systems could lead to novel electronic circuitry and other 
+uses in nanoelectronics.
+
+ To explore the manifestations of chaos in quantum mechanics, Srinivas Sridhar, 
+Arshad Kudrolli, and their coworkers at Northeastern University in Boston 
+observe the behavior of microwaves in closed, shallow copper containers, or 
+cavities. They exploit an exact equivalence between the equations of quantum 
+mechanics and those governing the behavior of electromagnetic waves in two 
+dimensions.
+
+"You do it [produce the equivalence] by making the cavity very thin, like a 
+pizza," Sridhar says.
+
+ Electromagnetic waves within this microwave cavity resemble oscillations of 
+the head of a drum, which vibrates at characteristic frequencies when struck 
+(SN: 9/17/94, p.184). By distributing fine sand across a vibrating drumhead, 
+researchers can map the drum's normal modes -- the patterns of vibration 
+corresponding to the drum's characteristic frequencies. The loose sand tends to 
+settle in more placid regions of the drumhead, away from the areas undergoing 
+strong oscillations.
+
+ In the quantum world, these normal modes are known as eigenfunctions, and 
+Sridhar has developed a way to map the eigenfunctions of microwaves bouncing 
+around inside cavities of different shapes.
+
+ A rectangular cavity produces a set of distinctive eigenfunctions, each one 
+corresponding to a particular energy. "You get exactly what you would expect 
+from quantum mechanics," Sridhar says. There's no chaos in this case.
+
+ However, the situation is somewhat different for a stadium-shaped cavity -- or 
+a rectangular cavity containing a large disk, which also gives rise to chaotic 
+motion. The classical description of an ordinary particle's motion in this 
+geometry is chaotic, meaning that there are no normal modes. How does quantum 
+mechanics change the picture?
+
+ In 1984, Eric J. Heller, now at Harvard University, argued on theoretical 
+grounds that quantum particles in such a geometry would have eigenfunctions 
+that retain some of the wave patterns associated with regular, periodic motion. 
+He described these eigenfunctions as having "scars" -- fuzzy tracks following 
+periodic trajectories that are unstable in the classical case (SN: 11/2/91, 
+p.282).
+
+ In other words, although the classical trajectories are random, the 
+corresponding quantum motion has eigenfunctions with a distinctive 
+distribution. Heller could explain the existence of these structures in terms 
+of quantum interference effects. Computer simulations furnished a picture of 
+what they look like (see illustrations).
+
+ In 1991, Sridhar provided the first direct observations of these scars in 
+microwave experiments with a rectangular cavity con-taining a large disk. His 
+subsequent work has revealed similar patterns in cavities having other 
+geometries (see color illustrations).
+
+"The Sridhar experiments are very valuable," Heller says. "At first, the 
+experiments were verifying things which we knew to be true from numerical 
+experiments. Most recently, Sridhar has broken new ground with challenges to 
+theory."
+
+ This recent work involves placing a random array of small obstacles inside a 
+rectangular cavity in order to study the connection between chaos and disorder 
+in quantum systems. It's like observing the effect of impurities on the 
+movement of electrons in tiny, two-dimensional structures.
+
+ The experiments reveal that these obstacles force the eigenfunctions to 
+concentrate themselves in certain areas of the cavity. They no longer spread 
+themselves throughout the entire container.
+
+"You see enormous localization in certain regions," Sridhar says. "The waves 
+are happy just to sit there." By changing the number of obstacles and the 
+microwave frequency, the researchers can increase or decrease the degree of 
+localization at will, thus making it possible to explore the link between chaos 
+and disorder.
+
+ Sridhar and Kudrolli described their work in March at an American Physical 
+Society meeting held in San Jose, Calif. Such findings may help explain the 
+results of experiments involving electron and photon activity in disordered 
+solids (SN: 4/20/91, p.248).
+
+ It's in the world of electrons and nanostructures at very low temperatures 
+that quantum chaos may prove of greatest value.
+
+ Advances in semiconductor fabrication now enable researchers to investigate 
+the electric properties of solid-state devices less than 1 micrometer across 
+and cooled to temperatures below 0.05 kelvin. Under these conditions, electrons 
+travel freely within the cavity; electric resistance arises from the bouncing 
+of electrons off the microstructure's sides. How well such a device conducts 
+electricity depends strongly on its shape.
+
+"Sridhar's experiments provide a tremendous amount of inspiration and intuition 
+for experiments and theory describing what electron waves look like in small 
+cavities," Jensen says. "You can also gain an enormous amount of insight into 
+these systems and their quantum properties from the classical mechanics, which 
+happens to be chaotic."
+
+ For example, researchers have observed clear differences in the electric 
+resistance arising from microstructures in the shape of a stadium, where the 
+classical motion is chaotic, and a circle, where the motion is regular.
+
+"These fruitful combinations of innovative experiments and theoretical games do 
+not just promise to improve our understanding of the classical-quantum 
+correspondence for classically chaotic systems," Jensen contends. "They may 
+also be of practical use in characterizing the unusual quantum mechanical 
+properties of tiny solid-state devices that may be incorporated into the 
+integrated circuits of the future."
+
+ copyright 1996 
+
+

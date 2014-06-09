@@ -1,0 +1,259 @@
+Biological Dark Matter: Science News Online, Jan. 12, 2002
+
+ Biological Dark Matter
+
+ Newfound RNA suggests a hidden complexity inside cells
+
+ John Travis
+
+ It started with worms that just would not grow up. In the early 1990s, Victor 
+Ambros and his colleagues were conducting a gene hunt. In particular, they were 
+searching for the gene that was mutated in a perplexing strain of 
+Caenorhabditis elegans, the small nematode whose development many biologists 
+study.
+
+ This genetic change Ambros hunted had apparently disrupted the worms' 
+developmental timing.
+
+ In normal strains, worms pass through four larval stages as they mature into 
+fertile adults. But members of the mutant strain get stuck at the first stage. 
+They would molt, but instead of moving on to the second larval stage, they 
+simply repeated the first stage. The larvae kept growing larger but never 
+became full-fledged adults.
+
+ Ambros' team painstakingly homed in on the gene responsible by adding pieces 
+of DNA from normal C. elegans back into the mutant worms. If a DNA sequence 
+restored full development, it presumably harbored a working copy of the gene 
+that's defective in the mutants, reasoned the investigators. In 1993 at 
+Dartmouth Medical School in Hanover, N.H., the hard work of Ambros and his 
+colleagues paid off with the elusive gene's discovery.
+
+ It was a "heroic detective story," says Sean Eddy of the Howard Hughes Medical 
+Institute at Washington University in St. Louis.
+
+ The story had a surprise ending, too. Unlike most genes, the one identified by 
+Ambros' group doesn't encode a protein. It spawns a small molecule of RNA-a 
+chemical relative of DNA-that somehow turns off other genes that play a role in 
+worm development.
+
+ This odd finding stood alone until a few years ago, when a team led by Gary 
+Ruvkun of the Massachusetts General Hospital in Boston found a gene that 
+controls C. elegans' transition from the fourth larval stage to adulthood. This 
+gene also creates RNA that regulates the expression of worm genes.
+
+ Although Ambros hadn't found genes in other organisms similar to the one he'd 
+identified in C. elegans, Ruvkun and his colleagues discovered that many 
+animals have versions of this second RNA-encoding worm gene. His team found 
+such genes in flies, mollusks, fish, and even people. The researchers 
+speculated that the RNA produced by the gene is a universal regulator of animal 
+development, perhaps an important controller of a caterpillar's metamorphosis 
+into a butterfly and a tadpole's into a frog.
+
+ Inspired by such research, biologists have now begun to systematically look 
+for so-called RNA genes." DNA whose final product is RNA instead of protein. 
+Several groups, including one led by Eddy, recently surveyed the DNA of the 
+bacterium Escherichia coli and uncovered dozens of such genes. Just a few 
+months ago, Ambros' team and two other research groups reported that worms, 
+flies, and people contain dozens of previously undetected genes that spawn RNA 
+instead of protein.
+
+ These investigators argue that the many intensive searches for protein-coding 
+genes have ignored or missed genes for small, stable RNA molecules that have 
+cellular functions. The RNA genes found so far are "just the tip of a huge 
+iceberg," says Ruvkun.
+
+ The biologist goes as far as to compare the RNA-gene findings to a humbling 
+discovery on a much larger scale. Astronomers studying the effects of gravity 
+on galaxies found to their astonishment that the universe contains large 
+quantities of so-called dark matter, mass that still eludes observation. In the 
+Oct. 26, 2001 Science, Ruvkun speculates that "the number of genes in the tiny 
+RNA world may turn out to be very large, numbering in the hundreds or even 
+thousands in each genome. Tiny RNA genes may be the biological equivalent of 
+dark matter-all around us but almost escaping detection."
+
+ RNA genes have already attracted commercial interest: A biotech firm is 
+testing whether some of the newfound bacterial RNAs play a role during 
+infection and might therefore be targets for new antibiotics. If that's not 
+provocative enough, some scientists suggest that RNA regulation of gene 
+activity and other cellular processes could explain the diversity and 
+complexity of plants and animals as compared with bacteria.
+
+ In the shadow
+
+ RNA has long stood in the shadow of DNA. Both chemicals consist of molecules 
+called nucleotides. In DNA, two strands of nucleotides pair up to form the 
+double-helix structure discovered by biologists James Watson and Francis Crick. 
+In contrast, RNA usually consists of a single strand of nucleotides, although 
+that strand can sometimes fold back on itself and create double-stranded 
+regions.
+
+ The "central dogma of genetics," a phrase coined by Crick, argues that 
+information in a cell flows from DNA to RNA to protein. A cell reads the 
+information encoded in a gene's DNA and makes a strand of RNA. This messenger 
+RNA, or mRNA, travels through a cell to sites of protein synthesis called 
+ribosomes. These microscopic factories then read the mRNA to determine what 
+amino acids to string together into a protein.
+
+ Yet biologists have long known that RNA does more in a cell than convey 
+protein recipes. For example, RNA strands are important parts of those 
+protein-making ribosomes (SN: 8/12/00, p. 100: ). In fact, some researchers 
+speculate that life began solely with RNA molecules, an idea known as the 
+RNA-world theory (SN: 4/7/01, p. 212: ).
+
+ Unlike the RNA genes recently identified by Amros and his colleagues, the 
+genes for the RNA in ribosomes were discovered several decades ago. After all, 
+a cell produces 10 millions copies of every ribosomal RNA. Moreover, each of 
+these strands is at least 13,000 nucleotides long-large enough for relatively 
+straightforward detection in the laboratory.
+
+ To unearth much smaller RNAs, such as the 22-nucleotide C. elegans strand that 
+Ambros initially identified, biologists have had to develop new search methods. 
+To pick out traditional genes, scientists had developed computer programs that 
+scan DNA sequences for distinctive protein-coding sequences. Those programs, 
+however, are ineffective at finding genes for RNAs.
+
+"Everything is biased towards proteins," says Stephen R. Holbrook of Lawrence 
+Berkeley National Laboratory in California.
+
+ He and his colleagues are trying to fix that. They recently tested a computer 
+program that they call RNAGENiE on the genome of E. coli. Armed with knowledge 
+about most of the bacterium's known RNA genes and rules regarding RNA 
+structure, the program spotted other previously recognized RNA genes, 
+Holbrook's team reports in the Oct. 1, 2001 Nucleic Acids Research. RNAGENiE 
+also identified several hundred potential RNA genes that researchers knew 
+nothing about.
+
+ These genes "are an undiscovered kingdom that's slowly revealing itself," says 
+Holbrook. His team plans to further refine RNAGENiE so that it can inspect the 
+more complex genomes of yeast, plants, and animals.
+
+ What's important
+
+ Several research groups have scanned the E. coli genome using other methods. 
+One of the most powerful is known as comparative genomics. Its success rests on 
+the idea that evolution preserves what's important. In other words, if two or 
+more species share an identical stretch of DNA, it probably does something 
+important. Otherwise, over time, mutations would scramble the sequences in each 
+species.
+
+ Biologists have used this principle to identify possible protein-coding genes, 
+but it also works for RNA genes. A team headed by Gisela Storz and Susan 
+Gottesman of the National Institutes of Health in Bethesda, Md., recently 
+demonstrated that approach in E. coli. By comparing several of the bacterium's 
+intergenic regions-parts of the genome empty of protein-coding genes-with those 
+of some closely related bacteria, the researchers identified 59 potential RNA 
+genes. They then verified that 17 of the genes in the bacteria produce RNA 
+strands ranging in length from 45 to 320 nucleotides.
+
+ Like several of E. coli's known RNAs that regulate gene activity, many of the 
+new RNAs bind to a protein called Hfq, the researchers reported in the July 1, 
+2001, Genes and Development. To Gottesman, that's evidence that the newfound 
+RNAs also influence gene activity in the bacterium.
+
+"There's a level of RNA regulation that we didn't realize was there," she says. 
+"It was just invisible."
+
+ In the Sept. 4, 2001 Current Biology, Eddy and his colleagues described a 
+similar comparative-genome scan. Matching E. coli's DNA against that of four 
+other bacteria, the researchers identified 275 potential RNA genes. To test the 
+predictions, the biologists followed up on 49 of the candidate genes and 
+determined that at least 11 of them produced RNAs of unknown function.
+
+ From the overlap seen in these and various other groups' results, Eddy 
+estimates that E. coli has 50 to 200 RNA genes. Its protein-coding genes number 
+about 4,000, he notes.
+
+ If biologists are going to exploit the newfound RNAs as targets for novel 
+antibiotics, they need to figure out the function of each one. That assignment 
+interests Ibis Therapeutics of Carlsbad, Calif. Funded in part by the 
+Department of Defense, which is looking for new ways to combat biological 
+warfare, this biotech firm develops small molecules that can dock inside RNA 
+molecules and interfere with their function.
+
+ The newly discovered bacterial RNAs represent potential targets for Ibis' 
+drugs, says David Ecker, the company's president. Ibis has begun to create 
+bacteria with mutations in their RNA genes and examine whether the mutant 
+microbes infect mice as effectively as the unaltered germs. If a gene mutation 
+reduces a bacterium's capability to produce illness, the gene's RNA product 
+could provide a good target for a drug, explains Ecker.
+
+ New RNA genes
+
+ The hunt for new RNA genes also goes on beyond the world of microbes. 
+According to a preliminary analysis by Eddy's team, biologists should soon be 
+able to expose most human RNA genes by comparing the human genome to the mouse 
+genome.
+
+ Several research groups have already turned up one new family of RNA genes in 
+flies, worms, and people. In the Oct. 26, 2001 Science, three teams describe 
+dozens of RNA genes similar to the two initially identified in C. elegans. 
+Researchers have dubbed the RNAs produced by these genes as microRNAs.
+
+ Thomas Tuschl of the Max Planck Institute for Biophysical Chemistry in 
+Gottingen, Germany, and his colleagues unearthed new genes by sifting through 
+all the RNA produced in fruit fly cells and human-cancer cells. They developed 
+techniques to pick out RNAs about 24 nucleotides long, ones that normally would 
+get discarded in experiments because of their small size. Tuschl's team 
+identified 16 novel microRNAs in fruit fly embryos and 21 in human cancer cells.
+
+ Working with C. elegans, David P. Bartel of the Whitehead Institute for 
+Biomedical Research in Cambridge, Mass., and his colleagues followed a similar 
+strategy. They sorted through the worm's RNA for molecules 21 to 25 nucleotides 
+in size and identified 55 microRNA genes. Many of these, the researchers found, 
+vary in activity during the worm's development.
+
+ Ambros and his Dartmouth colleague Rosalind C. Lee also found microRNA genes 
+by examining novel small RNAs made by C. elegans. Moreover, they compared the 
+worm's genome to that of a closely related nematode. All told, the two 
+researchers discovered 15 new genes encoding microRNAs. At least 10 of those 
+vary in abundance during larval development, suggesting that they too may 
+regulate the timing of development.
+
+ All three groups discovered that mammals, insects, and worms share some of the 
+same RNA genes. One intriguing gene is active in human-heart tissue and in the 
+developing mouse embryo.
+
+ Bartel suspects that there may be as many as 200 microRNA genes in C. elegans, 
+which would represent about 1 percent of its genes. He also points out that 
+there may be many other classes of RNA genes that investigators have yet to 
+uncover.
+
+ Overlooked culprit
+
+ How important are all these newfound RNAs and their genes to human development 
+and health? That won't be clear until scientists reveal the functions of the 
+RNA. Eddy speculates that scientists may have searched in vain for genes 
+causing some diseases because they considered only protein-coding genes when an 
+overlooked small RNA gene is the culprit.
+
+ RNA genes may be even more important than Eddy suggests, according to John 
+Mattick of the University of Queensland in Brisbane, Australia. In a radical 
+theory developed with University of Queensland physicist Michael J. Gagen, the 
+geneticist proposes that small RNAs account for the diversity and complexity of 
+eukaryotes-the animals, plants, and other organisms whose cells keep their DNA 
+in a pouch known as the nucleus.
+
+ Mattick notes that biologists have been surprised to find that the number of 
+protein-coding genes in an organism doesn't seem to reflect its complexity. 
+Worms and flies, for example, have roughly the same number of such genes, which 
+is only about twice the number counted in yeast and some bacteria. Moreover, 
+people may have only twice as many protein-coding genes as flies and insects do 
+and the same number that some fish have.
+
+ Perhaps the complexity of higher organisms lies in RNAs, not proteins, Mattick 
+and Gagen speculate. They note that in a traditional gene, not all the DNA 
+encodes the protein. When a cell reads a gene's DNA sequence to create 
+messenger RNA, it initially creates a longer-than-needed strand of RNA. To then 
+finalize the mature messenger RNA, enzymes cut out segments.
+
+ Mattick contends that these excised pieces of RNA, as well as the other RNAs 
+formed by the genes turning up in current studies, form a vast molecular 
+network that regulates a cell's overall activity. According to his 
+calculations, about 98 percent of the RNA produced in a eukaryotic cell don't 
+encode a protein.
+
+"This will be the big story in genomics over the next few years," Mattick 
+predicts. "You would have to be blind not to see that noncoding RNAs are a 
+vastly unexplored world."
+
+

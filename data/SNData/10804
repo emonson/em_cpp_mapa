@@ -1,0 +1,80 @@
+Science News Online (10/24/98): Cell-phone muffler squelches street noise
+
+ October 24, 1998 
+
+ Cell-phone muffler squelches street noise
+
+ By P. Weiss
+
+ A technique that quiets noise by producing counteracting sounds may soon mute 
+the background din that often plagues cellular-phone conversations.
+
+ Researchers at Lucent Technologies in Arlington, Va., reported last week that 
+they have developed a modified cell-phone prototype that combats low-frequency, 
+ambient noise, such as wind and traffic sounds. The antinoise circuitry can 
+squelch sound at frequencies below roughly 1,200 hertz, reducing the noise to 
+as little as one-eighth of its untreated loudness, says Michael A. Zuniga, 
+leader of the development team.
+
+ Zuniga described the nascent technology last week at the 136th biannual 
+meeting of the Acoustical Society of America in Norfolk, Va.
+
+ Cell-phone makers have expressed interest in conducting more extensive testing 
+of the innovation, he says. The producers then might license the technology 
+from Lucent, which no longer manufactures or sells telephones. The 
+noise-fighting phones "could appear in Japan next year, depending on how things 
+go this fall," Zuniga says.
+
+"It is absolutely a very exciting application," says Irene Lebovics, president 
+of NCT (Noise Cancellation Technologies) Hearing Products in Stamford, Conn. 
+"Walking on the street or riding in a car, you're always subject to 
+low-frequency noise. [It] has a masking effect on speech," she adds.
+
+ Zuniga says his team experimented with two approaches to the ambient-noise 
+problem, both of which involve detecting noise with an extra microphone and 
+generating sound waves that cancel it. One method, a feedback approach, reads 
+noise signals directly at the ear. Since feedback can cause squeals, the 
+researchers had to use less-than-optimal circuit settings to avoid them, 
+yielding marginal noise reduction.
+
+ The other method, called feed-forward, positions the microphone about 2 
+centimeters from the ear, so that it detects ambient sounds before the ear 
+does. The microphone converts the sound to electric signals, which are then 
+sent to a programmable, digital microchip custom-made by Fujitsu 
+Microelectronics in Dreieich-Buchschlag, Germany.
+
+ After analyzing the signals, the chip races noise-canceling waveforms to the 
+phone's speaker, which converts them to sound just in time to counteract 
+arriving noise. Because sound exists as compression waves in the air, opposite 
+peaks and dips of compression from the speaker nullify target noise in the 
+cavity between the phone and the ear, Zuniga explains.
+
+ The modifications also include internal changes to the earpiece so that the 
+speaker produces effective compression patterns despite differences in ear size 
+and shape, he says.
+
+ The performance of the feed-forward system was, "across the whole range of 
+users, pleasantly, pleasantly surprising," Zuniga says. He and his colleagues 
+both measured the noise reduction electronically and heard positive reviews 
+from five test subjects who tried the prototype phone.
+
+ Using sound to cancel sound is not a new idea. For decades, acoustics 
+designers have been developing products with what they call active noise 
+reduction, such as headphones that protect the ears against loud noises or make 
+it easier to hear an in-flight movie on an airplane.
+
+ Cellular phones, however, are a new frontier, says Graham Eatwell, a 
+consultant and president of Adaptive Audio in Annapolis, Md. "As an 
+active-control person, I think it's very interesting," he says of the Lucent 
+design, which has several patents granted or pending.
+
+ In particular, Lucent's use of digital circuits might signify that such 
+circuits are ready for use in other battery-operated, portable equipment, he 
+adds. Designers of such products previously shunned digital circuits as too 
+slow and power hungry. "One very big market is hearing aids," says Eatwell. 
+"That's the one everyone has their eye on."
+
+ From Science News, Vol. 154, No. 17, October 24, 1998, p. 262. Copyright C 
+1998 by Science Service.
+
+

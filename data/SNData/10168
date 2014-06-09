@@ -1,0 +1,68 @@
+Computation Takes a Quantum Leap: Science News Online, Aug. 26, 2000
+
+ Computation Takes a Quantum Leap
+
+ I. Peterson
+
+ Custom-assemble five fluorine atoms with a few other atoms, and the product is 
+a molecule. It's also a computer. The problem that it's solved is a simple one, 
+but the exercise provides experimental evidence that a quantum computer can 
+handle certain mathematical problems more efficiently than can a conventional 
+computer.
+
+ Though a practical quantum computer still may be decades away, "this result 
+gives us a great deal of confidence in understanding how quantum computing can 
+evolve into a future technology," says Isaac L. Chuang of the IBM Almaden 
+Research Center in San Jose, Calif.
+
+ He and his collaborators announced the feat last week at the Hot Chips 2000 
+conference at Stanford University.
+
+ A quantum computer exploits the quantum mechanical nature of tiny particles, 
+such as electrons or atomic nuclei, to encode information as quantum bits, or 
+qubits. Whereas an ordinary bit has at any time a value of either 0 or 1, a 
+qubit can also take on both values at once. Because a quantum computer can act 
+on these multiple states simultaneously, it's potentially many times as 
+powerful as a conventional computer (SN: 1/14/95, p. 30).
+
+ For their quantum computer, Chuang's team designed a molecule in which the 
+nuclei of five fluorine atoms interact with each other to produce a five-qubit 
+system (SN: 1/18/97, p. 37). The researchers report that they used radio pulses 
+to "program" the nuclei into specific quantum states. Nuclear magnetic 
+resonance (NMR) instruments could then detect the results.
+
+ The investigators tackled a permutation problem. Roughly speaking, computing 
+the order of a permutation is akin to finding the shortest path through a 
+hidden maze of rooms, each with precisely one exit and one entrance, connected 
+by one-way passages. The goal is to get back to the starting point most quickly.
+
+ Last year, Richard Cleve of the University of Calgary in Alberta showed 
+theoretically how a quantum computer could solve a particular version of this 
+problem in fewer steps than a conventional computer.
+
+ Chuang and his coworkers tackled a four-room version of the permutation 
+problem. They used radio pulses to program the molecules, which were dissolved 
+in a liquid, so that two qubits encoded the starting room, and three qubits 
+represented, in effect, the eight possible systems of one-way passageways.
+
+ Then, the researchers obtained the molecules' NMR spectrum, and its pattern of 
+lines gave the correct answer in each test. In essence, the result emerged in 
+one computational step, whereas a conventional computer would have required 
+more steps.
+
+"We anticipate more-complex algorithms, involving a few extra qubits, may be 
+possible using our current approach," comments team member Lieven M.K. 
+Vandersypen of Stanford.
+
+ However, "such implementations do not provide sufficient information about 
+critical issues for the future of quantum computation, such as how much control 
+we actually can achieve over a quantum computer," says Emanuel Knill of the Los 
+Alamos (N.M.) National Laboratory.
+
+ Earlier this year, Knill and his coworkers put together a seven-qubit quantum 
+computer made up of six hydrogen and four carbon atoms. Although the 
+researchers didn't perform a complete computation at that time, they 
+demonstrated a reliable, efficient procedure for setting up qubits for a 
+computation.
+
+

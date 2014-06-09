@@ -1,0 +1,77 @@
+Science News Online - Past Issues - 6/8/96
+
+ June 8, 1996
+
+ Boosting cryptography's role in security
+
+ By IVARS PETERSON
+
+ The U.S. State Department has regulations restricting the export of 
+cryptographic software. Applying these rules, however, can lead to 
+contradictory actions.
+
+ In 1994, officials ruled that a cryptography textbook that contained complete 
+computer programs for several strong cryptographic schemes was freely 
+exportable. Yet, when the same programs were put on a computer diskette, the 
+department argued that the diskette qualified as a "defense article" and 
+required a special license for export.
+
+ These rulings were obtained by Philip R. Karn Jr., a network engineer who 
+works for Qualcomm in San Diego, to test the regulations governing the export 
+of cryptographic technology. Karn's appeal of the decisions remains mired in 
+the courts. Last week, a panel of the National Research Council released a 
+report, "Cryptography's Role in Securing the Information Society," to highlight 
+the importance of cryptography for the future of information technology and to 
+point out shortcomings in current government policy on export controls.
+
+ Representing a wide range of interests, the 16-member panel recognized a 
+tremendous and widespread need for technology to encrypt electronic 
+information, making it easier to protect financial data, telecommunications 
+networks, and other assets from crime and terrorism. Such technology could also 
+provide greater privacy for individuals and boost the competitiveness of U.S. 
+companies in international markets, the panel argued.
+
+"Current [government] policy discourages the use of cryptography," says panel 
+chair Kenneth W. Dam of the University of Chicago Law School.
+
+ The panel members strongly endorsed the idea that no law should restrict the 
+manufacture, sale, or use of any form of encryption within the United States. 
+It recommended progressively relaxing, though not eliminating, export controls 
+on encryption technology.
+
+ Products incorporating a highly regarded cryptographic scheme known as the 
+Data Encryption Standard should be easier to export, the panel suggested. One 
+effect of such a change would be to encourage U.S. companies to include this 
+high level of cryptographic security in their products. Congress is already 
+considering legislation to relax export controls.
+
+ Even if the U.S. government heeds the suggestion, however, it may still be too 
+little, too late, says Jim Bidzos of RSA Data Security in Redwood City, Calif.
+
+ One Japanese company is already producing and selling throughout the world 
+computer chips that offer considerably stronger cryptographic security than the 
+Data Encryption Standard, he remarks. U.S. companies are currently shut out of 
+this market.
+
+ The panel also concluded that the government plan to introduce so-called 
+escrowed encryption is "relatively untried and entails its own potential 
+risks." In this scheme, a third party (in addition to the message recipient) 
+holds the digital keys required to unlock encrypted information (SN: 8/28/93, 
+p. 394; 2/12/94, p. 100). Such an approach is attractive to law enforcement and 
+national security agencies because with a court order they could obtain the 
+relevant key from the third party and decipher the otherwise incomprehensible 
+data.
+
+"The NRC report is a very valuable contribution to this debate," says Bruce 
+McConnell of the Office of Management and Budget and cochair of the interagency 
+working group on cryptography policy. The report recognizes that a balance must 
+be struck between computer security and concerns about national security and 
+law enforcement. "Where we differ is in exactly how you achieve that balance," 
+he notes.
+
+"In the past, government officials have tended to treat many aspects of 
+cryptography policy as top secret," Dam says. Most of the panel members had 
+access to this classified information, and they concluded that such knowledge 
+isn't essential for an informed public debate on cryptographic issues.
+
+

@@ -1,0 +1,230 @@
+Sneaky Calculations: Science News Online, Nov. 17, 2001
+
+ Sneaky Calculations
+
+ How to trick other people's computers into solving your math problems
+
+ Ivars Peterson
+
+ Browsing the World Wide Web is a breeze. Just click on a link or type in a 
+Web-page identifier-the so-called uniform resource locator, or URL. More often 
+than not, the requested page appears on your screen within seconds, downloaded 
+from a computer that could be anywhere in the world.
+
+ We owe such reliable, speedy service to a standard set of procedures that 
+governs communication between computers connected to the Internet. Largely 
+invisible to the user, these protocols orchestrate an intricate duet of 
+messages between interacting computers to guarantee that the right page appears 
+in the right place at the right time.
+
+ Those very same protocols, however, can be used for purposes entirely 
+unintended by the protocols' designers.
+
+ The communication system that brings you the Web page of your choice can be 
+exploited to perform computations. In effect, one computer can co-opt other 
+Internet computers to solve pieces of a complex computational problem. The 
+enslaved computers simply handle what appear to be routine Web page requests 
+and related messages, but the disguised messages ingeniously encode possible 
+solutions to a mathematical problem. If the solution is correct, a message 
+returns to the original sender.
+
+ Physicists Albert-Laszlo Barabasi and Hawoong Jeong and computer scientists 
+Jay B. Brockman and Vincent W. Freeh of the University of Notre Dame in Indiana 
+describe their scheme in the Aug. 30 Nature. They call it parasitic computing. 
+"The target computers are unaware that they have performed computation for the 
+benefit of a commanding node," the researchers remark.
+
+ It's a brilliant demonstration of how to solve difficult problems by 
+subverting protocol features, says computer scientist Matthias Bauer of the 
+Friedrich Alexander University of Erlangen-Nuremburg in Germany.
+
+ The fact that the target computers are unwitting participants in a computation 
+differentiates this scheme from other efforts to use the processing power of 
+thousands of computers distributed throughout the world for massive data 
+crunching. In the SETI@home project, for instance, users must install special 
+software that enables their computers, when otherwise idle, to download and 
+scan data from radiotelescopes for signals that might point to the existence of 
+extraterrestrial life (SN: 3/4/00, p. 152: ).
+
+"If parasitic computing imitates nature by not killing the parasite's host, it 
+could be an interesting technology," Bauer observes. However, like parasitism 
+in biology, parasitic computing can have deleterious effects. It could slightly 
+slow a co-opted computer, but on a larger scale, it might clog or even bring 
+down the Internet.
+
+ Key component
+
+ The seemingly simple request for a Web page involves a significant amount of 
+frenetic behind-the-scenes computation aimed at finding, delivering, and 
+displaying the desired page. One key component, governed by the so-called 
+transmission control protocol (TCP), involves a calculation to determine 
+whether a chunk of data was delivered without error.
+
+ Information sent across the Internet is typically split into small chunks, or 
+packets, that travel-often independently of each other-to their common 
+destination. Each packet bears a header providing data about its source and 
+destination and carrying a numerical value related to the packet's contents.
+
+ When a computer receives a packet of information, it checks for errors by 
+performing a calculation and comparing the result with the numerical value in 
+the packet's header (see "How TCP error detection works," below). Such a 
+calculation would detect, for example, the change of one bit from 0 to 1 or 1 
+to 0. Packets found to be corrupted are discarded. In that case, the 
+interrogating computer receives nothing and eventually displays, "The server is 
+not responding" or something similar.
+
+ To obtain "experimental evidence of the principle of parasitic computing," 
+Barabasi and his colleagues embedded potential solutions to a particular 
+mathematical question (see "Getting satisfaction," below) in Web request 
+messages sent from their own computers. When other computers linked to the 
+Internet received the messages and put them through the standard TCP 
+error-detecting routine, they also incidentally relayed information about the 
+validity of the embedded answers.
+
+ If a message incorporated a correct answer, it survived the target computer's 
+error check, and the target computer replied to the interrogating computer. 
+Otherwise, the target computer dropped the message and sent nothing back to the 
+interrogator. Hence, each reply would signal a correct solution.
+
+ In effect, by capitalizing on a calculation that Internet computers do anyway, 
+Barabasi and his coworkers tricked each target computer into handling a small 
+piece of a large mathematical puzzle. "We found a way to use the Internet as a 
+computer," Jeong says.
+
+ The Notre Dame team tested its scheme by exploiting several "consenting though 
+unwitting" Web site hosts in North America, Europe, and Asia. Subsequent 
+experiments were conducted over local networks.
+
+"Parasitic computing does not compromise the security of the targeted servers," 
+the researchers insist. It "accesses only those parts of the servers that have 
+been made explicitly available for Internet communication."
+
+ Nonetheless, Jeong comments, the team's demonstration raises many issues about 
+the "ownership" of resources connected to the Internet. For instance, what does 
+a computer owner actually consent to by connecting the computer to the 
+Internet? Does that consent include uncompensated use in parasitic-computing 
+projects?
+
+ At the same time, "if one considers how much computing power and bandwidth are 
+used by programs nowadays without the consent of the user, one could ask if it 
+really makes a big difference," Bauer says. For example, newly installed 
+software may automatically link to a company's Web server for license 
+information and updates. Also, Web servers often deliver unsolicited 
+advertising or download information to remote computers.
+
+"It is certain that if your space is public, someone is using it without your 
+knowledge and in a way you did not intend," Barabasi and his colleagues contend.
+
+ Delayed services
+
+ Although parasitic computing does not threaten the security of a target 
+computer, it could delay the services that the target computer normally 
+provides. On a sufficiently large scale, such slowdowns could disrupt the 
+Internet. As such, parasitic computing could even be used as a weapon in 
+cyberwarfare.
+
+ The example chosen and implemented by Barabasi and his collaborators in their 
+parasitic computing experiments poses no threat. Their primary goal was simply 
+to prove the idea that the communications protocol of the Internet could be 
+used to carry out computations. Indeed, the mathematical problem they used as a 
+test for parasitic computing could have been solved much more practically and 
+in less time on a desktop computer.
+
+ Finding a way to increase the efficiency of the process would make parasitic 
+computing more attractive for working out mathematical problems. It remains to 
+be seen whether that can be done.
+
+ Despite the inefficiency and impracticality of their approach so far, the 
+Notre Dame team already has encountered criticism for calling attention to ways 
+that communication could be turned into computation.
+
+ The researchers responded with the following statement: "By publishing our 
+work we wish to bring the Internet's various existing vulnerabilities to the 
+attention of both the scientific community and the society at large, so that 
+the ethical, legal, and scientific ramifications raised by it can be resolved."
+
+ Moreover, similar schemes could be used for purposes less innocent than 
+mathematical calculation. "There are many ways to bring down the Internet and 
+its attached systems," warns security expert Peter G. Neumann of SRI 
+International in Menlo Park, Calif.
+
+ Consider what Bauer describes as "villain-to-victim" computing-schemes that 
+take advantage of various Internet protocols for sharing or storing 
+information. Such covert links could permit individuals to communicate via 
+approved channels yet escape detection or filtering, a possibility now 
+heightened by concern about terrorism.
+
+ In the continuing cat-and-mouse game between parasite and host, and villain 
+and victim, software-based systems to detect intruders enable Web site hosts to 
+monitor requests made to their servers. For instance, Aaron Walters, Tom 
+Slabach, and Curt Freeland of Notre Dame have written instructions that catch 
+the specific sort of intrusion represented by parasitic computing based on TCP 
+error checking.
+
+ Although you can find a way to detect a specific version of parasitic 
+computing, "I think it is impossible to protect against all . . . techniques," 
+Jeong says. "Whenever you're connected to the net, there will be a part someone 
+can exploit."
+
+ There is a simple defense, of course. Just disconnect.
+
+ How TCP error detection works
+
+ All Web computers perform a simple calculation that lets a receiving computer 
+check whether a particular message or packet arrived without getting corrupted 
+along the way.
+
+ The sending computer first breaks the entire message into segments, each 
+consisting of 16 bits. All the segments are then added together using a variant 
+of binary arithmetic that gives a 16-bit result. Suppose the result is 
+1110101011011011. The sending computer flips each bit in the result so that 0s 
+becomes 1s and 1s becomes 0s, obtaining the complementary string 
+0001010100100100. This complementary string is incorporated into the message 
+header, and the message is sent.
+
+ The receiving computer breaks the incoming message into 16-bit segments, 
+calculates the sum, then adds it to the complementary string in the header. If 
+the message arrived unscathed, the result-called a checksum-is a string of 16 
+1s. If any bit in the message is altered during transmission, the checksum 
+would be different. In that case, the receiving computer would drop the message 
+and send nothing back to the interrogating computer. Otherwise, a message that 
+passes the error-detection stage goes through the hyper-text transmission 
+protocol (HTTP), which attempts to interpret the message's content.
+
+ Getting satisfaction
+
+ To demonstrate the feasibility of parasitic computing, Barabasi and his 
+collaborators chose a mathematical question known as the satisfiability problem 
+(SN: 5/6/00, p. 296: ).
+
+ Consider, for example, two variables, x and y, and the logical statement (x OR 
+y) AND ((NOT x) OR (NOT y)). The OR means that the clause (x OR y) is true if 
+either x or y is true, and the AND means that the clause (x AND y) is true only 
+if both x and y are true. Solving the given problem means assigning a value of 
+true or false to each of the two variables so that the entire statement is 
+satisfied. Here, x must be true and y false, or vice versa, for the statement 
+to be true.
+
+ The researchers chose a much more complex satisfiability problem that involved 
+16 variables and the logical operations AND and XOR. The operator XOR means 
+that the clause (x XOR y) is true only if x is true and y is false or if x is 
+false and y is true.
+
+ First, the interrogating computer generated all 216 possible solutions to the 
+given satisfiability problem. In this test case, only one of those solutions 
+was valid. The computer then created a message and a header for each possible 
+solution so that a target computer-at, say, a company or magazine Web 
+site-performing TCP error detection would obtain the correct result only if the 
+message contained a valid solution. If the result was incorrect, the target 
+computer would drop the message.
+
+ The message containing the valid solution then went through the hyper-text 
+transmission protocol (HTTP). However, because the original message was not a 
+legitimate Web request, the receiving computer responded with a message saying 
+something like, "Page not found."
+
+ Nevertheless, from the header information in the one returned message, the 
+interrogating computer identified the solution to the posed satisfiability 
+problem.
+
+

@@ -1,0 +1,66 @@
+Science News Online (8/7/99): Fast magnetic pulses trigger bits’ flips
+
+ Fast magnetic pulses trigger bits' flips 
+
+ By P. Weiss
+
+ An electron beam pierced these cobalt films at centers (small irregularities). 
+A brief, induced magnetic pulse triggered magnetization flips from 
+left-oriented (white) to right-oriented (black) in some areas. Like doomsday 
+prophets, experts in the quest to pack data ever more quickly and densely onto 
+conventional computer hard disks are again proclaiming, "The end is near!" They 
+warn that current magnetic-recording methods are approaching fundamental limits 
+on how quickly magnetic domains can reverse and how closely they can squeeze 
+together.
+
+ New research by Swiss and American scientists, however, suggests that there is 
+still a future for the technology. Experiments reported in the Aug. 6 Science 
+raise the possibility of a 1,000-fold increase in the speed of writing magnetic 
+data.
+
+ Christian H. Back of the Swiss Federal Institute of Technology (ETH) in Zurich 
+and his colleagues created rapidly changing magnetic fields by using electrons 
+accelerated to nearly the speed of light at the Stanford (Calif.) Linear 
+Accelerator Center. They demonstrated that magnetic pulses as short as 2 
+picoseconds (ps) trigger reversal of magnetization-the equivalent of writing a 
+new bit-in thin cobalt films. Today's fastest write heads require roughly 2 
+nanoseconds to switch a bit between 0 and 1.
+
+ Once the magnetization shift begins, notes team member Wolfgang Weber of ETH, 
+it takes a much longer period-up to 500 ps-to fully reverse direction. However, 
+"what counts in writing bits is only the time to trigger them," he says.
+
+ Although conventional wisdom dictates that ultrafast bit writing should 
+require very high magnetic field strengths, the team triggered reversals using 
+fields no greater than those from today's write heads, the scientists report.
+
+"Getting the time down by a factor of 1,000 is just incredible. I'm impressed," 
+comments H. Neal Bertram of the Center for Magnetic Recording Research at the 
+University of California, San Diego. He notes that magnetic-recording experts 
+had thought that a write pulse must endure at least 100 ps to induce a magnetic 
+domain to switch polarity.
+
+"There's hope this result can give [magnetic-recording-device designers] 
+guidance and optimism," he says. "The industry needs that right now."
+
+ To achieve such rapid triggering, Back and his coworkers tapped a 
+well-established phenomenon that enabled their brief magnetic-field pulse to 
+induce lingering effects. Zapping a thin film with a field lying both in the 
+plane of the film and perpendicular to the existing direction of magnetization 
+was known to tilt the magnetization out of the plane.
+
+ The new experiments demonstrate that once that tilt gets started, the pulse's 
+job is done. Intrinsic magnetic effects take over, and the magnetization 
+swivels into the opposite orientation. Because the applied pulse's role is 
+limited, fast triggering becomes possible without especially strong external 
+field pulses, Weber explains.
+
+ At this stage, no one expects these findings to trigger commercial products 
+any time soon. Dieter Weller of the IBM Almaden Research Center in San Jose, 
+Calif., another researcher on the team, jokes that the write head used in the 
+experiment-a 2-mile-long linear accelerator-"is a bit clumsy." Whether ordinary 
+write heads can generate magnetic field pulses like those made by the electron 
+beam remains to be seen, he cautions.
+
+ From Science News, Vol. 156, No. 6, August 7, 1999, p. 85. Copyright C 1999, 
+Science Service. 

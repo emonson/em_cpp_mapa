@@ -1,0 +1,211 @@
+Science News Online (7/24/99): The Honeycomb Conjecture
+
+ The Honeycomb Conjecture Proving mathematically that honeybee constructors are 
+on the right track
+
+ By Ivars Peterson
+
+ The honeybee's storage system consists of an array of hexagonal cells 
+precisely constructed from wax. (Agricultural Research Service, USDA) Honeybees 
+know a thing or two about working with wax and fashioning elegant, symmetrical 
+structures.
+
+ Gorging themselves on honey, young worker bees slowly excrete slivers of wax, 
+each fleck about the size of a pinhead. Other workers harvest these tiny wax 
+scales, then carefully position and mold them to assemble a vertical comb of 
+six-sided, or hexagonal, cells. The bees cluster in large numbers, maintaining 
+a hive temperature of 35@C, which keeps the wax firm but malleable during cell 
+construction.
+
+ This energetic, piecemeal activity produces a strong, remarkably precise 
+structure. Each wax partition, less than 0.1 millimeter thick, is fashioned to 
+a tolerance of 0.002 mm. Moreover, the cell walls all stand at the correct 120@ 
+angle with respect to one another to form a lattice of regular hexagons.
+
+ Observers throughout recorded history have marveled at the hexagonal pattern 
+of the honeybee's elaborate storage system. More than 2,000 years ago, Greek 
+scholars commented on how bees apparently possess "a certain geometrical 
+forethought" in achieving just the right type of enclosure to hold honey 
+efficiently. In the 19th century, Charles Darwin described the honeycomb as a 
+masterpiece of engineering that is "absolutely perfect in economising labour 
+and wax."
+
+ Biologists assume that bees minimize the amount of wax they use to build their 
+combs. But is a grid made up of regular hexagons indeed the best possible 
+choice? What if the walls were curved rather than flat, for example?
+
+ Mathematician Thomas C. Hales of the University of Michigan at Ann Arbor has 
+now formulated a proof of the so-called honeycomb conjecture, which holds that 
+a hexagonal grid represents the best way to divide a surface into regions of 
+equal area with the least total perimeter. Hales announced the feat last month 
+and posted his proof on the Internet at .
+
+ Although widely believed and often asserted as fact, this conjecture has long 
+eluded proof, says Frank Morgan of Williams College in Williamstown, Mass. 
+Hales' proof "looks right to me," he comments, "although I have not checked 
+every detail."
+
+ Last year, Hales proved Johannes Kepler's conjecture that the arrangement of 
+the familiar piles of neatly stacked oranges at a supermarket represents the 
+best way to pack identical spheres tightly (SN: 8/15/98, p. 103).
+
+ If Hales' proofs of the honeycomb and Kepler conjectures stand the test of 
+time, "it's a remarkable double achievement," says physicist Denis Weaire of 
+Trinity College Dublin in Ireland.
+
+ In an essay on the "sagacity of bees," Pappus of Alexandria noted in the 
+fourth century A.D. how bees, possessing a divine sense of symmetry, had as 
+their mission the fashioning of honeycombs without any cracks through which 
+that wonderful nectar known as honey could be lost. In his mathematical 
+analysis, he focused on the hexagonal arrangement of cells.
+
+ Although honeycomb cells are three-dimensional structures, each cell is 
+uniform in the direction perpendicular to its base. Hence, its hexagonal cross 
+section matters more than other factors in calculating how much wax it takes to 
+construct a comb.
+
+ The mathematicians' honeycomb conjecture therefore concerns a two-dimensional 
+pattern-as if bees were creating a grid for laying out tiles to cover an 
+infinitely wide bathroom floor.
+
+ Mathematicians of ancient Greece asked what choices bees might have if they 
+wanted to divide a flat surface into identical, equal-sided cells. Only three 
+regular polygons pack together snugly without leaving gaps: equilateral 
+triangles, squares, and regular hexagons. Other polygons, such as pentagons and 
+octagons, will not fit together without leaving spaces between the cells.
+
+ The Greeks asserted that if the same quantity of wax were used for the 
+construction of a single three-dimensional version of the three candidate 
+figures, the hexagonal cell would hold more honey than a triangular or square 
+cell. Equivalently, the perimeter of a hexagonal cell enclosing a given area is 
+less than that of a square or triangular cell enclosing the same area.
+
+ Other possibilities for arrays of cells, however, are conceivable. There's no 
+a priori reason why the cells must all have equal sides or identical shapes and 
+sizes. What about a crazy quilt of random polygons or cells with curved rather 
+than straight sides?
+
+ Sorting through these alternative patterns proved a formidable task for 
+mathematicians.
+
+ It was relatively straightforward to establish that a regular hexagon, with 
+equal sides and 120@ angles, has a smaller perimeter than any other six-sided 
+figure of the same area. Moreover, polygons with more sides than the hexagon, 
+such as regular octagons, do better, and polygons with fewer sides, such as 
+squares, do worse.
+
+ In 1943, Hungarian mathematician L. Fejes Toth proved the honeycomb conjecture 
+for the special case of filling the plane with any mixture of straight-sided 
+polygons. In effect, Morgan says, Toth established that the average number of 
+sides per cell in a plane-filling pattern is at most six. Moreover, the 
+advantage of having some polygons with more than six sides is less than the 
+disadvantage of having some polygons with fewer sides. Under these conditions, 
+the least-perimeter way to enclose and separate infinitely many regions of 
+equal area is the regular hexagonal grid of the honeycomb.
+
+ What if cells were allowed to have curved sides? Toth considered the question 
+and predicted that the best answer is still a grid of regular hexagons. 
+"Nevertheless, this conjecture has resisted all attempts at proving it," he 
+commented.
+
+ In recent years, Morgan has refocused attention on the honeycomb conjecture 
+and related questions, such as the most economical way of packaging a pair of 
+identical volumes as double bubbles (SN: 8/12/95, p. 101). In the May 
+Transactions of the American Mathematical Society, he outlined progress in 
+proving the hexagonal honeycomb conjecture and its variants, and he suggested a 
+possible route to a proof.
+
+ With curved sides, the complication is that a side that bulges out for one 
+cell must bulge in for its immediate neighbor. Bulging out helps minimize the 
+cell perimeter, while bulging in hurts.
+
+ Hales proved that the advantage of bulging out is less than the disadvantage 
+of bulging in. "The basic idea is quite simple and elegant," says John M. 
+Sullivan of the University of Illinois at Urbana-Champaign. Hales' main result 
+"shows that no single cell can do better than a hexagon if appropriately 
+penalized for having more than six sides or outward curves."
+
+ Therefore, straight-sided polygons work better than curved ones, and regular 
+hexagons are truly best of all.
+
+ Bees have that aspect of their honeycomb structures down pat.
+
+ Two possible structures for the closed end of a honeycomb cell. Mathematician 
+L. Fejes Toth showed that an end cap consisting of two hexagons and two squares 
+(top left) requires a little less wax than the one honeybees make, with three 
+diamond-shaped, or rhombic, panels (top right). A honeycomb consists of two 
+layers of such cells placed back to back so that a chamber on one side is 
+offset from its partner on the other side (bottom). (Weaire & Phelan/NATURE) 
+There's more to a honeycomb than a vertical, hexagonal grid, however. It 
+actually consists of two layers of cells placed back to back. The cells 
+themselves are tilted upward at an angle of about 13@ from the horizontal-just 
+enough to prevent stored honey from dripping out.
+
+ Instead of a flat bottom, each cell ends in three four-sided, diamond-shaped 
+panels, meeting in a point like a pencil sharpened with only three knife 
+strokes. The cells of the two layers are offset so the center of a chamber on 
+one side is the corner of three adjacent cells on the other side. This allows 
+the layers to interlock like the bottoms of two egg cartons fitted together. In 
+the honeycomb, however, one layer of material serves as the bottoms of two 
+cells. In cross section, the interface between the two layers has a zigzag 
+structure.
+
+ The angles of each diamond-shaped, or rhombic, face of the cell bottom are 
+109.5@ and 70.5@. In the 18th century, mathematicians proved that these 
+particular angles give the maximum volume for a three-rhombus configuration.
+
+ In 1964, Toth discovered that a combination of two hexagons and two squares 
+does a little better than an end cap of three rhombuses in terms of the 
+efficient use of wax. The difference, however, is very small. "By building such 
+cells, the bees would save per cell less than 0.35 percent of the area of an 
+opening (and a much smaller percentage of the surface area of a cell)," he 
+concluded.
+
+ Several years ago, Weaire and his colleague Robert Phelan experimented with a 
+liquid-air foam to test Toth's mathematical model. They pumped equal-sized 
+bubbles, about 2 mm in diameter, of a detergent solution between two glass 
+plates to generate a double layer.
+
+ The two layers of trapped bubbles formed hexagonal patterns at the glass 
+plates. The interface between the two layers adopted Toth's structure.
+
+ When Weaire and Phelan thickened the bubble walls by adding more liquid, 
+however, they unexpectedly found an abrupt transition. When the walls reached a 
+particular thickness, the interface suddenly switched to the three-rhombus 
+configuration of a honeycomb.
+
+ The switch also occurs in the reverse direction as liquid is removed.
+
+ So, honeybees may very well have found the optimal design solution for the 
+thicker wax walls of their honeycomb cells.
+
+ For mathematicians, however, "many questions remain open," Morgan says.
+
+ In two dimensions, for example, mathematicians can consider what happens when 
+they allow arrangements that include regions of several, intermingled 
+components or empty spaces between cells. In three dimensions, the question of 
+what space-filling arrangement of cells of equal size has the minimum surface 
+area is still not settled (SN: 3/5/94, p. 149).
+
+"The strategies I developed for the Kepler conjecture were very useful with the 
+honeycomb conjecture," Hales says. "A topic for future research might be to 
+determine to what extent [those methods] can be adapted to other optimization 
+problems."
+
+ These are matters that concern not only mathematicians but also researchers 
+interested in the characteristics and behavior of fluids, bubbles, foams, 
+crystals, and a variety of biological structures, from cell assemblages to 
+plant tissue.
+
+"Cell and tissue, shell and bone, leaf and flower, are so many portions of 
+matter, and it is obedience to the laws of physics that their particles have 
+been moved, moulded and conformed," D'Arcy W. Thompson wrote in his celebrated 
+book On Growth and Form, first published in 1917. "Their problems of form are 
+in the first instance mathematical problems, their problems of growth are 
+essentially physical problems."
+
+ The honeybee's honeycomb fits neatly into the atlas of mathematically optimal 
+forms found in nature.
+
+ From Science News, Vol. 156, No. 4, July 24, 1999, p. 60. Copyright C 1999, 
+Science Service. 

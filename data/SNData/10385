@@ -1,0 +1,294 @@
+Gadgets from the Quantum Spookhouse: Science News Online, Dec. 8, 2001
+
+ Gadgets from the Quantum Spookhouse
+
+ Navigation devices and other technologies may gain from queer quantum effects
+
+ Peter Weiss
+
+ Computers exploiting the oddities of quantum mechanics may eventually put 
+conventional computers to shame. Theoretically, full-fledged versions of those 
+quantum machines will someday master in an eye blink mathematical puzzles and 
+secret codes that current supercomputers wouldn't crack with a billion years of 
+number crunching.
+
+ The exotic innards of such quantum computers may prove to be unlike anything 
+used in computers today (SN: 8/26/00, p.132: ). Instead of chips with billions 
+of transistors, just a few hundred charged atoms, or ions, in an ultracold 
+refrigerator may carry out the complex computations. Or perhaps laser beams 
+bouncing around a maze of lenses and mirrors will do the job. Alternatively, 
+vials of liquid chemicals under the control of devices similar to hospitals' 
+magnetic resonance imaging scanners may also serve as quantum processors.
+
+ Quantum computing specialists face many avenues to explore, each of them 
+extremely challenging in its own right. One expectation that many of these 
+scientists share is this: Practical quantum computers won't be built for 
+decades, at least.
+
+ With success still so distant, and perhaps unattainable, some quantum computer 
+investigators have begun to wonder what other, perhaps easier, targets they 
+might hit along the way. Among the most peculiar properties that quantum 
+computing would harness is a relationship among particles known as entanglement 
+(SN: 9/29/01, p. 196: ). So strange is entanglement that physicists including 
+Albert Einstein battled for years to discredit the idea. Now, the concept is 
+hotter than it's ever been, and scientists are beginning to work out its uses 
+in a variety of technologies.
+
+ Entanglement remained a curiosity of quantum mechanics until the 1970s, when 
+theorists started to get an inkling of just how powerful 
+entanglement-exploiting computers might be. "With the growth and interest in 
+quantum computers, people started to ask, How do you quantify entanglement and 
+how do you make it? With all that attention, people started to think about 
+applications," says Richard J. Hughes of Los Alamos (N.M.) National Laboratory.
+
+ During the past few years, theorists have begun to work out ways to use 
+entanglement and other extraordinary quirks of the quantum world to tackle 
+important technological problems. Scientists have begun to experimentally test 
+a few of those schemes, and some of them seem feasible.
+
+ The potential payoffs are many. Entanglement and other quantum weirdness may 
+boost the accuracy of radar, Global Positioning System (GPS) receivers, and 
+other navigation devices. It may improve manufacturers' ability to lay down 
+tiny structures on microchips, expedite explorations for oil, improve the 
+vision of telescopes, and increase the accuracy of atomic clocks. Quantum 
+technology might even enable us to see objects without actually looking at 
+them-and without being seen ourselves.
+
+ Already close to realization are communications systems secured against 
+eavesdropping by means of certain less-exotic features of quantum mechanics 
+(SN: 6/17/00, p. 388). And experiments have already shown that entanglement 
+mechanisms improve these so-called quantum cryptography systems, their 
+developers say.
+
+"There are potentially many other types of applications, as well. We just 
+haven't thought of them yet," says Seth Lloyd of the Massachusetts Institute of 
+Technology (MIT).
+
+ Entangled photons
+
+ It all comes down to the seemingly magical ways of quantum mechanics. 
+Physicists have discovered that if they shine a laser beam into a certain type 
+of so-called nonlinear crystal, roughly one in ten billion of the photons that 
+pass through it will come out transformed into two photons. What's more, that 
+photon pair will have the quality called entanglement.
+
+"Entanglement is the quintessential quantum phenomenon," says Daniel Abrams of 
+NASA's Jet Propulsion Laboratory (JPL) in Pasadena, Calif. By using laser beams 
+or other prods to make atoms, ions, or molecules interact in distinctive ways, 
+scientists have also managed to entangle those diminutive denizens of the 
+quantum world. What's more, quantum mechanics sets no limit on how many 
+particles can be entangled with each other or how far apart they can be and 
+still maintain their peculiar, intimate correlation.
+
+ When particles become entangled, one or more of their traits become 
+complementary. In that sense, pairs of entangled photons are like pairs of 
+gloves in which there's always a left-handed and a right-handed partner. 
+However, for quantum particles-which are also waves, according to quantum 
+theory-traits that can be entangled include energy or wavelength, positions or 
+trajectories in space, and the properties known as spin and polarization, which 
+are related to the spatial orientations of electromagnetic fields.
+
+ Now for the weirdness. If no one measures the particular trait that has become 
+entangled within some group of particles, all those particles exist in a 
+twilight state in which they have no particular value of that trait. Measure 
+the trait for any one of those particles, however, and all the particles 
+instantly acquire specific, complementary values of the trait, no matter how 
+far apart the particles are.
+
+ Decades ago, scientists were troubled by that idea. Einstein rejected this 
+"spooky action at a distance," as he called it. Now, however, scientists and 
+engineers are learning to embrace it, and their technological imaginations are 
+getting quite a workout.
+
+ Funky quantum correlations
+
+ Equipped with atomic clocks, a fleet of 24 GPS satellites orbit Earth and 
+continuously beam down signals marking the spacecrafts' positions and the time 
+the signals were dispatched. When a GPS receiver on the ground collects those 
+signals from four satellites simultaneously, it can calculate its own position 
+to within as little as a few meters.
+
+ Much greater precision is possible by means of "funky quantum correlations," 
+such as entanglement, Lloyd says. In the July 26 Nature, he and his MIT 
+colleagues Vittorio Giovannetti and Lorenzo Maccone described quantum schemes 
+for measuring the time of arrival of radio-frequency bursts from satellites 
+more precisely than can be done today. Because the arrival time gives 
+information about each satellite's distance from the receiver, improving the 
+precision of that measurement better pinpoints the receiver on Earth.
+
+ When a satellite signal arrives at a conventional GPS receiver, it shows up as 
+an extended bunch of photons. To designate a time at which the signal can be 
+said to have arrived, the receiver records the entire incoming radiation pulse 
+and figures out its midpoint. The more photons received, the greater the 
+measurement's precision.
+
+ Now, suppose that the transmitted photons are entangled, Lloyd proposes. A 
+late-1980s experiment using beams of entangled photon pairs showed that they 
+spread out more than unentangled photons do, but they straggle in with an 
+enhanced degree of symmetry. For each particle that arrives 10 picoseconds 
+late, another will arrive precisely 10 picoseconds early. "Although the 
+individual arrival times are smeared out, the average time is better defined 
+than it is classically," Lloyd says.
+
+ A typical radiofrequency signal might contain a million trillion photons, 
+Lloyd says. If all could be entangled and detected, the receiver theoretically 
+could locate itself from each satellite to within the span of a hydrogen atom's 
+diameter.
+
+"That [huge] increase in accuracy should clue you in to the fact that that's 
+going to be damn hard to do," Lloyd cautions. However, more modest but still 
+substantial improvements over current GPS accuracy may be attainable by 
+entangling just a few photons, he says. He and his coworkers have just begun 
+experiments on the simplest case-entangling two photons to achieve a 40 percent 
+accuracy gain compared with unentangled two-photon pulses.
+
+"Simple demonstrations of quantum GPS and things like that are definitely on 
+the horizon," says Lloyd. "The technical challenges are considerable but not 
+significantly greater than building the first small-scale quantum computers."
+
+ He and his colleagues suspect their approach could benefit not only GPS 
+technology but also other navigational and ranging methods, such as radar and 
+perhaps even sonar. While GPS and radar use photons, sonar systems send beams 
+of acoustic vibrations, which physicists think of as particles called phonons. 
+"To make entangled phonons would be hard," Lloyd notes. "But, hell, there's 
+nothing that says you can't do it."
+
+ Besides promising greater precision in satellite-based systems that span 
+thousands of kilometers, quantum correlations may also offer a new way to 
+tighten tolerances in the realm of microelectronics manufacturing.
+
+ To make microcircuits with ever-smaller components, microelectronics makers 
+and federal laboratories are pumping billions of dollars into new 
+chip-fabrication methods using light with ever-shorter wavelengths (SN: 
+11/8/97, p. 302: ).
+
+ Light plays a role in the industry because it projects patterns of wires and 
+components onto the surface of a semiconductor wafer-a procedure known as 
+lithography. But light of a given wavelength can define lines no thinner than 
+half that wavelength, at least according to classical physics (SN: 5/5/01, p. 
+286: ).
+
+ There's a quantum way around that law, says Jonathan P. Dowling of JPL. Last 
+year, he and his colleagues at JPL and the University of Wales in Great Britain 
+showed theoretically that a pair of entangled photons of a certain wavelength 
+could "conspire," as he puts it, to act as a single photon of half that 
+wavelength.
+
+ This, in principle, would double both the horizontal and vertical resolution 
+of the circuitry pattern projected onto a chip, reducing the area occupied by 
+circuit elements to one-fourth of today's requirement. Ensnaring additional 
+photons into the web of entanglement compounds the benefits. For instance, 
+entangling three photons would provide a threefold improvement in linear 
+resolution, leading to a ninefold increase in circuit density.
+
+ This scheme is no longer just an idea. Recently, Yanhua Shih of the University 
+of Maryland in Baltimore and his colleagues have experimentally confirmed that 
+entangled photon pairs can interact to generate light with half the wavelength 
+of the entangled members. The team described its results in the July 2 Physical 
+Review Letters.
+
+ Interferometer approach
+
+ Even with such advances, there is no guarantee that quantum GPS or quantum 
+lithography will ever take off. The approach underlying them, however, can be 
+exploited in many other ways. That approach, known as interferometry, depends 
+on measuring minute differences in distance or time by examining interference 
+patterns of waves-usually waves of light-that take different paths to a 
+detector.
+
+ Interferometers are already ubiquitous in laboratories and industry. "Whenever 
+you want to do some sort of measurement, you usually begin with an 
+interferometer," Dowling says. For example, optical engineers take advantage of 
+interferometry to monitor the shape of a lens as it's being manufactured.
+
+ To do so, the engineers first split a beam of laser light into two. They shine 
+one part through the lens and then mix it back into the other part of the 
+original beam. Light passing through the lens travels more slowly than the 
+light moving through the air, so the two beams arrive at slightly different 
+times at a detector. This difference produces a pattern of dark and light 
+interference fringes. Irregularities in those can pinpoint distortions in the 
+lens surface.
+
+ In a famous example of interferometry gone awry, a misaligned part in an 
+interferometer used to test the mirror for the Hubble Space Telescope caused 
+engineers to distort that mirror's shape, initially saddling the billion-dollar 
+instrument with fuzzy vision. A subsequent space shuttle mission installed 
+corrective lenses (SN: 1/22/94, p. 52).
+
+ Even when classical interferometry is at its best, however, quantum 
+correlations such as entanglement can enable it to do better. Moreover, the 
+potential improvement in precision increases markedly with the number of 
+photons in each signal.
+
+ That may prove especially helpful as astronomy moves beyond individual 
+telescopes like Hubble to interferometric telescopes and other detectors, Lloyd 
+says. In such instruments, two or more telescopes some distance apart on Earth 
+bring together the light they collect from the same object, such as a star, to 
+generate interference fringes. By interpreting those fringes, scientists can 
+resolve details on celestial objects as if the multiple scopes were one huge 
+telescope as big across as the distance separating the individual instruments.
+
+ Astronomers are even discussing the notion of placing telescopes far apart in 
+space to serve jointly as a super-telescope that could examine distant objects, 
+such as black holes and planets orbiting neighboring stars (SN: 10/28/00, p. 
+282). Reconnaissance agencies are also considering similar techniques to better 
+spot minute features of interest on Earth, Lloyd speculates.
+
+ Researchers around the world are also pursuing the promise of quantum 
+improvements for other instruments, including gyroscopes used in navigation 
+systems, atomic clocks, and gravity-measuring devices, or gradiometers, that 
+guide oil exploration and geophysical research.
+
+ All these devices are interferometers of one sort or another. Some "are 
+analogous systems that might not look to you like . . . an interferometer. But 
+when you do the mathematics, it turns out to be the same," Abrams explains.
+
+ None of them will be easy to build because they require control of notoriously 
+fragile quantum phenomena. "Unless you're quite careful, the loss of a single 
+photon can mess up the entire procedure," says Lloyd.
+
+ Strange pictures
+
+ Still, the incentives for confronting such challenges continue to grow. 
+Consider this one, which seems straight out of Star Trek. Researchers at Boston 
+University have come up with a quantum way to make a picture of an 
+object-actually a three-dimensional image, or hologram (SN: 10/26/96, 
+p.270)-from light that doesn't even hit that object. It's like seeing something 
+without looking right at it or even its reflection. The effect is impossible 
+without entanglement, the scientists claim.
+
+ In the making of an ordinary hologram, a beam of classical, unentangled laser 
+light is split in two. One part bounces off a target and then interferes with 
+the other part-the so-called reference beam. The interference pattern recorded 
+in a photographic emulsion harbors the 3-D image of the target.
+
+ In contrast, the Boston researchers propose a scenario in which the object of 
+interest is surrounded by an opaque surface that has only a small aperture for 
+light to enter. Light illuminates and bounces off the object inside but can't 
+get back out. Only electric pulses, marking each time a photon hits the inner 
+walls, come from the enclosure.
+
+ If that incoming light first emerges from a nonlinear crystal to create 
+entangled photon pairs, one photon of each entangled pair can be directed into 
+the enclosed area while its entangled partner bypasses the enclosure on its way 
+to a photodetector. That makes it possible to record a hologram of the object 
+even though the photons that actually shine on the object stay in the 
+enclosure. Entangled partners of those enclosed photons serve as 
+outside-the-box messengers that can record some of the object's visual features.
+
+ Ayman F. Abouraddy, Bahaa E. Saleh, and their colleagues present the new 
+finding in the Nov. 5 Optics Express. As an experimental test of what they have 
+dubbed "quantum holography," the researchers are currently trying to image a 
+flat object, like a photographic slide, with the entangled pairs.
+
+ At a conference last summer where Saleh first brought up the idea, "there was 
+a great deal of interest from the reconnaissance people," he recalls. The 
+technique might lead to novel spying methods, he explains.
+
+ The quest for quantum computing has laid the groundwork for these various 
+quantum-enhanced technologies, scientists say. "The buildup of excitement about 
+quantum computers gave people a new language for thinking about entanglement 
+and things like that," Hughes says. "When you develop a new language you tend 
+to get new ideas."
+
+

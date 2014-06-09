@@ -1,0 +1,75 @@
+Lamprey cyborg sees the light and responds: Science News Online, Nov. 11, 2000
+
+ Lamprey cyborg sees the light and responds
+
+ Sid Perkins
+
+ The $6-million eel it ain't. But researchers who have taken the unprecedented 
+step of connecting a brain, in this case a sea lamprey's brain, to a small 
+mobile robot say they've got a roving fishbot that may someday lead to better 
+prosthetic devices for humans.
+
+ In the meantime, the two-wheeled robot that scoots about the lab bench in 
+response to light may help scientists better understand how an animal's nervous 
+system and a machine can communicate with each other.
+
+ Led by Sandro Mussa-Ivaldi, a computational neurobiologist at Northwestern 
+University Medical School in Chicago, the researchers described their findings 
+this week at the 30th annual meeting of the Society for Neuroscience in New 
+Orleans.
+
+"I'm very impressed with this work," says Stephen P. DeWeerth, a biomedical 
+engineer at Georgia Institute of Technology in Atlanta. "It combines the 
+realism of biology with the controllability of electronics."
+
+ To create the cyborg, Mussa-Ivaldi and his team removed a lamprey's brain and 
+part of its spinal cord and placed them in a refrigerated, oxygen-rich saline 
+solution. Then, they rigged small wires to bring electrical signals from 
+optical sensors mounted on the robot to the disembodied brain's vestibular 
+system, which normally enables the animal to distinguish up from down.
+
+ When the robot's sensors detected light, the lamprey's brain interpreted the 
+signals they sent as conveying a certain orientation in the water, the 
+scientists speculate. Electrical impulses that normally would have moved along 
+nerves to the animal's muscles instead traveled along a second set of wires to 
+the robot's wheels.
+
+ Depending on the electrodes' placement in the brain tissue, the signals caused 
+the robot to wheel toward or away from the light or to travel in a circle or a 
+spiral. In experiments with more than 40 lamprey brains, approaching the light 
+was the most common response.
+
+ Mussa-Ivaldi says the disembodied brain's continuous response to the 
+ever-changing signals from the robot's optical sensors is the first example of 
+two-way interaction between neural tissue and a robot. Studying the behavior of 
+this simple fish-robot hybrid may help researchers develop more complicated 
+systems that combine biological and electronic elements, he notes.
+
+"Scientists don't have a clear understanding of how to develop a two-way 
+communication between a brain and an artificial limb," Mussa-Ivaldi told 
+Science News. "We need to understand how the nervous system and a machine may 
+talk to one another."
+
+ The researchers chose a lamprey's brain to control their robot for several 
+reasons, says Mussa-Ivaldi. For one thing, the neurons are large and easily 
+identified. Also, the tissue can be kept alive outside the animal's body in a 
+cold saline solution for weeks. Moreover, he notes, the lamprey's central 
+nervous system can compensate for a lesion in the vestibular system. When some 
+of these cells are damaged, connections between the neurons somehow rearrange 
+so that the lamprey still swims normally.
+
+ In their next set of experiments, the researchers plan to examine the brain's 
+flexibility after such rewiring. They'll simulate a lesion in the lamprey's 
+nervous system by electronically blocking the input to the brain tissue from 
+one of the robot's sensors. After the brain has adjusted, the scientists will 
+restore the signal and observe the robot's behavior. Such a before-and-after 
+comparison would be impossible with a surgically induced lesion but easy to 
+obtain via reversible electronic simulation, Mussa-Ivaldi says.
+
+ Any organism that receives an implant or a prosthesis connected directly to 
+its nervous system will have to adapt to the device's presence and learn to 
+communicate with it, says DeWeerth. Characterizing the interactions between 
+simple biological and electronic materials is a fundamental step in building 
+true hybrid systems, he notes.
+
+

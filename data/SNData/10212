@@ -1,0 +1,206 @@
+When the Chips are Down: Science News Online, Nov. 25, 2000
+
+ When the Chips are Down Scientists seek alternatives to a computer technology 
+nearing its limits
+
+ By Laura Sivitz
+
+ Competition to make computer chips smaller, faster, and cheaper has fueled 
+U.S. economic growth, driven a technological revolution, and made your 
+once-flashy personal computer a relic in 2 years' time.
+
+ Experts, however, predict this march toward miniaturization will hit a wall by 
+about 2010. That's when transistors as we know them will have shrunk so close 
+to the atomic scale that quantum physics will take over and the old rules of 
+chip design won't hold.
+
+"Every major computer company that wants to stay in business beyond 2012 is 
+doing something in this area," says R. Stanley Williams, a senior scientist at 
+Hewlett-Packard Laboratories in Palo Alto, Calif. "It's kind of a desperate 
+race."
+
+ Biology could help speed the electronics industry to the finish line, many 
+researchers say. Nature has been building incredibly tiny, precise, geometric 
+structures ever since life began. Brain cells, for instance, release molecules 
+that fit into their corresponding receptors the way a key fits into a lock. 
+Getting nature to cheaply build a transistor as precisely shaped as a cell's 
+receptor might be one way that 21st-century electronics could vault over the 
+miniaturization wall.
+
+ Researchers across disciplines are banding together to attempt the feat. Some 
+are using DNA, as if it were a set of Lego pieces, to make a platform for what 
+could become the smallest computer chips ever. Others are using the building 
+blocks of proteins to assemble the world's tiniest wires. These and other 
+imaginative marriages of biological molecules with electronics could produce a 
+generation of minute devices that look nothing like their 20th-century parents.
+
+ Today's computer circuits are packed with transistors-the newest Intel Pentium 
+chip has 28 million of them. You can imagine a transistor as a drawbridge and 
+an electron as a car attempting to cross to the other side. Opening or closing 
+the transistor drawbridge controls the flow of electrons through a circuit.
+
+ The shorter the distance across each bridge, the more transistors you can 
+squeeze onto a chip, the faster a chip processes data, and the less energy it 
+needs to run. That's why smaller has meant better for decades of electronics 
+manufacturers and consumers.
+
+ Today's smallest transistors span a mere 180 nanometers-about 1/500 the width 
+of a human hair. That's getting close to the 25-nm limit at which the laws of 
+quantum physics will allow electrons to leap across transistor drawbridges even 
+when they're open. In other words, the basis of modern computer circuits will 
+soon break down.
+
+ It's time to envision something radically different, says Joseph M. Jasinski, 
+the senior manager of computational biology at IBM's research division in 
+Yorktown Heights, N.Y. The question is, What?
+
+ The new devices must be on the scale of nanometers and suitable for 
+inexpensive mass production-Mother Nature's forte. The biological world 
+regularly takes nanoscale building blocks of exquisitely precise shapes and 
+sizes and makes them into complex systems. These include the DNA double helix 
+and the cellular machines that build proteins based on the DNA code.
+
+ By mimicking biology, researchers hope to design molecules that could act as 
+self-directed construction workers assembling perfect nanoscale circuits, 
+millions or billions at a time. The molecules wouldn't necessarily conduct 
+current, but the crystalline devices they construct would. Like a bricklayer 
+building a house, this so-called bottom-up approach would contrast with the 
+current technique of sculpting microscopic circuit patterns from slabs of 
+silicon. And, researchers say, the new product would make today's fastest 
+circuit components seem unbearably slow.
+
+ In their search for just the right stuff to build smaller circuits with, some 
+scientists have zeroed in on DNA. They take advantage of the genetic code-four 
+nucleotide bases labeled A (adenine), C (cytosine), G (guanine), and T 
+(thymine)-to design short DNA strands that self-assemble into what could be the 
+foundation of a circuit board. Since an A in one DNA strand always binds to a T 
+in another, and a C always binds to a G, the scientists can predict how two 
+strands will come together.
+
+ Ned Seeman of New York University and his colleagues are trying to commandeer 
+this complementarity for decidedly nonbiological purposes. They're designing 
+DNA strands whose matching sequences zip together into nearly rectangular tiles 
+just 16 nm long and 4 nm wide. The researchers use this method to make 
+different types of DNA building blocks that are identical in shape and size. 
+About 250 trillion of them could fit inside this "o."
+
+ The beauty of these structures, according to Seeman, is that they can be 
+combined into a pattern resembling a striped plaza of ceramic tiles. Such a 
+miniature plaza could become the platform of a nanoscale circuit board, 
+according to Seeman. Key to the circuit would be special tiles designed so that 
+complementary DNA strands will stick on and jut into the air like a series of 
+poles.
+
+"We think we can add nanostuff-nanocrystals, nanotubes, and the like-" to the 
+top of each pole, Seeman says. These would be the electrical components of the 
+circuit, he continues, and as long as they're close enough, they should conduct 
+electricity.
+
+ Veering away from the DNA approach, several scientists have turned to a 
+different molecular pattern maker: peptides, amino acid chains that are shorter 
+than proteins.
+
+ Like DNA, peptides don't naturally bind to semiconductors, the crystalline 
+materials that make up computer chips. But through a technique resembling 
+accelerated evolution, materials chemist Angela Belcher of the University of 
+Texas at Austin and physicist Evelyn Hu of the University of California, Santa 
+Barbara are finding peptides that have this unusual property.
+
+ Belcher says she became interested in marrying peptides with nanoelectronics 
+during her doctoral research on abalone. "Nature has amazing control over 
+forming materials like shells," she says. Her research group revealed in the 
+mid-1990s that a specific peptide causes calcium carbonate to crystallize into 
+the structure found only in the tough abalone shell.
+
+ From that discovery, Belcher and Hu, then her postdoctoral advisor, realized 
+that if they found peptides able to direct the crystal growth of materials such 
+as silicon, they might have a tool for building nanoscale electronics. The 
+problem was that no known peptide interacted with semiconductor materials the 
+way some did with, say, calcium carbonate.
+
+ So, Belcher, Hu, and their colleagues grew a random assortment of 1 billion 
+different peptides, each a string of 12 amino acids. They then tested whether 
+any of the peptides stuck to silicon, gallium arsenide, or indium phosphide 
+crystals-three semiconductor materials widely used in the electronics industry.
+
+"There was no guarantee we would've seen anything stick at all," Hu says. To 
+her delight, though, the group found three peptides that not only bound 
+exclusively to one of the crystals in the experiment but also latched onto a 
+particular face of the crystal.
+
+ Their research, described in the June 8 Nature, was the first to link peptide 
+self-assemblers with semiconductors, according to chemist Vijay Pande of 
+Stanford University.
+
+ Jasinski says, "Angie's work is at the forefront of using biological 
+self-assembly to make nonbiological objects." IBM, Jasinski's employer, is one 
+of the organizations funding her research.
+
+ Belcher and her research group are still learning what makes these peptides 
+bind to certain semiconductors and crystal faces. Meanwhile, they continue to 
+discover tricks that certain peptides can do.
+
+ For instance, some peptides will prevent a semiconductor crystal from growing 
+in one or two of its three dimensions. This finding is critical because form 
+determines function in both crystals and circuits. Engineers need precise 
+control over the sizes and shapes of circuit components to prevent digital 
+information from getting garbled. And there's even less room for structural 
+imperfection in nanoscale devices than in today's smallest microchips.
+
+"If you really want to assemble a new set of tools-biological molecules that 
+will glom on to all the component materials that go into making a circuit-we 
+need a lot more biological-inorganic pairs," Hu says. Belcher and her group are 
+making progress on that quest. As they've expanded their targets to 20 more 
+semiconductor materials, their stash of crystal-manipulating peptides has 
+ballooned into the hundreds.
+
+ They are also designing new peptides that bind to two different crystals at 
+once, acting as a daub of glue. It will take that kind of finesse at the 
+nanoscale to produce self-assembling circuits.
+
+ As the miniaturization wall looms little more than a decade ahead, computer 
+companies predict that slow and steady won't win the race toward a nanoscale 
+chip. So, some scientists at Hewlett Packard Labs in Palo Alto, Calif., say 
+they're developing a more near-term technique for making molecular electronic 
+devices.
+
+ Williams' research team is developing a circuit where molecules acting as 
+switches take on the role that transistors play today (SN: 8/7/99, p. 95). 
+Their circuit will look like a sandwich with molecular switches as the filling.
+
+ Two gratings of silicon wires eight atoms wide and 9 nm apart will be the 
+bread of the circuit sandwich, holding specially designed switch molecules 
+in-between. An electric jolt can snap each molecule into one of two shapes.
+
+ The upper and lower wires will run in perpendicular directions, creating a 
+grid. In principle, each spot where the wires trap a molecule will be a bit of 
+memory and also a switch, according to Phil Kuekes, a computer architect at 
+Hewlett Packard.
+
+"By taking that regular structure and turning switches on and off, you can 
+program [the circuit] to be as complex as you want it to be," Williams says.
+
+ The company's current prototype has micron-size wires-about 1,000 times wider 
+than they'll ultimately need to be-and can do only the simplest of 
+computations, according to Williams. But he says that he and his coworkers have 
+already made silicon wires just 3 nm wide, and by the end of December, his 
+group aims to complete a 16-bit memory chip that fits on a 100-nm square.
+
+ Williams adds, "The laws of physics indicate it may be possible to build 
+computing devices that are 1 billion times more efficient than those we have 
+now."
+
+ Whether nanoscale computer chips have a foundation of DNA, are built by 
+peptides, or run on molecular switches, scientists still have many questions to 
+answer.
+
+ How will they hook these tiny components to one another and the rest of a 
+computer? How will they program the devices in sophisticated ways? And will the 
+new chips really turn out to be any better than the best ones engineers can 
+make with existing techniques?
+
+ If anything's certain, scientists will keep churning out promising nanoscale 
+ideas and results, and it will take years for the research to mature into a 
+21st-century computer chip.
+
+

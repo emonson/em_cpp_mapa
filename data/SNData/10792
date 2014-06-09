@@ -1,0 +1,197 @@
+Science News Online (10/10/98): Surreal Films
+
+ October 10, 1998
+
+ Surreal Films
+
+ A soapy solution to the math puzzle of turning a sphere inside out
+
+ By IVARS PETERSON
+
+ Note: images for this article may be found at .
+
+ Whether it's a child climbing a fence or a road crossing a mountain range, the 
+most energy-efficient way to get from one side to the other is to follow the 
+route that passes over the lowest spot.
+
+ Mathematicians have now used a similar energy-saving strategy to provide a 
+new, elegant solution to the problem of turning a sphere inside out.
+
+ In principle, a determined beachgoer could invert a beach ball by deflating 
+it, pulling the empty bag through its opening, and pumping the ball up again. 
+The task for mathematicians is harder yet: The perfect sphere that they work 
+with has no orifice, and the rules are different.
+
+ Imagine a ball made of an extremely thin, delicate, ghostly membrane that can 
+stretch, bend, and pass through itself. The idea is to turn such a sphere 
+inside out without puncturing, ripping, or creasing it.
+
+ You could try simply pushing the poles of a sphere toward each other, as if to 
+make them pass through each other and change places. At some point, however, 
+the distorted surface would develop a sharp kink that's not allowed, according 
+to the mathematician's rules.
+
+ Avoiding such a kink makes the task of exchanging a sphere's inner and outer 
+surface-called an eversion-a challenging puzzle.
+
+ In the past decade, after much effort, mathematicians discovered several ways 
+to accomplish this feat (SN: 5/13/89, p. 299). The latest answer to the problem 
+provides a geometrically optimal path-one that minimizes the energy needed to 
+contort the sphere through its transformation.
+
+"It's not just being able to do it, but being able to do it in the most 
+efficient way possible," says mathematician John M. Sullivan of the University 
+of Illinois at Urbana-Champaign.
+
+ The optimal sphere eversion, or optiverse, is now the star of a vivid, 
+computer-generated video, titled The Optiverse, produced by Sullivan and his 
+Illinois colleagues George K. Francis and Stuart Levy. It debuted in August at 
+the International Congress of Mathematicians in Berlin.
+
+"The sphere eversion problem is perennially intriguing," says Anthony V. 
+Phillips of the State University of New York at Stony Brook. "The optiverse 
+eversion is especially satisfying because it is natural. Given the central, 
+twisted configuration [at the halfway point], the surface unwinds itself."
+
+     
+
+ Until 1957, mathematicians were unsure whether it is possible to turn a sphere 
+inside out without making a hole in or creasing its surface. That uncertainty 
+vanished when Stephen Smale, now at the University of California, Berkeley, 
+proved a theorem in the field of differential topology demonstrating the 
+feasibility of a sphere eversion. The proof furnished no explicit picture of 
+how to do it, however.
+
+ The extraordinary difficulty of visualizing the details of a sphere eversion 
+made it a tremendous challenge to mathematicians and inspired some of the first 
+applications of computer graphics to mathematics.
+
+ One early procedure was discovered in 1967 by Bernard Morin, a blind 
+topologist at the Louis-Pasteur University in Strasbourg, France. In 1977, 
+Morin's sphere eversion became the basis of an animated film by Nelson L. Max 
+of the Lawrence Livermore (Calif.) National Laboratory. To create it, Max 
+started with a database of coordinates obtained from wire-mesh models depicting 
+11 stages in the transformation.
+
+ Other mathematicians discovered alternative schemes, gradually simplifying the 
+steps to make the process easier to follow-in effect, telling the story from 
+different geometric points of view (SN: 6/20/92, p. 404).
+
+ William P. Thurston, now at the University of California, Davis, found a 
+particularly striking eversion in which the sphere's initially unwrinkled 
+surface develops a symmetric set of bulges along its equator. Those ruffles 
+enable the sphere to twist around potential kinks as its inside and outside 
+surfaces exchange places. The computer-generated video Outside In provided a 
+dramatic view of the entire eversion (SN: 9/2/95, p. 155).
+
+ The trouble with these eversions, however, was that they consisted of a series 
+of stages that didn't lead automatically from one to the next.
+
+     
+
+ The new approach was inspired by the idea that a mathematical sphere could be 
+treated like a rubber ball or soap bubble. Adding a little physics to the math, 
+Robert B. Kusner of the University of Massachusetts at Amherst in the early 
+1980s adopted the notion that such a sphere's surface energy depends on how 
+much bending occurs. A smooth sphere has the smallest overall surface energy, 
+and distortions of the sphere increase that energy.
+
+ During any sphere eversion, the surface energy rises to a maximum, then falls 
+back to its minimum when it achieves the inside-out spherical shape. Moreover, 
+topologists have already proved that every eversion must pass through a 
+distorted shape in which at least four sections of the surface meet at one 
+point.
+
+ Kusner discovered a surface that resembles the halfway point in the original 
+Morin sphere eversion, when the inside and outside are equally exposed. This 
+shape also has the smallest surface energy of any formation in which four 
+surfaces meet at a point. He conjectured that this complicated, 
+self-intersecting surface might correspond in terms of energy to a saddle 
+point-like a pass through a mountain range. Going downhill from that midpoint 
+configuration to surfaces of lower energy, one could travel in one direction to 
+end up with the original sphere or in another direction to end up with the 
+inside-out sphere.
+
+ In effect, all one would have to do is nudge the intermediate surface, and it 
+would automatically snap into its original or inside-out configuration.
+
+ Deciding whether a sphere eversion based on this principle would work, 
+however, required additional research. "There were three possible worries," 
+Sullivan notes.
+
+ It was possible that the energy of Kusner's surface put it at the bottom of a 
+hollow in the middle of a mountain pass. In that case, a big push would be 
+needed to get that configuration out of its local depression and on its way to 
+the original or the everted sphere.
+
+ Another possibility was that all routes would lead to the original, but not 
+the inside-out sphere, or vice versa. Finally, the downhill, energy-minimizing 
+route might pass through an illegal, pinched configuration.
+
+     
+
+ When Kusner conceived of his sphere eversion, there was no graphics software 
+for modeling the type of energy-driven transformations that he had in mind.
+
+ More than a decade later, the availability of powerful computers and 
+interactive software for studying surface shapes finally made it feasible to 
+test his approach.
+
+ The Surface Evolver computer program, created by Kenneth A. Brakke of 
+Susquehanna University in Selinsgrove, Pa., uses energy-minimizing principles 
+to enable researchers to find the contours of soap films, explore the geometry 
+of foams (SN: 3/5/94, p. 149), and study how shapes change under a variety of 
+circumstances (SN: 12/23&30/89, p. 408). Brakke and Sullivan added constraints 
+to the Evolver's procedures, enabling the software to simulate a mathematical 
+sphere as it everted.
+
+"We did not know ahead of time that the Evolver would be successful in 
+producing a sphere eversion," Sullivan says.
+
+ The program represents surfaces as grids of triangles, and the software 
+computes how each of the grid's vertices moves to minimize surface energy. Each 
+frame of the resulting video uses from 1,000 to 2,000 triangles to approximate 
+the contorting sphere's curved surface.
+
+ Sullivan and his coworkers visualized the eversion in a variety of ways, 
+cutting away parts of the surface or making the sphere transparent to reveal 
+its inner contortions. The visual effect was unearthly: a weirdly shaped bubble 
+performing a surreal gymnastic routine.
+
+     
+
+ Mathematically, the computations and resulting animation provided evidence 
+that Kusner's eversion works. The midway surface configuration appears to 
+represent a true saddle point.
+
+ Additional computer experiments revealed that the case in which four surface 
+sections meeting at one point is just the simplest member of an infinite family 
+of eversions, each one characterized by a different number of intersecting 
+surface sections at the crucial halfway mark of the eversion.
+
+ The energy-minimizing approach pioneered for the sphere eversion may prove 
+useful for other transformations, such as turning the surface of a doughnut (or 
+torus) inside out. Maybe, Sullivan suggests, there's an efficient way to 
+perform that conversion.
+
+ However, many of the mathematical theorems describing the surface energy of a 
+sphere have not yet been fully established for a torus. "I'm not sure where to 
+start looking for the unstable critical tori from which I could push off to go 
+downhill," Sullivan notes.
+
+ Sullivan can show, for example, that for some starting surfaces, the downhill 
+path leads to pinching. "Perhaps it is just luck that the sphere eversion 
+avoids this pitfall," he remarks.
+
+ So, the quest for shape shifters isn't over. It's likely that the 
+sphere-eversion problem and its variants will continue to serve as a rich 
+testing ground for mathematical ideas and computer graphics techniques.
+
+ From Science News, Vol. 154, No. 15, October 10, 1998, p. 232. Copyright C 
+1998 by Science Service.
+
+     
+
+ Note: images for this article may be found at .
+
+

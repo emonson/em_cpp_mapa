@@ -1,0 +1,257 @@
+Science News Online (10/24/98): Atom Tinkerer's Paradise
+
+ October 24, 1998 
+
+ Atom Tinkerer's Paradise
+
+ Innovations to atom-imaging microscopes create labs on tips
+
+ By PETER WEISS
+
+ Maybe it was too big-or too small-a leap for his colleagues to fathom. 
+Whatever the reason, the hostility of fellow surface scientists was unvarnished 
+when James K. Gimzewski spoke at a 1985 surface-physics meeting about viewing a 
+single molecule with a new type of instrument-the scanning tunneling microscope.
+
+"They laughed me off the stage. It was new and they hated it," he says.
+
+ Microscopists were no more welcoming, says Gimzewski, a physicist at IBM's 
+Zurich Research Laboratory in Ruschlikon, Switzerland, where the scanning 
+tunneling microscope (STM) was invented by his colleagues.
+
+ Heinrich Rohrer, who was to share the 1986 Nobel Prize in Physics with IBM 
+colleague Gerd Karl Binnig for his part in the invention, "asked me go to 
+Australia and give a lecture at an international conference on microscopy. All 
+the TEM [transmission electron microscope] guys were shouting and laughing off 
+their heads," Gimzewski recalls.
+
+ A dozen years later, these and other pioneers of STM are having the last 
+laugh. The instruments and a host of its offspring, now known collectively as 
+scanning probe microscopes, or SPMs, have become standard equipment in research 
+labs around the globe.
+
+ While best known-and most often used-for picturing features as small as single 
+atoms, these atomic probes have acquired a wealth of other talents. Many of the 
+new uses arise from modifications and ingenious tricks devised by determined 
+researchers who regarded the microscopes as an invitation to improvise.
+
+ Once skepticism wore off-and the Nobel Prize recognition sank in-scientists 
+realized that an inspiring new terrain had opened up before them. In a world in 
+which atoms could be studied only on average, they had dreamed of seeing and 
+manipulating single atoms and molecules. The ability to touch their objects of 
+study had always been denied to atomic-level scientists-along with the insights 
+and freedom to explore that touching makes possible. Says Binnig, "Atoms are 
+not untouchables anymore."
+
+"What has surprised a lot of people is just how widespread the applications 
+have become," says microscopist Phillip E. Russell of North Carolina State 
+University in Raleigh. Scientists now can use SPMs to measure a wide variety of 
+properties, such as the strength of single chemical bonds. They can also 
+manipulate the atomic world in a growing number of ways-for instance, 
+developing electronic devices made from single molecules and devising new 
+compounds by snipping off atoms.
+
+ As Gimzewski puts it, for the atomic and molecular realm, the scanning probe 
+microscope is fast becoming "a laboratory on a tip."
+
+     
+
+ The innovators start from Rohrer and Binnig's basic concepts, now embodied in 
+the two main types of scanning probe microscopes: the STM and the atomic force 
+microscope (AFM). Binnig, Christoph Gerber of IBM, and Calvin F. Quate of 
+Stanford University invented the AFM in 1986.
+
+ The STM employs a very fine tip-only one or a few atoms across-connected to a 
+piezoelectric element, a tiny cylinder that lengthens or shortens minutely as 
+the voltage on it changes.
+
+ When the probe is within roughly a nanometer of a conductive surface, there is 
+a flow of tunneling current-so-called because the rules of quantum mechanics 
+allow electrons to defy classical physics and penetrate an energy barrier 
+presented by the gap as if they had tunneled through it. The current grows 
+stronger if the tip moves closer.
+
+ The instrument is designed so that a measure of the current feeds back to the 
+piezoelectric element. The element adjusts its length to maintain a constant 
+current and thus keep the tip at a constant height, a few angstroms, above the 
+surface. As the tip scans across the surface, it traces a pattern matching the 
+topography below. The landscape shows the shape of atoms but not necessarily 
+their identity.
+
+ Because the STM can depict only electrically conducting surfaces, its ability 
+to investigate many materials, such as biological samples, is limited. AFMs 
+overcome that restriction. Like the STM, they use an atomically sharp tip, but 
+it is mounted on a cantilever resembling a miniature diving board, which flexes 
+as the various electrostatic forces between the tip and atoms in the sample 
+push or pull. The AFM maps the atomic surface by adjusting the cantilever's 
+height to keep the force on its tip constant.
+
+     
+
+ Many scanning probe microscope innovators have propelled the evolution of the 
+instruments by modifying tips or cantilevers. Some have replaced standard 
+quartz or silicon tips used for imaging with more exotic materials. At Lawrence 
+Berkeley (Calif.) National Laboratory, for instance, a team led by Miquel B. 
+Salmeron uses SPMs with platinum tips to study, on an atomic scale, the 
+catalytic reactions that this metal promotes.
+
+ Others have mounted molecules on the tips to interact with the atoms or 
+molecules under study in telling ways. To measure the binding forces within and 
+between single molecules, for example, Hermann E. Gaub and his colleagues at 
+Ludwig-Maximilians University in Munich stick a protein-receptor molecule to an 
+AFM tip. They then bob this tip over a carpet of polymer strands studded with 
+proteins that are mates for the receptor.
+
+ By lowering and withdrawing the tip, a technique Gaub calls "fly fishing," the 
+experimenters eventually snag a polymer molecule by the receptor hook. Then 
+they throw the AFM into reverse, using the cantilever not to respond to a force 
+but to exert one, tugging against the bond and measuring the force between hook 
+and fish until molecules deform or break.
+
+ Getting creative with cantilevers, Gimzewski and his colleagues conducted a 
+series of experiments in which they made the tiny levers without tips, instead 
+coating the undersides with a layer of material that expands and contracts with 
+temperature, causing the cantilever to bend. Positioning such cantilevers above 
+chemical reactions between atoms on a surface, the IBM research team was able 
+to measure infinitesimal releases of heat from the reactions.
+
+ In another variation of this experiment, they measured humidity by attaching 
+absorbent minerals called zeolites to the end of a tip-free cantilever. As the 
+zeolite absorbs or gives up water, its mass increases or decreases, changing 
+the cantilever's vibration frequency.
+
+ Other modifications to the sensing ends of SPMs have made the instruments able 
+to respond to magnetic and electrical fields and flows of ions. Such 
+innovations have proven so useful that whole subgroups of SPMs have sprung up, 
+including magnetic force and magnetic resonance force microscopes, scanning 
+capacitance microscopes, and scanning conducting ion microscopes.
+
+     
+
+ Some researchers have wrung additional performance out of SPMs by expanding 
+the range of conditions under which the instruments work-for example, making 
+machines that operate in extreme cold, maintain extraordinary stability, or 
+make images in the presence of ultrasonic vibrations. Others have combined SPMs 
+with other sorts of sensors, such as optical detectors, to enlarge the 
+instruments' abilities.
+
+ At Zhifeng Shao's lab at the University of Virginia School of Medicine in 
+Charlottesville, researchers have built an AFM that works under freezing 
+conditions in which biological molecules become still and relatively stiff, 
+like hard rubber. At room temperature, biomolecules ordinarily wriggle and 
+writhe, making them the bucking broncos of probe microscopy. The sharp tips of 
+SPMs can gouge the often soft surfaces of biological materials, raising 
+questions about the fidelity of images. Using "cryogenic AFM," Shao's team has 
+made extraordinary snapshots of a number of biomolecules.
+
+ In the laboratory of Cornell University's Wilson Ho, an STM can detect the 
+vibrational energy of atomic bonds within a single molecule, which provides a 
+way to determine chemical identities. The difficulty has been the need to keep 
+the gap between the tip and the sample so precisely constant that voltage 
+variations induced by atomic vibrations would stand out.
+
+ To get the first vibrational readings-from acetylene molecules deposited on 
+copper -Ho and his coworkers doggedly eliminated disturbances. They had 
+calculated that the gap must remain steady to within a thousandth of a 
+nanometer, Ho and his colleagues reported in the June 12 Science. In fact, the 
+machine did 10 times better, says Ho.
+
+ Instead of banning vibrations, a research collaboration between the University 
+of Oxford in England and Hewlett-Packard Laboratories in Palo Alto, Calif., has 
+embraced them. In the Aug. 3 Physical Review Letters, a team led by Oxford's 
+Oleg V. Kolosov describes a technique of vibrating a semiconductor sample at 3 
+megahertz to measure precisely the elasticity of its surface.
+
+ The researchers exploit the dual nature of an AFM cantilever: flexible when 
+pushed by a slowly changing force but rigid when the force varies too quickly.
+
+ Because the cantilever can't track the oscillations, it stiffly resists them, 
+causing its tip to indent the surface. The cantilever flexes only in response 
+to the slowly varying average contact force. Happily, that average force 
+indicates the surface's softness.
+
+ Among researchers pushing to blend SPMs with other types of sensors, Andrew 
+Downes and Mark E. Welland, both of the University of Cambridge in England, 
+have added a light measuring ability. By detecting light emissions from metal 
+atoms stimulated by the STM's tunneling currents, the researchers may have 
+taken a step closer to the long-desired ability to discern an individual atom's 
+chemical identity.
+
+ In the May 25 Applied Physics Letters and Aug. 31 Physical Review Letters, the 
+duo described using a sensitive photomultiplier tube and lenses to collect 
+light from a metal sample as it was scanned with the STM tip. They succeeded at 
+distinguishing gold clusters from silver clusters, each just a nanometer 
+across, on the basis of both their emitted light and the voltage across the STM 
+tip at which the emissions began.
+
+     
+
+ In some notable innovations, researchers have left the nuts and bolts of their 
+SPMs untouched, discovering instead novel ways to apply the instruments.
+
+ Both Ho and Gimzewski have conducted experiments exploring the mechanical 
+effects of STM tunneling current on molecules. They have shown that current 
+pulses can cause molecules to rotate, possibly enabling researchers to position 
+individual molecules precisely for a chemical reaction at a particular bond.
+
+ Gimzewski has also used an STM as an atomic knife, cleaving an atom off the 
+four-lobed porphyrin molecule. That technique also holds promise for making 
+novel compounds and chemical reactions possible, he says.
+
+ Gimzewski and other researchers have used the STM tip to create some of the 
+first ultrasmall electronic devices, using molecules or atoms as circuit 
+components. For instance, by pressing on a C60 molecule, also known as a 
+buckyball, with an STM tip, Gimzewski induced it to act as a voltage amplifier, 
+controlled by the current from the STM tip.
+
+ A number of experiments in biology have used AFM tips to "feel" changes in the 
+softness of membranes, Binnig says. His research group, for instance, used AFM 
+scans to detect a sudden softening of a cell's walls as a virus penetrated its 
+defenses.
+
+ Biology researchers have just begun to recognize that with AFM's ability to 
+map contours comes a new way to measure volumes-of sperm heads, for instance. 
+Michael J. Allen of Digital Instruments in Santa Barbara, Calif., which 
+produces off-the-shelf SPMs, and his colleagues at Lawrence Livermore (Calif.) 
+National Laboratory have used AFM to determine that sperm with abnormal heads, 
+like 25 to 40 percent of human sperm, have no shortage of DNA and other 
+material packed within. These scientists use an unusually long, thin tip and 
+tap it along the surface of the sample instead of dragging it as with a normal 
+tip.
+
+     
+
+ One yet-to-be-achieved SPM innovation promises what none of the others 
+can-atomic imaging in three dimensions and, perhaps, chemical identification on 
+that scale as well.
+
+ Magnetic resonance force microscopy (MRFM) applies the same principles used by 
+hospital magnetic resonance imaging machines, which provide three-dimensional 
+views of internal soft tissues by detecting the spins of quadrillions of atomic 
+nuclei at a time. MRFM, however, aims to locate individual atoms this way, 
+which means detecting the faint magnetic field of a single, spinning nucleus.
+
+ A team led by Dan Rugar at IBM Almaden Research Center in San Jose, Calif., is 
+developing extra-long, thin AFM cantilevers with magnetic tips. Their 
+mechanical vibration frequency is expected to change slightly in response to 
+the force from a single electron's magnetic spin. While only a millionth the 
+force typically measured by AFMs, an electron's spin exerts a thousand times 
+more force than the lone nucleus, the researchers' ultimate goal.
+
+"We're quite a ways from the dream of 3-D pictures of molecules," Rugar says. 
+"The electron-spin work is a step toward that."
+
+ While seeing individual atoms with MRFM is a distant goal, Michael L. Roukes 
+of the California Institute of Technology in Pasadena says his lab is striving 
+to build a less ambitious MRFM instrument that could be used for examining the 
+magnetized layers within read-write heads in computer hard-disk drives. 
+Although it would not provide resolution at the atomic scale in all directions, 
+it could explore depth with nearly that precision, he says.
+
+ Scanning probe microscopes have enabled discovery at the atomic scale. They 
+have also inspired a torrent of toolmaking that has yet to run its course.
+
+ From Science News, Vol. 154, No. 17, October 24, 1998, p. 268. Copyright O 
+1998 by Science Service.
+
+

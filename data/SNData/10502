@@ -1,0 +1,147 @@
+Science News Online (10/12/96): Clusters and Decagons
+
+ October 12, 1996 
+
+ Clusters and Decagons New rules for constructing a quasicrystal
+
+ By IVARS PETERSON
+
+ The view from inside a typical crystal is notably monotonous. One neat row of 
+atoms succeeds another at regular intervals.
+
+ One can think of such an ordered solid in terms of stacked building blocks. 
+The blocks of a particular crystal consist of identical arrangements of atoms. 
+Constructing a crystal out of these unit cells is much like laying bricks to 
+build a wall.
+
+ Until 1984, scientists thought that all ordered solids have such a simple, 
+periodic arrangement. Then, during a project at the National Institute of 
+Standards and Technology in Gaithersburg, Md., Dan Shechtman of the Israel 
+Institute of Technology in Haifa was shocked to discover that an 
+aluminum-manganese alloy, which appeared to be crystalline, did not obey the 
+conventional rules of crystal structure (SN: 3/23/85, p. 188).
+
+ What set this material apart from normal crystals was the spacing of its rows 
+of atoms. Instead of repeating throughout the structure at some regular 
+interval, atoms of this so-called quasicrystal were spaced at either of two 
+characteristic intervals, in a fixed ratio. The atoms appeared to be clustered 
+in complex patterns that led to an unusual geometric arrangement.
+
+ Since Shechtman's startling discovery, researchers have synthesized a variety 
+of alloys with similar structures, which they have grouped with the 
+aluminum-manganese alloy into a new class of materials. They have also 
+discovered that some quasicrystalline alloys are harder than crystalline 
+materials having the same composition, some have a higher resistance to 
+electricity at low temperatures, and some have surfaces that are particularly 
+slippery.
+
+ Until recently, however, materials scientists could not explain how the atoms 
+of these quasicrystals could assemble themselves into such a complex 
+arrangement rather than the regularly repeating pattern of a crystal.
+
+ Now, physicists Paul J. Steinhardt of the University of Pennsylvania in 
+Philadelphia and Hyeong-Chai Jeong of the University of Maryland in College 
+Park have introduced a novel mathematical model that may shed light on the 
+interactions responsible for quasicrystal formation. Their model requires only 
+a single type of building block for constructing a two-dimensional quasicrystal.
+
+ Extended to three dimensions, this approach could provide a simple, unified 
+picture of how both ordinary crystals and quasicrystals form, Steinhardt 
+contends. The researchers report their findings in the Aug. 1 Nature.
+
+ One convenient way to picture a two-dimensional quasicrystal is as an 
+arrangement of structural units spread across a surface, like tiles on a 
+bathroom floor. To get the nonrepeating pattern characteristic of 
+quasicrystals, however, one can't use tiles shaped like squares or hexagons.
+
+ In 1974, mathematical physicist Roger Penrose of the University of Oxford in 
+England discovered that he could construct a nonperiodic tiling by using two 
+different tile shapes -- a wide diamond and a thin diamond -- with special 
+rules for how neighboring tiles fit together. All the pieces join neatly to 
+cover a flat surface, but the resulting pattern of tiles doesn't repeat itself 
+at regular intervals.
+
+ The Penrose tiling embodied several features characteristic of quasicrystal 
+structures. When quasicrystals were discovered, some researchers immediately 
+looked to Penrose tiling as a simple model of how quasicrystal atoms might be 
+arranged. It suggested that the atoms of a quasicrystal organize themselves 
+into two types of clusters, which act as building blocks, rather than into the 
+single type of block typical of conventional crystals.
+
+ The trouble was that a Penrose tiling requires a set of rules that specify how 
+the tiles must be placed. The tiles, marked for example with lines or arrows, 
+must abut certain edges to yield the final pattern.
+
+ The scientists can't imagine how clusters of atoms in quasicrystals could 
+interact in ways that mimic the complicated matching rules. Moreover, it's 
+difficult for anyone to piece together, say, 100 Penrose tiles without error 
+(SN: 7/16/88, p. 42). Yet perfect quasicrystals made up of 10^23 atoms can form 
+in minutes.
+
+ These inadequacies of the original Penrose tiling model prompted searches for 
+alternative ways of describing quasicrystals. One possibility involved 
+replacing Penrose's two shapes of diamond tiles with a single type of building 
+block.
+
+ Mathematician Petra Gummelt of the University of Greifswald in Germany was one 
+of the first to come up with such a scheme. She used a 10-sided, or decagonal, 
+tile as her basic structural unit. Rather than abutting each other like the 
+Penrose tiles, these decagons overlap in specific ways. The lumpiness one would 
+get with bathroom tiles was not a problem, because her mathematical tiles were 
+only two-dimensional.
+
+ When Steinhardt first heard of Gummelt's pattern, he was skeptical. "It wasn't 
+clear from her paper that the construction actually worked," Steinhardt says.
+
+ However, he and Jeong ended up proving Gummelt correct, and they worked out a 
+simpler versionof her proof that illuminated the link between her decagons and 
+Penrose's diamond tiles. They then proved that her overlap rules are equivalent 
+to Penrose's matching rules.
+
+ These results show that the atomic structure of quasicrystals and ordinary 
+crystals can be understood in terms of a single repeating unit, Steinhardt says.
+
+ A sensible way of interpreting the overlap rules in physical terms is as a 
+sharing of atoms by neighboring clusters, rather than as two clusters 
+penetrating into each other, he adds. Such a possibility is consistent with 
+experimental data on the positions of clustered atoms in quasicrystals.
+
+ Steinhardt and Jeong also found a second, independent way of constructing a 
+Penrose tiling suitable for modeling a quasicrystal. It eliminates the need for 
+matching or overlap rules.
+
+ The physicists identified a small cluster of adjacent tiles that appears again 
+and again within the Penrose tiling pattern. These clusters overlap, sharing 
+tiles with their neighbors. The pattern that contains the maximum number of 
+such overlapping clusters automatically generates a nonperiodic tiling.
+
+"Maximizing the density of a chosen cluster of tiles suffices to produce a 
+quasiperiodic tiling," the researchers say. The decagon scheme also meets this 
+criterion.
+
+ This finding suggests that when atoms settle into clusters that have the 
+lowest possible energy, the natural tendency is to form clusters of overlapping 
+clusters. This lowers the energy further by maximizing the number of low-energy 
+clusters present. "Cluster overlap plays an important part in this energy 
+minimization," Steinhardt says.
+
+ In ordinary crystals, no overlap occurs, and the atomic unit cells pack into a 
+repeating pattern, which gives the structure minimum energy.
+
+"If the clusters can share atoms and have the proper geometry, then 
+quasicrystals form," he notes. "The same basic picture explains both crystals 
+and quasicrystals."
+
+ These results for two-dimensional nonperiodic tilings apply directly to 
+certain stacked materials that researchers have synthesized. In this case, the 
+quasicrystalline geometry is restricted to thin layers. No one has yet extended 
+the ideas to three-dimensional structures.
+
+"If these principles can be established [in three dimensions], they may enable 
+the reliable prediction of new quasicrystals," Steinhardt and Jeong conclude.
+
+ With a better understanding of why quasicrystals form, materials scientists 
+may achieve improved control of the composition and structure of these 
+materials, potentially leading to a variety of practical applications.
+
+

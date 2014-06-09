@@ -1,0 +1,233 @@
+Science News Online - This Week - Feature Article - 8/23/97
+
+ August 23, 1997 
+
+ Mob Action
+
+ Peer pressure in the bacterial world
+
+ By EVELYN STRAUSS 
+
+"Team player" is not a phrase that usually comes to mind when thinking about 
+bacteria. Rather, these single-celled creatures seem to excel at independence. 
+Each individual can survive in a changing and often harsh world, where the 
+difference between life and death is one cell.
+
+ These rugged individualists live a streamlined life, in which the drive to 
+reproduce appears to rule. As soon as one cell divides into two, each strikes 
+off on its own, foraging for food, seeking safety, and trying to become two 
+once more.
+
+ Bacteria often seem so single-minded and self-reliant, they hardly merit 
+consideration as potential members of community organizations. Yet scientists 
+have gradually realized that diverse bacteria form coalitions to accomplish 
+feats that individuals cannot perform.
+
+ Once considered an oddity, this organizational ability appears to be a common 
+occurrence. Evolution seems to have distributed a standard kit of two genes to 
+a variety of unrelated bacteria. Armed with these tools, the various species 
+exploit a similar tactic for mobilizing mass production of useful molecules. 
+Each member of an assembly is counted, and the bacteria wait until the crowd 
+has gathered enough members -- a quorum -- to render success likely. Then each 
+bacterium begins to work toward the common goal.
+
+"This is a radical concept," says Kendall M. Gray of the University of South 
+Florida in Tampa. "They're single-celled organisms, but they exhibit complex 
+behavior. They're not only communicating, they're coordinating their behavior 
+so that they behave in a uniform manner."
+
+ Scientists first glimpsed this process, called quorum sensing, in the late 
+1960s. J. Woodland Hastings, then at the University of Illinois at 
+Urbana-Champaign, and his colleagues observed an odd characteristic of Vibrio 
+fischeri, a luminescent bacterium that inhabits squid. While growing V. 
+fischeri in the laboratory, the scientists noticed that although the number of 
+cells increased during the first few hours, the sample remained dark. 
+Luminescence shot up when the population reached a relatively high density and 
+the microorganisms were about to run out of nutrients.
+
+"One bacterium can devote all its energy to making light, but it's still 
+essentially invisible," says Gray. "If it waits until there are a billion cells 
+before it turns on the power, it has something useful."
+
+ Similarly, many bacteria secrete enzymes that help them survive. Each 
+bacterium transports a relatively small amount of an enzyme to the outside 
+world. It can no more change the concentration of that enzyme in the 
+environment than a person could dye the ocean red with a drop of food coloring. 
+If there are many bacteria -- particularly in a confined area -- the enzyme 
+would be available in a high enough concentration to do some good.
+
+ During the past 30 years, scientists have figured out the fundamentals of 
+quorum sensing, using V. fischeri as their primary subject. Each bacterium 
+produces a small, diffusible molecule that passes freely out of and into cells, 
+explains microbiologist E. Peter Greenberg of the University of Iowa in Iowa 
+City, who has spearheaded this work.
+
+ As the population of bacteria increases, so does the concentration of this 
+signaling molecule. Once the concentration in a bacterial cell has reached a 
+threshold, the signaling molecules can grab onto proteins called LuxR. This 
+embrace enables LuxR to bind to specific stretches of DNA and turn on the 
+adjacent genes. In V. fischeri, some of these genes provide blueprints for the 
+molecular apparatus that produces light.
+
+ In the early 1990s, scientists found that other bacteria possess communication 
+systems similar to that of V. fischeri. In each species, the signaling 
+molecules are constructed from a common module by an enzyme called an inducer 
+protein. Inducer proteins customize this module by adding different chemical 
+groups to it. The signaling molecules bind to a responsive protein, such as 
+LuxR, and together they turn on a gene. Scientists have now identified genes 
+for pairs of responsive-inducer proteins in over a dozen species of bacteria.
+
+"It's a very general phenomenon, and it's likely to be a key to the life of 
+microorganisms in many settings," says Barbara H. Iglewski of the University of 
+Rochester (N.Y.) School of Medicine and Dentistry. "If the bacteria can't talk 
+amongst themselves, they're not able to survive."
+
+ The discovery of quorum sensing tuned biologists in to the world of bacterial 
+communication. They have since found a variety of ways in which bacteria 
+coordinate their activities.
+
+ Most bacteria that use quorum sensing systems inhabit an animal or plant. The 
+microorganisms benefit from the process, but the host organism may or may not. 
+V. fischeri, for example, lives symbiotically in squid. It generates light that 
+prevents the squid from casting a predator-alerting shadow while searching for 
+food in the moonlight, and in return, the squid provides it with a home (SN: 
+9/14/96, p. 167).
+
+ Other bacteria produce molecules that damage their host. Pseudomonas 
+aeruginosa -- which causes lung disease in people with impaired immune systems 
+or cystic fibrosis -- produces enzymes that degrade tissue and allow the 
+bacterium to escape from the lungs into the bloodstream. The bacterium waits in 
+the lungs until its population reaches a critical density before beginning to 
+churn out these agents of destruction. Luciano Passador, also at Rochester, 
+likens P. aeruginosa's strategy to that of an army that amasses its troops 
+quietly and invades only when it can overpower its opponent.
+
+"So many bacteria get into the bloodstream simultaneously that the immune 
+system doesn't stand a chance of fighting them off," he says. Furthermore, if 
+the bacteria produced molecules early in infection, they might stimulate the 
+host to make antibodies that would inactivate the enzymes when the bacteria 
+tried to use them later, Greenberg reasons.
+
+ P. aeruginosa has many homes in addition to the human lung. It lives in the 
+soil, water, "everywhere," says Passador. Presumably, it needs different 
+proteins in different environments.
+
+"A soil bacterium that also infects people wouldn't necessarily want to 
+increase production of its tissue-degrading enzymes when it is reaching high 
+population densities in dirt," he says.
+
+ According to this theory, bacteria are doing more than just counting 
+themselves. They sense particular chemical and physical cues that help them 
+respond to different environments.
+
+ For instance, outside the lung, P. aeruginosa can grow as a film on many 
+surfaces, including implanted medical devices. These sources of infection are 
+hard to eradicate because the films resist antibiotics and detergents that 
+would kill individual bacteria. Greenberg and his collaborators have recently 
+shown that P. aeruginosa strains with defective quorum sensing systems form 
+abnormally thin films that succumb to detergents, he says.
+
+ Scientists have found that particular compounds in the environment stimulate 
+quorum sensing. Agrobacterium tumefaciens, an organism that causes tumors in 
+plants, directs its host to make certain substances. In addition to providing 
+nutrition for the bacterium, the host chemicals spur A. tumefaciens to produce 
+a responsive protein. This, in turn, enables individual bacteria to detect the 
+presence of their neighbors.
+
+ Scientists say other bacteria probably use a similar scheme for figuring out 
+where they are. This tactic ensures that they invest in the equipment with 
+which to sense population density only under specific conditions.
+
+ For the most part, scientists have focused on the detailed mechanics of quorum 
+sensing. Only recently have they begun to move their studies from the 
+laboratory into the field. Leland S. Pierson III of the University of Arizona 
+in Tucson has developed a system for listening in on bacterial conversations in 
+a natural setting -- the roots of a wheat plant.
+
+ Pierson studies Pseudomonas aureofaciens, a bacterium that infects and 
+benefits wheat plants. In large numbers, it makes an antibiotic that inhibits 
+the growth of a fungus that causes take-all disease, which can ruin entire 
+wheat harvests.
+
+ Pierson engineered a strain of P. aureofaciens that was incapable of making 
+its own signaling molecule but could respond to messages from other bacteria. 
+He inserted into this strain a gene that makes an easily detectable protein 
+rather than the usual machinery for antibiotic production. When the bacterium 
+experiences conditions that would normally trigger antibiotic output, it 
+manufactures this protein instead, thus alerting the researchers that it has 
+received a signal.
+
+ When Pierson added a strain that produces the signaling molecule to roots that 
+had been infected with the strain that lacks the signal, production of the 
+protein increased dramatically. These results indicate that distinct bacterial 
+populations can talk in the "real world," he says.
+
+ Now Pierson wants to find out whether bacteria of one species can hear 
+unrelated organisms. Most bacteria in the water, soil, plants, and people live 
+in neighborhoods composed of diverse members, raising the possibility that 
+there are conversations between different species. If so, this might allow 
+bacteria to find out who else is present and modify their behavior accordingly.
+
+ An organism could eavesdrop on its neighbors in several ways. Signaling 
+molecules from distinct species are not always unique, so a bacterium has an 
+opportunity to sense the presence of strains that mimic its own dialect. 
+Furthermore, while some responsive molecules are very picky, others are 
+promiscuous. They can recognize a variety of signaling molecules, although they 
+tend to function most effectively when supplied with the type made by their own 
+inducer gene.
+
+ Although scientists have not yet examined communication between species in the 
+natural environment, they have gathered laboratory evidence suggesting that it 
+occurs. Burkholderia cepacia is associated with fatal lung infections in people 
+with cystic fibrosis. It infects human lungs -- but almost always after they've 
+been colonized by P. aeruginosa.
+
+ Researchers have found that B. cepacia apparently has a way of intercepting 
+messages from P. aeruginosa. First, scientists grew P. aeruginosa in laboratory 
+broth, then disposed of the bacteria. When the investigators added this broth 
+to B. cepacia, the bacterium increased its manufacture of molecules thought to 
+be necessary for it to survive and spread within a person.
+
+ In a second experiment, the scientists added broth from a P. aeruginosa strain 
+that makes only small amounts of its signaling molecule. This broth triggered a 
+much weaker response by B. cepacia, indicating that B. cepacia is responding to 
+P. aeruginosa signals, the researchers argue.
+
+ The ability of different species to communicate with each other appears 
+widespread. In 1979, Greenberg showed that 19 of 28 marine bacteria he tested 
+produced factors that induced V. harveyi, a luminescent marine bacterium, to 
+generate light. Last year, Pierson tested about 40 wheat root bacteria and 
+found that approximately one-third sent a recognizable signal to P. 
+aureofaciens.
+
+ Bacterial messages may reach organisms more complex than bacteria. One of the 
+P. aeruginosa signaling molecules suppresses key activities of the mammalian 
+immune response, according to an unpublished report by David I. Pritchard and 
+his colleagues at the University of Nottingham in England.
+
+ Pierson wonders whether the conversations are always friendly, even among 
+bacteria. In principle, these microorganisms could manipulate each other by 
+interfering with one another's quorum sensing systems.
+
+"What a great way to compete -- control the other organism's genes," he says. 
+No one knows yet whether this happens in nature, but it is possible. In the 
+laboratory, scientists have found ways to confuse bacteria. In V. fischeri, 
+foreign signaling molecules can bind to LuxR and prevent it from functioning 
+normally, even in the presence of its usual signaling molecule.
+
+ Furthermore, scientists have found hints that a species of algae fouls up 
+communication among the microbes. These algae, which are particularly 
+successful at defending themselves against bacterial colonization, produce 
+natural inhibitors of bacterial quorum sensing, reported Staffan Kjelleberg of 
+the University of New South Wales in Sydney, Australia, and his colleagues in 
+the November 1996 Journal of Bacteriology.
+
+ These findings reveal a possible chink in the bacterial armor. Scientists 
+would like to crack the code, as these algae seem to have done, and use the 
+information for therapeutic and agricultural purposes.
+
+"Once we've figured out how to scramble messages, we'll know a lot more about 
+how bacteria communicate," says Passador. "Then we should be able to infiltrate 
+bacterial organizations and undermine their activities."
+
+

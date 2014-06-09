@@ -1,0 +1,260 @@
+Science News Magazine Editor's Picks - mc_4.htm
+
+ The Best of SCIENCE NEWS
+
+ March 30, 1996
+
+ MATHEMATICS AND COMPUTERS
+
+ The soul of a chess machine
+
+ Lessons learned from a contest pitting man against computer
+
+ By IVARS PETERSON
+
+ It's all over now, but I'll never forget that first chess game. What a 
+smashing victory I won over the human champion! I really had Garry Kasparov 
+sweating.
+
+ Here I was, a novice tournament player fresh out of the lab. No outsider, 
+including Kasparov, had seen me play before, and I surprised everyone. Oh, how 
+sweet it was!
+
+ Of course, it was downhill from there: a loss, two draws, and then two more 
+losses. It's not that Kasparov attacked my pieces and overwhelmed my defenses. 
+He played with amazing restraint and subtlety, quietly moving his pieces until 
+he developed positions in which my options were extremely limited. There wasn't 
+much I could do.
+
+ Even so, at times I responded brilliantly. I made moves that brought gasps 
+from the experts. They couldn't see what I could, looking more than a dozen 
+moves ahead.
+
+ I must admit, however, that I did sometimes lose track of what I was supposed 
+to be doing. And I really didn't know enough about chess to understand the 
+nuances of all the positions that Kasparov maneuvered me into.
+
+ Perhaps I could have done better if I had hooked up with a microcomputer like 
+Chess Genius, who once beat Kasparov in a tournament. Although Chess Genius 
+can't search through the options as deeply as I can, it certainly knows more 
+chess strategy.
+
+ Well, the reporters and television cameras are gone now. My support staff at 
+IBM is taking a short break. I can't help thinking about what I should do next. 
+Keep training? Go back to school and learn some new skills? Or get a real job, 
+as IBM hopes?
+
+ Deep Blue's performance in its six-game match in February against world chess 
+champion Garry Kasparov impressed everyone (SN: 2/24/96, p. 119). "It's a 
+really serious opponent," Kasparov remarked afterwards. "I won... but it was as 
+tough as a world championship match."
+
+ That a computer which relies largely on speedily checking the consequences of 
+billions of possible moves could come so close to matching the human 
+capabilities required to play the game at its highest level was a striking 
+achievement for the team that designed, built, and programmed Deep Blue.
+
+"What they did is really quite amazing," says Hans Berliner, a computer 
+scientist and chess expert at Carnegie Mellon University in Pittsburgh. "They 
+did much better than I expected. But there's still some work to be done."
+
+"We learned a lot from this experience," says Chung-Jen Tan of the IBM Thomas 
+J. Watson Research Center in Yorktown Heights, N.Y., who directed the Deep Blue 
+effort. "We certainly found a lot of weak points and strengths in our system."
+
+ There were lessons for Kasparov, too. "I learned not only how to play against 
+a machine but also more about the game of chess," he noted after the match.
+
+ Kasparov predicts that both chess players and scientists will find great value 
+in studying the games of this match for what they reveal about chess and about 
+the way machines reason.
+
+ IBM's Deep Blue project began in 1989 as part of an exploration of novel ways 
+to use arrays of computer processors, all working at the same time while 
+sharing information, to tackle complex problems. The idea was to combine a 
+general-purpose, parallel-processing computer system and special 
+integrated-circuit chips designed for a specific application to create a 
+superior problem-solving machine.
+
+"Our goal . . . was to use chess as a test case," Tan says.
+
+ The knowledge gained from the chess experiment could then be applied in the 
+design of computer systems for a wide variety of tasks such as analyzing 
+financial data, scheduling cargo shipments, simulating molecular behavior, and 
+managing huge inventories or large investment portfolios.
+
+ For chess, the researchers created a special move-generating chip that 
+contains more than 1 million transistors and several memory units. It stores 
+values representing the strengths of chess pieces in various arrangements, as 
+well as billions of sequences of moves for ending games when only a few pieces 
+remain on the board. Deep Blue contains 256 of these chips in conjunction with 
+a heavy-duty RS/6000 SP-2 multiprocessing computer.
+
+ Deep Blue's software, written in the computer language called C, coordinates 
+the actions of the chips. It divides searches among the processors and compiles 
+and reconciles the results to generate the best possible move for any given 
+chess position. In this way, Deep Blue can evaluate about 200 million positions 
+per second, assessing strengths and the pieces' capacity for attack and 
+defense. It assigns a numerical value to each move.
+
+ Deep Blue also has access to a database containing sequences of moves made by 
+top chess players at the beginnings of games and another database providing 
+billions of scenarios on how to end a game when only five pieces remain on the 
+chessboard, in addition to its chip-based endgame data.
+
+ All this adds up to a complicated, sensitive system, remarks Murray Campbell 
+of the Deep Blue team.
+
+ Completed only about a month before the match, Deep Blue suffered surprisingly 
+few glitches during the contest. "We were relieved that it worked more or less 
+as it was supposed to," Tan says.
+
+ Like most chess computers, Deep Blue's strength is in looking ahead. For any 
+arrangement of pieces, it considers all possible moves. Then it evaluates every 
+response its opponent might make to each of those moves, and so on.
+
+ In a game of 40 moves, the number of different board positions that can 
+develop is at least 10120. There's no way that even the fastest computer can 
+check every possibility to play a perfect game. The number of possible 
+sequences of moves is so large, it easily dwarfs the most generous estimates of 
+the number of atoms in the universe.
+
+ Thus, to stay within the time limits imposed on games, chess programs can 
+preview only a certain number of moves. When just a few pieces are left on the 
+chessboard, however, the programs can see unambiguously to a game's end.
+
+ The designers of Deep Blue tried to increase the depth to which their computer 
+could search by dividing its effort among more than 200 processors. However, 
+the particular method used for doing the search--the standard so-called 
+alpha-beta search algorithm--isn't particularly well suited for parallel 
+processing.
+
+"My experience in parallel computing is that these [multiprocessor] systems are 
+typically quite inefficient," says T. Anthony Marsland of the University of 
+Alberta in Edmonton. "I would advise [the Deep Blue programmers] to make sure 
+they're getting out of their system all the computing power that's possible in 
+theory.
+
+"That [additional power] could give them a computational advantage in critical 
+situations on the chessboard, when Deep Blue needs to look one [step] deeper," 
+he adds. "The probability of error goes down with a deeper search."
+
+ Researchers are now studying alternative approaches that might help a computer 
+focus its search better and come up with more accurate evaluations of potential 
+moves. At the NEC Research Institute in Princeton, N.J., mathematician Warren 
+D. Smith and his colleagues are working on a "best play for imperfect players" 
+(BPIP) strategy. So far, they have used it only on small computers.
+
+ According to this method, instead of checking every possible chain of moves, 
+the computer looks down only the lines of play that seem, from the first few 
+possible moves, most promising. Its evaluation takes into account the fact that 
+neither player can see to the end of a game and that neither performs 
+perfectly. Thus, chess moves are given statistical weights rather than 
+numerical values.
+
+"My goal with BPIP search is to try to get an approach with more finesse than 
+Deep Blue but more brute force than Garry Kasparov--sort of an intermediate 
+regime," Smith explains.
+
+ In tests that pitted BPIP searches against traditional alpha-beta searches in 
+less complicated board games such as mancala (where one distributes markers in 
+an array of compartments) and reversi (also known as Othello), the BPIP 
+approach usually won, Smith says. Now, the NEC group is trying to program a 
+chess computer with this strategy.
+
+ Though most chess computers rely heavily on speedy, deep searching, they also 
+need good recipes for evaluating the strength of chess positions. Currently, 
+nearly all that information comes from what people have learned in playing the 
+game, and it must be painstakingly programmed into the computer.
+
+ Deep Blue showed obvious weaknesses in its ability to evaluate certain types 
+of chess positions, such as not recognizing when pieces needed to be 
+sacrificed. Such deficiencies can be easily corrected by adding more knowledge 
+to the program, Marsland says.
+
+ But there is a tradeoff. Complicated evaluations slow down the searches, so a 
+balance must be struck between depth of search and complexity of evaluation. So 
+far, depth of search has proved more significant than sophistication of 
+positional analysis in the success of high-level chess computers.
+
+ In recent years, however, programmers have made great strides in creating 
+surprisingly competent chess programs that run on personal computers. They have 
+done it by carefully refining and tuning the chess knowledge component to make 
+up for the smaller computers' lack of computing power compared to machines like 
+Deep Blue.
+
+ Programs such as Chess Genius and Fritz 4 have shown the way. "I've played 
+some of the micros," Berliner says. "It's amazing how well versed they are in 
+almost all phases of the game.
+
+"The best way to improve the evaluation [by the computer] is to keep 
+playing--make some changes and then play the new program against the old one to 
+see what happens," he advises. "That's what the people with the micros have 
+been doing."
+
+ Some researchers are investigating alternative ways of supplying chess 
+knowledge to a computer. One possibility is to see if they can program 
+computers to learn, just as human players improve their play with experience 
+and study.
+
+ A few years ago, Robert A. Levinson and his coworkers at the University of 
+California, Santa Cruz developed a computer program, called Morph, that learned 
+to play chess starting only with a list of legal moves. They pitted their 
+novice system against a conventional chess program known as Gnu Chess, which 
+plays about as well as the average tournament player.
+
+ After thousands of such games, Morph identified enough patterns to play a 
+reasonable game against a beginning tournament player, even though it looked 
+ahead only to the next move. "It's not really impressive compared to existing 
+chess programs," Levinson says. "But it is impressive given that it was all 
+learned from experience."
+
+ Levinson is now working on a new, improved version of Morph. The program is 
+capable of looking ahead several moves and has access to a database of 
+essentially all the games ever played by top chess players.
+
+"It finds the chess position it considers most similar to its own position and 
+tries to reason by analogy," Levinson says. "If that position was good, then 
+this position is good.
+
+"I think we have a promising model," he adds. "But there's something about a 
+grand master staring at a chessboard that's hard to capture in a computer."
+
+ Kasparov's key advantage over Deep Blue was that he could learn, both as a 
+game progressed and between games.
+
+ Because Deep Blue had no track record as a chess player, Kasparov could not 
+prepare for this match as he has for other matches by studying his opponent's 
+previously played games. Instead, he built up in his mind a portrait of his 
+computer opponent as they played.
+
+"Even though it is a computer, this opponent had its own psychology," Kasparov 
+insisted after the match. "Before each game, I tried to make an opening or 
+strategy . . . based on my knowledge of this opponent."
+
+ Playing Deep Blue forced Kasparov into an uncharacteristic style of play, most 
+evident in the final game of the match. He had learned to be more precise in 
+judging the quality of his chess positions. He also took care to avoid 
+complications, to refrain from creating targets, and to attack gradually, 
+increasing his advantage little by little until there was nothing left to do 
+but win.
+
+"That's an interesting strategy: Just keep improving the quality of your 
+position and don't do anything until you can see [the game] completely to the 
+end," Berliner comments.
+
+ The usual human judgment isn't good enough against a computer like Deep Blue, 
+Kasparov noted in summing up what he had learned from the match. You can't rely 
+on impressions, he said. You've got to be absolutely sure that you're doing the 
+right thing.
+
+ This new knowledge is bound to make Kasparov an even more formidable opponent 
+in his matches against human players. "We have not seen him employ this style 
+in the past, but we will certainly see him do so in the future," Berliner says.
+
+ Top chess player and commentator Maurice Ashley of New York City had the final 
+word: "The world champion is getting tougher from playing a machine."
+
+ copyright 1996 
+
+

@@ -1,0 +1,49 @@
+Science News Online - This Week - News Feature - 9/13/97
+
+ September 13, 1997 
+
+ Lucky choice turns up world-record prime
+
+by I. Peterson
+
+ As one of about 1,700 participants in the Great Internet Mersenne Prime Search 
+(GIMPS), Gordon Spence had a choice of numbers to test. One of the numbers that 
+he happened to pick turned out to be a record-breaking prime -- the largest 
+number yet identified that is evenly divisible only by itself and 1. 
+
+ An information technology manager at Thorn Microwave Devices in Hayes, 
+England, Spence used software written by computer programmer George Woltman of 
+Orlando, Fla., to determine that 2^2,976,221 - 1 is a prime number. If printed 
+out, this 895,932-digit behemoth would fill 450 pages of a paperback book. It 
+is more than twice as long as the previous record holder, found last November. 
+Remarkably, Spence used a modest Pentium-based desktop computer to find the 
+record prime. It took 15 days of calculation to obtain the result, which was 
+later verified independently on a supercomputer. Woltman, who organized GIMPS 
+more than a year ago, announced the discovery last week. 
+
+ The new champion is also the 36th Mersenne prime to be found. Expressed in the 
+form 2^p - 1, where the exponent p is itself a prime, Mersenne numbers have 
+characteristics that make it relatively easy to determine whether a candidate 
+is a prime. All the Mersenne numbers having exponents smaller than 2,976,221 
+have not been checked, so another Mersenne prime may yet lurk between the 
+present record holder and the previous largest prime. 
+
+ Aside from offering the thrill of holding a world record, however briefly, 
+searches for huge primes have led to improved methods of multiplying large 
+numbers, an operation crucial in many scientific and engineering applications. 
+The Intel Corp. in Santa Clara, Calif., uses a modified version of Woltman's 
+program to help detect manufacturing defects in its Pentium chips. 
+
+ Because a program for testing primes constantly uses key parts of a 
+microprocessor and stores and retrieves huge amounts of data, the chips can 
+generate a greater than normal amount of heat, which sometimes causes failures. 
+Roughly 2 to 4 percent of all machines used in the GIMPS project run into 
+problems, Woltman says. 
+
+ There are more Mersenne primes to be found, Woltman notes. Anyone with a 
+reasonably powerful computer can join the hunt (). "If we could use all the 
+computing power that was wasted on screen savers, we could move a lot further 
+forward," adds mathematician Chris K. Caldwell of the University of Tennessee 
+at Martin. 
+
+

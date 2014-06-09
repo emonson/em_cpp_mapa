@@ -101,6 +101,7 @@ public:
                 net_centered = net.rowwise() - net.colwise().mean();
                 
                 // Eigen std SVD
+                // sigs = svd(net - repmat(mean(net,1), Nets_count, 1));
                 JacobiSVD<MatrixXd> svd(net_centered, Eigen::ComputeThinU | Eigen::ComputeThinV);
                 sigs = svd.singularValues();
 
@@ -130,7 +131,9 @@ public:
             seed_local_region = nn_idxs.row(i_seed).head(opts.MinNetPts + (maxScale-1)*opts.nPtsPerScale);
             allLocalRegions.push_back(seed_local_region);
             
-            isSeedPointGood(i_seed) = (int)(seed_local_region.size() > (2 * seed_est_dim)) && (seed_est_dim < opts.D);
+            // NOTE: Changed algorithm from original!!
+            // isSeedPointGood(i_seed) = (int)(seed_local_region.size() > (2 * seed_est_dim)) && (seed_est_dim < opts.D);
+            isSeedPointGood(i_seed) = (int)(seed_local_region.size() > (2 * seed_est_dim)) && (seed_est_dim < 10);
             if (isSeedPointGood(i_seed))
             {
             	goodLocalRegions.push_back(seed_local_region);

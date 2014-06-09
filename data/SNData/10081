@@ -1,0 +1,279 @@
+Looking for Mr. Goodoxide: Science News Online, March 25, 2000
+
+ Looking for Mr. Goodoxide
+
+ The hard-pressed semiconductor industry strives to replace silicon's 
+near-perfect mate
+
+ Peter Weiss
+
+ Breaking up is hard to do-especially after 40 years together. It's even 
+tougher when those 40 years were spent constantly side by side, fostering an 
+upstart technology that has changed the world.
+
+ Most everyone has heard that silicon is the material primarily responsible for 
+the miraculous surge in computing power that is reshaping society. That's true, 
+but silicon couldn't have done it alone. The well-known semiconductor's oxide, 
+which chip makers grow or deposit on exposed silicon surfaces, has also played 
+a crucial role.
+
+ Little noticed outside the semiconductor industry, silicon dioxide has 
+supported and protected silicon, as well as facilitated the element's special 
+electronic properties.
+
+"The guys like us who work with the stuff every day consider silicon dioxide 
+the greatest gift from God," says John S. Suehle of the National Institute of 
+Standards and Technology (NIST) in Gaithersburg, Md.
+
+ Nonetheless, the semiconductor industry now wants to divorce silicon from its 
+loyal oxide. The first signs of a breakup came nearly a decade ago, when one 
+sector of the industry-makers of random-access-memory chips-ran into problems 
+with the material and found ways to pair silicon with another compound, silicon 
+nitride.
+
+ Today, the disaffection is spreading to computing circuits. Circuit features 
+are becoming so small that chip makers are battling on many fronts to keep up 
+with the pace of change (SN: 11/8/97, p. 302: ). In the confines of smaller 
+circuits, silicon dioxide's even-handed skill at managing passels of unruly 
+charges has become a flaw.
+
+ Consequently, research groups in the industry and elsewhere are searching for 
+alternate materials. Although they don't know what will successfully replace 
+silicon dioxide, manufacturers are specifying new machinery and otherwise 
+making accommodations to handle likely alternatives in their production lines. 
+Chip makers are already using some substitute materials on a limited scale in 
+their products.
+
+"If we can't replace silicon dioxide, it's a showstopper for device 
+scaling"-the main process by which the industry has made circuit elements 
+smaller and smaller, says James H. Stathis of the IBM Thomas J. Watson Research 
+Center in Yorktown Heights, N.Y.
+
+ The semiconductor industry will part with silicon dioxide only reluctantly. 
+Chip makers are chafing at the uncertainty and expense of switching to what may 
+prove to be a less-than-perfect substitute, electronics specialists say.
+
+ Circuit manufacturers would do much worse, however, not to change, they add. 
+Unless the divorce takes place-and soon-the astounding pace of innovation on 
+which the semiconductor industry thrives could slacken for the first time.
+
+ Component density
+
+ The density of components on microcircuits has grown exponentially since the 
+early days of the industry, doubling roughly every 18 months. It's a grueling 
+rate of change that the industry has come to expect. For anyone who can't keep 
+up, "the penalty is death," Robert D. Miller of the IBM Almaden Research Center 
+in San Jose, Calif., grimly jokes.
+
+ When fashioning an integrated circuit on a chip, manufacturers use light to 
+project patterns onto surfaces of silicon or other semiconductors. Each pattern 
+defines the contours of a layer of material deposited on the surface. By 
+repeatedly applying patterns and adding to or carving away those layers, chip 
+builders create and wire together millions of circuit components on one chip.
+
+ To achieve greater component density, circuit makers use optical methods, such 
+as lenses, to shrink the patterns-a strategy called scaling. They must then 
+make other adjustments, such as altering the recipes and thicknesses of 
+deposited materials, in order for the diminished devices to work properly.
+
+ From the start, silicon dioxide has been one of the stars of this scaling 
+process. However, circuits have become so small that the material can no longer 
+keep up, transforming it from God's gift to semiconductors to silicon's 
+soon-to-be ex.
+
+ Paradoxically, silicon dioxide is losing its attractiveness in different 
+microcircuit applications for opposite reasons. In its role in the transistors 
+of integrated circuits, it no longer promotes accumulation of electric charge 
+strongly enough. In engineering parlance, it has too low a value of a property 
+called the dielectric constant, or k.
+
+ At the same time, silicon dioxide's value of k is turning out to be too high 
+for its other main function, electrically isolating wiring between devices.
+
+ To continue making faster circuits, chip makers have recently switched from 
+aluminum wiring to copper, which has less resistance and therefore increases 
+signal speed (SN: 9/27/97, p. 196). But that's not enough.
+
+ For insulation, circuit fabricators need a low-k material because charge 
+storage, or capacitance, between wires slows signals. It also encourages 
+signals to bleed from one wire to another.
+
+ To protect wires in some commercial products, manufacturers already spike the 
+silicon dioxide with a little fluorine to drive down the mixture's dielectric 
+constant, Miller says. In a few years, however, the industry will have to break 
+completely with silicon dioxide as the wiring insulator, he says.
+
+ This problem with silicon dioxide as a wiring insulator cropped up a little 
+sooner than the transistor woes, so chip makers have already gone much further 
+in dealing with it. Research into low-k materials is making progress, Miller 
+says. "There are people very far along on that, far enough along that we know 
+it can be done," he says. Some researchers have even explored replacing silicon 
+dioxide insulation with wispy, highly porous aerogels (SN:12/14/96, p. 383) or 
+simply with air (SN: 7/18/98, p. 37).
+
+ Replacing silicon dioxide
+
+ The challenge of replacing silicon dioxide in transistors looms ahead. Suehle 
+says that it may be "the most serious challenge" among many that the industry 
+faces.
+
+ Transistors are the workhorses of integrated circuits. In essence, a 
+transistor is like a valve: It modifies flow. Applying voltage or current to 
+one of the three terminals of a transistor controls the current moving between 
+the other two.
+
+ Most commonly used in integrated circuits is the complementary metal oxide 
+semiconductor, or CMOS, transistor. There, a layer of silicon dioxide serves as 
+an electrical insulator, or dielectric, preventing unwanted vertical current 
+flow between the control electrode, known as the gate, and the underlying 
+silicon.
+
+ Because of its high capacitance, the gate-silicon dioxide-silicon sandwich can 
+store substantial amounts of electric charge. That charge accumulation controls 
+the flow of electricity that traverses a thin skin of silicon just beneath the 
+oxide.
+
+ As circuit devices have shrunk, so too has the area of the gate. However, the 
+area in part determines how much charge the gate can hold. To keep the 
+capacitance up, designers have had to make the gate oxide thinner with each 
+scaling.
+
+ Materials scientists figured out how to grow silicon dioxide films so free of 
+defects, such as pinholes and impurities, that the gate oxides insulated well 
+even when pared down from hundreds of nanometers thick in the 1970s to only 
+about 2.5 nm today.
+
+"Being able to make [the oxide] thinner and thinner is what has really allowed 
+us to continue scaling," says NIST's Eric M. Vogel.
+
+ But even thinness and purity can't keep a relationship going forever. As the 
+oxide becomes thinner, a quantum-mechanical effect known as tunneling permits 
+more and more electrons to slip like ghosts through the oxide wall. Although 
+transistors can function despite tunneling leakage, they require more power. 
+Circuit makers find this power loss unacceptable, especially as electronic 
+products are increasingly becoming portable and battery-powered.
+
+ A new partner
+
+ The time has come for silicon to find a new partner, most semiconductor 
+specialists agree. Circuit builders need a substitute that they can pile more 
+thickly under the gate electrode, to prevent tunneling, without at the same 
+time reducing capacitance to an unacceptable level.
+
+ To continue scaling, "the only option is to go to higher-k materials. There is 
+no choice," Miller says.
+
+ With the change to copper and to silicon dioxide substitutes, "the industry is 
+going to be facing the most significant [materials] changes ever," says Howard 
+R. Huff of International Sematech, a research consortium based in Austin, Tex., 
+and sponsored by 13 semiconductor companies.
+
+ The high-k imperative has sent academic and industry researchers racing 
+through the periodic table. In particular, scientists are focusing on the 
+so-called transition metals, such as titanium, tantalum, and zirconium. These 
+elements form high-k compounds, some of which have long been used in 
+capacitors. Investigators also became acquainted with them during initial 
+attempts to replace silicon dioxide in memories.
+
+ Considering oxides and silicates of transition metals and more complex 
+combinations of several metals and perhaps other substances, "we have hundreds 
+of candidates," says Tso-Ping Ma of Yale University.
+
+ Mr. or Ms. Right
+
+ Like someone searching for Mr. or Ms. Right, researchers trolling for high-k 
+dielectrics can't afford to focus on just one appealing trait. Making their 
+task particularly daunting is the way solid-state physicists and engineers 
+recite lists of good things about silicon dioxide. The tributes read like 
+Elizabeth Barrett Browning's poem "How Do I Love Thee?"
+
+ Semiconductor specialists enumerate: Silicon dioxide is hard, tough, and 
+dense. It grows naturally on silicon. Water can't dissolve it. It transfers and 
+withstands heat well. It leaks little current and tolerates high voltages. It 
+can be deposited as a vapor and piled up nearly defect-free. And on and on.
+
+"If you want all those things, it's hard to find another material like silicon 
+dioxide," Miller says.
+
+ At the top of all the lists: Silicon dioxide mates with the silicon surface in 
+such a way that so-called dangling bonds become satisfied.
+
+ That's not just idle pleasure. Dangling bonds stick up from the surface when 
+sausage-like silicon crystals are sliced into wafers. Ordinarily bonded to four 
+other silicon atoms, many silicon atoms at a cut surface find themselves bereft 
+of a bond or two.
+
+ When the first CMOS transistors were invented, those hungry bonds spoiled the 
+performance of the devices. Then, in 1958, a group of scientists at Bell 
+Telephone Laboratories found that growing a thin layer of silicon dioxide on 
+the surface fulfilled the bonds.
+
+ In the view of researchers at the time, noted Chih-Tang Sah of the University 
+of Florida in Gainesville in a 1988 article about transistor history, that 
+discovery was the "most important and significant technology advance" leading 
+to silicon-integrated circuit technology.
+
+"Next to silicon, [silicon dioxide] is really what ignited the industry," adds 
+Robert R. Doering of Texas Instruments in Dallas.
+
+ How good are the best prospects-mainly transition-metal oxides-on the high-k 
+horizon? They quash tunneling currents admirably in laboratory experiments and 
+also maintain a hefty gate capacitance thanks to dielectric constants 6 to 20 
+times that of silicon dioxide.
+
+ Ma's Yale group and three other research teams reported such performance 
+results last December at the 1999 Institute of Electrical and Electronics 
+Engineers International Electron Devices Meeting in Washington, D.C.
+
+ Yet in some ways, those new dielectrics leave semiconductor specialists pining 
+for silicon dioxide.
+
+ Troubles arise at the silicon-dielectric boundary, for instance. Researchers 
+find lower-k compounds forming there, silicon dioxide itself or byproducts of 
+reactions between silicon and the new partner materials.
+
+ Huff notes also that none of the leading high-k candidates can tolerate the 
+heat of the current process for fabricating circuits. The industry should be 
+cautious not to jump prematurely into major, costly changes to manufacturing to 
+accommodate the materials, he says.
+
+ It may be wiser to cope with circuit leakage by counteracting it with 
+power-conserving designs and more judicious placement of the thinnest silicon 
+dioxide layers. Given uncertainty about the new materials, he asks, "Are you 
+going to overthrow 40 years of industrial experience with silicon dioxide?"
+
+ Realizing the change may turn out to be necessary, however, Huff helps lead a 
+Sematech team that is rushing to meet a June deadline. By then, the group must 
+produce specifications for a machine capable of depositing on circuits whatever 
+high-k materials will be ready for pilot studies 3 years from now. Very likely, 
+those will be a stopgap measure-silicon-based compounds already familiar to the 
+industry but only modestly higher k than silicon dioxide.
+
+ Cutting the knot
+
+ No one knows when silicon and its oxide will finally cut the knot. The 
+Semiconductor Industry Association in San Jose, Calif., gives manufacturers no 
+more than 5 years to take the high-k plunge. Otherwise, the industry's growth 
+rate will slow, the association says.
+
+ In its latest guide, or roadmap, to the industry's future, the group dryly 
+notes, however, that "history has shown that changes of this magnitude 
+ordinarily require 10 years or more to implement."
+
+ In 1998, Stathis and Donelli J. DiMaria, also of IBM's Watson Center, sent 
+tremors through the industry by predicting that gate oxides would start to fail 
+at a thickness of about 2.2 nm, which at that time was only a year or so away.
+
+ A more optimistic prediction-1.6 nm-came out of the December 1999 electron 
+devices meeting. The IBM researchers revised their estimate to 1.8 nm, Stathis 
+says, although he warns that setting a hard-and-fast limit is difficult.
+
+"Certainly by 2005, we'll hit that point," he predicts. "It could come a bit 
+sooner."
+
+ When it does, the microchip world in which silicon and silicon dioxide have 
+been the perfect couple will slip away. While the semiconductor industry toasts 
+silicon's new companion materials, some technologists may quietly mourn the end 
+of the good thing that silicon and its oxide had for so long.
+
+

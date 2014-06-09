@@ -1,0 +1,97 @@
+Science News Online - This Week - News Feature - 6/28/97 June 28, 1997
+
+ Channeling quantum information efficiently
+
+by I. Peterson To be understood over a crackly telephone line, a person can try 
+to speak more slowly or loudly -- or even repeat phrases -- to get the message 
+across.
+
+ Indeed, noise affects all sorts of communication, whether a radio broadcast or 
+the transmission of bits from one computer to another, and researchers have 
+long sought to determine the most efficient ways of packaging and transmitting 
+information so that it arrives in a form intelligible to the recipient.
+
+ The use of photons, electrons, or other quantum particles to carry information 
+represents one potential communication channel. The sender encodes the data as 
+the quantum state of a particle, and the recipient makes a measurement on the 
+particle to infer the original quantum state. The laws of quantum mechanics 
+specify the maximum amount of information that the recipient can extract per 
+particle.
+
+ Now, researchers have demonstrated that one can, in principle, approach the 
+theoretical maximum for transmitting information via photons and other quantum 
+particles by carefully choosing how the information is encoded, transmitted, 
+and decoded. The techniques work even when environmental noise distorts the 
+message.
+
+ Benjamin W. Schumacher of Kenyon College in Gambier, Ohio, and Michael D. 
+Westmoreland of Denison University in Granville, Ohio, report their findings in 
+the July Physical Review A. In a paper accepted for publication in IEEE 
+Transactions on Information Theory, Alexander S. Holevo of the Steklov 
+Mathematical Institute in Moscow describes his similar analysis.
+
+"These are interesting results," says Charles H. Bennett of the IBM Thomas J. 
+Watson Research Center in Yorktown Heights, N.Y. Such work "is relevant to 
+communication, precision measurement, and ultimately, perhaps, to quantum 
+computation."
+
+ To transmit a string of digits, an apparatus can generate photons whose 
+electric fields vibrate in particular directions. Scientists would like to find 
+the most efficient way to encode those digits.
+
+ One possibility is to use many distinct polarization states of a single photon 
+to encode a large number of digits simultaneously. However, quantum mechanics 
+prevents the recipient from reliably distinguishing all those states to convert 
+the quantum information back into digits.
+
+ In 1973, Holevo proved a theorem establishing the maximum amount of 
+information a recipient can obtain from a transmitted quantum signal. Last 
+year, Paul Hausladen of the University of Pennsylvania in Philadelphia and his 
+colleagues showed how it was possible to get arbitrarily close to this 
+theoretical limit. The new results from Holevo, Schumacher, and Westmoreland 
+extend those findings to signals distorted by noise -- for example, when 
+photons pass through a medium that rotates polarization angles.
+
+ In their article, Schumacher and Westmoreland suggest three complementary 
+strategies to get close to the limit. One is to use long strings of photons to 
+send messages in blocks rather than as single photons. The underlying idea is 
+to encode the message in units consisting of a certain number of photons each.
+
+ For instance, the sender can encode information in three-photon units. If two 
+different photon polarizations stand for 0 and 1, a set of three photons could 
+encode 000, 001, 010, 011, 100, 101, 110, and 111. Each of these eight 
+combinations, or code words, could represent a particular symbol or letter.
+
+ To improve the reliability of decoding, the second strategy is to employ only 
+the most distinguishable of the available quantum states. Thus, it's better to 
+use only the four code words 000, 011, 110, and 101, which differ in two places 
+from each other.
+
+ The third technique is to insist that the recipient of a message make a joint 
+measurement on a large number of photons. Measuring three photons at a time, 
+for example, can reveal more information about their quantum states than 
+studying them separately.
+
+ Thus, by using long code words (chosen for distinguishability) and an 
+appropriate measurement scheme, it's possible to convey information at any rate 
+up to the Holevo maximum, Schumacher and Westmoreland say.
+
+ The findings may give researchers a better sense of how to encode and decode 
+information transmitted via quantum particles and especially how to use as 
+little energy as possible to convey information or even store it in a computer 
+memory. Putting the ideas into practice, however, presents daunting obstacles. 
+For example, making a single measurement on more than two quantum particles at 
+a time remains a formidable task.
+
+ The new results from Holevo, Schumacher, and Westmoreland focus on the 
+capacity of quantum channels to carry information expressed in 1s and 0s. 
+Because they can also be prepared in mixed quantum states, photons and other 
+quantum particles can be used to convey information expressed in more complex 
+forms (SN: 4/10/93, p. 229). Such mixtures of states are of particular interest 
+to those exploring the possibility of developing computers that operate 
+according to quantum principles (SN: 1/14/95, p. 30).
+
+"The quantum situation is more complicated," Bennett says. "It's frustrating 
+that we know only parts of the answer yet."
+
+

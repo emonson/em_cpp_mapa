@@ -1,0 +1,245 @@
+Science News Online (11/20/99) Quantum Games
+
+ Quantum Games Taking advantage of quantum effects to attain a winning edge
+
+ By Ivars Peterson
+
+ Over a chessboard or in a diplomatic conference room, players strive for even 
+the slightest advantage that would tilt a game's outcome in their favor. 
+Reasoning, bullying, bluffing, and cheating can all come into play in the 
+search for a winning strategy.
+
+ Game theory offers mathematical tools for analyzing simple games. Originally 
+formulated in the 1940s, it provides a framework for deciding who wins under 
+various circumstances and suggests optimal strategies for achieving certain 
+ends.
+
+ Because researchers can interpret many human activities in terms of games, 
+they've applied game theory to important issues in fields such as economics 
+(SN: 3/28/98, p. 205), international relations (SN: 5/4/96, p. 284), and 
+computer science and artificial intelligence (SN: 7/18/98, p. 40).
+
+ Until recently, however, the realm of games appeared far removed from the 
+domain of physics and quantum mechanics, which governs the interactions of 
+atoms and electrons. Now, theorists are poised to exploit peculiarities of 
+quantum behavior to work out novel strategies for winning games.
+
+ It's like having a quantum penny, says mathematician David A. Meyer of the 
+University of California, San Diego. An ordinary penny comes up either heads or 
+tails. A quantum penny has the additional property that it can be put into a 
+state that mixes both heads and tails.
+
+ The extra possibility of a mixed state permits quantum-game strategies that 
+can theoretically be more successful than conventional ones in various games, 
+Meyer contends.
+
+ In the light of quantum theory, coin tossing, chess, and perhaps even 
+international negotiations take on a startling, new dimension. In some cases, 
+using a hypothetical quantum computer in place of a conventional one should 
+speed up searches to identify a winning strategy. In other instances, quantum 
+logic changes the game itself.
+
+ Computers play a mean, brute-force style of chess. When chess computer Deep 
+Blue triumphed over world champion Garry Kasparov in 1997, it relied heavily on 
+extensive searches (SN: 5/17/97, p. 300). For a given arrangement of chess 
+pieces, the computer simply looked ahead a fixed number of moves, evaluated the 
+strength of each move, and selected the best one.
+
+ In principle, a chess computer can foresee a game's end by checking each 
+possible path to its outcome. It can then choose an appropriate sequence of 
+moves to ensure a win, maintain a draw, or delay a loss. In a game of 40 moves, 
+however, the number of different board positions that can develop exceeds 
+10120. There's no way even the fastest conventional computer can check every 
+possibility to play a perfect game.
+
+ That's where quantum computers would help.
+
+ Ordinary computers rely on vast arrays of tiny transistors, arranged in logic 
+units called gates, to perform their calculations. They typically use the 
+presence or absence of certain amounts of electric charge to represent the 0s 
+and 1s of a computer's binary code.
+
+ The hypothetical quantum computer replaces the 0s and 1s with entities called 
+quantum bits, or qubits. Each qubit is encoded as a quantum state-a particular 
+energy level of an atom, for instance. One energy level would correspond to the 
+0 state and another, to the 1 state. Unlike an ordinary bit, however, a qubit 
+can also exist as a combination, or superposition, of those two states.
+
+ Computer scientists can, in principle, take advantage of superposition and the 
+wavelike nature of quantum particles. They would set up calculations so that 
+computational paths yielding undesirable results cancel each other out, while 
+computational paths leading to the answer reinforce each other (SN: 1/14/95, p. 
+30). In effect, quantum interference allows them to zero in quickly on the 
+relevant result.
+
+ In 1996, Lov K. Grover of Lucent Technologies' Bell Labs in Murray Hill, N.J., 
+invented a quantum-based procedure that would significantly speed up searches 
+of an unsorted list to find a desired item (SN: 8/31/96, p. 143).
+
+ Grover's search algorithm can itself be thought of as a kind of game, Meyer 
+remarks. As in the game of 20 questions, which calls for "yes" or "no" answers 
+to specific requests for information, Grover's procedure queries a database to 
+learn whether one is on the right track to the answer.
+
+ David Deutsch and Artur Ekert of the University of Oxford in England have 
+considered how a chess-playing quantum computer would use Grover's procedure. 
+It could investigate a trillion possible continuations from a given position in 
+the same number of steps as a conventional computer would need to check out a 
+million. Quantum superposition allows the computer to cancel out a lot of 
+unpromising possibilities that a conventional computer must look into one by 
+one.
+
+ Several researchers, including Grover and Scott Aaronson of Cornell 
+University, have investigated such potential improvements in performance. They 
+discovered that the search speed-up in a game in which two players take turns 
+looks especially promising if there is, at most, just one winning choice per 
+move. Since then, Grover has generalized his quantum-search method to cover 
+situations where there may be multiple solutions.
+
+ So, if Deep Blue comes out of retirement someday, it might face a newfangled 
+quantum computer and quite possibly a crushing defeat.
+
+ The results would be even more dramatically one-sided if a player were to 
+stack the quantum deck. Such a surreptitious act could change a game of chance 
+into one he or she can't lose.
+
+ Say the Starship Enterprise faces a dire emergency, and Captain Picard is 
+preparing for the worst. Suddenly, Q appears on the scene. This all-powerful 
+but malevolent being offers to help, provided that Picard can beat him at a 
+childishly simple game involving a penny.
+
+ The adversaries start with a closed box containing a penny, heads up. Neither 
+can see into the box at any time. Hiding his action from Picard, Q either flips 
+over the box (and the penny) or leaves it as it is. Picard then takes a turn, 
+after which Q gets a final chance. Q wins if the penny is heads up when the 
+adversaries together open the box.
+
+ Q's penny-flip challenge is an example of a two-person, zero-sum game: What 
+one player gains, the other loses.
+
+ Applying standard game theory, Picard figures that his chances of winning the 
+game are 50:50. He agrees to play-but loses to Q, not just once but again and 
+again.
+
+ Meyer invented this Star Trek scenario for his article in the Feb. 1 Physical 
+Review Letters. It illustrates what would happen if one player takes advantage 
+of a quantum strategy and the other doesn't.
+
+ Picard doesn't know that the penny in question is a quantum coin-an object 
+that can be both heads and tails at the same time. Q does, so he performs a 
+quantum flip on the penny. Instead of swapping tails for heads, this particular 
+move leaves the coin in a superposition of the two states, half heads and half 
+tails.
+
+ On his turn, Picard responds with a standard flip or does nothing. Neither 
+choice, however, alters the penny's mixed state. Q then does another quantum 
+move that unscrambles the superposition, bringing the coin back to heads to win 
+the game.
+
+ The key to Q's success is that he has access to quantum moves unavailable to 
+Picard, Meyer says. A quantum computer should have a similar advantage over a 
+conventional computer.
+
+ Researchers are now looking closely at the sorts of problems that stump 
+standard mathematical methods but can be solved efficiently by algorithms that 
+take full advantage of quantum effects. So far, they've identified only a 
+handful of such algorithms, including a method for factoring whole numbers (SN: 
+5/14/94, p. 308) and Grover's quantum-search technique.
+
+ A game-theory perspective may suggest new possibilities for efficient quantum 
+algorithms, Meyer says. Meanwhile, he's looking for other games in which 
+quantum strategies potentially offer an advantage.
+
+ It's also possible to imagine a quantum game with quantum players, in which 
+everyone wins.
+
+ Consider the game called the Prisoners' Dilemma, which has been the subject of 
+thousands of experiments and theoretical investigations in social science, 
+psychology, and economics since it was invented in the early 1950s.
+
+ Two prisoners charged with a serious crime are held in separate cells. Their 
+captors offer each of them the same deal.
+
+ If one testifies against the other and the other says nothing, the squealer 
+goes free and his associate gets a heavy sentence. If both remain silent, each 
+one gets a light sentence. If both snitch, each gets a medium sentence.
+
+ Unable to confer and lacking faith in the other's trustworthiness, each 
+prisoner inevitably concludes that the best strategy is to spill the beans. 
+Both end up serving a medium sentence, which is far worse than the light 
+sentence they would have received if they had trusted each other and said 
+nothing.
+
+ The same thing can happen when two competing stores cut prices to lure 
+customers or when two countries are in an arms race. Even though each party 
+makes the best possible choice from its own viewpoint, both end up worse off 
+than if they had cooperated.
+
+ The dilemma inherent in this situation, however, can disappear in a quantum 
+version of the game, says physicist Jens Eisert of the University of Potsdam in 
+Germany. "The players escape the dilemma if they both resort to quantum 
+strategies," he remarks.
+
+ Eisert, Potsdam colleague Martin Wilkens, and Maciej Lewenstein of the 
+University of Hannover in Germany describe their approach in the Oct. 11 
+Physical Review Letters.
+
+ In the standard version of the Prisoners' Dilemma, one can either squeal or 
+stay silent. The quantum edition allows a third option: a superposition of 
+squealing and staying silent. Moreover, the choices of the two prisoners can be 
+entangled, so that one influences the other.
+
+ Quantum particles show just that sort of behavior. If two particles are in an 
+entangled state, then even if the particles are physically separated by miles, 
+they behave in some respects as a single entity rather than two separate 
+entities (SN: 8/5/89, p. 88).
+
+ So, when a physical process creates an entangled pair of photons of light, 
+detecting the state of one of them automatically fixes the corresponding state 
+of the other, even when the two photons are far apart. Quantum cryptography 
+takes advantage of this effect (SN: 2/10/96, p. 90).
+
+ Eisert and his collaborators describe a physical model of the Prisoners' 
+Dilemma in which both prisoners have secret access to such particles and can 
+manipulate their states. In effect, the prisoners become quantum players.
+
+ The researchers demonstrate that the best strategy for both prisoners is 
+initially not to squeal or stay silent. Instead, they can feel each other out 
+using weird quantum combinations and, in the end, make the choice that rewards 
+them.
+
+"Very much as in quantum cryptography and computation, we have found superior 
+performance of the quantum strategies if entanglement is present," Eisert and 
+his coworkers assert.
+
+ At this early stage, no one knows where quantum game theory may eventually 
+lead. Eisert, Meyer, Grover, and others have taken just the first steps into a 
+strange, unexplored realm.
+
+ Many questions remain. Meyer, for instance, is now pondering what might happen 
+in games that involve three or more people, when coalitions, betrayals, and 
+shifting allegiances come into play.
+
+ At the same time, researchers keep in mind that quantum computation is, as 
+yet, a theoretical playground. The late Rolf W. Landauer often urged his 
+colleagues to include the following disclaimer with their papers: "This scheme, 
+like all other schemes for quantum computation, relies on speculative 
+technology, does not in its current form take into account all possible sources 
+of noise, unreliability, and manufacturing error, and probably will not work."
+
+ Nonetheless, researchers find themselves irresistibly drawn to the subject. 
+Insights from the nascent field of quantum game theory could shed light on 
+quantum communication issues (SN: 4/3/99, p. 220), for instance, or play a role 
+in schemes to ensure fairness in Internet gambling.
+
+ Even more intriguing is the possibility of a link to the behavior of 
+biological systems. "We may speculate that games of survival are being played 
+already on the molecular level, where quantum mechanics dictates the rules," 
+Eisert and his colleagues note.
+
+"It will be some time before quantum games in any form become practical," 
+Grover cautions. "Nevertheless, the concept is very exciting and has already 
+stimulated a number of new ideas."
+
+ From Science News, Vol. 156, No. 21, November 20, 1999, p. 334. Copyright C 
+1999, Science Service. 

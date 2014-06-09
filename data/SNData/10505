@@ -1,0 +1,226 @@
+Science News Online - Past Issues - Feature Article - 10/19/96 October 19, 1996
+
+ Core Concerns The hidden reaches of Earth are starting to reveal some of their 
+secrets
+
+ By RICHARD MONASTERSKY
+
+ Gary A. Glatzmaier gazed down on the world he had created and decided it was 
+good. Peering deep into the bowels of the planet, he saw vast currents of 
+molten iron alloy swirling at temperatures above 5,000 kelvins, nearly as hot 
+as the surface of the sun. He watched for 40,000 years as the globe's magnetic 
+field pulsated like the beating of a heart. Deeper still, at the center, he 
+beheld a spinning orb made of solid iron almost as large as the moon.
+
+ This creation, forged from numbers and equations, is a virtual version of 
+Earth's metallic core. Glatzmaier, a geophysicist at Los Alamos (N.M.) National 
+Laboratory, constructed the extremely sophisticated computer model to simulate 
+the magnetic dynamo that churns away, unseen, far below Earth's crust.
+
+ Five years ago, most geophysicists considered such representations poor 
+stand-ins for the real core -- the scientific equivalent of a tone-deaf Elvis 
+impersonator. In the last year, however, these models have earned newfound 
+respect by showing striking similarities to the real thing. The simulation by 
+Glatzmaier and his colleague Paul H. Roberts of the University of California, 
+Los Angeles scored a major coup with its prediction that Earth's solid inner 
+core spins out of sync with the rest of the planet -- a feature verified 3 
+months ago by seismologists (SN: 7/20/96, p. 36,  ).
+
+ Combined with recent advances in seismology, the computer models are opening 
+windows into Earth's hitherto impenetrable iron heart. This new access gives 
+scientists hope that they can finally tackle what Einstein reputedly called one 
+of the five greatest unsolved problems in physics: the origin of the planet's 
+magnetic field.
+
+ Although theorists have made great strides since Einstein offered that 
+challenge, geomagnetists still lack a firm understanding of how the field forms 
+and why it changes direction every few hundred thousand years or so. "The 
+mechanisms behind the magnetic field and behind the reversals are still really 
+mysterious. It's fair to say that this is one of the grand intellectual 
+challenges -- not just in the earth sciences, but, I think, in all of the 
+physical sciences," says Raymond Jeanloz, a geophysicist at the University of 
+California, Berkeley.
+
+ A soft-spoken scientist most at home among his equations, Glatzmaier declines 
+any comparison with the creator in Genesis. It's interesting to note, however, 
+that Glatzmaier began his modeling work with the sun, only later moving on to 
+model Earth.
+
+ Initially, Glatzmaier simulated the sun's magnetic field, which arises from 
+the motion of ionized hydrogen and helium inside that star. The branch of 
+physics governing this realm is called magnetohydrodynamics, a mouthful of a 
+term that researchers often shorten to MHD.
+
+ After the sun, Glatzmaier studied Jupiter, the Kuwaiti oil fires, and Earth's 
+rocky mantle before finally turning to Earth's core. The recent model -- a 
+variation of the one developed for the sun -- simulates in three dimensions the 
+currents of iron alloy flowing within the core.
+
+ The planet's nucleus is believed to have formed early in Earth's 
+4.5-billion-year history, when molten iron and other heavy elements sank deep 
+into the planet. As this metallic soup cooled over the eons, crystals of iron 
+froze at the center, creating a solid iron core inside the surrounding liquid 
+alloy.
+
+ Over time, this process built an inner core 2,440 kilometers wide, about 
+one-fifth the diameter of the planet. The outer core of liquid alloy spans 
+2,260 km from top to bottom and is composed of 90 percent iron and 10 percent 
+lighter elements, possibly oxygen and sulfur.
+
+ The slow cooling of the core, which continues today, is critical because it 
+stirs the iron alloy. Heat escaping from the top of the outer core chills the 
+upper layers of the outer core, causing the material to sink. At the same time, 
+iron crystals freeze and adhere to the surface of the inner core, leaving 
+behind material richer in the lighter elements. This alloy floats to the 
+surface of the outer core.
+
+ This movement of metallic fluids gave birth to Earth's geomagnetic field, 
+according to MHD theory. Basic physics teaches that moving metals can produce 
+an electric current if they pass through a preexisting magnetic field. This 
+principle underlies most electric generators, which use heat to move turbines 
+that carry wires past magnets.
+
+ If magnetic fields were common in the early solar system, as scientists 
+believe, then convective flow in the outer core must have created electric 
+currents in the fluid iron. The process turned into a self-sustaining dynamo, 
+because electric currents produce their own magnetic fields. Once the core 
+started producing a magnetic field, the continuous movement of the iron alloy 
+would have maintained electric currents in the outer core, thereby sustaining 
+the geomagnetic field.
+
+ Physicists had sketched out the general picture of this dynamo model by the 
+late 1950s, but the details of what goes on in the outer core remain one of 
+Earth's deepest secrets. What little is known about the outer core comes from 
+the portion of the geomagnetic field that reaches Earth's surface. With its 
+prominent north and south poles, this field is roughly dipolar in orientation, 
+as if it came from a huge bar magnet buried inside the planet.
+
+ The simple exterior field -- the one that guides Boy and Girl Scouts, 
+airliners, and migrating birds -- is but a tiny fraction of the magnetic field 
+writhing within Earth's core. The portion one can sense at Earth's surface 
+comes only from the uppermost layer of the outer core. The much more complex 
+field generated deeper down is trapped inside the outer core and never reaches 
+the planet's exterior.
+
+ In fact, much of the field created in the upper layer of the outer core also 
+remains hidden. The toroidal portion of the field -- which runs in circular 
+east-west bands within the outer core -- does not leak outside the core, so 
+scientists cannot measure it. Only the poloidal element -- which loops from one 
+pole around to the other pole -- extends to the planet's surface and into space.
+
+ While Earth conceals most of its field, a computer model is less bashful. 
+That's why Glatzmaier and Roberts have attempted to create a virtual version of 
+the geodynamo, which they run at the Pittsburgh Supercomputing Center and at 
+Los Alamos. They started by specifying how quickly heat leaks out of the core, 
+and then they let the MHD equations govern how the liquid alloy responds. The 
+flow patterns, as they established themselves, generated electric currents and 
+a magnetic field.
+
+"The question I wanted to answer was whether convection in the fluid core could 
+actually maintain the magnetic field -- a field that looks like the Earth's 
+magnetic field," says Glatzmaier. "People had assumed it was happening that 
+way, but it was never really demonstrated. What's encouraging is that I'm 
+getting a magnetic field that looks a lot like Earth's in its strength and its 
+structure."
+
+ The similarities extend beyond mere looks. The computer-fabricated field 
+migrates slowly to the west in a manner similar to that of the actual field, 
+whose features shift westward by roughly a degree each decade.
+
+ The model represents a step forward, says Glatzmaier, because in most previous 
+attempts, researchers had prescribed the flow patterns rather than letting them 
+evolve in response to the magnetic field. The earlier techniques used a 
+short-cut that simplified the problem and guaranteed a realistic outcome -- as 
+if the tone-deaf Elvis impersonator only lip-synced instead of actually singing.
+
+"The less you specify in the model, the more you are able to learn. If you 
+specify everything, you can get something that looks just like the Earth, but 
+you will not understand why things happen because you have specified the 
+solution," says Glatzmaier.
+
+ Glatzmaier and Roberts let their model run through millennia of simulated 
+time, watching the magnetic field wither and then rebound, all the while 
+remaining dipolar. About 35,000 years into the simulation (and after more than 
+a year of real time), the dipolar field nearly disappeared. For 1,000 virtual 
+years the field languished, with a confusing multitude of magnetic poles 
+popping up instead of fixed north and south poles. When the field eventually 
+recuperated, it was pointing in the opposite direction.
+
+ Here was a real triumph for Glatzmaier and Roberts. Their MHD model had 
+produced a geomagnetic reversal entirely on its own, without any provocation 
+from the experimenters.
+
+"Our original motivation was not to simulate magnetic field reversals. That 
+seemed too much to hope for. So that was a nice surprise," says Glatzmaier.
+
+ As the world turns over: In this computer simulation, the magnetic field 
+emanating from the core flipped upside down. Before the reversal, poloidal 
+magnetic field lines leave the north magnetic pole, curve around the planet, 
+and dive back into the south pole (left). During the transition, the field 
+becomes disorganized (middle) for roughly 1,000 years and then reestablishes 
+itself with the opposite polarity (right). Lines wrapping around the core in 
+east-west bands indicate the toroidal magnetic field.
+
+ The two researchers published their reversal data in the Sept. 21, 1995 
+Nature. Although the model simulations have continued, with one now exceeding 
+200,000 years in duration, Glatzmaier and Roberts have not witnessed a second 
+reversal.
+
+ That may be a good sign, since reversals of the actual geomagnetic field 
+usually occur only once every few hundred thousand years and occasionally much 
+less frequently. Still, with only one reversal under their belts, the 
+scientists cannot yet draw many conclusions about what causes the process.
+
+ The MHD model garnered even more attention last July, when two seismologists 
+reported that the solid inner core of the actual Earth is spinning faster than 
+the rest of the planet. Xiaodong Song and Paul G. Richards of the 
+Lamont-Doherty Earth Observatory in Palisades, N.Y., who made the discovery, 
+credited the MHD model for stimulating their search.
+
+ Glatzmaier and Roberts had predicted the core's quick spin last year, after 
+studying the flow patterns of the iron alloy within their model. The simulation 
+revealed eastward-moving currents of fluid at the bottom of the outer core, 
+roughly analogous to the jet streams in the atmosphere. These currents in the 
+outer core, the scientists realized, would put a magnetic torque on the inner 
+core, forcing it to spin slightly faster than the mantle and crust.
+
+ One of Glatzmaier and Roberts' chief competitors, Jeremy Bloxham of Harvard 
+University, has documented a similar torque within his MHD model of the core. 
+In the Harvard simulations, which began more recently than the Los Alamos work, 
+the core spins faster than the rest of the planet on average, but it slows down 
+for brief periods. "I wouldn't be surprised if the rate changes with time," 
+says Bloxham.
+
+ There may, however, be explanations besides magnetic torque for the core's 
+fast spin. Berkeley's Jeanloz notes that the rotation rate of the entire Earth 
+is slowing as a result of the friction caused by lunar and solar tides. The 
+deceleration of the inner core, however, may lag behind that of the rest of the 
+planet because the inner core is separated from the mantle and crust by the 
+fluid outer core. According to this theory, the inner core is now rotating as 
+quickly as Earth's surface was spinning 60,000 to 100,000 years ago.
+
+"We may be able to distinguish if one or the other of these ideas is correct 
+over the coming decades, if not years," says Jeanloz. If magnetic torques are 
+causing the discrepancy, seismologists monitoring the inner core should see the 
+rotation rate vary with time. If the slowdown of Earth is to blame, then the 
+rotation rate should change little except for an extremely slow deceleration. 
+Both of these mechanisms may work together, says Jeanloz.
+
+ As seismologists continue to refine ways of detecting the inner core's 
+rotation, Glatzmaier, Roberts, and others work on improving the MHD models of 
+the core. At present, the models take shortcuts in simulating fluid flow in the 
+core. Because of computer limitations, MHD models treat the iron alloy as being 
+orders of magnitude more viscous than the actual liquid core, which scientists 
+think flows about as easily as water. "We're hoping we're not doing too much 
+harm by making this approximation," says Glatzmaier.
+
+ These and other limitations had led many geophysicists to disregard MHD 
+models. The recent successes, however, have quieted critics and forced them to 
+start taking the models seriously.
+
+"The types of numerical calculations being done today are just beginning to 
+provide us with a set of tools that we need to understand how the geodynamo 
+works," says Bloxham. "There is just an enormous amount of work that we need to 
+do. But I think it's a very exciting time."
+
+

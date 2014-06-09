@@ -1,0 +1,261 @@
+Calculating Cartoons: Science News Online, Jan. 26, 2002
+
+ Calculating Cartoons
+
+ Physics simulations create convincing illusions in films and games
+
+ Peter Weiss
+
+ In the animated film Monsters, Inc., James P. Sullivan is an 8-foot-tall 
+monster who's covered from head to toe in a luxurious powder-blue pelt with 
+faint red polka dots. What makes him stand out in the already eye-popping 
+domain of computer animation is the independent motion of every single one of 
+the 3.2 million hairs on his body. The result is a coat of animated fur that 
+looks soft enough to stroke and behaves with a remarkable degree of realism.
+
+ Using the mathematics that accounts for the behavior of miniature systems of 
+springs and weights, computer scientists at Pixar Animation Studios in 
+Emeryville, Calif., which released the film last November, devised an efficient 
+way to represent a few thousand of the monster's hairs. Computers then 
+calculated how those representative strands would respond to the motions of the 
+monster's massive body and to gravity, wind, and other conditions of the 
+animated environment. With these few thousand strands serving as guideposts, 
+the computer then interpolated the behavior of the millions of strands between 
+them.
+
+ In another 2001 film, Pearl Harbor, real and animated warplanes and ships are 
+indistinguishable as they mingle on the screen. None of the real planes crash, 
+but the animated ones do. The fake planes were rendered graphically using 
+so-called rigid-body models, which essentially let the animators build 
+structures-and blow them up-using a virtual kit of wing and fuselage parts. The 
+puffs of flak that dot the sky in some scenes emanated from a computer 
+simulation of fluid dynamics, replete with equations for heat buildup and 
+pressure waves that add to the verisimilitude.
+
+ In those films and many more, including Stuart Little, The Perfect Storm, and 
+Shrek, powerful, physics-based computer simulations are vastly expanding the 
+range of realistic effects that can be brought to the screen. Leaps in 
+computing power and new algorithms for generating simulated action are also 
+transforming the $7-billion computer-game industry.
+
+ The physics being simulated "was all basically solved like 300 years ago," 
+notes Chris Hecker, a game developer in Oakland, Calif. But getting the 
+simulations to play out accurately and efficiently for the countless phenomena 
+in movie and game scenes is a hot area of computer-science research (SN: 
+4/10/99, p. 232: ). "As someone watching, you take them completely for granted, 
+but they're incredibly complicated things to get looking right," says animation 
+researcher Nick Foster of PDI Dreamworks in Palo Alto, Calif., the studio that 
+created Shrek, Antz, and numerous short animated films and commercials.
+
+ Animating an entire world
+
+ In hand-drawn animated films dating back to the 1930s such as Walt Disney's 
+Dumbo, Snow White and the Seven Dwarves, and Sleeping Beauty, artists created 
+two-dimensional fantasy worlds by drawing them on sheets of paper or celluloid. 
+Now, armed with computers, animators can digitally make characters, machines, 
+and environments with three-dimensional identities. Released in 1995, the first 
+computer-animated feature film, Pixar's Toy Story, was rendered completely in 
+three dimensions.
+
+ Building a simulated 3-D world can be both a boon and a curse. Thoroughly 
+simulating characters and their surroundings makes it possible to look at them 
+from any angle and to manipulate them via computer commands. On the other hand, 
+nearly everything in every scene must have carefully defined physical 
+characteristics and boundaries.
+
+ Sometimes it doesn't work out that way, especially when parts of the scene 
+move out of view. For instance, Foster notes, "in computer-animation-land, it's 
+easy for an animator to put part of a character's arm through his stomach," 
+when that's not the intention.
+
+ Then, the physics goes haywire. During the making of Monsters, Inc., such a 
+boundary problem at first turned the clothing on some characters into an 
+unrecognizable tangle. "We had days when we doubted if this could be solved," 
+recalls David Baraff of Pixar.
+
+ Baraff, who was a professor of robotics at Carnegie Mellon University in 
+Pittsburgh before making the switch to entertainment, hasn't yet revealed how 
+the problem was resolved. However, Pixar has applied for a patent on the 
+solution and may present a report on it next summer at the annual meeting known 
+as Siggraph, where computer graphics specialists exchange ideas, Baraff notes.
+
+ As animation pioneers experimented with computer-calculated 3-D motion, 
+starting in the 1960s, they first overcame the challenges of automating the 
+movement of simple, solid objects, like a ball flying through the air. The 
+physics and math are simple enough for a computer to easily calculate a moving 
+object's new position for each frame (SN: 11/24/90, p. 328). That's every 1/24 
+of a second for a film and as fast as every 1/60 of a second for a game.
+
+ The same Newtonian laws of motion apply to collisions of solid objects. These 
+calculations rapidly become enormous computational tasks as the number and 
+complexity of colliding objects grow, but they already have become routine 
+tools for making today's animated productions.
+
+ Some everyday phenomena, such as moving fluids, act in an even more 
+complicated and difficult-to-compute manner. To make images of them look real, 
+animators have turned to more-specialized tools. "For amorphous things like 
+water, clouds, smoke, and pieces of Jell-O, there seem to be two approaches," 
+notes ex-academic Hugh Reynolds, who cofounded the physics-based animation 
+company Havok in Redwood City, Calif., in 1998. "One [approach] is to try to 
+come up with a big, mysterious equation that represents all this stuff. The 
+other is to think of it as a big cluster of chunks," he explains. The latter-a 
+spinoff from the field known as computational fluid dynamics-is the more 
+practical of the two, and the one that animation scientists have embraced.
+
+ Consider the huge waves in The Perfect Storm, the spurting mud blobs and lava 
+in Shrek, and other fluid effects. To simulate these, animation scientists have 
+adapted methods created by physicists and engineers for breaking up the space 
+occupied by a fluid into tiny volumes, each of which can be processed in a 
+computer.
+
+ For each volume and each frame, a computer calculates the forces between the 
+volume and its neighbors, as well as other forces, such as gravity. With those 
+results, it then determines the velocity and pressure that the fluid would have 
+at the center of each volume.
+
+ To depict motion, the computer treats the fluid space as if thousands of 
+particles were sprinkled into component volumes at random locations. The 
+machine next calculates intermediate velocities at those locations and figures 
+out where the particles would have moved to by the next frame.
+
+ The computer then uses those new coordinates "to build a smooth, implicit 
+surface" that portrays the fluid, says Foster, a pioneer of fluid-animation 
+techniques in film. That last step is "pretty tricky mathematically," he notes. 
+The process of calculating all the forces, pressures, velocities, and particle 
+trajectories is then repeated frame by frame as the action advances. Although 
+real fluids don't act like tens of thousands of individual volumes jostling 
+each other, the approximation yields realistic-looking flows.
+
+ Most recently, Foster says, his team has added more physical nuance to the 
+simulations by switching from a uniform grid of volumes filling the fluid space 
+to one in which, nearest the surface, the volumes grow smaller and more densely 
+packed. That enables the computer to capture tiny ripples, swirls, and other 
+surface details beyond the gross movements of the fluid.
+
+ Carrying the technique to an extreme, researchers at the Georgia Institute of 
+Technology in Atlanta have recently extended physics-based animation to 
+simulating explosions. That's not yet done in the film industry, where movies 
+such as Pearl Harbor convincingly depict blasts by combining footage of real 
+explosions with manually generated computer graphics.
+
+ Gary D. Yngve, now a graduate student at the University of Washington in 
+Seattle, and his colleagues have built upon equations and algorithms borrowed 
+from scientific computational fluid dynamics. Their technique models the shock 
+waves generated by a detonation and can depict the interaction between the 
+blast and solid objects that may either shape the explosion or be shattered by 
+it.
+
+ Among scientists pushing the envelope of computer animation, most focus on its 
+visual aspects, but others are tuning in to sounds. James F. O'Brien of the 
+University of California, Berkeley, who was also a coauthor of the 
+explosion-simulation research, and his colleagues at Princeton University have 
+developed a computer program that calculates vibration patterns generated in 
+the surfaces of objects during collisions and other mechanical interactions. 
+The program then simulates the pressure waves-that is, the sounds-produced as 
+the vibrating surface shakes the air. The researchers described the novel 
+method last August at the SIGGRAPH conference in Los Angeles.
+
+ Since the streamlined technique adds only about 1 percent of additional 
+computation time to animation, game developers, who do not tolerate slowed-down 
+action, may be interested in using the approach says O'Brien. Games now rely on 
+prerecorded audio tracks, which can quickly get boring. "After a while, people 
+just turn off the audio," he notes,
+
+ One thing that computers still can't simulate adequately with equations is 
+natural bodily motions, such as walking and running, by human or animal 
+characters. "Our mathematics is not sophisticated enough yet," says Jovan 
+Popovic of the Massachusetts Institute of Technology. "The motion of creatures 
+is a lot harder than the passive simulations, such as fluid dynamics." 
+Moreover, people are such innately keen observers of human and animal motion 
+that the simulations have to be especially realistic.
+
+ To make their simulated characters move, animators use computer programs that 
+represent the characters as a virtual Tinkertoy kit of body parts. A grid of 
+numbers, called a matrix, defines how each joint moves in space and what its 
+limitations are.
+
+ To create believable motion, animators sometimes use so-called motion capture, 
+in which footage of real people or animals in action serves as a template. 
+Mostly, however, the animators just use the computer as a tool to draw the 
+action frame by frame. Like puppet masters, they adjust controls provided by 
+their computer programs to move virtual body parts, with additional refinements 
+for the soft tissues of the face.
+
+"Our characters have 700 to 800 animation controls," Foster notes. An eyebrow, 
+for instance, may be allotted up to six adjustments for some characters to 
+create realistic arching and wrinkling, he says.
+
+ The director's always right
+
+ Films tell stories. A top goal of animation scientists is to open realistic 
+simulations to the creativity of the head raconteur-the director. "In film, you 
+can overuse these [physics-simulation] tools and destroy the fundamental 
+storytelling," says Seamus Blackley, a former particle physicist who heads 
+computer game-console development for Microsoft Corp. in Redmond, Wash.
+
+ Whereas water flowing in some scientific simulations needs only behave like 
+real water, water in an animated film may have to scowl at someone or take on 
+the shape of a horse or dance along a diving board. "The huge challenge is 
+making these things what we call 'directable'," says Baraff.
+
+ For simple animations, Popovic and his colleagues have recently demonstrated 
+one way to that end. The researchers were considering what happens after a mug 
+drops onto a table. Suppose the director wants it to land upright, but in an 
+accurate physics simulation, the vessel always ends up on its side.
+
+ By adding subtle unevenness to what had been a perfectly flat table top, the 
+scientists showed that they can create conditions in which the mug bounces a 
+few times and then settles upright. Moreover, they've devised a way to enable 
+an animator to make incremental adjustments in the trajectory of animated 
+motion, including collision-related motions that gradually reshape the original 
+simulation.
+
+"Our mathematical models of collisions are all approximations of what happens 
+in the real world anyway, so we can vary them to our benefit," Popovic 
+explains. The technique also works more rapidly than approaches in which 
+researchers fix the final outcome from the start and then compute backwards, 
+sometimes for hours, to find a physically sound sequence of actions, he adds.
+
+ Playing with physics
+
+ Unlike films, computer games have always been simulations. What's new is the 
+raw computing power in the latest game consoles and the advent of more 
+efficient physics engines-the science-based programs that produce all of the 
+action.
+
+ Whereas typical games play clips of prerecorded animation to generate car 
+crashes, football tackles, or other events, a game with a good physics engine 
+"empowers the user to have a real effect on the virtual world," says David Wu, 
+founder of Pseudo Interactive, a Toronto-based game-development company.
+
+ Even if a game has a warped physical reality compared with our everyday world, 
+simulating the physics helps ensure that the responses of that realm are 
+consistent and believable. "Physics is one of the great tools in our arsenal to 
+create this consistency," says Microsoft's Blackley.
+
+ A new game called Cel Damage, for example, combines physics muscle with the 
+look and brutal zaniness of a Roadrunner cartoon. Hecker, who is also 
+editor-at-large of Game Developer Magazine, describes Cel Damage as 
+"state-of-the-art for computer-game physics."
+
+ Wu's company created the game to run on Microsoft's X-box, a console launched 
+last November. With this game, a player can attack opponents with an array of 
+weapons, including giant hammers, harpoons, and freezing rays that make an 
+enemy turn brittle enough to shatter into chunks.
+
+ To keep the game's action consistent with players' physical intuitions, the 
+game's physics engine calculates all the relevant interactions. But to make the 
+action also outlandishly cartoony, the computer plays loose with some of the 
+numbers used in its engine.
+
+ For instance, it assigns cars the elasticity of balloons and makes hammers as 
+heavy as anvils. When a hammer blow hits a car, the vehicle temporarily 
+squashes flat-cartoon fashion-and then springs back again. Overweight harpoons 
+hit like missiles, powerful enough to penetrate steel. It's all in the 
+parameters of the equations.
+
+ For game developers and filmmakers who know how to manipulate such 
+representations of physical reality, even the immutable laws of physics can 
+give wings to their fancy.
+
+

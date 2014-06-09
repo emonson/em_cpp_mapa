@@ -1,0 +1,125 @@
+Unlocking Puzzling Polygons: Science News Online, Sept. 23, 2000
+
+ Unlocking Puzzling Polygons Proof settles a wickedly prickly question about 
+unfurling crinkly shapes
+
+ By Ivars Peterson
+
+ Polygons come in all sorts of shapes: triangles, squares, hexagons, stars, and 
+a host of other straight-edged forms.
+
+ Think of a polygon as a chain of rigid rods connected to each other in two 
+dimensions with flexible joints. Start with any configuration, no matter how 
+complex and intricately indented, or crinkly. Can you always find a sequence of 
+moves that removes the indentations-unfurling the polygon into what 
+mathematicians describe as a convex shape, like a triangle-without ever letting 
+the rods cross each other?
+
+ That's not as easy to do as it may sound. Imagine, for example, the outline of 
+a set of fearsome jaws with interlocking teeth.
+
+ Computational geometers and assorted others puzzled over this problem for more 
+than a decade, ever since it came to the attention of robotics engineers who 
+were trying to make a robot arm move from place to place. In recent years, the 
+geometric speculation turned into a sort of game. Someone would propose a 
+complicated configuration that appears to stay locked, and other enthusiasts 
+would spend hours, even weeks, looking for the key to opening it up.
+
+ Most of those who tackled the polygon problem believed that someone ultimately 
+would come up with a polygon that could not be unfurled, at least not in two 
+dimensions.
+
+ No one ever came up with a stumper, however. Every tricky polygonal 
+configuration anyone ever proposed was eventually cracked. "In a few cases, it 
+took several months to find the answer," says Erik D. Demaine, a 19-year-old 
+computer science graduate student at the University of Waterloo in Ontario.
+
+ Now, the question is finally settled. Demaine, Robert Connelly of Cornell 
+University, and Gunter Rote of the Free University of Berlin have proved that 
+any polygon can be uncrinkled in two dimensions without any sides crossing each 
+other during the unfolding.
+
+ The researchers announced their proof last June in Minneapolis at a Society 
+for Industrial and Applied Mathematics conference on discrete mathematics.
+
+ Related geometric problems have practical applications, such as checking the 
+range of movements of a jointed, robotic arm, designing a complicated antenna 
+that opens up properly in space, or studying how a protein strand folds into a 
+compact blob. At the moment, however, the new result appears to have no obvious 
+applications.
+
+ The puzzle's real appeal has been aesthetic rather than practical. "It's 
+simply a natural question to ask and a beautiful problem," insists computer 
+scientist Joseph O'Rourke of Smith College in Northampton, Mass.
+
+ Over the years, studies of robotic arm movements have suggested purely 
+mathematical questions about morphing one geometric shape into another. One 
+important group of problems concerns chains made up of line segments. Such 
+chains may be closed, like a polygon, or open-ended, like a segmented arc. 
+Lines can also be linked to form a branched structure, termed a tree, where 
+jointed segments sprout from a common vertex.
+
+ Suppose, for example, that a tree has eight chains emanating from a central 
+point. Suppose further that each of these chains is made up of three segments 
+folded so that the entire tree looks like a stylized flower with eight petals.
+
+ In 1998, Sue Whitesides of McGill University in Montreal and a large team of 
+collaborators established that for certain segment lengths, the petals can't be 
+straightened out without letting segments cross. Opening up one petal 
+necessarily impinges on others.
+
+ Researchers also found examples of three-dimensional chains, both open and 
+closed, that are locked, or impossible to unfold. On the other hand, O'Rourke 
+and Smith College colleague Roxana Cocan proved last year that in the roominess 
+of four- or higher-dimensional space, one can straighten out any open chain and 
+uncrinkle any polygon.
+
+"That left the two-dimensional case as the major unsolved problem," O'Rourke 
+says.
+
+ Last year in July, Demaine, Rote, and Connelly all happened to be at a 
+geometry conference in Ascona, Switzerland. In considering the polygon puzzle, 
+Rote suggested that uncrinkling polygons had to require some sort of 
+expansion-as if a balloon were inflating inside the polygon and forcing its 
+sides outward.
+
+"His suggestion was crucial, though we didn't realize why it was so helpful 
+until later," Demaine remarks.
+
+ The trio did observe, however, that if they could somehow find a sequence of 
+movements in which the distance between any pair of joints stayed the same or 
+increased, then the segments could never cross. So, the problem could be 
+converted from one about avoiding intersections into one about expanding 
+movements.
+
+ By the time Demaine, Rote, and Connelly met again in November, this time in 
+Budapest, Connelly had realized that the notion of expansion could be studied 
+in the context of his own field of expertise: the rigidity of structures. With 
+this concept, the team could look at polygons as frameworks of rods and 
+invisible struts between nonadjacent joints, where rods have to stay the same 
+size but struts can increase in length. The researchers could then consider 
+stress patterns within that structure.
+
+"This allowed us to apply some beautiful theorems in rigidity theory," Demaine 
+notes.
+
+ A proof that flat polygonal chains can't lock followed from that insight. 
+Along the way, Demaine, Rote, and Connelly also established that any open chain 
+can always be straightened.
+
+ The big surprise is not the proof itself, O'Rourke comments, but the 
+conceptual breakthrough that the opening move in any successful uncrinkling 
+process has to be one in which each joint moves apart or stays the same 
+distance away from every other joint.
+
+ Last summer, Demaine, Connelly, and O'Rourke added another element to the 
+original argument. They showed that the area inside an uncrinkling polygon must 
+increase. "This seems almost obvious," Connelly notes, "but the proof that we 
+have is not completely trivial."
+
+ Now that the two-dimensional case is solved, Demaine is tangling with other 
+fierce geometric beasts. An origami enthusiast, he's tamed the hyperbolic 
+paraboloid. Demaine developed instructions for folding and gluing this classic 
+saddle shape into complex paper hats and starbursts.
+
+

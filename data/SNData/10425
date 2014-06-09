@@ -1,0 +1,77 @@
+Beam Team: Unusual laser emits a band of light: Science News Online, Feb. 23, 
+2002
+
+ Beam Team: Unusual laser emits a band of light
+
+ Peter Weiss
+
+ Typically, lasers emit light of one pure color, or wavelength. A new little 
+laser breaks that mold by generating a beam containing all the wavelengths in a 
+swath of the electromagnetic spectrum.
+
+ This new broadband laser operates in the infrared spectrum, which is invisible 
+to the human eye. The multiwavelength emission makes the laser more suitable 
+for many applications than conventional single-wavelength lasers are, its 
+inventors say. These uses include monitoring air pollution and observing 
+ultrafast reactions in combustion and other chemical processes.
+
+ It's "a breakthrough and a milestone in laser development," comments Erich 
+Gornik of the Vienna University of Technology in Austria.
+
+ An ordinary laser emits only a single color because it's built with a 
+light-emitting substance that naturally generates one wavelength of light when 
+energized. To create a laser that would emit a broad band of wavelengths, 
+Claire Gmachl, Federico Capasso, and their colleagues at Bell Labs' Lucent 
+Technologies in Murray Hill, N.J., deposited on a microchip alternating layers 
+of two semiconductors in a configuration known as a quantum cascade.
+
+ Like earlier quantum-cascade lasers, the new broadband laser contains hundreds 
+of exquisitely thin semiconductor layers, each one affecting the energies of 
+electrons passing through it, Gmachl says.
+
+ In any quantum-cascade laser, a high voltage coerces an electric current to 
+penetrate layer after layer in the stack. The tight physical confinement of 
+many of those stacked layers makes them act as so-called quantum wells, in 
+which electrons can only have certain amounts of energy, Gmachl explains. Those 
+specific energy levels are determined by the laws of quantum mechanics.
+
+ The stack emits a laser beam because many electrons forced into those wells by 
+the high voltage carry more energy than the wells can accept. Those electrons 
+shed their excess energy, sometimes as heat but often as photons. At each end 
+of the stack, partially reflective crystal surfaces cause many of those photons 
+to bounce back and forth. The rebounding photons boost the odds that other 
+electrons in the quantum wells also will convert their energy into photons 
+rather than heat, Gmachl notes. A fast buildup of light intensity permits 
+enough photons to streak beyond the end mirrors to form a beam.
+
+ In earlier generations of quantum-cascade lasers, all the quantum wells had 
+the same thickness. In the new version, however, the researchers varied the 
+quantum wells' thickness from a few atomic layers to a few dozen, causing each 
+well to emit light of a different wavelength. Also, each well emits small 
+amounts of light with wavelengths slightly longer and shorter than its dominant 
+one. The result: a beam of high intensity at every wavelength from 6 to 8 
+micrometers, in the so-called midinfrared range.
+
+ The Lucent researchers made the new laser, which is 2 millimeters long and 
+less than one-tenth the thickness of a human hair, by stacking quantum wells. 
+Each well is based on a layer of indium gallium arsenide sandwiched between 
+layers of aluminum indium arsenide. The team describes its invention in the 
+Feb. 21 Nature.
+
+ By using the same design principle with other materials, the scientists expect 
+to make broadband lasers that work in portions of the electromagnetic spectrum 
+other than the midinfrared. One such device, already in the works, would 
+operate at the shorter infrared wavelengths now widely used for optical-fiber 
+telecommunications, Gmachl says. In principle, the same technique might someday 
+lead to a white-light device for room lighting, computer displays, or video 
+projection, she notes.
+
+ Previous attempts to generate broadband laser light have employed exotic 
+crystals or extreme operating conditions. In contrast, the Lucent laser works 
+at room temperature.
+
+"This is really the first time that you've had a laser with such a broad 
+spectrum," comments Jerry R. Meyer of the Naval Research Laboratory in 
+Washington, D.C. "It's a spectacular demonstration of something new."
+
+

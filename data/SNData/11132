@@ -1,0 +1,307 @@
+Science News Online (7/3/99): Stop-and-Go Science
+
+ The Weekly Newsmagazine of Science
+
+ Volume 156, Number 1 (July 3, 1999)
+
+ Stop-and-Go Science
+
+ By better understanding traffic flow, researchers hope to keep down highway 
+congestion
+
+ By Peter Weiss
+
+ Speed limits change in response to traffic conditions on M25, a highway 
+encircling London that has devoted a segment of its 117-mile length to testing 
+technologies to improve traffic flow. Behind the scenes, people in a control 
+room use video cameras to monitor traffic along M25 and connecting roads. By 
+setting speeds and giving other directions (inset shows a sign on a local 
+road), the pilot system has improved traffic flows, cut accident rates, and 
+lessened pollution, say London police. (Highways Agency; Highways Agency/Giles 
+Barnard)
+
+ Welcome to Los Angeles. The year is 2020. The traffic is, well, worse.
+
+ Average commuting times are twice what they were in the 1990s. Drivers endure 
+a stop-and-go crawl over almost half the miles they travel. Peak speeds on the 
+region's roads have tumbled. The average rush-hour, roadway speed is 24 miles 
+per hour.
+
+ These bleak predictions from the Southern California Association of 
+Governments may paint a more troubled picture for L.A. than what's expected for 
+many metropolitan areas. However, the rest of the world's cities won't be far 
+behind.
+
+ Officials at all levels of government are sorting through a queue of proposals 
+to lessen congestion. They include, for example, better mass transit systems, 
+new road-use fees to influence driver choices, and construction of separate 
+highways for cars and trucks.
+
+ Meanwhile, scientists and engineers around the globe are trying to figure out 
+how to cram more vehicles onto the existing roadways without putting highway 
+speeds into a nosedive. "We can't just build more and more roads, so basically 
+we have to try to use the existing capacity more efficiently," says Peter 
+Molnar, a traffic scientist at Clark Atlanta (Ga.) University.
+
+ It's a two-pronged undertaking in which researchers are generating 
+mathematical and computer models of traffic flow and at the same time devising 
+ways to reduce congestion.
+
+ Some of the new mathematical models, advanced mainly by physicists, depict 
+traffic as more complex and unpredictable than traditional traffic experts, 
+mainly civil engineers, believe it to be. These models have sparked intense 
+controversy.
+
+ Other, relatively simple models, which are based on computer simulations 
+rather than differential equations, are winning acceptance for their ability to 
+generate artificial traffic networks that behave like real ones.
+
+ Researchers have also begun applying their findings in new ways, such as 
+combining simulations with actual traffic data to predict and avert delays. In 
+the next few years, traffic-forecasting systems linked to intelligent highway 
+controls, such as on-ramp metering lights, will become more common, the 
+scientists say. Then, the benefits of their investigations should start to kick 
+in.
+
+ Traffic-flow research is undergoing "a renaissance due to technological 
+advances," especially in computing, says Bernardo A. Huberman of Xerox PARC in 
+Palo Alto, Calif.
+
+ Armed with powerful mathematical and computational tools, scientists 
+interested in traffic patterns have flooded the literature with creative 
+representations. "You have a whole zoo of models," says Michael Schreckenberg 
+of the University of Duisburg in Germany. "It seems that every second paper 
+defines a new model," he jokes.
+
+ Computer-based traffic models simulate virtual vehicles that motor by the 
+hundreds or thousands through an artificial highway network. The simulations 
+emerge from a more general category of computer models known as agent-based 
+systems, or cellular automata.
+
+ In such models, multitudes of agents interact in an artificial environment. A 
+limited set of rules governs each agent's behavior, making possible endless 
+scenarios, from the evolution of weird life forms to the rise and fall of 
+artificial societies (SN: 11/23/96, p. 332).
+
+"We're trying to boil this whole complicated thing down to a few [traffic] 
+rules," says Kai Nagel of the Los Alamos National Laboratory and the Santa Fe 
+Institute, both in New Mexico.
+
+ In the early 1990s, he and Schreckenberg introduced cellular-automata models 
+to traffic-flow research. Since then, such simulations have grown in 
+popularity. Although the models are built from simple rules, the collective 
+behavior of the antlike subunits can become complex. The units in 
+computer-driven cellular-automata models can suddenly organize themselves into 
+distinctive patterns (SN: 8/13/94, p. 109), some of which resemble highway 
+congestion.
+
+ In contrast to the cellular-automata methods, a more top-down, conceptual 
+approach to traffic relies on equation-based models. These typically depict the 
+aggregate characteristics of traffic, such as average speed and traffic 
+density. Researchers often build such simulations by adapting physical models 
+of the behavior of gases and liquids.
+
+ Using this approach, some scientists have recently proposed a new picture of 
+traffic. They argue that vehicle flows can suddenly and spontaneously turn 
+sluggish or crystallize, a process like the transition of a freezing liquid to 
+a solid. These phase transformations of traffic can appear in some parts of the 
+flow but not in others.
+
+ An even better analogy points to the flow of granular materials, such as sand 
+or salt, says Schreckenberg. In a pile of sand that's partly damp and partly 
+dry, slightly damp grains tend to clump up. Even dry sand can undergo sudden 
+transformations, such as an avalanche.
+
+ Recognizing that unlike molecules or sand, cars move under the control of 
+people, physicists have added expressions to their equations to take into 
+account drivers' abilities to anticipate conditions and attempt to avoid 
+crashes.
+
+ Spontaneous transformations of traffic, as seen in their models, indicate 
+previously unrecognized complexity in highway flow, according to Shreckenberg 
+and other statistical physicists. Understanding it requires the concepts and 
+equations of a relatively new branch of mathematics known as nonlinear 
+dynamics, they say.
+
+ Since the late 1970s, researchers have tapped nonlinear dynamics as a tool for 
+understanding a wide range of phenomena, including chemical reactions that 
+progress through phases (SN: 2/21/98, p. 116) and boom-or-bust population 
+cycles of various organisms (SN: 9/10/94, p. 164).
+
+ Traffic congestion fluctuates in waves shown in graphs of solutions to a 
+mathematical model of highway flow near an on ramp (at x=0). Patterns include 
+bunching just next to the ramp (left), stop-and-go traffic in which cars reach 
+full speed between jams (center), and stop-and-slow traffic in which cars don't 
+regain full speed before reaching the next congestion wave (right). Which 
+pattern, or traffic phase, forms depends on how many vehicles pour in from 
+upstream (negative x direction) and from the on ramp. (Helbing et al./U. 
+Stuttgart)
+
+ If scientists can make sense of this new-found highway complexity, they may 
+have a better chance of smoothing it out. "If you know the dynamic properties 
+of traffic patterns, then you can predict what happens with these patterns in 
+the future," says Boris S. Kerner of automaker DaimlerChrysler in Stuttgart, 
+Germany. Such warning would allow traffic controllers to activate strategies to 
+prevent sudden transitions or break up undesirable phases once they have 
+formed, he adds.
+
+ Kerner is a leading advocate of this new view of traffic as a complex system. 
+He and Hubert Rehborn, also at the DaimlerChrysler Research Center, have found 
+evidence that traffic can transform between several different phases, similar 
+to the way that water changes between vapor, liquid, or ice states.
+
+ The researchers analyzed traffic data collected from sensors built into German 
+autobahns. Besides freely flowing cars and a full-scale traffic jam, they first 
+reported in 1996 a third state, which they dubbed synchronized traffic flow. 
+Under certain circumstances, cars would suddenly all slow down to roughly the 
+same speed and tend to stay in lane, indicating that the traffic had jelled 
+into a type of unified, moving mass.
+
+ Further data revealed that the synchronous phase allows waves of dense traffic 
+to pass upstream along the highway and leads to stop-and-go driving conditions. 
+Kerner reported this finding in the Oct. 26, 1998 Physical Review Letters.
+
+ He concludes, "With our experimental results ... we have understood the 
+nonlinear properties of real traffic flow."
+
+ Despite Kerner's declaration, other researchers are still adding new pieces to 
+the puzzle. Huberman and Dirk Helbing of the University of Stuttgart found 
+another highly coordinated, dense traffic state in a cellular-automata 
+simulation of mixed cars and trucks. They described it in the Dec. 24/31, 1998 
+Nature.
+
+ The researchers reported finding evidence of their simulated traffic phase in 
+Dutch highway data. "This state is quite favorable because it's associated with 
+a high flow," Helbing explains.
+
+ More recently, Helbing and other colleagues came up with a new analysis of 
+traffic that defines six phases. Besides free flow and traffic jam, the 
+researchers identify four phases of congestion, all characterized by waves of 
+rising and falling vehicle density. The phases may overlap with Kerner's 
+synchonized traffic state.
+
+ The new findings distinguish the phases by how often waves pass through the 
+stream of vehicles and how much the density drops off between waves. In a phase 
+called a "pinned localized cluster," for instance, an enduring but very 
+localized bunching haunts the immediate vicinity of an on ramp.
+
+ The researchers have found evidence for each of the phases in data from 
+European autobahns. Their analysis appears in the May 24 Physical Review 
+Letters.
+
+ Instead of the excitement of the physicists who have created it, the new 
+picture of traffic has aroused the ire of traditional traffic researchers. 
+Traffic engineers are particularly disturbed by the physicists' notion that 
+traffic flow can spontaneously break down into a slow-moving or stopped state.
+
+"When congestion arises for no apparent reason, this just means that its cause 
+has not been identified," asserts Carlos F. Daganzo of the University of 
+California, Berkeley. There are many possible causes to choose from, such as 
+accidents, merges, stalled cars, and slowpoke drivers.
+
+ Studies of actual traffic by Michael J. Cassidy, also of Berkeley, show that 
+congestion recurs reliably at the same bottlenecks along highways. Uncovering 
+the causes usually suggests cures, such as ramp metering or redesigning the 
+geometry of a stretch of highway. However, "if congestion really does form for 
+reasons we cannot pinpoint, then dealing with congestion in those instances 
+would be much harder," Cassidy says.
+
+ In the May 19 Transportation Research Part A, Cassidy, Daganzo, and Robert L. 
+Bertini, also of Berkeley, explain how ordinary bottlenecks could account for 
+Kerner's data without invoking nonlinearity or self-organizing complexity.
+
+ Daganzo also notes that engineers have long been aware of phase transitions in 
+traffic, such as the onset of a jam, but have simply used different words to 
+describe the phenomena. The recent models, for the most part, rediscover and 
+relabel well-known concepts and observations in their field, he and other 
+engineers claim.
+
+ The complicated, nonlinear models also fail the test known as Occam's razor, 
+says Paul Nelson, a physicist at Texas A&M University in College Station. That 
+is, the simplest theory that explains a phenomenon is the best theory. The 
+complex models "clearly can be tuned to produce about any effect one wishes to 
+produce," Nelson argues, and thus may have little to do with real traffic.
+
+ In response to the modelers who envision improving the flow of vehicles on 
+highways, Carroll J. Messer, also of Texas A&M, offers a word of caution. He 
+notes that the capacity of a typical American freeway has grown steadily, from 
+1,800 vehicles per lane per hour in 1965 to about 2,400 per lane per hour 
+today. "It's because of better vehicle performance and driver performance and 
+because our roads are better," he says. Messer, however, wonders if that figure 
+can realistically go much higher. There are limits to the degree to which 
+motorists' driving can be coordinated, he says.
+
+ A simple cellular-automata simulation of traffic flow: Cars (red) and trucks 
+(black) queue at a red light (red dot at lower left) and then resume movement 
+when the light turns green. Graphs track behavior of a test vehicle (arrow) and 
+total traffic flow. An active demonstration can be viewed at . (Second 
+Institute of Theoretical Physics/U. Stuttgart)
+
+ A number of researchers already have taken their cellular-automata models on 
+the road to monitor and predict traffic throughout an extensive area. 
+Schreckenberg and his colleagues have made such a model for Duisburg, a city of 
+half a million people, and blended the simulation with data from road sensors. 
+The model provides up-to-the-minute information on traffic flows within the 
+city via the Internet (). Visitors to the Web site see a color-coded map 
+indicating which streets are congested. Click on a street, and more-detailed 
+information pops up, such as the number of cars per minute.
+
+ By winter, a much more ambitious plan to simulate traffic on the major 
+arteries of Europe's most densely populated region should be complete, 
+Schreckenberg says. In the German state of North Rhine-Westphalia, there are 10 
+million people within a diameter of 68 kilometers. He says, "It's comparable to 
+Los Angeles. It has no real center." Much of the truck traffic between Western 
+and Eastern Europe rumbles across the area's highways.
+
+ Beyond minute-by-minute updates on traffic flows, which should begin in 
+August, the model will also provide 1-hour traffic forecasts by the end of 
+November, Schreckenberg says. "In 1 minute, you can calculate for the next 
+hour," he explains. "You just accelerate the simulation."
+
+ These predictions would allow drivers with access to the Internet to plan 
+their speediest route.
+
+ Traffic engineers at Texas A&M are also blending the real and the simulated, 
+but with a different goal. In a laboratory at the Texas Transportation 
+Institute, they link simulations of vehicle traffic to computerized traffic 
+controllers used in the field. The controllers, in turn, simultaneously drive 
+both real signals and signs, such as traffic lights, and simulations of such 
+indicators.
+
+"We could use simulated control or flip a switch and use the real control 
+system," Messer says. "It's just like replacing a heart in surgery."
+
+ By running simulations through the actual equipment, engineers get to see how 
+well their control strategies handle various scenarios, such as accidents or 
+construction. Test runs help them iron out bugs that could make traffic worse 
+rather than better, Messer says.
+
+ Cellular-automata simulations are also beginning to influence long-range 
+traffic planning. The Transportation Analysis and Simulation System (TRANSIMS), 
+which Nagel and other researchers have been developing at Los Alamos National 
+Laboratory, tracks the movements, over a 24-hour period, of a population of 
+software agents matched statistically to a city's residents. The simulation 
+takes into account minute details about streets, traffic signs, bus and bike 
+routes, and neighborhood demographics. It reveals overall and local 
+traffic-flow patterns while monitoring each individual's contribution.
+
+ A TRANSIMS simulation of part of Dallas has influenced road-construction 
+planning in the city. The project's scientists hope by next year to model the 
+entire city of Portland, Ore.
+
+ While disagreeing on what it takes to understand traffic, researchers seem to 
+concur that it's a comprehensible phenomenon that will yield to their efforts. 
+To theorists such as Schreckenberg, who helped launch cellular-automata traffic 
+models about 8 years ago, the ultimate triumph would be to unite 
+cellular-automata and equation-based models under one conceptual umbrella-"a 
+universal theory of traffic," he calls it.
+
+"Development is going very fast at the moment," Schreckenberg says. He expects 
+that in the next 8 years, they'll find such a theory.
+
+ Many of the experts also seem optimistic that applying their understanding of 
+traffic, either by increasing the flow of vehicles on existing roads or 
+improving planning for future highway growth, will make a difference in the 
+battle against congestion.
+
+

@@ -1,0 +1,92 @@
+Science News Online (7/26/97): Internet congestion stirs up data storms
+
+ July 26, 1997 
+
+ Internet congestion stirs up data storms
+
+by I. Peterson
+
+ The worldwide network of computer networks known as the Internet handles an 
+enormous amount of traffic every day. At any given moment, hundreds of 
+thousands of users are sending messages or browsing the 80 million or more 
+pages of the World Wide Web. Congestion has become such a problem (SN: 3/23/96, 
+p. 181) that some sites provide daily Internet "weather reports," detailing 
+average delays in reaching sites at different times in various parts of the 
+world. 
+
+ Groups monitoring Internet traffic have observed spikes of extremely high 
+activity-or data storms-that appear quickly, then subside. A congestion spike 
+may result from a specific event, such as the recent landing of a spacecraft on 
+Mars (SN: 7/12/97, p. 20), or from network failures, as happened last week. At 
+other times, however, a spike appears to have no discernible cause.
+
+ Researchers now suggest that intermittent congestion spikes punctuating 
+routine traffic are inevitable because the Internet is essentially a public 
+resource whose users are generally not charged fees according to the amount of 
+data exchanged. "We can connect human behavior at an individual level with the 
+global behavior of the Internet," says physicist Bernardo A. Huberman of the 
+Xerox Palo Alto (Calif.) Research Center.
+
+ Huberman and his colleague Rajan M. Lukose describe their findings in the July 
+25 Science.
+
+ In the mathematical model developed by Huberman and Lukose, the usefulness of 
+the Internet is proportional to the speed with which users can access 
+information at remote sites. At the same time, because they usually do not pay 
+costs linked to consumption, users don't differentiate between activities that 
+require the transfer of large amounts of information, such as downloading 
+graphic files and browsing Web sites, and those that require much less, such as 
+electronic mail, or E-mail.
+
+ Thinking their actions have little effect on the overall performance of the 
+Internet, users get greedy, Huberman argues. When they expect or discover 
+congestion and noticeable delays, however, they alter their behavior.
+
+ Typically, users who experience congestion tend to believe that others do so 
+as well and expect that if they try again later, the network is likely to be 
+less congested. Those who encounter little delay tend to take advantage of the 
+apparent lull in activity.
+
+ Depending on the situation, Web surfers can switch very rapidly from no use or 
+restrained use to heavy use and vice versa. Such switches reflect different 
+needs and amounts of impatience in obtaining information, the researchers say.
+
+ Their equations representing this system show that the collective effect of 
+these individual decisions, made independently and in the context of 
+uncertainty about the true state of the Internet at any given time, produces 
+wide, unpredictable fluctuations in activity from moment to moment, highlighted 
+by intermittent congestion spikes.
+
+ To determine whether such spikes actually occur in Internet traffic, Huberman 
+and Lukose recorded the round-trip times of standard messages, known as pings, 
+sent between a computer at Stanford University and one in the United Kingdom. 
+To focus on short-term fluctuations in activity, they sent nearly 10,000 
+messages over the course of about 45 minutes. The data clearly indicated the 
+presence of frequent congestion spikes, in the form of unusually long delays, 
+occurring at random times and lasting a fraction of a second. The spikes are 
+superimposed on a noisy background.
+
+ The researchers obtained similar results in tests between computers in 
+different parts of the United States and even in just the San Francisco Bay 
+Area. "The bursts of congestion skew the [overall Internet] statistics," 
+Huberman says, making the calculated average delay meaningless. "What's 
+important is not the spikes but what happens in between," he adds. Most of the 
+traffic goes through promptly.
+
+ To avoid congestion, users ought to be charged in proportion to the amount of 
+data transmitted, Huberman contends. Such charges would make people more 
+directly aware of their role in overtaxing the capacity of the Internet.
+
+"Both the present congestion of the Internet and technologies for improved 
+performance in the future Internet are active subjects of study," says Mark A. 
+Luker, who manages the network connections program at the National Science 
+Foundation in Arlington, Va.
+
+"I think pricing schemes are a wise and sound approach," says economist Jeffrey 
+K. MacKie-Mason of the University of Michigan in Ann Arbor, one of the first 
+researchers to investigate pricing mechanisms in response to Internet 
+congestion. Various network pricing schemes are now being tested, he says, and 
+the measurements and traffic analysis made by Huberman and Lukose are a useful 
+contribution.
+
+

@@ -1,0 +1,62 @@
+Science News Online (7/5/97): Computing nuclear crash and burn scenarios
+
+ July 5, 1997 
+
+ Computing nuclear crash and burn scenarios
+
+by I. Peterson
+
+ A jet aircraft skids along a runway. Its wing slams into a vertical pole, 
+rupturing a fuel tank. The sprayed fuel ignites to create a giant fireball that 
+engulfs the plane. The flames lick at a cruise missile, heating up critical 
+electronic components in the missile's nuclear warhead.
+
+ Thanks to a new computer capable of calculating at a rate of up to 1.8 
+trillion operations per second, researchers at the Sandia National Laboratories 
+in Albuquerque, N.M., now have a vastly improved tool for simulating various 
+scenarios involving nuclear weapons. Such simulations are designed to reduce 
+the need for full-scale tests of aging nuclear systems (SN: 10/19/96, p. 254).
+
+"It is a very important step in shifting from a test-centered program to a 
+computation-centered program," says Sandia director C. Paul Robinson.
+
+ Built at a cost of $55 million as part of the U.S. Department of Energy's 
+Accelerated Strategic Computing Initiative, the so-called teraflops 
+ultracomputer is the fastest computer in the world. Assembled from 9,072 
+Pentium Pro microprocessors, originally developed by Intel for use in 
+workstations and servers, the computer covers an area roughly equal to the 
+floor space of a modest home.
+
+ In a December test at Intel's Beaverton, Ore., plant, this computer became the 
+first to calculate at a rate of 1 trillion operations per second, using just 
+7,264 of its processors (SN: 1/4/97, p. 7). Installation of the full computer 
+at Sandia was completed late last month.
+
+ Even before all the processors had been installed, Sandia researchers were 
+running simulations on the computer. One key effort modeled, in four separate 
+stages, the crash of an airplane carrying a nuclear warhead.
+
+ Preliminary results provide insights into such complex phenomena as 
+wind-fanned fires. The simulations reveal, for example, that air rushing past a 
+column of flames spawns vortices that greatly intensify the fire. The 
+temperatures are highest at the fringes of the inferno.
+
+"The physics involved is really complicated," says Sandia's Carl W. Peterson, 
+who specializes in fluid mechanics. Even the ultracomputer isn't powerful 
+enough to enable researchers to model the full scenario -- from crumpled wing 
+to heated electronics -- in one continuous run.
+
+ At the same time, researchers are discovering they need experimental data to 
+feed into their models and to validate their findings. In the missile 
+simulation, for example, new experiments had to be performed to determine how 
+the special solid foam in which electronic components are packed responds to 
+heat.
+
+"We're finding we have to increase the amount of experimenting, say, on 
+materials," says Robert K. Thomas, who manages the materials and structural 
+mechanics effort at Sandia.
+
+"You must be willing to bet your paycheck on a simulation," says Sandia's 
+Russell Skocypec.
+
+

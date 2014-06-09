@@ -1,0 +1,67 @@
+Y2K problem looms in Hubble repair, Science News Online (11/6/99)
+
+ Y2K problem looms in Hubble repair 
+
+ By R. Cowen
+
+ Scene depicts the upcoming mission to replace failed gyroscopes on Hubble. 
+(NASA)
+
+ Space agency officials have their fingers crossed that the shuttle will roar 
+into space on schedule next month, carrying astronauts who will replace three 
+failed gyroscopes on the Hubble Space Telescope. Already postponed 2 months, 
+the repair mission is critical: If one more of Hubble's six gyroscopes fails, 
+the telescope won't be steady enough to observe the heavens.
+
+ There's another reason the space agency hopes the mission won't miss its 
+December launch window and get bumped into next year, Science News has learned. 
+Because planning time for the Hubble mission was unusually short, NASA hasn't 
+certified that the software the shuttle will use to navigate and rendezvous 
+with Hubble meets year-2000 (Y2K) standards.
+
+ The now-infamous Y2K problem stems from the use of two digits instead of four 
+to represent the year in computer programs (SN: 1/2/99, p. 4). Systems 
+continuing to use that shortcut may not know whether 00 means the year 1900 or 
+2000, creating the potential for serious errors.
+
+ Scheduled for launch between Dec. 2 and 14, the 9-day Hubble-repair mission 
+will include four space walks. Although anxious about the schedule, "we have no 
+reason to believe that NASA can't get the mission off on time," says Steven 
+Beckwith, director of the Space Telescope Science Institute in Baltimore, which 
+operates Hubble. If inclement weather or other circumstances force the mission 
+to forgo a December launch, however, the Y2K factor could loom large in efforts 
+to quickly reschedule.
+
+ If tests now under way reveal that the NASA software will need only minor 
+modifications to be Y2K-compatible, a postponed mission could fly as early as 
+mid-January. But if the software, essentially the same used to coordinate 
+Hubble repairs in 1997, has to be replaced with a newer version, the fix could 
+delay the launch by 4 months, says Denny Holt, manager for the Hubble mission 
+at NASA's Johnson Space Center in Houston.
+
+ Holt notes, however, that there's only an "outside chance" that the old 
+software would have to be scrapped, causing such a major delay. So far, tests 
+have not uncovered Y2K-related problems. The analysis, however, won't be 
+completed until next month.
+
+ Hubble has had only three working gyroscopes since January and another could 
+fail at any time. In announcing plans for the repair mission last March (SN: 
+3/27/99, p. 203), the agency had pushed for the earliest launch possible, an 
+October date. Wiring problems discovered in the shuttle, however, forced the 
+mission to be rescheduled to December.
+
+ In choosing the earliest launch date, the agency hoped to avoid what NASA 
+chief scientist Edward J. Weiler called a "science emergency." Each month that 
+the telescope lies dormant, about $20 million in operational costs would go to 
+waste.
+
+ To save time, NASA decided last spring to use the same software that 
+successfully navigated the shuttle during a Hubble repair mission 2 years ago. 
+They had estimated that testing the old software for Y2K problems would have 
+added another 6 months to the planning time, Holt says. If modifying the 
+program now proves necessary, he says, the experience acquired in certifying 
+Y2K compatibility for a newer version of shuttle software should make that task 
+easier.
+
+ From Science News, Vol. 156, No. 19, November 6, 1999, p. 294. Copyright C 
+1999, Science Service. 

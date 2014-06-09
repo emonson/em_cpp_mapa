@@ -1,0 +1,209 @@
+Deep Vision: Science News Online, June 1, 2002
+
+ Deep Vision
+
+ When walls become doors into virtual worlds
+
+ Peter Weiss
+
+ It was when he was being measured for a new suit that Thomas A. DeFanti, a 
+computer scientist and photographer at the University of Illinois in Chicago, 
+came up with a new angle on virtual reality. DeFanti recalls looking at himself 
+in the tailor's three-mirror booth and wondering whether he could combine 
+computers and a projection system into a high-tech imaging system that would 
+recreate a three-dimensional likeness that would look right from any viewing 
+angle.
+
+ Back then in 1991, the only way to create the illusion of being immersed in a 
+computer-generated world was to don a helmet outfitted with tiny computer 
+monitors that fit directly over your eyes.
+
+ A few months later, DeFanti, Daniel Sandin, also of the University of 
+Illinois, and some of their colleagues had turned the concept into something 
+they called the CAVE, which stands for Cave Automatic Virtual Environment-a 
+cubic room of screens onto which rear-screen projectors throw 
+computer-generated views of a virtual scene.
+
+ A visitor to a CAVE sees-and, these days, sometimes hears, feels, and even 
+smells-a three-dimensional world that seems to engulf him or her. That virtual 
+world can include anything a computer can simulate, from the inside of an atom 
+to an ancient Greek temple or the heart of the Milky Way. What's more, the CAVE 
+dweller can move around the objects and experience them from all sides, just as 
+he or she might in the real world.
+
+ Today, 11 years after DeFanti's tailor-shop revelation, CAVEs and wall- or 
+desk-size displays using the same technology are proliferating at universities, 
+businesses, and military and government sites (SN: 2/27/99, p. 136: ). 
+Scientists use them to analyze data in new ways. Engineers use them to design 
+new products with less reliance on physical prototypes. And many others, 
+including artists, architects, and game designers, are using the systems to 
+devise and display their creations. In short, CAVEs are coming out of the 
+closet.
+
+ Most recently, an offshoot of CAVE technology has brought virtual reality to a 
+much wider audience. Show goers at major planetariums and science centers have 
+begun experiencing the sensations of flying through space or other virtual 
+scenes rather than just looking at them. More and more of these entertainment 
+productions embody the scientific simulations once confined to laboratories. 
+Meanwhile, scientists working at these centers are also using the new 
+facilities, after hours, as giant CAVE-like displays for their own research 
+projects.
+
+ Room with your view
+
+ With traditional visual media, from paintings to photographs to television 
+sets, viewers can't opt for different viewing angles or perspectives. In CAVEs, 
+they can.
+
+ To help keep the changing perspectives realistic, a CAVE user wears an 
+eyeglass frame fitted with an electromagnetic or ultrasonic tracking device. It 
+enables the computer to monitor the orientation of the person's head and eyes 
+and redraw images in corresponding perspectives. If several people use a CAVE 
+simultaneously, only the one with the tracker gets the full effect.
+
+ In addition to simulating various virtual perspectives, the computers behind 
+some CAVEs can create an illusion of stereovision (SN: 11/12/94, p. 319). In 
+real life, each eye sees a slightly different view of the world. The 
+differences between those views enable our brains to construct 3-D portraits of 
+objects.
+
+ To create that 3-D effect in a CAVE, each projector cycles through alternating 
+images of right- and left-eye views at, typically, 60 repetitions per second of 
+each. The CAVE user's eyeglasses are equipped with shutters or polarizing 
+filters that make sure each eye sees only its intended view. The brain then 
+melds those images into a single stereoscopic view (SN: 9/18/99, p. 184: ).
+
+ Submerged in data
+
+ In a CAVE at the University of Maryland in College Park, an image of a tube 
+with a propeller at one end floats in space. The propeller turns lazily as the 
+cylindrical shell expands and contracts in full 3-D, as if it were breathing.
+
+ This particular simulation is designed for probing the vibrations of a 
+torpedo's casing as the weapon travels through the water. The goal of this 
+Navy-funded work is to find ways to dampen the vibrations and thereby make the 
+weapons stealthier, says Amr M. Baz, a mechanical engineering professor and 
+leader of the project.
+
+ With a few manipulations of a wand, graduate student Wael Akl zooms in on the 
+torpedo until the view shifts from the outside to the inside of the cylinder. 
+For Akl and the other two people in the CAVE, the cylinder appears to undulate, 
+out then in, all around them. With more wand action, Akl installs different 
+sets of virtual reinforcing rings into the shell so the group can observe how 
+the rings affect the vibration pattern.
+
+ This CAVE provides more than just visual simulations of the device's behavior. 
+Ten speakers broadcast sounds calculated to match what the vibrating torpedo 
+casing would transmit into its surroundings. A researcher also can slip on a 
+so-called haptic device, in this case a glove with which one person can "touch" 
+the casing at different locations and feel its vibrations.
+
+ For these types of engineering studies, CAVE technology can save time and 
+money by enabling designers to test their ideas before actually building 
+anything. Today, every major car company and some airplane builders do vehicle 
+design using CAVEs or less-elaborate systems that run on single walls or even a 
+tabletop, says Jeff Brum, a product manager at FakeSpace Systems in Kitchener, 
+Ont.
+
+ Many oil and gas companies are using such systems to create images of 
+underground formations from existing seismic data. The 3-D projections help 
+analysts locate fault lines and other features that provide clues to good 
+drilling locations.
+
+ Some investigators are proving that some of the grandest CAVE-like displays 
+can include whole audiences sitting in theater chairs. In one, people lean back 
+and zoom through a 3-D representation of 100,000 stars derived from actual 
+satellite-telescope data or see dramatic, simulated astronomical events.
+
+ After the show, however, the same theater has proven valuable for scientific 
+research. Astrophysicist Michael M. Shara of the American Museum of Natural 
+History in New York describes the museum's Hayden Planetarium as "the CAVE gone 
+wild."
+
+ Some evenings, after the planetarium's virtual-reality shows have ended, he 
+and Jarrod R. Hurley, also of the museum, have used the dome to project their 
+computer simulations of dense clouds of stars known as globular clusters. The 
+dome's enormity enables the astrophysicists to simultaneously view stars that 
+are nearby one another yet quite distant from others, all the while maintaining 
+proper scale, Shara explains.
+
+ With this unique tool of scientific visualization, Hurley and Shara have found 
+evidence that stars in globular clusters come together and then break apart 
+again into small groups far more frequently than previously thought.
+
+ Most theories of stellar evolution portray stars as lone entities or perhaps 
+in a pair with one other star. The newly recognized "promiscuous" behavior, as 
+Hurley and Shara have described it, allows for all kinds of unexpected swapping 
+of stellar gases and other interactions that may dramatically change the life 
+histories of as many as 70 percent of the stars in a cluster. "Things not 
+explainable by conventional stellar evolution became crystal clear," Shara 
+says. He and Hurley describe their ideas about stellar promiscuity in the May 1 
+Astrophysical Journal.
+
+ Before exploiting the planetarium as a CAVE-like display for research, the 
+scientists had been running their simulations on ordinary computer monitors 
+without fully realizing what they were seeing. In the dome, however, "there was 
+a set of these 'eureka' moments when you look up on the dome and you say, 'Oh, 
+geez. That's what's happening!'" Shara recalls.
+
+ Never static
+
+ Three years after inventing the CAVE, DeFanti, Sandin, and their colleagues 
+had also developed a compact version dubbed the Immersadesk. The device is a 
+table-like workstation that a user, wearing stereo glasses, stands in front of. 
+By 1995, FakeSpace had begun manufacturing CAVEs and related products for the 
+commercial market. Today, several other manufacturers are also building 
+CAVE-style displays. The family of devices has grown to include large, 
+single-panel walls and modular CAVEs that can be readily broken down and 
+reassembled for trade shows and other traveling exhibits. And CAVE technology 
+continues to evolve.
+
+ Last year, manufacturers introduced digital projectors based on microchips 
+covered with millions of tiny, moving mirrors. DeFanti says the new projectors 
+deliver images in CAVES seven times as bright as their predecessors, which are 
+like ones in projection televisions. "Finally, the CAVE does not feel like it's 
+in moonlight," he declares.
+
+ DeFanti and other virtual-reality researchers are also developing CAVE-like 
+systems that use computer monitors rather than projectors. By eliminating 
+distances between projectors and screens, monitors might make CAVE-like 
+displays possible in a fraction of the space of current systems. Theoretically, 
+each cubicle in an office could have its own CAVE, DeFanti speculates.
+
+ Researchers are also trying to make CAVE-like displays better for group 
+experiences. To foster collaborative use for such applications as virtual 
+travel, architectural tours, and training sessions, researchers at the 
+Fraunhofer Institute for Media Communication in Sankt Augustin, Germany, 
+unveiled in March a new booth called i-CONE. With its curved, high-resolution 
+projection screen, i-CONE allows up to a dozen people to simultaneously view 
+undistorted scenes, claims Martin Gobel of the institute.
+
+ Some attempts to push the technology further have failed. For example, Gobel 
+recalls that 3 years ago, the Fraunhofer Institute outfitted a display with 
+odors, but no one noticed them unless they were danger signals, such as the 
+smell of smoke. "It was disappointing that people couldn't smell what we were 
+injecting," he says.
+
+ In a new and growing trend, the users of CAVEs and CAVE-like systems are 
+networking them together. For instance, to create the visual sequences used in 
+the current Hayden Planetarium show-"The Search for Life: Are We Alone?" which 
+opened March 2-producers were able to connect the dome via the new high-speed 
+academic network, Internet 2, to a CAVE at the National Center for 
+Supercomputing Applications (NCSA) in Urbana-Champaign, Ill. NCSA's greater 
+computing power and specialized software enabled the producers to run elaborate 
+astrophysical simulations and to transfer excerpts from those simulations to 
+New York for the show.
+
+ Despite their different equipment, in one after-hours work session, the two 
+far-flung teams simultaneously inhabited the same scene and consulted about how 
+to manipulate it.
+
+"We both got into the same space, although we were 1,000 miles apart," says 
+Carter Emmart, visualization director at the Hayden Planetarium.
+
+ Other networked users are sharing data, touring each other's virtual 
+environments, or staging cyber-art exhibits. Whether stand-alone or networked, 
+room-shaped or domed, CAVE-like displays are becoming portals to anywhere you 
+can imagine.
+
+

@@ -1,0 +1,71 @@
+Science News Online (4/25/98): Sifting through the Web's data jumble by I. 
+Peterson
+
+ May 2, 1998 
+
+ Sifting through the Web's data jumble
+
+by I. Peterson
+
+ Searching the World Wide Web for authoritative sources of information about a 
+given topic can be a daunting task. Consulting just one indexing service to 
+track down "jaguar," for instance, generates an alarming list of 336,770 
+documents -- a mad muddle of entries about cars, animals, sports teams, 
+computers, and a town in Poland.
+
+ Now, a team of researchers has come up with a method for automatically 
+compiling rosters of authoritative Web resources on broad topics. Based on 
+analyses of the way Web pages are linked to one another, the technique produces 
+resource lists similar to those constructed manually by experts at such Web 
+services as Yahoo! and Infoseek.
+
+ Computer scientists Jon Kleinberg of Cornell University, Prabhakar Raghavan of 
+the IBM Almaden Research Center in San Jose, Calif., and their coworkers 
+described the project at the Seventh International World Wide Web Conference, 
+held last month in Brisbane, Australia.
+
+ In making Web pages, people typically incorporate links to other pages. Such 
+links furnish "precisely the type of human judgment we need to identify 
+authority," Kleinberg says. His team couples that authority with Web-searching 
+tools, known as engines, that hunt indiscriminately for selected words in Web 
+text (SN: 5/2/98, p. 286).
+
+ Making the assumption that the most authoritative pages on a given subject 
+would be those most often listed as links on other pages, Kleinberg developed 
+an algorithm to evaluate such relationships.
+
+ He incorporated this technique into a novel program that begins by conducting 
+a text-based search using a standard search engine, which supplies a selection 
+of about 200 documents containing the required words. That set is then expanded 
+to include all pages to which those documents are linked.
+
+ Ignoring the text, the program examines the network of links and assigns 
+scores to each page on the basis of the number of links to and from it. The 
+program then considers which pages receive the most links. A page, containing 
+authoritative information about a specific topic or providing a useful list 
+would presumably be the focus of other pages. Such pages are given extra value.
+
+ Ten repetitions of the calculations usually generate a remarkably focused 
+list, Kleinberg says. In tests by Kleinberg and his coworkers, the results were 
+sometimes better than manually compiled resource lists. However, the method 
+doesn't always work well for highly specific queries, nor does it pick up fresh 
+content. IBM has applied for a patent on the underlying algorithm.
+
+ From Science News, Vol. 153, No. 18, May 2, 1998, p. 278. Copyright O 1998 by 
+Science Service.
+
+  
+
+ References:  
+
+ Chakrabarti, S., et al. Preprint. Automatic resource compilation by analyzing 
+hyperlink structure and associated text. (Available at .)
+
+ Further Readings: 
+
+ Peterson, I. 1998. Web searches fall short. Science News 153(May 2):286.
+
+ Additional information about the Seventh International World Wide Web 
+Conference can be found at .
+
+

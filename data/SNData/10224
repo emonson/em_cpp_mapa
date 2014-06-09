@@ -1,0 +1,235 @@
+Visions of Infinity: Science News Online, Dec. 23 & 30, 2000
+
+ Visions of Infinity Tiling a hyperbolic floor inspires both mathematics and art
+
+ By Ivars Peterson
+
+ Even the most brilliant innovators get their inspiration from somewhere.
+
+ For the Dutch graphic artist M.C. Escher, such a creative impetus came from a 
+particular illustration in a 1957 mathematical article about symmetry. It gave 
+him what he later described as "quite a shock" and inspired him to create four 
+artworks: the Circle Limit series of prints.
+
+ The illustration showed a curious tiling of black and white triangles with 
+curved sides. Enclosed within a circle, the alternately colored triangles 
+became progressively smaller as they approached the circle's perimeter.
+
+ The concept of infinity had long intrigued Escher, and he had sought to 
+capture this elusive notion in visual images. One strategy that he employed was 
+to create repeating patterns of interlocking figures. Although Escher could 
+imagine how such arrays could extend infinitely, the actual patterns he drew, 
+of course, represented only a fragment of an infinite expanse.
+
+ In another approach, Escher tried to fit together replicas of a figure, such 
+as a fish, that diminish in size as they spiral into or recede from a point in 
+the middle of a square or circular frame. However, he wasn't entirely satisfied 
+with these efforts.
+
+ The mathematical drawing-an illustration of the so-called hyperbolic 
+plane-that had so startled Escher offered him a precise, aesthetically pleasing 
+way to depict diminishing figures within a circle.
+
+ The article containing the diagram had been written by H.S.M. Coxeter, a 
+mathematician at the University of Toronto. Today in his nineties, Coxeter 
+continues to focus on the interplay of symmetry and geometric shapes. His 
+research covers topics such as the mathematics of kaleidoscopic patterns.
+
+ Coxeter had sent Escher a copy of his symmetry article as a thank you for 
+permission to reproduce several of Escher's periodic drawings as illustrations. 
+The men had met in 1954 in Amsterdam at the International Congress of 
+Mathematicians, where there was an exhibition of Escher's work. That encounter 
+led to correspondence between the two, which continued until Escher's death in 
+1972.
+
+ Escher in 1958 mailed Coxeter a print of "Circle Limit I"-the first fruit of 
+the artist's venture, inspired by Coxeter, into hyperbolic geometry. In the 
+decades since Escher's initial foray, the Circle Limit prints have motivated 
+many mathematical investigations and artistic endeavors. Each year, 
+mathematicians and computer scientists continue to add to the literature of 
+hyperbolic tilings and related mathematical topics.
+
+ Despite the many manifestations of Escher-inspired research, it all stems from 
+the same basic principles of curved geometry.
+
+ For example, if you draw any triangle on a sheet of paper and add up its three 
+angles, the result is always 180 degrees. When you draw a triangle on a 
+saddle-shaped surface, however, the angles invariably add up to less than 180 
+degrees.
+
+ Just as a flat surface-like that of a sheet of paper-is a piece of the 
+infinite mathematical surface known as the Euclidean plane, a saddle-shaped 
+surface can be thought of as a small piece of the hyperbolic plane. Picturing 
+what the hyperbolic plane looks like on a larger scale, however, requires some 
+mind-bending ingenuity.
+
+ Freelance mathematician Jeffrey R. Weeks of Canton, N.Y., suggests making 
+"hyperbolic paper" from a large number of equilateral triangles as one way to 
+get a feel for the hyperbolic plane.
+
+ Taping together equilateral triangles so that precisely six triangles meet at 
+each vertex produces a flat sheet. In contrast, assembling equilateral 
+triangles so seven triangles meet at each vertex produces a floppy, bumpy 
+surface. The more triangles you use and the larger the resulting sheet, the 
+more closely it resembles the hyperbolic plane.
+
+ A similar construction can be done with pentagons. Mathematician and sculptor 
+Helaman Ferguson of Laurel, Md., has made an intriguingly wrinkly hyperbolic 
+quilt by sewing together pentagonal patches of fabric so that four pentagons 
+meet at each corner. It's an unruly blanket that refuses to lie flat, he says.
+
+ Such constructions are not the only way to visualize the hyperbolic plane. 
+More than a century ago, French mathematician Henri Poincare introduced a 
+method for representing the entire hyperbolic plane on a flat, disk-shaped 
+surface.
+
+ In Poincare's model, the hyperbolic plane is compressed to fit within a 
+circle. The circle's circumference represents points at infinity. In this 
+context, a straight line, meaning the shortest distance between two points, is 
+a segment of a circular arc that meets the Poincare disk's circular boundary at 
+right angles.
+
+ Although this model distorts distances, it represents angles faithfully. The 
+hyperbolic measure of an angle is equal to that measured in the disk 
+representation of the hyperbolic plane. So, a repeating pattern made up of 
+identical geometric shapes in the hyperbolic plane transforms, when represented 
+in a Poincare model, into an array of shapes that diminish in size as they get 
+closer to the disk's bounding circle.
+
+ For his Circle Limit prints, Escher worked out the underlying rules of these 
+disk models and developed his own method for constructing a hyperbolic grid, 
+relying on his skill and intuition to create the geometric scaffolding he 
+needed. Coxeter's "hocus pocus" mathematical text wasn't much help, Escher 
+later remarked in a letter to Coxeter. Nonetheless, Escher executed the 
+drawings with extraordinary accuracy, Coxeter comments.
+
+"The first time I saw a print of 'Circle Limit III,' I said to myself, 'that is 
+the most beautiful example I have ever seen of the Poincare circle model for 
+hyperbolic geometry,'" says J. Taylor Hollist, a mathematician at the State 
+University of New York at Oneonta. He's documented many historical interactions 
+between Escher and scientists.
+
+ Besides its beauty, "Circle Limit III" also presents a puzzle. For some 
+reason, in this particular case, Escher drew a pattern of lines somewhat 
+different from that in Coxeter's original drawing. The main arcs seen in 
+"Circle Limit III" meet the circumference at a specific angle very close to 80 
+degrees rather than precisely 90 degrees.
+
+ Coxeter was able to demonstrate that each arc is of a type known to 
+mathematicians as an equidistant curve. It bears the same relationship to a 
+hyperbolic straight line as a line of latitude does to the equator on the 
+surface of a sphere.
+
+ When Coxeter worked out trigonometrically what the proper angle of such a 
+curve in Escher's print should be, he obtained 79 degrees 58 minutes, again 
+confirming the accuracy of Escher's draftsmanship.
+
+ Besides intriguing professional mathematicians, Escher's Circle Limit prints 
+and their repeating patterns prove to be useful vehicles for becoming 
+comfortable with and teaching hyperbolic geometry, says Douglas J. Dunham of 
+the computer science department at the University of Minnesota at Duluth. "Even 
+to mathematicians, hyperbolic geometry is not that familiar," he contends.
+
+ Dunham and his students have written several computer programs to generate 
+hyperbolic patterns, particularly those made up of repeating motifs colored in 
+various ways.
+
+ Mathematicians use a standard notation for describing a mosaic made up of 
+identical tiles, where each tile is a polygon with a given number of edges of 
+the same length and the same number of corners or vertexes. On a flat surface, 
+there are three such tilings. A tiling in which six equilateral triangles meet 
+at each intersection is designated {3,6}, one in which four squares meet at 
+each intersection is {4,4}, and one in which three hexagons meet at each 
+intersection is {6,3}.
+
+ The same notation applies to regular tilings of the hyperbolic plane. A tiling 
+where four pentagons meet at each vertex is labeled {5,4}. In general, for 
+polygons with p sides, meeting q at a vertex, the result is a hyperbolic tiling 
+when (p - 2) multiplied by (q - 2) is greater than 4.
+
+ Escher's "Circle Limit IV," which features interlocking devils and angels, is 
+an example of a {6,4} tiling. In other words, the underlying hyperbolic grid 
+consists of hexagons that meet four at each vertex.
+
+ Dunham has developed a computer program that transforms a hyperbolic Escher 
+design from one tiling pattern to another. For example, he can transform the 
+{8,3} pattern of crosses in "Circle Limit II" into a strikingly different 
+{10,3} tiling, where the central figure is a star.
+
+ The same pattern can be transformed into an array of starbursts with any 
+number of rays, Dunham notes. Indeed, there is an infinite number of hyperbolic 
+tilings available for such transformations. The use of different motifs and 
+color schemes increases the possibilities even further.
+
+ At a conference on mathematical connections in art, music, and science held 
+last summer at Southwestern College in Winfield, Kans., Dunham described a 
+novel extension of some of these ideas. He had worked with Celtic knot 
+patterns, used centuries ago in Ireland and elsewhere to decorate religious 
+texts. Such knots are formed by weaving a ribbon into an alternating 
+over-and-under pattern, then joining the two ends to form a continuous band.
+
+ Dunham now has a computer program that generates intriguing hyperbolic 
+versions of these ancient designs. He can also construct examples in which 
+rings interlock in the over-and-under pattern characteristic of Celtic knots.
+
+ Interestingly, Escher himself incorporated an intricate pattern of 
+interlocking rings within a circular frame in his last woodcut, "Snakes." 
+Dunham can show that this pattern is closely related to a hyperbolic variant of 
+a Celtic weaving. Although Escher and Dunham approached these patterns from 
+different perspectives, their intellectual common ground is apparent.
+
+ In a 1960 essay later translated and published in the book The Graphic Work of 
+M.C. Escher (1961, Duell, Sloan and Pearce), Escher noted, "The ideas that are 
+basic to [my art] often bear witness to my amazement and wonder at the laws of 
+nature which operate in the world around us.
+
+"By keenly confronting the enigmas that surround us, and by considering and 
+analyzing the observations that I have made, I ended up in the domain of 
+mathematics," he continued. "Although I am absolutely without training or 
+knowledge in the exact sciences, I often seem to have more in common with 
+mathematicians than with my fellow artists."
+
+ Constructing Escher
+
+ Nowadays, mathematicians, computer scientists, and others have a variety of 
+speedy computer-based methods for generating hyperbolic patterns and tilings. 
+M.C. Escher didn't have such technology at his disposal. Neither did Henri 
+Poincare and other 19th-century mathematicians who drew various pictures of the 
+hyperbolic plane. They relied on the traditional tools of geometry-compass and 
+straight- edge-to create their diagrams.
+
+ In an article to appear in the January 2001 American Mathematical Monthly, 
+however, Chaim Goodman-Strauss of the University of Arkansas in Fayetteville 
+suggests what these procedural details might have been. He offers techniques 
+and instructions for drawing by hand some tilings of the Poincare model of the 
+hyperbolic plane.
+
+"Remarkably, this may be the first detailed, explicit synthetic construction of 
+triangle tilings of the hyperbolic plane to appear," Goodman-Strauss notes.
+
+ His directions are built out of basic tasks familiar to a student of Euclidean 
+geometry: bisecting a line segment, drawing a parallel through a given point, 
+drawing a perpendicular through a given point, constructing a circle through 
+three given points, and a handful of other operations.
+
+ A suitable combination of those activities enables one to construct, for 
+example, the hyperbolic line that passes through two given points. To achieve 
+this, one must create a geometric scaffolding of lines and points outside a 
+Poincare disk to guide the drawing of arcs and points within the circle's 
+boundary.
+
+ Goodman-Strauss worked out the method by extending his expertise in Euclidean 
+geometry to encompass the types of curves and angles necessary to represent 
+hyperbolic structures. He admits that there's probably nothing original in his 
+contribution. "Surely, this was all well-known at the end of the 19th century, 
+just as it has long been forgotten at the dawn of the 21st," he remarks.
+
+ Nonetheless, reviving long-lost construction techniques has value. Such 
+exercises offer an illuminating window on not only Escher's art but also the 
+remarkable work of earlier mathematicians who explored non-Euclidean geometries.
+
+"It is wonderfully satisfying to make these pictures by hand, patiently, with 
+pencil and paper, compass and straightedge," Goodman-Strauss adds. "I encourage 
+you to test this theorem for yourself!"
+
+

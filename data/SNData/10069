@@ -1,0 +1,225 @@
+Great Computations: Science News Online, Mar. 4, 2000
+
+ Great Computations Owners of home computers join researchers in cracking 
+problems and crunching data
+
+ By I. Peterson
+
+ Computers at home or in the office often sit idle for minutes, hours, or days 
+at a time. The Internet now allows researchers to take advantage of this 
+enormous reservoir of unused computer power.
+
+ More than 1.6 million people have downloaded software to sift through signals 
+collected by the Arecibo radio telescope in Puerto Rico as part of a search for 
+signs of intelligent extraterrestrial life. Investigators at the University of 
+California, Berkeley manage the year-old project, known as SETI@home, and 
+consolidate the results (SN: 9/18/99, p. 187).
+
+ A recent call for people interested in running large models of the world's 
+climate brought 15,000 replies within 2 weeks. "The response was pretty 
+impressive," says Myles R. Allen of the Rutherford Appleton Laboratory in 
+Chilton, England. "It looks like we're going ahead."
+
+ Founded in 1996, a worldwide effort to identify record-breaking primes-numbers 
+evenly divisible only by themselves and 1-has attracted more than 13,000 
+participants to the Great Internet Mersenne Prime Search (GIMPS) (SN: 2/21/98, 
+p. 127). A smaller effort focuses on factoring large numbers to test encryption 
+methods that safeguard information transmitted on the Internet.
+
+ Beyond the satisfaction of contributing to ongoing scientific and mathematical 
+research, such participation can sometimes lead to a modicum of fame and even 
+fortune.
+
+ Last summer, using GIMPS software on his home computer, technology consultant 
+Nayan Hajratwala of Plymouth, Mich., discovered the first prime number with at 
+least 1 million decimal digits. As a result, he qualified for a prize of 
+$50,000 offered by the Electronic Frontier Foundation in San Francisco, to spur 
+development of cooperative computing technology. The foundation has since 
+announced that it will award $100,000 to the discoverer of the first prime with 
+at least 10 million digits.
+
+"I still participate in the [GIMPS] program, and I am always looking for more 
+computers to add to the search," Hajratwala says.
+
+ Anyone can join in the hunt. All it takes is a desktop computer with idle time 
+on its chips and a connection to the Internet. Indeed, the number of 
+opportunities for taking part in group computational efforts continues to grow, 
+and several Internet companies now focus on organizing and coordinating such 
+projects.
+
+"The combination of the Internet and the proliferation of home computers has 
+resulted in one of the most significant new scientific and mathematical tools," 
+says retired engineer Harvey Dubner of Ridgewood, N.J., who keeps his own 
+computers occupied with several prime pursuits. "Using normally wasted computer 
+power to attack problems that cannot be solved in any other way is truly 
+wonderful and important."
+
+ A fascination with gargantuan numbers, especially those that are primes, has 
+played a central role in the rise of collective computing.
+
+ A decade ago, powerful supercomputers dominated the hunt for trophy-class 
+prime numbers. Computer programmer George Woltman of Orlando, Fla., organized 
+GIMPS to challenge that dominance.
+
+ The search for Mersenne primes, named for the French monk and mathematician 
+Marin Mersenne, concerns numbers of the form 2n - 1, where the exponent n is 
+itself a prime. Written in binary notation, a Mersenne number consists of an 
+unbroken string of 1s. Nearly all of the largest known primes are numbers of 
+this form.
+
+ To facilitate searches for Mersenne primes, Woltman wrote a small, efficient 
+computer program to test whether a number is a prime and made the software 
+available on a Web site. His program relied on an ingenious computational 
+algorithm invented by Richard E. Crandall of Reed College in Portland, Ore., to 
+speed up certain computer operations. Anyone with even a modest personal 
+computer could download and use the software to check lists of candidate 
+numbers for primes. Because the computer is not connected to the Internet 
+during the hours while the program runs, it is not vulnerable to unauthorized 
+use by outsiders.
+
+ The project quickly attracted hundreds of participants. To manage the 
+calculations, Scott Kurowski of Entropia.com () in Campbell, Calif., developed 
+the PrimeNet server, which now automatically doles out chunks of work and 
+gathers results from thousands of copies of Woltman's program residing on more 
+than 22,000 computers throughout the world.
+
+ Handling massive amounts of data processing over the Internet, the system 
+represents a "new kind of computing service," Kurowski says.
+
+ To date, GIMPS participants have found the four largest known primes.
+
+ Mersenne primes are not the only targets of large group efforts. Last fall, 
+Crandall, Ernst W. Mayer of Cupertino, Calif., and Jason S. Papadopoulos of the 
+University of Maryland at College Park performed a massive calculation to prove 
+that the 24th Fermat number, which is more than 5 million digits long, is not a 
+prime.
+
+ That was the biggest computation ever done to obtain a simple "yes-or-no" 
+answer, Crandall contends. It required 100 quadrillion (1017) computer 
+operations, comparable to the number needed to create the animated movie A 
+Bug's Life.
+
+ A Fermat number has the form 22n + 1. The first Fermat number is 22 + 1, or 5; 
+the second is 24 + 1, or 17; and the third is 28 + 1, or 257. Written in binary 
+form, a Fermat number consists of 2n - 1 zeroes sandwiched between an initial 
+and a final 1.
+
+ In the early 1600s, French mathematician Pierre de Fermat conjectured that all 
+such numbers are primes. That turns out not to be true. The first four Fermat 
+numbers are prime, but the fifth is divisible by 641. Among the rest of the 
+known Fermat numbers, up to and now including the 24th, none are prime.
+
+ Proving that a number is not a prime is much easier than actually determining 
+its prime factors. No one has yet found even one prime factor of the 24th 
+Fermat number, for example.
+
+ Crandall is now working with Kurowski to set up a system that would allow 
+individuals and teams to join forces to factor large Fermat numbers. Crandall 
+himself has offered modest cash prizes to anyone who finds new factors.
+
+ Esoteric pursuits of big numbers have value, Crandall notes. They have, for 
+example, spurred the development of computational techniques useful for solving 
+other problems.
+
+"Who knows where an idea will lead?" Crandall argues. Obscure notions can 
+translate into tremendous benefits years later, he says.
+
+ Factoring has long intrigued and perplexed number theorists. Multiplication is 
+easy, but the inverse process of finding the prime factors of a nonprime, or 
+composite, number is horribly time-consuming when the numbers get large.
+
+ The assumed difficulty of factoring large numbers plays a crucial role in the 
+so-called RSA encryption system, which is widely used to safeguard credit card 
+numbers and other information transmitted across the Internet. To unscramble 
+intercepted data, a snoop's computer must factor a large number into its two 
+prime-number components.
+
+ How big should the numbers be to ensure an adequate level of security? Since 
+1988, researchers have organized themselves into teams to test the security of 
+these schemes (SN: 10/22/88, p. 263). Last year, one worldwide effort required 
+5 months on 300 personal computers and a Cray supercomputer to crack a 
+155-digit number into two 78-digit primes (SN: 10/2/99, p. 221).
+
+ Nowadays, information-security companies and other organizations occasionally 
+offer cash prizes for either factoring numbers of a certain size or testing the 
+security of alternative mathematical schemes for encrypting information.
+
+ The resulting competition has helped drive the development of increasingly 
+efficient and refined methods for factoring, pitting one scheme against 
+another. It has also produced strong rivalries. Last fall, for example, a 
+global effort involving 195 volunteers and 740 computers demonstrated how a 
+cryptographic system based on functions called elliptic-curve discrete 
+logarithms could outperform an RSA scheme based on factoring.
+
+ The nonprofit Internet company known as distributed.net () has coordinated 
+several group attacks on cryptographic schemes, earning several cash awards. In 
+January, its 62-day effort involving 38,000 contributors won a contest 
+sponsored by a French security firm.
+
+ Most projects don't offer prizes, however. The problems themselves are 
+intriguing or have research value. The GIMPS Web site at  maintains a list of 
+mathematical research efforts soliciting support from individuals or teams.
+
+ Computational number theory isn't the only field where individuals can 
+contribute computing resources. "There are plenty of deep questions that could 
+profit from extensive distributed computing," says Joe P. Buhler of the 
+Mathematical Sciences Research Institute in Berkeley, Calif., who has 
+participated in several such efforts.
+
+ The SETI@home project takes advantage of idle computers to perform large-scale 
+data processing. A colorful screensaver pops up whenever a computer is running 
+the program, available at .
+
+ Other opportunities span fields such as chemistry, molecular biology, 
+epidemiology, population dynamics, and climate modeling.
+
+ In the Oct. 14, 1999 Nature, Allen proposed recruiting people for the 
+demanding task of forecasting climate. "For a 50-year forecast, we would first 
+need to perform large numbers of simulations of the past 50 years, both with 
+and without external influences such as increasing greenhouse gases," he notes. 
+"We could then discard all those perturbed models that were either inconsistent 
+with the observed record or inconsistent with our (much less certain) estimate 
+of what the 20th century would have been like in the absence of external 
+influences."
+
+ Allen calls the proposed effort Casino-21. "This experiment would introduce an 
+entirely new form of climate prediction: a fuzzy prediction, reflecting the 
+range of risks and probabilities, rather than a single &lsquobest-guess&rsquo 
+forecast," he says. "We don't have the computing resources to do this [fuzzy 
+prediction] any other way."
+
+ There's even the possibility of worldwide fame for the participant running the 
+model that makes the most accurate forecast, Allen adds, "and a nice 
+screensaver, of course."
+
+ Participants can get into trouble, however, if they don't own the computer 
+that they're using to run a climate model, check Mersenne numbers, or crunch 
+radio-telescope data.
+
+ In September 1998, computer consultant Aaron Blosser of Lakewood, Colo., found 
+himself under arrest, accused of interfering with the operation of computers at 
+the Denver-based US West phone company. With the permission of a supervisor, 
+Blosser had installed GIMPS software on the company's computers to search for 
+Mersenne primes.
+
+ Soon after, computers at US West's facility in Phoenix, Ariz., started to take 
+as long as 5 minutes, rather than just 3 to 5 seconds, to retrieve telephone 
+numbers. Company investigators discovered Blosser's GIMPS program, blamed it 
+for the slowdown, and called in the FBI, which searched Blosser's home and 
+confiscated his computers.
+
+ Blosser now faces the possibility of a misdemeanor charge of computer fraud 
+and perhaps a fine and an indeterminate amount of restitution to US West for 
+the cost of removing the software from any machine he had installed it on.
+
+ The lesson is clear. "Do not install your own software onto a work PC, or you 
+could end up just like me," Blosser warns. "If you do not own the machine 
+you're running the program on, you are in fact breaking the law if you don't 
+receive permission, in writing, from the owner of the machine."
+
+ At the same time, Blosser adds, "I still believe in the validity of many of 
+the ongoing research efforts, [especially] GIMPS. I can only hope that . . . 
+companies and universities would be willing to explore the possibility of 
+allowing their vast resources to be used in these projects."
+
+

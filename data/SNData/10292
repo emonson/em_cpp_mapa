@@ -1,0 +1,63 @@
+Light shines in quantum-computing arena: Science News Online, May 19, 2001
+
+ Light shines in quantum-computing arena
+
+ Peter Weiss
+
+ For a few years, scientists have been predicting that computers exploiting the 
+quantum properties of matter will carry out computations billions of times 
+faster than today's supercomputers. Yet the technical challenges are so 
+daunting that such quantum computers may not be feasible for decades.
+
+ Now, researchers have developed a new, yet less exotic computing method that 
+may be as good as quantum computing for certain tasks, such as searching 
+databases. The method relies entirely on classical physics, say Ian Walmsley 
+and his colleagues of the University of Rochester in New York. To convert their 
+ideas into hardware, the Rochester scientists have built an optical device and 
+successfully demonstrated the method.
+
+ The group reported its results at the Lasers and Electro-Optics/Quantum 
+Electronics and Laser Science conference in Baltimore last week.
+
+ Researchers expect quantum processors to work incredibly fast thanks in part 
+to particles' wavelike interactions, including interference. The processors 
+would take advantage of another, stranger effect known as entanglement, in 
+which two or more particles share one quantum state (SN: 8/21/00, p. 132).
+
+ Walmsley and his colleagues suspected that classical interference such as that 
+between intersecting light waves, could lead to a computation method analogous 
+to the interference aspect of quantum computing. Optical computers already 
+exist, but their calculations take advantage of different intensities of light. 
+Says Walmsley: "They don't exploit the fact that waves interfere."
+
+ His group built a prototype of an interference-based optical computer. Then, 
+they searched a database using a famous quantum-computing algorithm invented by 
+Lov K. Grover of Lucent Technologies' Bell Labs in Murray Hill, N.J. (SN: 
+11/29/99, p. 334). In 1997, Grover theorized that a quantum system relying on 
+his interference-based algorithm would require only a single lightning-fast 
+operation to find a target item.
+
+ The Rochester researchers simulate a 50-item database by vibrating a crystal 
+of tellurium dioxide so that one small region of the crystal expands. Then, 
+they fire a sub-trillionth-of-a-second pulse of light through a diffraction 
+grating, which spreads the light into beams of various frequencies. The 
+expanded region slightly alters the speed of the beam passing through it. The 
+light rays exiting the crystal meet up and interact with a copy of the original 
+pulse.
+
+ Because of interference, only the altered beam corresponding to the targeted 
+database item passes on to a detector, the researchers say. The Rochester 
+scheme thus completes its search in a single operation.
+
+ David A. Meyer of the University of California, San Diego and some other 
+theorists had previously argued that a computer using classical physics can 
+perform as well as any quantum computer in some calculations that involve only 
+interference. Until now, however, there's been no actual interference-based 
+classical computer for testing the idea. The Rochester team's work has 
+experimentally verified this theory, Meyer says.
+
+ Walmsley says that his group is preparing experiments to see if the new 
+approach might even work for some quantum calculations that are expected to 
+require entanglement to be carried out quickly and efficiently.
+
+

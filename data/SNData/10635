@@ -1,0 +1,68 @@
+Science News Online - This Week - News Feature - 11/15/97
+
+ November 15, 1997 
+
+ Prize offered for solving number conundrum
+
+by I. Peterson
+
+ For more than 300 years, the mathematical problem known as Fermat's last 
+theorem attracted a plethora of would-be conquerors. The theorem was finally 
+proved just a few years ago by Andrew Wiles of Princeton University as part of 
+a larger effort that illuminates links between number theory and geometry (SN: 
+11/5/94, p. 295).
+
+ The complicated, lengthy proof that Wiles found hasn't satisfied everyone, 
+however. Some still wonder whether a simpler proof could be found -- one that 
+Pierre de Fermat himself may have had in mind but failed to write down 
+centuries ago.
+
+"The mystery remains: Is there an elementary proof?" asks Andrew Beal, a banker 
+in Dallas and an amateur mathematician interested in number theory.
+
+ In grappling with the problem, Beal has looked for solvable equations 
+analogous to the one expressing Fermat's last theorem. "I would try to 
+understand why the solutions of the new equation can't be converted to 
+solutions of the Fermat equation," he says.
+
+ As a result of those studies, Beal has formulated a conjecture involving 
+equations of the form Ax + By = Cz. The six letters represent whole numbers, 
+with x, y, and z greater than 2. Fermat's last theorem involves the special 
+case in which the exponents x, y, and z are the same.
+
+ Beal noticed that when a solution of the general equation existed, A, B, and C 
+had a common factor. For example, in the equation 36 + 183 = 38, the numbers 3, 
+18, and 3 all have the factor 3.
+
+ Using computers at his bank, Beal checked equations with exponents up to 100. 
+"I couldn't come up with a solution that didn't involve a common factor," he 
+says. The question is whether that is always true.
+
+ Beal has now offered a prize of $50,000 to anyone who can prove the conjecture 
+or $10,000 to anyone who can find a counterexample.
+
+ Interestingly, Beal's conjecture is closely related to questions of 
+considerable concern to number theorists. "It is remarkable that occasionally 
+someone working in isolation and with no connections to the mathematical 
+[community] formulates a problem so close to current research activity," R. 
+Daniel Mauldin of the University of North Texas in Denton comments in the 
+December Notices of the American Mathematical Society, where the Beal prize 
+problem is announced. Mauldin heads the prize committee and will handle all 
+inquiries and proposed proofs.
+
+ Whether a proof is likely to materialize anytime soon isn't evident at the 
+moment. "It's not clear how you would go about solving it or whether the 
+methods of Wiles could be extended this far," says Andrew J. Granville of the 
+University of Georgia in Athens.
+
+ Intriguingly, introducing a coefficient larger than 1, so that the equation 
+reads, say, Ax + 31 By = Cz, allows all sorts of possible solutions when x, y, 
+and z are greater than 2. In the Beal conjecture, the coefficients are all 1, 
+which appears to put the resulting equations and their solutions in a special 
+category.
+
+ The deeper question is one of finding a general method of identifying all 
+solutions to the equation, whether there are just a few or an infinite number 
+of them, Granville says. "That would be a wonderful advance." 
+
+

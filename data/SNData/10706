@@ -1,0 +1,202 @@
+Science News Online - This Week - Feature Article - 4/12/97 April 12, 1997
+
+ Gazing into Crystal Balls Colloids help scientists understand how materials 
+melt 
+
+ By CORINNA WU
+
+ Liquids freeze into solids; solids melt into liquids. These commonplace phase 
+transitions, in which one state of matter transforms into another, nevertheless 
+retain an aura of mystery. No one fully understands what happens at the 
+interface between two phases -- an uncharted borderland where atoms rearrange 
+themselves out of one structure and into another.
+
+ Tracking atoms as they make these rearrangements isn't easy. Although 
+scientists can use electron microscopes to image individual atoms as fuzzy 
+blobs, that's not a practical way to study an interface between two phases. 
+Atoms move in and out of the boundary region quickly and unpredictably, making 
+it hard to know which atoms to look at.
+
+ One way around these observational hurdles is to study a model system instead 
+of real atoms. Many scientists are turning to colloids, suspensions of small 
+particles dispersed in a liquid. Under the right conditions, colloidal 
+particles can organize to form crystals -- three-dimensional arrangements with 
+a specific structure -- which can then melt like conventional materials. 
+Colloidal crystals provide scientists with a way to test how atoms interact and 
+what they do during phase transitions. Recent experiments have revealed some 
+surprising things about the nature of these interactions, standing accepted 
+theory on its head.
+
+ Far from being exotic laboratory concoctions, colloidal suspensions are found 
+widely in nature. A person sipping a glass of milk is ingesting a colloidal 
+suspension of proteins dispersed in water. Gemstone opals get their fiery 
+colors from crystallized silica colloids that are just the right size for 
+scattering light.
+
+ Colloidal systems have many industrial uses as well. For example, paint 
+consists of pigment particles suspended in a liquid binder. When colloidal 
+particles bump, they clump -- creating that gooey glob of pigment that lurks at 
+the bottom of an unstirred paint can. The paint industry doesn't like 
+precipitation, but "in the dairy industry, that's known as cheese," says David 
+G. Grier, a physicist at the University of Chicago. "Many of the industrial 
+applications involve controlling the interaction between particles."
+
+ Learning about colloidal interactions could prove useful not only for 
+understanding existing materials but for making entirely new ones. Materials 
+consisting of linked colloids could have interesting properties. For example, 
+researchers are discussing making photonic crystals, materials that act as 
+semiconductors for light, out of colloids. To do so, they must arrange 
+colloidal particles of a particular size to filter light in a prescribed way.
+
+ Accordingly, Grier and other researchers around the world have focused their 
+attention on the physics of colloidal crystals. Some groups use gold or silica 
+clusters for their work. Others, including Grier, choose tiny, commercially 
+available polystyrene beads, "beautifully spherical" particles less than a 
+micrometer in diameter. The beads are so uniform, says Cherry A. Murray, head 
+of the semiconductor physics research department at Lucent Technologies in 
+Murray Hill, N.J., that scientists use them to calibrate the magnification of 
+electron microscopes.
+
+ In addition to uniform size, other properties make the beads attractive to 
+colloid researchers. The beads are manufactured with a surface coating of 
+thousands of sulfate salt groups, which dissociate into ions when the beads are 
+placed in water. The positively charged ions float away, leaving a host of 
+negative charges on the beads. Squeezing the fluid against a glass wall 
+concentrates the negatively charged spheres so that they coalesce into an 
+orderly array -- a colloidal crystal -- but as soon as the pressure is 
+released, the crystals fall apart. In other words, they melt.
+
+ Even though the spheres are small, they are big enough to be seen under a 
+light microscope, making them easier to study than other types of colloidal 
+particles. Murray, who has worked with colloidal crystals for more than 15 
+years, pioneered a method of videotaping the crystals as they form and 
+disintegrate. She digitizes the video images so a computer can trace the 
+particles' patterns of movement.
+
+"I like to call it analog molecular dynamics simulation," Murray says. "The 
+observer can see each sphere move individually and follow it in time."
+
+ She uses the word "analog" to distinguish the method from molecular dynamics 
+simulations performed wholly on the computer. Such simulations calculate 
+behavior of crystals existing only as mathematical constructs. Videotaping and 
+digitizing an image of a real colloidal crystal, Murray says, overcomes the 
+limitations of even supercomputer simulations.
+
+ For example, a computer has only so much memory, which limits the size of the 
+crystal that can be simulated. A real crystal could, in principle, contain as 
+many beads as the researcher wants. Also, that crystal could be left to 
+equilibrate in the lab for as long as necessary. Time on a supercomputer is too 
+precious to design lengthy experiments.
+
+ Grier, who worked with Murray several years ago, also captures colloidal 
+crystals on video. One day, he and his colleague Amy E. Larsen, now at St. Olaf 
+College in Northfield, Minn., ran what they expected would be a routine 
+experiment: compressing layers of spheres against the walls of a glass 
+container, releasing the pressure, and watching the crystal melt. Instead, what 
+they saw challenged a basic tenet of the currently accepted theory of colloidal 
+interactions.
+
+ That theory says that a group of particles with the same charge should repel 
+each other, and indeed, they usually do. If negatively charged polystyrene 
+spheres had only repulsive interactions, they should push away from each other 
+in a matter of seconds. Surprisingly, some of the crystals made by Grier and 
+Larsen refused to melt. Instead, they stayed together for nearly an hour. "It's 
+exactly like slush, or a frozen margarita," Grier says. "You have chunks of 
+crystal floating around in a very dilute fluid."
+
+ What keeps the colloidal slush from melting? Grier and Larsen concluded that 
+the colloidal particles must possess some sort of long-range attraction, even 
+though their individual charges should repel each other. Two Japanese 
+scientists first proposed this idea more than a decade ago, developing what 
+became known as the Sogami-Ise theory. Experiments supported the idea of 
+long-range attractions in colloids, but other calculations eventually exposed 
+flaws in the theory's details, says Grier.
+
+ The currently accepted theory of how particles interact balances the repulsive 
+forces and the weak attractions caused by shifting electric charges in the 
+spheres. Grier and Larsen's results suggest that the theory does not account 
+adequately for the strong attractive part of the interaction.
+
+ The shape of the crystals, which show facets, or flat edges, provides 
+additional evidence to support this idea, he says. Faceted crystals need more 
+energy to hold themselves together than amorphous blobs do.
+
+ To elucidate the nature of this long-range attraction, the scientists tested 
+the influence of the glass plates against which they squeezed the crystals. 
+Previous studies had shown that glass promotes attractive interactions between 
+the spheres. They measured the interaction between two polystyrene beads near a 
+glass wall. At a distance of about 2.5 micrometers from the wall, the two beads 
+attracted each other, within a certain range of separations, but at about 9.5 
+micrometers from the wall, they always repelled each other.
+
+ The crystals in the slush were too big and too far from the glass for the 
+effect of the walls to explain their stability, however. "The wall-induced 
+attraction could be holding together the first layer, but then what's holding 
+together the second, third, fourth, fifth, sixth layers?" asks Grier. He and 
+Larsen described their findings in the Jan. 16 Nature.
+
+ Since two spheres repel each other but many spheres attract, Grier describes 
+this anomaly as a many-body effect, a catchall phrase for this kind of 
+phenomenon. In a colloid, each negatively charged sphere tends to attract a 
+cloud of positive ions around it. Grier suggests that the overlapping of these 
+positive ion clouds might hold a collection of spheres together. A similar 
+thing happens in metals, whose electrons spread out in a sea over all of the 
+atoms in the material. Grier's suggestion may also explain how a glass wall 
+causes nearby spheres to attract. "The glass turns out to be [negatively] 
+charged in water also," Grier says, so the positive ion cloud associated with 
+it could act as a mediator between the spheres.
+
+ The origin and nature of the long-range attractions that Grier and Larsen see 
+in their colloidal crystals remain mysterious. In particular, molecular 
+dynamics simulations performed on a computer show no such phenomenon under the 
+conditions of the experiment, says Mark J. Stevens of Sandia National 
+Laboratories in Albuquerque, N.M.
+
+ Beyond understanding how colloids themselves interact, researchers want to see 
+how well these crystals can simulate other materials. The way polystyrene 
+spheres pack together to form colloidal crystals offers a useful simulation of 
+the close packing of atoms in a typical metal, Murray says, but colloids are 
+not good mimics of other elements. For example, she explains, "silicon wants to 
+bond with four nearest neighbors in a tetrahedral arrangement" that the tiny 
+spheres don't reproduce.
+
+ The resemblance to metals becomes even more pronounced in systems that consist 
+of two kinds of colloids. By mixing two types of polystyrene spheres with 
+different sizes or electric properties, Murray can create colloidal crystals 
+that behave like metal alloys. One system she's found closely resembles the 
+structure of a calcium-copper mixture.
+
+ Murray is also using these binary mixtures to study the kind of phase 
+transition certain crystals make when they transform from tight arrays into 
+glasses, whose particles are less ordered. "You can get very complicated 
+phases," she says.
+
+ Despite the evident similarities, extrapolating from the micrometer-size beads 
+to atoms one ten-thousandth their size is tricky, Stevens cautions. The beads 
+are classical systems, but on the scale of true atomic systems, quantum 
+mechanics takes over. That difference in the physics governing each system 
+limits how far the analogy between colloidal and atomic crystals extends.
+
+ The next challenge, Grier says, will be to place the new experimental results 
+in a theoretical framework.
+
+"The understanding of phase transitions is, in my opinion, one of the most 
+important problems in condensed-matter physics today," he says. Perhaps as 
+theory, experiment, and computer simulations gradually come together, 
+scientists' understanding of colloids and materials will crystallize too.
+
+ Reference:
+
+ Larsen, A.E., and D.G. Grier. 1997. Like-charge attractions in metastable 
+colloidal crystallites. Nature 385(Jan. 16):230. Further readings
+
+ Murray, C.A., and D.G. Grier. 1995. Colloidal crystals. American Scientist 
+83(May-June):238.
+
+ Peterson, I. 1996. Fine points of melting in plasma crystals. Science News 
+149(March 9):150.
+
+_____. 1990. Shining a bright light on quantum darkness. Science News 138(Sept. 
+29):196.
+
+
