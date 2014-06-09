@@ -64,7 +64,8 @@ int main( int argc, const char** argv )
     // opts = struct('dmax',3, 'Kmax',15, 'n0',640, 'plotFigs',true);
     MAPA::Opts opts;
     opts.dmax = 6;
-    opts.Kmax = 16;
+    opts.d_hardlimit = 5;
+    opts.Kmax = 8;
     opts.n0 = Xred.rows();
     
     opts.SetDefaults(Xred);

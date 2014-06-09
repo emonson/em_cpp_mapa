@@ -5,6 +5,8 @@
 #include <Eigen/Core>
 #include <iostream>     // std::cout
 
+#include "Options.h"
+
 using namespace Eigen;
 
 
@@ -36,7 +38,7 @@ public:
         width = -1;
     };
     
-    void EstimateDimensionality(const ArrayXd &cDelta, const ArrayXXd &S_MSVD, double alpha0 = 0.2)
+    void EstimateDimensionality(const ArrayXd &cDelta, const ArrayXXd &S_MSVD, MAPA::Opts opts)
     {
         double slope;
         ArrayXd current_to_prev_spectra_diff;
@@ -49,7 +51,7 @@ public:
         int nDims = S_MSVD.cols();
         distances = cDelta;
         spectra = S_MSVD;
-        width = 5;
+        width = opts.estDimWindowWidth;
         
         // NOTE: Trying all of these same as Matlab but just subtracting one when using as an index
         int lowerScaleIdxMax = nScales < 12 ? nScales : 12;
@@ -104,7 +106,7 @@ public:
             // part of the manifold around this net point, so we can set the
             // estimation of the dimension, and we won't get any more help from
             // these dims judging the window of good scales (r/delta indices)
-            if ((dim == nDims) || (slope <= alpha0))
+            if ((dim == nDims) || (slope <= opts.alpha0))
             {
                 // Set j either at iMax+1 or at the r/delta index at which the slope
                 // flattened out below 0.1
@@ -112,7 +114,7 @@ public:
                 {
                     upperScaleIdx = jj;
                     slope = compute_slope(dim, upperScaleIdx);
-                    if (slope > alpha0)
+                    if (slope > opts.alpha0)
                     {
                         break;
                     }

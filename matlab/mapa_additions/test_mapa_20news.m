@@ -1,5 +1,5 @@
 
-load('/Users/emonson/Data/Fodava/EMoDocMatlabData/n20_setAll_tdm_20120711_train.mat');
+load('/Users/emonson/Data/Fodava/EMoDocMatlabData/n20_sub1_tdm_train.mat');
 
 % all "non-zero class" documents (need D x N)
 
@@ -28,10 +28,10 @@ cos_sim = (I'*I)./(I2'*I2);
 % [U, S, V] = svd(cos_sim,0);
 
 %% do mapa on reduced dimensionality data
-red_dim = 200;
+red_dim = 100;
 
 X = V(:,1:red_dim)*S(1:red_dim,1:red_dim); % 1047 points in 8 true classes
-opts = struct('dmax', 6, 'Kmax', 40, 'n0', 800, 'plotFigs', false);
+opts = struct('dmax', 6, 'Kmax', 4, 'n0', 100, 'plotFigs', false, 'd_hardlimit', 10);
 % opts = struct('K', 2, 'n0', 1177, 'plotFigs', true);
 % X = I';
 % opts = struct('dmax', 12, 'Kmax', 64, 'n0', 1047, 'plotFigs', true);

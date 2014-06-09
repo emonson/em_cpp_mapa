@@ -3,11 +3,14 @@
 #include <cstdio>
 #include <string>
 #include "EstimateDimFromSpectra.h"
+#include "Options.h"
+
 // #include <time.h>
 
 int main(int argc, char * argv[])
 {
-    double alpha0 = 0.212132034355964227412272293804562650620937347412109375;
+    MAPA::Opts opts;
+    opts.alpha0 = 0.212132034355964227412272293804562650620937347412109375;
     std::stringstream spectra_file;
     std::string d_off, lo_off, hi_off;
     MAPA::EstimateDimFromSpectra estdim;
@@ -41,7 +44,7 @@ int main(int argc, char * argv[])
         spectra_file << "/Users/emonson/Programming/em_cpp_mapa/data/lmsvd_out/artdat_rev1_lmsvd_mid_spectra" << i_seed << ".dmat";
         igl::readDMAT( spectra_file.str().c_str(), NetS);
         
-        estdim.EstimateDimensionality(Delta_1, NetS, alpha0);
+        estdim.EstimateDimensionality(Delta_1, NetS, opts);
         
         d_off = AllEstDims(i_seed-1) == estdim.GetDimension() ? "  ": " *";
         lo_off = AllGoodScales(i_seed-1,0) == estdim.GetLowerScaleIdx() ? "  ": " *";

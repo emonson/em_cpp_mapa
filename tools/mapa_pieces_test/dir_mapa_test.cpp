@@ -9,6 +9,8 @@
 #include "TDMgenerator.h"
 #include "DIRtokenizer.h"
 #include "SvdlibcSVD.h"
+#include "Options.h"
+#include "Mapa.h"
 
 int main( int argc, const char** argv )
 {
@@ -16,6 +18,9 @@ int main( int argc, const char** argv )
         _CrtMemCheckpoint( &startMemState );
     #endif
     
+    // ---------------------------------------------
+    // Load, tokenize, and generate TDM for document data
+
     std::string dirname = "/Users/emonson/Programming/em_cpp_mapa/data/SNData";
 
     int min_term_length = 3;
@@ -29,14 +34,16 @@ int main( int argc, const char** argv )
     
     std::cout << "TDM: " << tdm.rows() << " x " << tdm.cols() << ", " << tdm.nonZeros() << std::endl << std::endl;
     
-    // SVDLIBC sparse SVD
-    int rank = 5;
+    // ---------------------------------------------
+    // Reduce dimensionality with SVD
+
+    int rank = 50;
     clock_t t = clock();
     
     MAPA::SvdlibcSVD svds(tdm, rank);
     
     t = clock() - t;
-    printf("SVD sparse Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
+    printf("SVD Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
     
     std::cout << "U: " << svds.matrixU().rows() << " x " << svds.matrixU().cols() << std::endl;
     // std::cout << svds.matrixU() << std::endl << std::endl;
@@ -45,48 +52,50 @@ int main( int argc, const char** argv )
     std::cout << "S" << std::endl;
     std::cout << svds.singularValues().transpose() << std::endl << std::endl;
 
-    Eigen::MatrixXd Xred = svds.matrixV() * svds.singularValues().asDiagonal();
+    Eigen::ArrayXXd Xred = svds.matrixV() * svds.singularValues().asDiagonal();
     
     std::cout << "Xred: " << Xred.rows() << " x " << Xred.cols() << std::endl;
 
-    // SVDLIBC dense SVD
-    Eigen::MatrixXd tdm_dense = tdm;
-    t = clock();
-
-    MAPA::SvdlibcSVD svdsd(tdm_dense, rank);
-
-    t = clock() - t;
-    printf("SVD dense Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
+    // ---------------------------------------------
+    // Run MAPA on reduced dimensionality data
+    // TODO: Need labels!!
     
-    std::cout << "U: " << svdsd.matrixU().rows() << " x " << svdsd.matrixU().cols() << std::endl;
-    // std::cout << svdsd.matrixU() << std::endl << std::endl;
-    std::cout << "V: " << svdsd.matrixV().rows() << " x " << svdsd.matrixV().cols() << std::endl;
-    // std::cout << svdsd.matrixV() << std::endl << std::endl;
-    std::cout << "S" << std::endl;
-    std::cout << svdsd.singularValues().head(rank).transpose() << std::endl << std::endl;
+    // Reseed random number generator since Eigen Random.h doesn't do this itself
+    srand( (unsigned int)time(NULL) );
 
-    Eigen::MatrixXd Xred_d = svdsd.matrixV() * svdsd.singularValues().asDiagonal();
+    // opts = struct('dmax',3, 'Kmax',15, 'n0',640, 'plotFigs',true);
+    MAPA::Opts opts;
+    opts.dmax = 6;
+    opts.d_hardlimit = 10;
+    // opts.Kmax = 16;
+    opts.K = 8;
+    opts.n0 = Xred.rows();
     
-    std::cout << "Xred_d: " << Xred_d.rows() << " x " << Xred_d.cols() << std::endl;
-    
-    // Eigen standard SVD
+    opts.SetDefaults(Xred);
+    std::cout << "options" << std::endl;
+    std::cout << opts << std::endl;
+        
     t = clock();
     
-    JacobiSVD<MatrixXd> svd_e(tdm_dense, Eigen::ComputeThinU | Eigen::ComputeThinV);
+    MAPA::Mapa mapa(Xred, opts);
     
     t = clock() - t;
-    printf("JacobiSVD Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
     
-    std::cout << "U: " << svd_e.matrixU().rows() << " x " << svd_e.matrixU().cols() << std::endl;
-    // std::cout << svd_e.matrixU() << std::endl << std::endl;
-    std::cout << "V: " << svd_e.matrixV().rows() << " x " << svd_e.matrixV().cols() << std::endl;
-    // std::cout << svd_e.matrixV() << std::endl << std::endl;
-    std::cout << "S" << std::endl;
-    std::cout << svd_e.singularValues().head(rank).transpose() << std::endl << std::endl;
+    std::cout << std::endl << "Mapa labels:" << std::endl;
+    std::cout << mapa.GetLabels().transpose() << std::endl;
+    std::cout << std::endl << "Mapa plane dims:" << std::endl;
+    std::cout << mapa.GetPlaneDims().transpose() << std::endl;
+    std::cout << std::endl << "Mapa disance-based error:" << std::endl;
+    std::cout << mapa.GetDistanceError() << std::endl << std::endl;
 
-    Eigen::MatrixXd Xred_e = svd_e.matrixV().leftCols(rank) * svd_e.singularValues().head(rank).asDiagonal();
-    
-    std::cout << "Xred_e: " << Xred_e.rows() << " x " << Xred_e.cols() << std::endl;
+    printf("Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
+
+//     double MisclassificationRate = MAPA::UtilityCalcs::ClusteringError(mapa.GetLabels(), true_labels);
+//     
+//     t = clock() - t;
+//     printf("Elapsed time: %.10f sec.for %ld d result\n", (double)t/CLOCKS_PER_SEC, mapa.GetPlaneDims().size() );
+//     printf("Misclassification Rate: %.10f\n", MisclassificationRate );
+
     
     
     return EXIT_SUCCESS;

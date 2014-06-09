@@ -24,7 +24,7 @@ ADD_EXECUTABLE(mapa_motion_segmentation_test mapa_motion_segmentation_test.cpp)
 TARGET_LINK_LIBRARIES(mapa_motion_segmentation_test svd myann)
 
 ADD_EXECUTABLE(lmsvd_test lmsvd_test.cpp)
-TARGET_LINK_LIBRARIES(lmsvd_test myann)
+TARGET_LINK_LIBRARIES(lmsvd_test myann svd)
 
 ADD_EXECUTABLE(ann_obj_test ann_obj_test.cpp)
 TARGET_LINK_LIBRARIES(ann_obj_test myann)

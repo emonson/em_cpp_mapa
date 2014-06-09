@@ -77,6 +77,7 @@ public:
         N = 0;			// number of points
         D = 0;			// dimensionality of points
         dmax = 0;
+        d_hardlimit = 0;
         K = 0;
         Kmax = 0;
         alpha0 = 0.0;
@@ -94,6 +95,7 @@ public:
         showSpectrum = false;
         postOptimization = false;
         maxKNN = 0;
+        estDimWindowWidth = 5;
     };
     
     void SetDefaults(ArrayXXd &X)
@@ -197,6 +199,7 @@ public:
 		unsigned int N;
 		unsigned int D;
 		unsigned int dmax;
+		unsigned int d_hardlimit;
 		unsigned int K;
 		unsigned int Kmax;
 		unsigned int maxKNN;
@@ -214,7 +217,8 @@ public:
 		bool plotFigs;
 		bool showSpectrum;
 		bool postOptimization;
-
+        unsigned int estDimWindowWidth;
+        
 		// --------------------------
 		friend std::ostream& operator<<(std::ostream& os, const Opts& op);
 
@@ -228,6 +232,7 @@ std::ostream& operator<<(std::ostream& os, const Opts& op)
     os << "N: " << op.N << std::endl;
     os << "D: " << op.D << std::endl;
     os << "dmax: " << op.dmax << std::endl;
+    os << "d_hardlimit: " << op.d_hardlimit << std::endl;
     os << "K: " << op.K << std::endl;
     os << "Kmax: " << op.Kmax << std::endl;
     os << "maxKNN: " << op.maxKNN << std::endl;

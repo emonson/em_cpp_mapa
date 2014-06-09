@@ -430,6 +430,7 @@ public:
                 planeDims = spectral_analysis.GetPlaneDims();
                 labels = spectral_analysis.GetLabels();
                 distance_error = spectral_analysis.GetError();
+                std::cout << distance_error << std::endl;
             // end
             }
             //     

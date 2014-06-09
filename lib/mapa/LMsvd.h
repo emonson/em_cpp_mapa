@@ -22,6 +22,7 @@ Duke University
 #include "Options.h"
 #include "NRsearch.h"
 #include "EstimateDimFromSpectra.h"
+#include "SvdlibcSVD.h"
 
 using namespace Eigen;
 
@@ -67,8 +68,32 @@ public:
         
         allEstDims = ArrayXi::Zero(n_seeds);
         allGoodScales = ArrayXXi::Zero(n_seeds,2);
-
-        ArrayXXd Nets_S(opts.nScales, opts.D);
+        
+        // I have found it helpful to be able to set a hard cutoff for the dimensionality
+        // of the resulting clusters (e.g. for documents if you throw out any points estimated
+        // at d = 10 or above, the resulting clusters all tend to be d < 4). But, as long
+        // as we're cutting off higher-d results, we may as well not compute any more singular
+        // values here as necessary since the SVDs in this routine are a bottleneck for the
+        // overall algorithm. We need some extra singular values, though, to compensate for the
+        // fact that EstDimFromSpectra uses a windowed average for its calculations
+        // (not sure where the +1 comes from yet...)
+        unsigned int D_limit;
+        unsigned int svD_limit;
+        if ((opts.d_hardlimit > 0) && (opts.d_hardlimit <= opts.D))
+        {
+            D_limit = opts.d_hardlimit;
+        }
+        else
+        {
+            D_limit = opts.D;
+        }
+        svD_limit = D_limit + opts.estDimWindowWidth + 1;
+        if (svD_limit > opts.D) 
+        {
+            svD_limit = opts.D;
+        }
+        
+        ArrayXXd Nets_S(opts.nScales, svD_limit);
         int Nets_count, maxScale, seed_est_dim;
         double Nets_count_sqrt;
         ArrayXi allXcols = ArrayXi::LinSpaced(X.cols(), 0, X.cols()-1);
@@ -102,7 +127,8 @@ public:
                 
                 // Eigen std SVD
                 // sigs = svd(net - repmat(mean(net,1), Nets_count, 1));
-                JacobiSVD<MatrixXd> svd(net_centered, Eigen::ComputeThinU | Eigen::ComputeThinV);
+                // JacobiSVD<MatrixXd> svd(net_centered, Eigen::ComputeThinU | Eigen::ComputeThinV);
+                MAPA::SvdlibcSVD svd(net_centered, svD_limit);
                 sigs = svd.singularValues();
 
                 // make into a row vector and normalize the singular values by the
@@ -110,13 +136,13 @@ public:
                 sigs /= Nets_count_sqrt;
                 
                 // sometimes there will be less singular values than D
-                D_sigs.setZero(opts.D);
+                D_sigs.setZero(svD_limit);
                 D_sigs.head(sigs.size()) = sigs;
                 Nets_S.row(i_scale) = D_sigs.transpose();
             }
         
             // lStats = EstimateDimFromSpectra(Delta(i_seed,:)', Nets_S, opts.alpha0, i_seed);
-        	estdim.EstimateDimensionality( Delta.row(i_seed), Nets_S, opts.alpha0);
+        	estdim.EstimateDimensionality( Delta.row(i_seed), Nets_S, opts);
         		
             // estDims(i_seed) = lStats.DimEst;
             // GoodScales(i_seed,:) = lStats.GoodScales;
@@ -133,7 +159,8 @@ public:
             
             // NOTE: Changed algorithm from original!!
             // isSeedPointGood(i_seed) = (int)(seed_local_region.size() > (2 * seed_est_dim)) && (seed_est_dim < opts.D);
-            isSeedPointGood(i_seed) = (int)(seed_local_region.size() > (2 * seed_est_dim)) && (seed_est_dim < 10);
+            
+            isSeedPointGood(i_seed) = (int)(seed_local_region.size() > (2 * seed_est_dim)) && (seed_est_dim < D_limit);
             if (isSeedPointGood(i_seed))
             {
             	goodLocalRegions.push_back(seed_local_region);
