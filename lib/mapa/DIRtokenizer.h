@@ -60,7 +60,7 @@ public:
 
                         // http://stackoverflow.com/questions/2602013/read-whole-ascii-file-into-c-stdstring
                         std::string whole_file_path = pathAppend(dirpath, ent->d_name);
-                        std::ifstream t(whole_file_path);
+                        std::ifstream t(whole_file_path.c_str());
                         std::stringstream buffer;
                         buffer << t.rdbuf();
 

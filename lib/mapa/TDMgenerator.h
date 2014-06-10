@@ -325,7 +325,7 @@ private:
         stopwords_map.clear();
         
         // read in stopwords from text file
-        std::ifstream stopfile(stopfile_name);
+        std::ifstream stopfile(stopfile_name.c_str());
         
         if (stopfile) // Verify that the file was open successfully
         {

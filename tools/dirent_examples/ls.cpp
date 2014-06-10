@@ -24,6 +24,8 @@
  
 #include <iostream>
 #include <string>
+#include <cstdio>
+#include <cstdlib>
 #include "dirent.h"
 
 void list_directory( const char *dirname )

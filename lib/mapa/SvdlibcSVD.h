@@ -18,6 +18,7 @@ Duke University
 
 #include "svdlib.h"
 
+#include <cstdio>
 #include <vector>
 #include <iostream>
 

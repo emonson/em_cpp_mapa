@@ -20,8 +20,8 @@ TARGET_LINK_LIBRARIES(svdmain svd)
 ADD_EXECUTABLE(jig_svd_test jig_svd_test.cpp)
 TARGET_LINK_LIBRARIES(jig_svd_test tinyxml2 svd)
 
-ADD_EXECUTABLE(jig_red_test jig_red_test.cpp)
-TARGET_LINK_LIBRARIES(jig_red_test tinyxml2 svd redsvd)
+# ADD_EXECUTABLE(jig_red_test jig_red_test.cpp)
+# TARGET_LINK_LIBRARIES(jig_red_test tinyxml2 svd redsvd)
 
 ADD_EXECUTABLE(dir_svd_test dir_svd_test.cpp)
 TARGET_LINK_LIBRARIES(dir_svd_test svd)

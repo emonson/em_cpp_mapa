@@ -8,6 +8,7 @@ using namespace Eigen;
 #include <string>
 #include <vector>
 #include <iostream>
+#include <cstdio>
 
 #include "svdlib.h"
 

@@ -15,18 +15,18 @@ int main(int argc, char * argv[])
     // Read in test data
     Eigen::ArrayXXd X;
     std::cout << "Reading in Artifical 3D test data (rev1)" << std::endl;
-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artificial_data_rev1.dmat", X );
+    igl::readDMAT( "/home/emonson/Programming/em_cpp_mapa/data/artificial_data_rev1.dmat", X );
 		
     // Read in seed points
     Eigen::ArrayXXi seeds_in;
     std::cout << "Reading in seed points for test data (rev1)" << std::endl;
-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_nrsearch_seeds.dmat", seeds_in);
+    igl::readDMAT( "/home/emonson/Programming/em_cpp_mapa/data/artdat_rev1_nrsearch_seeds.dmat", seeds_in);
     Eigen::ArrayXi seeds = seeds_in.col(0);
 
     // Read in seed points
     Eigen::ArrayXXi aprioriSampleLabels_in;
     std::cout << "Reading in apriori sample labels for test data (rev1)" << std::endl;
-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artificial_aprioriLabels_rev1.dmat", aprioriSampleLabels_in);
+    igl::readDMAT( "/home/emonson/Programming/em_cpp_mapa/data/artificial_aprioriLabels_rev1.dmat", aprioriSampleLabels_in);
     Eigen::ArrayXi aprioriSampleLabels = aprioriSampleLabels_in.row(0);
 
     // NOTE: seeds is matlab-style 1s index!!

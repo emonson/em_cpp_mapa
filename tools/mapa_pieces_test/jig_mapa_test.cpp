@@ -21,7 +21,7 @@ int main( int argc, const char** argv )
     // ---------------------------------------------
     // Load, tokenize, and generate TDM for document data
 
-    std::string filename = "/Users/emonson/Programming/em_cpp_mapa/data/InfovisVAST-papers.jig";
+    std::string filename = "/home/emonson/Programming/em_cpp_mapa/data/InfovisVAST-papers.jig";
 
     int min_term_length = 3;
     int min_term_count = 5;
