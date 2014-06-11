@@ -1,0 +1,235 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 29565df..774d33a 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -41,7 +41,7 @@ set(MAPA_INCLUDE_DIRS
+    ${MAPA_SOURCE_DIR}/lib/tinyxml2/
+    ${MAPA_SOURCE_DIR}/lib/redsvd-0.2.0/src/
+    ${MAPA_SOURCE_DIR}/lib/boost_1_55_0/
+-   ${MAPA_SOURCE_DIR}/lib/dirent/include/
++   ${MAPA_SOURCE_DIR}/lib/dirent-1.20.1/include/
+    ${MAPA_SOURCE_DIR}/lib/mapa/
+    ${MAPA_SOURCE_DIR}/lib/SVDLIBC/
+ )
+diff --git a/lib/SVDLIBC/CMakeLists.txt b/lib/SVDLIBC/CMakeLists.txt
+index ec991d2..1196d88 100644
+--- a/lib/SVDLIBC/CMakeLists.txt
++++ b/lib/SVDLIBC/CMakeLists.txt
+@@ -20,4 +20,8 @@ SET(SVDLIBC_SOURCE_FILES
+ )
+ 
+ ADD_LIBRARY( svd  ${SVDLIBC_INCLUDE_FILES} ${SVDLIBC_SOURCE_FILES})
+-TARGET_LINK_LIBRARIES( svd m )
++if(WIN32)
++	TARGET_LINK_LIBRARIES( svd Ws2_32 )
++else(WIN32)
++	TARGET_LINK_LIBRARIES( svd m )
++endif(WIN32)
+diff --git a/lib/SVDLIBC/las2.c b/lib/SVDLIBC/las2.c
+index 21d6d2b..d719ab4 100644
+--- a/lib/SVDLIBC/las2.c
++++ b/lib/SVDLIBC/las2.c
+@@ -1667,6 +1667,7 @@ void machar(long *ibeta, long *it, long *irnd, long *machep, long *negep) {
+   ZERO = ONE - ONE;
+   
+   a = ONE;
++  b = ONE; // added to prevent Visual Studio compiler error...
+   temp1 = ONE;
+   while (temp1 - ONE == ZERO) {
+     a = a + a;
+diff --git a/lib/SVDLIBC/svdutil.c b/lib/SVDLIBC/svdutil.c
+index 5c7cb22..c666b6c 100644
+--- a/lib/SVDLIBC/svdutil.c
++++ b/lib/SVDLIBC/svdutil.c
+@@ -37,10 +37,16 @@ POSSIBILITY OF SUCH DAMAGE.
+ #include <math.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+-#include <netinet/in.h>
++// #include <netinet/in.h>
+ #include "svdlib.h"
+ #include "svdutil.h"
+ 
++#if WIN32
++#define popen _popen
++#define pclose _pclose
++#include "Winsock2.h"
++#endif
++
+ #define BUNZIP2  "bzip2 -d"
+ #define BZIP2    "bzip2 -1"
+ #define UNZIP    "gzip -d"
+diff --git a/lib/mapa/UtilityCalcs.h b/lib/mapa/UtilityCalcs.h
+index e5abc23..66850e8 100644
+--- a/lib/mapa/UtilityCalcs.h
++++ b/lib/mapa/UtilityCalcs.h
+@@ -14,7 +14,6 @@ Duke University
+ #include <Eigen/Core>
+ #include "mersenneTwister2002.h"
+ #include "kMeansRex.h"
+-#include "ANN.h"
+ #include <igl/sort.h>
+ #include <igl/slice.h>
+ 
+diff --git a/lib/mapa/kMeansRex.h b/lib/mapa/kMeansRex.h
+index 3dd2eae..89323c4 100644
+--- a/lib/mapa/kMeansRex.h
++++ b/lib/mapa/kMeansRex.h
+@@ -289,7 +289,7 @@ private:
+     // Actual calculation of clusters
+     void run_lloyd()  {
+ 
+-        double prevDist,totalDist = 0;
++        double prevDist = 0,totalDist = 0;
+         Centers = Seeds;
+ 
+         Dist = ArrayXXd::Zero(N,K);
+
+diff --git a/tools/kmeans_test/kmeans_test.cpp b/tools/kmeans_test/kmeans_test.cpp
+index 4fb0f39..0aaf4fd 100644
+--- a/tools/kmeans_test/kmeans_test.cpp
++++ b/tools/kmeans_test/kmeans_test.cpp
+@@ -18,11 +18,12 @@ int main(int argc, char * argv[])
+     // Read in test data
+     Eigen::ArrayXXd X;
+     std::cout << "Reading in Artifical 3D test data (rev1)" << std::endl;
+-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artificial_data_rev1.dmat", X );
++    igl::readDMAT( "C:\\Users\\emonson\\Programming\\em_cpp_mapa\\data\\artificial_data_rev1.dmat", X );
+ 
+     // ---------------------------
+     // Actual KMeansRex object
+     std::cout << "KMeansRex with mapa seeding – 3 clusters" << std::endl;
++	std::cout << X << std::endl;
+ 
+     KMeans::KMeansRex km(X, 3);
+ 
+diff --git a/tools/mapa_pieces_test/ann_obj_test.cpp b/tools/mapa_pieces_test/ann_obj_test.cpp
+index f6a65f6..795b0bb 100644
+--- a/tools/mapa_pieces_test/ann_obj_test.cpp
++++ b/tools/mapa_pieces_test/ann_obj_test.cpp
+@@ -9,13 +9,14 @@ int main(int argc, char * argv[])
+     // Read in test data
+     Eigen::ArrayXXd X;
+     std::cout << "Reading in Artifical 3D test data (rev1)" << std::endl;
+-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artificial_data_rev1.dmat", X );
++    igl::readDMAT( "C:\\Users\\emonson\\Programming\\em_cpp_mapa\\data\\artificial_data_rev1.dmat", X );
+     
+-    // Read in seed points
+-    Eigen::ArrayXi seeds;
+-    std::cout << "Reading in seed points for test data (rev1)" << std::endl;
+-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_nrsearch_seeds.dmat", seeds);
+-		
++	// Read in seed points
++	Eigen::ArrayXXi seeds_in;
++	std::cout << "Reading in seed points for test data (rev1)" << std::endl;
++	igl::readDMAT("/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_nrsearch_seeds.dmat", seeds_in);
++	Eigen::ArrayXi seeds = seeds_in.col(0);
++
+     // NOTE: seeds is matlab-style 1s index!!
+     seeds -= 1;
+     
+diff --git a/tools/mapa_pieces_test/dir_mapa_test.cpp b/tools/mapa_pieces_test/dir_mapa_test.cpp
+index 0b0f355..0cffb00 100644
+--- a/tools/mapa_pieces_test/dir_mapa_test.cpp
++++ b/tools/mapa_pieces_test/dir_mapa_test.cpp
+@@ -21,7 +21,7 @@ int main( int argc, const char** argv )
+     // ---------------------------------------------
+     // Load, tokenize, and generate TDM for document data
+ 
+-    std::string dirname = "/Users/emonson/Programming/em_cpp_mapa/data/SNData";
++    std::string dirname = "C:\\Users\\emonson\\Programming\\em_cpp_mapa\\data\\SNData";
+ 
+     int min_term_length = 3;
+     int min_term_count = 5;
+diff --git a/tools/mapa_pieces_test/lmsvd_test.cpp b/tools/mapa_pieces_test/lmsvd_test.cpp
+index 0767d73..d6ac56d 100644
+--- a/tools/mapa_pieces_test/lmsvd_test.cpp
++++ b/tools/mapa_pieces_test/lmsvd_test.cpp
+@@ -13,29 +13,29 @@ int main(int argc, char * argv[])
+     // Read in test data
+     Eigen::ArrayXXd X;
+     std::cout << "Reading in Artifical 3D test data (rev1)" << std::endl;
+-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artificial_data_rev1.dmat", X );
++    igl::readDMAT( "C:\\Users\\emonson\\Programming\\em_cpp_mapa\\data\\artificial_data_rev1.dmat", X );
+ 		
+     // Read in seed points
+     Eigen::ArrayXXi seeds_in;
+     std::cout << "Reading in seed points for test data (rev1)" << std::endl;
+-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_nrsearch_seeds.dmat", seeds_in);
++    igl::readDMAT( "C:\\Users\\emonson\\Programming\\em_cpp_mapa\\data\\artdat_rev1_nrsearch_seeds.dmat", seeds_in);
+     Eigen::ArrayXi seeds = seeds_in.col(0);
+ 		
+     // Read in real lmsvd all good seeds
+     Eigen::ArrayXXi AllGoodScales;
+     std::cout << "Reading in Artifical test data (rev1) matlab-generated GoodScales" << std::endl;
+-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_lmsvd_allgoodscales.dmat", AllGoodScales );
++    igl::readDMAT( "C:\\Users\\emonson\\Programming\\em_cpp_mapa\\data\\artdat_rev1_lmsvd_allgoodscales.dmat", AllGoodScales );
+ 
+     // Read in real lmsvd all est dims
+     // since it's a row vector, reading in as XXi
+     Eigen::ArrayXXi AllEstDims;
+     std::cout << "Reading in Artifical test data (rev1) matlab-generated EstDims" << std::endl;
+-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_lmsvd_allestdims.dmat", AllEstDims );
++    igl::readDMAT( "C:\\Users\\emonson\\Programming\\em_cpp_mapa\\data\\artdat_rev1_lmsvd_allestdims.dmat", AllEstDims );
+ 
+     // Read in good seed ponits
+     Eigen::ArrayXXi GoodSeedPoints_in;
+     std::cout << "Reading in Artifical test data (rev1) matlab-generated EstDims" << std::endl;
+-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_lmsvd_out_goodseeds.dmat", GoodSeedPoints_in );
++    igl::readDMAT( "C:\\Users\\emonson\\Programming\\em_cpp_mapa\\data\\artdat_rev1_lmsvd_out_goodseeds.dmat", GoodSeedPoints_in );
+     Eigen::ArrayXi GoodSeedPoints = GoodSeedPoints_in.row(0);
+ 
+     // NOTE: seeds is matlab-style 1s index!!
+diff --git a/tools/tokenize_test/ann_tokenize_test.cpp b/tools/tokenize_test/ann_tokenize_test.cpp
+index e5e3ded..77e7dd9 100644
+--- a/tools/tokenize_test/ann_tokenize_test.cpp
++++ b/tools/tokenize_test/ann_tokenize_test.cpp
+@@ -51,7 +51,7 @@ int example_1( const char* filename )
+ 	boost::char_separator<char> sep(" \t\n¡!¿?⸘‽“”‘’‛‟.,‚„'\"′″´˝^°¸˛¨`˙˚ªº…:;&_¯­–‑—§#⁊¶†‡@%‰‱¦|/\\ˉˆ˘ˇ-‒~*‼⁇⁈⁉$€¢£‹›«»<>{}[]()=+|01234567890");
+     
+     // read in stopwords from text file
+-    std::ifstream stopfile("/Users/emonson/Programming/em_cpp_mapa/data/tartarus_org_stopwords.txt", std::ios_base::in);
++    std::ifstream stopfile("C:\\Users\\emonson\\Programming\\em_cpp_mapa\\data\\tartarus_org_stopwords.txt", std::ios_base::in);
+     assert(!stopfile.fail());
+     std::map<std::string, bool> stopwords_map;
+     
+@@ -265,7 +265,7 @@ int main( int argc, const char** argv )
+ //        printf("must specify filename\n");
+ //        return EXIT_FAILURE;
+ //    }
+-    const char* filename = "/Users/emonson/Programming/em_cpp_mapa/tools/tokenize_test/InfovisVAST-papers.jig";
++    const char* filename = "C:\\Users\\emonson\\Programming\\em_cpp_mapa\\data\\InfovisVAST-papers.jig";
+ 	example_1( filename );
+ //    example_5();
+ 
+diff --git a/tools/tokenize_test/dir_tdm_test.cpp b/tools/tokenize_test/dir_tdm_test.cpp
+index 7c27050..6fac433 100644
+--- a/tools/tokenize_test/dir_tdm_test.cpp
++++ b/tools/tokenize_test/dir_tdm_test.cpp
+@@ -13,7 +13,7 @@ int main( int argc, const char** argv )
+         _CrtMemCheckpoint( &startMemState );
+     #endif
+     
+-    std::string dirname = "/Users/emonson/Programming/em_cpp_mapa/data/SNData";
++    std::string dirname = "C:\\Users\\emonson\\Programming\\em_cpp_mapa\\data\\SNData";
+ 
+     int min_term_length = 3;
+     int min_term_count = 5;
+diff --git a/tools/tokenize_test/jig_tdm_test.cpp b/tools/tokenize_test/jig_tdm_test.cpp
+index 81dd076..870579c 100644
+--- a/tools/tokenize_test/jig_tdm_test.cpp
++++ b/tools/tokenize_test/jig_tdm_test.cpp
+@@ -9,11 +9,8 @@
+ 
+ int main( int argc, const char** argv )
+ {
+-    #if defined( _MSC_VER ) && defined( DEBUG )
+-        _CrtMemCheckpoint( &startMemState );
+-    #endif
+-    
+-    std::string filename = "/Users/emonson/Programming/em_cpp_mapa/data/InfovisVAST-papers.jig";
++     
++    std::string filename = "C:\\Users\\emonson\\Programming\\em_cpp_mapa\\data\\InfovisVAST-papers.jig";
+ 
+     int min_term_length = 3;
+     int min_term_count = 5;

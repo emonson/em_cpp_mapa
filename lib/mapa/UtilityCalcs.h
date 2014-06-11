@@ -14,7 +14,6 @@ Duke University
 #include <Eigen/Core>
 #include "mersenneTwister2002.h"
 #include "kMeansRex.h"
-#include "ANN.h"
 #include <igl/sort.h>
 #include <igl/slice.h>
 
