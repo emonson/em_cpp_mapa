@@ -1667,7 +1667,7 @@ void machar(long *ibeta, long *it, long *irnd, long *machep, long *negep) {
   ZERO = ONE - ONE;
   
   a = ONE;
-  b = ONE;
+  b = ONE;  // added to prevent Visual Studio compiler error...
   temp1 = ONE;
   while (temp1 - ONE == ZERO) {
     a = a + a;

@@ -529,6 +529,28 @@ class UtilityCalcs {
         return low_key;
     }
 
+    // Path concatenation taken from C++ Cookbook sec 10.17, example 10-26.
+    // http://my.safaribooksonline.com/book/programming/cplusplus/0596007612/10dot-streams-and-files/cplusplusckbk-chp-10-sect-17
+    
+    static std::string PathAppend(const std::string& p1, const std::string& p2) {
+
+        char sep = '/';
+        std::string tmp = p1;
+
+        #ifdef _WIN32
+          sep = '\\';
+        #endif
+
+        if (p1[p1.length()] != sep) { // Need to add a
+            tmp += sep;                // path separator
+            return(tmp + p2);
+        }
+        else
+        {
+            return(p1 + p2);
+        }
+    };
+    
   private:
     
     static bool gtezero(int val) { return val >= 0; }

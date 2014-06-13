@@ -12,9 +12,10 @@ int main(int argc, char * argv[])
     igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artificial_data_rev1.dmat", X );
     
     // Read in seed points
-    Eigen::ArrayXi seeds;
+    Eigen::ArrayXXi seeds_in;
     std::cout << "Reading in seed points for test data (rev1)" << std::endl;
-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_nrsearch_seeds.dmat", seeds);
+    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_nrsearch_seeds.dmat", seeds_in);
+    Eigen::ArrayXi seeds = seeds_in.col(0);
 		
     // NOTE: seeds is matlab-style 1s index!!
     seeds -= 1;

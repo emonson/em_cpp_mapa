@@ -37,9 +37,16 @@ POSSIBILITY OF SUCH DAMAGE.
 #include <math.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <netinet/in.h>
+// #include <netinet/in.h>
 #include "svdlib.h"
 #include "svdutil.h"
+
+// Windows has different function names for these...
+#if WIN32
+#define popen _popen
+#define pclose _pclose
+#include "Winsock2.h"
+#endif
 
 #define BUNZIP2  "bzip2 -d"
 #define BZIP2    "bzip2 -1"

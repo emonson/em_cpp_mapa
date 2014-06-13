@@ -22,10 +22,6 @@ set(GFORTRAN_LIBRARY /usr/local/Cellar/gfortran/4.7.2/gfortran/lib/libgfortran.d
 
 PROJECT(MAPA)
 
-FIND_PACKAGE(BLAS)
-FIND_PACKAGE(LAPACK)
-FIND_LIBRARY(GFORTRAN_LIBRARY gfortran)
-
 INCLUDE_DIRECTORIES( "/usr/local/include" )
 
 set(MAPA_INCLUDE_DIRS 
@@ -41,7 +37,6 @@ set(MAPA_INCLUDE_DIRS
    ${MAPA_SOURCE_DIR}/lib/tinyxml2/
    ${MAPA_SOURCE_DIR}/lib/redsvd-0.2.0/src/
    ${MAPA_SOURCE_DIR}/lib/boost_1_55_0/
-   ${MAPA_SOURCE_DIR}/lib/dirent/include/
    ${MAPA_SOURCE_DIR}/lib/mapa/
    ${MAPA_SOURCE_DIR}/lib/SVDLIBC/
 )

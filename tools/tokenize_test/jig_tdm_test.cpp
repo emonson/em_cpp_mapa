@@ -9,10 +9,6 @@
 
 int main( int argc, const char** argv )
 {
-    #if defined( _MSC_VER ) && defined( DEBUG )
-        _CrtMemCheckpoint( &startMemState );
-    #endif
-    
     std::string filename = "/Users/emonson/Programming/em_cpp_mapa/data/InfovisVAST-papers.jig";
 
     int min_term_length = 3;

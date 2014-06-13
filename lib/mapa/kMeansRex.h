@@ -289,7 +289,8 @@ private:
     // Actual calculation of clusters
     void run_lloyd()  {
 
-        double prevDist,totalDist = 0;
+        double prevDist = 0;
+        double totalDist = 0;
         Centers = Seeds;
 
         Dist = ArrayXXd::Zero(N,K);
