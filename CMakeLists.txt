@@ -23,6 +23,9 @@ set(GFORTRAN_LIBRARY /usr/local/Cellar/gfortran/4.7.2/gfortran/lib/libgfortran.d
 PROJECT(MAPA)
 
 INCLUDE_DIRECTORIES( "/usr/local/include" )
+CONFIGURE_FILE( ${MAPA_SOURCE_DIR}/mapa_config.h.in
+                ${MAPA_BINARY_DIR}/mapa_config.h )
+INCLUDE_DIRECTORIES( ${MAPA_BINARY_DIR} )
 
 set(MAPA_INCLUDE_DIRS 
    ${MAPA_SOURCE_DIR}/lib/ 
