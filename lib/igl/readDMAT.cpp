@@ -59,7 +59,9 @@ template <typename DerivedW>
 IGL_INLINE bool igl::readDMAT(const std::string file_name,
   Eigen::PlainObjectBase<DerivedW> & W)
 {
-  FILE * fp = fopen(file_name.c_str(),"r");
+  // Changing "r" to "rb" or it often hits the end of file early in Windows
+  // EMonson 06/16/2014
+  FILE * fp = fopen(file_name.c_str(), "rb");
   if(fp == NULL)
   {
     fprintf(stderr,"IOError: readDMAT() could not open %s...\n",file_name.c_str());
@@ -109,8 +111,17 @@ IGL_INLINE bool igl::readDMAT(const std::string file_name,
     // Resize for output
     W.resize(num_rows,num_cols);
     double * Wraw = new double[num_rows*num_cols];
-    fread(Wraw, sizeof(double), num_cols*num_rows, fp);
-    // Loop over columns slowly
+	// Adding check for number of results returned
+	// EMonson 06/16/2014
+	size_t result;
+    result = fread(Wraw, sizeof(double), num_cols*num_rows, fp);
+	if (result != num_cols*num_rows)
+	{
+		fclose(fp);
+		fprintf(stderr, "IOError: readDMAT() only read %d / %d binary entries\n", result, num_cols*num_rows);
+		return false;
+	}
+	// Loop over columns slowly
     for(int j = 0;j < num_cols;j++)
     {
       // loop over rows (down columns) quickly
@@ -131,7 +142,9 @@ IGL_INLINE bool igl::readDMAT(
   const std::string file_name, 
   std::vector<std::vector<Scalar> > & W)
 {
-  FILE * fp = fopen(file_name.c_str(),"r");
+  // Changing "r" to "rb" or it often hits the end of file early in Windows
+  // EMonson 06/16/2014
+  FILE * fp = fopen(file_name.c_str(),"rb");
   if(fp == NULL)
   {
     fprintf(stderr,"IOError: readDMAT() could not open %s...\n",file_name.c_str());
@@ -181,8 +194,17 @@ IGL_INLINE bool igl::readDMAT(
     // Resize for output
     W.resize(num_rows,typename std::vector<Scalar>(num_cols));
     double * Wraw = new double[num_rows*num_cols];
-    fread(Wraw, sizeof(double), num_cols*num_rows, fp);
-    // Loop over columns slowly
+	// Adding check for number of results returned
+	// EMonson 06/16/2014
+	size_t result;
+	result = fread(Wraw, sizeof(double), num_cols*num_rows, fp);
+	if (result != num_cols*num_rows)
+	{
+		fclose(fp);
+		fprintf(stderr, "IOError: readDMAT() only read %d / %d binary entries\n", result, num_cols*num_rows);
+		return false;
+	}
+	// Loop over columns slowly
     for(int j = 0;j < num_cols;j++)
     {
       // loop over rows (down columns) quickly

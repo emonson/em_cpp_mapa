@@ -2,21 +2,27 @@
 #include <igl/readDMAT.h>
 #include <cstdio>
 #include "NRsearch.h"
+#include "mapa_config.h"
+#include "UtilityCalcs.h"
 // #include <time.h>
 
 int main(int argc, char * argv[])
 {
-    // Read in test data
+	std::string data_dir = MAPA::UtilityCalcs::PathAppend(MAPA_SOURCE_DIR, "data");
+
+	// Read in test data
     Eigen::ArrayXXd X;
     std::cout << "Reading in Artifical 3D test data (rev1)" << std::endl;
-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artificial_data_rev1.dmat", X );
-    
+	std::string data_file = MAPA::UtilityCalcs::PathAppend(data_dir, "artificial_data_rev1.dmat");
+    igl::readDMAT( data_file, X );
+
     // Read in seed points
     Eigen::ArrayXXi seeds_in;
     std::cout << "Reading in seed points for test data (rev1)" << std::endl;
-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_nrsearch_seeds.dmat", seeds_in);
+	std::string seeds_file = MAPA::UtilityCalcs::PathAppend(data_dir, "artdat_rev1_nrsearch_seeds.dmat");
+	igl::readDMAT( seeds_file, seeds_in );
     Eigen::ArrayXi seeds = seeds_in.col(0);
-		
+
     // NOTE: seeds is matlab-style 1s index!!
     seeds -= 1;
     

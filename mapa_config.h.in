@@ -2,6 +2,6 @@
 #define MAPA_CONFIG_H
 
 // define source data directory so example code can access it no matter where the build directory is
-#define MAPA_SOURCE_DIR @MAPA_SOURCE_DIR@
+#define MAPA_SOURCE_DIR "@MAPA_SOURCE_DIR@"
 
 #endif
