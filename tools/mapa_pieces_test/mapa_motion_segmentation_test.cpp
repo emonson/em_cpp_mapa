@@ -3,6 +3,9 @@
 #include <iostream>
 #include <string>
 #include <stdio.h> // printf
+
+#include "mapa_config.h"
+#include "UtilityCalcs.h"
 #include "Options.h"
 #include "Mapa.h"
 
@@ -14,6 +17,8 @@
 int main(int argc, char * argv[])
 {
     std::stringstream data_file;
+	std::string data_dir = MAPA::UtilityCalcs::PathAppend(MAPA_SOURCE_DIR, "data");
+    std::string data_start_str = MAPA::UtilityCalcs::PathAppend(data_dir, "MotionSegmentation_set");
     
     for (int ss = 1; ss <= 3; ss++)
     {
@@ -22,14 +27,14 @@ int main(int argc, char * argv[])
         std::cout << std::endl << "# -------------------------" << std::endl;
         std::cout << "Reading in Motion segmentation set " << ss << " data" << std::endl;
         data_file.str("");
-        data_file << "/Users/emonson/Programming/em_cpp_mapa/data/MotionSegmentation_set" << ss << "_data_10d.dmat";
+        data_file << data_start_str << ss << "_data_10d.dmat";
         igl::readDMAT( data_file.str().c_str(), X);
     
         // Read in true labels
         Eigen::ArrayXXi true_labels_in;
         std::cout << "Reading in Motion segmentation set " << ss << " labels" << std::endl;
         data_file.str("");
-        data_file << "/Users/emonson/Programming/em_cpp_mapa/data/MotionSegmentation_set" << ss << "_labels.dmat";
+        data_file << data_start_str << ss << "_labels.dmat";
         igl::readDMAT( data_file.str().c_str(), true_labels_in);
         Eigen::ArrayXi true_labels = true_labels_in.col(0);
 

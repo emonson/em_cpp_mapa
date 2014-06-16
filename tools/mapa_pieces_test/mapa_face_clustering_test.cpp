@@ -2,6 +2,9 @@
 #include <igl/readDMAT.h>
 #include <iostream>
 #include <stdio.h> // printf
+
+#include "mapa_config.h"
+#include "UtilityCalcs.h"
 #include "Options.h"
 #include "Mapa.h"
 
@@ -13,14 +16,18 @@
 int main(int argc, char * argv[])
 {
     // Read in test data
+	std::string data_dir = MAPA::UtilityCalcs::PathAppend(MAPA_SOURCE_DIR, "data");
+
     Eigen::ArrayXXd X;
     std::cout << "Reading in Face clustering data (svd to 30d)" << std::endl;
-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/face_clustering_svd_in_data.dmat", X );
+	std::string data_file = MAPA::UtilityCalcs::PathAppend(data_dir, "face_clustering_svd_in_data.dmat");
+    igl::readDMAT( data_file, X );
 		
     // Read in true labels
     Eigen::ArrayXXi true_labels_in;
     std::cout << "Reading in true labels for test data (rev1)" << std::endl;
-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/face_clustering_svd_in_labels.dmat", true_labels_in);
+	data_file = MAPA::UtilityCalcs::PathAppend(data_dir, "face_clustering_svd_in_labels.dmat");
+    igl::readDMAT( data_file, true_labels_in);
     Eigen::ArrayXi true_labels = true_labels_in.row(0);
 
     // NOTE: seeds is matlab-style 1s index!!

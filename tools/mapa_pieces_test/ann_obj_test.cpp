@@ -1,9 +1,11 @@
 #include <Eigen/Core>
 #include <igl/readDMAT.h>
 #include <cstdio>
-#include "NRsearch.h"
+
 #include "mapa_config.h"
 #include "UtilityCalcs.h"
+#include "NRsearch.h"
+
 // #include <time.h>
 
 int main(int argc, char * argv[])

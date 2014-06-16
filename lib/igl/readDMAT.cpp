@@ -118,7 +118,7 @@ IGL_INLINE bool igl::readDMAT(const std::string file_name,
 	if (result != num_cols*num_rows)
 	{
 		fclose(fp);
-		fprintf(stderr, "IOError: readDMAT() only read %d / %d binary entries\n", result, num_cols*num_rows);
+		fprintf(stderr, "IOError: readDMAT() only read %d / %d binary entries\n", (int)result, num_cols*num_rows);
 		return false;
 	}
 	// Loop over columns slowly
@@ -201,7 +201,7 @@ IGL_INLINE bool igl::readDMAT(
 	if (result != num_cols*num_rows)
 	{
 		fclose(fp);
-		fprintf(stderr, "IOError: readDMAT() only read %d / %d binary entries\n", result, num_cols*num_rows);
+		fprintf(stderr, "IOError: readDMAT() only read %d / %d binary entries\n", (int)result, num_cols*num_rows);
 		return false;
 	}
 	// Loop over columns slowly

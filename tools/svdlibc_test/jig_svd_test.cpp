@@ -6,17 +6,16 @@
 #include <Eigen/SVD>
 #include <Eigen/SparseCore>
 
+#include "mapa_config.h"
+#include "UtilityCalcs.h"
 #include "TDMgenerator.h"
 #include "JIGtokenizer.h"
 #include "SvdlibcSVD.h"
 
 int main( int argc, const char** argv )
 {
-    #if defined( _MSC_VER ) && defined( DEBUG )
-        _CrtMemCheckpoint( &startMemState );
-    #endif
-    
-    std::string filename = "/Users/emonson/Programming/em_cpp_mapa/data/InfovisVAST-papers.jig";
+	std::string data_dir = MAPA::UtilityCalcs::PathAppend(MAPA_SOURCE_DIR, "data");
+	std::string filename = MAPA::UtilityCalcs::PathAppend(data_dir, "InfovisVAST-papers.jig");
 
     int min_term_length = 3;
     int min_term_count = 5;

@@ -4,6 +4,9 @@
 #include <iostream>
 #include <vector>
 #include <string>
+
+#include "mapa_config.h"
+#include "UtilityCalcs.h"
 #include "Options.h"
 #include "EstimateDimFromSpectra.h"
 #include "LMsvd.h"
@@ -11,31 +14,38 @@
 int main(int argc, char * argv[])
 {
     // Read in test data
+	std::string data_dir = MAPA::UtilityCalcs::PathAppend(MAPA_SOURCE_DIR, "data");
+
     Eigen::ArrayXXd X;
     std::cout << "Reading in Artifical 3D test data (rev1)" << std::endl;
-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artificial_data_rev1.dmat", X );
+	std::string data_file = MAPA::UtilityCalcs::PathAppend(data_dir, "artificial_data_rev1.dmat");
+    igl::readDMAT( data_file, X );
 		
     // Read in seed points
     Eigen::ArrayXXi seeds_in;
     std::cout << "Reading in seed points for test data (rev1)" << std::endl;
-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_nrsearch_seeds.dmat", seeds_in);
+	data_file = MAPA::UtilityCalcs::PathAppend(data_dir, "artdat_rev1_nrsearch_seeds.dmat");
+    igl::readDMAT( data_file, seeds_in);
     Eigen::ArrayXi seeds = seeds_in.col(0);
 		
     // Read in real lmsvd all good seeds
     Eigen::ArrayXXi AllGoodScales;
     std::cout << "Reading in Artifical test data (rev1) matlab-generated GoodScales" << std::endl;
-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_lmsvd_allgoodscales.dmat", AllGoodScales );
+	data_file = MAPA::UtilityCalcs::PathAppend(data_dir, "artdat_rev1_lmsvd_allgoodscales.dmat");
+    igl::readDMAT( data_file, AllGoodScales );
 
     // Read in real lmsvd all est dims
     // since it's a row vector, reading in as XXi
     Eigen::ArrayXXi AllEstDims;
     std::cout << "Reading in Artifical test data (rev1) matlab-generated EstDims" << std::endl;
-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_lmsvd_allestdims.dmat", AllEstDims );
+	data_file = MAPA::UtilityCalcs::PathAppend(data_dir, "artdat_rev1_lmsvd_allestdims.dmat");
+    igl::readDMAT( data_file, AllEstDims );
 
     // Read in good seed ponits
     Eigen::ArrayXXi GoodSeedPoints_in;
     std::cout << "Reading in Artifical test data (rev1) matlab-generated EstDims" << std::endl;
-    igl::readDMAT( "/Users/emonson/Programming/em_cpp_mapa/data/artdat_rev1_lmsvd_out_goodseeds.dmat", GoodSeedPoints_in );
+	data_file = MAPA::UtilityCalcs::PathAppend(data_dir, "artdat_rev1_lmsvd_out_goodseeds.dmat");
+    igl::readDMAT( data_file, GoodSeedPoints_in );
     Eigen::ArrayXi GoodSeedPoints = GoodSeedPoints_in.row(0);
 
     // NOTE: seeds is matlab-style 1s index!!
@@ -88,6 +98,10 @@ int main(int argc, char * argv[])
     
     std::vector<ArrayXi> goodRegions = lmsvd.GetGoodLocalRegions();
     
+	std::string lmout_data_dir = MAPA::UtilityCalcs::PathAppend(MAPA_SOURCE_DIR, "data");
+	lmout_data_dir = MAPA::UtilityCalcs::PathAppend(lmout_data_dir, "lmsvd_out");
+	lmout_data_dir = MAPA::UtilityCalcs::PathAppend(lmout_data_dir, "artdat_rev1_lmsvd_out_goodlocreg_");
+
     int file_idx = 1;
     std::stringstream locreg_file;
     ArrayXXi matGoodLocalRegion;
@@ -96,12 +110,12 @@ int main(int argc, char * argv[])
     {
         // std::cout << "Reading in seed " << i_seed << " spectra for test data (rev1)" << std::endl;
         locreg_file.str("");
-        locreg_file << "/Users/emonson/Programming/em_cpp_mapa/data/lmsvd_out/artdat_rev1_lmsvd_out_goodlocreg_" << file_idx << ".dmat";
+        locreg_file << lmout_data_dir << file_idx << ".dmat";
         igl::readDMAT( locreg_file.str().c_str(), matGoodLocalRegion);
-        std::cout << "* " << matGoodLocalRegion << std::endl;
+        std::cout << "* " << matGoodLocalRegion-1 << std::endl;
         file_idx++;
         
-        std::cout << "- " << (*it).transpose() << std::endl;
+        std::cout << "- " << (*it).transpose() << std::endl << std::endl;
     }
 
     return 0;

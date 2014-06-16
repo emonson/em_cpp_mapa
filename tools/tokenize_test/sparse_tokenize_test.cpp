@@ -33,22 +33,21 @@ using namespace tinyxml2;
 #include <Eigen/Core>
 #include <Eigen/SparseCore>
 
+#include "mapa_config.h"
+#include "UtilityCalcs.h"
 
 int main( int argc, const char** argv )
 {
-    #if defined( _MSC_VER ) && defined( DEBUG )
-        _CrtMemCheckpoint( &startMemState );
-    #endif
-    
-    const char* filename = "/Users/emonson/Programming/em_cpp_mapa/data/InfovisVAST-papers.jig";
+	std::string data_dir = MAPA::UtilityCalcs::PathAppend(MAPA_SOURCE_DIR, "data");
+	std::string datafile_str = MAPA::UtilityCalcs::PathAppend(data_dir, "InfovisVAST-papers.jig");
 
 	// Load the document to parse
 	XMLDocument doc;
-    doc.LoadFile( filename );
+    doc.LoadFile( datafile_str.c_str() );
     printf("Error ID %d\n", doc.ErrorID());
    if (doc.ErrorID() > 0)
    {
-     printf("Error Loading %s\n", filename);
+     printf("Error Loading %s\n", datafile_str.c_str());
      return doc.ErrorID();
    }
 
@@ -56,7 +55,8 @@ int main( int argc, const char** argv )
 	boost::char_separator<char> sep(" \t\n¡!¿?⸘‽“”‘’‛‟.,‚„'\"′″´˝^°¸˛¨`˙˚ªº…:;&_¯­–‑—§#⁊¶†‡@%‰‱¦|/\\ˉˆ˘ˇ-‒~*‼⁇⁈⁉$€¢£‹›«»<>{}[]()=+|01234567890");
     
     // read in stopwords from text file
-    std::ifstream stopfile("/Users/emonson/Programming/em_cpp_mapa/data/tartarus_org_stopwords.txt", std::ios_base::in);
+	std::string stopfile_str = MAPA::UtilityCalcs::PathAppend(data_dir, "tartarus_org_stopwords.txt");
+    std::ifstream stopfile(stopfile_str.c_str(), std::ios_base::in);
 
     // load stopwords into hash map
     std::map<std::string, bool> stopwords_map;

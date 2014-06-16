@@ -36,6 +36,9 @@ int gFail = 0;
 #include <Eigen/Core>
 #include <Eigen/SparseCore>
 
+#include "mapa_config.h"
+#include "UtilityCalcs.h"
+
 int example_1( const char* filename )
 {
 	// Load the document to parse
@@ -52,7 +55,10 @@ int example_1( const char* filename )
 	boost::char_separator<char> sep(" \t\n¡!¿?⸘‽“”‘’‛‟.,‚„'\"′″´˝^°¸˛¨`˙˚ªº…:;&_¯­–‑—§#⁊¶†‡@%‰‱¦|/\\ˉˆ˘ˇ-‒~*‼⁇⁈⁉$€¢£‹›«»<>{}[]()=+|01234567890");
     
     // read in stopwords from text file
-    std::ifstream stopfile("/Users/emonson/Programming/em_cpp_mapa/data/tartarus_org_stopwords.txt", std::ios_base::in);
+	std::string data_dir = MAPA::UtilityCalcs::PathAppend(MAPA_SOURCE_DIR, "data");
+	std::string stopfile_str = MAPA::UtilityCalcs::PathAppend(data_dir, "tartarus_org_stopwords.txt");
+
+    std::ifstream stopfile(stopfile_str.c_str(), std::ios_base::in);
     assert(!stopfile.fail());
     
     // load stopwords into hash map
@@ -213,16 +219,10 @@ void example_5()
 
 int main( int argc, const char** argv )
 {
-#if defined( _MSC_VER ) && defined( DEBUG )
-    _CrtMemCheckpoint( &startMemState );
-#endif
-    
-//    if (argc != 2) {
-//        printf("must specify filename\n");
-//        return EXIT_FAILURE;
-//    }
-    const char* filename = "/Users/emonson/Programming/em_cpp_mapa/tools/tokenize_test/InfovisVAST-papers.jig";
-	example_1( filename );
+	std::string data_dir = MAPA::UtilityCalcs::PathAppend(MAPA_SOURCE_DIR, "data");
+	std::string datafile_str = MAPA::UtilityCalcs::PathAppend(data_dir, "InfovisVAST-papers.jig");
+
+	example_1( datafile_str.c_str() );
 //    example_5();
 
 

@@ -4,15 +4,14 @@
 #include <Eigen/Core>
 #include <Eigen/SparseCore>
 
+#include "mapa_config.h"
+#include "UtilityCalcs.h"
 #include "BoostDIRtokenizer.h"
 
 int main( int argc, const char** argv )
 {
-    #if defined( _MSC_VER ) && defined( DEBUG )
-        _CrtMemCheckpoint( &startMemState );
-    #endif
-    
-    std::string dirname = "/Users/emonson/Programming/em_cpp_mapa/data/SNData";
+	std::string data_dir = MAPA::UtilityCalcs::PathAppend(MAPA_SOURCE_DIR, "data");
+    std::string dirname = MAPA::UtilityCalcs::PathAppend(data_dir, "SNData");
 
     int min_term_length = 2;
     int min_term_count = 2;
