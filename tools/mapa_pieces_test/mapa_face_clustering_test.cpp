@@ -29,6 +29,7 @@ int main(int argc, char * argv[])
 	data_file = MAPA::UtilityCalcs::PathAppend(data_dir, "face_clustering_svd_in_labels.dmat");
     igl::readDMAT( data_file, true_labels_in);
     Eigen::ArrayXi true_labels = true_labels_in.row(0);
+	std::cout << true_labels.transpose() << std::endl;
 
     // NOTE: seeds is matlab-style 1s index!!
     true_labels -= 1;

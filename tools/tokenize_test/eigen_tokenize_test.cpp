@@ -10,8 +10,6 @@
 #include <crtdbg.h>
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
-_CrtMemState startMemState;
-_CrtMemState endMemState;
 #else
 #include <sys/stat.h>	// mkdir
 #endif

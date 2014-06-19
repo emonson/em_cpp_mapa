@@ -193,28 +193,28 @@ private:
         }
     };
 
-    void sampleRowsPlusPlus()
-    {
-        ArrayXd ChosenIDs = ArrayXd::Ones(K);
-        int choice = discrete_rand( ChosenIDs );
-        Seeds.row(0) = X.row( choice );
-        ChosenIDs[0] = choice;
-        ArrayXd minDist(N);
-        ArrayXd curDist(N);
-        for (int kk=1; kk<K; kk++)
-        {
-            curDist = ( X.rowwise() - Seeds.row(kk-1) ).square().rowwise().sum().sqrt();
-            if (kk==1)
-            {
-                minDist = curDist;
-            } else {
-                minDist = curDist.min( minDist );
-            }
-            choice = discrete_rand( minDist );
-            ChosenIDs[kk] = choice;
-            Seeds.row(kk) = X.row( choice );
-        }
-    };
+    //void sampleRowsPlusPlus()
+    //{
+    //    ArrayXd ChosenIDs = ArrayXd::Ones(K);
+    //    int choice = discrete_rand( ChosenIDs );
+    //    Seeds.row(0) = X.row( choice );
+    //    ChosenIDs[0] = choice;
+    //    ArrayXd minDist(N);
+    //    ArrayXd curDist(N);
+    //    for (int kk=1; kk<K; kk++)
+    //    {
+    //        curDist = ( X.rowwise() - Seeds.row(kk-1) ).square().rowwise().sum().sqrt();
+    //        if (kk==1)
+    //        {
+    //            minDist = curDist;
+    //        } else {
+    //            minDist = curDist.min( minDist );
+    //        }
+    //        choice = discrete_rand( minDist );
+    //        ChosenIDs[kk] = choice;
+    //        Seeds.row(kk) = X.row( choice );
+    //    }
+    //};
 
     void sampleRowsMAPA()
     {
@@ -311,8 +311,8 @@ private:
     void init_Mu() {
         if ( method == "random" ) {
             sampleRowsRandom();
-        } else if ( method == "plusplus" ) {
-            sampleRowsPlusPlus();
+        //} else if ( method == "plusplus" ) {
+        //    sampleRowsPlusPlus();
         } else if ( method == "mapa" ) {
             sampleRowsMAPA();
         }

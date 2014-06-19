@@ -16,10 +16,6 @@
 
 int main( int argc, const char** argv )
 {
-    #if defined( _MSC_VER ) && defined( DEBUG )
-        _CrtMemCheckpoint( &startMemState );
-    #endif
-    
     // ---------------------------------------------
     // Load, tokenize, and generate TDM for document data
 
