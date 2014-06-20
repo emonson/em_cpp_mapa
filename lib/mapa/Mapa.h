@@ -389,6 +389,8 @@ public:
             planeDims = spectral_analysis.GetPlaneDims();
             labels = spectral_analysis.GetLabels();
             distance_error = spectral_analysis.GetError();
+            planeCenters = spectral_analysis.GetPlaneCenters();
+            planeBases = spectral_analysis.GetPlaneBases();
        }
 
         // Also select a model when only upper bound is given
@@ -410,11 +412,11 @@ public:
             // NOTE: Why would we recompute the bases for all points for this error calculation??
             // PROBLEM: computing_bases_all with faces_clustering
             MAPA::ComputingBases computing_bases_all(X, labels, planeDims);
-            std::vector<ArrayXd> planeCenters_all = computing_bases_all.GetCenters();
-            std::vector<ArrayXXd> planeBases_all = computing_bases_all.GetBases();
+            planeCenters = computing_bases_all.GetCenters();
+            planeBases = computing_bases_all.GetBases();
         
             //     L2Errors = L2error(X, labels, planeDims);
-            distance_error = MAPA::UtilityCalcs::L2error( X, labels, planeDims, planeCenters_all, planeBases_all );
+            distance_error = MAPA::UtilityCalcs::L2error( X, labels, planeDims, planeCenters, planeBases );
 
             //     K = 1;
             int K = 1;
@@ -430,6 +432,8 @@ public:
                 planeDims = spectral_analysis.GetPlaneDims();
                 labels = spectral_analysis.GetLabels();
                 distance_error = spectral_analysis.GetError();
+                planeCenters = spectral_analysis.GetPlaneCenters();
+                planeBases = spectral_analysis.GetPlaneBases();
                 std::cout << distance_error << std::endl;
             // end
             }
@@ -460,6 +464,16 @@ public:
     {
         return distance_error;
     };
+    
+    std::vector<ArrayXd> GetPlaneCenters()
+    {
+        return planeCenters;
+    };
+    
+    std::vector<ArrayXXd> GetPlaneBases()
+    {
+        return planeBases;
+    };
 
 
 private:
@@ -467,6 +481,8 @@ private:
     ArrayXi labels;
     ArrayXi planeDims;
     double distance_error;
+    std::vector<ArrayXd> planeCenters;
+    std::vector<ArrayXXd> planeBases;
 
 }; // class def
 

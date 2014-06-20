@@ -151,8 +151,8 @@ public:
         
         // NOTE: Why would we recompute the bases for all points for this error calculation??
         MAPA::ComputingBases computing_bases_all(X, labels, planeDims);
-        std::vector<ArrayXd> planeCenters_all = computing_bases_all.GetCenters();
-        std::vector<ArrayXXd> planeBases_all = computing_bases_all.GetBases();
+        planeCenters_all = computing_bases_all.GetCenters();
+        planeBases_all = computing_bases_all.GetBases();
         
         err = MAPA::UtilityCalcs::L2error( X, labels, planeDims, planeCenters_all, planeBases_all );
     };
@@ -172,12 +172,24 @@ public:
         return err;
     };
     
+    std::vector<ArrayXd> GetPlaneCenters()
+    {
+        return planeCenters_all;
+    };
+    
+    std::vector<ArrayXXd> GetPlaneBases()
+    {
+        return planeBases_all;
+    };
+
 
 private:
 
     ArrayXi planeDims;
     ArrayXi labels;
     double err;
+    std::vector<ArrayXd> planeCenters_all;
+    std::vector<ArrayXXd> planeBases_all;
     
 }; // class def
 
