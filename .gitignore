@@ -11,3 +11,7 @@ build_debug
 
 # QtCreator puts .user at the end of the main CMakeLists.txt file
 *.user
+
+# waf build system leaves around some extra files
+.waf*
+.lock-wscript
