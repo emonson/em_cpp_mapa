@@ -62,13 +62,14 @@ int main( int argc, const char** argv )
     // opts = struct('dmax',3, 'Kmax',15, 'n0',640, 'plotFigs',true);
     MAPA::Opts opts;
     opts.dmax = 6;
-    opts.d_hardlimit = 5;
-    opts.Kmax = 8;
-    opts.n0 = Xred.rows();
+    opts.d_hardlimit = 10;
+    opts.Kmax = 12;
+    // opts.n0 = Xred.rows();
+    opts.n0 = 160;
     
     opts.SetDefaults(Xred);
-    std::cout << "options" << std::endl;
-    std::cout << opts << std::endl;
+    // std::cout << "options" << std::endl;
+    // std::cout << opts << std::endl;
         
     t = clock();
     
@@ -94,13 +95,127 @@ int main( int argc, const char** argv )
     // ---------------------------------------------
     // Convert MAPA output to document labels and terms
     
-    ArrayXd labels = mapa.GetLabels();
+    ArrayXi labels = mapa.GetLabels();
     std::vector<ArrayXd> centers = mapa.GetPlaneCenters();
     std::vector<ArrayXXd> bases = mapa.GetPlaneBases();
 
     // TODO: need doc names from TDM generator
+    std::vector<std::string> docIDs = tdm_gen.getDocIDs();
+    std::vector<std::string> terms = tdm_gen.getTerms();
+    
     // TODO: back-generate terms from centers / bases 
     // TODO: may need to figure out doc closest to center since center not a doc...
-      
+    
+    // %% Major terms
+    // % figure;
+    // % hold on;
+    // for ii=1:length(planeCenters), 
+    //     if ~isempty(planeCenters{ii}),
+    //         % Need to reproject vectors back into term space
+    //         cent = abs(planeCenters{ii}*U(:,1:red_dim)');
+    //         [YY,II]=sort(cent, 'descend'); 
+    //         disp(ii); 
+    //         disp(terms(II(1:10))); 
+    //         % plot(cent(II));
+    //     end
+    // end
+    
+    int n_top_terms = 10;
+    
+    // Centers
+    std::vector< std::vector<std::string> > centers_top_terms;
+    int center_count = 0;
+    for(std::vector<ArrayXd>::iterator it = centers.begin(); it != centers.end(); ++it) {
+        if ((*it).size() > 0)
+        {
+            std::vector<std::string> top_terms;
+            // Reproject center back into term space
+            // Centers come out as column vectors, so U [D x N] * center [N x 1] = cent [D x 1]
+            ArrayXd cent = (svds.matrixU() * (*it).matrix()).array().abs();
+			
+			// sort columns independently (only one here)
+			int dim = 1;
+			// sort descending order
+			int ascending = false;
+			// Sorted output matrix
+			ArrayXd Y;
+			// sorted indices for sort dimension
+			ArrayXi IX;
+			
+			igl::sort(cent,1,ascending,Y,IX);
+			
+			for (int ii = 0; ii < n_top_terms; ii++)
+			{
+			    top_terms.push_back(terms.at(IX(ii)));
+			}
+            centers_top_terms.push_back(top_terms);
+        }
+        center_count++;
+    }
+    
+    // 
+    // %% Basis vectors
+    // cluster_idx = 2;
+    // for ii=1:length(planeBases{cluster_idx}), 
+    //     % Need to reproject vectors back into term space
+    //     projected = planeBases{cluster_idx}(ii,:)*U(:,1:red_dim)';
+    //     [YY,II]=sort(abs(projected), 'descend'); 
+    //     fprintf(1, '%d: ', ii);
+    //     for tt = 1:10,
+    //         term = terms{II(tt)}; 
+    //         if projected >= 0,
+    //             term_sign = '+';
+    //         else
+    //             term_sign = '-';
+    //         end
+    //         fprintf(1, ' %s%s ', term_sign, term);
+    //     end
+    //     fprintf(1, '\n');
+    // end  
+    
+    // Basis vectors
+    std::cout << "Centers & Basis Vectors" << std::endl;
+    center_count = 0;
+    for(std::vector<ArrayXXd>::iterator it = bases.begin(); it != bases.end(); ++it) {
+        
+        std::cout << center_count << " ";
+        for (int ii = 0; ii < n_top_terms; ii++)
+        {
+            std::cout << centers_top_terms.at(center_count).at(ii) << " ";
+        }
+        std::cout << std::endl;
+        
+        if ((*it).size() > 0)
+        {
+            int n_basis_vecs = (*it).rows();
+            for (int bb = 0; bb < n_basis_vecs; bb++)
+            {
+                // Reproject center back into term space
+                // Bases come out as row vectors, so U [D x N] * center [N x 1] = cent [D x 1]
+                ArrayXd projected = ((*it).row(bb).matrix() * svds.matrixU().transpose()).array().abs().transpose();
+            
+                // sort columns independently (only one here)
+                int dim = 1;
+                // sort descending order
+                int ascending = false;
+                // Sorted output matrix
+                ArrayXd Y;
+                // sorted indices for sort dimension
+                ArrayXi IX;
+            
+                igl::sort(projected,1,ascending,Y,IX);
+            
+                std::cout << "  " << bb << " : ";
+                for (int ii = 0; ii < n_top_terms; ii++)
+                {
+                    std::cout << terms.at(IX(ii)) << " ";
+                }
+                std::cout << std::endl;
+			}
+        }
+        center_count++;
+        std::cout << std::endl;
+    }
+    
     return EXIT_SUCCESS;
 }

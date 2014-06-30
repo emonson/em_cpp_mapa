@@ -122,7 +122,8 @@ public:
 	    boost::char_separator<char> sep(" \t\n¡!¿?⸘‽“”‘’‛‟.,‚„'\"′″´˝^°¸˛¨`˙˚ªº…:;&_¯­–‑—§#⁊¶†‡@%‰‱¦|/\\ˉˆ˘ˇ-‒~*‼⁇⁈⁉$€¢£‹›«»<>{}[]()=+|01234567890");
         
         // Set up hash map of docID string and index keys which will be used in count vectors
-        index_docID_map[docIndex] = id_str;
+        // index_docID_map[docIndex] = id_str;
+        docID_str_vec.push_back(id_str);
         
         tokenizer tokens(text_str, sep);
         for (tokenizer::iterator tok_iter = tokens.begin(); tok_iter != tokens.end(); ++tok_iter)
@@ -180,7 +181,8 @@ public:
             }
             
             // Record the term with its index as key
-            termIndex_term_map[term_idx] = term;
+            // termIndex_term_map[term_idx] = term;
+            term_str_vec.push_back(term);
         
             // Print
             if (VERBOSE) std::cout << term << " => " << term_count << std::endl;
@@ -248,6 +250,16 @@ public:
         return tfidf;
     };
     
+    std::vector<std::string> getDocIDs()
+    {
+        return docID_str_vec;
+    };
+    
+    std::vector<std::string> getTerms()
+    {
+        return term_str_vec;
+    };
+    
 private:
 
     bool tdm_current;
@@ -264,8 +276,10 @@ private:
     std::map<std::string, std::vector<int> > term_docIndexVec_map;
     std::map<std::string, std::vector<int> >::iterator term_indexVec_it;
     
-    std::map<int, std::string> index_docID_map;
-    std::map<int, std::string> termIndex_term_map;
+    // std::map<int, std::string> index_docID_map;
+    // std::map<int, std::string> termIndex_term_map;
+    std::vector<std::string> docID_str_vec;
+    std::vector<std::string> term_str_vec;
     
     int MIN_TERM_LENGTH;
     int MIN_TERM_COUNT;
