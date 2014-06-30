@@ -55,6 +55,7 @@ int main( int argc, const char** argv )
 
     // ---------------------------------------------
     // Run MAPA on reduced dimensionality data
+    // TODO: Need labels!!
     
     // Reseed random number generator since Eigen Random.h doesn't do this itself
     srand( (unsigned int)time(NULL) );
@@ -91,16 +92,6 @@ int main( int argc, const char** argv )
 //     printf("Elapsed time: %.10f sec.for %ld d result\n", (double)t/CLOCKS_PER_SEC, mapa.GetPlaneDims().size() );
 //     printf("Misclassification Rate: %.10f\n", MisclassificationRate );
 
-    // ---------------------------------------------
-    // Convert MAPA output to document labels and terms
     
-    ArrayXd labels = mapa.GetLabels();
-    std::vector<ArrayXd> centers = mapa.GetPlaneCenters();
-    std::vector<ArrayXXd> bases = mapa.GetPlaneBases();
-
-    // TODO: need doc names from TDM generator
-    // TODO: back-generate terms from centers / bases 
-    // TODO: may need to figure out doc closest to center since center not a doc...
-      
     return EXIT_SUCCESS;
 }
