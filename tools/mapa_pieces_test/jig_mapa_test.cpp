@@ -22,9 +22,11 @@ int main( int argc, const char** argv )
 
 	std::string data_dir = MAPA::UtilityCalcs::PathAppend(MAPA_SOURCE_DIR, "data");
     std::string filename = MAPA::UtilityCalcs::PathAppend(data_dir, "InfovisVAST-papers.jig");
-
-    int min_term_length = 3;
-    int min_term_count = 5;
+    
+    filename = "/Users/emonson/Dropbox/Jigsaw/datafiles/pubmed_breast_cancer.jig";
+    
+    int min_term_length = 2;
+    int min_term_count = 3;
     MAPA::TDMgenerator tdm_gen(min_term_length, min_term_count);
 	MAPA::JIGtokenizer jig_tok(filename, &tdm_gen);
     
@@ -155,7 +157,7 @@ int main( int argc, const char** argv )
             // Reproject center back into term space
             // Centers come out as column vectors, so U [D x N] * center [N x 1] = cent [D x 1]
             ArrayXd cent = (svds.matrixU() * (*it).matrix()).array().abs();
-			
+
 			// sort columns independently (only one here)
 			int dim = 1;
 			// sort descending order

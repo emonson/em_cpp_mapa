@@ -51,14 +51,21 @@ public:
             {
                 // Extract the document ID from the XML
                 XMLElement* docID = documentElement->FirstChildElement("docID");
-                std::string id_str(docID->GetText());
+                if (docID)
+                {
+                    std::string id_str(docID->GetText());
         
-                // Extract the document text from the XML
-                XMLElement* docText = documentElement->FirstChildElement("docText");
-                std::string text_str(docText->GetText());
+                    // Extract the document text from the XML
+                    XMLElement* docText = documentElement->FirstChildElement("docText");
+                    if (docText)
+                    {
+                        std::string text_str(docText->GetText());
 
-                // Add document to generator
-                tdm_gen->addDocument(id_str, text_str);
+                        // Add document to generator
+                        tdm_gen->addDocument(id_str, text_str);
+                        std::cout << "added doc " << id_str << std::endl;
+                    }
+                }
             }
         }
     };
