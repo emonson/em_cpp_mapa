@@ -63,7 +63,6 @@ public:
 
                         // Add document to generator
                         tdm_gen->addDocument(id_str, text_str);
-                        std::cout << "added doc " << id_str << std::endl;
                     }
                 }
             }

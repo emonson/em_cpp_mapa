@@ -22,9 +22,7 @@ int main( int argc, const char** argv )
 
 	std::string data_dir = MAPA::UtilityCalcs::PathAppend(MAPA_SOURCE_DIR, "data");
     std::string filename = MAPA::UtilityCalcs::PathAppend(data_dir, "InfovisVAST-papers.jig");
-    
-    filename = "/Users/emonson/Dropbox/Jigsaw/datafiles/pubmed_breast_cancer.jig";
-    
+        
     int min_term_length = 2;
     int min_term_count = 3;
     MAPA::TDMgenerator tdm_gen(min_term_length, min_term_count);
@@ -108,25 +106,11 @@ int main( int argc, const char** argv )
     
     // TODO: may need to figure out doc closest to center since center not a doc...
     
-    // %% Major terms
-    // % figure;
-    // % hold on;
-    // for ii=1:length(planeCenters), 
-    //     if ~isempty(planeCenters{ii}),
-    //         % Need to reproject vectors back into term space
-    //         cent = abs(planeCenters{ii}*U(:,1:red_dim)');
-    //         [YY,II]=sort(cent, 'descend'); 
-    //         disp(ii); 
-    //         disp(terms(II(1:10))); 
-    //         % plot(cent(II));
-    //     end
-    // end
-    
     int n_top_terms = 10;
     
-    // tdm mean
-    // Reproject center back into term space
-    // Centers come out as column vectors, so U [D x N] * center [N x 1] = cent [D x 1]
+    // ---------------------------------------------
+    // TDM mean vector terms
+    
     ArrayXd cent = tdm_mean.array().abs();
     
     // sort columns independently (only one here)
@@ -147,7 +131,8 @@ int main( int argc, const char** argv )
     }
     std::cout << std::endl << std::endl;
 
-    // Centers
+    // ---------------------------------------------
+    // Centers terms
     std::vector< std::vector<std::string> > centers_top_terms;
     int center_count = 0;
     for(std::vector<ArrayXd>::iterator it = centers.begin(); it != centers.end(); ++it) {
@@ -178,7 +163,8 @@ int main( int argc, const char** argv )
         center_count++;
     }
     
-    // Centers Diff
+    // ---------------------------------------------
+    // Centers Diff terms
     std::vector< std::vector<std::string> > centers_offset_top_terms;
     center_count = 0;
     for(std::vector<ArrayXd>::iterator it = centers.begin(); it != centers.end(); ++it) {
@@ -209,37 +195,49 @@ int main( int argc, const char** argv )
         center_count++;
     }
     
-    // 
-    // %% Basis vectors
-    // cluster_idx = 2;
-    // for ii=1:length(planeBases{cluster_idx}), 
-    //     % Need to reproject vectors back into term space
-    //     projected = planeBases{cluster_idx}(ii,:)*U(:,1:red_dim)';
-    //     [YY,II]=sort(abs(projected), 'descend'); 
-    //     fprintf(1, '%d: ', ii);
-    //     for tt = 1:10,
-    //         term = terms{II(tt)}; 
-    //         if projected >= 0,
-    //             term_sign = '+';
-    //         else
-    //             term_sign = '-';
-    //         end
-    //         fprintf(1, ' %s%s ', term_sign, term);
-    //     end
-    //     fprintf(1, '\n');
-    // end  
+    // ---------------------------------------------
+    // Gathering up doc IDs for clusters
+    // NOTE: Not relying on labels being sequential, even though they should be...
+    std::vector< std::vector<std::string> > cluster_docIDs;
+    ArrayXi unique_labels = MAPA::UtilityCalcs::UniqueMembers(labels);
+    std::map<int, int> label_clusterIdx_map;
+    for (int ll = 0; ll < unique_labels.size(); ll++)
+    {
+        std::vector<std::string> doc_vec;
+        cluster_docIDs.push_back(doc_vec);
+        label_clusterIdx_map[unique_labels(ll)] = ll;
+        std::cout << "(" << unique_labels(ll) << "," << ll << ") ";
+    }
+    std::cout << std::endl;
     
-    // Basis vectors
+    // NOTE: labels and docIDs had better be the same length...
+    for (int ii = 0; ii < labels.size(); ii++)
+    {
+        cluster_docIDs.at( label_clusterIdx_map[labels(ii)] ).push_back(docIDs.at(ii));
+    }
+     
+    // ---------------------------------------------
+    // Basis vectors terms
     std::cout << "Centers & Basis Vectors" << std::endl;
     center_count = 0;
     for(std::vector<ArrayXXd>::iterator it = bases.begin(); it != bases.end(); ++it) {
         
+        // docIDs
+        for (int ii = 0; ii < cluster_docIDs.at(center_count).size(); ii++)
+        {
+            std::cout << cluster_docIDs.at(center_count).at(ii) << " ";
+        }
+        std::cout << std::endl;
+        
+        // Centers
         std::cout << center_count << " ";
         for (int ii = 0; ii < n_top_terms; ii++)
         {
             std::cout << centers_top_terms.at(center_count).at(ii) << " ";
         }
         std::cout << std::endl;
+        
+        // Centers with mean subtracted
         std::cout << center_count << " ";
         for (int ii = 0; ii < n_top_terms; ii++)
         {
