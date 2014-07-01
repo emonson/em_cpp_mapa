@@ -5,6 +5,7 @@
 #include <Eigen/Core>
 #include <Eigen/SVD>
 #include <Eigen/SparseCore>
+#include <igl/sum.h>
 
 #include "mapa_config.h"
 #include "UtilityCalcs.h"
@@ -28,6 +29,7 @@ int main( int argc, const char** argv )
 	MAPA::JIGtokenizer jig_tok(filename, &tdm_gen);
     
     Eigen::SparseMatrix<double,0,long> tdm = tdm_gen.getTDM();
+    Eigen::VectorXd tdm_mean = (MatrixXd(tdm)).rowwise().mean();
     
     std::cout << "TDM: " << tdm.rows() << " x " << tdm.cols() << ", " << tdm.nonZeros() << std::endl << std::endl;
     
@@ -99,11 +101,9 @@ int main( int argc, const char** argv )
     std::vector<ArrayXd> centers = mapa.GetPlaneCenters();
     std::vector<ArrayXXd> bases = mapa.GetPlaneBases();
 
-    // TODO: need doc names from TDM generator
     std::vector<std::string> docIDs = tdm_gen.getDocIDs();
     std::vector<std::string> terms = tdm_gen.getTerms();
     
-    // TODO: back-generate terms from centers / bases 
     // TODO: may need to figure out doc closest to center since center not a doc...
     
     // %% Major terms
@@ -122,6 +122,29 @@ int main( int argc, const char** argv )
     
     int n_top_terms = 10;
     
+    // tdm mean
+    // Reproject center back into term space
+    // Centers come out as column vectors, so U [D x N] * center [N x 1] = cent [D x 1]
+    ArrayXd cent = tdm_mean.array().abs();
+    
+    // sort columns independently (only one here)
+    int dim = 1;
+    // sort descending order
+    int ascending = false;
+    // Sorted output matrix
+    ArrayXd Y;
+    // sorted indices for sort dimension
+    ArrayXi IX;
+    
+    igl::sort(cent,1,ascending,Y,IX);
+    
+    std::cout << "tdm mean" << std::endl;
+    for (int ii = 0; ii < n_top_terms; ii++)
+    {
+        std::cout << terms.at(IX(ii)) << " ";
+    }
+    std::cout << std::endl << std::endl;
+
     // Centers
     std::vector< std::vector<std::string> > centers_top_terms;
     int center_count = 0;
@@ -149,6 +172,37 @@ int main( int argc, const char** argv )
 			    top_terms.push_back(terms.at(IX(ii)));
 			}
             centers_top_terms.push_back(top_terms);
+        }
+        center_count++;
+    }
+    
+    // Centers Diff
+    std::vector< std::vector<std::string> > centers_offset_top_terms;
+    center_count = 0;
+    for(std::vector<ArrayXd>::iterator it = centers.begin(); it != centers.end(); ++it) {
+        if ((*it).size() > 0)
+        {
+            std::vector<std::string> top_terms;
+            // Reproject center back into term space
+            // Centers come out as column vectors, so U [D x N] * center [N x 1] = cent [D x 1]
+            ArrayXd cent = ((svds.matrixU() * (*it).matrix()) - tdm_mean).array().abs();
+			
+			// sort columns independently (only one here)
+			int dim = 1;
+			// sort descending order
+			int ascending = false;
+			// Sorted output matrix
+			ArrayXd Y;
+			// sorted indices for sort dimension
+			ArrayXi IX;
+			
+			igl::sort(cent,1,ascending,Y,IX);
+			
+			for (int ii = 0; ii < n_top_terms; ii++)
+			{
+			    top_terms.push_back(terms.at(IX(ii)));
+			}
+            centers_offset_top_terms.push_back(top_terms);
         }
         center_count++;
     }
@@ -182,6 +236,12 @@ int main( int argc, const char** argv )
         for (int ii = 0; ii < n_top_terms; ii++)
         {
             std::cout << centers_top_terms.at(center_count).at(ii) << " ";
+        }
+        std::cout << std::endl;
+        std::cout << center_count << " ";
+        for (int ii = 0; ii < n_top_terms; ii++)
+        {
+            std::cout << centers_offset_top_terms.at(center_count).at(ii) << " ";
         }
         std::cout << std::endl;
         

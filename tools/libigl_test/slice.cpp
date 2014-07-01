@@ -17,6 +17,8 @@ using namespace std;
 #include <igl/slice_into.h>
 #include <igl/speye.h>
 #include <igl/print_ijv.h>
+#include <igl/sum.h>
+
 using namespace igl;
 
 int main(int argc, char * argv[])
@@ -60,7 +62,13 @@ int main(int argc, char * argv[])
   cout<<"spB_IJV=["<<endl;print_ijv(spB,1);cout<<endl<<"];"<<endl;
   cout<<"spB=sparse(spB_IJV(:,1),spB_IJV(:,2),spB_IJV(:,3));"<<endl;
   
+  SparseVector<double> spSum;
+  sum(spA,2,spSum);
+  cout << endl << "sparse sum" << endl;
+  cout << VectorXd(spSum) << endl;
+  
   // Eigen select
+  cout << endl << "Eigen select" << endl;
   MatrixXi m(1,5);
   m << 1, 2, 3, 4, 5;
   // select equivalent of loop over members(i), (m(i) < 3) ? 0 : m(i)
