@@ -238,7 +238,7 @@ void example_5()
     //			<sub attrib="1" />
     //			<sub attrib="2" />
     //			<sub attrib="3" >& Text!</sub>
-    //		<element>
+    //		</element>
     
     XMLDocument* doc = new XMLDocument();
     XMLNode* element = doc->InsertEndChild( doc->NewElement( "element" ) );
@@ -270,7 +270,7 @@ int main( int argc, const char** argv )
 	std::string datafile_str = MAPA::UtilityCalcs::PathAppend(data_dir, "InfovisVAST-papers.jig");
 
 	example_1( datafile_str.c_str() );
-//    example_5();
+    example_5();
 
 
     return EXIT_SUCCESS;
