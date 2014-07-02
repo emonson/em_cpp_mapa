@@ -55,24 +55,24 @@ public:
         
         // -------------------------------------
         // DECIDE here what type of term generation to use...
-        std::vector<std::string> tdm_mean_terms = generate_tdm_mean_terms();
+        // std::vector<std::string> tdm_mean_terms = generate_tdm_mean_terms();
 
         // Centers terms
-        VEC_OF_STR_VECS centers_top_terms = generate_center_terms();
+        // VEC_OF_STR_VECS centers_top_terms = generate_center_terms();
     
         // Centers Diff terms
-        VEC_OF_STR_VECS centers_offset_top_terms = generate_center_offset_terms();
+        // VEC_OF_STR_VECS centers_offset_top_terms = generate_center_offset_terms();
 
         // Basis vectors terms
-        VEC_OF_STR_VECS bases_top_terms = generate_bases_terms();
+        VEC_OF_STR_VECS bases_top_terms = generate_bases_terms(n_top_terms);
         
         // -------------------------------------
         // Generate XML output
-        generate_XML_output(centers_top_terms, name);
+        generate_XML_output(bases_top_terms, name);
 
     };
     
-    void generate_XML_output(VEC_OF_STR_VECS clusters_terms, std::string clusters_name, int n_top_terms = 3)
+    void generate_XML_output(VEC_OF_STR_VECS clusters_terms, std::string clusters_name)
     {
         if (clusters_terms.size() != cluster_docIDs.size())
         {
@@ -122,10 +122,11 @@ public:
             
             // Labels (terms)
             std::stringstream terms_ss;
-            for (int ii = 0; ii < n_top_terms; ii++)
+            int n_terms = clusters_terms.at(cc).size();
+            for (int ii = 0; ii < n_terms; ii++)
             {
                 terms_ss << clusters_terms.at(cc).at(ii);
-                if (ii < n_top_terms-1)
+                if (ii < n_terms-1)
                 {
                     terms_ss << ",";
                 }
@@ -166,6 +167,26 @@ private:
     std::vector<std::string> terms;
     VEC_OF_STR_VECS cluster_docIDs;
 
+    void generate_cluster_docIDs()
+    {
+        // NOTE: Not relying on labels being sequential, even though they should be...
+        cluster_docIDs.clear();
+        ArrayXi unique_labels = MAPA::UtilityCalcs::UniqueMembers(labels);
+        std::map<int, int> label_clusterIdx_map;
+        for (int ll = 0; ll < unique_labels.size(); ll++)
+        {
+            std::vector<std::string> doc_vec;
+            cluster_docIDs.push_back(doc_vec);
+            label_clusterIdx_map[unique_labels(ll)] = ll;
+        }
+    
+        // NOTE: labels and docIDs had better be the same length...
+        for (int ii = 0; ii < labels.size(); ii++)
+        {
+            cluster_docIDs.at( label_clusterIdx_map[labels(ii)] ).push_back(docIDs.at(ii));
+        }
+    };
+    
     void generate_tmd_mean()
     {
         tdm_mean = MatrixXd::Zero(U.rows(),1);
@@ -291,26 +312,6 @@ private:
         return centers_offset_top_terms;
     };
     
-    void generate_cluster_docIDs()
-    {
-        // NOTE: Not relying on labels being sequential, even though they should be...
-        cluster_docIDs.clear();
-        ArrayXi unique_labels = MAPA::UtilityCalcs::UniqueMembers(labels);
-        std::map<int, int> label_clusterIdx_map;
-        for (int ll = 0; ll < unique_labels.size(); ll++)
-        {
-            std::vector<std::string> doc_vec;
-            cluster_docIDs.push_back(doc_vec);
-            label_clusterIdx_map[unique_labels(ll)] = ll;
-        }
-    
-        // NOTE: labels and docIDs had better be the same length...
-        for (int ii = 0; ii < labels.size(); ii++)
-        {
-            cluster_docIDs.at( label_clusterIdx_map[labels(ii)] ).push_back(docIDs.at(ii));
-        }
-    };
-    
     VEC_OF_STR_VECS generate_bases_terms(int n_terms = -1)
     {
         // Default to all terms
@@ -326,7 +327,7 @@ private:
         {
             if ((*it).size() > 0)
             {
-                // WARNING: doing a single vector of terms for all bases isn't a good idea!
+                // NOTE: doing n_terms for each basis dimension!
                 std::vector<std::string> top_terms;
                 int n_basis_vecs = (*it).rows();
                 for (int bb = 0; bb < n_basis_vecs; bb++)
