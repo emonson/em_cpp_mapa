@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
 #include <time.h>
 
 #include <Eigen/Core>
@@ -96,7 +97,7 @@ int main( int argc, const char** argv )
 //     printf("Misclassification Rate: %.10f\n", MisclassificationRate );
 
     // Generate output
-    MAPA::XMLclusterdoc(&tdm_gen, &mapa, &svds, &tdm_mean, "jig mapa test");
+    MAPA::XMLclusterdoc(&tdm_gen, &mapa, &svds, "jig mapa test");
     
     return EXIT_SUCCESS;
 }
