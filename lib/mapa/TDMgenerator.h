@@ -96,7 +96,7 @@ public:
         {
             if (!s.empty())
             {
-                stopwords_map.insert( std::pair<std::string,int>(s, true));
+                stopwords_map.insert( std::pair<std::string,bool>(s, true));
                 new_stopwords_count++;
                 if (VERBOSE) std::cout << s << " · ";
             }

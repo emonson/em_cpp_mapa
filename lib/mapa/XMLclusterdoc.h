@@ -55,7 +55,8 @@ public:
         
         // -------------------------------------
         // DECIDE here what type of term generation to use...
-        // std::vector<std::string> tdm_mean_terms = generate_tdm_mean_terms();
+        
+        std::vector<std::string> tdm_mean_terms = generate_tdm_mean_terms();
 
         // Centers terms
         // VEC_OF_STR_VECS centers_top_terms = generate_center_terms();
@@ -64,15 +65,24 @@ public:
         // VEC_OF_STR_VECS centers_offset_top_terms = generate_center_offset_terms();
 
         // Basis vectors terms
-        VEC_OF_STR_VECS bases_top_terms = generate_bases_terms(n_top_terms);
+        // VEC_OF_STR_VECS bases_top_terms = generate_bases_terms(n_top_terms);
+        
+        // Bases terms that don't repeat tdm_mean top 10 terms
+        std::vector<std::string> stop_terms;
+        int n_stop_terms = 10 < tdm_mean_terms.size() ? 10 : tdm_mean_terms.size();
+        for (int ii = 0; ii < n_stop_terms; ii++)
+        {
+            stop_terms.push_back( tdm_mean_terms.at(ii) );
+        }
+        VEC_OF_STR_VECS bases_nomean_terms = generate_bases_nomean_terms(stop_terms, n_top_terms);
         
         // -------------------------------------
         // Generate XML output
-        generate_XML_output(bases_top_terms, name);
+        generate_XML_output(bases_nomean_terms, name, &stop_terms);
 
     };
     
-    void generate_XML_output(VEC_OF_STR_VECS clusters_terms, std::string clusters_name)
+    void generate_XML_output(VEC_OF_STR_VECS clusters_terms, std::string clusters_name, std::vector<std::string> *common_terms = 0)
     {
         if (clusters_terms.size() != cluster_docIDs.size())
         {
@@ -112,7 +122,22 @@ public:
         name->InsertFirstChild( doc->NewText( clusters_name.c_str() ) );
         XMLNode* type = jigsawcluster->InsertAfterChild( name, doc->NewElement( "type" ) );
         type->InsertFirstChild( doc->NewText( "text-based" ) );
-        
+        if (common_terms)
+        {
+            // Labels (terms)
+            std::stringstream terms_ss;
+            int n_terms = common_terms->size();
+            for (int ii = 0; ii < n_terms; ii++)
+            {
+                terms_ss << common_terms->at(ii);
+                if (ii < n_terms-1)
+                {
+                    terms_ss << ",";
+                }
+            }
+            XMLNode* commonlabels = jigsawcluster->InsertAfterChild( type, doc->NewElement( "commonlabels" ) );
+            commonlabels->InsertFirstChild( doc->NewText( terms_ss.str().c_str() ) );
+        }        
         
         // Loop over clusters
         for(std::vector<int>::size_type cc = 0; cc != clusters_terms.size(); cc++) {
@@ -361,6 +386,70 @@ private:
         return bases_top_terms;
     };
 
+    VEC_OF_STR_VECS generate_bases_nomean_terms(std::vector<std::string> stop_terms, int n_top_terms)
+    {
+        // Copy stop terms over to new map for quick lookup
+        std::map<std::string, bool> stopwords_map;
+        for (int ss = 0; ss < stop_terms.size(); ss++)
+        {
+            stopwords_map.insert( std::pair<std::string,bool>(stop_terms.at(ss), true));
+        }
+        
+        VEC_OF_STR_VECS bases_top_terms;
+        for(std::vector<ArrayXXd>::iterator it = bases.begin(); it != bases.end(); ++it) 
+        {
+            // Prepare vector of sorted index arrays for all bases so can iterate through them to pick terms
+            if ((*it).size() > 0)
+            {
+                std::vector<std::string> top_terms;
+                int n_basis_vecs = (*it).rows();
+                MatrixXi sorted_idxs = MatrixXi::Zero(U.rows(), n_basis_vecs);
+                for (int bb = 0; bb < n_basis_vecs; bb++)
+                {
+                    // Reproject basis vector back into term space
+                    // Bases come out as row vectors, so basis [1 x d] * U.T [d x D] = proj [1 x D]
+                    ArrayXd projected = ((*it).row(bb).matrix() * U.transpose()).array().abs().transpose();
+            
+                    // sort columns independently (only one here)
+                    int dim = 1;
+                    // sort descending order
+                    int ascending = false;
+                    // Sorted output matrix
+                    ArrayXd Y;
+                    // sorted indices for sort dimension
+                    ArrayXi IX;
+            
+                    igl::sort(projected,1,ascending,Y,IX);
+                    sorted_idxs.col(bb) = IX;
+                }
+                // reshape to row array so iterating through will automatically iterate across columns then down rows
+                sorted_idxs.resize(1,sorted_idxs.size());
+                
+                // Now iterate through top vectors until have enough terms
+                // while also keeping track to not repeat terms
+                std::map<int,bool> used_idxs_map;
+                for (int ii = 0; ii < sorted_idxs.size(); ii++)
+                {
+                    int idx = sorted_idxs(ii);
+                    std::string term = terms.at(idx);
+                    // Only count terms not in stopwords list and not used before
+                    if ((stopwords_map.find(term) == stopwords_map.end()) && (used_idxs_map.find(idx) == used_idxs_map.end())) 
+                    {
+                        top_terms.push_back(term);
+                        used_idxs_map.insert( std::pair<int,bool>(idx,true) );
+                    }
+                    // Stop with this cluster if have enough terms
+                    if (top_terms.size() == n_top_terms)
+                    {
+                        break;
+                    }
+                }
+                bases_top_terms.push_back(top_terms);
+            }
+        }
+        
+        return bases_top_terms;
+    };
 }; // class def
 
 } // namespace MAPA

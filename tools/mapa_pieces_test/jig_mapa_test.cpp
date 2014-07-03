@@ -27,16 +27,20 @@ int main( int argc, char** argv )
     TCLAP::CmdLine cmd("jig_mapa_test", ' ', "0.1");
 
     TCLAP::UnlabeledValueArg<std::string> filenameArg("jigfile", "Path to Jigsaw .jig data file", true, "", ".jig data file");
-    cmd.add(filenameArg);
 
     TCLAP::ValueArg<int> lengthArg("l","min_term_length", "Minimum number of characters for a term", false, 3, "integer > 1");
-    cmd.add(lengthArg);
 
     TCLAP::ValueArg<int> countArg("c","min_term_count", "Minimum term count per document", false, 2, "integer > 0");
-    cmd.add(countArg);
+
+    TCLAP::ValueArg<int> nlabelsArg("n","num_cluster_labels", "Number of cluster keyword labels in XML", false, 3, "integer > 0");
 
     try
     {
+        cmd.add(filenameArg);
+        cmd.add(lengthArg);
+        cmd.add(countArg);
+        cmd.add(nlabelsArg);
+        
         cmd.parse( argc, argv );
     }
     catch (TCLAP::ArgException &e)
@@ -55,6 +59,9 @@ int main( int argc, char** argv )
     
     int min_term_count = countArg.getValue();
     min_term_count = min_term_count > 0 ? min_term_count : 1;
+
+    int n_top_terms = nlabelsArg.getValue();
+    n_top_terms = n_top_terms > 0 ? n_top_terms : 1;
 
     // ---------------------------------------------
     // Load, tokenize, and generate TDM for document data
@@ -129,7 +136,7 @@ int main( int argc, char** argv )
 //     printf("Misclassification Rate: %.10f\n", MisclassificationRate );
 
     // Generate output
-    MAPA::XMLclusterdoc(&tdm_gen, &mapa, &svds, "jig mapa test");
+    MAPA::XMLclusterdoc(&tdm_gen, &mapa, &svds, "jig mapa test", n_top_terms);
     
     return EXIT_SUCCESS;
 }
