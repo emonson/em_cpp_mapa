@@ -8,6 +8,8 @@
 #include <Eigen/SparseCore>
 #include <igl/sum.h>
 
+#include "CmdLine.h"
+
 #include "mapa_config.h"
 #include "UtilityCalcs.h"
 #include "TDMgenerator.h"
@@ -17,16 +19,46 @@
 #include "Mapa.h"
 #include "XMLclusterdoc.h"
 
-int main( int argc, const char** argv )
+int main( int argc, char** argv )
 {
+
+    // ---------------------------------------------
+    //Command line parsing
+    TCLAP::CmdLine cmd("jig_mapa_test", ' ', "0.1");
+
+    TCLAP::UnlabeledValueArg<std::string> filenameArg("jigfile", "Path to Jigsaw .jig data file", true, "", ".jig data file");
+    cmd.add(filenameArg);
+
+    TCLAP::ValueArg<int> lengthArg("l","min_term_length", "Minimum number of characters for a term", false, 3, "integer > 1");
+    cmd.add(lengthArg);
+
+    TCLAP::ValueArg<int> countArg("c","min_term_count", "Minimum term count per document", false, 2, "integer > 0");
+    cmd.add(countArg);
+
+    try
+    {
+        cmd.parse( argc, argv );
+    }
+    catch (TCLAP::ArgException &e)
+    {
+        std::cerr << "error: " << e.error() << " for arg " << e.argId() << std::endl;
+        return -1;
+    }
+
+	// std::string data_dir = MAPA::UtilityCalcs::PathAppend(MAPA_SOURCE_DIR, "data");
+    // std::string filename = MAPA::UtilityCalcs::PathAppend(data_dir, "InfovisVAST-papers.jig");
+    std::string filename = filenameArg.getValue();
+    
+    // NOTE: After checking for unreasonable values, the adjusted values are set to non-defaults...
+    int min_term_length = lengthArg.getValue();
+    min_term_length = min_term_length > 1 ? min_term_length : 2;
+    
+    int min_term_count = countArg.getValue();
+    min_term_count = min_term_count > 0 ? min_term_count : 1;
+
     // ---------------------------------------------
     // Load, tokenize, and generate TDM for document data
 
-	std::string data_dir = MAPA::UtilityCalcs::PathAppend(MAPA_SOURCE_DIR, "data");
-    std::string filename = MAPA::UtilityCalcs::PathAppend(data_dir, "InfovisVAST-papers.jig");
-        
-    int min_term_length = 2;
-    int min_term_count = 3;
     MAPA::TDMgenerator tdm_gen(min_term_length, min_term_count);
 	MAPA::JIGtokenizer jig_tok(filename, &tdm_gen);
     
