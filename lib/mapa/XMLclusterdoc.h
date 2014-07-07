@@ -96,6 +96,12 @@ public:
         std::replace( out_file.begin(), out_file.end(), ' ', '_');
         out_file += ".xml";
         
+        // If this is a whole path, try to grab just the end file name for the clusters name
+        std::string out_name = clusters_name;
+        unsigned found = out_name.find_last_of("/\\");
+        out_name = out_name.substr(found+1);
+
+        
         // XML building test
         // TODO: change and make more flexible/modular the term geration based on centers & bases!!
 
@@ -120,7 +126,7 @@ public:
         XMLNode* xmldecl = doc->InsertFirstChild( doc->NewDeclaration() );
         XMLNode* jigsawcluster = doc->InsertAfterChild( xmldecl, doc->NewElement( "jigsawcluster" ) );
         XMLNode* name = jigsawcluster->InsertFirstChild( doc->NewElement( "name" ) );
-        name->InsertFirstChild( doc->NewText( clusters_name.c_str() ) );
+        name->InsertFirstChild( doc->NewText( out_name.c_str() ) );
         XMLNode* type = jigsawcluster->InsertAfterChild( name, doc->NewElement( "type" ) );
         type->InsertFirstChild( doc->NewText( "text-based" ) );
         if (common_terms)
@@ -461,7 +467,6 @@ private:
             stopwords_map.insert( std::pair<std::string,bool>(stop_terms.at(ss), true));
         }
         
-        // TODO: 
         // Run through all centers, reproject, and then store in a matrix where (abs) centers are in the columns. 
         // Simultaneously create a matrix of columns containing cluster index.
         // Also create a matrix of columns containing original indices
@@ -471,43 +476,67 @@ private:
         // Keep track of how many total terms have been gathered and break out when all are full n_top_terms * n_clusters
         
         VEC_OF_STR_VECS centers_top_terms;
-        int center_count = 0;
-        for(std::vector<ArrayXd>::iterator it = centers.begin(); it != centers.end(); ++it) {
-            if ((*it).size() > 0)
-            {
-                std::vector<std::string> top_terms;
-                // Reproject center back into term space
-                // Centers come out as column vectors, so U [D x d] * center [d x 1] = cent [D x 1]
-                ArrayXd cent = (U * (*it).matrix()).array().abs();
+        int D = U.rows();
+        int n_clusters = centers.size();
+        MatrixXd coeffs_mat(D,n_clusters);
+        MatrixXi idxs_mat(D,n_clusters);
+        MatrixXi center_idxs_mat(D,n_clusters);
+        for(std::vector<ArrayXd>::size_type cc = 0; cc != centers.size(); cc++) {
+            
+            std::vector<std::string> top_terms;
+            // Reproject center back into term space
+            // Centers come out as column vectors, so U [D x d] * center [d x 1] = cent [D x 1]
+            ArrayXd cent = (U * centers.at(cc).matrix()).array().abs();
+            
+            coeffs_mat.col(cc) = cent;
+            idxs_mat.col(cc) = ArrayXi::LinSpaced(D,0,D-1);
+            center_idxs_mat.col(cc) = ArrayXi::Constant(D,cc);
 
-                // sort columns independently (only one here)
-                int dim = 1;
-                // sort descending order
-                int ascending = false;
-                // Sorted output matrix
-                ArrayXd Y;
-                // sorted indices for sort dimension
-                ArrayXi IX;
-            
-                igl::sort(cent,1,ascending,Y,IX);
-            
-                for (int ii = 0; ii < IX.size(); ii++)
-                {
-                    std::string term = terms.at(IX(ii));
-                    // Only count terms not in stopwords list
-                    if (stopwords_map.find(term) == stopwords_map.end()) 
-                    {
-                        top_terms.push_back(term);
-                    }
-                    // Stop with this cluster if have enough terms
-                    if (top_terms.size() == n_top_terms)
-                    {
-                        break;
-                    }
-                }
-                centers_top_terms.push_back(top_terms);
+            centers_top_terms.push_back(top_terms);
+        }
+
+        // NOTE: I'm sure we could find a more memory-efficient way of doing this...
+        coeffs_mat.resize(n_clusters*D,1);
+        idxs_mat.resize(n_clusters*D,1);
+        center_idxs_mat.resize(n_clusters*D,1);
+        
+        ArrayXd coeffs = coeffs_mat;
+        ArrayXi idxs = idxs_mat;
+        ArrayXi center_idxs = center_idxs_mat;
+
+        // sort columns independently (only one here)
+        int dim = 1;
+        // sort descending order
+        int ascending = false;
+        // Sorted output matrix
+        ArrayXd Y;
+        // sorted indices for sort dimension
+        ArrayXi IX;
+    
+        igl::sort(coeffs,1,ascending,Y,IX);
+        
+        // Keep track of both total terms accumulated for exit, and used terms so won't repeat with other clusters
+        // Algorithm should only assign term to cluster with the most representation of that term
+        int total_terms = 0;
+        std::map<std::string, bool> usedwords_map;
+        for (int ii = 0; ii < IX.size(); ii++)
+        {
+            std::string term = terms.at(idxs(IX(ii)));
+            int center_idx = center_idxs(IX(ii));
+            // Only count terms not in stopwords list
+            if (   (stopwords_map.find(term) == stopwords_map.end()) \
+                && (usedwords_map.find(term) == usedwords_map.end()) \
+                && (centers_top_terms.at(center_idx).size() < n_top_terms) )
+            {
+                centers_top_terms.at(center_idx).push_back(term);
+                usedwords_map.insert( std::pair<std::string,bool>(term, true));
+                total_terms++;
             }
-            center_count++;
+            // Stop with this cluster if have enough terms
+            if (total_terms == (n_top_terms * n_clusters))
+            {
+                break;
+            }
         }
         
         return centers_top_terms;
