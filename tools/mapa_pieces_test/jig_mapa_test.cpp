@@ -26,20 +26,25 @@ int main( int argc, char** argv )
     //Command line parsing
     TCLAP::CmdLine cmd("jig_mapa_test", ' ', "0.1");
 
-    TCLAP::UnlabeledValueArg<std::string> filenameArg("jigfile", "Path to Jigsaw .jig data file", true, "", ".jig data file");
+    TCLAP::UnlabeledValueArg<std::string> filenameArg("jigfile", "Path to Jigsaw .jig data file", false, "", ".jig data file");
+
+    TCLAP::ValueArg<std::string> outfileArg("o","outfile", "Path (name) of output .xml file", false, "jig_mapa_test", "integer > 0");
 
     TCLAP::ValueArg<int> lengthArg("l","min_term_length", "Minimum number of characters for a term", false, 3, "integer > 1");
 
     TCLAP::ValueArg<int> countArg("c","min_term_count", "Minimum term count per document", false, 2, "integer > 0");
 
     TCLAP::ValueArg<int> nlabelsArg("n","num_cluster_labels", "Number of cluster keyword labels in XML", false, 3, "integer > 0");
+    TCLAP::ValueArg<int> nstoplabelsArg("s","num_stop_labels", "Number of clusters center labels to ignore when generating cluster labels", false, 10, "integer >= 0");
 
     try
     {
         cmd.add(filenameArg);
+        cmd.add(outfileArg);
         cmd.add(lengthArg);
         cmd.add(countArg);
         cmd.add(nlabelsArg);
+        cmd.add(nstoplabelsArg);
         
         cmd.parse( argc, argv );
     }
@@ -49,9 +54,12 @@ int main( int argc, char** argv )
         return -1;
     }
 
-	// std::string data_dir = MAPA::UtilityCalcs::PathAppend(MAPA_SOURCE_DIR, "data");
-    // std::string filename = MAPA::UtilityCalcs::PathAppend(data_dir, "InfovisVAST-papers.jig");
     std::string filename = filenameArg.getValue();
+    if (filename.size() == 0)
+    {
+	    std::string data_dir = MAPA::UtilityCalcs::PathAppend(MAPA_SOURCE_DIR, "data");
+        filename = MAPA::UtilityCalcs::PathAppend(data_dir, "InfovisVAST-papers.jig");
+    }
     
     // NOTE: After checking for unreasonable values, the adjusted values are set to non-defaults...
     int min_term_length = lengthArg.getValue();
@@ -62,6 +70,10 @@ int main( int argc, char** argv )
 
     int n_top_terms = nlabelsArg.getValue();
     n_top_terms = n_top_terms > 0 ? n_top_terms : 1;
+    int n_stop_terms = nstoplabelsArg.getValue();
+    n_stop_terms = n_stop_terms >= 0 ? n_stop_terms : 0;
+    
+    std::string outfile = outfileArg.getValue();
 
     // ---------------------------------------------
     // Load, tokenize, and generate TDM for document data
@@ -136,7 +148,7 @@ int main( int argc, char** argv )
 //     printf("Misclassification Rate: %.10f\n", MisclassificationRate );
 
     // Generate output
-    MAPA::XMLclusterdoc(&tdm_gen, &mapa, &svds, "jig mapa test", n_top_terms);
+    MAPA::XMLclusterdoc(&tdm_gen, &mapa, &svds, outfile, n_top_terms, n_stop_terms);
     
     return EXIT_SUCCESS;
 }

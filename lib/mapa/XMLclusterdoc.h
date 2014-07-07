@@ -32,7 +32,7 @@ class XMLclusterdoc {
 
 public:
 
-    XMLclusterdoc(MAPA::TDMgenerator *tdm_gen, MAPA::Mapa *mapa, MAPA::SvdlibcSVD *svds, std::string name, int n_top_terms = 3)
+    XMLclusterdoc(MAPA::TDMgenerator *tdm_gen, MAPA::Mapa *mapa, MAPA::SvdlibcSVD *svds, std::string name, int n_top_terms = 3, int n_stop_terms = 10)
     {
         // -------------------------------------
         // Grab MAPA output
@@ -69,16 +69,17 @@ public:
         
         // Bases terms that don't repeat tdm_mean top 10 terms
         std::vector<std::string> stop_terms;
-        int n_stop_terms = 10 < tdm_mean_terms.size() ? 10 : tdm_mean_terms.size();
+        n_stop_terms = n_stop_terms < tdm_mean_terms.size() ? n_stop_terms : tdm_mean_terms.size();
         for (int ii = 0; ii < n_stop_terms; ii++)
         {
             stop_terms.push_back( tdm_mean_terms.at(ii) );
         }
-        VEC_OF_STR_VECS bases_nomean_terms = generate_bases_nomean_terms(stop_terms, n_top_terms);
+        // VEC_OF_STR_VECS label_terms = generate_bases_nomean_terms(stop_terms, n_top_terms);
+        VEC_OF_STR_VECS label_terms = generate_centers_nomean_terms(stop_terms, n_top_terms);
         
         // -------------------------------------
         // Generate XML output
-        generate_XML_output(bases_nomean_terms, name, &stop_terms);
+        generate_XML_output(label_terms, name, &stop_terms);
 
     };
     
@@ -450,6 +451,69 @@ private:
         
         return bases_top_terms;
     };
+
+    VEC_OF_STR_VECS generate_centers_nomean_terms(std::vector<std::string> stop_terms, int n_top_terms)
+    {
+        // Copy stop terms over to new map for quick lookup
+        std::map<std::string, bool> stopwords_map;
+        for (int ss = 0; ss < stop_terms.size(); ss++)
+        {
+            stopwords_map.insert( std::pair<std::string,bool>(stop_terms.at(ss), true));
+        }
+        
+        // TODO: 
+        // Run through all centers, reproject, and then store in a matrix where (abs) centers are in the columns. 
+        // Simultaneously create a matrix of columns containing cluster index.
+        // Also create a matrix of columns containing original indices
+        // Form col or row vector of all results by resize to 1 x n_clusters*D
+        // Sort
+        // Fill in order of sorting, checking against stop terms, and checking whether each cluster's terms are full
+        // Keep track of how many total terms have been gathered and break out when all are full n_top_terms * n_clusters
+        
+        VEC_OF_STR_VECS centers_top_terms;
+        int center_count = 0;
+        for(std::vector<ArrayXd>::iterator it = centers.begin(); it != centers.end(); ++it) {
+            if ((*it).size() > 0)
+            {
+                std::vector<std::string> top_terms;
+                // Reproject center back into term space
+                // Centers come out as column vectors, so U [D x d] * center [d x 1] = cent [D x 1]
+                ArrayXd cent = (U * (*it).matrix()).array().abs();
+
+                // sort columns independently (only one here)
+                int dim = 1;
+                // sort descending order
+                int ascending = false;
+                // Sorted output matrix
+                ArrayXd Y;
+                // sorted indices for sort dimension
+                ArrayXi IX;
+            
+                igl::sort(cent,1,ascending,Y,IX);
+            
+                for (int ii = 0; ii < IX.size(); ii++)
+                {
+                    std::string term = terms.at(IX(ii));
+                    // Only count terms not in stopwords list
+                    if (stopwords_map.find(term) == stopwords_map.end()) 
+                    {
+                        top_terms.push_back(term);
+                    }
+                    // Stop with this cluster if have enough terms
+                    if (top_terms.size() == n_top_terms)
+                    {
+                        break;
+                    }
+                }
+                centers_top_terms.push_back(top_terms);
+            }
+            center_count++;
+        }
+        
+        return centers_top_terms;
+    };
+
+
 }; // class def
 
 } // namespace MAPA
