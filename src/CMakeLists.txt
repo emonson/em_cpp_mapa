@@ -10,5 +10,5 @@ ADD_DEFINITIONS(-DIGL_HEADER_ONLY)
 
 LINK_DIRECTORIES( ${ANN_LINK_DIR} ${SVD_LINK_DIR} ${TINYXML2_LINK_DIR} )
 
-ADD_EXECUTABLE(mapa_jig_clustering mapa_jig_clustering.cpp)
-TARGET_LINK_LIBRARIES(mapa_jig_clustering tinyxml2 myann svd)
+ADD_EXECUTABLE(mapa_clustering mapa_clustering.cpp)
+TARGET_LINK_LIBRARIES(mapa_clustering tinyxml2 myann svd)
