@@ -36,6 +36,7 @@ public:
     {
         // -------------------------------------
         // Grab MAPA output
+        
         labels = mapa->GetLabels();
         centers = mapa->GetPlaneCenters();
         bases = mapa->GetPlaneBases();
@@ -45,8 +46,6 @@ public:
         
         U = svds->matrixU();
     
-        // TODO: may need to figure out doc closest to center since center not a doc...
-    
         // Calculate the mean of the cluster centers
         generate_tmd_mean();
         
@@ -54,31 +53,23 @@ public:
         generate_cluster_docIDs();
         
         // -------------------------------------
-        // DECIDE here what type of term generation to use...
+        // Generate terms for labeling clusters
         
         std::vector<std::string> tdm_mean_terms = generate_tdm_mean_terms();
-
-        // Centers terms
-        // VEC_OF_STR_VECS centers_top_terms = generate_center_terms();
-    
-        // Centers Diff terms
-        // VEC_OF_STR_VECS centers_offset_top_terms = generate_center_offset_terms();
-
-        // Basis vectors terms
-        // VEC_OF_STR_VECS bases_top_terms = generate_bases_terms(n_top_terms);
         
-        // Bases terms that don't repeat tdm_mean top 10 terms
+        // Cluster terms don't repeat tdm_mean top 10 terms
         std::vector<std::string> stop_terms;
         n_stop_terms = n_stop_terms < tdm_mean_terms.size() ? n_stop_terms : tdm_mean_terms.size();
         for (int ii = 0; ii < n_stop_terms; ii++)
         {
             stop_terms.push_back( tdm_mean_terms.at(ii) );
         }
-        // VEC_OF_STR_VECS label_terms = generate_bases_nomean_terms(stop_terms, n_top_terms);
+        
         VEC_OF_STR_VECS label_terms = generate_centers_nomean_terms(stop_terms, n_top_terms);
         
         // -------------------------------------
         // Generate XML output
+        
         generate_XML_output(label_terms, name, &stop_terms);
 
     };
@@ -88,6 +79,7 @@ public:
         if (clusters_terms.size() != cluster_docIDs.size())
         {
             std::cerr << "ERROR: MAPA::XMLclusterdoc -- number of clusters doesn't match between terms and docIDs!" << std::endl;
+            std::cerr << "cluster_docIDs: " << cluster_docIDs.size() << ", clusters_terms: " << clusters_terms.size() << std::endl;
             return;
         }
         
@@ -102,9 +94,8 @@ public:
         out_name = out_name.substr(found+1);
 
         
-        // XML building test
-        // TODO: change and make more flexible/modular the term geration based on centers & bases!!
-
+        // XML example
+        //
         // <?xml version="1.0" encoding="UTF-8"?>
         // <jigsawcluster>
         //   <name>Papers Text Cluster</name>
@@ -149,6 +140,10 @@ public:
         // Loop over clusters
         for(std::vector<int>::size_type cc = 0; cc != clusters_terms.size(); cc++) {
         
+            int n_ids = cluster_docIDs.at(cc).size();
+            // Jigsaw can't import clusters with no documents in them...
+            if (n_ids == 0) { continue; }
+            
             // XML
             XMLNode* cluster = jigsawcluster->InsertEndChild( doc->NewElement( "cluster" ) );
             
@@ -168,7 +163,6 @@ public:
         
             // docIDs
             std::stringstream docIDs_ss;
-            int n_ids = cluster_docIDs.at(cc).size();
             for (int ii = 0; ii < n_ids; ii++)
             {
                 docIDs_ss << cluster_docIDs.at(cc).at(ii);
@@ -188,8 +182,6 @@ public:
     
 private:
 
-    std::string clusters_name;
-
     ArrayXi labels;
     MatrixXd U;
     MatrixXd tdm_mean;
@@ -199,23 +191,30 @@ private:
     std::vector<std::string> terms;
     VEC_OF_STR_VECS cluster_docIDs;
 
+    // ------------------
+    // UTILITIES
+    
     void generate_cluster_docIDs()
     {
-        // NOTE: Not relying on labels being sequential, even though they should be...
+        // Relying on labels being sequential so can deal with empty clusters
         cluster_docIDs.clear();
         ArrayXi unique_labels = MAPA::UtilityCalcs::UniqueMembers(labels);
-        std::map<int, int> label_clusterIdx_map;
-        for (int ll = 0; ll < unique_labels.size(); ll++)
+        int max_label = unique_labels.maxCoeff();
+        for (int ll = 0; ll <= max_label; ll++)
         {
             std::vector<std::string> doc_vec;
             cluster_docIDs.push_back(doc_vec);
-            label_clusterIdx_map[unique_labels(ll)] = ll;
         }
     
-        // NOTE: labels and docIDs had better be the same length...
+        if (labels.size() != docIDs.size())
+        {
+            std::cerr << "ERROR: MAPA::XMLclusterdoc -- lengths of labels and docIDs don't match!" << std::endl;
+            std::cerr << "labels: " << labels.size() << ", docIDs: " << docIDs.size() << std::endl;
+            return;
+        }
         for (int ii = 0; ii < labels.size(); ii++)
         {
-            cluster_docIDs.at( label_clusterIdx_map[labels(ii)] ).push_back(docIDs.at(ii));
+            cluster_docIDs.at( labels(ii) ).push_back( docIDs.at(ii) );
         }
     };
     
@@ -229,6 +228,30 @@ private:
         tdm_mean /= centers.size();
     };
     
+    ArrayXi sorted_indices(ArrayXd coeffs)
+    {
+        // sort columns independently (only one here)
+        int dim = 1;
+        // sort descending order
+        int ascending = false;
+        // Sorted output matrix
+        ArrayXd Y;
+        // sorted indices for sort dimension
+        ArrayXi IX;
+
+        igl::sort(coeffs,1,ascending,Y,IX);
+        
+        return IX;
+    };
+
+    // ------------------
+    // TERM GENERATION
+    //
+    // Playing with various methods for generating lists of terms associated with
+    // each of the clusters. There is a lot of repeated code that could be refactored,
+    // but in the end probably just going to choose one and stick with it...
+    
+
     std::vector<std::string> generate_tdm_mean_terms(int n_terms = -1)
     {
         // Default to all terms
@@ -242,16 +265,7 @@ private:
         
         ArrayXd cent = tdm_mean.array().abs();
     
-        // sort columns independently (only one here)
-        int dim = 1;
-        // sort descending order
-        int ascending = false;
-        // Sorted output matrix
-        ArrayXd Y;
-        // sorted indices for sort dimension
-        ArrayXi IX;
-    
-        igl::sort(cent,1,ascending,Y,IX);
+        ArrayXi IX = sorted_indices(cent);
     
         for (int ii = 0; ii < n_top_terms; ii++)
         {
@@ -280,17 +294,8 @@ private:
                 // Centers come out as column vectors, so U [D x d] * center [d x 1] = cent [D x 1]
                 ArrayXd cent = (U * (*it).matrix()).array().abs();
 
-                // sort columns independently (only one here)
-                int dim = 1;
-                // sort descending order
-                int ascending = false;
-                // Sorted output matrix
-                ArrayXd Y;
-                // sorted indices for sort dimension
-                ArrayXi IX;
-            
-                igl::sort(cent,1,ascending,Y,IX);
-            
+                ArrayXi IX = sorted_indices(cent);
+
                 for (int ii = 0; ii < n_top_terms; ii++)
                 {
                     top_terms.push_back(terms.at(IX(ii)));
@@ -322,16 +327,7 @@ private:
                 // Centers come out as column vectors, so U [D x N] * center [N x 1] = cent [D x 1]
                 ArrayXd cent = ((U * (*it).matrix()) - tdm_mean).array().abs();
             
-                // sort columns independently (only one here)
-                int dim = 1;
-                // sort descending order
-                int ascending = false;
-                // Sorted output matrix
-                ArrayXd Y;
-                // sorted indices for sort dimension
-                ArrayXi IX;
-            
-                igl::sort(cent,1,ascending,Y,IX);
+                ArrayXi IX = sorted_indices(cent);
             
                 for (int ii = 0; ii < n_top_terms; ii++)
                 {
@@ -368,16 +364,7 @@ private:
                     // Bases come out as row vectors, so U [D x N] * center [N x 1] = cent [D x 1]
                     ArrayXd projected = ((*it).row(bb).matrix() * U.transpose()).array().abs().transpose();
             
-                    // sort columns independently (only one here)
-                    int dim = 1;
-                    // sort descending order
-                    int ascending = false;
-                    // Sorted output matrix
-                    ArrayXd Y;
-                    // sorted indices for sort dimension
-                    ArrayXi IX;
-            
-                    igl::sort(projected,1,ascending,Y,IX);
+                    ArrayXi IX = sorted_indices(projected);
             
                     for (int ii = 0; ii < n_top_terms; ii++)
                     {
@@ -417,16 +404,8 @@ private:
                     // Bases come out as row vectors, so basis [1 x d] * U.T [d x D] = proj [1 x D]
                     ArrayXd projected = ((*it).row(bb).matrix() * U.transpose()).array().abs().transpose();
             
-                    // sort columns independently (only one here)
-                    int dim = 1;
-                    // sort descending order
-                    int ascending = false;
-                    // Sorted output matrix
-                    ArrayXd Y;
-                    // sorted indices for sort dimension
-                    ArrayXi IX;
-            
-                    igl::sort(projected,1,ascending,Y,IX);
+                    ArrayXi IX = sorted_indices( projected );
+                    
                     sorted_idxs.col(bb) = IX;
                 }
                 // reshape to row array so iterating through will automatically iterate across columns then down rows
@@ -504,16 +483,7 @@ private:
         ArrayXi idxs = idxs_mat;
         ArrayXi center_idxs = center_idxs_mat;
 
-        // sort columns independently (only one here)
-        int dim = 1;
-        // sort descending order
-        int ascending = false;
-        // Sorted output matrix
-        ArrayXd Y;
-        // sorted indices for sort dimension
-        ArrayXi IX;
-    
-        igl::sort(coeffs,1,ascending,Y,IX);
+        ArrayXi IX = sorted_indices(coeffs);
         
         // Keep track of both total terms accumulated for exit, and used terms so won't repeat with other clusters
         // Algorithm should only assign term to cluster with the most representation of that term
@@ -541,8 +511,8 @@ private:
         
         return centers_top_terms;
     };
-
-
+    
+    
 }; // class def
 
 } // namespace MAPA

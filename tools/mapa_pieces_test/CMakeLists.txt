@@ -38,5 +38,5 @@ ADD_EXECUTABLE(jig_mapa_test jig_mapa_test.cpp)
 TARGET_LINK_LIBRARIES(jig_mapa_test tinyxml2 myann svd)
 
 ADD_EXECUTABLE(dir_mapa_test dir_mapa_test.cpp)
-TARGET_LINK_LIBRARIES(dir_mapa_test myann svd)
+TARGET_LINK_LIBRARIES(dir_mapa_test tinyxml2 myann svd)
 
