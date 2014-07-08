@@ -15,6 +15,7 @@ ELSE()
   options are: None(CMAKE_CXX_FLAGS or CMAKE_C_FLAGS used) Debug Release
   RelWithDebInfo MinSizeRel.")
 ENDIF()
+
 set(CMAKE_OSX_ARCHITECTURES x86_64 CACHE STRING "")
 set(CMAKE_OSX_DEPLOYMENT_TARGET 10.9 CACHE STRING "")
 set(CMAKE_OSX_SYSROOT /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk CACHE STRING "")
@@ -40,8 +41,8 @@ set(MAPA_INCLUDE_DIRS
    ${MAPA_SOURCE_DIR}/lib/tinyxml2/
    ${MAPA_SOURCE_DIR}/lib/redsvd-0.2.0/src/
    ${MAPA_SOURCE_DIR}/lib/boost_1_55_0/
-   ${MAPA_SOURCE_DIR}/lib/mapa/
    ${MAPA_SOURCE_DIR}/lib/SVDLIBC/
+   ${MAPA_SOURCE_DIR}/src/include/
 )
 
 set(MAPA_LIB_DIR 
@@ -62,10 +63,10 @@ set(REDSVD_LINK_DIR
 )
 
 ADD_SUBDIRECTORY(lib)
-ADD_SUBDIRECTORY(tools)
+ADD_SUBDIRECTORY(tests)
 
-option(BUILD_MAPA_JIG_CLUSTERING "Build main MAPA Jigsaw document clustering application" ON)
-if(BUILD_MAPA_JIG_CLUSTERING)
+option(BUILD_APP_MAPA_CLUSTERING "Build main MAPA Jigsaw document clustering application" ON)
+if(BUILD_APP_MAPA_CLUSTERING)
   ADD_SUBDIRECTORY(src)
-endif(BUILD_MAPA_JIG_CLUSTERING)
+endif(BUILD_APP_MAPA_CLUSTERING)
 
