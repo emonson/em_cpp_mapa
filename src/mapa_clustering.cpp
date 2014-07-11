@@ -31,50 +31,52 @@ int main( int argc, char** argv )
     TCLAP::CmdLine cmd("mapa_clustering", ' ', "0.9");
     
     // required
-    TCLAP::UnlabeledValueArg<std::string> pathnameArg("path", "Path to .jig file or directory of text files", false, "", "text data directory");
+    TCLAP::UnlabeledValueArg<std::string> pathnameArg("path", "Path to .jig file or directory of text files", true, "", "path string");
     
     // one or the other required (xor below)
-    TCLAP::ValueArg<int> kArg("K","K", "Number of clusters", true, 2, "integer > 0");
-    TCLAP::ValueArg<int> kmaxArg("","kmax", "Maximum number of clusters", true, 2, "integer >= 0");
+    TCLAP::ValueArg<int> kArg("K","K", "Number of clusters", true, 2, "integer");
+
+    TCLAP::ValueArg<int> kmaxArg("","kmax", "Maximum number of clusters", true, 2, "integer");
 
     // optional
-    TCLAP::ValueArg<std::string> outfileArg("o","outfile", "Path (name) of output .xml file (default path.xml)", false, "", "integer > 0");
+    TCLAP::ValueArg<std::string> outfileArg("o","outfile", "Path (name) of output .xml file (default <data_file_name>.xml)", false, "", "path string");
 
-    TCLAP::ValueArg<std::string> addstopwordsArg("a","add_stopwords", "Space-delimited string in quotes of extra stopwords to add", false, "", "space-delimited string");
+    TCLAP::ValueArg<std::string> addstopwordsArg("","add_stopwords", "Space-delimited string in quotes of extra stopwords to add", false, "", "string");
 
-    TCLAP::ValueArg<int> lengthArg("l","min_term_length", "Minimum number of characters for a term (default = 3)", false, 3, "integer > 1");
+    TCLAP::ValueArg<int> lengthArg("","min_term_length", "Minimum number of characters for a term (default = 3)", false, 3, "integer");
 
-    TCLAP::ValueArg<int> countArg("c","min_term_count", "Minimum term count per document (default = 2)", false, 2, "integer > 0");
+    TCLAP::ValueArg<int> countArg("","min_term_count", "Minimum term count per document (default = 2)", false, 2, "integer");
 
-    TCLAP::ValueArg<int> nlabelsArg("n","n_cluster_labels", "Number of cluster keyword labels in XML (default = 3)", false, 3, "integer > 0");
-    TCLAP::ValueArg<int> nstoplabelsArg("s","n_stop_labels", "Number of clusters center labels to ignore when generating cluster labels (default = 10)", false, 10, "integer >= 0");
+    TCLAP::ValueArg<int> nlabelsArg("","n_cluster_labels", "Number of cluster keyword labels in XML (default = 3)", false, 3, "integer");
+    
+    TCLAP::ValueArg<int> nstoplabelsArg("","n_stop_labels", "Number of clusters center labels to ignore when generating cluster labels (default = 10)", false, 10, "integer");
 
-    TCLAP::ValueArg<int> n0Arg("","n0", "Number of seed points (default = 20 * K)", false, 0, "integer > 0");
+    TCLAP::ValueArg<int> n0Arg("","n0", "Number of seed points (default = 20 * K)", false, 0, "integer");
 
-    TCLAP::ValueArg<int> rankArg("D","dim_reduced", "Dimensionality to reduce original data to with SVD (default = K * dmax)", false, 50, "integer > 0");
+    TCLAP::ValueArg<int> rankArg("D","dim_reduced", "Dimensionality to reduce original data to with SVD (default = K * dmax)", false, 50, "integer");
 
-    TCLAP::ValueArg<int> dmaxArg("","dmax", "Suggested limit on dimensionality of each cluster (default = 6)", false, 6, "integer >= 0");
-    TCLAP::ValueArg<int> dhardlimitArg("","dhard", "Forced hard limit on max dimensionality of each cluster (default = none)", false, 10, "integer >= 0");
+    TCLAP::ValueArg<int> dmaxArg("","dmax", "Suggested limit on dimensionality of each cluster (default = 6)", false, 6, "integer");
+    
+    TCLAP::ValueArg<int> dhardlimitArg("","dhard", "Forced hard limit on max dimensionality of each cluster (default = none)", false, 10, "integer");
 
     TCLAP::SwitchArg verboseArg("V", "verbose", "Verbose output", false);
 
     try
     {
-        cmd.add(pathnameArg);
-        cmd.add(outfileArg);
-        cmd.add(lengthArg);
-        cmd.add(countArg);
-        cmd.add(nlabelsArg);
-        cmd.add(nstoplabelsArg);
-        cmd.add(addstopwordsArg);
-        // one or the other must be set
-        cmd.xorAdd(kArg, kmaxArg);
-        cmd.add(n0Arg);
-        cmd.add(dmaxArg);
-        cmd.add(dhardlimitArg);
         cmd.add(verboseArg);
+        cmd.add(nstoplabelsArg);
+        cmd.add(nlabelsArg);
+        cmd.add(addstopwordsArg);
+        cmd.add(countArg);
+        cmd.add(lengthArg);
+        cmd.add(dhardlimitArg);
+        cmd.add(dmaxArg);        
         cmd.add(rankArg);
-        
+        cmd.add(n0Arg);
+        cmd.xorAdd(kArg, kmaxArg);
+        cmd.add(outfileArg);
+        cmd.add(pathnameArg);
+
         cmd.parse( argc, argv );
     }
     catch (TCLAP::ArgException &e)
@@ -87,11 +89,6 @@ int main( int argc, char** argv )
     // Grab command line values
     
     std::string pathname = pathnameArg.getValue();
-    if (pathname.size() == 0)
-    {
-	    std::string data_dir = MAPA::UtilityCalcs::PathAppend(MAPA_SOURCE_DIR, "data");
-        pathname = MAPA::UtilityCalcs::PathAppend(data_dir, "SNData");
-    }
     
     std::string outfile = outfileArg.getValue();
     if (!outfileArg.isSet())
