@@ -125,9 +125,6 @@ public:
                 // center this set of net points and do an SVD to get the singular values
                 net_centered = net.rowwise() - net.colwise().mean();
                 
-                // Eigen std SVD
-                // sigs = svd(net - repmat(mean(net,1), Nets_count, 1));
-                // JacobiSVD<MatrixXd> svd(net_centered, Eigen::ComputeThinU | Eigen::ComputeThinV);
                 MAPA::SvdlibcSVD svd(net_centered, svD_limit);
                 sigs = svd.singularValues();
 
@@ -141,13 +138,8 @@ public:
                 Nets_S.row(i_scale) = D_sigs.transpose();
             }
         
-            // lStats = EstimateDimFromSpectra(Delta(i_seed,:)', Nets_S, opts.alpha0, i_seed);
         	estdim.EstimateDimensionality( Delta.row(i_seed), Nets_S, opts);
         		
-            // estDims(i_seed) = lStats.DimEst;
-            // GoodScales(i_seed,:) = lStats.GoodScales;
-            // maxScale = GoodScales(i_seed,2);
-            // goodLocalRegions{i_seed} = nn_idxs(i_seed, 1:(opts.MinNetPts + (maxScale-1)*opts.nPtsPerScale));
             seed_est_dim = estdim.GetDimension();
             allEstDims(i_seed) = seed_est_dim;
             allGoodScales(i_seed,0) = estdim.GetLowerScaleIdx(); // NOTE: Matlab 1s-based now!!!             
@@ -156,9 +148,6 @@ public:
             maxScale = allGoodScales(i_seed,1);
             seed_local_region = nn_idxs.row(i_seed).head(opts.MinNetPts + (maxScale-1)*opts.nPtsPerScale);
             allLocalRegions.push_back(seed_local_region);
-            
-            // NOTE: Changed algorithm from original!!
-            // isSeedPointGood(i_seed) = (int)(seed_local_region.size() > (2 * seed_est_dim)) && (seed_est_dim < opts.D);
             
             isSeedPointGood(i_seed) = (int)(seed_local_region.size() > (2 * seed_est_dim)) && (seed_est_dim < D_limit);
             if (isSeedPointGood(i_seed))

@@ -36,32 +36,20 @@ class UtilityCalcs {
 
     static ArrayXXd P2Pdists(const ArrayXXd &X, const std::vector<ArrayXd> &centers, const std::vector<ArrayXXd> &bases)
     {
-        // function dists = p2pdist(X,centers,bases)
-        // 
         // % This code computes (squared) points to planes distances.
-        // 
-        // N = size(X,1);
-        // K = length(centers);
         int N = X.rows();
         int K = centers.size();
 
-        // dists = Inf(N, K);
         ArrayXXd dists = ArrayXXd::Constant(N,K,INFINITY);
 
-        // for k = 1:K
         for (int k = 0; k < K; k++)
         {
-            // if ~isempty(centers{k}) && ~isempty(bases{k})
             if ((centers[k].size() > 0) && (bases[k].size() > 0))
             {
-                // Y = X - repmat(centers{k},N,1);
                 ArrayXXd Y = X.rowwise() - centers[k].transpose();
                 
-                // dists(:,k) = sum(Y.^2,2) - sum((Y*bases{k}').^2,2);
                 dists.col(k) = Y.square().rowwise().sum() - (Y.matrix() * bases[k].matrix().transpose()).array().square().rowwise().sum();
-            //     end
             }
-        // end
         }
         
         return dists;
@@ -73,11 +61,6 @@ class UtilityCalcs {
                           const std::vector<ArrayXd> &ctr,
                           const std::vector<ArrayXXd> &dir)
     {
-        // function mse = L2error(data, idx, dim, ctr, dir)
-        // 
-        // D = size(data,2);
-        // K = max(labels);
-        
         // original point dimensionality
         int D = data.cols();
         // number of clusters
@@ -93,37 +76,25 @@ class UtilityCalcs {
         //     [ctr,dir] = computing_bases(data,labels,dims);
         // end
 
-        // mse = zeros(1,K);
         ArrayXd mse_array = ArrayXd::Zero(K);
         
-        // for k = 1:K
         for (int k = 0; k < K; k++)
         {
-            // cls_k = data((labels==k),:);
-            // n_k = size(cls_k,1);
-            
             ArrayXi cls_k_idxs = MAPA::UtilityCalcs::IdxsFromComparison(labels, "eq", k);
             ArrayXXd cls_k;
             igl::slice(data, cls_k_idxs, 1, cls_k);
             int n_k = cls_k.rows();
 
-            // if n_k >= dims(k)+1
             if (n_k > dims(k))
             {
-                // cls_k = cls_k - repmat(centers{k},n_k,1);
                 cls_k.rowwise() -= ctr[k].transpose();
                 
-                // mse(k) = sum( sum(cls_k.^2,2) - sum((cls_k*dir{k,1}').^2,2) ) / (D-dims(k));
                 ArrayXd sum_squares = cls_k.square().rowwise().sum();
                 ArrayXd proj_sum_squares = (cls_k.matrix() * dir[k].matrix().transpose()).array().square().rowwise().sum();
                 mse_array[k] = (sum_squares - proj_sum_squares).sum() / (D-dims[k]);
-            // end
             }
-            
-        // end
         }
         
-        // mse = sqrt(sum(mse)/sum(labels>0));
         int N = labels.size();
         ArrayXi ones = ArrayXi::Ones(N);
         ArrayXi zeros = ArrayXi::Zero(N);
@@ -136,8 +107,6 @@ class UtilityCalcs {
 
     static double ClusteringError(const ArrayXi &clustered_labels, const ArrayXi &true_labels)
     {
-        // function p = clustering_error_improved(clustered_labels, true_labels)
-        // 
         // % Right now this only works for equal numbers of clusters in both the true
         // %   and inferred labels. 
         // % For unequal numbers, the inefficient way would be to make K equal to the
@@ -149,11 +118,7 @@ class UtilityCalcs {
         // %   then generate all of the permutations of each of those and check them for
         // %   which is best. That would make k! * (n!/((n-k)!*k!)) possibilities over
         // %   which to find the max.
-        // 
-        // % Make sure both are row vectors (or columns will work)
-        // clustered_labels = reshape(clustered_labels, 1, []);
-        // true_labels = reshape(true_labels, 1, []);
-        // 
+
         int N = clustered_labels.size();
         if (N != true_labels.size())
         {
@@ -161,51 +126,34 @@ class UtilityCalcs {
             return 1.0;
         }
         
-        // Js = unique(clustered_labels);
-        // Ks = unique(true_labels);
-        // K = max([length(Js) length(Ks)]);
         ArrayXi Js = MAPA::UtilityCalcs::UniqueMembers(clustered_labels);
         ArrayXi Ks = MAPA::UtilityCalcs::UniqueMembers(true_labels);
         int K = Js.size() > Ks.size() ? Js.size() : Ks.size();
         
-        // planeSizes = zeros(1,K);
         ArrayXi planeSizes = ArrayXi::Zero(K);
         
-        // for k = 1:length(Ks)
-        //     planeSizes(k) = sum(true_labels == Ks(k));
-        // end
         for (int k = 0; k < Ks.size(); k++)
         {
             ArrayXi cls_k_idxs = MAPA::UtilityCalcs::IdxsFromComparison(true_labels, "eq", Ks(k));
             planeSizes(k) = cls_k_idxs.size();
         }
 
-        // counts_mtx = zeros(K,K);
         ArrayXXi counts_mtx = ArrayXXi::Zero(K,K);
         ArrayXi ones = ArrayXi::Ones(N);
         ArrayXi zeros = ArrayXi::Zero(N);
         
         // % k is the index of true labels
-        // for k = 1:length(Ks)
         for (int k = 0; k < Ks.size(); k++)
         {
-            //     % j is the index of the inferred, clustering results labels
-            //     for j = 1:length(Js)
+            // % j is the index of the inferred, clustering results labels
             for (int j = 0; j < Js.size(); j++)
             {
-                //         % count up how many matches there are with this k and j combination
-                //         counts_mtx(k,j) = sum( (clustered_labels == Js(j)) & (true_labels == Ks(k)) );
+                // % count up how many matches there are with this k and j combination
                 ArrayXi clustered_matching = (clustered_labels == Js(j)).select(ones, zeros);
                 ArrayXi true_matching = (true_labels == Ks(k)).select(ones, zeros);
                 counts_mtx(k,j) = (clustered_matching * true_matching).sum();
-            //     end
             }
-        // end
         }
-        
-
-        // [n_correct, ~] = number_of_correctly_classified_points(counts_mtx);
-        // p = 1 - n_correct/length(true_labels);
         
         int correct = MAPA::UtilityCalcs::NumberOfCorrectlyClassifiedPoints(counts_mtx);
         double p = 1.0 - (double)correct / (double)N;
@@ -216,7 +164,6 @@ class UtilityCalcs {
     static int NumberOfCorrectlyClassifiedPoints(const ArrayXXi &counts_mtx)
     {
 
-        // K = size(counts_mtx,1);
         int K = counts_mtx.rows();
         
         // % There are K! permutations of the integers 1:K
@@ -244,12 +191,6 @@ class UtilityCalcs {
         // Not returning these for now...
         ArrayXi optimal_js = permuted_js;
         
-        // for pp = 1:n_permutations,
-        //     for k = 1:K
-        //         num_correct(pp) = num_correct(pp) + counts_mtx(k, permuted_js(pp,k));
-        //     end
-        // end
-        
         do {
             num_correct = 0;
             for (int k = 0; k < K; k++)
@@ -263,9 +204,6 @@ class UtilityCalcs {
             }
         } while ( std::next_permutation(pt, pt+K) );
 
-        // [n,I] = max(num_correct);
-        // opt_perm = permuted_js(I);
-        
         return max_correct;
     };
 
@@ -297,41 +235,41 @@ class UtilityCalcs {
 
     static ArrayXi RandSample(unsigned int N, unsigned int K, bool sorted=false)
     {
-			/* Y = randsample(N,K) returns Y as a column vector of K values sampled
-			uniformly at random, without replacement, from the integers 0:N-1 */
+        /* Y = randsample(N,K) returns Y as a column vector of K values sampled
+        uniformly at random, without replacement, from the integers 0:N-1 */
 
-			if (K > N)
-			{
-      	std::cerr << "MAPA::UtilityCalcs::RandSample Error – Number of samples K can't be larger than N" << std::endl;
-      	return ArrayXi::Zero(K);
-			}
+        if (K > N)
+        {
+            std::cerr << "MAPA::UtilityCalcs::RandSample Error – Number of samples K can't be larger than N" << std::endl;
+            return ArrayXi::Zero(K);
+        }
 			
-			ArrayXd randX(N);
-			randX.setRandom();
-			
-			// sort columns independently (only one here)
-			int dim = 1;
-			// sort ascending order
-			int ascending = true;
-			// Sorted output matrix
-			ArrayXd Y;
-			// sorted indices for sort dimension
-			ArrayXi IX;
-			
-			igl::sort(randX,1,ascending,Y,IX);
+        ArrayXd randX(N);
+        randX.setRandom();
+        
+        // sort columns independently (only one here)
+        int dim = 1;
+        // sort ascending order
+        int ascending = true;
+        // Sorted output matrix
+        ArrayXd Y;
+        // sorted indices for sort dimension
+        ArrayXi IX;
+        
+        igl::sort(randX,1,ascending,Y,IX);
 
-			if (!sorted)
-			{
-				return IX.head(K);			
-			}
-			else
-			{
-				ArrayXi Yidxs;
-				ArrayXi Xidxs = IX.head(K);
-				
-				igl::sort(Xidxs, 1, ascending, Yidxs, IX);
-				return Yidxs;
-			}
+        if (!sorted)
+        {
+            return IX.head(K);			
+        }
+        else
+        {
+            ArrayXi Yidxs;
+            ArrayXi Xidxs = IX.head(K);
+            
+            igl::sort(Xidxs, 1, ascending, Yidxs, IX);
+            return Yidxs;
+        }
     };
 
     static ArrayXi UniqueMembers(const ArrayXi &labels)
@@ -458,37 +396,21 @@ class UtilityCalcs {
 
     static ArrayXi ClusteringInUSpace(const ArrayXXd &U, bool normalizeU)
     {
-        // function indicesKmeans = clustering_in_U_space_min(U,opts)
         // % will cluster the rows of U (same number as the rows of A)
         // % minimal version using KMeansRex and only 'hard' seeds
-        // 
-        // K = size(U,2);
         
         ArrayXXd U_copy = U;
         int K = U.cols();
         
-        // if opts.normalizeU,
         if (normalizeU)
         {
-            //     rowNorms = sqrt(sum(U.^2,2));
-            //     rowNorms(rowNorms==0) = 1;
-            //     U = U./repmat(rowNorms,1,K);
             ArrayXd rowNorms = U_copy.square().rowwise().sum().sqrt();
             rowNorms = (rowNorms == 0).select(1.0, rowNorms);
             U_copy = U_copy.colwise() / rowNorms;
-        // end
         }
         
-
-        // [~, indicesKmeans] = KMeansRex(U, K, 100, 'mapa');
         KMeans::KMeansRex km(U_copy, K);
         ArrayXi indicesKmeans = km.GetClusterAssignments();
-
-        // % This is a C++ routine that has 0-based indices, so add one here
-        // indicesKmeans = indicesKmeans + 1;
-        // 
-        // 
-        // end
 
         return indicesKmeans;
     };

@@ -29,7 +29,6 @@ class SpectralAnalysis {
 
 public:
 
-    // function [planeDims, labels, err] =  spectral_analysis(X, U, allPtsInOptRegions, invColMap, localDims, nOutliers)
     SpectralAnalysis(const ArrayXXd &X, 
                      const ArrayXXd &U, 
                      ArrayXi allPtsInOptRegions,
@@ -37,34 +36,23 @@ public:
                      ArrayXi localDims,
                      int nOutliers = 0)
     {
-        // K = size(U,2);
         err = INFINITY;
         int K = U.cols();
-        
-        // SCCopts = struct();
-        // SCCopts.normalizeU = 1;
-        // SCCopts.seedType = 'hard';
-        // indicesKmeans = clustering_in_U_space(U,K,SCCopts);
-        
+                
         // NOTE: Only allowing 'hard' seed type right now...
         bool normalizeU = true;
         ArrayXi indicesKmeans = MAPA::UtilityCalcs::ClusteringInUSpace(U, normalizeU);
         
-        // planeDims = zeros(1,K);
         planeDims = ArrayXi::Zero(K);
         
-        // for k = 1:K
         for (int k = 0; k < K; k++)
         {
             //     % Find the original point indices of the rows of A/U in this cluster
-            //     class_k = allPtsInOptRegions(indicesKmeans == k);
             ArrayXi cluster_k_idxs = MAPA::UtilityCalcs::IdxsFromComparison(indicesKmeans, "eq", k);
             ArrayXi class_k;
             igl::slice(allPtsInOptRegions, cluster_k_idxs, class_k);
         
             //     % Figure out which of these points are seed points
-            //     temp = invColMap(class_k);  
-            //     temp = temp(temp>0);
             ArrayXi temp0;
             igl::slice(invColMap, class_k, temp0);
             ArrayXi temp1 = MAPA::UtilityCalcs::IdxsFromComparison(temp0, "gte", 0);
@@ -73,7 +61,6 @@ public:
         
             //     % Then see what dimensionality most of these seed points in this
             //     % cluster have
-            //     planeDims(k) = mode(localDims(temp));
             ArrayXi cluster_dims;
             igl::slice(localDims, temp_valid, cluster_dims);
 
@@ -87,21 +74,16 @@ public:
                 // TODO: This probably isn't right!!
                 planeDims(k) = MAPA::UtilityCalcs::Mode(localDims);
             }
-            
-        // end
         }
         
-        // [planeCenters, planeBases] = computing_bases(X(allPtsInOptRegions,:), indicesKmeans, planeDims);
         ArrayXXd X_allPtsOpt;
         igl::slice(X, allPtsInOptRegions, 1, X_allPtsOpt);
         MAPA::ComputingBases computing_bases(X_allPtsOpt, indicesKmeans, planeDims);
         std::vector<ArrayXd> planeCenters = computing_bases.GetCenters();
         std::vector<ArrayXXd> planeBases = computing_bases.GetBases();
         
-        // dists = p2pdist(X,planeCenters,planeBases);
         ArrayXXd all_dists = MAPA::UtilityCalcs::P2Pdists(X, planeCenters, planeBases);
         
-        // [dists,labels] = min(dists,[],2);
         int N = all_dists.rows();
         ArrayXd dists = ArrayXd::Constant(N, INFINITY);
         labels = ArrayXi::Constant(N, -1);
@@ -147,9 +129,7 @@ public:
         //     labels(outliers)=0;
         // end
         
-        // err = L2error(X, labels, planeDims);
-        
-        // NOTE: Why would we recompute the bases for all points for this error calculation??
+        // Recompute the bases for all points for this error calculation
         MAPA::ComputingBases computing_bases_all(X, labels, planeDims);
         planeCenters_all = computing_bases_all.GetCenters();
         planeBases_all = computing_bases_all.GetBases();

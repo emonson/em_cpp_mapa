@@ -22,8 +22,7 @@ Duke University
 
 */
 
-    // TODO: Add way to return term and document ID vectors!!
-    // TODO: Should check whether it's faster to do the sums with int triplet values rather than double...
+// TODO: Should check whether it's faster to do the sums with int triplet values rather than double...
     
 #include <iostream>
 #include <fstream>
