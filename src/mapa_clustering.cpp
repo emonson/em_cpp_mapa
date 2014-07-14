@@ -57,7 +57,7 @@ int main( int argc, char** argv )
 
     TCLAP::ValueArg<int> dmaxArg("","dmax", "Suggested limit on dimensionality of each cluster (default = 6)", false, 6, "integer");
     
-    TCLAP::ValueArg<int> dhardlimitArg("","dhard", "Forced hard limit on max dimensionality of each cluster (default = none)", false, 10, "integer");
+    TCLAP::ValueArg<int> dhardlimitArg("","dhard", "Forced hard limit on max dimensionality of each cluster (default = 10)", false, 10, "integer");
 
     TCLAP::SwitchArg verboseArg("V", "verbose", "Verbose output", false);
 
