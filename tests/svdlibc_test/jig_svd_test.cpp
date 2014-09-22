@@ -26,7 +26,7 @@ int main( int argc, const char** argv )
     
     std::cout << "TDM: " << tdm.rows() << " x " << tdm.cols() << ", " << tdm.nonZeros() << std::endl << std::endl;
     
-    int rank = 50;
+    int rank = 5;
     clock_t t = clock();
     
     MAPA::SvdlibcSVD svds(tdm, rank);

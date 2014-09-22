@@ -13,7 +13,12 @@
 #include "SvdlibcSVD.h"
 
 #include "redsvd.hpp"
+
 #include "EigenRandomSVD.h"
+#include "LinalgIO.h"
+#include "Precision.h"
+#include "RandomSVD.h"
+#include "SVD.h"
 
 int main( int argc, const char** argv )
 {
@@ -25,11 +30,18 @@ int main( int argc, const char** argv )
     MAPA::TDMgenerator tdm_gen(min_term_length, min_term_count);
 	MAPA::JIGtokenizer jig_tok(filename, &tdm_gen);
     
+    // Eigen sparse matrix
     Eigen::SparseMatrix<double,0,long> tdm = tdm_gen.getTDM();
-    
+    // Eigen dense matrix
+    Eigen::MatrixXd tdm_dense = tdm;
+    // Sam dense matrix
+    FortranLinalg::DenseMatrix<Precision> tdm_sam(tdm.rows(), tdm.cols());
+    tdm_sam.setDataPointer(tdm_dense.data());
+
     std::cout << std::endl << "TDM (sparse input matrix): " << tdm.rows() << " x " << tdm.cols() << ", " << tdm.nonZeros() << " nonzeros" << std::endl << std::endl;
     
     int rank = 5;
+    int power_iterations = 3;
 
     // --------------------------------
     // SVDLIBC (sparse)
@@ -53,7 +65,6 @@ int main( int argc, const char** argv )
     // --------------------------------
     // Eigen standard JacobiSVD (dense)
     
-    Eigen::MatrixXd tdm_dense = tdm;
     t = clock();
     JacobiSVD<MatrixXd> svd_e(tdm_dense, Eigen::ComputeThinU | Eigen::ComputeThinV);
     t = clock() - t;
@@ -92,9 +103,8 @@ int main( int argc, const char** argv )
     // --------------------------------
     // Eigen random SVD (dense – Sam)
     
-    Eigen::MatrixXd tdm_dense_r = tdm;
     t = clock();
-    EigenLinalg::RandomSVD svd_er(tdm_dense_r, rank, 3);
+    EigenLinalg::RandomSVD svd_er(tdm_dense, rank, 3);
     t = clock() - t;
     printf("Eigen Random SVD Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
     
@@ -102,6 +112,40 @@ int main( int argc, const char** argv )
     // std::cout << svd_er.matrixU() << std::endl << std::endl;
     std::cout << "S: ";
     std::cout << svd_er.S.head(rank).transpose() << std::endl << std::endl << std::endl;
+
+    // --------------------------------
+    // Sam dense standard Fortran version
+    
+    t = clock();
+    FortranLinalg::SVD<Precision> svd_fs(tdm_sam, true);
+    t = clock() - t;
+    std::cout << "SVD" << std::endl;
+    std::cout << (t2-t1)/(double)CLOCKS_PER_SEC << std::endl;
+
+    printf("LAPACK standard Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
+
+    std::cout << "U: " << svd_fs.U.M() << " x " << svd_fs.U.N() << std::endl;
+    std::cout << "S: ";
+    for (int ii = 0; ii < rank; ii++)
+    {
+        std::cout << svd_fs.S(ii) << " " << std::endl;
+    }
+
+    // --------------------------------
+    // Sam dense random Fortran version
+    
+    t = clock();
+    FortranLinalg::RandomSVD<Precision> svd_fr(tdm_sam, rank, power_iterations, true);
+    t = clock() - t;
+
+    printf("LAPACK random Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
+
+    std::cout << "U: " << svd_fr.U.M() << " x " << svd_fr.U.N() << std::endl;
+    std::cout << "S: ";
+    for (int ii = 0; ii < rank; ii++)
+    {
+        std::cout << svd_fr.S(ii) << " " << std::endl;
+    }
 
     return EXIT_SUCCESS;
 }

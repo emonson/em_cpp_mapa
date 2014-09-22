@@ -10,6 +10,11 @@ if(BUILD_TEST_SVDLIBC)
   ADD_SUBDIRECTORY(svdlibc_test)
 endif(BUILD_TEST_SVDLIBC)
 
+option(BUILD_TEST_ALLSVD "Build all SVD comparison test" OFF)
+if(BUILD_TEST_ALLSVD)
+  ADD_SUBDIRECTORY(all_svd_test)
+endif(BUILD_TEST_ALLSVD)
+
 option(BUILD_TEST_SAMSVD "Build Sam's SVD test" OFF)
 if(BUILD_TEST_SAMSVD)
   ADD_SUBDIRECTORY(svd_test)
