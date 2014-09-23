@@ -37,20 +37,23 @@ int main( int argc, const char** argv )
     // Sam dense matrix
     FortranLinalg::DenseMatrix<Precision> tdm_sam(tdm.rows(), tdm.cols());
     tdm_sam.setDataPointer(tdm_dense.data());
+    
+    // DEBUG - write data out for further testing
+    // FortranLinalg::LinalgIO<Precision>::writeMatrix("jig_tdm", tdm_sam);
 
     std::cout << std::endl << "TDM (sparse input matrix): " << tdm.rows() << " x " << tdm.cols() << ", " << tdm.nonZeros() << " nonzeros" << std::endl << std::endl;
     
-    int rank = 5;
+    int rank = 20;
     int power_iterations = 3;
 
     // --------------------------------
     // SVDLIBC (sparse)
     
+    printf("SVDLIBC ");
     clock_t t = clock();    
-    MAPA::SvdlibcSVD svds(tdm, rank);
-    
+    MAPA::SvdlibcSVD svds(tdm, rank);    
     t = clock() - t;
-    printf("SVDLIBC Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
+    printf("Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
     
     std::cout << "U: " << svds.matrixU().rows() << " x " << svds.matrixU().cols() << std::endl;
     // std::cout << svds.matrixU() << std::endl << std::endl;
@@ -65,10 +68,11 @@ int main( int argc, const char** argv )
     // --------------------------------
     // Eigen standard JacobiSVD (dense)
     
+    printf("Eigen standard JacobiSVD ");
     t = clock();
     JacobiSVD<MatrixXd> svd_e(tdm_dense, Eigen::ComputeThinU | Eigen::ComputeThinV);
     t = clock() - t;
-    printf("Eigen standard JacobiSVD Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
+    printf("Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
     
     std::cout << "U: " << svd_e.matrixU().rows() << " x " << svd_e.matrixU().cols() << std::endl;
     // std::cout << svd_e.matrixU() << std::endl << std::endl;
@@ -85,10 +89,11 @@ int main( int argc, const char** argv )
     
     REDSVD::SMatrixXf tdm_r = tdm.cast<float>();
 
+    printf("RedSVD ");
     t = clock();
     REDSVD::RedSVD svd_r(tdm_r, rank);
     t = clock() - t;
-    printf("RedSVD Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
+    printf("Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
 
     std::cout << "U: " << svd_r.matrixU().rows() << " x " << svd_r.matrixU().cols() << std::endl;
     // std::cout << svd_r.matrixU() << std::endl << std::endl;
@@ -103,49 +108,50 @@ int main( int argc, const char** argv )
     // --------------------------------
     // Eigen random SVD (dense – Sam)
     
+    printf("Eigen Random SVD ");
     t = clock();
     EigenLinalg::RandomSVD svd_er(tdm_dense, rank, 3);
     t = clock() - t;
-    printf("Eigen Random SVD Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
+    printf("Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
     
     std::cout << "U: " << svd_er.U.rows() << " x " << svd_er.U.cols() << std::endl;
     // std::cout << svd_er.matrixU() << std::endl << std::endl;
     std::cout << "S: ";
-    std::cout << svd_er.S.head(rank).transpose() << std::endl << std::endl << std::endl;
+    std::cout << svd_er.S.head(rank).transpose() << std::endl << std::endl;
 
     // --------------------------------
     // Sam dense standard Fortran version
     
+    printf("LAPACK standard SVD ");
     t = clock();
     FortranLinalg::SVD<Precision> svd_fs(tdm_sam, true);
     t = clock() - t;
-    std::cout << "SVD" << std::endl;
-    std::cout << (t2-t1)/(double)CLOCKS_PER_SEC << std::endl;
-
-    printf("LAPACK standard Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
+    printf("Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
 
     std::cout << "U: " << svd_fs.U.M() << " x " << svd_fs.U.N() << std::endl;
     std::cout << "S: ";
     for (int ii = 0; ii < rank; ii++)
     {
-        std::cout << svd_fs.S(ii) << " " << std::endl;
+        std::cout << svd_fs.S(ii) << " ";
     }
+    std::cout << std::endl << std::endl;
 
     // --------------------------------
     // Sam dense random Fortran version
     
+    printf("LAPACK random SVD ");
     t = clock();
     FortranLinalg::RandomSVD<Precision> svd_fr(tdm_sam, rank, power_iterations, true);
     t = clock() - t;
-
-    printf("LAPACK random Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
+    printf("Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
 
     std::cout << "U: " << svd_fr.U.M() << " x " << svd_fr.U.N() << std::endl;
     std::cout << "S: ";
     for (int ii = 0; ii < rank; ii++)
     {
-        std::cout << svd_fr.S(ii) << " " << std::endl;
+        std::cout << svd_fr.S(ii) << " ";
     }
+    std::cout << std::endl << std::endl;
 
     return EXIT_SUCCESS;
 }
