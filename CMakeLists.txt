@@ -58,9 +58,9 @@ set(SVD_LINK_DIR
 set(TINYXML2_LINK_DIR 
    ${MAPA_SOURCE_DIR}/lib/tinyxml2/
 )
-set(REDSVD_LINK_DIR 
-   ${MAPA_SOURCE_DIR}/lib/redsvd-0.2.0/build/default/src/
-)
+# set(REDSVD_LINK_DIR 
+#    ${MAPA_SOURCE_DIR}/lib/redsvd-0.2.0/build/default/src/
+# )
 
 ADD_SUBDIRECTORY(lib)
 ADD_SUBDIRECTORY(tests)

@@ -12,7 +12,7 @@
 #include "JIGtokenizer.h"
 #include "SvdlibcSVD.h"
 
-#include "redsvd.hpp"
+// #include "redsvd.hpp"
 
 #include "EigenRandomSVD.h"
 #include "LinalgIO.h"
@@ -87,23 +87,23 @@ int main( int argc, const char** argv )
     // --------------------------------
     // RedSVD test (row-major sparse)
     
-    REDSVD::SMatrixXf tdm_r = tdm.cast<float>();
-
-    printf("RedSVD ");
-    t = clock();
-    REDSVD::RedSVD svd_r(tdm_r, rank);
-    t = clock() - t;
-    printf("Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
-
-    std::cout << "U: " << svd_r.matrixU().rows() << " x " << svd_r.matrixU().cols() << std::endl;
-    // std::cout << svd_r.matrixU() << std::endl << std::endl;
-    std::cout << "V: " << svd_r.matrixV().rows() << " x " << svd_r.matrixV().cols() << std::endl;
-    // std::cout << svd_r.matrixV() << std::endl << std::endl;
-    std::cout << "S: ";
-    std::cout << svd_r.singularValues().head(rank).transpose() << std::endl;
-
-    Eigen::MatrixXf Xred_r = svd_r.matrixV().leftCols(rank) * svd_r.singularValues().head(rank).asDiagonal();
-    std::cout << "X reduced redsvd: " << Xred_r.rows() << " x " << Xred_r.cols() << std::endl << std::endl;
+//     REDSVD::SMatrixXf tdm_r = tdm.cast<float>();
+// 
+//     printf("RedSVD ");
+//     t = clock();
+//     REDSVD::RedSVD svd_r(tdm_r, rank);
+//     t = clock() - t;
+//     printf("Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
+// 
+//     std::cout << "U: " << svd_r.matrixU().rows() << " x " << svd_r.matrixU().cols() << std::endl;
+//     // std::cout << svd_r.matrixU() << std::endl << std::endl;
+//     std::cout << "V: " << svd_r.matrixV().rows() << " x " << svd_r.matrixV().cols() << std::endl;
+//     // std::cout << svd_r.matrixV() << std::endl << std::endl;
+//     std::cout << "S: ";
+//     std::cout << svd_r.singularValues().head(rank).transpose() << std::endl;
+// 
+//     Eigen::MatrixXf Xred_r = svd_r.matrixV().leftCols(rank) * svd_r.singularValues().head(rank).asDiagonal();
+//     std::cout << "X reduced redsvd: " << Xred_r.rows() << " x " << Xred_r.cols() << std::endl << std::endl;
     
     // --------------------------------
     // Eigen random SVD (dense – Sam)

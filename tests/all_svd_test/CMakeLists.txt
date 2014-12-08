@@ -10,4 +10,5 @@ ADD_DEFINITIONS(-DIGL_HEADER_ONLY)
 LINK_DIRECTORIES( ${SVD_LINK_DIR} ${REDSVD_LINK_DIR} ${ANN_LINK_DIR} )
 
 ADD_EXECUTABLE(jig_all_test jig_all_test.cpp)
-TARGET_LINK_LIBRARIES(jig_all_test tinyxml2 svd redsvd ${GFORTRAN_LIBRARY} lapack blas)
+# TARGET_LINK_LIBRARIES(jig_all_test tinyxml2 svd redsvd ${GFORTRAN_LIBRARY} lapack blas)
+TARGET_LINK_LIBRARIES(jig_all_test tinyxml2 svd ${GFORTRAN_LIBRARY} lapack blas)
