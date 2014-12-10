@@ -43,7 +43,7 @@ int main( int argc, const char** argv )
 
     std::cout << std::endl << "TDM (sparse input matrix): " << tdm.rows() << " x " << tdm.cols() << ", " << tdm.nonZeros() << " nonzeros" << std::endl << std::endl;
     
-    int rank = 20;
+    int rank = 100;
     int power_iterations = 3;
 
     // --------------------------------
@@ -124,7 +124,7 @@ int main( int argc, const char** argv )
     
     printf("LAPACK standard SVD ");
     t = clock();
-    FortranLinalg::SVD<Precision> svd_fs(tdm_sam, true);
+    FortranLinalg::SVD<Precision> svd_fs(tdm_sam, false);
     t = clock() - t;
     printf("Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
 
@@ -141,7 +141,7 @@ int main( int argc, const char** argv )
     
     printf("LAPACK random SVD ");
     t = clock();
-    FortranLinalg::RandomSVD<Precision> svd_fr(tdm_sam, rank, power_iterations, true);
+    FortranLinalg::RandomSVD<Precision> svd_fr(tdm_sam, rank, power_iterations, false);
     t = clock() - t;
     printf("Elapsed time: %.10f sec.\n", (double)t/CLOCKS_PER_SEC );
 
